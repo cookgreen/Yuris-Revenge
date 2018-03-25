@@ -85,13 +85,16 @@ Rules:
 	yr|rules/animals.yaml
 	yr|rules/allied-structures.yaml
 	yr|rules/soviet-structures.yaml
+	yr|rules/yuri-structures.yaml
 	yr|rules/civilian-structures.yaml
 	yr|rules/tech-structures.yaml
 	yr|rules/allied-vehicles.yaml
 	yr|rules/soviet-vehicles.yaml
+	yr|rules/yuri-vehicles.yaml
 	yr|rules/civilian-vehicles.yaml
 	yr|rules/allied-naval.yaml
 	yr|rules/soviet-naval.yaml
+	yr|rules/yuri-naval.yaml
 	yr|rules/aircraft.yaml
 	yr|rules/civilian-props.yaml
 	yr|rules/trees.yaml
