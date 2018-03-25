@@ -1,34 +1,48 @@
-grinder: Grinder
+intro: INTRO
+	Filename: Drok
 	Extension: wav
-power: Power
+
+score: SCORE
+	Filename: ScoreX
 	Extension: wav
-fortific: Fortification
+
+loading: LOADING
+	Filename: Bully
 	Extension: wav
-indeep: In Deep
+
+credits: CREDITS
+	Filename: OptionX
 	Extension: wav
-tension: Tension
+
+brainfreeze: BrainFreeze
+	Filename: BrainFre
 	Extension: wav
-eaglehun: Eagle Hunter
+
+drok: Drok
+	Filename: Drok
 	Extension: wav
-industro: Industro Funk
+
+deceiver: Deceiver
+	Filename: Deceiver
 	Extension: wav
-jank: Jank
+
+phatattack: PhatAttack
+	Filename: PhatAtta
 	Extension: wav
-200meter: 200 Meters
+
+bullykit: BullyKit
+	Filename: Bully
 	Extension: wav
-blowitup: Blow It Up
+
+defendthebase: DefendTheBase
+	Filename: Defend
 	Extension: wav
-destroy: Destroy
+
+tactics: Tactics
+	Filename: Tactics
 	Extension: wav
-burn: Burn
+
+trancelvania: TranceLVania
+	Filename: TranceLV
 	Extension: wav
-motorize: Motorized
-	Extension: wav
-hm2: HM 2
-	Extension: wav
-credits: Credits
-	Filename: ra2-opt
-	Extension: wav
-score: Score
-	Filename: ra2-sco
-	Extension: wav
+
