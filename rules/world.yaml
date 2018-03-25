@@ -28,6 +28,11 @@
 		InternalName: random-soviets
 		RandomFactionMembers: cuba, libya, iraq, russia
 		Side: Randoms
+	Faction@yuri:
+		Name: Yuri
+		InternalName: random-yuri
+		RandomFactionMembers: yuri
+		Side: Randoms
 	Faction@1:
 		Name: America
 		InternalName: america
@@ -73,6 +78,11 @@
 		InternalName: russia
 		Side: Soviets
 		Description: Russia\nSpecial Vehicle: Tesla Tank
+	Faction@10:
+		Name: Yuri Country
+		InternalName: yuri
+		Side: Soviets
+		Description: 
 	ResourceType@Ore:
 		ResourceType: 1
 		Palette: resource
