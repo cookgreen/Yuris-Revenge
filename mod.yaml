@@ -125,7 +125,7 @@ Chrome:
 Assemblies:
 	common|OpenRA.Mods.Common.dll
 	common|OpenRA.Mods.Cnc.dll
-	yr|OpenRA.Mods.yr.dll
+	yr|yr.dll
 
 ChromeLayout:
 	yr|chrome/ingame-player.yaml
