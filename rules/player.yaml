@@ -1,0 +1,81 @@
+Player:
+	AlwaysVisible:
+	TechTree:
+	ClassicProductionQueue@Building:
+		Type: Building
+		BuildSpeed: 40
+		LowPowerSlowdown: 3
+		QueuedAudio: Building
+		ReadyAudio: ConstructionComplete
+		SpeedUp: true
+	ClassicProductionQueue@Support:
+		Type: Support
+		BuildSpeed: 40
+		LowPowerSlowdown: 3
+		QueuedAudio: Building
+		ReadyAudio: ConstructionComplete
+		SpeedUp: true
+	ClassicProductionQueue@Vehicle:
+		Type: Vehicle
+		BuildSpeed: 40
+		LowPowerSlowdown: 3
+		SpeedUp: true
+	ClassicProductionQueue@Infantry:
+		Type: Infantry
+		BuildSpeed: 40
+		LowPowerSlowdown: 3
+		SpeedUp: true
+	ClassicProductionQueue@Aircraft:
+		Type: Aircraft
+		BuildSpeed: 40
+		LowPowerSlowdown: 3
+		SpeedUp: true
+	ClassicProductionQueue@Ship:
+		Type: Ship
+		BuildSpeed: 40
+		LowPowerSlowdown: 3
+		SpeedUp: true
+	PlaceBuilding:
+		Palette: effect75alpha
+	SupportPowerManager:
+	ScriptTriggers:
+	MissionObjectives:
+	ConquestVictoryConditions:
+	PowerManager:
+	AllyRepair:
+	PlayerResources:
+	DeveloperMode:
+		Enabled: true
+	GpsWatcher:
+	Shroud:
+	FrozenActorLayer:
+	BaseAttackNotifier:
+		AllyNotification: OurAllyIsUnderAttack
+	HarvesterAttackNotifier:
+		Notification: OreMinerUnderAttack
+	PlayerStatistics:
+	PlaceSimpleBeacon:
+		IsPlayerPalette: true
+		Palette: player
+	ProvidesTechPrerequisite@infonly:
+		Name: Infantry Only
+		Prerequisites: techlevel.infonly
+		Id: infantryonly
+	ProvidesTechPrerequisite@low:
+		Name: Low
+		Prerequisites: techlevel.infonly, techlevel.low
+		Id: low
+	ProvidesTechPrerequisite@medium:
+		Name: Medium
+		Prerequisites: techlevel.infonly, techlevel.low, techlevel.medium
+		Id: medium
+	ProvidesTechPrerequisite@unrestricted:
+		Name: Unrestricted
+		Prerequisites: techlevel.infonly, techlevel.low, techlevel.medium, techlevel.unrestricted
+		Id: unrestricted
+	GrantConditionOnPrerequisiteManager:
+	VeteranProductionIconOverlay:
+		Offset: 2, 2
+		Image: cameo-chevron
+		Sequence: idle
+		Palette: cameo-chevron

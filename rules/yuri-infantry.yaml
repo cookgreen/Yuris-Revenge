@@ -1,0 +1,119 @@
+init:
+	Inherits: ^Infantry
+	Buildable:
+		BuildPaletteOrder: 60
+		Description:
+	Valued:
+		Cost: 200
+	Tooltip:
+		Name: Yuri Initiate
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Health:
+		HP: 100
+	Mobile:
+		Speed: 
+	Passenger:
+		PipType: Green
+	RevealsShroud:
+		Range: 5c0
+	AttackFrontal:
+		Voice: Attack
+	Armament@primary:
+		Weapon: PsychicJab
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: PsychicJabE
+		RequiresCondition: rank-elite
+	WithInfantryBody
+		DefaultAttackSequence: shoot
+        
+yengineer:
+	Inherits: ^Infantry
+	Buildable:
+		BuildPaletteOrder: 60
+		Description:
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Yuri Engineer
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Health:
+		HP: 75
+	Mobile:
+		Speed: 
+	Passenger:
+		PipType: Green
+	RevealsShroud:
+		Range: 5c0
+	AttackFrontal:
+		Voice: Attack
+	Armament@primary:
+		Weapon: DefuseKit
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: 
+		RequiresCondition: rank-elite
+	WithInfantryBody
+		DefaultAttackSequence: shoot
+        
+brute:
+	Inherits: ^Infantry
+	Buildable:
+		BuildPaletteOrder: 60
+		Description:
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Yuri Brute
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Health:
+		HP: 200
+	Mobile:
+		Speed: 
+	Passenger:
+		PipType: Green
+	RevealsShroud:
+		Range: 5c0
+	AttackFrontal:
+		Voice: Attack
+	Armament@primary:
+		Weapon: Punch
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: PunchE
+		RequiresCondition: rank-elite
+	WithInfantryBody
+		DefaultAttackSequence: shoot
+
+virus:
+	Inherits: ^Infantry
+	Buildable:
+		BuildPaletteOrder: 60
+		Description:
+	Valued:
+		Cost: 700
+	Tooltip:
+		Name: Yuri Virus
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Health:
+		HP: 100
+	Mobile:
+		Speed: 
+	Passenger:
+		PipType: Green
+	RevealsShroud:
+		Range: 5c0
+	AttackFrontal:
+		Voice: Attack
+	Armament@primary:
+		Weapon: Virusgun
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: VirusgunE
+		RequiresCondition: rank-elite
+	WithInfantryBody
+		DefaultAttackSequence: shoot

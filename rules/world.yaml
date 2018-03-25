@@ -1,0 +1,227 @@
+^BaseWorld:
+	Inherits: ^Palettes
+	AlwaysVisible:
+	MusicPlaylist:
+		VictoryMusic: score
+		DefeatMusic: score
+	ActorMap:
+	ScreenMap:
+	TerrainGeometryOverlay:
+	DebugVisualizations:
+	ShroudRenderer:
+		Index: 255, 16, 32, 48, 64, 80, 96, 112, 128, 144, 160, 176, 192, 208, 224, 240, 20, 40, 56, 65, 97, 130, 148, 194, 24, 33, 66, 132, 28, 41, 67, 134, 1, 2, 4, 8, 3, 6, 12, 9, 7, 14, 13, 11, 5, 10, 15, 255
+		UseExtendedIndex: true
+		FogPalette: shroud
+		ShroudPalette: shroud
+	Faction@random:
+		Name: Random
+		InternalName: Random
+		RandomFactionMembers: random-allies, random-soviets
+		Side: Randoms
+	Faction@allies:
+		Name: Allies
+		InternalName: random-allies
+		RandomFactionMembers: america, germany, england, france, korea
+		Side: Randoms
+	Faction@soviets:
+		Name: Soviets
+		InternalName: random-soviets
+		RandomFactionMembers: cuba, libya, iraq, russia
+		Side: Randoms
+	Faction@1:
+		Name: America
+		InternalName: america
+		Side: Allies
+		Description: America\nSpecial Ability: Paratroopers
+	Faction@2:
+		Name: Germany
+		InternalName: germany
+		Side: Allies
+		Description: Germany\nSpecial Vehicle: Tank Destroyer
+	Faction@3:
+		Name: England
+		InternalName: england
+		Side: Allies
+		Description: England\nSpecial Infantry: Sniper
+	Faction@4:
+		Name: France
+		InternalName: france
+		Side: Allies
+		Description: France\nSpecial Building: Grand Cannon
+	Faction@5:
+		Name: Korea
+		InternalName: korea
+		Side: Allies
+		Description: Korea\nSpecial Aircraft: Black Eagle
+	Faction@6:
+		Name: Cuba
+		InternalName: cuba
+		Side: Soviets
+		Description: Cuba\nSpecial Infantry: Terrorist
+	Faction@7:
+		Name: Libya
+		InternalName: libya
+		Side: Soviets
+		Description: Libya\nSpecial Vehicle: Demolition Truck
+	Faction@8:
+		Name: Iraq
+		InternalName: iraq
+		Side: Soviets
+		Description: Iraq\nSpecial Infantry: Desolator
+	Faction@9:
+		Name: Russia
+		InternalName: russia
+		Side: Soviets
+		Description: Russia\nSpecial Vehicle: Tesla Tank
+	ResourceType@Ore:
+		ResourceType: 1
+		Palette: resource
+		Sequences: tib01, tib02, tib03, tib04, tib05, tib06, tib07, tib08, tib09, tib10, tib11, tib12, tib13, tib14, tib15, tib16, tib17, tib18, tib19, tib20
+		MaxDensity: 12
+		ValuePerUnit: 25
+		Type: Ore
+		Name: Valuable Minerals
+		PipColor: Yellow
+		AllowedTerrainTypes: Clear, Rough, Road
+		AllowUnderActors: false
+		TerrainType: Ore
+	ResourceType@Gems:
+		ResourceType: 2
+		Palette: resource
+		Sequences: gem01, gem02, gem03, gem04, gem05, gem06, gem07, gem08, gem09, gem10, gem11, gem12
+		MaxDensity: 12
+		ValuePerUnit: 50
+		Type: Gems
+		Name: Valuable Minerals
+		PipColor: Red
+		AllowedTerrainTypes: Clear, Rough, Road
+		AllowUnderActors: false
+		TerrainType: Gems
+
+World:
+	Inherits: ^BaseWorld
+	ChatCommands:
+	DevCommands:
+	DebugVisualizationCommands:
+	PlayerCommands:
+	HelpCommand:
+	ScreenShaker:
+	BuildingInfluence:
+	ProductionQueueFromSelection:
+		ProductionPaletteWidget: PRODUCTION_PALETTE
+	DomainIndex:
+	SmudgeLayer@smallscorch:
+		Type: SmallScorch
+		Sequence: smallscorches
+		SmokeType: smallfire
+		SmokePercentage: 50
+	SmudgeLayer@mediumscorch:
+		Type: MediumScorch
+		Sequence: mediumscorches
+		SmokeType: mediumfire
+		SmokePercentage: 75
+	SmudgeLayer@largescorch:
+		Type: LargeScorch
+		Sequence: largescorches
+		SmokeType: largefire
+		SmokePercentage: 100
+	SmudgeLayer@smallcrater:
+		Type: SmallCrater
+		SmokeType: smallsmoke
+		Sequence: smallcraters
+	SmudgeLayer@mediumcrater:
+		Type: MediumCrater
+		SmokeType: smallsmoke
+		Sequence: mediumcraters
+	SmudgeLayer@largecrater:
+		Type: LargeCrater
+		SmokeType: largesmoke
+		Sequence: largecraters
+	ResourceLayer:
+	ResourceClaimLayer:
+	WarheadDebugOverlay:
+	SpawnMapActors:
+	MapBuildRadius:
+	MapOptions:
+	CreateMPPlayers:
+	MPStartUnits@amcv:
+		Class: none
+		ClassName: MCV Only
+		Factions: allies, america, germany, england, france, korea
+		BaseActor: amcv
+	MPStartUnits@lightallies:
+		Class: light
+		ClassName: Light Support
+		Factions: allies, america, germany, england, france, korea
+		BaseActor: amcv
+		SupportActors: dog,e1,e1
+		InnerSupportRadius: 3
+		OuterSupportRadius: 5
+	MPStartUnits@mediumallies:
+		Class: medium
+		ClassName: Medium Support
+		Factions: allies, america, germany, england, france, korea
+		BaseActor: amcv
+		SupportActors: dog,e1,e1,e1,mtnk,engineer
+		InnerSupportRadius: 3
+		OuterSupportRadius: 5
+	MPStartUnits@heavyallies:
+		Class: heavy
+		ClassName: Heavy Support
+		Factions: allies, america, germany, england, france, korea
+		BaseActor: amcv
+		SupportActors: dog,e1,e1,e1,e1,mtnk,mtnk,fv,engineer
+		InnerSupportRadius: 3
+		OuterSupportRadius: 5
+	MPStartUnits@smcv:
+		Class: none
+		ClassName: MCV Only
+		Factions: soviets, cuba, libya, iraq, russia
+		BaseActor: smcv
+	MPStartUnits@lightsoviets:
+		Class: light
+		ClassName: Light Support
+		Factions: soviets, cuba, libya, iraq, russia
+		BaseActor: smcv
+		SupportActors: dog,e2,e2,e2
+		InnerSupportRadius: 3
+		OuterSupportRadius: 5
+	MPStartUnits@mediumsoviets:
+		Class: medium
+		ClassName: Medium Support
+		Factions: soviets, cuba, libya, iraq, russia
+		BaseActor: smcv
+		SupportActors: dog,e2,e2,e2,e2,htnk,engineer
+		InnerSupportRadius: 3
+		OuterSupportRadius: 5
+	MPStartUnits@heavysoviets:
+		Class: heavy
+		ClassName: Heavy Support
+		Factions: soviets, cuba, libya, iraq, russia
+		BaseActor: smcv
+		SupportActors: dog,e2,e2,e2,e2,e2,htnk,htnk,htk,engineer
+		InnerSupportRadius: 3
+		OuterSupportRadius: 5
+	CrateSpawner:
+		Minimum: 1
+		Maximum: 3
+		SpawnInterval: 3000
+		WaterChance: 25
+		InitialSpawnDelay: 1000
+	MPStartLocations:
+	SpawnMPUnits:
+	PathFinder:
+	ValidateOrder:
+	DebugPauseState:
+	RadarPings:
+	StartGameNotification:
+	ObjectivesPanel:
+		PanelName: SKIRMISH_STATS
+	LoadWidgetAtGameStart:
+
+EditorWorld:
+	Inherits: ^BaseWorld
+	EditorActorLayer:
+	EditorResourceLayer:
+	EditorSelectionLayer:
+	LoadWidgetAtGameStart:

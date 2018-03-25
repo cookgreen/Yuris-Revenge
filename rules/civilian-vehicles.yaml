@@ -1,0 +1,100 @@
+bus:
+	Inherits: ^CivVehicle
+	Tooltip:
+		Name: School Bus
+	Cargo:
+		Types: Infantry
+		MaxWeight: 20
+		PipCount: 5
+		UnloadVoice: Move
+
+limo:
+	Inherits: ^CivVehicle
+	Tooltip:
+		Name: Presidential Limousine
+	Cargo:
+		Types: Infantry
+		MaxWeight: 20
+		PipCount: 5
+		UnloadVoice: Move
+
+pick:
+	Inherits: ^CivVehicle
+	Tooltip:
+		Name: Pickup Truck
+
+car:
+	Inherits: ^CivVehicle
+	Tooltip:
+		Name: Automobile
+
+wini:
+	Inherits: ^CivVehicle
+	Tooltip:
+		Name: Recreational Vehicle
+	RenderVoxels:
+		NormalsPalette: ts-normals
+
+propa:
+	Inherits: ^CivVehicle
+	Tooltip:
+		Name: Propaganda Truck
+
+cop:
+	Inherits: ^CivVehicle
+	Tooltip:
+		Name: Police Car
+
+euroc:
+	Inherits: ^CivVehicle
+	Tooltip:
+		Name: European Car
+	RenderVoxels:
+		NormalsPalette: ts-normals
+
+cona:
+	Inherits: ^CivVehicle
+	Tooltip:
+		Name: Excavator
+	RenderVoxels:
+		NormalsPalette: ts-normals
+
+trucka:
+	Inherits: ^CivVehicle
+	Tooltip:
+		Name: Truck
+
+truckb:
+	Inherits: ^CivVehicle
+	Tooltip:
+		Name: Truck
+
+suvb:
+	Inherits: ^CivVehicle
+	Tooltip:
+		Name: Black SUV
+
+suvw:
+	Inherits: ^CivVehicle
+	Tooltip:
+		Name: White SUV
+
+stang:
+	Inherits: ^CivVehicle
+	Tooltip:
+		Name: Mustang
+		GenericName: Sports Car
+	RenderVoxels:
+		NormalsPalette: ts-normals
+
+ptruck:
+	Inherits: ^CivVehicle
+	Tooltip:
+		Name: Pickup Truck
+
+taxi:
+	Inherits: ^CivVehicle
+	Tooltip:
+		Name: Taxi
+	RenderVoxels:
+		NormalsPalette: ts-normals

@@ -1,0 +1,2424 @@
+cafncb:
+	Defaults:
+		Offset: 0,-15
+		UseTilesetCode: true
+	idle: ctfncb
+		Length: 16
+		ShadowStart: 32
+	damaged-idle: ctfncb
+		Start: 16
+		Length: 16
+		ShadowStart: 48
+	icon: wallicon
+		Offset: 0,0
+		UseTilesetCode: false
+
+cafncw:
+	Defaults:
+		Offset: 0,-15
+		UseTilesetCode: true
+	idle: ctfncw
+		Length: 16
+		ShadowStart: 32
+	damaged-idle: ctfncw
+		Start: 16
+		Length: 16
+		ShadowStart: 48
+	icon: wallicon
+		Offset: 0,0
+		UseTilesetCode: false
+
+gasand:
+	Defaults:
+		Offset: 0,-15
+		UseTilesetCode: true
+	idle: gtsand
+		Length: 16
+		ShadowStart: 32
+	damaged-idle: gtsand
+		Start: 16
+		Length: 16
+		ShadowStart: 48
+	icon: wallicon
+		Offset: 0,0
+		UseTilesetCode: false
+
+cafncp:
+	Defaults:
+		Offset: 0,-15
+		UseTilesetCode: true
+	idle: ctfncp
+		Length: 16
+		ShadowStart: 32
+	damaged-idle: ctfncp
+		Start: 16
+		Length: 16
+		ShadowStart: 48
+	icon: wallicon
+		Offset: 0,0
+		UseTilesetCode: false
+
+cakrmw:
+	Defaults:
+		Offset: 0,-15
+		UseTilesetCode: true
+	idle: ctkrmw
+		Length: 16
+		ShadowStart: 32
+	damaged-idle: ctkrmw
+		Start: 16
+		Length: 16
+		ShadowStart: 48
+	icon: wallicon
+		Offset: 0,0
+		UseTilesetCode: false
+
+cawash01:
+	Defaults:
+		Offset: 0,-60
+	idle: cgwash01
+		ShadowStart: 4
+	damaged-idle: cgwash01
+		Start: 1
+		ShadowStart: 5
+	rubble: cgwash01
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+cawash03:
+	Defaults:
+		Offset: -15,-52
+	idle: cuwash03
+		ShadowStart: 4
+	damaged-idle: cuwash03
+		Start: 1
+		ShadowStart: 5
+	rubble: cuwash03
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+cawash04:
+	Defaults:
+		Offset: 0,-60
+	idle: cuwash04
+		ShadowStart: 4
+	damaged-idle: cuwash04
+		Start: 1
+		ShadowStart: 5
+	rubble: cuwash04
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+cawash05:
+	Defaults:
+		Offset: -30,-45
+	idle: cuwash05
+		ShadowStart: 4
+	damaged-idle: cuwash05
+		Start: 1
+		ShadowStart: 5
+	rubble: cuwash05
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+cawash06:
+	Defaults:
+		Offset: 0,-60
+	idle: cuwash06
+		ShadowStart: 5
+	damaged-idle: cuwash06
+		Start: 1
+		ShadowStart: 7
+	rubble: cuwash06
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+cawash07:
+	Defaults:
+		Offset: 0,-45
+	idle: cuwash07
+		ShadowStart: 4
+	damaged-idle: cuwash07
+		Start: 1
+		ShadowStart: 5
+	rubble: cuwash07
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+cawash08:
+	Defaults:
+		Offset: 15,-52
+	idle: cuwash08
+		ShadowStart: 4
+	damaged-idle: cuwash08
+		Start: 1
+		ShadowStart: 5
+	rubble: cuwash08
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+cawash09:
+	Defaults:
+		Offset: 0,-45
+	idle: cuwash09
+		ShadowStart: 4
+	damaged-idle: cuwash09
+		Start: 1
+		ShadowStart: 5
+	rubble: cuwash09
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+cawash10:
+	Defaults:
+		Offset: 0,-60
+	idle: cuwash10
+		ShadowStart: 4
+	damaged-idle: cuwash10
+		Start: 1
+		ShadowStart: 5
+	rubble: cuwash10
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+cawash11:
+	Defaults:
+		Offset: 0,-60
+	idle: cuwash11
+		ShadowStart: 4
+	damaged-idle: cuwash11
+		Start: 1
+		ShadowStart: 5
+	rubble: cuwash11
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+cawsh12:
+	Defaults:
+		Offset: 0,-45
+	idle: cgwsh12
+		ShadowStart: 4
+	damaged-idle: cgwsh12
+		Start: 1
+		ShadowStart: 5
+	rubble: cgwsh12
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+cawash13:
+	Defaults:
+		Offset: 15,-52
+	idle: cuwash13
+		ShadowStart: 4
+	damaged-idle: cuwash13
+		Start: 1
+		ShadowStart: 5
+	rubble: cuwash13
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+cawash14:
+	Defaults:
+		Offset: 0,-45
+	idle: cgwash14
+		ShadowStart: 4
+	damaged-idle: cgwash14
+		Start: 1
+		ShadowStart: 5
+	rubble: cgwash14
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+cawash15:
+	Defaults:
+		Offset: 15,-52
+	idle: cgwash15
+		ShadowStart: 4
+	damaged-idle: cgwash15
+		Start: 1
+		ShadowStart: 5
+	rubble: cgwash15
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+cawash16:
+	Defaults:
+		Offset: -30,-60
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+cawash17:
+	Defaults:
+		Offset: -30,-75
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+cawash18:
+	Defaults:
+		Offset: 0,-30
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 3
+	idle-water: cawsh18a
+		Length: 10
+		ShadowStart: 10
+		Tick: 80
+
+cawash19:
+	Defaults:
+		Offset: 0,-60
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+canewy01:
+	Defaults:
+		Offset: 0,-60
+	idle: cunewy01
+		ShadowStart: 4
+	damaged-idle: cunewy01
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+canewy04:
+	Defaults:
+		Offset: 0,-45
+	idle: cgnewy04
+	damaged-idle: cgnewy04
+		Start: 1
+	rubble: cgnewy04
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+canewy05:
+	Defaults:
+		Offset: 0,-30
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 3
+
+canewy06:
+	Defaults:
+		Offset: 0,-45
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+canewy07:
+	Defaults:
+		Offset: 0,-45
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+canewy08:
+	Defaults:
+		Offset: 0,-45
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+canewy10:
+	Defaults:
+		Offset: -15,-37
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+canewy11:
+	Defaults:
+		Offset: -15,-37
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+canewy12:
+	Defaults:
+		Offset: 15,-37
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+canewy13:
+	Defaults:
+		Offset: 0,-45
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+canewy14:
+	Defaults:
+		Offset: 0,-45
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+canewy15:
+	Defaults:
+		Offset: 0,-45
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+canewy16:
+	Defaults:
+		UseTilesetCode: true
+		Offset: 0,-30
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+canewy17:
+	Defaults:
+		Offset: 0,-30
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+canewy18:
+	Defaults:
+		Offset: 0,-30
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+canewy20:
+	Defaults:
+		Offset: 30,-60
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+canewy21:
+	Defaults:
+		Offset: -30,-60
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+caarmy01:
+	Defaults:
+		UseTilesetCode: true
+		Offset: -15,-37
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+
+caarmy02:
+	Defaults:
+		Offset: 0,-15
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 2
+
+caarmy03:
+	Defaults:
+		Offset: 0,-15
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 2
+
+caarmy04:
+	Defaults:
+		Offset: 0,-15
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 2
+
+cawa2a:
+	Defaults:
+		Offset: 0,-60
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+cawa2b:
+	Defaults:
+		Offset: 0,-60
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+cawa2c:
+	Defaults:
+		UseTilesetCode: true
+		Offset: 0,-60
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+cawa2d:
+	Defaults:
+		UseTilesetCode: true
+		Offset: 0,-60
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+cafarm01:
+	Defaults:
+		UseTilesetCode: true
+		Offset: 0,-30
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+
+cafarm02:
+	Defaults:
+		UseTilesetCode: true
+		Offset: 0,-15
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+cafarm06:
+	Defaults:
+		UseTilesetCode: true
+		Offset: 0,-30
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 2
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+cafrma:
+	Defaults:
+		Offset: 0,-30
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 2
+		ShadowStart: 5
+
+cafrmb:
+	Defaults:
+		Offset: 0,-15
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 2
+
+cabarn02:
+	Defaults:
+		UseTilesetCode: true
+		Offset: 0,-30
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 2
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+causfgl:
+	Defaults:
+		UseTilesetCode: true
+		Offset: 0,-15
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	flag: causfgl_a
+		Length: 16
+		ShadowStart: 16
+
+carufgl:
+	Defaults:
+		UseTilesetCode: true
+		Offset: 0,-15
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	flag: carufgl_a
+		Length: 16
+		ShadowStart: 16
+
+cairfgl:
+	Defaults:
+		UseTilesetCode: true
+		Offset: 0,-15
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	flag: cairfgl_a
+		Length: 16
+		ShadowStart: 16
+
+capofgl:
+	Defaults:
+		Offset: 0,-15
+	idle: capofgl
+		ShadowStart: 4
+	damaged-idle: capofgl
+		Start: 1
+		ShadowStart: 5
+	flag: capofgl_a
+		Length: 16
+		ShadowStart: 16
+
+caskfgl:
+	Defaults:
+		UseTilesetCode: true
+		Offset: 0,-15
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	flag: cuskfgl_a
+		Length: 16
+		ShadowStart: 16
+
+calbfgl:
+	Defaults:
+		UseTilesetCode: true
+		Offset: 0,-15
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	flag: culbfgl_a
+		Length: 16
+		ShadowStart: 16
+
+cafrfgl:
+	Defaults:
+		UseTilesetCode: true
+		Offset: 0,-15
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	flag: cufrfgl_a
+		Length: 16
+		ShadowStart: 16
+
+cagefgl:
+	Defaults:
+		UseTilesetCode: true
+		Offset: 0,-15
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	flag: cugefgl_a
+		Length: 16
+		ShadowStart: 16
+
+cacufgl:
+	Defaults:
+		UseTilesetCode: true
+		Offset: 0,-15
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	flag: cucufgl_a
+		Length: 16
+		ShadowStart: 16
+
+caukfgl:
+	Defaults:
+		UseTilesetCode: true
+		Offset: 0,-15
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	flag: cuukfgl_a
+		Length: 16
+		ShadowStart: 16
+
+camisc01:
+	Defaults:
+		UseTilesetCode: true
+		Offset: 0,-15
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		ShadowStart: 4
+
+camisc02:
+	Defaults:
+		UseTilesetCode: true
+		Offset: 0,-15
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+
+camisc03:
+	Defaults:
+		UseTilesetCode: true
+		Offset: 0,-15
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+
+camisc04:
+	Defaults:
+		UseTilesetCode: true
+		Offset: 0,-15
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+
+camisc05:
+	Defaults:
+		UseTilesetCode: true
+		Offset: 0,-15
+	idle:
+		ShadowStart: 2
+	damaged-idle:
+		Start: 1
+		ShadowStart: 3
+
+camisc06:
+	Defaults:
+		UseTilesetCode: true
+		Offset: -15,-22
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+
+camsc07:
+	Defaults:
+		UseTilesetCode: true
+		Offset: 0,-30
+	idle:
+		ShadowStart: 3
+	damaged-idle:
+		Start: 1
+		ShadowStart: 4
+
+camsc08:
+	Defaults:
+		UseTilesetCode: true
+		Offset: 0,-15
+	idle:
+		ShadowStart: 3
+	damaged-idle:
+		Start: 1
+		ShadowStart: 4
+
+camsc09:
+	Defaults:
+		UseTilesetCode: true
+		Offset: 0,-15
+	idle:
+		ShadowStart: 3
+	damaged-idle:
+		Start: 1
+		ShadowStart: 4
+
+camsc10:
+	Defaults:
+		UseTilesetCode: true
+		Offset: 0,-60
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+camsc11:
+	Defaults:
+		UseTilesetCode: true
+		Offset: 0,-15
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+
+camsc12:
+	Defaults:
+		UseTilesetCode: true
+		Offset: 0,-15
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+
+camsc13:
+	Defaults:
+		UseTilesetCode: true
+		Offset: 15,-22
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+
+camiam01:
+	Defaults:
+		Offset: -30,-45
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+camiam02:
+	Defaults:
+		Offset: -30,-45
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+camiam03:
+	Defaults:
+		Offset: 15,-37
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+camiam04:
+	Defaults:
+		Offset: 0,-15
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+
+camiam05:
+	Defaults:
+		Offset: 15,-52
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+camiam06:
+	Defaults:
+		Offset: 0,-60
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+camiam07:
+	Defaults:
+		UseTilesetCode: true
+		Offset: 0,-60
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+camiam08:
+	Defaults:
+		Offset: -30,-30
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+castrt01:
+	Defaults:
+		Offset: 0,-15
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 3
+
+castrt02:
+	Defaults:
+		Offset: 0,-15
+	idle:
+		ShadowStart: 3
+
+castrt03:
+	Defaults:
+		Offset: 0,-15
+	idle:
+		ShadowStart: 3
+
+castrt04:
+	Defaults:
+		Offset: 0,-15
+	idle:
+		ShadowStart: 3
+
+castrt05:
+	Defaults:
+		Offset: 0,-15
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 3
+
+camex01:
+	Defaults:
+		Offset: -15,-37
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 2
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+camex02:
+	Defaults:
+		Offset: -30,-75
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 2
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+camex03:
+	Defaults:
+		Offset: 0,-45
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 2
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+camex04:
+	Defaults:
+		Offset: 0,-60
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 2
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+camex05:
+	Defaults:
+		Offset: 0,-30
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 2
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+castl01:
+	Defaults:
+		UseTilesetCode: true
+		Offset: 0,-60
+	idle: custl01
+		ShadowStart: 4
+	damaged-idle: custl01
+		Start: 1
+		ShadowStart: 5
+	rubble: custl01
+		UseTilesetCode: false
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+castl02:
+	Defaults:
+		Offset: 0,-60
+		UseTilesetCode: true
+	idle: custl02
+		ShadowStart: 4
+	damaged-idle: custl02
+		Start: 1
+		ShadowStart: 5
+	rubble: custl02
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+castl03:
+	Defaults:
+		Offset: 0,-60
+		UseTilesetCode: true
+	idle: custl03
+		ShadowStart: 4
+	damaged-idle: custl03
+		Start: 1
+		ShadowStart: 5
+	rubble: custl03
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+castl04:
+	Defaults:
+		Offset: 60,-60
+	idle: cgstl04
+		ShadowStart: 3
+	damaged-idle: cgstl04
+		Start: 1
+		ShadowStart: 4
+	rubble: cgstl04
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+castl05a:
+	Defaults:
+		Offset: 0,-60
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+castl05b:
+	Defaults:
+		Offset: 0,-60
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+castl05c:
+	Defaults:
+		Offset: 0,-60
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+castl05d:
+	Defaults:
+		Offset: 0,-60
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+castl05e:
+	Defaults:
+		Offset: 0,-60
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+castl05f:
+	Defaults:
+		Offset: 0,-60
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+castl05g:
+	Defaults:
+		Offset: 0,-60
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+castl05h:
+	Defaults:
+		Offset: 0,-60
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+cacolo01:
+	Defaults:
+		UseTilesetCode: true
+		Offset: -30,-60
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+caind01:
+	Defaults:
+		UseTilesetCode: true
+		Offset: 0,-60
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+calab:
+	Defaults:
+		UseTilesetCode: true
+		Offset: 15,-52
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+cagas01:
+	Defaults:
+		UseTilesetCode: true
+		Offset: 0,-45
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+cahse01:
+	Defaults:
+		Offset: -15,-37
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 4
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+cahse02:
+	Defaults:
+		Offset: -15,-37
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 4
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+cahse03:
+	Defaults:
+		Offset: 15,-52
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 4
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+cahse04:
+	Defaults:
+		Offset: -15,-37
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 4
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+cahse05:
+	Defaults:
+		Offset: 15,-22
+		UseTilesetCode: true
+	idle:
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+cahse06:
+	Defaults:
+		Offset: -15,-22
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 2
+	damaged-idle:
+		Start: 1
+		ShadowStart: 4
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+cahse07:
+	Defaults:
+		Offset: 15,-37
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 2
+	damaged-idle:
+		Start: 1
+		ShadowStart: 4
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+cawt01:
+	Defaults:
+		Offset: 0,-15
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 2
+	damaged-idle:
+		Start: 1
+		ShadowStart: 3
+
+cabunk01:
+	Defaults:
+		Offset: 0,-30
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+cabunk02:
+	Defaults:
+		Offset: 0,-30
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+carus01:
+	Defaults:
+		Offset: 0,-60
+	idle: cgrus01
+		ShadowStart: 4
+	damaged-idle: cgrus01
+		Start: 1
+		ShadowStart: 5
+	rubble: cgrus01
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+carus02a:
+	Defaults:
+		Offset: 0,-15
+		UseTilesetCode: false
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+carus02b:
+	Defaults:
+		Offset: 0,-15
+		UseTilesetCode: false
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+carus02c:
+	Defaults:
+		Offset: 0,-15
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+
+carus02d:
+	Defaults:
+		Offset: 0,-15
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+
+carus02e:
+	Defaults:
+		Offset: 0,-15
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+
+carus02f:
+	Defaults:
+		Offset: 0,-15
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+
+carus02g:
+	Defaults:
+		Offset: 0,-15
+		UseTilesetCode: false
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+carus03:
+	Defaults:
+		Offset: 45,-52
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+carus04:
+	Defaults:
+		Offset: 0,-60
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+carus05:
+	Defaults:
+		Offset: 0,-60
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+carus06:
+	Defaults:
+		Offset: 0,-60
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+carus07:
+	Defaults:
+		Offset: 0,-15
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+carus08:
+	Defaults:
+		Offset: 0,-15
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+carus09:
+	Defaults:
+		Offset: -15,-22
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+carus10:
+	Defaults:
+		Offset: -15,-22
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+carus11:
+	Defaults:
+		Offset: -15,-22
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+cachig01:
+	Defaults:
+		Offset: -15,-37
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+cachig02:
+	Defaults:
+		Offset: 15,-37
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+cachig03:
+	Defaults:
+		Offset: -15,-37
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+cachig04:
+	Defaults:
+		Offset: 0,-30
+	idle: cgchig04
+		ShadowStart: 4
+	damaged-idle: cgchig04
+		Start: 1
+		ShadowStart: 5
+	rubble: cgchig04
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+cachig05:
+	Defaults:
+		Offset: 0,-60
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+cachig06:
+	Defaults:
+		Offset: 0,-30
+	idle: cgchig06
+		ShadowStart: 4
+	damaged-idle: cgchig06
+		Start: 1
+		ShadowStart: 5
+	rubble: cgchig06
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+catech01:
+	Defaults:
+		Offset: 0,-45
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+catexs01:
+	Defaults:
+		Offset: 0,-30
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+catexs02:
+	Defaults:
+		Offset: 0,-60
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+catexs03:
+	Defaults:
+		Offset: 0,-45
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+catexs04:
+	Defaults:
+		Offset: 0,-45
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+catexs05:
+	Defaults:
+		Offset: 0,-45
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+catexs06:
+	Defaults:
+		Offset: 0,-45
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+catexs07:
+	Defaults:
+		Offset: 0,-45
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+catexs08:
+	Defaults:
+		Offset: 15,-37
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+canwy05:
+	Defaults:
+		Offset: 0,-60
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+canwy09:
+	Defaults:
+		Offset: 15,-37
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+canwy22:
+	Defaults:
+		Offset: 0,-45
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+canwy23:
+	Defaults:
+		Offset: -15,-37
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+canwy24:
+	Defaults:
+		Offset: 0,-45
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+canwy25:
+	Defaults:
+		Offset: 0,-45
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+canwy26:
+	Defaults:
+		Offset: -30,-60
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+camov01:
+	Defaults:
+		Offset: 45,-37
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 3
+	damaged-idle:
+		Start: 1
+		ShadowStart: 4
+	idle-overlay: camov01_a
+		Length: 30
+		Tick: 200
+	damaged-idle-overlay: camov01_a
+		Start: 30
+		Length: 30
+		Tick: 200
+
+camov02:
+	Defaults:
+		UseTilesetCode: true
+		Offset: 0,-30
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	idle-overlay: camov02_a
+		Length: 2
+		Tick: 200
+	damaged-idle-overlay: camov02_a
+		Start: 2
+		Length: 2
+		Tick: 200
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+capars01:
+	Defaults:
+		Offset: 0,-60
+	idle: cgpars01
+		ShadowStart: 4
+	damaged-idle: cgpars01
+		Start: 1
+		ShadowStart: 5
+	rubble: cgpars01
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+capars02:
+	Defaults:
+		Offset: -30,-75
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+capars04:
+	Defaults:
+		Offset: 0,-45
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+capars05:
+	Defaults:
+		Offset: 0,-45
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+capars06:
+	Defaults:
+		Offset: 0,-45
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+capars07:
+	Defaults:
+		Offset: 0,-15
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+
+capars08:
+	Defaults:
+		Offset: -30,-75
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+capars09:
+	Defaults:
+		Offset: -30,-75
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+capars10:
+	Defaults:
+		Offset: -15,-52
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+capars11:
+	Defaults:
+		Offset: 15,-52
+	idle: cgpars11
+		ShadowStart: 4
+	damaged-idle: cgpars11
+		Start: 1
+		ShadowStart: 5
+	rubble: cgpars11
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+capars12:
+	Defaults:
+		Offset: 30,-60
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+capars13:
+	Defaults:
+		Offset: 15,-52
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+capars14:
+	Defaults:
+		Offset: -15,-52
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+cats01:
+	Defaults:
+		Offset: 0,-30
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 3
+	damaged-idle:
+		Start: 1
+		ShadowStart: 4
+
+cagard01:
+	Defaults:
+		Offset: 0,-15
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 3
+	damaged-idle:
+		Start: 1
+		ShadowStart: 4
+	idle-flag: cagrd1_a
+		Length: 9
+		ShadowStart: 9
+		Tick: 80
+
+caeur1:
+	Defaults:
+		Offset: 0,-30
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+caeur2:
+	Defaults:
+		Offset: 0,-30
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+caeur04:
+	Defaults:
+		Offset: -15,-52
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+caprs03:
+	Defaults:
+		Offset: -30,-75
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+caswst01:
+	Defaults:
+		Offset: 15,-37
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+
+galite:
+	idle:
+		ShadowStart: 2
+	damaged-idle:
+		Start: 1
+		ShadowStart: 3
+	icon: liteicon
+
+cacity01:
+	Defaults:
+		Offset: 0,-60
+	idle:
+		ShadowStart: 3
+
+cacity02:
+	Defaults:
+		Offset: -15,-67
+	idle:
+		ShadowStart: 3
+
+cacity03:
+	Defaults:
+		Offset: 0,-45
+	idle:
+		ShadowStart: 3
+
+cacity04:
+	Defaults:
+		Offset: 0,-60
+	idle:
+		ShadowStart: 3
+
+city01:
+	Defaults:
+		Offset: 0,-45
+	idle:
+		ShadowStart: 2
+
+city02:
+	Defaults:
+		Offset: -15,-52
+	idle:
+		ShadowStart: 2
+
+city03:
+	Defaults:
+		Offset: 0,-45
+	idle:
+		ShadowStart: 2
+
+city04:
+	Defaults:
+		Offset: 0,-60
+	idle:
+		ShadowStart: 2
+
+city05:
+	Defaults:
+		Offset: 0,-60
+	idle:
+		ShadowStart: 2

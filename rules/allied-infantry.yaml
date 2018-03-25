@@ -1,0 +1,519 @@
+engineer:
+	Inherits: ^Infantry
+	Inherits@MC: ^MindControllable
+	Buildable:
+		Queue: Infantry
+		Prerequisites: ~barracks
+		BuildPaletteOrder: 30
+		Description: Captures enemy structures.\n  Unarmed
+	Valued:
+		Cost: 500
+	DeliversCash:
+		Payload: 250
+		PlayerExperience: 25
+		Voice: Move
+	Tooltip:
+		Name: Engineer
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Health:
+		HP: 75
+	Mobile:
+		Speed: 56
+	Passenger:
+		PipType: Blue
+	EngineerRepair:
+	RepairsBridges:
+		RepairNotification: BridgeRepaired
+	Captures:
+		Sabotage: false
+		CaptureTypes: building, husk
+	-AutoTarget:
+	RevealsShroud:
+		Range: 4c0
+	Voiced:
+		VoiceSet: EngineerVoice
+	Guard:
+		Voice: Action
+	AttackMove:
+		Voice: Action
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+	WithInfantryBody:
+		DefaultAttackSequence: stand
+
+dog:
+	Inherits: ^Infantry
+	Buildable:
+		Queue: Infantry
+		Prerequisites: ~barracks
+		BuildPaletteOrder: 40
+		Description: Anti-infantry unit.\nCan detect cloaked units and spies.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+	Valued:
+		Cost: 200
+	DeliversCash:
+		Payload: 100
+		PlayerExperience: 10
+		Voice: Move
+	Tooltip:
+		Name: Attack Dog
+	Selectable:
+		Bounds: 30, 24, 0, -5
+	Health:
+		HP: 100
+	Mobile:
+		Speed: 99
+	Passenger:
+		PipType: Yellow
+	RevealsShroud:
+		Range: 5c0
+	Armament:
+		Weapon: DogJaw
+	AttackLeap:
+		Voice: Attack
+	AutoTarget:
+		InitialStance: AttackAnything
+	RenderSprites:
+		Image: adog
+		FactionImages:
+			soviet: dog
+			cuba: dog
+			libya: dog
+			iraq: dog
+			russia: dog
+	IgnoresDisguise:
+	DetectCloaked:
+		Range: 5c0
+	Voiced:
+		VoiceSet: DogVoice
+	ProducibleWithLevel:
+		Prerequisites: barracks.infiltrated
+	-TakeCover:
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+	WithDeathAnimation@normal:
+		DeathTypes:
+			ExplosionDeath: 1
+			BulletDeath: 2
+			RadiationDeath: 1
+			PsychicDeath: 1
+			ElectroDeath: 2
+	-WithDeathAnimation@effect:
+
+e1:
+	Inherits@1: ^Infantry
+	Inherits@2: ^Parachutable
+	Inherits@MC: ^MindControllable
+	Buildable:
+		Queue: Infantry
+		Prerequisites: ~gapile
+		BuildPaletteOrder: 10
+		Description: General-purpose infantry.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+	Valued:
+		Cost: 200
+	DeliversCash:
+		Payload: 100
+		PlayerExperience: 10
+		Voice: Move
+	Tooltip:
+		Name: G.I.
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Health:
+		HP: 125
+	Mobile:
+		Speed: 31
+	Passenger:
+		PipType: Green
+	RevealsShroud:
+		Range: 5c0
+	AttackFrontal:
+		Voice: Attack
+	Armament@primary:
+		Weapon: M60
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: M60E
+		RequiresCondition: rank-elite
+#	Armament@deployed:
+#		Weapon: para
+#		UpgradeTypes: deployed
+#		UpgradeMinEnabledLevel: 1
+#	Armament@elite-deployed:
+#		Weapon: paraE
+#		UpgradeTypes: eliteparaweapon
+#		UpgradeMinEnabledLevel: 1
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+	Voiced:
+		VoiceSet: GIVoice
+	ProducibleWithLevel:
+		Prerequisites: barracks.infiltrated
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+
+snipe:
+	Inherits: ^Infantry
+	Inherits@MC: ^MindControllable
+	Valued:
+		Cost: 600
+	DeliversCash:
+		Payload: 300
+		PlayerExperience: 30
+		Voice: Move
+	Tooltip:
+		Name: Sniper
+	Buildable:
+		Queue: Infantry
+		BuildPaletteOrder: 80
+		Prerequisites: radar, ~infantry.england
+		Description: Special anti-infantry unit.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Mobile:
+		Speed: 35
+	Health:
+		HP: 125
+	Passenger:
+		PipType: Red
+	RevealsShroud:
+		Range: 8c0
+	Armor:
+		Type: None
+	Armament@primary:
+		Weapon: awp
+	AttackFrontal:
+		Voice: Attack
+	Voiced:
+		VoiceSet: SniperVoice
+	ProducibleWithLevel:
+		Prerequisites: barracks.infiltrated
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+
+spy:
+	Inherits: ^Infantry
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Infantry
+		BuildPaletteOrder: 130
+		Prerequisites: gatech, ~gapile
+		Description: Infiltrates enemy structures for intel or\nsabotage. Exact effect depends on the\nbuilding infiltrated.\n  Unarmed\nSpecial Ability: Disguises
+	Valued:
+		Cost: 500
+	DeliversCash:
+		Payload: 250
+		PlayerExperience: 25
+		Voice: Move
+	DisguiseTooltip:
+		Name: Spy
+		GenericName: Soldier
+	Selectable:
+		Bounds: 24, 28, -1, -8
+	Health:
+		HP: 25
+	Mobile:
+		Speed: 56
+	RevealsShroud:
+		Range: 5c0
+	Passenger:
+		PipType: Yellow
+	TakeCover:
+	Disguise:
+		DisguisedCondition: disguise
+	Infiltrates:
+		Types: SpyInfiltrate
+	-AutoTarget:
+	-WithInfantryBody:
+	WithDisguisingInfantryBody:
+		IdleAnimations: idle1,idle2
+		StandAnimations: stand
+	WithDecoration@disguise:
+		Image: pips
+		Sequence: pip-disguise
+		Palette: pips
+		ReferencePoint: Top, Right
+		ZOffset: 256
+		RequiresCondition: disguise
+	Voiced:
+		VoiceSet: SpyVoice
+	Guard:
+		Voice: Action
+	AttackMove:
+		Voice: Action
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+
+ghost:
+	Inherits: ^Infantry
+	Inherits@MC: ^MindControllable
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Infantry
+		BuildPaletteOrder: 100
+		Prerequisites: ~disabled
+		Description: Elite commando infantry, armed with\na sub machine gun and C4.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft\nSpecial Ability: Destroy Building with C4
+	Valued:
+		Cost: 1000
+	DeliversCash:
+		Payload: 500
+		PlayerExperience: 50
+		Voice: Move
+	Tooltip:
+		Name: Navy SEAL
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Health:
+		HP: 125
+	GrantConditionOnTerrain:
+		Condition: water-borne
+		TerrainTypes: Water
+	Targetable@WaterBorne:
+		TargetTypes: Underwater
+		RequiresCondition: water-borne
+	Mobile:
+		Speed: 71
+		TerrainSpeeds:
+			Clear: 100
+			Rough: 100
+			Rail: 90
+			Road: 100
+			DirtRoad: 100
+			Ore: 90
+			Gems: 80
+			Water: 70
+	RevealsShroud:
+		Range: 8c0
+	Demolition:
+		Voice: SpecialAttack
+	Armor:
+		Type: Flak
+	Passenger:
+		PipType: Red
+	Armament@primary:
+		Weapon: MP5
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: MP5E
+		RequiresCondition: rank-elite
+	AttackFrontal:
+		Voice: Attack
+	RenderSprites:
+		Image: seal
+	Voiced:
+		VoiceSet: SealVoice
+	ProducibleWithLevel:
+		Prerequisites: barracks.infiltrated
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+	WithSwimSuit:
+	-TakeCover: # TODO: allow multiple sequence modifiers
+
+tany:
+	Inherits: ^Infantry
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Infantry
+		BuildPaletteOrder: 140
+		Prerequisites: gatech, ~gapile
+		BuildLimit: 1
+		Description: Elite commando infantry, armed with \ndual pistols and C4.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft\nSpecial Ability: Destroy Building with C4\n\nMaximum 1 can be trained.
+	Valued:
+		Cost: 1000
+	DeliversCash:
+		Payload: 500
+		PlayerExperience: 50
+		Voice: Move
+	Tooltip:
+		Name: Tanya
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Health:
+		HP: 125
+	GrantConditionOnTerrain:
+		Condition: water-borne
+		TerrainTypes: Water
+	Targetable@WaterBorne:
+		TargetTypes: Underwater
+		RequiresCondition: water-borne
+	Mobile:
+		Speed: 71
+		TerrainSpeeds:
+			Clear: 100
+			Rough: 100
+			Rail: 90
+			Road: 100
+			DirtRoad: 100
+			Ore: 90
+			Gems: 80
+			Water: 70
+	RevealsShroud:
+		Range: 6c0
+	Demolition:
+		Voice: Attack
+	Armor:
+		Type: Flak
+	Passenger:
+		PipType: Red
+	Armament@primary:
+		Weapon: DoublePistols
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: DoublePistolsE
+		RequiresCondition: rank-elite
+	AttackFrontal:
+		Voice: Attack
+	AnnounceOnBuild:
+	Voiced:
+		VoiceSet: TanyaVoice
+	ProducibleWithLevel:
+		Prerequisites: barracks.infiltrated
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+	-TakeCover: # TODO: allow multiple sequence modifiers
+	WithSwimSuit:
+
+jumpjet:
+	Inherits: ^Infantry
+	HiddenUnderFog:
+		Type: CenterPosition
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Infantry
+		BuildPaletteOrder: 60
+		Prerequisites: ~gapile, radar
+		Description: Airborne soldier.\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles
+	Valued:
+		Cost: 600
+	Tooltip:
+		Name: Rocketeer
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Health:
+		HP: 125
+	-Mobile:
+	RevealsShroud:
+		Range: 8c0
+		Type: CenterPosition
+	Armor:
+		Type: None
+	Armament@primary:
+		Weapon: 20mm
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: 20mmE
+		RequiresCondition: rank-elite
+	AttackFrontal:
+		Voice: Attack
+	Aircraft:
+		CruiseAltitude: 3072
+		LandWhenIdle: false
+		InitialFacing: 20
+		TurnSpeed: 10
+		Speed: 100
+		AltitudeVelocity: 83
+		Voice: Move
+		AirborneCondition: airborne
+		RepairBuildings:
+		RearmBuildings:
+		CanHover: True
+		IdealSeparation: 512
+		TakeOffOnResupply: true
+		VTOL: true
+	WithInfantryBody:
+		StandSequences: fly
+		MoveSequence: fly
+		DefaultAttackSequence: shoot-air
+		IdleSequences: idle-air
+	Hovers:
+		OffsetModifier: -45
+	-Crushable:
+	-TakeCover:
+	-Targetable:
+	-WithDeathAnimation@normal:
+	-WithDeathAnimation@effect:
+	Targetable@airborne:
+		TargetTypes: Air, Disguise
+		RequiresCondition: airborne
+	WithShadow:
+	Voiced:
+		VoiceSet: RocketeerVoice
+	ProducibleWithLevel:
+		Prerequisites: barracks.infiltrated
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+	Targetable@ground:
+		TargetTypes: Ground, Infantry, DetonateAttack, Disguise
+		RequiresCondition: !airborne
+	-Passenger:
+	SpawnActorOnDeath:
+		Actor: jumpjet.husk
+
+jumpjet.husk:
+	Inherits: ^HelicopterHusk
+	Inherits@1: ^SpriteActor
+	WithFacingSpriteBody:
+	-RenderVoxels:
+	-WithVoxelBody:
+	Tooltip:
+		Name: Rocketeer
+	Aircraft:
+		TurnSpeed: 10
+		Speed: 100
+	FallsToEarth:
+		Explosion: UnitExplodeSmall
+	RevealsShroud:
+		Range: 8c0
+		Type: CenterPosition
+	WithShadow:
+
+cleg:
+	Inherits: ^Infantry
+	Inherits@MC: ^MindControllable
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Tooltip:
+		Name: Chrono Legionnaire
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Infantry
+		BuildPaletteOrder: 150
+		Prerequisites: ~gapile, gatech
+		Description: High-tech soldier.\n Strong vs Infantry, Vehicles\n Weak vs Aircraft
+	ProducibleWithLevel:
+		Prerequisites: barracks.infiltrated
+	Valued:
+		Cost: 1500
+	DeliversCash:
+		Payload: 750
+		PlayerExperience: 75
+		Voice: Move
+	Health:
+		HP: 125
+	Mobile:
+		Speed: 51
+	RevealsShroud:
+		Range: 8c0
+	Passenger:
+		PipType: Red
+	-Crushable:
+	-TakeCover:
+	PortableChrono:
+		ChronoshiftSound: ichrmova.wav
+		DeployCursor: chronosphere
+		DeployBlockedCursor: chronosphere
+		Voice: Move
+		ChargeDelay: 300
+		TargetCursor: chronosphere
+	Voiced:
+		VoiceSet: ChronoLegionnaireVoice
+	Armament@Temporal:
+		Weapon: NeutronRifle
+	AttackFrontal:
+		Voice: Attack
+	WithInfantryBody:
+		DefaultAttackSequence: shoot

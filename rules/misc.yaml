@@ -1,0 +1,146 @@
+mpspawn:
+	Immobile:
+		OccupiesSpace: false
+	BodyOrientation:
+	AlwaysVisible:
+	RenderSpritesEditorOnly:
+	WithSpriteBody:
+	QuantizeFacingsFromSequence:
+	EditorTilesetFilter:
+		Categories: System
+
+waypoint:
+	Immobile:
+		OccupiesSpace: false
+	BodyOrientation:
+	AlwaysVisible:
+	RenderSpritesEditorOnly:
+	WithSpriteBody:
+	QuantizeFacingsFromSequence:
+	EditorTilesetFilter:
+		Categories: System
+
+crate:
+	Inherits: ^Crate
+	Crate:
+		Lifetime: 240
+	GiveCashCrateAction@500:
+		Amount: 500
+		SelectionShares: 10
+		UseCashTick: yes
+	GiveCashCrateAction@1000:
+		Amount: 1000
+		SelectionShares: 20
+		UseCashTick: yes
+	GiveCashCrateAction@1500:
+		Amount: 1500
+		SelectionShares: 10
+		UseCashTick: yes
+	RevealMapCrateAction:
+		SelectionShares: 2
+		Effect: reveal-map
+	LevelUpCrateAction:
+		SelectionShares: 25
+	GiveMcvCrateAction@soviets:
+		SelectionShares: 0
+		NoBaseSelectionShares: 150
+		ValidFactions: cuba, libya, iraq, russia
+		Units: smcv
+	GiveMcvCrateAction@allied:
+		SelectionShares: 0
+		NoBaseSelectionShares: 150
+		ValidFactions: america, germany, england, france, korea
+		Units: amcv
+
+^amcv.colorpicker:
+	Inherits: amcv
+	AlwaysVisible:
+	Mobile:
+		InitialFacing: 160
+	RenderSprites:
+		Image: amcv
+		StandSequences: idle
+		Palette: colorpicker
+	RenderVoxels:
+		Image: amcv
+		Palette: colorpicker
+
+SROCK01:
+	Inherits: ^Rock
+
+SROCK02:
+	Inherits: ^Rock
+
+SROCK03:
+	Inherits: ^Rock
+
+SROCK04:
+	Inherits: ^Rock
+
+SROCK05:
+	Inherits: ^Rock
+
+TROCK01:
+	Inherits: ^Rock
+
+TROCK02:
+	Inherits: ^Rock
+
+TROCK03:
+	Inherits: ^Rock
+
+TROCK04:
+	Inherits: ^Rock
+
+TROCK05:
+	Inherits: ^Rock
+
+CAMERA:
+	AlwaysVisible:
+	Immobile:
+		OccupiesSpace: false
+	RevealsShroud:
+		Range: 10c0
+		Type: CenterPosition
+	BodyOrientation:
+		QuantizedFacings: 1
+	WithSpriteBody:
+	RenderSpritesEditorOnly:
+		Image: camera
+	EditorOnlyTooltip:
+		Name: (reveals area to owner)
+	EditorTilesetFilter:
+		Categories: System
+
+FLAMEGUY:
+	Inherits@1: ^ExistsInWorld
+	Inherits@2: ^SpriteActor
+	Mobile:
+		Speed: 71
+		SharesCell: true
+		TerrainSpeeds:
+			Clear: 45
+			Road: 50
+			Rail: 45
+			DirtRoad: 50
+			Rough: 40
+			Ore: 45
+			Gems: 45
+	HiddenUnderFog:
+	RenderSprites:
+		Palette: effect
+	WithInfantryBody:
+		IdleSequences: run
+	Health:
+		HP: 160
+	SelfHealing:
+		Step: -10
+		HealIfBelow: 101
+	ScaredyCat:
+		PanicSequencePrefix:
+	WithDeathAnimation:
+		FallbackSequence: die
+		UseDeathTypeSuffix: false
+		DeathSequencePalette: effect
+		DeathPaletteIsPlayerPalette: false
+	HitShape:

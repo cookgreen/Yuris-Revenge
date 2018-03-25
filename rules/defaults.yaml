@@ -1,0 +1,1045 @@
+^ExistsInWorld:
+	AppearsOnRadar:
+	UpdatesPlayerStatistics:
+	CombatDebugOverlay:
+	DrawLineToTarget:
+	GivesExperience:
+	ScriptTriggers:
+	ConditionManager:
+	Huntable:
+
+^SpriteActor:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: false
+	QuantizeFacingsFromSequence:
+	AutoSelectionSize:
+	RenderSprites:
+
+^1x1Shape:
+	HitShape:
+		UseTargetableCellsOffsets: true
+		Type: Rectangle
+			LocalYaw: -128
+			TopLeft: -512, -512
+			BottomRight: 512, 512
+
+^1x2Shape:
+	HitShape:
+		UseTargetableCellsOffsets: true
+		Type: Rectangle
+			LocalYaw: -128
+			TopLeft: -512, -1024
+			BottomRight: 512, 1024
+
+^1x4Shape:
+	HitShape:
+		UseTargetableCellsOffsets: true
+		Type: Rectangle
+			LocalYaw: -128
+			TopLeft: -512, -2048
+			BottomRight: 512, 2048
+
+^2x1Shape:
+	HitShape:
+		UseTargetableCellsOffsets: true
+		Type: Rectangle
+			LocalYaw: -128
+			TopLeft: -1024, -512
+			BottomRight: 1024, 512
+
+^2x2Shape:
+	HitShape:
+		UseTargetableCellsOffsets: true
+		Type: Rectangle
+			LocalYaw: -128
+			TopLeft: -1024, -1024
+			BottomRight: 1024, 1024
+
+^2x3Shape:
+	HitShape:
+		UseTargetableCellsOffsets: true
+		Type: Rectangle
+			LocalYaw: -128
+			TopLeft: -1024, -1536
+			BottomRight: 1024, 1536
+
+^2x5Shape:
+	HitShape:
+		UseTargetableCellsOffsets: true
+		Type: Rectangle
+			LocalYaw: -128
+			TopLeft: -1024, -2560
+			BottomRight: 1024, 2560
+
+^2x6Shape:
+	HitShape:
+		UseTargetableCellsOffsets: true
+		Type: Rectangle
+			LocalYaw: -128
+			TopLeft: -1024, -3072
+			BottomRight: 1024, 3072
+
+^3x1Shape:
+	HitShape:
+		UseTargetableCellsOffsets: true
+		Type: Rectangle
+			LocalYaw: -128
+			TopLeft: -1536, -512
+			BottomRight: 1536, 512
+
+^3x2Shape:
+	HitShape:
+		UseTargetableCellsOffsets: true
+		Type: Rectangle
+			LocalYaw: -128
+			TopLeft: -1536, -1024
+			BottomRight: 1536, 1024
+
+^3x3Shape:
+	HitShape:
+		UseTargetableCellsOffsets: true
+		Type: Rectangle
+			LocalYaw: -128
+			TopLeft: -1536, -1536
+			BottomRight: 1536, 1536
+
+^3x4Shape:
+	HitShape:
+		UseTargetableCellsOffsets: true
+		Type: Rectangle
+			LocalYaw: -128
+			TopLeft: -1536, -2048
+			BottomRight: 1536, 2048
+
+^3x5Shape:
+	HitShape:
+		UseTargetableCellsOffsets: true
+		Type: Rectangle
+			LocalYaw: -128
+			TopLeft: -1536, -2560
+			BottomRight: 1536, 2560
+
+^4x2Shape:
+	HitShape:
+		UseTargetableCellsOffsets: true
+		Type: Rectangle
+			TopLeft: -2048, -1024
+			BottomRight: 2048, 1024
+
+^4x3Shape:
+	HitShape:
+		UseTargetableCellsOffsets: true
+		Type: Rectangle
+			LocalYaw: -128
+			TopLeft: -2048, -1536
+			BottomRight: 2048, 1536
+
+^4x4Shape:
+	HitShape:
+		UseTargetableCellsOffsets: true
+		Type: Rectangle
+			LocalYaw: -128
+			TopLeft: -2048, -2048
+			BottomRight: 2048, 2048
+
+^5x3Shape:
+	HitShape:
+		UseTargetableCellsOffsets: true
+		Type: Rectangle
+			LocalYaw: -128
+			TopLeft: -2560, -1536
+			BottomRight: 2560, 1536
+
+^5x4Shape:
+	HitShape:
+		UseTargetableCellsOffsets: true
+		Type: Rectangle
+			LocalYaw: -128
+			TopLeft: -2560, -2048
+			BottomRight: 2560, 2048
+
+^6x4Shape:
+	HitShape:
+		UseTargetableCellsOffsets: true
+		Type: Rectangle
+			LocalYaw: -128
+			TopLeft: -3072, -2048
+			BottomRight: 3072, 2048
+
+^GainsExperience:
+	GainsExperience:
+		Conditions:
+			500: rank-veteran
+			1000: rank-elite
+	FirepowerMultiplier@VETERAN:
+		RequiresCondition: rank-veteran && !rank-elite
+		Modifier: 110
+	FirepowerMultiplier@ELITE:
+		RequiresCondition: rank-elite
+		Modifier: 130
+	DamageMultiplier@VETERAN:
+		RequiresCondition: rank-veteran && !rank-elite
+		Modifier: 90
+	DamageMultiplier@ELITE:
+		RequiresCondition: rank-elite
+		Modifier: 75
+	SpeedMultiplier@VETERAN:
+		RequiresCondition: rank-veteran && !rank-elite
+		Modifier: 120
+	SpeedMultiplier@ELITE:
+		RequiresCondition: rank-elite
+		Modifier: 140
+	ReloadDelayMultiplier@VETERAN:
+		RequiresCondition: rank-veteran && !rank-elite
+		Modifier: 90
+	ReloadDelayMultiplier@ELITE:
+		RequiresCondition: rank-elite
+		Modifier: 75
+	SelfHealing@ELITE:
+		Step: 2
+		Ticks: 100
+		HealIfBelow: 100
+		DamageCooldown: 125
+		RequiresCondition: rank-veteran && !rank-elite
+		Modifier: 90
+	InaccuracyMultiplier@ELITE:
+		RequiresCondition: rank-elite
+		Modifier: 50
+	WithDecoration@VETERAN:
+		Image: rank
+		Sequence: veteran
+		Palette: pips
+		ReferencePoint: Bottom, Right
+		RequiresCondition: rank-veteran && !rank-elite
+		ZOffset: 256
+	WithDecoration@ELITE:
+		Image: rank
+		Sequence: elite
+		Palette: pips
+		ReferencePoint: Bottom, Right
+		RequiresCondition: rank-elite
+		ZOffset: 256
+
+^CrateStatModifiers:
+	FirepowerMultiplier@CRATES:
+		RequiresCondition: crate-firepower
+		Modifier: 200
+	DamageMultiplier@CRATES:
+		RequiresCondition: crate-damage
+		Modifier: 50
+	SpeedMultiplier@CRATES:
+		RequiresCondition: crate-speed
+		Modifier: 170
+	ExternalCondition@CRATE-FIREPOWER:
+		Condition: crate-firepower
+	ExternalCondition@CRATE-DAMAGE:
+		Condition: crate-damage
+	ExternalCondition@CRATE-SPEED:
+		Condition: crate-speed
+
+^IronCurtainable:
+	WithColoredOverlay@ironcurtain:
+		RequiresCondition: invulnerability
+	DamageMultiplier@ironcurtain:
+		RequiresCondition: invulnerability
+		Modifier: 0
+	TimedConditionBar:
+		Condition: invulnerability
+	ExternalCondition@INVULNERABILITY:
+		Condition: invulnerability
+
+^ChronoDisable:
+	DisableOnCondition@ChronoDisable:
+		RequiresCondition: chronodisable
+	TimedConditionBar@ChronoDisable:
+		Condition: chronodisable
+		Color: FFFFFF
+	#Mobile:
+	#	RequiresCondition: !notmobile
+	ExternalCondition@CHRONODISABLE:
+		Condition: chronodisable
+
+^MindControllable:
+	MindControllable:
+		Condition: controlled
+	WithMindControlArc:
+		UsePlayerColor: true
+		Offset: 0,0,960
+	Targetable@MC:
+		TargetTypes: MindControl
+		RequiresCondition: !controlled
+
+^Building:
+	Inherits@1: ^ExistsInWorld
+	Inherits@2: ^SpriteActor
+	Inherits@3: ^IronCurtainable
+	Inherits@shape: ^1x1Shape
+	-DrawLineToTarget:
+	SelectionDecorations:
+		Palette: pips
+	Selectable:
+		Priority: 3
+	Targetable:
+		TargetTypes: Ground, C4, DetonateAttack, Structure
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+		BuildSounds: uplace.wav
+		UndeploySounds: uselbuil.wav
+		TerrainTypes: Clear, Road, DirtRoad, Rough
+		Adjacent: 3
+	FrozenUnderFog:
+	GivesBuildableArea:
+	Capturable:
+	SoundOnDamageTransition:
+		DamagedSounds: gdamag1a.wav, gdamag1b.wav, gdamag1c.wav, gdamag1d.wav, gdamag1e.wav
+		DestroyedSounds: bgendiea.wav, bgendieb.wav, bgendiec.wav, bgendied.wav, bgendiee.wav, bgendief.wav
+	WithSpriteBody:
+	Explodes:
+		Type: Footprint
+		Weapon: UnitExplodeSmall
+		Sequences: building, large_bang, large_brnl, verylarge_clsn, large_tumu
+	RepairableBuilding:
+		IndicatorPalette: mouse
+	EngineerRepairable:
+		Voice: Attack
+	EmitInfantryOnSell@allies:
+		ActorTypes: e1, e1, e1
+		Factions: america, germany, england, france, korea
+	EmitInfantryOnSell@soviets:
+		ActorTypes: e2, e2, e2, e2
+		Factions: cuba, libya, iraq, russia
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	CaptureNotification:
+	ShakeOnDeath:
+	ProximityCaptor:
+		Types: Building
+	Sellable:
+		SellSounds: uselbuil.wav
+	Guardable:
+		Range: 3c0
+	Demolishable:
+	WithMakeAnimation:
+	HitShape:
+		UseTargetableCellsOffsets: true
+	EditorTilesetFilter:
+		Categories: Building
+
+^SupportBuilding:
+	Inherits: ^Building
+	AutoTarget:
+		EnableStances: false
+	-Capturable:
+	-CaptureNotification:
+	-MustBeDestroyed:
+	-ShakeOnDeath:
+	-GivesBuildableArea:
+
+^CivBuilding:
+	Inherits: ^Building
+	-GivesBuildableArea:
+	-Capturable:
+	-MustBeDestroyed:
+	-GivesExperience:
+	-CaptureNotification:
+	-Sellable:
+	-UpdatesPlayerStatistics:
+	-WithMakeAnimation:
+	Health:
+		HP: 900
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+	Tooltip:
+		Name: Civilian Building
+	EditorTilesetFilter:
+		Categories: Civilian building
+
+^Rubble:
+	Inherits@1: ^SpriteActor
+	Inherits@shape: ^1x1Shape
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terrain
+	WithSpriteBody:
+		Sequence: rubble
+	FrozenUnderFog:
+	HitShape:
+		UseTargetableCellsOffsets: true
+	EditorTilesetFilter:
+		Categories: Building rubble
+
+^TechBuilding:
+	Inherits: ^Building
+	-MustBeDestroyed:
+	-GivesExperience:
+	-Sellable:
+	-UpdatesPlayerStatistics:
+	-WithMakeAnimation:
+	Health:
+		HP: 900
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+	Tooltip:
+		Description: Tech Building
+	CaptureNotification:
+		Notification: TechBuildingCaptured
+		LoseNotification: TechBuildingLost
+	EditorTilesetFilter:
+		Categories: Tech building
+
+^Flag:
+	Inherits: ^CivBuilding
+	Selectable:
+		Bounds: 50, 228, 0, 0
+	Building:
+		Footprint: x
+		Dimensions: 1, 1
+	Tooltip:
+		Name: Flag
+	Health:
+		HP: 20
+	Armor:
+		Type: Steel
+	RevealsShroud:
+		Range: 6c0
+	WithIdleOverlay@flag:
+		Sequence: flag
+	SoundOnDamageTransition:
+		DamagedSounds: bmetdama.wav, bmetdamb.wav, bmetdamc.wav
+		DestroyedSounds: bmetdama.wav, bmetdamb.wav, bmetdamc.wav
+	EditorTilesetFilter:
+		Categories: Flag
+
+^VoxelLighting:
+	Inherits: ^SupportBuilding
+	RenderVoxels:
+		Scale: 11.7
+		LightYaw: 800
+		LightPitch: 150
+		LightAmbientColor: -0.5,-0.5,-0.5
+		LightDiffuseColor: 1.4,1.4,1.4
+
+^Wall:
+	Inherits@1: ^ExistsInWorld
+	Inherits@2: ^SpriteActor
+	Inherits@shape: ^1x1Shape
+	FrozenUnderFog:
+	-CombatDebugOverlay:
+	-DrawLineToTarget:
+	-ConditionManager:
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+		BuildSounds: uplace.wav
+		Adjacent: 9
+		TerrainTypes: Clear, Rough, Road, DirtRoad
+	BlocksProjectiles:
+	LineBuild:
+		Range: 8
+		NodeTypes: wall
+	LineBuildNode:
+		Types: wall
+	Targetable:
+		TargetTypes: Ground, Wall, C4, DetonateAttack, NoAutoTarget
+	WithWallSpriteBody:
+		Type: wall
+	Sellable:
+		SellSounds: uselbuil.wav
+	Demolishable:
+	Valued:
+		Cost: 100
+	Health:
+		HP: 300
+	Armor:
+		Type: Concrete
+	HitShape:
+	EditorTilesetFilter:
+		Categories: Wall
+
+^Fence:
+	Inherits: ^Wall
+	Valued:
+		Cost: 25
+	Health:
+		HP: 100
+	Armor:
+		Type: Wood
+	Crushable:
+		CrushClasses: fence
+	SoundOnDamageTransition:
+		DamagedSounds: gblacrua.wav, gblacrub.wav
+		DestroyedSounds: gblacrua.wav, gblacrub.wav
+
+^Infantry:
+	Inherits@1: ^ExistsInWorld
+	Inherits@2: ^SpriteActor
+	Inherits@3: ^GainsExperience
+	Inherits@4: ^ChronoDisable
+	Inherits@5: ^CrateStatModifiers
+	Health:
+	HitShape:
+		Type: Circle
+			Radius: 128
+	Armor:
+		Type: None
+	RevealsShroud:
+		Range: 4c0
+	Mobile:
+		Voice: Move
+		Crushes: crate
+		SharesCell: true
+		TerrainSpeeds:
+			Clear: 100
+			Rough: 100
+			Rail: 90
+			Road: 100
+			DirtRoad: 100
+			Ore: 90
+			Gems: 80
+	WithTextControlGroupDecoration:
+	SelectionDecorations:
+		Palette: pips
+	Selectable:
+	Targetable:
+		TargetTypes: Ground, Infantry, DetonateAttack, Disguise
+	WithInfantryBody:
+		IdleSequences: idle1,idle2
+		StandSequences: stand
+		DefaultAttackSequence: shoot
+	WithDeathAnimation@normal:
+		DeathTypes:
+			ExplosionDeath: 1
+			BulletDeath: 2
+	WithDeathAnimation@effect:
+		DeathSequencePalette: effect
+		DeathPaletteIsPlayerPalette: False
+		DeathTypes:
+			RadiationDeath: 4
+			PsychicDeath: 5
+			ElectroDeath: 6
+	SpawnActorOnDeath@flames:
+		Actor: FLAMEGUY
+		DeathType: FlameDeath
+	AutoTarget:
+	AttackMove:
+		Voice: Attack
+	TakeCover:
+		DamageModifiers:
+			Prone50Percent: 50
+			Prone70Percent: 70
+			Prone100Percent: 100
+		DamageTriggers: TriggerProne
+	Passenger:
+		Voice: Move
+		CargoType: Infantry
+	HiddenUnderFog:
+	ActorLostNotification:
+	ProximityCaptor:
+		Types: Infantry
+	Crushable:
+		CrushSound: igensqua.wav
+	Guard:
+		Voice: Attack
+	Guardable:
+	DeathSounds@normal:
+		DeathTypes: ExplosionDeath, BulletDeath
+	DeathSounds@burned:
+		Voice: Burned
+		DeathTypes: FlameDeath
+	DeathSounds@zapped:
+		Voice: Zapped
+		DeathTypes: ElectroDeath
+	DeathSounds@radiation:
+		Voice: Melted
+		DeathTypes: RadiationDeath
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	Cloneable:
+		Types: infantry
+	Voiced:
+		VoiceSet: GIVoice
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+	Repairable:
+		RepairBuildings: cahosp
+		Voice: Move
+	Chronoshiftable:
+		ExplodeInstead: true
+	EditorTilesetFilter:
+		Categories: Infantry
+
+^Parachutable:
+	WithSpriteBody@Parachute:
+		Sequence: paradrop
+		RequiresCondition: parachute
+	Parachutable:
+		FallRate: 26
+		KilledOnImpassableTerrain: true
+		GroundCorpseSequence:
+		GroundCorpsePalette:
+		WaterCorpseSequence:
+		WaterCorpsePalette:
+		ParachutingCondition: parachute
+	WithParachute:
+		RequiresCondition: parachute
+		Image: parach
+		OpeningSequence: open
+		Sequence: idle
+		ClosingSequence: close
+	ExternalCondition@PARACHUTE:
+		Condition: parachute
+
+^CivilianInfantry:
+	Inherits: ^Infantry
+	Inherits@MC: ^MindControllable
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Valued:
+		Cost: 10
+	DeliversCash:
+		Payload: 5
+		PlayerExperience: 2
+		Voice: Move
+	Tooltip:
+		GenericName: Civilian
+	Health:
+		HP: 50
+	Mobile:
+		Voice: Move
+		Speed: 71
+	RevealsShroud:
+		Range: 2c0
+	AttackFrontal:
+		Voice: Attack
+	ProximityCaptor:
+		Types: CivilianInfantry
+	ScaredyCat:
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	-TakeCover:
+	Voiced:
+		VoiceSet: CivilianAlliedMaleVoice
+	WithInfantryBody:
+		IdleSequences: idle1
+	EditorTilesetFilter:
+		Categories: Civilian infantry
+
+^Animal:
+	Inherits: ^Infantry
+	Valued:
+		Cost: 10
+	DeliversCash:
+		Payload: 5
+		PlayerExperience: 2
+		Voice: Move
+	Armor:
+		Type: None
+	Health:
+		HP: 200
+	Targetable:
+		TargetTypes: Ground
+	RevealsShroud:
+		Range: 2c0
+	Mobile:
+		Speed: 40
+	Selectable:
+		Bounds: 45, 25, 0, -8
+	AttackFrontal:
+		Voice: Attack
+	DeathSounds@burned:
+		Voice: Die
+	DeathSounds@zapped:
+		Voice: Die
+	DeathSounds@radiation:
+		Voice: Die
+	-TakeCover:
+	WithDeathAnimation@effect:
+		DeathSequencePalette: player
+		DeathPaletteIsPlayerPalette: true
+		DeathTypes:
+			RadiationDeath: 1
+			ElectroDeath: 2
+	-SpawnActorOnDeath@flames:
+	WithDeathAnimation@flames:
+		DeathTypes:
+			FlameDeath: 1
+	-Crushable:
+	EditorTilesetFilter:
+		Categories: Animal
+
+^Vehicle:
+	Inherits@1: ^ExistsInWorld
+	Inherits@2: ^GainsExperience
+	Inherits@3: ^IronCurtainable
+	Inherits@4: ^ChronoDisable
+	Inherits@5: ^CrateStatModifiers
+	Mobile:
+		Voice: Move
+		Crushes: crate
+		TerrainSpeeds:
+			Clear: 100
+			Rough: 100
+			Rail: 50
+			Road: 100
+			DirtRoad: 100
+			Beach: 100
+			Ore: 70
+			Gems: 70
+		TurnSpeed: 5
+	SelectionDecorations:
+		Palette: pips
+	Selectable:
+		Bounds: 32,32
+	Targetable:
+		TargetTypes: Ground, Repair, DetonateAttack
+	Repairable:
+		Voice: Move
+		RepairBuildings: gadept, nadept, caoutp
+	Passenger:
+		Voice: Move
+		CargoType: Vehicle
+		Weight: 3
+	AttackMove:
+		Voice: Attack
+	HiddenUnderFog:
+	WithTextControlGroupDecoration:
+	ActorLostNotification:
+	ProximityCaptor:
+		Types: Vehicle
+	Guard:
+		Voice: Attack
+	Guardable:
+	BodyOrientation:
+		QuantizedFacings: 0
+		CameraPitch: 90
+		UseClassicPerspectiveFudge: false
+	Explodes:
+		Weapon: UnitExplodeSmall
+		EmptyWeapon: UnitExplodeSmall
+	RenderVoxels:
+		Scale: 11.7
+		LightYaw: 800
+		LightPitch: 150
+		LightAmbientColor: -0.5,-0.5,-0.5
+		LightDiffuseColor: 1.4,1.4,1.4
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	Voiced:
+		VoiceSet: AlliedVehicleVoice
+	Chronoshiftable:
+		ChronoshiftSound: schrmov.wav
+		ReturnToOrigin: false
+	EditorTilesetFilter:
+		Categories: Vehicle
+
+^CivVehicle:
+	Inherits: ^Vehicle
+	Inherits@MC: ^MindControllable
+	Tooltip:
+		GenericName: Civilian Vehicle
+	Valued:
+		Cost: 800
+	Mobile:
+		Speed: 113
+	Health:
+		HP: 100
+	HitShape:
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 5c0
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	WithVoxelBody:
+	Voiced:
+		VoiceSet: CarVoice
+	EditorTilesetFilter:
+		Categories: Civilian vehicle
+
+^NeutralAircraft:
+	Inherits@1: ^ExistsInWorld
+	Targetable@airborne:
+		TargetTypes: Air
+		RequiresCondition: airborne
+	SelectionDecorations:
+		Palette: pips
+	Selectable:
+	Aircraft:
+		Voice: Move
+		AirborneCondition: airborne
+		CanHover: True
+		VTOL: true
+	HiddenUnderFog:
+		Type: CenterPosition
+	AttackMove:
+		Voice: Attack
+	ActorLostNotification:
+	BodyOrientation:
+		QuantizedFacings: 0
+		CameraPitch: 90
+		UseClassicPerspectiveFudge: false
+	Guard:
+		Voice: Attack
+	Guardable:
+	MustBeDestroyed:
+	RenderVoxels:
+		Scale: 11.7
+		LightYaw: 800
+		LightPitch: 150
+		LightAmbientColor: -0.5,-0.5,-0.5
+		LightDiffuseColor: 1.4,1.4,1.4
+	Targetable@ground:
+		TargetTypes: Ground, Repair, Vehicle
+		RequiresCondition: !airborne
+	DeathSounds:
+	AppearsOnRadar:
+		UseLocation: true
+	EditorTilesetFilter:
+		Categories: Aircraft
+
+^Aircraft:
+	Inherits@1: ^NeutralAircraft
+	Inherits@2: ^GainsExperience
+	WithTextControlGroupDecoration:
+
+^Plane:
+	Inherits: ^Aircraft
+	Aircraft:
+		CruiseAltitude: 5600
+		CruisingCondition: cruising
+		AltitudeVelocity: 120
+		LandWhenIdle: false
+		TakeOffOnCreation: false
+	Hovers@CRUISING:
+		RequiresCondition: cruising
+	ReturnOnIdle:
+	WithVoxelBody:
+
+^Husk:
+	RenderVoxels:
+		Scale: 11.7
+		LightYaw: 800
+		LightPitch: 150
+		LightAmbientColor: -0.5,-0.5,-0.5
+		LightDiffuseColor: 1.4,1.4,1.4
+	WithVoxelBody:
+	BodyOrientation:
+		QuantizedFacings: 0
+		CameraPitch: 90
+	Aircraft:
+	HiddenUnderFog:
+		Type: CenterPosition
+	ScriptTriggers:
+	Tooltip:
+		GenericName: Destroyed Aircraft
+	Health:
+		HP: 1
+	FallsToEarth:
+		Velocity: 86
+	HitShape:
+	EditorTilesetFilter:
+		Categories: Husk
+
+^PlaneHusk:
+	Inherits: ^Husk
+	FallsToEarth:
+		Spins: false
+		Moves: true
+
+^HelicopterHusk:
+	Inherits: ^Husk
+	Aircraft:
+		CanHover: true
+		VTOL: true
+
+^Ship:
+	Inherits@1: ^ExistsInWorld
+	Inherits@2: ^GainsExperience
+	Inherits@3: ^IronCurtainable
+	Inherits@4: ^ChronoDisable
+	Inherits@5: ^CrateStatModifiers
+	Mobile:
+		Voice: Move
+		Crushes: crate
+		TerrainSpeeds:
+			Water: 100
+		TurnSpeed: 5
+	LeavesTrails:
+		Image: wake
+		Palette: effect50alpha
+		TerrainTypes: Water
+		StationaryInterval: 18
+		MovingInterval: 6
+	SelectionDecorations:
+		Palette: pips
+	Selectable:
+		Bounds: 32,32
+	Targetable:
+		TargetTypes: Ground, Repair
+	Repairable:
+		Voice: Attack
+		RepairBuildings: gayard, nayard
+	AttackMove:
+		Voice: Attack
+	HiddenUnderFog:
+	ActorLostNotification:
+	ProximityCaptor:
+		Types: Ship
+	Guard:
+		Voice: Attack
+	Guardable:
+	BodyOrientation:
+		QuantizedFacings: 0
+		CameraPitch: 90
+		UseClassicPerspectiveFudge: false
+	Tooltip:
+		GenericName: Ship
+	Explodes:
+		Weapon: UnitExplodeSmall
+		EmptyWeapon: UnitExplodeSmall
+	RenderVoxels:
+		Scale: 11.7
+		LightYaw: 800
+		LightPitch: 150
+		LightAmbientColor: -0.5,-0.5,-0.5
+		LightDiffuseColor: 1.4,1.4,1.4
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	Voiced:
+		VoiceSet: SovietNavalVoice
+	Chronoshiftable:
+		ChronoshiftSound: schrmov.wav
+		ReturnToOrigin: false
+	EditorTilesetFilter:
+		Categories: Naval
+
+^OreDrill:
+	Inherits@1: ^SpriteActor
+	Tooltip:
+		Name: Ore Drill
+	WithSpriteBody:
+	Building:
+		Footprint: x
+		Dimensions: 1,1
+	AppearsOnRadar:
+	RadarColorFromTerrain:
+		Terrain: Ore
+	BodyOrientation:
+	FrozenUnderFog:
+	SeedsResource:
+		ResourceType: Ore
+		Interval: 55
+	WithIdleAnimation:
+	QuantizeFacingsFromSequence:
+	RenderSprites:
+		Palette: player
+	AutoSelectionSize:
+	HitShape:
+		UseTargetableCellsOffsets: true
+	EditorTilesetFilter:
+		Categories: Resource spawn
+
+^Tree:
+	Inherits@1: ^ExistsInWorld
+	Inherits@2: ^SpriteActor
+	WithSpriteBody:
+	FrozenUnderFog:
+	Building:
+		Footprint: x
+		Dimensions: 1, 1
+	AppearsOnRadar:
+	BodyOrientation:
+	Tooltip:
+		Name: Tree
+	QuantizeFacingsFromSequence:
+	RenderSprites:
+		Palette: terrain
+	AutoSelectionSize:
+	Targetable:
+		TargetTypes: Ground, Wall, DetonateAttack
+	Health:
+		HP: 200
+	HitShape:
+	Armor:
+		Type: Wood
+	EditorTilesetFilter:
+		Categories: Tree
+
+^StreetSign:
+	Inherits: ^Tree
+	Tooltip:
+		Name: Street Sign
+	EditorTilesetFilter:
+		Categories: Decoration
+
+^TrafficLight:
+	Inherits: ^Tree
+	Tooltip:
+		Name: Traffic Light
+	EditorTilesetFilter:
+		Categories: Decoration
+
+^StreetLight:
+	Inherits: ^Tree
+	Tooltip:
+		Name: Street Light
+	Armor:
+		Type: steel
+	Health:
+		HP: 50
+	EditorTilesetFilter:
+		Categories: Decoration
+
+^TelephonePole:
+	Inherits: ^Tree
+	Tooltip:
+		Name: Utility Pole
+	Health:
+		HP: 20
+	Armor:
+		Type: Concrete
+	EditorTilesetFilter:
+		Categories: Decoration
+
+^Rock:
+	Inherits@1: ^SpriteActor
+	WithSpriteBody:
+	FrozenUnderFog:
+	Building:
+		Footprint: x
+		Dimensions: 1, 1
+	AppearsOnRadar:
+	BodyOrientation:
+	Tooltip:
+		Name: Rock
+	QuantizeFacingsFromSequence:
+	RenderSprites:
+		Palette: terrain
+	HitShape:
+		UseTargetableCellsOffsets: true
+	EditorTilesetFilter:
+		Categories: Rock
+
+^Crate:
+	Inherits@1: ^SpriteActor
+	HiddenUnderFog:
+	Tooltip:
+		Name: Crate
+		GenericName: Crate
+	Crate:
+		TerrainTypes: Clear, Rough, Road, Ore, Gems
+	RenderSprites:
+		Palette: terrain
+		Image: crate
+	WithCrateBody:
+		LandSequence: land
+		WaterSequence: water
+	EditorTilesetFilter:
+		Categories: System
