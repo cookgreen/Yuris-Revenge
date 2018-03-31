@@ -226,3 +226,15 @@ zep: #Kirov Reporting!
 
 #zbomb: #Kirov bomb needs voxel projectiles
 #	idle:
+
+ymcv:
+	idle:
+
+init:
+	idle:
+
+virus:
+	idle:
+
+brute:
+	idle:

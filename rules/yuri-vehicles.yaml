@@ -1,0 +1,41 @@
+ymcv:
+	Inherits: ^Vehicle
+	Inherits@MC: ^MindControllable
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 80
+		Prerequisites: ~gaweap, gadept
+		Description: Deploys into a Construction Yard.
+	Valued:
+		Cost: 3000
+	Tooltip:
+		Name: Yuri Mobile Construction Vehicle
+	Selectable:
+		Priority: 4
+		Bounds: 68, 56, 0, -7
+	Health:
+		HP: 1000
+	Armor:
+		Type: Heavy
+	Mobile:
+		Speed: 80
+		TurnSpeed: 5
+		Crushes: fence, crate, infantry
+	RevealsShroud:
+		Range: 4c0
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	BaseBuilding:
+	Transforms:
+		Voice: Move
+		IntoActor: yacnst
+		Offset: -1,-1
+		Facing: 96
+		TransformSounds: uplace.wav
+		NoTransformNotification: BuildingCannotPlaceAudio
+	RenderSprites:
+	RenderVoxels:
+	WithVoxelBody:
+	Voiced:
+		VoiceSet: AlliedConstructionVehicleVoice
+	HitShape:

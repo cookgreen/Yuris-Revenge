@@ -28,8 +28,8 @@
 		InternalName: random-soviets
 		RandomFactionMembers: cuba, libya, iraq, russia
 		Side: Randoms
-	Faction@yuri:
-		Name: Yuri
+	Faction@yuris:
+		Name: Yuris
 		InternalName: random-yuri
 		RandomFactionMembers: yuri
 		Side: Randoms
@@ -81,7 +81,7 @@
 	Faction@10:
 		Name: Yuri Country
 		InternalName: yuri
-		Side: Soviets
+		Side: Yuris
 		Description: 
 	ResourceType@Ore:
 		ResourceType: 1
@@ -210,6 +210,35 @@ World:
 		Factions: soviets, cuba, libya, iraq, russia
 		BaseActor: smcv
 		SupportActors: dog,e2,e2,e2,e2,e2,htnk,htnk,htk,engineer
+		InnerSupportRadius: 3
+		OuterSupportRadius: 5
+	MPStartUnits@ymcv:
+		Class: none
+		ClassName: MCV Only
+		Factions: yuris, yuri
+		BaseActor: ymcv
+	MPStartUnits@lightyuris:
+		Class: light
+		ClassName: Light Support
+		Factions: yuris, yuri
+		BaseActor: ymcv
+		SupportActors: brute,init,init,init
+		InnerSupportRadius: 3
+		OuterSupportRadius: 5
+	MPStartUnits@mediumyuris:
+		Class: medium
+		ClassName: Medium Support
+		Factions: yuris, yuri
+		BaseActor: ymcv
+		SupportActors: brute,init,init,init,init,htnk,engineer
+		InnerSupportRadius: 3
+		OuterSupportRadius: 5
+	MPStartUnits@heavyyuris:
+		Class: heavy
+		ClassName: Heavy Support
+		Factions: yuri
+		BaseActor: ymcv
+		SupportActors: brute,init,init,init,init,init,htnk,htnk,htk,engineer
 		InnerSupportRadius: 3
 		OuterSupportRadius: 5
 	CrateSpawner:

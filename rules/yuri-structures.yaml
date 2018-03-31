@@ -1,0 +1,318 @@
+yacnst:
+	Inherits: ^Building
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 1000
+		Prerequisites: ~disabled
+		Description:
+	Selectable:
+		Bounds: 220, 155, 0, -20
+	Health:
+		HP: 1000
+	Armor:
+		Type: concrete
+	RevealsShroud:
+		Range: 8c0
+	Valued
+		Cost: 3000
+	Production:
+		Produces: Building,Support
+	Transforms:
+		IntoActor: 
+		Offset: 1,1
+		Facing: 96
+		DeployCursor: undeploy
+	Tooltip
+		Name: Yuri Construction Yard
+	ProvidesPrerequisite:
+		Prerequisite: structures.ThirdSide
+	Power:
+		Amount: 0
+
+yapowr:
+	Inherits: ^Building
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 1000
+		Prerequisites: ~disabled
+		Description:
+	Selectable:
+		Bounds: 220, 155, 0, -20
+	Health:
+		HP: 700
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 8c0
+	Valued
+		Cost: 600
+	Tooltip
+		Name: Yuri Bio Reactor
+	ProvidesPrerequisite:
+		Prerequisite: YACNST
+	Power:
+		Amount: 150
+
+yabrck:
+	Inherits: ^Building
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 1000
+		Prerequisites: ~disabled
+		Description:
+	Selectable:
+		Bounds: 220, 155, 0, -20
+	Health:
+		HP: 500
+	Armor:
+		Type: steel
+	RevealsShroud:
+		Range: 8c0
+	Valued
+		Cost: 500
+	Tooltip
+		Name: Yuri Barracks
+	ProvidesPrerequisite:
+		Prerequisite: POWER,YACNST
+	Power:
+		Amount: -10
+
+yaweap:
+	Inherits: ^Building
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 1000
+		Prerequisites: ~disabled
+		Description:
+	Selectable:
+		Bounds: 220, 155, 0, -20
+	Health:
+		HP: 1000
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 8c0
+	Valued
+		Cost: 2000
+	Tooltip
+		Name: Yuri War Factory
+	ProvidesPrerequisite:
+		Prerequisite: PROC,YABRCK,YACNST
+	Power:
+		Amount: -25
+
+yayard:
+	Inherits: ^Building
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 1000
+		Prerequisites: ~disabled
+		Description:
+	Selectable:
+		Bounds: 220, 155, 0, -20
+	Health:
+		HP: 1500
+	Armor:
+		Type: concrete
+	RevealsShroud:
+		Range: 8c0
+	Valued
+		Cost: 1000
+	Tooltip
+		Name: Yuri Submarine Pen
+	ProvidesPrerequisite:
+		Prerequisite: YACNST,POWER,PROC
+	Power:
+		Amount: -25
+
+yadept:
+	Inherits: ^Building
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 1000
+		Prerequisites: ~disabled
+		Description:
+	Selectable:
+		Bounds: 220, 155, 0, -20
+	Health:
+		HP: 1200
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 8c0
+	Valued
+		Cost: 800
+	Tooltip
+		Name: ZZZ Yuri Service Depot
+	ProvidesPrerequisite:
+		Prerequisite: YAWEAP,YACNST
+	Power:
+		Amount: -25
+
+yatech:
+	Inherits: ^Building
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 1000
+		Prerequisites: ~disabled
+		Description:
+	Selectable:
+		Bounds: 220, 155, 0, -20
+	Health:
+		HP: 500
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 8c0
+	Valued
+		Cost: 2000
+	Tooltip
+		Name: Yuri Battle Lab
+	ProvidesPrerequisite:
+		Prerequisite: YAWEAP,YACNST,RADAR
+	Power:
+		Amount: -100
+
+gafwll:
+	Inherits: ^Building
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 1000
+		Prerequisites: ~disabled
+		Description:
+	Selectable:
+		Bounds: 220, 155, 0, -20
+	Health:
+		HP: 300
+	Armor:
+		Type: concrete
+	RevealsShroud:
+		Range: 8c0
+	Valued
+		Cost: 100
+	Tooltip
+		Name: Yuri Citadel Wall
+	ProvidesPrerequisite:
+		Prerequisite: YABRCK
+	Power:
+		Amount: 0
+
+yaggun:
+	Inherits: ^Building
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 1000
+		Prerequisites: ~disabled
+		Description:
+	Selectable:
+		Bounds: 220, 155, 0, -20
+	Health:
+		HP: 810
+	Armor:
+		Type: steel
+	RevealsShroud:
+		Range: 8c0
+	Valued
+		Cost: 1000
+	Tooltip
+		Name: Yuri Gattling Cannon
+	ProvidesPrerequisite:
+		Prerequisite: BARRACKS,YACNST
+	Power:
+		Amount: -50
+
+yapsyt:
+	Inherits: ^Building
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 1000
+		Prerequisites: ~disabled
+		Description:
+	Selectable:
+		Bounds: 220, 155, 0, -20
+	Health:
+		HP: 455
+	Armor:
+		Type: steel
+	RevealsShroud:
+		Range: 8c0
+	Valued
+		Cost: 1500
+	Tooltip
+		Name: Yuri Psychic Tower
+	ProvidesPrerequisite:
+		Prerequisite: NAPSIS,YACNST
+	Power:
+		Amount: -100
+
+naindp:
+	Inherits: ^Building
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 1000
+		Prerequisites: ~disabled
+		Description:
+	Selectable:
+		Bounds: 220, 155, 0, -20
+	Health:
+		HP: 1000
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 8c0
+	Valued
+		Cost: 2500
+	Tooltip
+		Name: Soviet Industrial Plant
+	ProvidesPrerequisite:
+		Prerequisite: NATECH,PROC,NACNST
+	Power:
+		Amount: -200
+
+yagrnd:
+	Inherits: ^Building
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 1000
+		Prerequisites: ~disabled
+		Description:
+	Selectable:
+		Bounds: 220, 155, 0, -20
+	Health:
+		HP: 900
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 8c0
+	Valued
+		Cost: 600
+	Tooltip
+		Name: Yuri Grinder
+	ProvidesPrerequisite:
+		Prerequisite: YAWEAP,YACNST
+	Power:
+		Amount: -50
+
+yagntc:
+	Inherits: ^Building
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 1000
+		Prerequisites: ~disabled
+		Description:
+	Selectable:
+		Bounds: 220, 155, 0, -20
+	Health:
+		HP: 1000
+	Armor:
+		Type: concrete
+	RevealsShroud:
+		Range: 8c0
+	Valued
+		Cost: 2500
+	Tooltip
+		Name: Yuri Genetic Mutator Device
+	ProvidesPrerequisite:
+		Prerequisite: YATECH,YACNST
+	Power:
+		Amount: -200

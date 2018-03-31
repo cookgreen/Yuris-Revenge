@@ -1,5 +1,6 @@
+*.pdb
+*.exe
 *.suo
 *.dll
 *.cache
-*.pdb
 obj/
