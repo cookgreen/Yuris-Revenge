@@ -10,7 +10,7 @@ OpenRA - Version: 049ed08
 OpenRA Ra2 mod - Version: 049ed08  
 
 ## Usage
-Copy all files to your mod folder
+Check https://github.com/cookgreen/yr/wiki for more details
 
 ## Credit
 OpenRA - OpenRA development team  
