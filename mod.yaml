@@ -54,6 +54,7 @@ Packages:
 	~isoubnmd.mix
 	~isourbmd.mix
 	~loadmd.mix
+	~localmd.mix
 	~lun.mix
 	~lunar.mix
 	~ntrlmd.mix

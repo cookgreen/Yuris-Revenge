@@ -143,7 +143,7 @@ yadept:
 	Valued
 		Cost: 800
 	Tooltip
-		Name: ZZZ Yuri Service Depot
+		Name: Yuri Service Depot
 	ProvidesPrerequisite:
 		Prerequisite: YAWEAP,YACNST
 	Power:

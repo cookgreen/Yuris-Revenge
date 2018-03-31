@@ -227,7 +227,7 @@ zep: #Kirov Reporting!
 #zbomb: #Kirov bomb needs voxel projectiles
 #	idle:
 
-ymcv:
+pcv:
 	idle:
 
 init:

@@ -1,10 +1,10 @@
-ymcv:
+pcv:
 	Inherits: ^Vehicle
 	Inherits@MC: ^MindControllable
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 80
-		Prerequisites: ~gaweap, gadept
+		Prerequisites: ~yaweap, yadept
 		Description: Deploys into a Construction Yard.
 	Valued:
 		Cost: 3000

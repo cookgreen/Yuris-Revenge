@@ -212,16 +212,16 @@ World:
 		SupportActors: dog,e2,e2,e2,e2,e2,htnk,htnk,htk,engineer
 		InnerSupportRadius: 3
 		OuterSupportRadius: 5
-	MPStartUnits@ymcv:
+	MPStartUnits@pcv:
 		Class: none
 		ClassName: MCV Only
 		Factions: yuris, yuri
-		BaseActor: ymcv
+		BaseActor: pcv
 	MPStartUnits@lightyuris:
 		Class: light
 		ClassName: Light Support
 		Factions: yuris, yuri
-		BaseActor: ymcv
+		BaseActor: pcv
 		SupportActors: brute,init,init,init
 		InnerSupportRadius: 3
 		OuterSupportRadius: 5
@@ -229,7 +229,7 @@ World:
 		Class: medium
 		ClassName: Medium Support
 		Factions: yuris, yuri
-		BaseActor: ymcv
+		BaseActor: pcv
 		SupportActors: brute,init,init,init,init,htnk,engineer
 		InnerSupportRadius: 3
 		OuterSupportRadius: 5
@@ -237,7 +237,7 @@ World:
 		Class: heavy
 		ClassName: Heavy Support
 		Factions: yuri
-		BaseActor: ymcv
+		BaseActor: pcv
 		SupportActors: brute,init,init,init,init,init,htnk,htnk,htk,engineer
 		InnerSupportRadius: 3
 		OuterSupportRadius: 5
