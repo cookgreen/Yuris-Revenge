@@ -297,9 +297,6 @@ ModContent:
 			TestFiles: ^Content/yr/ra2.mix, ^Content/yr/language.mix
 			Sources: ra2, origin, tfd
 			Required: true
-		music: Red Alert 2 Music
-			TestFiles: ^Content/yr/theme.mix
-			Sources: ra2, origin, tfd
 		base-md: Yuri's Revenge Files
 			TestFiles: ^Content/yr/ra2md.mix, ^Content/yr/langmd.mix
 			Sources: yr, origin, tfd
