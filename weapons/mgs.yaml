@@ -145,3 +145,37 @@ BlackHawkCannon:
 	Report: vblhatta.wav, vblhattb.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 25
+        
+PsychicJab:
+	Inherits: ^MG
+	ReloadDelay: 15
+	Range:4c512
+	Report: 
+	Warhead@1Dam: SpreadDamage
+		Damage: 25       
+        
+PsychicJabE:
+	Inherits: ^MG
+	ReloadDelay: 10
+	Range:6c0
+	Report: 
+	Warhead@1Dam: SpreadDamage
+		Damage: 30
+        
+Virusgun:
+	Inherits: ^MG
+	ReloadDelay: 100
+	Range:10c0
+	Report: 
+	Warhead@1Dam: SpreadDamage
+		Damage: 125       
+        
+VirusgunE:
+	Inherits: ^MG
+	ReloadDelay: 100
+	Range:15c0
+	Report: 
+	Warhead@1Dam: SpreadDamage
+		Damage: 125
+        
+

@@ -12,7 +12,7 @@ init:
 	Health:
 		HP: 100
 	Mobile:
-		Speed: 
+		Speed: 4
 	Passenger:
 		PipType: Green
 	RevealsShroud:
@@ -42,21 +42,11 @@ yengineer:
 	Health:
 		HP: 75
 	Mobile:
-		Speed: 
+		Speed: 4
 	Passenger:
 		PipType: Green
 	RevealsShroud:
 		Range: 5c0
-	AttackFrontal:
-		Voice: Attack
-	Armament@primary:
-		Weapon: DefuseKit
-		RequiresCondition: !rank-elite
-	Armament@elite:
-		Weapon: 
-		RequiresCondition: rank-elite
-	WithInfantryBody
-		DefaultAttackSequence: shoot
         
 brute:
 	Inherits: ^Infantry
@@ -72,7 +62,7 @@ brute:
 	Health:
 		HP: 200
 	Mobile:
-		Speed: 
+		Speed: 6
 	Passenger:
 		PipType: Green
 	RevealsShroud:
@@ -102,7 +92,7 @@ virus:
 	Health:
 		HP: 100
 	Mobile:
-		Speed: 
+		Speed: 4
 	Passenger:
 		PipType: Green
 	RevealsShroud:

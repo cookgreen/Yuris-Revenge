@@ -68,7 +68,7 @@ Packages:
 	yr|uibits
 
 MapFolders:
-	ra2|maps: System
+	yr|maps: System
 	~^maps/yr/049ed08: User
 
 Rules:

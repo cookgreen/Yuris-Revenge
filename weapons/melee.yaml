@@ -53,3 +53,17 @@ SquidPunch:
 	Warhead@1Dam: SpreadDamage
 		Damage: 50
 		ValidTargets: Water, Underwater
+        
+ Punch:
+	Inherits: AlligatorBite
+	ReloadDelay: 60
+	Range: 1c496
+	Warhead@1Dam: SpreadDamage
+		Damage: 100
+        
+ PunchE:
+	Inherits: AlligatorBite
+	ReloadDelay: 60
+	Range: 1c496
+	Warhead@1Dam: SpreadDamage
+		Damage: 100

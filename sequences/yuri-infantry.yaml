@@ -1,0 +1,58 @@
+init:
+	Inherits: ^BasicInfantry
+	Defaults: trst
+	run:
+		Tick: 120
+	die1:
+		Start: 86
+	die2:
+		Start: 101
+	shoot:
+		Start: 116
+		Length: 6
+		Facings: 8
+		Tick: 80
+	deploy:
+		Start: 164
+		Length: 15
+		Tick: 80
+	paradrop:
+		Start: 179
+	cheer:
+		Start: 180
+	icon: initicon
+    
+brute:
+	Inherits: ^BasicInfantry
+	run:
+		Tick: 120
+	liedown:
+		Start: 212
+	standup:
+		Start: 228
+	prone-shoot:
+		Start: 164
+	deploy:
+		Start: 244
+		Length: 15
+	cheer:
+		Start: 259
+	icon: bruteicon
+
+virus:
+	Inherits: ^ArmedInfantry
+	run:
+		Tick: 120
+	deploy:
+		Start: 199
+		Length: 15
+		Tick: 80
+	deployed:
+		Start: 198
+	deployed-fire:
+		Start: 192
+		Length: 7
+		Tick: 80
+	cheer:
+		Start: 314
+	icon: virusoicon
