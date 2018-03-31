@@ -10,6 +10,7 @@ Packages:
 	~^Content/yr
 	.
 	$ra2: ra2
+	$yr: yr
 	./mods/common: common
 	~ra2.mix
 	~language.mix
@@ -67,7 +68,7 @@ Packages:
 	yr|uibits
 
 MapFolders:
-	yr|maps: System
+	ra2|maps: System
 	~^maps/yr/049ed08: User
 
 Rules:
@@ -128,6 +129,7 @@ Chrome:
 Assemblies:
 	common|OpenRA.Mods.Common.dll
 	common|OpenRA.Mods.Cnc.dll
+	ra2|OpenRA.Mods.RA2.dll
 	yr|yr.dll
 
 ChromeLayout:
