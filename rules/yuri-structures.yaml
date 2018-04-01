@@ -1,10 +1,14 @@
 yacnst:
 	Inherits: ^Building
+	Inherits@shape: ^4x4Shape
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 1000
 		Prerequisites: ~disabled
 		Description:
+	Building:
+		Footprint: xxxx xxxx xxxx xxxx
+		Dimensions: 4,4
 	Selectable:
 		Bounds: 220, 155, 0, -20
 	Health:
@@ -17,15 +21,20 @@ yacnst:
 		Cost: 3000
 	Production:
 		Produces: Building,Support
+	Tooltip
+		Name: Yuri Construction Yard
 	Transforms:
-		IntoActor: 
+		IntoActor: pcv
 		Offset: 1,1
 		Facing: 96
 		DeployCursor: undeploy
-	Tooltip
-		Name: Yuri Construction Yard
+	ProductionBar@Building:
+		ProductionType: Building
+	ProductionBar@Support:
+		ProductionType: Support
+	WithBuildingPlacedOverlay:
 	ProvidesPrerequisite:
-		Prerequisite: structures.ThirdSide
+		Prerequisite: structures.yuris
 	Power:
 		Amount: 0
 
@@ -73,7 +82,7 @@ yabrck:
 	Tooltip
 		Name: Yuri Barracks
 	ProvidesPrerequisite:
-		Prerequisite: POWER,YACNST
+		Prerequisite: YACNST
 	Power:
 		Amount: -10
 
@@ -97,7 +106,7 @@ yaweap:
 	Tooltip
 		Name: Yuri War Factory
 	ProvidesPrerequisite:
-		Prerequisite: PROC,YABRCK,YACNST
+		Prerequisite: YABRCK,YACNST
 	Power:
 		Amount: -25
 
@@ -121,7 +130,7 @@ yayard:
 	Tooltip
 		Name: Yuri Submarine Pen
 	ProvidesPrerequisite:
-		Prerequisite: YACNST,POWER,PROC
+		Prerequisite: YACNST
 	Power:
 		Amount: -25
 

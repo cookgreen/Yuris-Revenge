@@ -117,6 +117,8 @@ Sequences:
 	yr|sequences/tech-structures.yaml
 	yr|sequences/trees.yaml
 	yr|sequences/vehicles.yaml
+	yr|sequences/yuri-infantry.yaml
+	yr|sequences/yuri-structures.yaml
 
 ModelSequences:
 	yr|sequences/voxels.yaml

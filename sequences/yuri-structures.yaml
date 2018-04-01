@@ -1,0 +1,43 @@
+yacnst:
+	Defaults:
+		Offset: 4, -58
+		UseTilesetCode: true
+		TilesetOverrides:
+			TEMPERATE: GENERIC
+			URBAN: GENERIC
+	idle: yacnst_c
+		Length: 1
+		ShadowStart: 0
+		Tick: 150
+	damaged-idle: yacnst_c
+		Start: 1
+		Length: 1
+		ShadowStart: 1
+		Tick: 150
+	make: yacnstmk
+		Length: 22
+		ShadowStart: 31
+		TilesetOverrides:
+			TEMPERATE: TEMPERATE
+			URBAN: URBAN
+	idle-top: ycnst_a
+		Length: 11
+		Tick: 200
+	damaged-idle-top: yacnst_ad
+		Start: 11
+		Length: 11
+		Tick: 150
+	crane-overlay: yacnst_b
+		Length: 20
+		Tick: 150
+	damaged-crane-overlay: yacnst_bd
+		Start: 20
+		Length: 20
+		Tick: 150
+	dead: ngcnstdm # SHP broken & unused
+		Length: 25
+		ShadowStart: 25
+		Tick: 100
+	icon: yconicon
+		Offset: 0,0
+		UseTilesetCode: false

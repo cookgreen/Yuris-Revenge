@@ -227,14 +227,92 @@ zep: #Kirov Reporting!
 #zbomb: #Kirov bomb needs voxel projectiles
 #	idle:
 
-pcv:
+ambu:
+	idle:
+    
+bcab:
+	idle:
+  
+bfrt: #Battle Fortress
+	idle:
+    
+bpln:
+	idle:
+  
+bsub:
 	idle:
 
-init:
+bsubmisl:
+	idle:
+  
+cahead:
+	idle:
+    
+caheaddm:
 	idle:
 
-virus:
+caos:
+	idle:
+    
+cblc:
+	idle:
+    
+civp:
+	idle:
+    
+ddbx:
+	idle:
+    
+disk:
+	idle:
+	turret: disktur
+    
+doly:
+	idle:
+    
+ftrk:
+	idle:
+    
+hovr:
+	idle:
+    
+jeep:
+	idle:
+    
+mind:
 	idle:
 
-brute:
+pcv: #Yuri mcv
 	idle:
+    
+robo:
+	idle:
+	turret: robotur
+    
+schd:
+	idle:
+	turret: schdtur
+    
+schp:
+	idle:
+    
+smin:
+	idle:
+	turret: smintur
+    
+spyp:
+	idle:
+    
+tele:
+	idle:
+	turret: teletur
+    
+ycab:
+	idle:
+    
+yhvr:
+	idle:
+    
+ytnk:
+	idle:
+	turret: ytnktur

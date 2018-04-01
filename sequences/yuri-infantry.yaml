@@ -1,6 +1,5 @@
 init:
 	Inherits: ^BasicInfantry
-	Defaults: trst
 	run:
 		Tick: 120
 	die1:
