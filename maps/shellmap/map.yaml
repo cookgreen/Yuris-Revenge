@@ -33,5 +33,5 @@ Rules:
 	World:
 		-StartGameNotification:
 		MusicPlaylist:
-			StartingMusic: grinder
+			StartingMusic: intro
 			LoopStartingMusic: true

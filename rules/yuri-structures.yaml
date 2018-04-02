@@ -32,7 +32,6 @@ yacnst:
 		ProductionType: Building
 	ProductionBar@Support:
 		ProductionType: Support
-	WithBuildingPlacedOverlay:
 	ProvidesPrerequisite:
 		Prerequisite: structures.yuris
 	Power:
@@ -57,8 +56,6 @@ yapowr:
 		Cost: 600
 	Tooltip
 		Name: Yuri Bio Reactor
-	ProvidesPrerequisite:
-		Prerequisite: YACNST
 	Power:
 		Amount: 150
 
@@ -81,8 +78,6 @@ yabrck:
 		Cost: 500
 	Tooltip
 		Name: Yuri Barracks
-	ProvidesPrerequisite:
-		Prerequisite: YACNST
 	Power:
 		Amount: -10
 
@@ -105,8 +100,6 @@ yaweap:
 		Cost: 2000
 	Tooltip
 		Name: Yuri War Factory
-	ProvidesPrerequisite:
-		Prerequisite: YABRCK,YACNST
 	Power:
 		Amount: -25
 

@@ -62,6 +62,9 @@ Packages:
 	~snowmd.mix
 	~ubn.mix
 	~urbann.mix
+	~audiomd.mix
+	~cameomd.mix
+	~thememd.mix
 	yr|bits
 	yr|bits/cameos
 	yr|bits/structures

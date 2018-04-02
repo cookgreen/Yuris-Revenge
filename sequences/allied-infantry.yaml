@@ -252,3 +252,21 @@ cleg:
 	cheer:
 		Start: 165
 	icon: clegicon
+    
+ ggi:
+	Inherits: ^ArmedInfantry
+	run:
+		Tick: 120
+	die1:
+		Start: 134
+	die2:
+		Start: 149
+	shoot:
+		Start: 204
+	prone-shoot:
+		Start: 252
+	paradrop:
+		Start: 371
+	cheer:
+		Start: 196
+	icon: gdgiicon

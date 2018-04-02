@@ -3,55 +3,49 @@ init:
 	run:
 		Tick: 120
 	die1:
-		Start: 86
+		Start: 56
 	die2:
-		Start: 101
+		Start: 71
 	shoot:
-		Start: 116
-		Length: 6
-		Facings: 8
-		Tick: 80
-	deploy:
-		Start: 164
-		Length: 15
-		Tick: 80
+		Start: 209
+	prone-shoot:
+		Start: 257
 	paradrop:
-		Start: 179
+		Start: 305
 	cheer:
-		Start: 180
+		Start: 201
 	icon: initicon
     
 brute:
 	Inherits: ^BasicInfantry
 	run:
 		Tick: 120
-	liedown:
-		Start: 212
-	standup:
-		Start: 228
-	prone-shoot:
-		Start: 164
-	deploy:
-		Start: 244
-		Length: 15
+	die1:
+		Start: 86
+	die2:
+		Start: 101
+	shoot:
+		Start: 116
+	paradrop:
+		Start: 284
 	cheer:
-		Start: 259
-	icon: bruteicon
+		Start: 276
+	icon: bruticon
 
 virus:
 	Inherits: ^ArmedInfantry
 	run:
 		Tick: 120
-	deploy:
-		Start: 199
-		Length: 15
-		Tick: 80
-	deployed:
-		Start: 198
-	deployed-fire:
-		Start: 192
-		Length: 7
-		Tick: 80
+	die1:
+		Start: 134
+	die2:
+		Start: 149
+	shoot:
+		Start: 204
+	prone-shoot:
+		Start: 252
+	paradrop:
+		Start: 300
 	cheer:
-		Start: 314
-	icon: virusoicon
+		Start: 196
+	icon: vrusicon

@@ -1,48 +1,48 @@
 intro: INTRO
-	Filename: Drok
+	Filename: drok
 	Extension: wav
 
 score: SCORE
-	Filename: ScoreX
+	Filename: scorex
 	Extension: wav
 
 loading: LOADING
-	Filename: Bully
+	Filename: bully
 	Extension: wav
 
 credits: CREDITS
-	Filename: OptionX
+	Filename: optionx
 	Extension: wav
 
 brainfreeze: BrainFreeze
-	Filename: BrainFre
+	Filename: brainfre
 	Extension: wav
 
 drok: Drok
-	Filename: Drok
+	Filename: drok
 	Extension: wav
 
 deceiver: Deceiver
-	Filename: Deceiver
+	Filename: deceiver
 	Extension: wav
 
 phatattack: PhatAttack
-	Filename: PhatAtta
+	Filename: phatatta
 	Extension: wav
 
 bullykit: BullyKit
-	Filename: Bully
+	Filename: bully
 	Extension: wav
 
 defendthebase: DefendTheBase
-	Filename: Defend
+	Filename: defend
 	Extension: wav
 
 tactics: Tactics
-	Filename: Tactics
+	Filename: tactics
 	Extension: wav
 
 trancelvania: TranceLVania
-	Filename: TranceLV
+	Filename: trancelv
 	Extension: wav
 
