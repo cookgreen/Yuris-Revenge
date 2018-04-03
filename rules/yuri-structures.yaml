@@ -32,6 +32,10 @@ yacnst:
 		ProductionType: Building
 	ProductionBar@Support:
 		ProductionType: Support
+	WithIdleOverlay@top:
+		Sequence: idle-top
+	WithIdleOverlay@normal:
+		Sequence: idle-normal
 	ProvidesPrerequisite:
 		Prerequisite: structures.yuris
 	Power:

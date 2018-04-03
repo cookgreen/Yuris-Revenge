@@ -20,13 +20,19 @@ yacnst:
 		TilesetOverrides:
 			TEMPERATE: TEMPERATE
 			URBAN: URBAN
-	idle-top: ycnst_a
+	idle-top: yacnst_a
 		Length: 2
 		Tick: 200
-	damaged-idle-top: ycnst_a
+	damaged-idle-top: yacnst_a
 		Start: 2
 		Length: 2
 		Tick: 150
+	idle-normal: yacnst
+		length: 1
+		ShadowStart: 3
+	damaged-idle-normal: yacnst
+		Start: 1
+		ShadowStart: 4
 	build: yacnst_b
 		Length: 21
 		Tick: 150
@@ -34,14 +40,6 @@ yacnst:
 		Start: 21
 		Length: 21
 		Tick: 150
-	idle-normal: yacnst
-		length: 1
-		ShadowStart: 3
-		ZOffset: -1024
-	damaged-idle-normal: yacnst
-		Start: 1
-		ShadowStart: 4
-		ZOffset: -1024
 	dead: ngcnstdm # SHP broken & unused
 		Length: 25
 		ShadowStart: 25
