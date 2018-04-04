@@ -1,18 +1,22 @@
 init:
 	Inherits: ^Infantry
 	Buildable:
-		BuildPaletteOrder: 60
-		Description:
+		Queue: Infantry
+		Prerequisites: ~yabrck
+		BuildPaletteOrder: 20
+		Description: Basic Yuri Infantry.\n Strong vs Infantry and Vehicle\n Weak vs aircraft
 	Valued:
 		Cost: 200
 	Tooltip:
 		Name: Yuri Initiate
+	DeliversCash:
+		Payload: 100
 	Selectable:
 		Bounds: 20, 30, 0, -11
 	Health:
 		HP: 100
 	Mobile:
-		Speed: 4
+		Speed: 40
 	Passenger:
 		PipType: Green
 	RevealsShroud:
@@ -31,8 +35,10 @@ init:
 yengineer:
 	Inherits: ^Infantry
 	Buildable:
-		BuildPaletteOrder: 60
-		Description:
+		Queue: Infantry
+		Prerequisites: ~yabrck
+		BuildPaletteOrder: 20
+		Description: Capture enemy structures.\n Unarmed
 	Valued:
 		Cost: 500
 	Tooltip:
@@ -42,7 +48,7 @@ yengineer:
 	Health:
 		HP: 75
 	Mobile:
-		Speed: 4
+		Speed: 40
 	Passenger:
 		PipType: Green
 	RevealsShroud:
@@ -51,8 +57,10 @@ yengineer:
 brute:
 	Inherits: ^Infantry
 	Buildable:
-		BuildPaletteOrder: 60
-		Description:
+		Queue: Infantry
+		Prerequisites: ~yabrck
+		BuildPaletteOrder: 20
+		Description: Powerful soldiers.\n Strong vs Infantry and Vehicle\n Weak vs aircraft
 	Valued:
 		Cost: 500
 	Tooltip:
@@ -62,7 +70,7 @@ brute:
 	Health:
 		HP: 200
 	Mobile:
-		Speed: 6
+		Speed: 60
 	Passenger:
 		PipType: Green
 	RevealsShroud:
@@ -81,8 +89,10 @@ brute:
 virus:
 	Inherits: ^Infantry
 	Buildable:
-		BuildPaletteOrder: 60
-		Description:
+		Queue: Infantry
+		Prerequisites: ~yabrck
+		BuildPaletteOrder: 20
+		Description: Elite sniper.\n Strong vs Infantry\n Weak vs Vehicle and Aircraft
 	Valued:
 		Cost: 700
 	Tooltip:
@@ -92,7 +102,7 @@ virus:
 	Health:
 		HP: 100
 	Mobile:
-		Speed: 4
+		Speed: 40
 	Passenger:
 		PipType: Green
 	RevealsShroud:

@@ -16,6 +16,13 @@ init:
 		Start: 201
 	icon: initicon
     
+
+yengineer:   
+	Inherits: ^BasicInfantry
+	paradrop:
+		Start: 244
+	icon: yengicon
+   
 brute:
 	Inherits: ^BasicInfantry
 	run:
@@ -31,6 +38,7 @@ brute:
 	cheer:
 		Start: 276
 	icon: bruticon
+
 
 virus:
 	Inherits: ^ArmedInfantry

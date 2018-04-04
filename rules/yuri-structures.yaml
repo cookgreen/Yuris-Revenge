@@ -45,45 +45,96 @@ yapowr:
 	Inherits: ^Building
 	Buildable:
 		Queue: Building
-		BuildPaletteOrder: 1000
-		Prerequisites: ~disabled
-		Description:
+		BuildPaletteOrder: 10
+		Prerequisites: ~structures.yuris
+		Description: Provides power for other structures.
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Valued
+		Cost: 600
+	Tooltip
+		Name: Yuri Bio Reactor
+	ProvidesPrerequisite:
+		Prerequisite: power
 	Selectable:
-		Bounds: 220, 155, 0, -20
+		Bounds: 96, 98, -2, -24
 	Health:
 		HP: 700
 	Armor:
 		Type: wood
 	RevealsShroud:
-		Range: 8c0
-	Valued
-		Cost: 600
-	Tooltip
-		Name: Yuri Bio Reactor
+		Range: 4c0
+	WithIdleOverlay@lights:
+		Sequence: idle-lights
 	Power:
 		Amount: 150
+	InfiltrateForPowerOutage:
+	AffectedByPowerOutage:
+	ScalePowerWithHealth:
+	PowerTooltip:
+	Targetable:
+		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
 
 yabrck:
 	Inherits: ^Building
+	Inherits@shape: ^3x2Shape
 	Buildable:
 		Queue: Building
-		BuildPaletteOrder: 1000
-		Prerequisites: ~disabled
-		Description:
+		BuildPaletteOrder: 20
+		Prerequisites: power, ~structures.yuris
+		Description: Train Yuri's soldiers
 	Selectable:
-		Bounds: 220, 155, 0, -20
+		Bounds: 132, 134, -28, -28
 	Health:
 		HP: 500
-	Armor:
-		Type: steel
-	RevealsShroud:
-		Range: 8c0
 	Valued
 		Cost: 500
 	Tooltip
 		Name: Yuri Barracks
+	ProvidesPrerequisite:
+		Prerequisite: yabrck
+	ProvidesPrerequisite@default:
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 2,3
+	PrimaryBuilding:
+		PrimaryCondition: primary
+	WithTextDecoration@primary:
+		RequiresSelection: true
+		Text: PRIMARY
+		ReferencePoint: Top
+		ZOffset: 256
+		RequiresCondition: primary
+	Production:
+		Produces: Infantry
+	ProductionBar:
+	Armor:
+		Type: steel
+	RevealsShroud:
+		Range: 5c0
+	RallyPoint:
+		Offset: 2,3
+		Palette: mouse
+		IsPlayerPalette: false
+	Exit@0_n1:
+		SpawnOffset: 170,-810,0
+		ExitCell: 0, -1
+	Exit@0_2:
+		SpawnOffset: -900,220,0
+		ExitCell: 0, 2
+	Exit@2_n1:
+		SpawnOffset: 900,-220,0
+		ExitCell: 2, -1
+	Exit@2_2:
+		SpawnOffset: -170,810,0
+		ExitCell: 2, 2
 	Power:
 		Amount: -10
+	InfiltrateForSupportPower:
+		Proxy: barracks.infiltrated
+	Targetable:
+		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
 
 yaweap:
 	Inherits: ^Building

@@ -49,7 +49,76 @@ yacnst:
 		UseTilesetCode: false
         
 yapowr:
+	Defaults:
+		Offset: 0, -31
+		UseTilesetCode: true
+		TilesetOverrides:
+			TEMPERATE: GENERIC
+			URBAN: GENERIC
+	make: yapowrmk
+		Length: 22
+		ShadowStart: 22
+		TilesetOverrides:
+			TEMPERATE: TEMPERATE
+			URBAN: URBAN
+	idle: yapowr
+		Length: 1
+		ShadowStart: 3
+		Tick: 150
+	damaged-idle: yapowr
+		Start: 1
+		Length: 1
+		ShadowStart: 4
+		Tick: 150
+	idle-tier2: yapowr_b
+		length: 5
+		ShadowStart: 16
+		Tick: 150
+	damaged-idle-tier2: yapowr_b
+		Start: 8
+		length: 8
+		ShadowStart: 24
+		Tick: 150
+	idle-lights: yapowr_c
+		length: 2
+		Tick: 150
+	damaged-idle-lights: yapowr_c
+		Start: 5
+		length: 2
+		Tick: 150
 	icon: ypwricon
+		Offset: 0,0
+		UseTilesetCode: false
     
 yabrck:
+	Defaults:
+		Offset: 0, -31
+		UseTilesetCode: true
+		TilesetOverrides:
+			TEMPERATE: GENERIC
+			URBAN: GENERIC
+	make: yabrckmk
+		length: 25
+		ShadowStart: 25
+		TilesetOverrides:
+			TEMPERATE: TEMPERATE
+			URBAN: URBAN
+	idle: yabrck
+		length: 1
+		ShadowStart: 3
+		Tick: 150
+	damaged-idle: yabrck
+		Start: 1
+		length: 1
+		ShadowStart: 4
+		Tick: 150
+	idle-training: yabrck_a
+		length: 7
+		Tick: 150
+	damaged-idle-training: yabrck_b
+		Start: 8
+		length: 7
+		Tick: 150
 	icon: brckicon
+		Offset: 0,0
+		UseTilesetCode: false
