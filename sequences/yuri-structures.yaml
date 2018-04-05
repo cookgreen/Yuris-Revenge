@@ -115,10 +115,44 @@ yabrck:
 	idle-training: yabrck_a
 		length: 7
 		Tick: 150
-	damaged-idle-training: yabrck_b
+	damaged-idle-training: yabrck_a
 		Start: 8
 		length: 7
 		Tick: 150
 	icon: brckicon
+		Offset: 0,0
+		UseTilesetCode: false
+        
+yarefn:
+	Defaults:
+		Offset: 0, -31
+		UseTilesetCode: true
+		TilesetOverrides:
+			TEMPERATE: GENERIC
+			URBAN: GENERIC
+	make: yarefnmk
+		length: 17
+		ShadowStart: 17
+		TilesetOverrides:
+			TEMPERATE: TEMPERATE
+			URBAN: URBAN
+	idle: yarefn
+		length: 1
+		ShadowStart: 3
+		Tick: 150
+	damaged-idle: yarefn
+		Start: 1
+		length: 1
+		ShadowStart: 4
+		Tick: 150
+	idle-processing: yarefn_a
+		length: 2
+		ShadowStart: 2
+		Tick: 150
+	damaged-idle-processing: yarefn_a
+		length: 2
+		ShadowStart: 2
+		Tick: 150
+	icon: sminicon
 		Offset: 0,0
 		UseTilesetCode: false

@@ -129,10 +129,75 @@ yabrck:
 	Exit@2_2:
 		SpawnOffset: -170,810,0
 		ExitCell: 2, 2
+	WithIdleOverlay@training:
+		Sequence: idle-training
 	Power:
 		Amount: -10
 	InfiltrateForSupportPower:
 		Proxy: barracks.infiltrated
+	Targetable:
+		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
+
+yarefn:
+	Inherits: ^Building
+	Inherits@shape: ^2x2Shape
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 1000
+		Prerequisites: power, ~structures.yuris
+		Description: Provides credits for Yuri
+	Selectable:
+		Bounds: 70, 50, 0, -20
+	Valued
+		Cost: 1500
+	Tooltip
+		Name: Yuri Ore Refinery
+	Health:
+		HP: 2000
+	Armor:
+		Type: medium
+	RevealsShroud:
+		Range: 8c0
+	ProvidesPrerequisite:
+		Prerequisite: yarefn
+	TiberianSunRefinery:
+		DockOffset: 3,1
+		ShowTicks: True
+		TickLifetime: 30
+		TickVelocity: 1
+		TickRate: 10
+		DockAngle: 160
+		UseStorage: false
+	CustomSellValue:
+		Value: 300
+	InfiltrateForCash:
+		Percentage: 50
+		Notification: CreditsStolen
+		Minimum: 500
+	FreeActor:
+		Actor: slav
+		SpawnOffset: 3, 1
+		Facing: 160
+	FreeActor@2:
+		Actor: slav
+		SpawnOffset: 3, 1
+		Facing: 160
+	FreeActor@3:
+		Actor: slav
+		SpawnOffset: 3, 1
+		Facing: 160
+	FreeActor@4:
+		Actor: slav
+		SpawnOffset: 3, 1
+		Facing: 160
+	FreeActor@5:
+		Actor: slav
+		SpawnOffset: 3, 1
+		Facing: 160
+	WithIdleOverlay@processing:
+		Sequence: idle-processing
+	Power:
+		Amount: 0
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
 
@@ -278,54 +343,6 @@ yaggun:
 	Power:
 		Amount: -50
 
-yapsyt:
-	Inherits: ^Building
-	Buildable:
-		Queue: Building
-		BuildPaletteOrder: 1000
-		Prerequisites: ~disabled
-		Description:
-	Selectable:
-		Bounds: 220, 155, 0, -20
-	Health:
-		HP: 455
-	Armor:
-		Type: steel
-	RevealsShroud:
-		Range: 8c0
-	Valued
-		Cost: 1500
-	Tooltip
-		Name: Yuri Psychic Tower
-	ProvidesPrerequisite:
-		Prerequisite: NAPSIS,YACNST
-	Power:
-		Amount: -100
-
-naindp:
-	Inherits: ^Building
-	Buildable:
-		Queue: Building
-		BuildPaletteOrder: 1000
-		Prerequisites: ~disabled
-		Description:
-	Selectable:
-		Bounds: 220, 155, 0, -20
-	Health:
-		HP: 1000
-	Armor:
-		Type: wood
-	RevealsShroud:
-		Range: 8c0
-	Valued
-		Cost: 2500
-	Tooltip
-		Name: Soviet Industrial Plant
-	ProvidesPrerequisite:
-		Prerequisite: NATECH,PROC,NACNST
-	Power:
-		Amount: -200
-
 yagrnd:
 	Inherits: ^Building
 	Buildable:
@@ -371,5 +388,147 @@ yagntc:
 		Name: Yuri Genetic Mutator Device
 	ProvidesPrerequisite:
 		Prerequisite: YATECH,YACNST
+	Power:
+		Amount: -200
+
+yapsyt:
+	Inherits: ^Building
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 1000
+		Prerequisites: ~disabled
+		Description:
+	Selectable:
+		Bounds: 220, 155, 0, -20
+	Health:
+		HP: 455
+	Armor:
+		Type: steel
+	RevealsShroud:
+		Range: 8c0
+	Valued
+		Cost: 1500
+	Tooltip
+		Name: Yuri Psychic Tower
+	ProvidesPrerequisite:
+		Prerequisite: NAPSIS,YACNST
+	Power:
+		Amount: -100
+
+yarock:
+	Inherits: ^Building
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 1000
+		Prerequisites: ~disabled
+		Description:
+	Selectable:
+		Bounds: 220, 155, 0, -20
+	Health:
+		HP: 700
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 8c0
+	Valued
+		Cost: 600
+	Tooltip
+		Name: Rocket Launch Pad
+	ProvidesPrerequisite:
+		Prerequisite: structures.GDI
+	Power:
+		Amount: 0
+
+yacomd:
+	Inherits: ^Building
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 1000
+		Prerequisites: ~disabled
+		Description:
+	Selectable:
+		Bounds: 220, 155, 0, -20
+	Health:
+		HP: 1000
+	Armor:
+		Type: concrete
+	RevealsShroud:
+		Range: 8c0
+	Valued
+		Cost: 3000
+	Tooltip
+		Name: Yuri Command Center
+	ProvidesPrerequisite:
+		Prerequisite: structures.GDI
+	Power:
+		Amount: 0
+
+yapppt:
+	Inherits: ^Building
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 1000
+		Prerequisites: ~disabled
+		Description:
+	Selectable:
+		Bounds: 220, 155, 0, -20
+	Health:
+		HP: 1000
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 8c0
+	Valued
+		Cost: 0
+	Tooltip
+		Name: Partially Built Psychic Dominator
+	Power:
+		Amount: 0
+
+garobo:
+	Inherits: ^Building
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 1000
+		Prerequisites: ~disabled
+		Description:
+	Selectable:
+		Bounds: 220, 155, 0, -20
+	Health:
+		HP: 600
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 8c0
+	Valued
+		Cost: 600
+	Tooltip
+		Name: Allied Robot Control Center
+	ProvidesPrerequisite:
+		Prerequisite: GAWEAP,GACNST
+	Power:
+		Amount: -100
+
+naindp:
+	Inherits: ^Building
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 1000
+		Prerequisites: ~disabled
+		Description:
+	Selectable:
+		Bounds: 220, 155, 0, -20
+	Health:
+		HP: 1000
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 8c0
+	Valued
+		Cost: 2500
+	Tooltip
+		Name: Soviet Industrial Plant
+	ProvidesPrerequisite:
+		Prerequisite: NATECH,PROC,NACNST
 	Power:
 		Amount: -200

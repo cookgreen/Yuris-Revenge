@@ -117,3 +117,45 @@ virus:
 		RequiresCondition: rank-elite
 	WithInfantryBody
 		DefaultAttackSequence: shoot
+        
+slav:
+	Inherits: ^Infantry
+	Buildable:
+		Prerequisites: ~yabrck
+		BuildPaletteOrder: 20
+		Description: Work for Yuri
+	Valued:
+		Cost: 700
+	Tooltip:
+		Name: Yuri Slave Worker
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Harvester:
+		Capacity: 12
+		Resources: Ore, Gems
+		UnloadTicksPerBale: 1
+		SearchFromProcRadius: 24
+		SearchFromOrderRadius: 12
+		HarvestVoice: Move
+		DeliverVoice: Move
+	Health:
+		HP: 100
+	Mobile:
+		Speed: 50
+	Passenger:
+		PipType: Green
+	RevealsShroud:
+		Range: 5c0
+	AttackFrontal:
+		Voice: Attack
+	WithHarvestOverlay:
+		Sequence: shovel
+		Palette: effect
+	Armament@primary:
+		Weapon: shovel
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: shovel
+		RequiresCondition: rank-elite
+	WithInfantryBody
+		DefaultAttackSequence: shoot
