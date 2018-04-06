@@ -449,3 +449,51 @@ SlaveWorkerVoice:
 		Select: isl1sea ,isl1seb ,isl1sec ,isl1sed ,isl1see ,isl1sef
 		Feedback: isl1fea ,isl1feb ,isl1fec ,isl1fed ,isl1fee ,isl2fea ,isl2feb ,isl2fec ,isl2fed ,isl2fee
 		Die: isl2dia ,isl2dib ,isl2dic ,isl2did ,isl2die
+        
+MCVYuriVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: vmcysea ,vmcyseb ,vmcysec ,vmcysed ,vmcysee
+		Move: vmcymoa ,vmcymob ,vmcymoc ,vmcymod ,vmcymoe
+        
+SlaveMinerVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: vslasea ,vslaseb ,vslasec ,vslased ,vslasee ,vslasef ,vslaseg
+		Move: vslamoa ,vslamoc ,vslamoe ,vslamof
+		Attack: vslaata ,vslaatb ,vslaatc ,vslaate
+        
+LasherTankVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: vlassed ,vlassef ,vlasseg ,vlasmod
+		Move: vlasmoa ,vlasmoc ,vlasmof ,vlasatd
+		Attack: vlasata ,vlasatc ,vlasate ,vlasatf ,vlasatg 
+        
+GattlingTankVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: vgatsea ,vgatseb ,vgatsec ,vgatsed ,vgatsee
+		Move: vgatmoa ,vgatmob ,vgatmoc ,vgatmod ,vgatmoe
+		Attack: vgatata ,vgatatb ,vgatatc ,vgatatd ,vgatate ,vgatatf
+        
+MagnetronVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: vmagsea ,vmagseb ,vmagsec ,vmagsed ,vmagsee
+		Move: vmagmoa ,vmagmob ,vmagmoc ,vmagmod ,vmagmoe
+		Attack: vmagata ,vmagatb ,vmagatc ,vmagatd ,vmagate ,vmagatf
+        
+ChaosDroneVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: vchasela ,vchaselb
+		Move: vchamova ,vchamovb ,vchamovc ,vchamovd
+		Attack: vchaatca
+        
+MasterMindVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: vmassea ,vmasseb ,vmassec ,vmassed ,vmassee ,vmassef
+		Move: vmasmoa ,vmasmob ,vmasmoc ,vmasmod ,vmasmoe
+		Attack: vmasata ,vmasatb ,vmasatc ,vmasatd ,vmasate ,vmasatf

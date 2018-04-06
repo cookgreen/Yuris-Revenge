@@ -4,6 +4,9 @@ pcv:
 smin:
 	icon: sminicon
     
+ltnk:
+	icon: ltnkicon
+    
 ytnk:
 	icon: ytnkicon
     

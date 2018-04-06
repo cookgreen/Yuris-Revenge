@@ -18,7 +18,6 @@ Packages:
 	~langmd.mix
 	~cache.mix
 	~audiomd.mix
-	~audio.mix
 	~cameomd.mix
 	~multi.mix
 	~cameo.mix
@@ -39,7 +38,6 @@ Packages:
 	~temperat.mix
 	~urb.mix
 	~urban.mix
-	~audio.bag
 	~cachemd.mix
 	~conqmd.mix
 	~des.mix
@@ -63,6 +61,7 @@ Packages:
 	~snowmd.mix
 	~ubn.mix
 	~urbann.mix
+	~audio.bag
 	~thememd.mix
 	yr|bits
 	yr|bits/cameos

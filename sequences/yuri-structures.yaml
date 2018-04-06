@@ -97,12 +97,6 @@ yabrck:
 		TilesetOverrides:
 			TEMPERATE: GENERIC
 			URBAN: GENERIC
-	make: yabrckmk
-		length: 25
-		ShadowStart: 25
-		TilesetOverrides:
-			TEMPERATE: TEMPERATE
-			URBAN: URBAN
 	idle: yabrck
 		length: 1
 		ShadowStart: 3
@@ -119,6 +113,16 @@ yabrck:
 		Start: 8
 		length: 7
 		Tick: 150
+	dead: ggpiledm # SHP broken & unused
+		Length: 25
+		ShadowStart: 25
+		Tick: 100
+	make: yabrckmk
+		Length: 25
+		ShadowStart: 25
+		TilesetOverrides:
+			TEMPERATE: TEMPERATE
+			URBAN: URBAN
 	icon: brckicon
 		Offset: 0,0
 		UseTilesetCode: false
@@ -130,21 +134,17 @@ yarefn:
 		TilesetOverrides:
 			TEMPERATE: GENERIC
 			URBAN: GENERIC
+	idle: yarefn
+		ShadowStart: 3
+	damaged-idle: yarefn
+		Start: 1
+		ShadowStart: 4
 	make: yarefnmk
-		length: 17
+		Length: 17
 		ShadowStart: 17
 		TilesetOverrides:
 			TEMPERATE: TEMPERATE
 			URBAN: URBAN
-	idle: yarefn
-		length: 1
-		ShadowStart: 3
-		Tick: 150
-	damaged-idle: yarefn
-		Start: 1
-		length: 1
-		ShadowStart: 4
-		Tick: 150
 	idle-processing: yarefn_a
 		length: 2
 		ShadowStart: 2

@@ -17,8 +17,15 @@ init:
 	icon: initicon
     
 
-yengineer:   
+yengineer:
 	Inherits: ^BasicInfantry
+	Defaults: engineer
+	run:
+		Tick: 120
+	die1:
+		Start: 56
+	die2:
+		Start: 71
 	paradrop:
 		Start: 244
 	icon: yengicon

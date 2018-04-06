@@ -172,6 +172,11 @@ yarefn:
 		TickRate: 10
 		DockAngle: 160
 		UseStorage: false
+	Transforms:
+		IntoActor: smin
+		Offset: 1,1
+		Facing: 96
+		DeployCursor: undeploy
 	CustomSellValue:
 		Value: 300
 	InfiltrateForCash:

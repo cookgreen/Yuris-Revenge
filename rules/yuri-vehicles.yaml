@@ -37,7 +37,7 @@ pcv:
 	RenderVoxels:
 	WithVoxelBody:
 	Voiced:
-		VoiceSet: AlliedConstructionVehicleVoice
+		VoiceSet: MCVYuriVoice
 	HitShape:
     
 smin:
@@ -45,25 +45,23 @@ smin:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 10
-		Prerequisites: ~yaweap, yarefn
-		Description: Gathers Ore.\n  Unarmed\nSpecial ability: Can teleport to own refineries
+		Prerequisites: yaweap, yarefn
+		Description: Provides Credit for Yuri
 	Valued:
-		Cost: 1400
+		Cost: 1500
 	Tooltip:
-		Name: Chrono Miner
+		Name: Slave Miner
 	Selectable:
-		Priority: 7
 		Bounds: 64, 52, 0, -6
-	Harvester:
-		Capacity: 20
-		Resources: Ore, Gems
-		UnloadTicksPerBale: 1
-		SearchFromProcRadius: 24
-		SearchFromOrderRadius: 12
-		HarvestVoice: Move
-		DeliverVoice: Move
+	Transforms:
+		Voice: Move
+		IntoActor: yarefn
+		Offset: -1,-1
+		Facing: 96
+		TransformSounds: uplace.wav
+		NoTransformNotification: BuildingCannotPlaceAudio
 	Health:
-		HP: 1000
+		HP: 2000
 	Armor:
 		Type: Medium
 	Mobile:
@@ -71,23 +69,81 @@ smin:
 		TurnSpeed: 8
 		WaitAverage: 0
 		Crushes: crate, infantry
+	Turreted:
+		TurnSpeed: 5
+	Armament@primary:
+		Weapon: 20mmrapid
+		LocalOffset: 640,0,384
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: 20mmrapidE
+		LocalOffset: 640,0,384
+		RequiresCondition: rank-elite
+	AttackTurreted:
+		Voice: Attack
 	RevealsShroud:
 		Range: 4c0
-	WithHarvestOverlay:
-		Offset: 121,0,0
-		Palette: effect
 	GainsExperience: # can get experience, i.e. speed
 	RenderSprites: # TODO: WithHarvestOverlay relies on this, but it should actually be removed
 	RenderVoxels:
-	WithVoxelUnloadBody:
+	WithVoxelBody:
+	WithVoxelTurret:
 	Voiced:
-		VoiceSet: ChronoMinerVoice
+		VoiceSet: SlaveMinerVoice
 	HitShape:
-ytnk:
+    
+ltnk:
 	Inherits: ^Vehicle
 	Inherits@MC: ^MindControllable
 	Valued:
 		Cost: 700
+	Tooltip:
+		Name: Lasher Light Tank
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 20
+		Prerequisites: ~yaweap
+		Description: Basic Yuri Tank.\n  Strong vs Vehicle\n  Weak vs Infantry, Aircraft
+	Mobile:
+		Speed: 90
+		TurnSpeed: 5
+		Crushes: fence, crate, infantry
+	Health:
+		HP: 300
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 8c0
+	Turreted:
+		TurnSpeed: 5
+	Armament@primary:
+		Weapon: 105mm
+		LocalOffset: 640,0,384
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: 105mmE
+		LocalOffset: 640,0,384
+		RequiresCondition: rank-elite
+	AttackTurreted:
+		Voice: Attack
+	AutoTarget:
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	RenderVoxels:
+	WithVoxelBody:
+	WithVoxelTurret:
+	Voiced:
+		VoiceSet: LasherTankVoice
+	ProducibleWithLevel:
+		Prerequisites: warfactory.infiltrated
+	HitShape:
+    
+ytnk:
+	Inherits: ^Vehicle
+	Inherits@MC: ^MindControllable
+	Valued:
+		Cost: 600
 	Tooltip:
 		Name: Gattling Tank
 	Buildable:
@@ -100,7 +156,7 @@ ytnk:
 		TurnSpeed: 5
 		Crushes: fence, crate, infantry
 	Health:
-		HP: 300
+		HP: 210
 	Armor:
 		Type: Heavy
 	RevealsShroud:
@@ -125,15 +181,16 @@ ytnk:
 	WithVoxelBody:
 	WithVoxelTurret:
 	Voiced:
-		VoiceSet: AlliedVehicleVoice
+		VoiceSet: GattlingTankVoice
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
+    
 tele:
 	Inherits: ^Vehicle
 	Inherits@MC: ^MindControllable
 	Valued:
-		Cost: 700
+		Cost: 1000
 	Tooltip:
 		Name: Magnetron
 	Buildable:
@@ -146,9 +203,9 @@ tele:
 		TurnSpeed: 5
 		Crushes: fence, crate, infantry
 	Health:
-		HP: 300
+		HP: 150
 	Armor:
-		Type: Heavy
+		Type: Light
 	RevealsShroud:
 		Range: 8c0
 	Turreted:
@@ -171,14 +228,14 @@ tele:
 	WithVoxelBody:
 	WithVoxelTurret:
 	Voiced:
-		VoiceSet: AlliedVehicleVoice
+		VoiceSet: MagnetronVoice
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
 caos:
 	Inherits: ^Vehicle
 	Valued:
-		Cost: 700
+		Cost: 800
 	Tooltip:
 		Name: Chaos Drone
 	Buildable:
@@ -191,9 +248,9 @@ caos:
 		TurnSpeed: 5
 		Crushes: fence, crate, infantry
 	Health:
-		HP: 300
+		HP: 200
 	Armor:
-		Type: Heavy
+		Type: Light
 	RevealsShroud:
 		Range: 8c0
 	Turreted:
@@ -215,7 +272,7 @@ caos:
 	RenderVoxels:
 	WithVoxelBody:
 	Voiced:
-		VoiceSet: AlliedVehicleVoice
+		VoiceSet: ChaosDroneVoice
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
@@ -224,7 +281,7 @@ mind:
 	Inherits: ^Vehicle
 	Inherits@MC: ^MindControllable
 	Valued:
-		Cost: 700
+		Cost: 1750
 	Tooltip:
 		Name: Master Mind
 	Buildable:
@@ -237,7 +294,7 @@ mind:
 		TurnSpeed: 5
 		Crushes: fence, crate, infantry
 	Health:
-		HP: 300
+		HP: 500
 	Armor:
 		Type: Heavy
 	RevealsShroud:
@@ -261,7 +318,7 @@ mind:
 	RenderVoxels:
 	WithVoxelBody:
 	Voiced:
-		VoiceSet: AlliedVehicleVoice
+		VoiceSet: MasterMindVoice
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
