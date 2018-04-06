@@ -10,6 +10,7 @@ EngineerVoice:
 		libya: iens
 		iraq: iens
 		russia: iens
+		yuri: ieny
 	Voices:
 		Select: sea, seb, sec, sed
 		Move: moa, mob, moc
@@ -410,3 +411,41 @@ CowVoice:
 		Move: gcowmova, gcowmovb
 		Feedback: gcowsela, gcowselb, gcowselc
 		Die: gcowdiea
+
+        
+
+InitiateVoice:
+	DefaultVariant: .wav
+	Voices: 
+		Attack: iiniata ,iiniatb ,iiniatc ,iiniatd ,iiniate ,iiniatf
+		Move: iinimoa ,iinimoc ,iinimod ,iinimoe
+		Select: iinisea ,iiniseb ,iinisec ,iinisee
+		Feedback: iinifea ,iinifeb ,iinifec ,iinifed ,iinifee
+		Die: iinidia ,iinidib ,iinidic ,iinidid ,iinidie
+
+BruteVoice:
+	DefaultVariant: .wav
+	Voices: 
+		Attack: ibruata ,ibruatb ,ibruatc ,ibruatd ,ibruate
+		Move: ibrumoa ,ibrumob ,ibrumoc ,ibrumod ,ibrumoe
+		Select: ibrusea ,ibruseb ,ibrusec ,ibrused ,ibrusee
+		Feedback: ibrufea ,ibrufeb ,ibrufec ,ibrufed ,ibrufee
+		Die: ibrudia ,ibrudib ,ibrudic ,ibrudid ,ibrudie
+
+VirusVoice:
+	DefaultVariant: .wav
+	Voices: 
+		Attack: ivirata ,iviratb ,iviratc ,iviratd ,iviratf ,iviratg
+		Move: ivirmoa ,ivirmob ,ivirmoc ,ivirmod ,ivirmoe
+		Select: ivirsea ,ivirseb ,ivirsec ,ivirsed ,ivirsee
+		Feedback: ,ivirfea ,ivirfeb ,ivirfec ,ivirfed ,ivirfee
+		Die: ivirdia ,ivirdib ,ivirdic ,ivirdid ,ivirdie
+     
+SlaveWorkerVoice:
+	DefaultVariant: .wav
+	Voices: 
+		Attack: isl1ata ,isl1atb ,isl1atc ,isl1atd ,isl1ate
+		Move: isl1moa ,isl1mob ,isl1moc ,isl1mod ,isl1moe
+		Select: isl1sea ,isl1seb ,isl1sec ,isl1sed ,isl1see ,isl1sef
+		Feedback: isl1fea ,isl1feb ,isl1fec ,isl1fed ,isl1fee ,isl2fea ,isl2feb ,isl2fec ,isl2fed ,isl2fee
+		Die: isl2dia ,isl2dib ,isl2dic ,isl2did ,isl2die

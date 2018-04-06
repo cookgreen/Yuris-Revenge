@@ -36,6 +36,7 @@ yacnst:
 		Sequence: idle-top
 	WithIdleOverlay@normal:
 		Sequence: idle-normal
+	WithBuildingPlacedAnimation:
 	ProvidesPrerequisite:
 		Prerequisite: structures.yuris
 	Power:
@@ -96,7 +97,7 @@ yabrck:
 		Prerequisite: yabrck
 	ProvidesPrerequisite@default:
 	Building:
-		Footprint: xxx xxx
+		Footprint: xx xx xx
 		Dimensions: 2,3
 	PrimaryBuilding:
 		PrimaryCondition: primary
@@ -143,7 +144,7 @@ yarefn:
 	Inherits@shape: ^2x2Shape
 	Buildable:
 		Queue: Building
-		BuildPaletteOrder: 1000
+		BuildPaletteOrder: 30
 		Prerequisites: power, ~structures.yuris
 		Description: Provides credits for Yuri
 	Selectable:
@@ -160,6 +161,9 @@ yarefn:
 		Range: 8c0
 	ProvidesPrerequisite:
 		Prerequisite: yarefn
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
 	TiberianSunRefinery:
 		DockOffset: 3,1
 		ShowTicks: True
@@ -203,33 +207,70 @@ yarefn:
 
 yaweap:
 	Inherits: ^Building
+	Inherits@shape: ^5x3Shape
 	Buildable:
 		Queue: Building
-		BuildPaletteOrder: 1000
-		Prerequisites: ~disabled
-		Description:
+		BuildPaletteOrder: 50
+		Prerequisites: power, yarefn, ~structures.yuris
+		Description: Produces Yuri Vehicles
 	Selectable:
-		Bounds: 220, 155, 0, -20
+		Bounds: 196, 178, -6, -48
+	Valued
+		Cost: 2000
+	Tooltip
+		Name: Yuri War Factory
+	ProvidesPrerequisite@default:
 	Health:
 		HP: 1000
 	Armor:
 		Type: wood
 	RevealsShroud:
 		Range: 8c0
-	Valued
-		Cost: 2000
-	Tooltip
-		Name: Yuri War Factory
+	RevealsShroud:
+		Range: 4c0
+	Building:
+		Footprint: xxxxx xxxxx xxxxx
+		Dimensions: 5,3
+	RallyPoint:
+		Offset: 6,1
+		Palette: mouse
+		IsPlayerPalette: false
+	Exit@1:
+		ExitCell: 5,1
+	Production:
+		Produces: Vehicle
+	PrimaryBuilding:
+		PrimaryCondition: primary
+	WithTextDecoration@primary:
+		RequiresSelection: true
+		Text: PRIMARY
+		ReferencePoint: Top
+		ZOffset: 256
+		RequiresCondition: primary
+	WithExitOverlay@door:
+		Sequence: build-door
+	WithExitOverlay@top-vehicles:
+		Sequence: build-top
+	WithIdleOverlay@lights:
+		Sequence: idle-lights
+	WithIdleOverlay@bib:
+		Sequence: bib
+	ProductionBar:
 	Power:
 		Amount: -25
+	InfiltrateForSupportPower:
+		Proxy: warfactory.infiltrated
+	Targetable:
+		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
 
 yayard:
 	Inherits: ^Building
+	Inherits@shape: ^4x4Shape
 	Buildable:
 		Queue: Building
-		BuildPaletteOrder: 1000
-		Prerequisites: ~disabled
-		Description:
+		BuildPaletteOrder: 50
+		Prerequisites: power, yarefn, ~structures.yuris
+		Description: Build Yuri's Navy Force
 	Selectable:
 		Bounds: 220, 155, 0, -20
 	Health:
@@ -243,9 +284,121 @@ yayard:
 	Tooltip
 		Name: Yuri Submarine Pen
 	ProvidesPrerequisite:
-		Prerequisite: YACNST
+		Prerequisite: yayard
 	Power:
 		Amount: -25
+	Targetable:
+		TargetTypes: Ground, Water, C4
+	ProvidesPrerequisite@default:
+	Building:
+		Footprint: xxxx xxxx xxxx xxxx
+		Dimensions: 4,4
+		Adjacent: 13
+		TerrainTypes: Water
+	-GivesBuildableArea:
+	Health:
+		HP: 1500
+	Armor:
+		Type: Concrete
+	RevealsShroud:
+		Range: 10c0
+	# X -2 column
+	Exit@n2_n2:
+		ExitCell: -2,-2
+	Exit@n2_n1:
+		ExitCell: -2,-1
+	Exit@n2_0:
+		ExitCell: -2,0
+	Exit@n2_1:
+		ExitCell: -2,1
+	Exit@n2_2:
+		ExitCell: -2,2
+	Exit@n2_3:
+		ExitCell: -2,3
+	Exit@n2_4:
+		ExitCell: -2,4
+	Exit@n2_5:
+		ExitCell: -2,5
+	# X -1 column
+	Exit@n1_n2:
+		ExitCell: -1,-2
+	Exit@n1_5:
+		ExitCell: -1,5
+	# X 0 column
+	Exit@0_n2:
+		ExitCell: 0,-2
+	Exit@0_5:
+		ExitCell: 0,5
+	# X 1 column
+	Exit@1_n2:
+		ExitCell: 1,-2
+	Exit@1_5:
+		ExitCell: 1,5
+	# X 2 column
+	Exit@2_n2:
+		ExitCell: 2,-2
+	Exit@2_5:
+		ExitCell: 2,5
+	# X 3 column
+	Exit@3_n2:
+		ExitCell: 3,-2
+	Exit@3_5:
+		ExitCell: 3,5
+	# X 4 column
+	Exit@4_n2:
+		ExitCell: 4,-2
+	Exit@4_5:
+		SpawnOffset: 0,-113,0
+		Facing: 160
+		ExitCell: 4,5
+	# X 5 column
+	Exit@5_n2:
+		ExitCell: 5,-2
+	Exit@5_n1:
+		ExitCell: 5,-1
+	Exit@5_0:
+		ExitCell: 5,0
+	Exit@5_1:
+		ExitCell: 5,1
+	Exit@5_2:
+		ExitCell: 5,2
+	Exit@5_3:
+		ExitCell: 5,3
+	Exit@5_4:
+		SpawnOffset: 0,-113,0
+		Facing: 96
+		ExitCell: 5,4
+	Exit@5_5:
+		ExitCell: 5,5
+	Production:
+		Produces: Ship
+	PrimaryBuilding:
+		PrimaryCondition: primary
+	WithTextDecoration@primary:
+		RequiresSelection: true
+		Text: PRIMARY
+		ReferencePoint: Top
+		ZOffset: 256
+		RequiresCondition: primary
+	RallyPoint:
+		Offset: 5,1
+		Palette: mouse
+		IsPlayerPalette: false
+	RepairsUnits:
+		FinishRepairingNotification: UnitRepaired
+	ProductionBar:
+	Power:
+		Amount: -20
+	WithIdleOverlay@crane:
+		Sequence: idle-crane
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+	WithRepairOverlay:
+		Sequence: repair
+	WithProductionOverlay@lights:
+		Sequence: production-lights
+	-EmitInfantryOnSell@allies:
+	-EmitInfantryOnSell@soviets:
 
 yadept:
 	Inherits: ^Building

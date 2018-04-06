@@ -29,6 +29,8 @@ init:
 	Armament@elite:
 		Weapon: PsychicJabE
 		RequiresCondition: rank-elite
+	Voiced:
+		VoiceSet: InitiateVoice
 	WithInfantryBody
 		DefaultAttackSequence: shoot
         
@@ -49,10 +51,31 @@ yengineer:
 		HP: 75
 	Mobile:
 		Speed: 40
+	DeliversCash:
+		Payload: 250
+		PlayerExperience: 25
+		Voice: Move
 	Passenger:
-		PipType: Green
+		PipType: Blue
+	EngineerRepair:
+	RepairsBridges:
+		RepairNotification: BridgeRepaired
+	Captures:
+		Sabotage: false
+		CaptureTypes: building, husk
+	-AutoTarget:
 	RevealsShroud:
-		Range: 5c0
+		Range: 4c0
+	Voiced:
+		VoiceSet: EngineerVoice
+	Guard:
+		Voice: Action
+	AttackMove:
+		Voice: Action
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+	WithInfantryBody:
+		DefaultAttackSequence: stand
         
 brute:
 	Inherits: ^Infantry
@@ -83,6 +106,8 @@ brute:
 	Armament@elite:
 		Weapon: PunchE
 		RequiresCondition: rank-elite
+	Voiced:
+		VoiceSet: BruteVoice
 	WithInfantryBody
 		DefaultAttackSequence: shoot
 
@@ -115,6 +140,8 @@ virus:
 	Armament@elite:
 		Weapon: VirusgunE
 		RequiresCondition: rank-elite
+	Voiced:
+		VoiceSet: VirusVoice
 	WithInfantryBody
 		DefaultAttackSequence: shoot
         
@@ -157,5 +184,7 @@ slav:
 	Armament@elite:
 		Weapon: shovel
 		RequiresCondition: rank-elite
+	Voiced:
+		VoiceSet: SlaveWorkerVoice
 	WithInfantryBody
 		DefaultAttackSequence: shoot

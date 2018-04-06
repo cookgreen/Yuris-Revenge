@@ -14,9 +14,13 @@ Packages:
 	./mods/common: common
 	~ra2.mix
 	~language.mix
-	~multi.mix
-	~audio.mix
+	~ra2md.mix
+	~langmd.mix
 	~cache.mix
+	~audiomd.mix
+	~audio.mix
+	~cameomd.mix
+	~multi.mix
 	~cameo.mix
 	~conquer.mix: conquer
 	~generic.mix
@@ -36,8 +40,6 @@ Packages:
 	~urb.mix
 	~urban.mix
 	~audio.bag
-	~ra2md.mix
-	~langmd.mix
 	~cachemd.mix
 	~conqmd.mix
 	~des.mix
@@ -61,8 +63,6 @@ Packages:
 	~snowmd.mix
 	~ubn.mix
 	~urbann.mix
-	~audiomd.mix
-	~cameomd.mix
 	~thememd.mix
 	yr|bits
 	yr|bits/cameos
@@ -121,6 +121,7 @@ Sequences:
 	yr|sequences/vehicles.yaml
 	yr|sequences/yuri-infantry.yaml
 	yr|sequences/yuri-structures.yaml
+	yr|sequences/yuri-vehicles.yaml
 
 ModelSequences:
 	yr|sequences/voxels.yaml

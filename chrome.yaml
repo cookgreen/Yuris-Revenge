@@ -1495,11 +1495,11 @@ flags: buttons.png
 	libya:   45, 21, 45, 21
 	iraq:    45, 42, 45, 21
 	russia:  45, 63, 45, 21
-	yuri:  45, 63, 45, 21
+	yuri:  90, 00, 45, 21
 	Random:  45, 84, 45, 21
 	random-allies:  00, 105, 45, 21
 	random-soviets:  45, 105, 45, 21
-	random-yuri:  45, 105, 45, 21
+	random-yuri:  90, 105, 45, 21
 	spectator: 45, 84, 45, 21
 
 music: musicplayer.png

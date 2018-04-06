@@ -156,3 +156,120 @@ yarefn:
 	icon: sminicon
 		Offset: 0,0
 		UseTilesetCode: false
+        
+yaweap:
+	Defaults:
+		Offset: -30, -60
+		UseTilesetCode: true
+		TilesetOverrides:
+			TEMPERATE: GENERIC
+			URBAN: GENERIC
+	idle: yaweap
+		ShadowStart: 3
+		ZOffset: -1536
+	damaged-idle: yaweap
+		Start: 1
+		ShadowStart: 4
+		ZOffset: -1536
+	build-door: yaweap_1
+		ShadowStart: 2
+		ZOffset: -1024
+	damaged-build-door: yaweap_1
+		Start: 1
+		ShadowStart: 3
+		ZOffset: -1024
+	build-top: yaweap_2
+		ShadowStart: 2
+		ZOffset: 1024
+	damaged-build-top: yaweap_2
+		Start: 1
+		ShadowStart: 3
+		ZOffset: 1024
+	build-air-open: yaweap_3
+		ShadowStart: 2
+	damaged-air-open: yaweap_3
+		Start: 1
+		ShadowStart: 3
+	build-air-inside: yaweap_4
+		ShadowStart: 2
+	damaged-air-inside: yaweap_4
+		Start: 1
+		ShadowStart: 3
+	bib: yaweapbb
+		ShadowStart: 2
+		ZOffset: -1024
+	damaged-bib: yaweapbb
+		Start: 1
+		ShadowStart: 2
+		ZOffset: -1024
+	idle-lights: yaweap_a
+		Length: 7
+		ShadowStart: 16
+		Tick: 150
+	damaged-idle-lights: yaweap_a
+		Start: 8
+		Length: 7
+		ShadowStart: 16
+		Tick: 150
+	make: yaweapmk
+		Length: 24
+		ShadowStart: 25
+		TilesetOverrides:
+			TEMPERATE: TEMPERATE
+			URBAN: URBAN
+	icon: ywepicon
+		Offset: 0,0
+		UseTilesetCode: false
+yayard:
+	Defaults:
+		Offset: 0, -45
+		UseTilesetCode: true
+		TilesetOverrides:
+			TEMPERATE: GENERIC
+			URBAN: GENERIC
+	idle: yayard
+		ShadowStart: 3
+	damaged-idle: yayard
+		Start: 2
+		ShadowStart: 4
+	idle-crane: yayard_a
+		Length: 15
+		ShadowStart: 32
+		Tick: 200
+	damaged-idle-crane: yayard_a
+		Start: 16
+		Length: 15
+		ShadowStart: 48
+		Tick: 200
+	idle-waves: ngyard_c
+		Length: 15
+		ShadowStart: 30
+		Tick: 200
+	damaged-idle-waves: yayard_c
+		Start: 16
+		Length: 15
+		ShadowStart: 32
+		Tick: 200
+	production-lights: yayard_d
+		Length: 15
+		ZOffset: 256
+	damaged-production-lights: yayard_d
+		Start: 15
+		Length: 15
+		ZOffset: 256
+	make: yayardmk
+		Length: 24
+		ShadowStart: 25
+		TilesetOverrides:
+			TEMPERATE: TEMPERATE
+			URBAN: URBAN
+	repair: yayard_s
+		Length: 15
+		ShadowStart: 32
+	damaged-repair: yayard_s
+		Start: 16
+		Length: 15
+		ShadowStart: 48
+	icon: yyrdicon
+		Offset: 0,0
+		UseTilesetCode: false
