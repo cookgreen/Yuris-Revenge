@@ -71,20 +71,20 @@ yapowr:
 		ShadowStart: 4
 		Tick: 150
 	idle-tier2: yapowr_b
-		length: 5
+		Length: 5
 		ShadowStart: 16
 		Tick: 150
 	damaged-idle-tier2: yapowr_b
 		Start: 8
-		length: 8
+		Length: 8
 		ShadowStart: 24
 		Tick: 150
 	idle-lights: yapowr_c
-		length: 2
+		Length: 2
 		Tick: 150
 	damaged-idle-lights: yapowr_c
 		Start: 5
-		length: 2
+		Length: 2
 		Tick: 150
 	icon: ypwricon
 		Offset: 0,0
@@ -98,20 +98,20 @@ yabrck:
 			TEMPERATE: GENERIC
 			URBAN: GENERIC
 	idle: yabrck
-		length: 1
+		Length: 1
 		ShadowStart: 3
 		Tick: 150
 	damaged-idle: yabrck
 		Start: 1
-		length: 1
+		Length: 1
 		ShadowStart: 4
 		Tick: 150
 	idle-training: yabrck_a
-		length: 7
+		Length: 7
 		Tick: 150
 	damaged-idle-training: yabrck_a
 		Start: 8
-		length: 7
+		Length: 7
 		Tick: 150
 	dead: ggpiledm # SHP broken & unused
 		Length: 25
@@ -146,11 +146,11 @@ yarefn:
 			TEMPERATE: TEMPERATE
 			URBAN: URBAN
 	idle-processing: yarefn_a
-		length: 2
+		Length: 2
 		ShadowStart: 2
 		Tick: 150
 	damaged-idle-processing: yarefn_a
-		length: 2
+		Length: 2
 		ShadowStart: 2
 		Tick: 150
 	icon: sminicon
@@ -271,5 +271,86 @@ yayard:
 		Length: 15
 		ShadowStart: 48
 	icon: yyrdicon
+		Offset: 0,0
+		UseTilesetCode: false
+        
+yagrnd:
+	Defaults:
+		Offset: 0, -31
+		UseTilesetCode: true
+		TilesetOverrides:
+			TEMPERATE: GENERIC
+			URBAN: GENERIC
+	idle: yagrnd_c
+		Length: 1
+		ShadowStart: 2
+		Tick: 180
+	damaged-idle: yagrnd_c
+		Start: 1
+		Length: 1
+		ShadowStart: 3
+	idle-normal: yagrnd_a
+		length: 10
+		ShadowStart: 11
+		Tick: 180
+	damaged-idle-normal: yagrnd_a
+		length: 10
+		ShadowStart: 11
+		Tick: 180
+	make: yagrndmk
+		Length: 30
+		ShadowStart: 30
+		TilesetOverrides:
+			TEMPERATE: TEMPERATE
+			URBAN: URBAN
+	grind: yagrnd_b
+		Length: 48
+		ShadowStart: 96
+		Tick: 120
+	damaged-grind: yagrnd_b
+		Start: 48
+		Length: 48
+		ShadowStart: 144
+		Tick: 120
+	icon: grndicon
+		Offset: 0,0
+		UseTilesetCode: false
+        
+naindp:
+	Defaults:
+		Offset: 0, -31
+		UseTilesetCode: true
+		TilesetOverrides:
+			TEMPERATE: GENERIC
+			URBAN: GENERIC
+	idle: naindp
+		Length: 1
+		ShadowStart: 3
+	damaged-idle: naindp
+		Start: 1
+		Length: 1
+		ShadowStart: 4
+	make: naindpmk
+		Length: 26
+		ShadowStart: 26
+		TilesetOverrides:
+			TEMPERATE: TEMPERATE
+			URBAN: URBAN
+	idle-processing: naindp_a
+		Length: 13
+		Tick: 150
+	damaged-idle-processing: naindp_a
+		Start: 14
+		Length: 11
+		Tick: 150
+	idle-lights: naindp_b
+		Length: 26
+		ShadowStart: 26
+		Tick: 150
+	damaged-idle-lights: naindp_b
+		Length: 26
+		ShadowStart: 26
+		Tick: 150
+	icon: indpicon
 		Offset: 0,0
 		UseTilesetCode: false

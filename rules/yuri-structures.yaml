@@ -79,7 +79,7 @@ yapowr:
 
 yabrck:
 	Inherits: ^Building
-	Inherits@shape: ^3x2Shape
+	Inherits@shape: ^2x3Shape
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 20
@@ -209,30 +209,6 @@ yarefn:
 		Amount: 0
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
-
-yagrnd:
-	Inherits: ^Building
-	Buildable:
-		Queue: Building
-		BuildPaletteOrder: 1000
-		Prerequisites: ~disabled
-		Description:
-	Selectable:
-		Bounds: 220, 155, 0, -20
-	Health:
-		HP: 900
-	Armor:
-		Type: wood
-	RevealsShroud:
-		Range: 8c0
-	Valued
-		Cost: 600
-	Tooltip
-		Name: Yuri Grinder
-	ProvidesPrerequisite:
-		Prerequisite: YAWEAP,YACNST
-	Power:
-		Amount: -50
 
 yaweap:
 	Inherits: ^Building
@@ -429,29 +405,39 @@ yayard:
 	-EmitInfantryOnSell@allies:
 	-EmitInfantryOnSell@soviets:
 
-yadept:
+yagrnd:
 	Inherits: ^Building
+	Inherits@shape: ^3x3Shape
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 1000
-		Prerequisites: ~disabled
-		Description:
+		Prerequisites: yaweap, ~structures.yuris
+		Description: Convert Soldiers and Vehicle to credits which provides for Yuri
 	Selectable:
-		Bounds: 220, 155, 0, -20
+		Bounds: 154, 127, 0, -20
 	Health:
-		HP: 1200
+		HP: 900
 	Armor:
 		Type: wood
 	RevealsShroud:
 		Range: 8c0
 	Valued
-		Cost: 800
+		Cost: 600
 	Tooltip
-		Name: Yuri Service Depot
+		Name: Yuri Grinder
+	Building:
+		Footprint: xxx xxx xxx
+		Dimensions: 3,3
 	ProvidesPrerequisite:
-		Prerequisite: YAWEAP,YACNST
+		Prerequisite: yagrnd
+	AcceptsDeliveredCash:
+	WithIdleOverlay@normal:
+		Sequence: idle-normal
+#Note: didn't support in 04e90
+#	WithAcceptDeliveredCashAnimation:
+#		Sequence: grind
 	Power:
-		Amount: -25
+		Amount: -50
 
 yatech:
 	Inherits: ^Building
@@ -693,13 +679,21 @@ garobo:
 
 naindp:
 	Inherits: ^Building
+	Inherits@shape: ^3x3Shape
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 1000
-		Prerequisites: ~disabled
-		Description:
+		Prerequisites: natech, ~structures.soviets
+		Description: Provides credits for Soviet War machine.
+		BuildLimit: 1
+	CashTrickler:
+		Interval: 100
+		Amount: 20
 	Selectable:
-		Bounds: 220, 155, 0, -20
+		Bounds: 178, 173, 0, -20
+	Building:
+		Footprint: xxx xxx xxx
+		Dimensions: 3,3
 	Health:
 		HP: 1000
 	Armor:
@@ -711,6 +705,10 @@ naindp:
 	Tooltip
 		Name: Soviet Industrial Plant
 	ProvidesPrerequisite:
-		Prerequisite: NATECH,PROC,NACNST
+		Prerequisite: naindp
+	WithIdleOverlay@processing:
+		Sequence: idle-processing
+	WithIdleOverlay@lights:
+		Sequence: idle-lights
 	Power:
 		Amount: -200

@@ -4,7 +4,7 @@ pcv:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 80
-		Prerequisites: yaweap, yadept
+		Prerequisites: ~yaweap, yagrnd
 		Description: Deploys into a Construction Yard.
 	Valued:
 		Cost: 3000
@@ -45,7 +45,7 @@ smin:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 10
-		Prerequisites: yaweap, yarefn
+		Prerequisites: ~yaweap, ~yarefn
 		Description: Provides Credit for Yuri
 	Valued:
 		Cost: 1500
