@@ -210,6 +210,30 @@ yarefn:
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
 
+yagrnd:
+	Inherits: ^Building
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 1000
+		Prerequisites: ~disabled
+		Description:
+	Selectable:
+		Bounds: 220, 155, 0, -20
+	Health:
+		HP: 900
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 8c0
+	Valued
+		Cost: 600
+	Tooltip
+		Name: Yuri Grinder
+	ProvidesPrerequisite:
+		Prerequisite: YAWEAP,YACNST
+	Power:
+		Amount: -50
+
 yaweap:
 	Inherits: ^Building
 	Inherits@shape: ^5x3Shape
@@ -453,6 +477,54 @@ yatech:
 	Power:
 		Amount: -100
 
+yagntc:
+	Inherits: ^Building
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 1000
+		Prerequisites: ~disabled
+		Description:
+	Selectable:
+		Bounds: 220, 155, 0, -20
+	Health:
+		HP: 1000
+	Armor:
+		Type: concrete
+	RevealsShroud:
+		Range: 8c0
+	Valued
+		Cost: 2500
+	Tooltip
+		Name: Yuri Genetic Mutator Device
+	ProvidesPrerequisite:
+		Prerequisite: YATECH,YACNST
+	Power:
+		Amount: -200
+
+yappet:
+	Inherits: ^Building
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 1000
+		Prerequisites: ~disabled
+		Description:
+	Selectable:
+		Bounds: 220, 155, 0, -20
+	Health:
+		HP: 1000
+	Armor:
+		Type: concrete
+	RevealsShroud:
+		Range: 8c0
+	Valued
+		Cost: 2500
+	Tooltip
+		Name: Yuri Puppet Master
+	ProvidesPrerequisite:
+		Prerequisite: YATECH,YACNST
+	Power:
+		Amount: -200
+
 gafwll:
 	Inherits: ^Building
 	Buildable:
@@ -500,54 +572,6 @@ yaggun:
 		Prerequisite: BARRACKS,YACNST
 	Power:
 		Amount: -50
-
-yagrnd:
-	Inherits: ^Building
-	Buildable:
-		Queue: Building
-		BuildPaletteOrder: 1000
-		Prerequisites: ~disabled
-		Description:
-	Selectable:
-		Bounds: 220, 155, 0, -20
-	Health:
-		HP: 900
-	Armor:
-		Type: wood
-	RevealsShroud:
-		Range: 8c0
-	Valued
-		Cost: 600
-	Tooltip
-		Name: Yuri Grinder
-	ProvidesPrerequisite:
-		Prerequisite: YAWEAP,YACNST
-	Power:
-		Amount: -50
-
-yagntc:
-	Inherits: ^Building
-	Buildable:
-		Queue: Building
-		BuildPaletteOrder: 1000
-		Prerequisites: ~disabled
-		Description:
-	Selectable:
-		Bounds: 220, 155, 0, -20
-	Health:
-		HP: 1000
-	Armor:
-		Type: concrete
-	RevealsShroud:
-		Range: 8c0
-	Valued
-		Cost: 2500
-	Tooltip
-		Name: Yuri Genetic Mutator Device
-	ProvidesPrerequisite:
-		Prerequisite: YATECH,YACNST
-	Power:
-		Amount: -200
 
 yapsyt:
 	Inherits: ^Building

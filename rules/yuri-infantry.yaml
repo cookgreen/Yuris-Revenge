@@ -11,6 +11,8 @@ init:
 		Name: Yuri Initiate
 	DeliversCash:
 		Payload: 100
+		PlayerExperience: 5
+		Voice: Move
 	Selectable:
 		Bounds: 20, 30, 0, -11
 	Health:
@@ -88,6 +90,10 @@ brute:
 		Cost: 500
 	Tooltip:
 		Name: Yuri Brute
+	DeliversCash:
+		Payload: 250
+		PlayerExperience: 10
+		Voice: Move
 	Selectable:
 		Bounds: 20, 30, 0, -11
 	Health:
@@ -122,6 +128,10 @@ virus:
 		Cost: 700
 	Tooltip:
 		Name: Yuri Virus
+	DeliversCash:
+		Payload: 350
+		PlayerExperience: 20
+		Voice: Move
 	Selectable:
 		Bounds: 20, 30, 0, -11
 	Health:
