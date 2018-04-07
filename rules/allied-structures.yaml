@@ -744,6 +744,9 @@ gaorep:
 		Description: Refines all forms of income by 25%.
 	Selectable:
 		Bounds: 134, 102, -10, -21
+	CashTrickler:
+		Interval: 100
+		Amount: 20
 	Valued:
 		Cost: 2500
 	Tooltip:
