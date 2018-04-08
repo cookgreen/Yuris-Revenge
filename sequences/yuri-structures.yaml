@@ -316,6 +316,35 @@ yagrnd:
 		Offset: 0,0
 		UseTilesetCode: false
         
+yatech:
+	Defaults:
+		Offset: 0, -45
+		UseTilesetCode: true
+		TilesetOverrides:
+			TEMPERATE: GENERIC
+			URBAN: GENERIC
+	idle: yatech
+		ShadowStart: 3
+	damaged-idle: yatech
+		Start: 1
+		ShadowStart: 4
+	critical-idle: yatech_a
+		Length: 31
+		ShadowStart: 64
+	damaged-critical-idle: yatech_a
+		Start: 31
+		Length: 31
+		ShadowStart: 64
+	make: yatechmk
+		Length: 25
+		ShadowStart: 25
+		TilesetOverrides:
+			TEMPERATE: TEMPERATE
+			URBAN: URBAN
+	icon: ytchicon
+		Offset: 0,0
+		UseTilesetCode: false
+        
 naindp:
 	Defaults:
 		Offset: 0, -31

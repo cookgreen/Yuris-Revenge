@@ -441,13 +441,14 @@ yagrnd:
 
 yatech:
 	Inherits: ^Building
+	Inherits@shape: ^3x2Shape
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 1000
-		Prerequisites: ~disabled
-		Description:
+		Prerequisites: yaweap, ~structures.yuris
+		Description: Provides newest technology for Yuri
 	Selectable:
-		Bounds: 220, 155, 0, -20
+		Bounds: 128, 215, 0, -20
 	Health:
 		HP: 500
 	Armor:
@@ -458,10 +459,19 @@ yatech:
 		Cost: 2000
 	Tooltip
 		Name: Yuri Battle Lab
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3,2
 	ProvidesPrerequisite:
-		Prerequisite: YAWEAP,YACNST,RADAR
+		Prerequisite: yatech
+	InfiltrateForSupportPower:
+		Proxy: yuris.tech.infiltrated
+	WithIdleOverlay@critical:
+		Sequence: critical-idle
 	Power:
 		Amount: -100
+	Targetable:
+		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
 
 yagntc:
 	Inherits: ^Building

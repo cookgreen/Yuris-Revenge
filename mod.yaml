@@ -20,7 +20,6 @@ Packages:
 	~audiomd.mix
 	~cameomd.mix
 	~multi.mix
-	~cameo.mix
 	~conquer.mix: conquer
 	~generic.mix
 	~isogen.mix

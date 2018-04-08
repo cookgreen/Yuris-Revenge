@@ -582,7 +582,7 @@ naclon:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 100
-		Prerequisites: natech, ~structures.soviets
+		Prerequisites: yatech, ~structures.yuris
 		BuildLimit: 1
 		Description: Clones most trained infantry.
 	Valued:
@@ -594,6 +594,9 @@ naclon:
 		Dimensions: 2, 2
 	Selectable:
 		Bounds: 108, 134, 0, -48
+	CashTrickler:
+		Interval: 100
+		Amount: 20
 	Health:
 		HP: 1000
 	Armor:
@@ -646,15 +649,14 @@ naclon:
 		IsPlayerPalette: false
 	ClonesProducedUnits:
 		CloneableTypes: infantry
-	AcceptsDeliveredCash:
 
 napsis:
 	Inherits: ^Building
 	Inherits@shape: ^2x2Shape
 	Buildable:
-		Queue: Support
+		Queue: Building
 		BuildPaletteOrder: 60
-		Prerequisites: natech, ~structures.soviets
+		Prerequisites: yarefn, ~structures.yuris
 		Description: Detects enemy units and strikepoints
 	Valued:
 		Cost: 2000
@@ -663,12 +665,17 @@ napsis:
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
+	ProvidesPrerequisite:
+		Prerequisite: radar
+	ProvidesPrerequisite@default:
 	Selectable:
 		Bounds: 82, 150, -1, -55
 	Health:
 		HP: 750
 	Armor:
 		Type: Wood
+	ProvidesRadar:
+		RequiresCondition: !disabled
 	RevealsShroud:
 		Range: 10c0
 	RenderDetectionCircle:
@@ -684,6 +691,8 @@ napsis:
 		IndicatorPalette: ts-mouse
 		PowerupSpeech: BuildingOnline
 		PowerdownSpeech: BuildingOffline
+	GrantConditionOnDisabled@IDISABLE:
+		Condition: disabled
 
 nairon:
 	Inherits: ^Building

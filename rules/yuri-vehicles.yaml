@@ -62,6 +62,10 @@ smin:
 		NoTransformNotification: BuildingCannotPlaceAudio
 	Health:
 		HP: 2000
+	DeliversCash:
+		Payload: 1500
+		PlayerExperience: 25
+		Voice: Move
 	Armor:
 		Type: Medium
 	Mobile:
@@ -110,6 +114,10 @@ ltnk:
 		Crushes: fence, crate, infantry
 	Health:
 		HP: 300
+	DeliversCash:
+		Payload: 700
+		PlayerExperience: 25
+		Voice: Move
 	Armor:
 		Type: Heavy
 	RevealsShroud:
@@ -157,6 +165,10 @@ ytnk:
 		Crushes: fence, crate, infantry
 	Health:
 		HP: 210
+	DeliversCash:
+		Payload: 600
+		PlayerExperience: 25
+		Voice: Move
 	Armor:
 		Type: Heavy
 	RevealsShroud:
@@ -202,6 +214,10 @@ tele:
 		Speed: 90
 		TurnSpeed: 5
 		Crushes: fence, crate, infantry
+	DeliversCash:
+		Payload: 1000
+		PlayerExperience: 25
+		Voice: Move
 	Health:
 		HP: 150
 	Armor:
@@ -249,6 +265,10 @@ caos:
 		Crushes: fence, crate, infantry
 	Health:
 		HP: 200
+	DeliversCash:
+		Payload: 800
+		PlayerExperience: 25
+		Voice: Move
 	Armor:
 		Type: Light
 	RevealsShroud:
@@ -295,6 +315,10 @@ mind:
 		Crushes: fence, crate, infantry
 	Health:
 		HP: 500
+	DeliversCash:
+		Payload: 1750
+		PlayerExperience: 25
+		Voice: Move
 	Armor:
 		Type: Heavy
 	RevealsShroud:
