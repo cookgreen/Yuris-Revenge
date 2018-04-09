@@ -1,5 +1,7 @@
 yr: Red Alert2 Yuri's Revenge Expansion
 	Install:
 		copy: .
-			^Content/mo/ra2md.mix: ra2md.mix
-			^Content/mo/langmd.mix: langmd.mix
+			^Content/yr/ra2md.mix: ra2md.mix
+			^Content/yr/langmd.mix: langmd.mix
+			^Content/yr/thememd.mix: thememd.mix
+			^Content/yr/movmd03.mix: movmd03.mix

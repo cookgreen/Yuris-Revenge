@@ -308,6 +308,9 @@ ModContent:
 		music-md: Yuri's Revenge Music
 			TestFiles: ^Content/yr/thememd.mix
 			Sources: yr, origin, tfd
+		movie-md: Yuri's Revenge Briefings
+			TestFiles: ^Content/yr/movmd03.mix
+			Sources: yr, origin, tfd
 	Sources:
 		yr|installer/ra2.yaml
 		yr|installer/yr.yaml
