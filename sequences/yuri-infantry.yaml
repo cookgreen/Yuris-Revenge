@@ -75,7 +75,7 @@ slav:
 		Start: 86
 	die2:
 		Start: 101
-	shovel:
+	harvest:
 		Start: 116
 	shoot:
 		Start: 164

@@ -168,11 +168,11 @@ slav:
 	Selectable:
 		Bounds: 20, 30, 0, -11
 	Harvester:
-		Capacity: 12
-		Resources: Ore, Gems
-		UnloadTicksPerBale: 1
-		SearchFromProcRadius: 24
-		SearchFromOrderRadius: 12
+		Capacity: 20
+		Resources: Ore,Gems
+		BaleUnloadDelay: 1
+		SearchFromProcRadius: 30
+		SearchFromOrderRadius: 11
 		HarvestVoice: Move
 		DeliverVoice: Move
 	Health:
@@ -185,9 +185,11 @@ slav:
 		Range: 5c0
 	AttackFrontal:
 		Voice: Attack
-	WithHarvestOverlay:
-		Sequence: shovel
-		Palette: effect
+	RenderSprites:
+	WithSpriteBody:
+	WithHarvestAnimation:
+	WithDockingAnimation:
+		DockSequence: idle
 	Armament@primary:
 		Weapon: shovel
 		RequiresCondition: !rank-elite

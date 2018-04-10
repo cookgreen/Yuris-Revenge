@@ -661,7 +661,7 @@ napsis:
 	Valued:
 		Cost: 2000
 	Tooltip:
-		Name: Psychic Sensor
+		Name: Yuri Psychic Sensor
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2

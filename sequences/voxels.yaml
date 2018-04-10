@@ -307,6 +307,9 @@ tele:
 	idle:
 	turret: teletur
     
+yaggun:
+	turret: yaggun
+    
 ycab:
 	idle:
     

@@ -33,17 +33,13 @@ yacnst:
 	damaged-idle-normal: yacnst
 		Start: 1
 		ShadowStart: 4
-	build: yacnst_b
-		Length: 21
+	crane-overlay: yacnst_b
+		Length: 18
 		Tick: 150
-	damaged-build: yacnst_b
-		Start: 21
-		Length: 21
+	damaged-crane-overlay: yacnst_b
+		Start: 18
+		Length: 18
 		Tick: 150
-	dead: ngcnstdm # SHP broken & unused
-		Length: 25
-		ShadowStart: 25
-		Tick: 100
 	icon: yconicon
 		Offset: 0,0
 		UseTilesetCode: false
@@ -383,3 +379,213 @@ naindp:
 	icon: indpicon
 		Offset: 0,0
 		UseTilesetCode: false
+        
+gafwll:
+	Defaults:
+		Offset: 0, -12
+		UseTilesetCode: true
+	idle: gafwll
+		Length: 16
+		ShadowStart: 32
+	damaged-idle: gafwll
+		Start: 16
+		Length: 16
+		ShadowStart: 48
+	icon: citwicon
+		Offset: 0,0
+		UseTilesetCode: false
+        
+natbnk:
+	Defaults:
+		Offset: 0, -12
+		UseTilesetCode: true
+	idle: natbnkbb
+		Length: 1
+		ShadowStart: 3
+	damaged-idle: natbnkbb
+		Start: 1
+		Length: 1
+		ShadowStart: 4
+	build: natbnk_b
+		Length: 10
+		ShadowStart: 20
+	damaged-build: natbnk_b
+		Start: 10
+		Length: 10
+		ShadowStart: 30
+	make: natbnkmk
+		Length: 10
+		ShadowStart: 10
+		TilesetOverrides:
+			TEMPERATE: TEMPERATE
+			URBAN: 
+	icon: tbnkicon
+		Offset: 0,0
+		UseTilesetCode: false
+        
+yaggun:
+	Defaults:
+		Offset: 0, -20
+		UseTilesetCode: true
+		TilesetOverrides:
+			TEMPERATE: GENERIC
+			URBAN: GENERIC
+	idle: yaggun
+		ShadowStart: 3
+	damaged-idle: yaggun
+		Start: 1
+		ShadowStart: 4
+	make: yaggunmk
+		Length: 13
+		ShadowStart: 13
+		TilesetOverrides:
+			TEMPERATE: TEMPERATE
+			URBAN: URBAN
+		ZOffset: 0
+	icon: ggunicon
+		Offset: 0,0
+		UseTilesetCode: false
+yapsyt:
+	Defaults:
+		Offset: 0, -15
+		UseTilesetCode: true
+		TilesetOverrides:
+			TEMPERATE: GENERIC
+			URBAN: GENERIC
+	idle: yapsyt
+		Length: 1
+		ShadowStart: 3
+	damaged-idle: yapsyt
+		Start: 1
+		Length: 1
+		ShadowStart: 4
+	idle-top: yapsyt_a
+		Length: 26
+		ShadowStart: 78
+	damaged-idle-top: yapsyt_a
+		Start: 52
+		Length: 26
+		ShadowStart: 130
+	idle-full: yapsyt_b
+		Length: 26
+		ShadowStart: 26
+	damaged-idle-full: yapsyt_a
+		Start: 52
+		Length: 26
+		ShadowStart: 104
+	make: yapsytmk
+		Length: 31
+		ShadowStart: 31
+		TilesetOverrides:
+			TEMPERATE: TEMPERATE
+			URBAN: URBAN
+	icon: psyticon
+		Offset: 0,0
+		UseTilesetCode: false
+yagntc:
+	Defaults:
+		Offset: 0, -31
+		UseTilesetCode: true
+		TilesetOverrides:
+			TEMPERATE: GENERIC
+			URBAN: GENERIC
+## ORA can't process yagntc shp file, use yapowr instead
+	make: yapowrmk
+		Length: 3
+		ShadowStart: 3
+		TilesetOverrides:
+			TEMPERATE: TEMPERATE
+			URBAN: URBAN
+	idle: yagntc
+		Length: 1
+		ShadowStart: 3
+		Tick: 150
+	damaged-idle: yagntc
+		Start: 1
+		Length: 1
+		ShadowStart: 4
+		Tick: 150
+	idle-top: yagntc_e
+		Length: 1
+		ShadowStart: 2
+		Tick: 150
+	damaged-idle-top: yagntc_e
+		Start: 1
+		Length: 1
+		ShadowStart: 3
+		Tick: 150
+	superweapon-active: yagntc_f
+		Length: 8
+		ShadowStart: 16
+		Tick: 150
+	damaged-superweapon-active: yagntc_f
+		Start: 8
+		Length: 8
+		ShadowStart: 24
+		Tick: 150
+	superweapon-reset: yagntc_h
+		Length: 31
+		ShadowStart: 63
+		Tick: 150
+	damaged-superweapon-reset: yagntc_h
+		Start: 31
+		Length: 31
+		ShadowStart: 93
+		Tick: 150
+	icon: gtncicon
+		Offset: 0,0
+		UseTilesetCode: false
+        
+yappet:
+	Defaults:
+		Offset: 0, -31
+		UseTilesetCode: true
+		TilesetOverrides:
+			TEMPERATE: GENERIC
+			URBAN: GENERIC
+	make: yappetmk
+		Length: 24
+		ShadowStart: 24
+		TilesetOverrides:
+			TEMPERATE: TEMPERATE
+			URBAN: URBAN
+	idle: yappet_e
+		Length: 1
+		ShadowStart: 2
+		Tick: 150
+	damaged-idle: yappet_e
+		Start: 1
+		Length: 1
+		ShadowStart: 3
+		Tick: 150
+	superweapon-active: yappet_f
+		Length: 19
+		ShadowStart: 38
+		Tick: 150
+	damaged-superweapon-active: yappet_f
+		Start: 19
+		Length: 19
+		ShadowStart: 57
+		Tick: 150
+	superweapon-idle: yappet_g
+		Length: 8
+		ShadowStart: 16
+		Tick: 150
+	damaged-superweapon-idle: yappet_g
+		Start: 8
+		Length: 8
+		ShadowStart: 24
+		Tick: 150
+	superweapon-reset: yappet_h
+		Length: 19
+		ShadowStart: 38
+		Tick: 150
+	damaged-superweapon-reset: yappet_h
+		Start: 19
+		Length: 19
+		ShadowStart: 57
+		Tick: 150
+	icon: pupticon
+		Offset: 0,0
+		UseTilesetCode: false
+        
