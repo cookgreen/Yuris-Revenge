@@ -397,7 +397,7 @@ gafwll:
         
 natbnk:
 	Defaults:
-		Offset: 0, -12
+		Offset: 0, -24
 		UseTilesetCode: true
 	idle: natbnkbb
 		Length: 1
@@ -418,7 +418,7 @@ natbnk:
 		ShadowStart: 10
 		TilesetOverrides:
 			TEMPERATE: TEMPERATE
-			URBAN: 
+			URBAN: URBAN
 	icon: tbnkicon
 		Offset: 0,0
 		UseTilesetCode: false
@@ -586,6 +586,35 @@ yappet:
 		ShadowStart: 57
 		Tick: 150
 	icon: pupticon
+		Offset: 0,0
+		UseTilesetCode: false
+
+nabnkr:
+	Defaults:
+		Offset: 0, -24
+		UseTilesetCode: true
+	idle: nabnkr
+		Length: 1
+		ShadowStart: 4
+	damaged-idle: nabnkr
+		Start: 1
+		Length: 1
+		ShadowStart: 5
+	idle-garrison: nabnkr
+		Start: 2
+		Length: 1
+		ShadowStart: 6
+	damaged-idle-garrison: nabnkr
+		Start: 3
+		Length: 1
+		ShadowStart: 7
+	make: nabnkrmk
+		Length: 25
+		ShadowStart: 25
+		TilesetOverrides:
+			TEMPERATE: TEMPERATE
+			URBAN: URBAN
+	icon: bnkricon
 		Offset: 0,0
 		UseTilesetCode: false
         
