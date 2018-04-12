@@ -504,9 +504,8 @@ natbnk:
 		Types: Vehicle
 		MaxWeight: 1
 		PipCount: 1
-		InitialUnits: ytnk
 	AttackGarrisoned:
-		Armaments: garrisoned
+		Armaments: primary
 		PortOffsets: 384,0,128, 224,-341,128, -224,-341,128, -384,0,128, -224,341,128, 224,341,128
 		PortYaws: 0, 176, 341, 512, 682, 853
 		PortCones: 88, 88, 88, 88, 88, 88
@@ -804,38 +803,3 @@ naindp:
 		Sequence: idle-lights
 	Power:
 		Amount: -200
-    
-nabnkr:
-	Inherits: ^Building
-	Inherits@shape: ^2x2Shape
-	Buildable:
-		Queue: Support
-		BuildPaletteOrder: 20
-		Prerequisites: nahand, ~structures.soviets
-		Description: Make Soviet soldier more powerful when against the enemies
-	Selectable:
-		Bounds: 220, 155, 0, -20
-	Health:
-		HP: 810
-	Armor:
-		Type: steel
-	Cargo:
-		Types: Infantry
-		MaxWeight: 6
-		PipCount: 6
-	AttackGarrisoned:
-		Armaments: garrisoned
-		PortOffsets: 384,0,128, 224,-341,128, -224,-341,128, -384,0,128, -224,341,128, 224,341,128
-		PortYaws: 0, 176, 341, 512, 682, 853
-		PortCones: 88, 88, 88, 88, 88, 88
-	RevealsShroud:
-		Range: 8c0
-	Valued
-		Cost: 600
-	Tooltip
-		Name: Soviet Battle Bunker
-	Building:
-		Footprint: xx xx
-		Dimensions: 2,2
-	Power:
-		Amount: 0

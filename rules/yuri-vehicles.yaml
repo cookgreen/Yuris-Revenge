@@ -176,11 +176,51 @@ ytnk:
 	Turreted:
 		TurnSpeed: 5
 	Armament@primary:
-		Weapon: 105mm
+		Weapon: AGGattling
 		LocalOffset: 640,0,384
 		RequiresCondition: !rank-elite
-	Armament@elite:
-		Weapon: 105mmE
+	Armament@primary-elite:
+		Weapon: AGGattling
+		LocalOffset: 640,0,384
+		RequiresCondition: rank-elite
+	Armament@second:
+		Weapon: AGGattling2
+		LocalOffset: 640,0,384
+		RequiresCondition: !rank-elite
+	Armament@second-elite:
+		Weapon: AGGattling2E
+		LocalOffset: 640,0,384
+		RequiresCondition: rank-elite
+	Armament@third:
+		Weapon: AGGattling3
+		LocalOffset: 640,0,384
+		RequiresCondition: !rank-elite
+	Armament@third-elite:
+		Weapon: AGGattling3E
+		LocalOffset: 640,0,384
+		RequiresCondition: rank-elite
+	Armament@forth:
+		Weapon: AAGattling
+		LocalOffset: 640,0,384
+		RequiresCondition: !rank-elite
+	Armament@forth-elite:
+		Weapon: AAGattlingE
+		LocalOffset: 640,0,384
+		RequiresCondition: rank-elite
+	Armament@fifth:
+		Weapon: AAGattling2
+		LocalOffset: 640,0,384
+		RequiresCondition: !rank-elite
+	Armament@fifth-elite:
+		Weapon: AAGattling2E
+		LocalOffset: 640,0,384
+		RequiresCondition: rank-elite
+	Armament@sixth:
+		Weapon: AAGattling3
+		LocalOffset: 640,0,384
+		RequiresCondition: !rank-elite
+	Armament@sixth-elite:
+		Weapon: AAGattling3E
 		LocalOffset: 640,0,384
 		RequiresCondition: rank-elite
 	AttackTurreted:

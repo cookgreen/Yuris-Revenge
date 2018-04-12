@@ -944,3 +944,38 @@ nalasr:
 		Range: 6c0
 		Type: pillbox
 	AutoTarget:
+    
+nabnkr:
+	Inherits: ^Building
+	Inherits@shape: ^2x2Shape
+	Buildable:
+		Queue: Support
+		BuildPaletteOrder: 20
+		Prerequisites: nahand, ~structures.soviets
+		Description: Make Soviet soldier more powerful when against the enemies
+	Selectable:
+		Bounds: 83, 75, 0, -20
+	Health:
+		HP: 810
+	Armor:
+		Type: steel
+	Cargo:
+		Types: Infantry
+		MaxWeight: 6
+		PipCount: 6 
+	AttackGarrisoned:
+		Armaments: primary
+		PortOffsets: 384,0,128, 224,-341,128, -224,-341,128, -384,0,128, -224,341,128, 224,341,128
+		PortYaws: 0, 176, 341, 512, 682, 853
+		PortCones: 88, 88, 88, 88, 88, 88
+	RevealsShroud:
+		Range: 8c0
+	Valued
+		Cost: 600
+	Tooltip
+		Name: Soviet Battle Bunker
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Power:
+		Amount: 0

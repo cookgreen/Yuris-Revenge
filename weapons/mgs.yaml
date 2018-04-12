@@ -150,7 +150,7 @@ PsychicJab:
 	Inherits: ^MG
 	ReloadDelay: 15
 	Range:4c512
-	Report: 
+	Report: iiniatta.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 25       
         
@@ -158,7 +158,7 @@ PsychicJabE:
 	Inherits: ^MG
 	ReloadDelay: 10
 	Range:6c0
-	Report: 
+	Report: iiniatta.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 30
         
@@ -166,7 +166,7 @@ Virusgun:
 	Inherits: ^MG
 	ReloadDelay: 100
 	Range:10c0
-	Report: 
+	Report: iviratta.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 125       
         
@@ -174,8 +174,150 @@ VirusgunE:
 	Inherits: ^MG
 	ReloadDelay: 100
 	Range:15c0
-	Report: 
+	Report: iviratta.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 125
         
+AGGattling:
+	Inherits: ^MG
+	ReloadDelay: 16
+	Range:5c0
+	Report: vgatlo1a.wav, vgatlo2a.wav, vgatlo2b.wav, vgatlo2c.wav, vgatlo3a.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 25 
+        
+AGGattling2:
+	Inherits: ^MG
+	ReloadDelay: 16
+	Range:5c0
+	Report: vgatlo4a.wav, vgatlo5a.wav, vgatlo5b.wav, vgatlo6a.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 25 
+        
+AGGattling3:
+	Inherits: ^MG
+	ReloadDelay: 16
+	Range:5c0
+	Report: vgatlo7a.wav, vgatlo8a.wav, vgatlo8b.wav, vgatlo9a.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 25 
+        
+AGGattlingE:
+	Inherits: ^MG
+	ReloadDelay: 16
+	Range:5c0
+	Report: vgatlo1a.wav, vgatlo2a.wav, vgatlo2b.wav, vgatlo2c.wav, vgatlo3a.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 25 
+        
+AGGattling2E:
+	Inherits: ^MG
+	ReloadDelay: 16
+	Range:5c0
+	Report: vgatlo4a.wav, vgatlo5a.wav, vgatlo5b.wav, vgatlo6a.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 25 
+        
+AGGattling3E:
+	Inherits: ^MG
+	ReloadDelay: 16
+	Range:5c0
+	Report: vgatlo7a.wav, vgatlo8a.wav, vgatlo8b.wav, vgatlo9a.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 25 
+        
+AAGattling:
+	Inherits: ^MG
+	ReloadDelay: 16
+	Range:8c0
+	Report: vgatlo1a.wav, vgatlo2a.wav, vgatlo2b.wav, vgatlo2c.wav, vgatlo3a.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 25 
+        
+AAGattling2:
+	Inherits: ^MG
+	ReloadDelay: 8
+	Range:8c0
+	Report: vgatlo4a.wav, vgatlo5a.wav, vgatlo5b.wav, vgatlo6a.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 30 
+        
+AAGattling3:
+	Inherits: ^MG
+	ReloadDelay: 4
+	Range:8c0
+	Report: vgatlo7a.wav, vgatlo8a.wav, vgatlo8b.wav, vgatlo9a.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 40 
+        
+AAGattlingE:
+	Inherits: ^MG
+	ReloadDelay: 16
+	Range:8c0
+	Report: vgatlo1a.wav, vgatlo2a.wav, vgatlo2b.wav, vgatlo2c.wav, vgatlo3a.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 25 
+        
+AAGattling2E:
+	Inherits: ^MG
+	ReloadDelay: 8
+	Range:8c0
+	Report: vgatlo4a.wav, vgatlo5a.wav, vgatlo5b.wav, vgatlo6a.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 25 
+        
+AAGattling3E:
+	Inherits: ^MG
+	ReloadDelay: 4
+	Range:8c0
+	Report: vgatlo7a.wav, vgatlo8a.wav, vgatlo8b.wav, vgatlo9a.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 25  
+        
+AAGattCann:
+	Inherits: ^MG
+	ReloadDelay: 100
+	Range:8c0
+	Report: vgatlo1a.wav, vgatlo2a.wav, vgatlo2b.wav, vgatlo2c.wav, vgatlo3a.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 125 
 
+AAGattCann2:
+	Inherits: ^MG
+	ReloadDelay: 100
+	Range:8c0
+	Report: vgatlo4a.wav, vgatlo5a.wav, vgatlo5b.wav, vgatlo6a.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 125 
+       
+AAGattCann3:
+	Inherits: ^MG
+	ReloadDelay: 100
+	Range:8c0
+	Report: vgatlo7a.wav, vgatlo8a.wav, vgatlo8b.wav, vgatlo9a.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 125 
+        
+AAGattCannE:
+	Inherits: ^MG
+	ReloadDelay: 100
+	Range:8c0
+	Report: vgatlo4a.wav, vgatlo5a.wav, vgatlo5b.wav, vgatlo6a.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 125
+
+AAGattCann2E:
+	Inherits: ^MG
+	ReloadDelay: 100
+	Range:8c0
+	Report: vgatlo4a.wav, vgatlo5a.wav, vgatlo5b.wav, vgatlo6a.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 125 
+       
+AAGattCann3E:
+	Inherits: ^MG
+	ReloadDelay: 100
+	Range:8c0
+	Report: vgatlo7a.wav, vgatlo8a.wav, vgatlo8b.wav, vgatlo9a.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 125 
