@@ -1,6 +1,6 @@
-# Yuri's Revenge for OpenRA
+# Yuri's Revenge Mod for OpenRA
 ## Introduction
-This is Yuri Revenge mod for OpenRA Engine
+Port Yuri's Revenge to OpenRA Engine
 
 ## Version
 049ed08
