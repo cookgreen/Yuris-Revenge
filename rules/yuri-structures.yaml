@@ -528,8 +528,6 @@ yaggun:
 		BuildPaletteOrder: 30
 		Prerequisites: yabrck, ~structures.yuris
 		Description: Powerful Anti-Infantry and Aircraft Cannon
-	Selectable:
-		Bounds: 220, 155, 0, -20
 	Health:
 		HP: 810
 	Armor:
@@ -548,10 +546,36 @@ yaggun:
 		Name: Yuri Gattling Cannon
 	Power:
 		Amount: -50
+	Turreted:
+		TurnSpeed: 10
+		InitialFacing: 224
+		Offset: 320,0,-20
 	AttackTurreted:
 		Voice: Attack
-	Armament:
-		Weapon: vulcan
+	Armament@pirmary:
+		Weapon: AGGattling
+	Armament@pirmary:
+		Weapon: AGGattlingE
+	Armament@second:
+		Weapon: AGGattling2
+	Armament@second:
+		Weapon: AGGattling2E
+	Armament@third:
+		Weapon: AGGattling3
+	Armament@third:
+		Weapon: AGGattling3E
+	Armament@pirmary-aa:
+		Weapon: AAGattling
+	Armament@pirmary-aa-elite:
+		Weapon: AAGattlingE
+	Armament@second-aa:
+		Weapon: AAGattling2
+	Armament@second-aa-elite:
+		Weapon: AAGattling2E
+	Armament@third-aa:
+		Weapon: AAGattling3
+	Armament@third-aa-elite:
+		Weapon: AAGattling3E
 	BodyOrientation:
 		QuantizedFacings: 16
 	RenderVoxels:

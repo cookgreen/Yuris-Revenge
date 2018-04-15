@@ -21,6 +21,9 @@ mind:
     
 disk:
 	icon: diskicon
+
+yhvr:
+	icon: yhvricon
     
 bsub:
-	icon: rsubicon
+	icon: bsubicon

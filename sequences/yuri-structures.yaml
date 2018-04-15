@@ -77,11 +77,11 @@ yapowr:
 		Tick: 150
 	idle-lights: yapowr_c
 		Length: 2
-		Tick: 150
+		Tick: 200
 	damaged-idle-lights: yapowr_c
 		Start: 5
 		Length: 2
-		Tick: 150
+		Tick: 200
 	icon: ypwricon
 		Offset: 0,0
 		UseTilesetCode: false

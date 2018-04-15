@@ -46,7 +46,7 @@ lcrf:
 	WithVoxelBody:
 	RenderSprites:
 	Voiced:
-		VoiceSet: AlliedNavalVoice
+		VoiceSet: HoverVoice
 	HitShape:
 
 dest:

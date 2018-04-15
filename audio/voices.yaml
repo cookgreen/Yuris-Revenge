@@ -22,6 +22,40 @@ EngineerVoice:
 		Melted: igenmela, igenmelb, igenmelc
 		# [EngAllPowerDown] Sounds = ienapow
 		DisablePrefixes: Zapped, Burned, Melted
+        
+HoverVoice:
+	DefaultVariant: .wav
+	Prefixes:
+		america: vhoa
+		germany: vhoa
+		england: vhoa
+		france: vhoa
+		korea: vhoa
+		cuba: vhos
+		libya: vhos
+		iraq: vhos
+		russia: vhos
+		yuri: vhoy
+	Voices:
+		Select: sea, seb, sec, sed, see
+		Move: moa, mob, moc, mod, moe   
+        
+MCVVoice:
+	DefaultVariant: .wav
+	Prefixes:
+		america: vmca
+		germany: vmca
+		england: vmca
+		france: vmca
+		korea: vmca
+		cuba: vmcs
+		libya: vmcs
+		iraq: vmcs
+		russia: vmcs
+		yuri: vmcy
+	Voices:
+		Select: sea, seb, sec, sed, see
+		Move: moa, mob, moc, mod, moe
 
 AlliedVehicleVoice:
 	DefaultVariant: .wav
@@ -450,12 +484,6 @@ SlaveWorkerVoice:
 		Feedback: isl1fea ,isl1feb ,isl1fec ,isl1fed ,isl1fee ,isl2fea ,isl2feb ,isl2fec ,isl2fed ,isl2fee
 		Die: isl2dia ,isl2dib ,isl2dic ,isl2did ,isl2die
         
-MCVYuriVoice:
-	DefaultVariant: .wav
-	Voices:
-		Select: vmcysea ,vmcyseb ,vmcysec ,vmcysed ,vmcysee
-		Move: vmcymoa ,vmcymob ,vmcymoc ,vmcymod ,vmcymoe
-        
 SlaveMinerVoice:
 	DefaultVariant: .wav
 	Voices:
@@ -497,3 +525,21 @@ MasterMindVoice:
 		Select: vmassea ,vmasseb ,vmassec ,vmassed ,vmassee ,vmassef
 		Move: vmasmoa ,vmasmob ,vmasmoc ,vmasmod ,vmasmoe
 		Attack: vmasata ,vmasatb ,vmasatc ,vmasatd ,vmasate ,vmasatf
+        
+DiskVoice:
+	DefaultVariant: .wav
+	Voices:
+		Build: vflomoe
+		Select: vflosea ,vfloseb ,vflosec ,vflosed ;,vflosee
+		Move: vflomob ,vflomoc ,vflomod
+		Attack: vfloata ,vfloatb ,vfloatc ,vfloatd ,vfloate
+		Steal: vflosta ,vflostb ,vflostd ,vfloste ,vflostf
+		Die: vflodiea
+        
+BoomerVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: vboosea ,vbooseb ,vboosec ,vboosed ,vboosee
+		Move: vboomoa ,vboomob ,vboomoc ,vboomod ,vboomoe
+		Attack: vbooa2a ,vbooa2b ,vbooa2c ,vbooa2d ,vbooa2e ,vbooa2f
+		Attack-Land: vbooa1a ,vbooa1b ,vbooa1c ,vbooa1d ,vbooa1e ,vbooa1f

@@ -37,7 +37,7 @@ pcv:
 	RenderVoxels:
 	WithVoxelBody:
 	Voiced:
-		VoiceSet: MCVYuriVoice
+		VoiceSet: MCVVoice
 	HitShape:
     
 smin:
@@ -386,3 +386,58 @@ mind:
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
+
+
+disk:
+	Inherits: ^Aircraft
+	Valued:
+		Cost: 1750
+	Tooltip:
+		Name: Floating Disk
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 30
+		Prerequisites: ~yaweap, yatech
+		Description: Yuri Laser Disk, Strong with infantry, aircraft\n Weak with vehicles
+	Aircraft:
+		TurnSpeed: 3
+		Speed: 140
+	Selectable:
+		Bounds: 30,24
+	Health:
+		HP: 150
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 8c0
+		Type: CenterPosition
+	Armament@primary:
+		Weapon: DiskLaser
+	Armament@second:
+		Weapon: DiskDrain
+	AttackPlane:
+		FacingTolerance: 20
+		Voice: Attack
+	Voiced:
+		VoiceSet: DiskVoice
+	AutoTarget:
+	Turreted:
+		TurnSpeed: 5
+	RenderSprites:
+	RenderVoxels:
+	WithVoxelBody:
+	WithVoxelTurret:
+	AttackTurreted:
+		Voice: Attack
+	AnnounceOnBuild:
+	HitShape:
+
+diskhusk:
+	Inherits: ^PlaneHusk
+	Tooltip:
+		Name: Harrier
+	Aircraft:
+		TurnSpeed: 5
+		Speed: 140
+	RenderVoxels:
+		Image: falc

@@ -38,7 +38,7 @@ smcv:
 	RenderVoxels:
 	WithVoxelBody:
 	Voiced:
-		VoiceSet: SovietVehicleVoice
+		VoiceSet: MCVVoice
 	HitShape:
 
 harv:

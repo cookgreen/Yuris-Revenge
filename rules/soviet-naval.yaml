@@ -45,6 +45,8 @@ sapc:
 		EmptyWeapon: UnitExplode
 	WithVoxelBody:
 	RenderSprites:
+	Voiced:
+		VoiceSet: HoverVoice
 	HitShape:
 
 sub:

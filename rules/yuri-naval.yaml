@@ -1,0 +1,113 @@
+yhvr:
+	Inherits: ^Ship
+	Buildable:
+		Queue: Ship
+		BuildPaletteOrder: 10
+		Prerequisites: ~yayard
+		Description:Yuri naval transport.\nCan carry yuri infantry and yuri vehicles.\n  Unarmed
+	Valued:
+		Cost: 900
+	Tooltip:
+		Name: Hover Transport Yuri
+	Selectable:
+		Bounds: 60, 80, 0, -6
+	Health:
+		HP: 300
+	Armor:
+		Type: Heavy
+	Mobile:
+		TurnSpeed: 10
+		Speed: 75
+		TerrainSpeeds:
+			Clear: 80
+			Rough: 80
+			Rail: 50
+			Road: 100
+			DirtRoad: 100
+			Beach: 60
+			Ore: 50
+			Gems: 50
+			Water: 100
+		RequiresCondition: !notmobile
+	RevealsShroud:
+		Range: 6c0
+	Cargo:
+		Types: Infantry, Vehicle
+		MaxWeight: 9
+		PipCount: 12
+		PassengerFacing: 96
+		UnloadTerrainTypes: Clear, Rough, Rail, Road, DirtRoad, Beach, Ore, Gems
+		UnloadVoice: Move
+		LoadingCondition: notmobile
+	Explodes:
+		Weapon: UnitExplode
+		EmptyWeapon: UnitExplode
+	WithVoxelBody:
+	RenderSprites:
+	Voiced:
+		VoiceSet: HoverVoice
+	HitShape:
+
+bsub:
+	Inherits: ^Ship
+	Inherits@MC: ^MindControllable
+	Buildable:
+		Queue: Ship
+		BuildPaletteOrder: 20
+		Prerequisites: ~yayard
+		Description: Basic Yuri Navy unit\nCan detect other submarines and Giant Squids.\n  Strong vs Ships\n  Weak vs Ground units, Aircraft\nSpecial Ability: Submerge
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: Yuri Boomer
+	Health:
+		HP: 1200
+	Armor:
+		Type: Heavy
+	Mobile:
+		TurnSpeed: 4
+		Speed: 71
+	-LeavesTrails:
+	RevealsShroud:
+		Range: 6c0
+	-Targetable:
+	Targetable:
+		TargetTypes: Ground, Water, Repair
+		RequiresCondition: underwater
+	Cloak:
+		CloakTypes: Underwater
+		InitialDelay: 50
+		CloakDelay: 75
+		CloakSound: vnavupa.wav
+		UncloakSound: vnavupa.wav
+		CloakedCondition: underwater
+		UncloakOn: Damage
+		IsPlayerPalette: true
+		RequiresCondition: !uncloak-critical-damage
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: uncloak-critical-damage
+		ValidDamageStates: Critical
+	Armament:
+		Weapon: SubTorpedo
+		LocalOffset: 768,0,0
+		FireDelay: 2
+	AttackFrontal:
+		Voice: Attack
+	AutoTarget:
+		InitialStance: ReturnFire
+	DetectCloaked:
+		CloakTypes: Underwater
+		Range: 4c0
+	RenderDetectionCircle:
+	Explodes:
+		Weapon: UnitExplode
+		EmptyWeapon: UnitExplode
+	-MustBeDestroyed:
+	WithVoxelBody:
+	RenderSprites:
+	Targetable@underwater:
+		TargetTypes: Underwater, Repair
+		RequiresCondition: underwater
+	Voiced:
+		VoiceSet: BoomerVoice
+	HitShape:

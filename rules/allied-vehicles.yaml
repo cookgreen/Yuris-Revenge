@@ -37,7 +37,7 @@ amcv:
 	RenderVoxels:
 	WithVoxelBody:
 	Voiced:
-		VoiceSet: AlliedConstructionVehicleVoice
+		VoiceSet: MCVVoice
 	HitShape:
 
 cmin:
