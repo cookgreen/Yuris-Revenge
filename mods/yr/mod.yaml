@@ -1,0 +1,324 @@
+Metadata:
+	Title: Red Alert 2 Yuri's Revenge
+	Description: Yuri has returned from shadow, it is time to take revenge!
+	Version: release-20180307
+	Author: the RA2YR mod team
+
+PackageFormats: Mix, AudioBag
+
+Packages:
+	~^Content/yr
+	.
+	$ra2: ra2
+	$yr: yr
+	./mods/common: common
+	~ra2.mix
+	~language.mix
+	~cameo.mix
+	~ra2md.mix
+	~langmd.mix
+	~cache.mix
+	~audiomd.mix
+	~cameomd.mix
+	~multi.mix
+	~conquer.mix: conquer
+	~generic.mix
+	~isogen.mix
+	~isosnow.mix
+	~isotemp.mix
+	~isourb.mix
+	~load.mix
+	~local.mix
+	~neutral.mix
+	~sidec01.mix
+	~sidec02.mix
+	~sno.mix
+	~snow.mix
+	~tem.mix
+	~temperat.mix
+	~urb.mix
+	~urban.mix
+	~cachemd.mix
+	~conqmd.mix
+	~des.mix
+	~desert.mix
+	~genermd.mix
+	~isodes.mix
+	~isodesmd.mix
+	~isolun.mix
+	~isolunmd.mix
+	~isosnomd.mix
+	~isotemmd.mix
+	~isoubn.mix
+	~isoubnmd.mix
+	~isourbmd.mix
+	~loadmd.mix
+	~localmd.mix
+	~lun.mix
+	~lunar.mix
+	~ntrlmd.mix
+	~sidec02md.mix
+	~snowmd.mix
+	~ubn.mix
+	~urbann.mix
+	~audio.bag
+	~thememd.mix
+	yr|bits
+	yr|bits/cameos
+	yr|bits/structures
+	yr|bits/animations
+	yr|uibits
+
+MapFolders:
+	yr|maps: System
+	~^maps/yr/049ed08: User
+
+Rules:
+	yr|rules/proxy-actors.yaml
+	yr|rules/misc.yaml
+	yr|rules/ai.yaml
+	yr|rules/player.yaml
+	yr|rules/world.yaml
+	yr|rules/palettes.yaml
+	yr|rules/defaults.yaml
+	yr|rules/allied-infantry.yaml
+	yr|rules/soviet-infantry.yaml
+	yr|rules/yuri-infantry.yaml
+	yr|rules/civilians.yaml
+	yr|rules/animals.yaml
+	yr|rules/allied-structures.yaml
+	yr|rules/soviet-structures.yaml
+	yr|rules/yuri-structures.yaml
+	yr|rules/civilian-structures.yaml
+	yr|rules/tech-structures.yaml
+	yr|rules/allied-vehicles.yaml
+	yr|rules/soviet-vehicles.yaml
+	yr|rules/yuri-vehicles.yaml
+	yr|rules/civilian-vehicles.yaml
+	yr|rules/allied-naval.yaml
+	yr|rules/soviet-naval.yaml
+	yr|rules/yuri-naval.yaml
+	yr|rules/aircraft.yaml
+	yr|rules/civilian-props.yaml
+	yr|rules/trees.yaml
+	yr|rules/civilian-naval.yaml
+
+Sequences:
+	yr|sequences/aircraft.yaml
+	yr|sequences/allied-infantry.yaml
+	yr|sequences/allied-structures.yaml
+	yr|sequences/animals.yaml
+	yr|sequences/civilians.yaml
+	yr|sequences/civilian-props.yaml
+	yr|sequences/civilian-structures.yaml
+	yr|sequences/defaults.yaml
+	yr|sequences/misc.yaml
+	yr|sequences/soviet-infantry.yaml
+	yr|sequences/soviet-structures.yaml
+	yr|sequences/tech-structures.yaml
+	yr|sequences/trees.yaml
+	yr|sequences/vehicles.yaml
+	yr|sequences/yuri-infantry.yaml
+	yr|sequences/yuri-structures.yaml
+	yr|sequences/yuri-vehicles.yaml
+
+ModelSequences:
+	yr|sequences/voxels.yaml
+
+Cursors:
+	yr|cursors.yaml
+
+Chrome:
+	yr|chrome.yaml
+
+Assemblies:
+	common|OpenRA.Mods.Common.dll
+	common|OpenRA.Mods.Cnc.dll
+	ra2|OpenRA.Mods.RA2.dll
+	yr|yr.dll
+
+ChromeLayout:
+	yr|chrome/ingame-player.yaml
+	yr|chrome/ingame-infoobjectives.yaml
+	common|chrome/ingame-infostats.yaml
+	common|chrome/ingame-observerstats.yaml
+	common|chrome/musicplayer.yaml
+	common|chrome/tooltips.yaml
+	common|chrome/ingame.yaml
+	common|chrome/ingame-observer.yaml
+	common|chrome/ingame-chat.yaml
+	common|chrome/ingame-fmvplayer.yaml
+	common|chrome/ingame-menu.yaml
+	common|chrome/ingame-info.yaml
+	common|chrome/ingame-infoscripterror.yaml
+	common|chrome/ingame-infobriefing.yaml
+	common|chrome/ingame-debug.yaml
+	common|chrome/ingame-perf.yaml
+	common|chrome/mainmenu.yaml
+	common|chrome/settings.yaml
+	common|chrome/credits.yaml
+	common|chrome/lobby.yaml
+	common|chrome/lobby-players.yaml
+	common|chrome/lobby-options.yaml
+	common|chrome/lobby-music.yaml
+	common|chrome/lobby-mappreview.yaml
+	common|chrome/lobby-kickdialogs.yaml
+	common|chrome/multiplayer-browser.yaml
+	common|chrome/multiplayer-createserver.yaml
+	common|chrome/multiplayer-directconnect.yaml
+	common|chrome/map-chooser.yaml
+	common|chrome/connection.yaml
+	common|chrome/replaybrowser.yaml
+	yr|chrome/assetbrowser.yaml
+	common|chrome/missionbrowser.yaml
+	common|chrome/confirmation-dialogs.yaml
+	common|chrome/color-picker.yaml
+	common|chrome/dropdowns.yaml
+	common|chrome/editor.yaml
+    
+Hotkeys:
+	common|hotkeys/game.yaml
+	common|hotkeys/observer.yaml
+	common|hotkeys/production-common.yaml
+	common|hotkeys/supportpowers.yaml
+	common|hotkeys/viewport.yaml
+	yr|hotkeys.yaml
+
+Weapons:
+	yr|weapons/bullets.yaml
+	yr|weapons/defaults.yaml
+	yr|weapons/explosions.yaml
+	yr|weapons/flaks.yaml
+	yr|weapons/melee.yaml
+	yr|weapons/mgs.yaml
+	yr|weapons/misc.yaml
+	yr|weapons/missiles.yaml
+	yr|weapons/zaps.yaml
+
+Voices:
+	yr|audio/voices.yaml
+
+Notifications:
+	yr|audio/notifications.yaml
+
+TileSets:
+	yr|tilesets/temperat.yaml
+	yr|tilesets/snow.yaml
+	yr|tilesets/urban.yaml
+
+MapGrid:
+	Type: RectangularIsometric
+	TileSize: 60,30
+	SubCellsOffsets: 0,0,0, -256,128,0, 0,-128,0, 256,128,0
+	DefaultSubCell: 2
+	MaximumTerrainHeight: 16
+
+Music:
+	yr|audio/music.yaml
+
+Translations:
+	yr|languages/english.yaml
+
+LoadScreen: LogoStripeLoadScreen
+	Image: yr|uibits/loadscreen.png
+	Text: Carving wooden nickels..., Preparing paratroopers..., Welcoming you to Texas..., Optimizing helium mix..., Receiving thoughts..., Igniting boosters...
+
+ServerTraits:
+	LobbyCommands
+	PlayerPinger
+	MasterServerPinger
+
+ChromeMetrics:
+	common|metrics.yaml
+	yr|metrics.yaml
+
+Fonts:
+	Regular:
+		Font: common|FreeSans.ttf
+		Size:14
+	Bold:
+		Font: common|FreeSansBold.ttf
+		Size:14
+	Title:
+		Font: common|FreeSansBold.ttf
+		Size:32
+	BigBold:
+		Font: common|FreeSansBold.ttf
+		Size:24
+	MediumBold:
+		Font: common|FreeSansBold.ttf
+		Size:18
+	Small:
+		Font: common|FreeSans.ttf
+		Size:12
+	Tiny:
+		Font: common|FreeSans.ttf
+		Size:10
+	TinyBold:
+		Font: common|FreeSansBold.ttf
+		Size:10
+
+SupportsMapsFrom: yr
+
+SoundFormats: Aud, Wav
+
+SpriteFormats: ShpTS, TmpTS, ShpTD
+
+SpriteSequenceFormat: TilesetSpecificSpriteSequence
+	TilesetExtensions:
+		TEMPERATE: .tem
+		SNOW: .sno
+		URBAN: .urb
+	TilesetCodes:
+		GENERIC: g
+		SNOW: a
+		TEMPERATE: t
+		URBAN: u
+
+ModelSequenceFormat: VoxelModelSequence
+
+GameSpeeds:
+	slower:
+		Name: Slower
+		Timestep: 50
+		OrderLatency: 3
+	default:
+		Name: Default
+		Timestep: 40
+		OrderLatency: 3
+	fast:
+		Name: Fast
+		Timestep: 35
+		OrderLatency: 4
+	faster:
+		Name: Faster
+		Timestep: 30
+		OrderLatency: 4
+	fastest:
+		Name: Fastest
+		Timestep: 20
+		OrderLatency: 6
+
+ModContent:
+	InstallPromptMessage: Red Alert 2 Yuri's Revenge requires artwork and audio from the original game.
+	HeaderMessage: The original game content must be copied from an original game disc.
+	Packages:
+		base: Red Alert 2 Files
+			TestFiles: ^Content/yr/ra2.mix, ^Content/yr/language.mix
+			Sources: ra2, origin, tfd
+			Required: true
+		base-md: Yuri's Revenge Files
+			TestFiles: ^Content/yr/ra2md.mix, ^Content/yr/langmd.mix
+			Sources: yr, origin, tfd
+			Required: true
+		music-md: Yuri's Revenge Music
+			TestFiles: ^Content/yr/thememd.mix
+			Sources: yr, origin, tfd
+		movie-md: Yuri's Revenge Briefings
+			TestFiles: ^Content/yr/movmd03.mix
+			Sources: yr, origin, tfd
+	Sources:
+		yr|installer/ra2.yaml
+		yr|installer/yr.yaml
+		yr|installer/origin.yaml
+		yr|installer/firstdecade.yaml

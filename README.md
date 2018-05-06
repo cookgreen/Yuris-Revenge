@@ -3,11 +3,11 @@
 Port Yuri's Revenge to OpenRA Engine
 
 ## Version
-049ed08
+release-20180307
 
 ## Requirement
-OpenRA - Version: 049ed08  
-OpenRA Ra2 mod - Version: 049ed08  
+OpenRA - Version: release-20180307  
+OpenRA Ra2 mod - Version: release-20180307 
 
 ## Usage
 Check https://github.com/cookgreen/yr/wiki for more details

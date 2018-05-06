@@ -1,0 +1,369 @@
+e2:
+	Inherits@1: ^Infantry
+	Inherits@2: ^Parachutable
+	Inherits@MC: ^MindControllable
+	Buildable:
+		Queue: Infantry
+		Prerequisites: ~nahand
+		BuildPaletteOrder: 20
+		Description: Cheap rifle infantry.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+	Valued:
+		Cost: 100
+	DeliversCash:
+		Payload: 50
+		PlayerExperience: 5
+		Voice: Move
+	Tooltip:
+		Name: Conscript
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Health:
+		HP: 125
+	Mobile:
+		Speed: 34
+	Passenger:
+		PipType: Green
+	RevealsShroud:
+		Range: 5c0
+	AttackFrontal:
+		Voice: Attack
+	Armament@primary:
+		Weapon: M1Carbine
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: M1CarbineE
+		RequiresCondition: rank-elite
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+	Voiced:
+		VoiceSet: ConscriptVoice
+	ProducibleWithLevel:
+		Prerequisites: barracks.infiltrated
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+
+flakt:
+	Inherits@1: ^Infantry
+	Inherits@2: ^Parachutable
+	Inherits@MC: ^MindControllable
+	Buildable:
+		Queue: Infantry
+		Prerequisites: naradr, ~nahand
+		BuildPaletteOrder: 70
+		Description: Anti-Air/Anti-Infantry unit.\n  Strong vs Aircraft, Infantry\n  Weak vs Vehicles
+	Valued:
+		Cost: 100
+	DeliversCash:
+		Payload: 50
+		PlayerExperience: 5
+		Voice: Move
+	Tooltip:
+		Name: Flak Trooper
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Health:
+		HP: 100
+	Mobile:
+		Speed: 34
+	Passenger:
+		PipType: Green
+	RevealsShroud:
+		Range: 5c0
+	AttackFrontal:
+		Voice: Attack
+	Armament@primary:
+		Weapon: FlakGuyGun
+		RequiresCondition: !rank-elite
+	Armament@secondary:
+		Weapon: FlakGuyAAGun
+		RequiresCondition: !rank-elite
+	Armament@primary-elite:
+		Weapon: FlakGuyGunE
+		RequiresCondition: rank-elite
+	Armament@secondary-elite:
+		Weapon: FlakGuyAAGunE
+		RequiresCondition: rank-elite
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+		IdleAnimation:
+	Voiced:
+		VoiceSet: FlakTrooperVoice
+	ProducibleWithLevel:
+		Prerequisites: barracks.infiltrated
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+
+shk:
+	Inherits@1: ^Infantry
+	Inherits@2: ^Parachutable
+	Inherits@MC: ^MindControllable
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Infantry
+		Prerequisites: ~nahand
+		BuildPaletteOrder: 50
+		Description: Special armored unit using electricity.\n  Strong vs Infantry, Light armor\n  Weak vs Tanks, Aircraft\nSpecial ability: Charge tesla coils
+	Valued:
+		Cost: 500
+	DeliversCash:
+		Payload: 250
+		PlayerExperience: 25
+		Voice: Move
+	Tooltip:
+		Name: Tesla Trooper
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Health:
+		HP: 130
+	Mobile:
+		Speed: 51
+	RevealsShroud:
+		Range: 6c0
+	Armor:
+		Type: Plate
+	Passenger:
+		PipType: Red
+	AttackFrontal:
+		Voice: Attack
+	Armament@primary:
+		Weapon: ElectricBolt
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: ElectricBoltE
+		RequiresCondition: rank-elite
+	Armament@charge:
+		Weapon: AssaultBolt
+		LocalOffset: 427,0,341
+		TargetStances: Ally
+		ForceTargetStances: None
+		Cursor: ability
+		OutsideRangeCursor: ability
+	AmmoPool:
+		PipCount: 0
+		SelfReloads: true
+		SelfReloadTicks: 70
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+	ProximityExternalCondition:
+		Condition: charged
+		Range: 1c256
+	Voiced:
+		VoiceSet: TeslaTrooperVoice
+	ProducibleWithLevel:
+		Prerequisites: barracks.infiltrated
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+	ReloadAmmoPool@1:
+
+terror:
+	Inherits: ^Infantry
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Infantry
+		BuildPaletteOrder: 90
+		Prerequisites: naradr, ~infantry.cuba
+		Description: Carries C4 charges taped to his body and kamikazes enemies\nblowing them up quickly and efficiently.\n  Strong vs Ground units\n  Weak vs Aircraft
+	Valued:
+		Cost: 200
+	DeliversCash:
+		Payload: 100
+		PlayerExperience: 10
+		Voice: Move
+	Tooltip:
+		Name: Terrorist
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Health:
+		HP: 75
+	Mobile:
+		Speed: 71
+	RevealsShroud:
+		Range: 6c0
+	Armor:
+		Type: Flak
+	Passenger:
+		PipType: Red
+	Explodes:
+		Weapon: TerrorBomb
+		EmptyWeapon: TerrorBomb
+	AttackSuicides:
+		Voice: Attack
+	AttackFrontal:
+		Voice: Attack
+	WithInfantryBody:
+	Voiced:
+		VoiceSet: TerroristVoice
+	-TakeCover:
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+
+deso:
+	Inherits: ^Infantry
+	Inherits@MC: ^MindControllable
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Infantry
+		BuildPaletteOrder: 120
+		Prerequisites: naradr, ~infantry.iraq
+		Description: Carries a radiation-emitting weapon.\nCan deploy for area-of-effect damage.\n  Strong vs Infantry, Light armor\n  Weak vs Tanks, Aircraft
+	Valued:
+		Cost: 200
+	DeliversCash:
+		Payload: 100
+		PlayerExperience: 10
+		Voice: Move
+	Tooltip:
+		Name: Desolator
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Health:
+		HP: 150
+	Mobile:
+		Speed: 41
+	RevealsShroud:
+		Range: 6c0
+	Armor:
+		Type: Plate
+	Passenger:
+		PipType: Red
+	Armament@primary:
+		Weapon: RadBeamWeapon
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: RadBeamWeaponE
+		RequiresCondition: rank-elite
+	AttackFrontal:
+		Voice: Attack
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+	Voiced:
+		VoiceSet: DesolatorVoice
+	ProducibleWithLevel:
+		Prerequisites: barracks.infiltrated
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+
+ivan:
+	Inherits: ^Infantry
+	Inherits@MC: ^MindControllable
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Infantry
+		BuildPaletteOrder: 110
+		Prerequisites: naradr, ~nahand
+		Description: Specialist for explosives. Can plant a Bomb on anything, even Cows.
+	Valued:
+		Cost: 600
+	DeliversCash:
+		Payload: 300
+		PlayerExperience: 30
+		Voice: Move
+	Tooltip:
+		Name: Crazy Ivan
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Voiced:
+		VoiceSet: CrazyIvanVoice
+	Health:
+		HP: 125
+	Mobile:
+		Speed: 60
+	RevealsShroud:
+		Range: 6c0
+	Armor:
+		Type: None
+	Passenger:
+		PipType: Red
+	Explodes:
+		Weapon: IvanDeath
+		EmptyWeapon: IvanDeath
+	Armament@primary:
+		Weapon: IvanBomber
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: IvanBomberE
+		RequiresCondition: rank-elite
+	AttackFrontal:
+		Voice: Attack
+		Cursor: bomb
+		OutsideRangeCursor: bomb
+	TakeCover:
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+		IdleSequences: idle1,idle2
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+
+yuri:
+	Inherits: ^Infantry
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Infantry
+		BuildPaletteOrder: 160
+		Prerequisites: natech, ~nahand
+		Description: Psychic infantry. Can mind control enemy units.\nCan be deployed to unleash a powerful psychic wave.\n  Strong vs Infantry, Vehicles\n  Weak vs Terror Drones, Aircraft, Buildings
+	Valued:
+		Cost: 1200
+	DeliversCash:
+		Payload: 600
+		PlayerExperience: 60
+		Voice: Move
+	Tooltip:
+		Name: Yuri
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Voiced:
+		VoiceSet: YuriVoice
+	Health:
+		HP: 100
+	Mobile:
+		Speed: 60
+		RequiresCondition: !deployed && !deploying && !chronodisable
+	RevealsShroud:
+		Range: 12c0
+	Armor:
+		Type: None
+	Passenger:
+		PipType: Red
+	PeriodicExplosion:
+		Weapon: PsiWave
+		LocalOffset: 0,0,128
+		RequiresCondition: deployed
+	GrantTimedConditionOnDeploy:
+		DeployedTicks: 50
+		CooldownTicks: 0
+		Facing: 96
+		DeployedCondition: deployed
+		DeployingCondition: deploying
+		DeployAnimation: deploy
+		UndeployAnimation: undeploy
+		ShowSelectionBar: false
+		Voice:
+	TakeCover:
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+		IdleSequences: idle1,idle2
+		RequiresCondition: !deployed && !deploying
+	WithSpriteBody@DEPLOYED:
+		Sequence: deployed
+		RequiresCondition: deployed || deploying
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+	AttackFrontal:
+		Voice: Attack
+	Armament:
+		Weapon: MindControl
+		MuzzleSequence: muzzle
+		LocalOffset: 0,0,960
+		PauseOnCondition: deployed
+	WithMuzzleOverlay:
+	MindController:
+		ControllingCondition: controlling
+		Sounds: iyurat1a.wav
+	WithMindControlArc:
+		UsePlayerColor: true
+		Offset: 0,0,960
+	AutoTarget:
+	AutoTargetPriority@DEFAULT:
+		Types: MindControl
+		RequiresCondition: !controlling
