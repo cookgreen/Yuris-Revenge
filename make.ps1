@@ -218,7 +218,8 @@ function ReadConfigLine($line, $name)
 function ParseConfigFile($fileName)
 {
 	$names = @("MOD_ID", "ENGINE_VERSION", "AUTOMATIC_ENGINE_MANAGEMENT", "AUTOMATIC_ENGINE_SOURCE",
-		"AUTOMATIC_ENGINE_EXTRACT_DIRECTORY", "AUTOMATIC_ENGINE_TEMP_ARCHIVE_NAME", "ENGINE_DIRECTORY")
+		"AUTOMATIC_ENGINE_EXTRACT_DIRECTORY", "AUTOMATIC_ENGINE_TEMP_ARCHIVE_NAME", "ENGINE_DIRECTORY", "AUTOMATIC_RA2_EXTRACT_DIRECTORY",
+        "AUTOMATIC_RA2_SOURCE", "AUTOMATIC_RA2_TEMP_ARCHIVE_NAME", "RA2_DIRECTORY")
 
 	$reader = [System.IO.File]::OpenText($fileName)
 	while($null -ne ($line = $reader.ReadLine()))
@@ -343,6 +344,50 @@ if ($command -eq "all" -or $command -eq "clean")
 		Invoke-Expression ".\make.cmd $command"
 		echo ""
 		cd $templateDir
+
+        
+        ##################################################
+        ####                                          ####
+        ####               Handle RA2                 ####
+        ####                                          ####
+        ##################################################
+        echo "Downloading RA2..."
+
+        $RA2_VERSION = $env:RA2_VERSION
+
+        $ra2_url = $env:AUTOMATIC_RA2_SOURCE
+        
+        mkdir $env:AUTOMATIC_RA2_EXTRACT_DIRECTORY > $null
+		$dlPath = Join-Path $pwd (Split-Path -leaf $env:AUTOMATIC_RA2_EXTRACT_DIRECTORY)
+		$dlPath = Join-Path $dlPath (Split-Path -leaf $env:AUTOMATIC_RA2_TEMP_ARCHIVE_NAME)
+
+        $client = new-object System.Net.WebClient
+		[Net.ServicePointManager]::SecurityProtocol = 'Tls12'
+		$client.DownloadFile($ra2_url, $dlPath)
+
+        Add-Type -assembly "system.io.compression.filesystem"
+		[io.compression.zipfile]::ExtractToDirectory($dlPath, $env:AUTOMATIC_RA2_EXTRACT_DIRECTORY)
+		rm $dlPath
+
+        $extractedDir = $env:AUTOMATIC_RA2_EXTRACT_DIRECTORY + '/ra2-master'
+        $extractedNewDir = $env:AUTOMATIC_RA2_EXTRACT_DIRECTORY + '/ra2'
+		Rename-Item $extractedDir 'ra2'
+		Move-Item $extractedNewDir -Destination '.'
+
+		rm $env:AUTOMATIC_RA2_EXTRACT_DIRECTORY -r
+        
+        cd $env:RA2_DIRECTORY
+		Invoke-Expression ".\make.cmd version $env:ENGINE_VERSION"
+		Invoke-Expression ".\make.cmd all"
+		echo ""
+        
+        $ra2_dll = $env:RA2_DIRECTORY + '/mods/ra2/OpenRA.Mods.RA2.dll'
+        $ra2_mod_dir = './mods/ra2'
+        if(!(Test-Path $ra2_mod_dir))
+        {
+            mkdir $ra2_mod_dir
+        }
+		Move-Item $ra2_dll -Destination $ra2_mod_dir
 	}
 }
 

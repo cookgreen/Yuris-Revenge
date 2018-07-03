@@ -71,7 +71,7 @@ Packages:
 
 MapFolders:
 	yr|maps: System
-	~^maps/yr/049ed08: User
+	~^maps/yr/release-20180307: User
 
 Rules:
 	yr|rules/proxy-actors.yaml
@@ -135,7 +135,7 @@ Assemblies:
 	common|OpenRA.Mods.Common.dll
 	common|OpenRA.Mods.Cnc.dll
 	ra2|OpenRA.Mods.RA2.dll
-	yr|yr.dll
+	yr|OpenRA.Mods.YR.dll
 
 ChromeLayout:
 	yr|chrome/ingame-player.yaml

@@ -7,7 +7,7 @@ release-20180307
 
 ## Requirement
 OpenRA - Version: release-20180307  
-OpenRA Ra2 mod - Version: release-20180307 
+OpenRA Ra2 mod - Version: {DEV-VERSION}
 
 ## Usage
 Check https://github.com/cookgreen/yr/wiki for more details

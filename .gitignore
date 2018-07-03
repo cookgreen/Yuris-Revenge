@@ -1,5 +1,6 @@
 user.config
 engine
+ra2
 bin
 obj
 mods/*/*.dll
