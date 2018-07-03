@@ -7,8 +7,8 @@
     <ProjectGuid>{5FC0D41E-5B09-413E-8D14-97AB1981A76E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>OpenRA.Mod.YR</RootNamespace>
-    <AssemblyName>OpenRA.Mod.YR</AssemblyName>
+    <RootNamespace>OpenRA.Mods.YR</RootNamespace>
+    <AssemblyName>OpenRA.Mods.YR</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

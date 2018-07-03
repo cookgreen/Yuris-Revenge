@@ -9,7 +9,7 @@ using OpenRA.Mods.Common.Activities;
 using OpenRA.Traits;
 using OpenRA.Mods.Common.Traits;
 
-namespace OpenRA.Mod.YR.Activities
+namespace OpenRA.Mods.YR.Activities
 {
     class DeliverPower : Enter
     {

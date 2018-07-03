@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenRA;
 
-namespace OpenRA.Mod.YR.Traits
+namespace OpenRA.Mods.YR.Traits
 {
     [Desc("Tag trait for actors with `DeliversCash`.")]
     class AcceptDeliveredPowerInfo : ITraitInfo

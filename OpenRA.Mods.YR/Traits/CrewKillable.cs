@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OpenRA.Mod.YR.Traits
+namespace OpenRA.Mods.YR.Traits
 {
     class CrewKillable
     {

@@ -11,7 +11,7 @@ using OpenRA;
 using OpenRA.Mods.Common;
 using OpenRA.Mods.Common.Traits;
 
-namespace OpenRA.Mod.YR.Traits
+namespace OpenRA.Mods.YR.Traits
 {
     [Desc("Deliver power to actors with the `AcceptsDeliveredPower` trait.")]
     class DeliversPowerInfo : ITraitInfo
