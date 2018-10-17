@@ -12,7 +12,6 @@
 	BodyOrientation:
 		UseClassicPerspectiveFudge: false
 	QuantizeFacingsFromSequence:
-	AutoSelectionSize:
 	RenderSprites:
 
 ^1x1Shape:
