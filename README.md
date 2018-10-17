@@ -2,7 +2,10 @@
 ## Introduction
 Port Yuri's Revenge to OpenRA Engine
 
-## Version
+## MOD Version
+{DEV-VERSION}
+
+## Engine Version
 release-20180307
 
 ## Requirement
