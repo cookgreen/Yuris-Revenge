@@ -388,6 +388,11 @@ if ($command -eq "all" -or $command -eq "clean")
             mkdir $ra2_mod_dir
         }
 		Move-Item $ra2_dll -Destination $ra2_mod_dir
+
+        cmd /c "setdir-yr"
+        $msbuildPath = FindMSBuild;
+        $cmd = $msbuildPath + " OpenRA.Mods.YR.sln"
+        cmd /c $cmd
 	}
 }
 

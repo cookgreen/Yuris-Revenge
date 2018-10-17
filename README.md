@@ -13,7 +13,7 @@ OpenRA - Version: release-20180307
 OpenRA Ra2 mod - Version: {DEV-VERSION}
 
 ## Usage
-Check https://github.com/cookgreen/yr/wiki for more details
+Run "make.cmd" and type "all" in the terminal
 
 ## Credit
 OpenRA - OpenRA development team  
