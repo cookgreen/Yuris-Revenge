@@ -239,7 +239,7 @@ yaweap:
 	Building:
 		Footprint: xxxxx xxxxx xxxxx
 		Dimensions: 5,3
-	RallyPoint:
+	RallyPointEx:
 		Offset: 6,1
 		Palette: mouse
 		IsPlayerPalette: false

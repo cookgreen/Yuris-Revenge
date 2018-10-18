@@ -124,7 +124,7 @@ gapile:
 		Type: Steel
 	RevealsShroud:
 		Range: 5c0
-	RallyPoint:
+	RallyPointEx:
 		Offset: 2,3
 		Palette: mouse
 		IsPlayerPalette: false
@@ -345,7 +345,7 @@ gaweap:
 		Type: Wood
 	RevealsShroud:
 		Range: 4c0
-	RallyPoint:
+	RallyPointEx:
 		Offset: 5,1
 		Palette: mouse
 		IsPlayerPalette: false

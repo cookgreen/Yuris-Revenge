@@ -157,7 +157,7 @@ nahand:
 		Produces: Infantry
 	PrimaryBuilding:
 		PrimaryCondition: primary
-	RallyPoint:
+	RallyPointEx:
 		Offset: 3,3
 		Palette: mouse
 		IsPlayerPalette: false
@@ -300,7 +300,7 @@ naweap:
 		Type: Wood
 	RevealsShroud:
 		Range: 4c0
-	RallyPoint:
+	RallyPointEx:
 		Offset: 6,1
 		Palette: mouse
 		IsPlayerPalette: false
