@@ -657,11 +657,10 @@ yagntc:
 	Power:
 		Amount: -200
 	SupportPowerChargeBar:
-	RequiresPower:
-	CanPowerDown:
-		IndicatorPalette: ts-mouse
-		PowerupSpeech: BuildingOnline
-		PowerdownSpeech: BuildingOffline
+#	CanPowerDown:
+#		IndicatorPalette: ts-mouse
+#		PowerupSpeech: BuildingOnline
+#		PowerdownSpeech: BuildingOffline
 	WithIdleOverlay@top:
 		Sequence: idle-top
 
@@ -691,11 +690,10 @@ yappet:
 		Dimensions: 3,3
 	Power:
 		Amount: -200
-	RequiresPower:
-	CanPowerDown:
-		IndicatorPalette: ts-mouse
-		PowerupSpeech: BuildingOnline
-		PowerdownSpeech: BuildingOffline
+#	CanPowerDown:
+#		IndicatorPalette: ts-mouse
+#		PowerupSpeech: BuildingOnline
+#		PowerdownSpeech: BuildingOffline
 	SupportPowerChargeBar:
 
 yarock:
