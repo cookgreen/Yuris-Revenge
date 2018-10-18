@@ -51,18 +51,23 @@ crate:
 		NoBaseSelectionShares: 150
 		ValidFactions: america, germany, england, france, korea
 		Units: amcv
+	GiveMcvCrateAction@yuris:
+		SelectionShares: 0
+		NoBaseSelectionShares: 150
+		ValidFactions: yuri
+		Units: pcv
 
-^amcv.colorpicker:
-	Inherits: amcv
+pcv.colorpicker:
+	Inherits: pcv
 	AlwaysVisible:
 	Mobile:
 		InitialFacing: 160
 	RenderSprites:
-		Image: amcv
+		Image: pcv
 		StandSequences: idle
 		Palette: colorpicker
 	RenderVoxels:
-		Image: amcv
+		Image: pcv
 		Palette: colorpicker
 
 SROCK01:
