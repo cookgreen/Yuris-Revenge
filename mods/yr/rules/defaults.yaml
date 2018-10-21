@@ -528,6 +528,9 @@
 			RadiationDeath: 4
 			PsychicDeath: 5
 			ElectroDeath: 6
+			VirusDeath: 7
+			BruteDeath: 8
+			GenDeath: 9
 	SpawnActorOnDeath@flames:
 		Actor: FLAMEGUY
 		DeathType: FlameDeath

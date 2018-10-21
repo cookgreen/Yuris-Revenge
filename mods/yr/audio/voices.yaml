@@ -10,13 +10,26 @@ EngineerVoice:
 		libya: iens
 		iraq: iens
 		russia: iens
-		yuri: ieny
 	Voices:
 		Select: sea, seb, sec, sed
 		Move: moa, mob, moc
 		Action: ata, atb, atc
 		Feedback: fea, feb, fec
 		Die: dia, dib, dic, did
+		Zapped: igenzapa
+		Burned: ienadia #gotta put something as temp else game crashes
+		Melted: igenmela, igenmelb, igenmelc
+		# [EngAllPowerDown] Sounds = ienapow
+		DisablePrefixes: Zapped, Burned, Melted
+   
+EngineerYuriVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: ienysea, ienyseb, ienysec, ienysed, ienysee
+		Move: ienymoa, ienymob, ienymoc, ienymod, ienymoe
+		Action: ienyata, ienyatb, ienyatc, ienyatd, ienyate
+		Feedback: ienyfea, ienyfeb, fec, ienyfed, ienyfee
+		Die: ienydia, ienydib, ienydic, ienydid, ienydie
 		Zapped: igenzapa
 		Burned: ienadia #gotta put something as temp else game crashes
 		Melted: igenmela, igenmelb, igenmelc

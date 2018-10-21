@@ -153,6 +153,21 @@ PsychicJab:
 	Report: iiniatta.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 25       
+		ValidTargets: Ground, Water
+		Versus:
+			None: 100
+			Flak: 80
+			Plate: 80
+			Light: 50
+			Medium: 25
+			Heavy: 25
+			Wood: 75
+			Steel: 50
+			Concrete: 25
+			Drone: 100
+			Rocket: 100
+	Warhead@2Eff: CreateEffect
+		Explosions: initfire
         
 PsychicJabE:
 	Inherits: ^MG
@@ -161,6 +176,21 @@ PsychicJabE:
 	Report: iiniatta.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 30
+		ValidTargets: Ground, Water
+		Versus:
+			None: 100
+			Flak: 80
+			Plate: 80
+			Light: 50
+			Medium: 25
+			Heavy: 25
+			Wood: 75
+			Steel: 50
+			Concrete: 25
+			Drone: 100
+			Rocket: 100
+	Warhead@2Eff: CreateEffect
+		Explosions: initfire
         
 Virusgun:
 	Inherits: ^MG
@@ -169,14 +199,46 @@ Virusgun:
 	Report: iviratta.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 125       
+		ValidTargets: Ground
+		Versus:
+			None: 100
+			Flak: 100
+			Plate: 100
+			Light: 1
+			Medium: 1
+			Heavy: 1
+			Wood: 1
+			Steel: 1
+			Concrete: 1
+			Drone: 1
+			Rocket: 100
+		DamageTypes: VirusDeath, Prone100Percent
+	Warhead@2Eff: CreateEffect
+		Explosions: piff
         
 VirusgunE:
 	Inherits: ^MG
-	ReloadDelay: 100
-	Range:15c0
+	ReloadDelay: 80
+	Range:16c0
 	Report: iviratta.wav
 	Warhead@1Dam: SpreadDamage
-		Damage: 125
+		Damage: 125     
+		ValidTargets: Ground
+		Versus:
+			None: 100
+			Flak: 100
+			Plate: 100
+			Light: 1
+			Medium: 1
+			Heavy: 1
+			Wood: 1
+			Steel: 1
+			Concrete: 1
+			Drone: 1
+			Rocket: 100
+		DamageTypes: VirusDeath, Prone100Percent
+	Warhead@2Eff: CreateEffect
+		Explosions: piff
         
 AGGattling:
 	Inherits: ^MG
@@ -186,6 +248,21 @@ AGGattling:
 	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 25 
+		ValidTargets: Ground, Water, Air
+		Versus:
+			None: 100
+			Flak: 80
+			Plate: 70
+			Light: 50
+			Medium: 30
+			Heavy: 10
+			Wood: 10
+			Steel: 5
+			Concrete: 3
+			Drone: 200
+			Rocket: 100
+	Warhead@2Eff: CreateEffect
+		Explosions: piffpiff
         
 AGGattling2:
 	Inherits: ^MG
@@ -195,6 +272,21 @@ AGGattling2:
 	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 25 
+		ValidTargets: Ground, Water, Air
+		Versus:
+			None: 100
+			Flak: 80
+			Plate: 70
+			Light: 50
+			Medium: 30
+			Heavy: 10
+			Wood: 10
+			Steel: 5
+			Concrete: 3
+			Drone: 200
+			Rocket: 100
+	Warhead@2Eff: CreateEffect
+		Explosions: piffpiff
         
 AGGattling3:
 	Inherits: ^MG
@@ -204,6 +296,21 @@ AGGattling3:
 	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 25 
+		ValidTargets: Ground, Water, Air
+		Versus:
+			None: 100
+			Flak: 80
+			Plate: 70
+			Light: 50
+			Medium: 30
+			Heavy: 10
+			Wood: 10
+			Steel: 5
+			Concrete: 3
+			Drone: 200
+			Rocket: 100
+	Warhead@2Eff: CreateEffect
+		Explosions: piffpiff
         
 AGGattlingE:
 	Inherits: ^MG
@@ -213,6 +320,21 @@ AGGattlingE:
 	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 25 
+		ValidTargets: Ground, Water, Air
+		Versus:
+			None: 100
+			Flak: 80
+			Plate: 70
+			Light: 50
+			Medium: 30
+			Heavy: 10
+			Wood: 10
+			Steel: 5
+			Concrete: 3
+			Drone: 200
+			Rocket: 100
+	Warhead@2Eff: CreateEffect
+		Explosions: piffpiff
         
 AGGattling2E:
 	Inherits: ^MG
@@ -222,6 +344,21 @@ AGGattling2E:
 	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 25 
+		ValidTargets: Ground, Water, Air
+		Versus:
+			None: 100
+			Flak: 80
+			Plate: 70
+			Light: 50
+			Medium: 30
+			Heavy: 10
+			Wood: 10
+			Steel: 5
+			Concrete: 3
+			Drone: 200
+			Rocket: 100
+	Warhead@2Eff: CreateEffect
+		Explosions: piffpiff
         
 AGGattling3E:
 	Inherits: ^MG
@@ -231,6 +368,21 @@ AGGattling3E:
 	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 25 
+		ValidTargets: Ground, Water, Air
+		Versus:
+			None: 100
+			Flak: 80
+			Plate: 70
+			Light: 50
+			Medium: 30
+			Heavy: 10
+			Wood: 10
+			Steel: 5
+			Concrete: 3
+			Drone: 200
+			Rocket: 100
+	Warhead@2Eff: CreateEffect
+		Explosions: piffpiff
         
 AAGattling:
 	Inherits: ^MG
@@ -241,6 +393,21 @@ AAGattling:
 	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 25 
+		ValidTargets: Ground, Water, Air
+		Versus:
+			None: 100
+			Flak: 80
+			Plate: 70
+			Light: 50
+			Medium: 30
+			Heavy: 10
+			Wood: 10
+			Steel: 5
+			Concrete: 3
+			Drone: 200
+			Rocket: 100
+	Warhead@2Eff: CreateEffect
+		Explosions: piffpiff
         
 AAGattling2:
 	Inherits: ^MG
@@ -251,6 +418,21 @@ AAGattling2:
 	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 30 
+		ValidTargets: Ground, Water, Air
+		Versus:
+			None: 100
+			Flak: 80
+			Plate: 70
+			Light: 50
+			Medium: 30
+			Heavy: 10
+			Wood: 10
+			Steel: 5
+			Concrete: 3
+			Drone: 200
+			Rocket: 100
+	Warhead@2Eff: CreateEffect
+		Explosions: piffpiff
         
 AAGattling3:
 	Inherits: ^MG
@@ -260,6 +442,21 @@ AAGattling3:
 	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 40 
+		ValidTargets: Ground, Water, Air
+		Versus:
+			None: 100
+			Flak: 80
+			Plate: 70
+			Light: 50
+			Medium: 30
+			Heavy: 10
+			Wood: 10
+			Steel: 5
+			Concrete: 3
+			Drone: 200
+			Rocket: 100
+	Warhead@2Eff: CreateEffect
+		Explosions: piffpiff
         
 AAGattlingE:
 	Inherits: ^MG
@@ -270,6 +467,21 @@ AAGattlingE:
 	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 25 
+		ValidTargets: Ground, Water, Air
+		Versus:
+			None: 100
+			Flak: 80
+			Plate: 70
+			Light: 50
+			Medium: 30
+			Heavy: 10
+			Wood: 10
+			Steel: 5
+			Concrete: 3
+			Drone: 200
+			Rocket: 100
+	Warhead@2Eff: CreateEffect
+		Explosions: piffpiff
         
 AAGattling2E:
 	Inherits: ^MG
@@ -279,6 +491,21 @@ AAGattling2E:
 	Report: vgatlo4a.wav, vgatlo5a.wav, vgatlo5b.wav, vgatlo6a.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 25 
+		ValidTargets: Ground, Water, Air
+		Versus:
+			None: 100
+			Flak: 80
+			Plate: 70
+			Light: 50
+			Medium: 30
+			Heavy: 10
+			Wood: 10
+			Steel: 5
+			Concrete: 3
+			Drone: 200
+			Rocket: 100
+	Warhead@2Eff: CreateEffect
+		Explosions: piffpiff
         
 AAGattling3E:
 	Inherits: ^MG
@@ -288,6 +515,21 @@ AAGattling3E:
 	Report: vgatlo7a.wav, vgatlo8a.wav, vgatlo8b.wav, vgatlo9a.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 25  
+		ValidTargets: Ground, Water, Air
+		Versus:
+			None: 100
+			Flak: 80
+			Plate: 70
+			Light: 50
+			Medium: 30
+			Heavy: 10
+			Wood: 10
+			Steel: 5
+			Concrete: 3
+			Drone: 200
+			Rocket: 100
+	Warhead@2Eff: CreateEffect
+		Explosions: piffpiff
         
 AAGattCann:
 	Inherits: ^MG
@@ -299,6 +541,21 @@ AAGattCann:
 	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 30 
+		ValidTargets: Ground, Water, Air
+		Versus:
+			None: 100
+			Flak: 80
+			Plate: 70
+			Light: 50
+			Medium: 30
+			Heavy: 10
+			Wood: 10
+			Steel: 5
+			Concrete: 3
+			Drone: 200
+			Rocket: 100
+	Warhead@2Eff: CreateEffect
+		Explosions: piffpiff
 
 AAGattCann2:
 	Inherits: ^MG
@@ -309,6 +566,21 @@ AAGattCann2:
 	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 30 
+		ValidTargets: Ground, Water, Air
+		Versus:
+			None: 100
+			Flak: 80
+			Plate: 70
+			Light: 50
+			Medium: 30
+			Heavy: 10
+			Wood: 10
+			Steel: 5
+			Concrete: 3
+			Drone: 200
+			Rocket: 100
+	Warhead@2Eff: CreateEffect
+		Explosions: piffpiff
        
 AAGattCann3:
 	Inherits: ^MG
@@ -319,6 +591,21 @@ AAGattCann3:
 	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 30 
+		ValidTargets: Ground, Water, Air
+		Versus:
+			None: 100
+			Flak: 80
+			Plate: 70
+			Light: 50
+			Medium: 30
+			Heavy: 10
+			Wood: 10
+			Steel: 5
+			Concrete: 3
+			Drone: 200
+			Rocket: 100
+	Warhead@2Eff: CreateEffect
+		Explosions: piffpiff
         
 AAGattCannE:
 	Inherits: ^MG
@@ -329,6 +616,21 @@ AAGattCannE:
 	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 30
+		ValidTargets: Ground, Water, Air
+		Versus:
+			None: 100
+			Flak: 80
+			Plate: 70
+			Light: 50
+			Medium: 30
+			Heavy: 10
+			Wood: 10
+			Steel: 5
+			Concrete: 3
+			Drone: 200
+			Rocket: 100
+	Warhead@2Eff: CreateEffect
+		Explosions: piffpiff
 
 AAGattCann2E:
 	Inherits: ^MG
@@ -339,6 +641,21 @@ AAGattCann2E:
 	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 30 
+		ValidTargets: Ground, Water, Air
+		Versus:
+			None: 100
+			Flak: 80
+			Plate: 70
+			Light: 50
+			Medium: 30
+			Heavy: 10
+			Wood: 10
+			Steel: 5
+			Concrete: 3
+			Drone: 200
+			Rocket: 100
+	Warhead@2Eff: CreateEffect
+		Explosions: piffpiff
        
 AAGattCann3E:
 	Inherits: ^MG
@@ -349,16 +666,67 @@ AAGattCann3E:
 	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 30 
+		ValidTargets: Ground, Water, Air
+		Versus:
+			None: 100
+			Flak: 80
+			Plate: 70
+			Light: 50
+			Medium: 30
+			Heavy: 10
+			Wood: 10
+			Steel: 5
+			Concrete: 3
+			Drone: 200
+			Rocket: 100
+	Warhead@2Eff: CreateEffect
+		Explosions: piffpiff
         
 AKM:
 	Inherits: ^MG
-	ReloadDelay: 25
-	Report: iconatta.wav, iconattb.wav, iconattc.wav, iconattd.wav, iconatte.wav
+	ReloadDelay: 20
+	Range:7c0
+	Report: iboratta.wav, iborattb.wav
 	Warhead@1Dam: SpreadDamage
-		Damage: 15
+		Damage: 65
+		ValidTargets: Ground, Water
+		Versus:
+			None: 200
+			Flak: 200
+			Plate: 100
+			Light: 50
+			Medium: 50
+			Heavy: 50
+			Wood: 1
+			Steel: 1
+			Concrete: 1
+			Drone: 100
+			Rocket: 100
+	Warhead@2Eff: CreateEffect
+		Explosions: piffpiff
+	Warhead@3Eff: CreateEffect
+		Explosions: piffpiff
 AKME:
 	Inherits: ^MG
-	ReloadDelay: 25
-	Report: iconatta.wav, iconattb.wav, iconattc.wav, iconattd.wav, iconatte.wav
+	ReloadDelay: 20
+	Range:9c0
+	Report: iboratta.wav, iborattb.wav
 	Warhead@1Dam: SpreadDamage
-		Damage: 15
+		Damage: 90
+		ValidTargets: Ground, Water
+		Versus:
+			None: 200
+			Flak: 200
+			Plate: 100
+			Light: 50
+			Medium: 50
+			Heavy: 50
+			Wood: 1
+			Steel: 1
+			Concrete: 1
+			Drone: 100
+			Rocket: 100
+	Warhead@2Eff: CreateEffect
+		Explosions: piffpiff
+	Warhead@3Eff: CreateEffect
+		Explosions: piffpiff

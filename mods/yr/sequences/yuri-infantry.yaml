@@ -2,10 +2,14 @@ init:
 	Inherits: ^BasicInfantry
 	run:
 		Tick: 120
-	die1:
+	idle1:
 		Start: 56
-	die2:
+	idle2:
 		Start: 71
+	die1:
+		Start: 139
+	die2:
+		Start: 154
 	shoot:
 		Start: 209
 	prone-shoot:
@@ -23,9 +27,9 @@ yengineer:
 	run:
 		Tick: 120
 	die1:
-		Start: 56
+		Start: 134
 	die2:
-		Start: 71
+		Start: 149
 	paradrop:
 		Start: 244
 	icon: yengicon

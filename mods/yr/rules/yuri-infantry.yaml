@@ -69,7 +69,7 @@ yengineer:
 	RevealsShroud:
 		Range: 4c0
 	Voiced:
-		VoiceSet: EngineerVoice
+		VoiceSet: EngineerYuriVoice
 	Guard:
 		Voice: Action
 	AttackMove:
@@ -158,7 +158,6 @@ virus:
 slav:
 	Inherits: ^Infantry
 	Buildable:
-		Prerequisites: ~yabrck
 		BuildPaletteOrder: 20
 		Description: Work for Yuri
 	Valued:

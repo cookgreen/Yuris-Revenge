@@ -210,6 +210,7 @@ explosion:
 	tesla_impact: tstimpct
 	iron_fx: ironfx
 	chronosk: chronosk
+	initfire: fire01
 	psi_wave: ring1
 
 discus:
