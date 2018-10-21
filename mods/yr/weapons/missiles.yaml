@@ -195,3 +195,39 @@ DiskDrain:
 	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 25 
+
+Maverick3:
+	Inherits: Maverick
+	Report: vmigatta.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 750
+		Versus:
+			Flak: 100
+			Plate: 100
+			Light: 100
+			Medium: 100
+			Heavy: 100
+			Wood: 100
+			Steel: 100
+			Concrete: 75
+			Drone: 100
+			Rocket: 100
+		DamageTypes: ExplosionDeath, Prone50Percent
+
+Maverick3E:
+	Inherits: Maverick
+	Report: vmigatta.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 750
+		Versus:
+			Flak: 100
+			Plate: 100
+			Light: 100
+			Medium: 100
+			Heavy: 100
+			Wood: 100
+			Steel: 100
+			Concrete: 75
+			Drone: 100
+			Rocket: 100
+		DamageTypes: ExplosionDeath, Prone50Percent

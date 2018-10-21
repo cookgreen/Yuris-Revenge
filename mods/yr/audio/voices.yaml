@@ -567,3 +567,11 @@ BoomerVoice:
 		Move: vboomoa ,vboomob ,vboomoc ,vboomod ,vboomoe
 		Attack: vbooa2a ,vbooa2b ,vbooa2c ,vbooa2d ,vbooa2e ,vbooa2f
 		Attack-Land: vbooa1a ,vbooa1b ,vbooa1c ,vbooa1d ,vbooa1e ,vbooa1f
+        
+MigVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: vintsea, vintseb, vintsec, vintsed
+		Move: vmigmoa,vmigmob
+		Attack: vmigata,vmigatb
+		Die: vmigdia,vmigdic

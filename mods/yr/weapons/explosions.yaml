@@ -240,3 +240,33 @@ demobomb:
 		SmudgeType: LargeScorch
 		Size: 2
 		Delay: 15
+        
+
+MigDeath:
+	ReloadDelay: 0
+	Range: 1c849
+	Projectile: Bullet
+		Speed: 425
+		Blockable: false
+	Warhead@1Dam: SpreadDamage
+		Delay: 100
+		Spread: 213
+		Damage: 1
+		Falloff: 1000, 368, 135, 50, 18, 7, 0
+		Versus:
+			None: 1
+			Flak: 1
+			Plate: 1
+			Light: 1
+			Medium: 1
+			Heavy: 1
+			Wood: 1
+			Steel: 1
+			Concrete: 1
+			Drone: 1
+			Rocket: 1
+		DamageTypes: PsychicDeath, Prone100Percent
+	Warhead@2Eff: CreateEffect
+		Delay: 0
+		Explosions: small_tumu
+		ValidTargets: Ground, Water

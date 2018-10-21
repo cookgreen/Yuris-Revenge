@@ -252,3 +252,49 @@ pdplanehusk:
 		Speed: 100
 	RenderVoxels:
 		Image: pdplane
+
+bpln:
+	Inherits: ^Plane
+	Valued:
+		Cost: 0
+	Tooltip:
+		Name: Soviet MIG
+	Aircraft:
+		TurnSpeed: 3
+		Speed: 140
+		RearmBuildings: gaairc, amradr
+	Selectable:
+		Bounds: 30,24
+	Health:
+		HP: 100
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 8c0
+		Type: CenterPosition
+	Armament@primary:
+		Weapon: Maverick3
+	Armament@primary-elite:
+		Weapon: Maverick3E
+	AttackPlane:
+		FacingTolerance: 20
+		Voice: Attack
+	Voiced:
+		VoiceSet: MigVoice
+	AmmoPool:
+		Ammo: 1
+		PipCount: 1
+		PipType: Ammo
+		PipTypeEmpty: AmmoEmpty
+		AmmoCondition: ammo
+	AutoTarget:
+	RenderSprites:
+		Image: bpln
+	RenderVoxels:
+		Image: bpln
+	Explodes:
+		Weapon: MigDeath
+		EmptyWeapon: MigDeath
+	HitShape:
+	CarrierSlave:
+		LandingDistance: 1c0
