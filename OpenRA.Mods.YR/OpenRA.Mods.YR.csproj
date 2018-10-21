@@ -79,8 +79,6 @@
     <Compile Include="Traits\RallyPointEx.cs" />
     <Compile Include="Warheads\InfraredMarkerWarhead.cs" />
     <Compile Include="Warheads\MagWaveWarhead.cs" />
-    <Compile Include="Warheads\SAFlameWarhead.cs" />
-    <Compile Include="Warheads\VirusWarhead.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\engine\OpenRA.Game\OpenRA.Game.csproj">

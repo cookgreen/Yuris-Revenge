@@ -23,7 +23,6 @@ namespace OpenRA.Mods.Common.Effects
     {
         readonly Actor building;
         readonly RallyPointEx rp;
-        readonly Animation flag;
         readonly Animation circles;
         readonly ExitInfo[] exits;
 
@@ -49,8 +48,8 @@ namespace OpenRA.Mods.Common.Effects
 
         void IEffect.Tick(World world)
         {
-            if (flag != null)
-                flag.Tick();
+            //if (flag != null)
+            //    flag.Tick();
 
             if (circles != null)
                 circles.Tick();
@@ -104,7 +103,7 @@ namespace OpenRA.Mods.Common.Effects
             if (Game.Settings.Game.DrawTargetLine)
                 yield return new TargetLineRenderable(targetLine, building.Owner.Color.RGB);
 
-            if (circles != null || flag != null)
+            if (circles != null/* || flag != null*/)
             {
                 var palette = wr.Palette(rp.PaletteName);
 
@@ -112,9 +111,9 @@ namespace OpenRA.Mods.Common.Effects
                     foreach (var r in circles.Render(targetLine[1], palette))
                         yield return r;
 
-                if (flag != null)
-                    foreach (var r in flag.Render(targetLine[1], palette))
-                        yield return r;
+                //if (flag != null)
+                //    foreach (var r in flag.Render(targetLine[1], palette))
+                //        yield return r;
             }
         }
     }
