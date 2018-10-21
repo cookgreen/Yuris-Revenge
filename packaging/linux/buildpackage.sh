@@ -97,16 +97,8 @@ install -m 0755 temp.desktop "${BUILTDIR}/openra-${MOD_ID}.desktop"
 sed "s/{MODID}/${MOD_ID}/g" include/mod-mimeinfo.xml.in | sed "s/{TAG}/${TAG}/g" > temp.xml
 install -Dm 0755 temp.xml "${BUILTDIR}/usr/share/mime/packages/openra-${MOD_ID}.xml"
 
-if [ -f "${PACKAGING_DIR}/mod_scalable.svg" ]; then
-  install -Dm644 "${PACKAGING_DIR}/mod_scalable.svg" "${BUILTDIR}/usr/share/icons/hicolor/scalable/apps/openra-${MOD_ID}.svg"
-fi
-
-for i in 16x16 32x32 48x48 64x64 128x128 256x256 512x512 1024x1024; do
-  if [ -f "${PACKAGING_DIR}/mod_${i}.png" ]; then
-    install -Dm644 "${PACKAGING_DIR}/mod_${i}.png" "${BUILTDIR}/usr/share/icons/hicolor/${i}/apps/openra-${MOD_ID}.png"
-    install -m644 "${PACKAGING_DIR}/mod_${i}.png" "${BUILTDIR}/openra-${MOD_ID}.png"
-  fi
-done
+install -Dm644 "${PACKAGING_DIR}/../../mods/yr/logo.png" "${BUILTDIR}/usr/share/icons/hicolor/32x32/apps/openra-${MOD_ID}.png"
+install -m644 "${PACKAGING_DIR}/../../mods/yr/logo.png" "${BUILTDIR}/openra-${MOD_ID}.png"
 
 install -d "${BUILTDIR}/usr/bin"
 
