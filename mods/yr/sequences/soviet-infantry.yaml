@@ -118,6 +118,40 @@ ivan:
 	cheer:
 		Start: 259
 	icon: ivanicon
+    
+boris:
+	Inherits: ^ArmedInfantry
+	run:
+		Tick: 120
+	prone:
+		Start: 86
+		length: 1
+		Facings: 6
+	shoot:
+		Start: 169
+	prone-shoot:
+		Start: 217
+	idle1:
+		Start: 56
+		length: 15
+	idle2:
+		Start: 71
+		Length: 20
+	die1:
+		Start: 139
+	die2:
+		Start: 154
+	cheer:
+		Start: 297
+	paradrop:
+		Start: 292
+	secondary-fire
+		Start: 401
+		Length: 1
+	secondary-prone
+		Start: 217
+		Length: 6
+	icon: brisicon
 
 yuri:
 	Inherits: ^ArmedInfantry

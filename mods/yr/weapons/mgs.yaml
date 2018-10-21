@@ -349,3 +349,16 @@ AAGattCann3E:
 	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 30 
+        
+AKM:
+	Inherits: ^MG
+	ReloadDelay: 25
+	Report: iconatta.wav, iconattb.wav, iconattc.wav, iconattd.wav, iconatte.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 15
+AKME:
+	Inherits: ^MG
+	ReloadDelay: 25
+	Report: iconatta.wav, iconattb.wav, iconattc.wav, iconattd.wav, iconatte.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 15

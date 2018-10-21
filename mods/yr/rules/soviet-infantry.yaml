@@ -293,77 +293,52 @@ ivan:
 		IdleSequences: idle1,idle2
 	QuantizeFacingsFromSequence:
 		Sequence: stand
-
-yuri:
-	Inherits: ^Infantry
+        
+boris:
+	Inherits@1: ^Infantry
 	Buildable:
 		Queue: Infantry
-		BuildAtProductionType: Infantry
-		BuildPaletteOrder: 160
 		Prerequisites: natech, ~nahand
-		Description: Psychic infantry. Can mind control enemy units.\nCan be deployed to unleash a powerful psychic wave.\n  Strong vs Infantry, Vehicles\n  Weak vs Terror Drones, Aircraft, Buildings
+		BuildPaletteOrder: 20
+		BuildLimit: 1
+		Description: Elite Soviet commando Infantry\n  Strong vs Infantry, Buildings, Vehicles\n  Weak with Aircraft
 	Valued:
-		Cost: 1200
+		Cost: 1500
 	DeliversCash:
-		Payload: 600
-		PlayerExperience: 60
+		Payload: 50
+		PlayerExperience: 5
 		Voice: Move
 	Tooltip:
-		Name: Yuri
+		Name: Boris
 	Selectable:
 		Bounds: 20, 30, 0, -11
-	Voiced:
-		VoiceSet: YuriVoice
 	Health:
-		HP: 100
+		HP: 200
 	Mobile:
-		Speed: 60
-		RequiresCondition: !deployed && !deploying && !chronodisable
-	RevealsShroud:
-		Range: 12c0
-	Armor:
-		Type: None
+		Speed: 30
 	Passenger:
 		PipType: Red
-	PeriodicExplosion:
-		Weapon: PsiWave
-		LocalOffset: 0,0,128
-		RequiresCondition: deployed
-	GrantTimedConditionOnDeploy:
-		DeployedTicks: 50
-		CooldownTicks: 0
-		Facing: 96
-		DeployedCondition: deployed
-		DeployingCondition: deploying
-		DeployAnimation: deploy
-		UndeployAnimation: undeploy
-		ShowSelectionBar: false
-		Voice:
-	TakeCover:
-	WithInfantryBody:
-		DefaultAttackSequence: shoot
-		IdleSequences: idle1,idle2
-		RequiresCondition: !deployed && !deploying
-	WithSpriteBody@DEPLOYED:
-		Sequence: deployed
-		RequiresCondition: deployed || deploying
-	QuantizeFacingsFromSequence:
-		Sequence: stand
+	RevealsShroud:
+		Range: 9c0
 	AttackFrontal:
 		Voice: Attack
-	Armament:
-		Weapon: MindControl
-		MuzzleSequence: muzzle
-		LocalOffset: 0,0,960
-		PauseOnCondition: deployed
-	WithMuzzleOverlay:
-	MindController:
-		ControllingCondition: controlling
-		Sounds: iyurat1a.wav
-	WithMindControlArc:
-		UsePlayerColor: true
-		Offset: 0,0,960
-	AutoTarget:
-	AutoTargetPriority@DEFAULT:
-		Types: MindControl
-		RequiresCondition: !controlling
+	Armament@primary:
+		Weapon: AKM
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: AKME
+		RequiresCondition: rank-elite
+	Armament@secondary:
+		Weapon: Flare
+		RequiresCondition: !rank-elite
+	Armament@secondary-elite:
+		Weapon: FlareE
+		RequiresCondition: rank-elite
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+	Voiced:
+		VoiceSet: BorisVoice
+	ProducibleWithLevel:
+		Prerequisites: barracks.infiltrated
+	QuantizeFacingsFromSequence:
+		Sequence: stand

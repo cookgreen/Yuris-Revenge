@@ -200,12 +200,12 @@ yaweap:
 		ZOffset: -1024
 	idle-lights: yaweap_a
 		Length: 7
-		ShadowStart: 16
+		ShadowStart: 0
 		Tick: 150
 	damaged-idle-lights: yaweap_a
 		Start: 8
 		Length: 7
-		ShadowStart: 16
+		ShadowStart: 0
 		Tick: 150
 	make: yaweapmk
 		Length: 24
@@ -465,14 +465,14 @@ yapsyt:
 	damaged-idle-top: yapsyt_a
 		Start: 52
 		Length: 26
-		ShadowStart: 130
+		ShadowStart: 78
 	idle-full: yapsyt_b
 		Length: 26
 		ShadowStart: 26
 	damaged-idle-full: yapsyt_a
 		Start: 52
 		Length: 26
-		ShadowStart: 104
+		ShadowStart: 78
 	make: yapsytmk
 		Length: 31
 		ShadowStart: 31

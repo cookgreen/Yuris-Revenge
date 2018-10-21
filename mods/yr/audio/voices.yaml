@@ -296,7 +296,18 @@ TerroristVoice:
 		Zapped: igenzapa
 		Burned: ienadia #gotta put something as temp else game crashes
 		Melted: igenmela, igenmelb, igenmelc
-
+        
+BorisVoice:
+	DefaultVariant: .wav
+	Voices:
+		Build: iborcra,iborcrb,iborcrc,iborcrd,iborcre
+		Select: iborsea,iborseb,iborsec,iborsed,iborsee
+		Move: ibormo,ibormob,ibormoc,ibormod,ibormoe
+		Attack: iborata,iboratb,iboratc,iboratd,iborate
+		Feedback: iborfea,iborfeb,iborfec,iborfed
+		Die: ibordia,ibordib,ibordic,ibordid,ibordie
+		AirStrike: iboraib
+        
 YuriVoice:
 	DefaultVariant: .wav
 	Voices:

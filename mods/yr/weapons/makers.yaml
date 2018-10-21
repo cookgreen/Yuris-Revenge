@@ -1,0 +1,12 @@
+Flare:
+	Inherits: ^MG
+	ReloadDelay: 25
+	Report: iconatta.wav, iconattb.wav, iconattc.wav, iconattd.wav, iconatte.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 15
+FlareE:
+	Inherits: ^MG
+	ReloadDelay: 25
+	Report: iconatta.wav, iconattb.wav, iconattc.wav, iconattd.wav, iconatte.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 15

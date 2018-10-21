@@ -190,6 +190,7 @@ Weapons:
 	yr|weapons/explosions.yaml
 	yr|weapons/flaks.yaml
 	yr|weapons/melee.yaml
+	yr|weapons/makers.yaml
 	yr|weapons/mgs.yaml
 	yr|weapons/misc.yaml
 	yr|weapons/missiles.yaml

@@ -160,3 +160,26 @@
 	Warhead@2Eff: CreateEffect
 		Explosions: tesla_impact
 		ValidTargets: Ground, Water
+        
+^Maker:
+	Range: 10c0
+	ReloadDelay: 10
+	Warhead@1Dam: SpreadDamage
+		Spread: 0
+		Damage: 0
+		Versus:
+			None: 0
+			Flak: 0
+			Plate: 0
+			Light: 0
+			Medium: 100
+			Heavy: 0
+			Wood: 0
+			Steel: 0
+			Concrete: 0
+			Drone: 0
+			Rocket: 0
+		DamageTypes: ElectroDeath
+	Warhead@2Eff: CreateEffect
+		Explosions: tesla_impact
+		ValidTargets: Ground, Water
