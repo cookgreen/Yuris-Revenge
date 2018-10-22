@@ -36,22 +36,23 @@ EngineerYuriVoice:
 		# [EngAllPowerDown] Sounds = ienapow
 		DisablePrefixes: Zapped, Burned, Melted
         
-HoverVoice:
+HoverAlliedVoice:
 	DefaultVariant: .wav
-	Prefixes:
-		america: vhoa
-		germany: vhoa
-		england: vhoa
-		france: vhoa
-		korea: vhoa
-		cuba: vhos
-		libya: vhos
-		iraq: vhos
-		russia: vhos
-		yuri: vhoy
 	Voices:
-		Select: sea, seb, sec, sed, see
-		Move: moa, mob, moc, mod, moe   
+		Select: vhoasea, vhoaseb, vhoasec, vhoased, vhoasee
+		Move: vhoamoa, vhoamob, vhoamoc, vhoamod, vhoamoe  
+        
+HoverSovietVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: vhossea, vhosseb, vhossec, vhossed, vhossee
+		Move: vhosmoa, vhosmob, vhosmod, vhosmoe  
+        
+HoverYuriVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: vhoysea, vhoyseb, vhoysec, vhoysed, vhoysee
+		Move: vhoymoa, vhoymob, vhoymoc, vhoymod, vhoymoe   
         
 MCVVoice:
 	DefaultVariant: .wav
@@ -87,10 +88,45 @@ AlliedConstructionVehicleVoice:
 ChronoMinerVoice:
 	DefaultVariant: .wav
 	Voices:
-		Select: vgrasea, vgraseb, vgrasec, vgrased, vgrasee
-		Move: vgramob, vgramod, vgramoe, vgramof
-		Attack: vgraata, vgraatb, vgraatc, vgraatd, vgraate
+		Select: vchrsea, vchrseb, vchrsec, vchrsed, vchrsee
+		Move: vchrmoa,vchrmob,vchrmoc,vchrmod,vchrmoe
+		Attack: vchrhaa,vchrhab,vchrhac,vchrhad,vchrhae
 
+GrizzlyTankVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: vgrasea, vgraseb, vgrasec, vgrased, vgrasee
+		Move: vgramoa, vgramob, vgramoc, vgramod, vgramoe, vgramof
+		Attack: vgriatta,vgriattb,vgriattc
+
+TankDestroyerVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: vtansea,vtanseb,vtansec,vtansed,vtansee
+		Move: vtanmoa,vtanmob,vtanmoc,vtanmod,vtanmoc
+		Attack: vtanata,vtanatb,vtanatc,vtanatd,vtanate
+
+IFVVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: vifvsea,vifvseb,vifvsec,vifvsed,vifvsee,vifvsef
+		Move: vifvmoa,vifvmob,vifvmoc,vifvmod,vifvmoe,vifvmof
+		Attack: vifvata,vifvatb,vifvatc,vifvatd,vifvate
+
+PrismTankVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: vprisea,vpriseb,vprisec,vprised,vprisee
+		Move: vprimoa,vprimob,vprimoc,vprimod,vprimoe
+		Attack: vpriata,vpriatb,vpriatc,vpriatd,vpriate
+
+MirageTankVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: vmirsea,vmirseb,vmirsec,vmirsed,vmirsee,vmirsef
+		Move: vmirmoa,vmirmob,vmirmoc,vmirmod,vmirmoe,vmirmof,vmirmog
+		Attack: vmirata,vmiratb,vmiratc,vmiratd,vmirate
+        
 SovietVehicleVoice:
 	DefaultVariant: .wav
 	Voices:
@@ -98,12 +134,61 @@ SovietVehicleVoice:
 		Move: vgrsmoa, vgrsmob, vgrsmoc
 		Attack: vgrsata, vgrsatb, vgrsatc, vgrsatd
 
+WarMinerVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: vwarsea,vwarseb,vwarsec,vwarsed,vwarsee
+		Move: vwarmoa,vwarmob,vwarmoc,vwarmod,vwarmoe
+		Attack: vwarata,vwaratb,vwaratc,vwaratd,vwarate
+
+FlakTrackVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: vflasea,vflaseb,vflasec,vflased,vflasee
+		Move: vflamoa,vflamob,vflamoc,vflamod,vflamoe
+		Attack: vflaata,vflaatb,vflaatc,vflaatd,vflaate
+
+ApocalypseTankVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: vaposea,vaposeb,vaposec,vaposed,vaposee
+		Move: vapomoa,vapomob,vapomoc,vapomod,vapomoe
+		Attack: vapoata,vapoatb,vapoatc,vapoatd,vapoate,vapoatf
+
+TeslaTankVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: vtessea,vtesseb,vtessec,vtessed,vtessee
+		Move: vtesmoa,vtesmob,vtesmoc,vtesmod,vtesmoe
+		Attack: vtesata,vtesatb,vtesatd,vtesate
+
 AlliedNavalVoice:
 	DefaultVariant: .wav
 	Voices:
 		Select: vwaasea, vwaaseb, vwaasec, vwaased
 		Move: vwaamoa, vwaamob, vwaamoc, vwaamod, vwaamoe
 		Attack: vwaaata, vwaaatb, vwaaatc
+       
+AegisVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: vaegsea,vaegseb,vaegsec,vaegsed,vaegsee
+		Move: vaegmoa,vaegmob,vaegmoc,vaegmod,vaegmoe
+		Attack: vaegata,vaegatb,vaegatc,vaegatd,vaegate,vaegatf,vaegatg,vaegath
+       
+TyphoonSubVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: vsubsea,vsubseb,vsubsec,vsubsed,vsubsee
+		Move: vsubmoa,vsubmob,vsubmoc,vsubmod,vsubmoe
+		Attack: vsubata,vsubatb,vsubatc,vsubatd,vsubate
+       
+SeaScorpionVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: vscosea,vscoseb,vscosec,vscosed,vscosee
+		Move: vscomoa,vscomob,vscomoc,vscomod,vscomoe
+		Attack: vscoata,vscoatb,vscoatc,vscoatd,vscoate
 
 SovietNavalVoice:
 	DefaultVariant: .wav

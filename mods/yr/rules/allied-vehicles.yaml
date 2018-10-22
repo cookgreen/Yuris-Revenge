@@ -131,7 +131,7 @@ mtnk:
 	WithVoxelTurret:
 	WithVoxelBarrel:
 	Voiced:
-		VoiceSet: AlliedVehicleVoice
+		VoiceSet: GrizzlyTankVoice
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
@@ -176,7 +176,7 @@ tnkd:
 		NormalsPalette: ts-normals
 	WithVoxelBody:
 	Voiced:
-		VoiceSet: AlliedVehicleVoice
+		VoiceSet: TankDestroyerVoice
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
@@ -294,7 +294,7 @@ fv:
 		Sequence: turret-hitech
 		RequiresCondition: ifv-tesla || ifv-deso || ifv-demo || ifv-chrono
 	Voiced:
-		VoiceSet: AlliedVehicleVoice
+		VoiceSet: IFVVoice
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
@@ -344,7 +344,7 @@ sref:
 	WithVoxelTurret:
 	WithVoxelBody:
 	Voiced:
-		VoiceSet: AlliedVehicleVoice
+		VoiceSet: PrismTankVoice
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
@@ -391,7 +391,7 @@ mgtk:
 	RenderVoxels:
 	WithVoxelBody:
 	Voiced:
-		VoiceSet: AlliedVehicleVoice
+		VoiceSet: MirageTankVoice
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:

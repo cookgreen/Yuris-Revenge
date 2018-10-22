@@ -96,7 +96,7 @@ harv:
 	WithVoxelTurret:
 	WithVoxelUnloadBody:
 	Voiced:
-		VoiceSet: SovietVehicleVoice
+		VoiceSet: WarMinerVoice
 	HitShape:
 
 dron:
@@ -186,7 +186,7 @@ htk:
 	WithVoxelTurret:
 	WithVoxelBody:
 	Voiced:
-		VoiceSet: SovietVehicleVoice
+		VoiceSet: FlakTrackVoice
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
@@ -285,7 +285,7 @@ apoc:
 	WithVoxelTurret:
 	WithVoxelBarrel:
 	Voiced:
-		VoiceSet: SovietVehicleVoice
+		VoiceSet: ApocalypseTankVoice
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
@@ -331,7 +331,7 @@ ttnk:
 	WithVoxelBody:
 	WithVoxelTurret:
 	Voiced:
-		VoiceSet: SovietVehicleVoice
+		VoiceSet: TeslaTankVoice
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:

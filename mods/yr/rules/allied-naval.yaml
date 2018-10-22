@@ -46,7 +46,7 @@ lcrf:
 	WithVoxelBody:
 	RenderSprites:
 	Voiced:
-		VoiceSet: AlliedNavalVoice
+		VoiceSet: HoverAlliedVoice
 	HitShape:
 
 dest:
@@ -131,7 +131,7 @@ aegis:
 	WithVoxelBody:
 	RenderSprites:
 	Voiced:
-		VoiceSet: AlliedNavalVoice
+		VoiceSet: AegisVoice
 	HitShape:
 
 dlph:

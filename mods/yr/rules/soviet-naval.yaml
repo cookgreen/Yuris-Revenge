@@ -46,7 +46,7 @@ sapc:
 	WithVoxelBody:
 	RenderSprites:
 	Voiced:
-		VoiceSet: HoverVoice
+		VoiceSet: HoverSovietVoice
 	HitShape:
 
 sub:
@@ -110,6 +110,8 @@ sub:
 		TargetTypes: Underwater, Repair
 		RequiresCondition: underwater
 	HitShape:
+	Voiced:
+		VoiceSet: TyphoonSubVoice
 
 hyd:
 	Inherits: ^Ship
@@ -146,6 +148,8 @@ hyd:
 	WithVoxelBody:
 	RenderSprites:
 	HitShape:
+	Voiced:
+		VoiceSet: SeaScorpionVoice
 
 sqd:
 	Inherits@1: ^ExistsInWorld
