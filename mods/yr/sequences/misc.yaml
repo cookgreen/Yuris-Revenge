@@ -393,6 +393,7 @@ icon:
 	abomb: nukeicon
 	paradrop: paraicon
 	airborne: aparicon
+	geneticmute: muteicon
 
 atomic:
 	up: nkmslup

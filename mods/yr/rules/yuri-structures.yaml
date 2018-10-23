@@ -657,10 +657,21 @@ yagntc:
 	Power:
 		Amount: -200
 	SupportPowerChargeBar:
-#	CanPowerDown:
-#		IndicatorPalette: ts-mouse
-#		PowerupSpeech: BuildingOnline
-#		PowerdownSpeech: BuildingOffline
+	TransformActorsPower:
+		ChargeInterval: 1
+		Icon: geneticmute
+		Description: Genetic Converter
+		LongDesc: Transform the soldiers to the powerful brute which will obey Yuri forever!
+		EndChargeSound: snukread.wav
+		LaunchSound: snuklaun.wav
+		StartFullyCharged: true
+		DisplayTimerStances: Ally, Neutral, Enemy
+		DisplayBeacon: True
+		DisplayRadarPing: True
+		Actor: brute
+		EffectSequence: die9
+		EffectPalette: colorpicker
+		PauseOnCondition: lowpower
 	WithIdleOverlay@top:
 		Sequence: idle-top
 
@@ -682,7 +693,7 @@ yappet:
 	RevealsShroud:
 		Range: 8c0
 	Valued
-		Cost: 2500
+		Cost: 5000
 	Tooltip
 		Name: Yuri Puppet Master
 	Building:

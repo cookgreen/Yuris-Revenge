@@ -1,4 +1,8 @@
-﻿using OpenRA.Mods.Common.Traits;
+﻿using OpenRA.Mods.Common;
+using OpenRA.Mods.Common.Activities;
+using OpenRA.Mods.Common.Effects;
+using OpenRA.Mods.Common.Traits;
+using OpenRA.Primitives;
 using OpenRA.Traits;
 using System;
 using System.Collections.Generic;
@@ -41,6 +45,12 @@ namespace OpenRA.Mods.YR.Traits
 
         [GrantedConditionReference]
         public IEnumerable<string> LinterSpawnContainConditions { get { return SpawnContainConditions.Values; } }
+
+        public readonly int SquadSize = 1;
+        public readonly WVec SquadOffset = new WVec(-1536, 1536, 0);
+
+        public readonly int QuantizedFacings = 32;
+        public readonly WDist Cordon = new WDist(5120);
 
         public override object Create(ActorInitializer init) { return new MarkerMaster(init, this); }
     }
@@ -135,6 +145,57 @@ namespace OpenRA.Mods.YR.Traits
                 se.SpawnerSlave.Attack(se.Actor, target);
             });
         }
+
+        public void SendSlaveFromTheEdage(Actor self, WPos target)
+        {
+            for (int j = 0; j < Info.Actors.Length; j++)
+            {
+                string slaveName = Info.Actors[j];
+                int attackFacing = 256 * self.World.SharedRandom.Next(Info.QuantizedFacings) / Info.QuantizedFacings;
+
+                var altitude = self.World.Map.Rules.Actors[slaveName].TraitInfo<AircraftInfo>().CruiseAltitude.Length;
+                var attackRotation = WRot.FromFacing(attackFacing);
+                var delta = new WVec(0, -1024, 0).Rotate(attackRotation);
+                target = target + new WVec(0, 0, altitude);
+                var startEdge = target - (self.World.Map.DistanceToEdge(target, -delta) + Info.Cordon).Length * delta / 1024;
+                var finishEdge = target + (self.World.Map.DistanceToEdge(target, delta) + Info.Cordon).Length * delta / 1024;
+
+                var aircraftInRange = new Dictionary<Actor, bool>();
+
+
+                self.World.AddFrameEndTask(w =>
+                {
+                    Actor distanceTestActor = null;
+                    for (var i = -Info.SquadSize / 2; i <= Info.SquadSize / 2; i++)
+                    {
+                        // Even-sized squads skip the lead plane
+                        if (i == 0 && (Info.SquadSize & 1) == 0)
+                            continue;
+
+                        // Includes the 90 degree rotation between body and world coordinates
+                        var so = Info.SquadOffset;
+                        var spawnOffset = new WVec(i * so.Y, -Math.Abs(i) * so.X, 0).Rotate(attackRotation);
+                        var targetOffset = new WVec(i * so.Y, 0, 0).Rotate(attackRotation);
+
+                        var a = w.CreateActor(slaveName, new TypeDictionary
+                    {
+                        new CenterPositionInit(startEdge + spawnOffset),
+                        new OwnerInit(self.Owner),
+                        new FacingInit(attackFacing),
+                    });
+
+                        var attack = a.Trait<AttackBomber>();
+                        attack.SetTarget(w, target + targetOffset);
+
+                        a.QueueActivity(new Fly(a, Target.FromPos(target + spawnOffset)));
+                        a.QueueActivity(new Fly(a, Target.FromPos(finishEdge + spawnOffset)));
+                        a.QueueActivity(new RemoveSelf());
+                        aircraftInRange.Add(a, false);
+                        distanceTestActor = a;
+                    }
+                });
+            }
+    }
 
         public virtual void OnBecomingIdle(Actor self)
         {
