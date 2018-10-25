@@ -12,6 +12,7 @@ Speech:
 		russia: csof
 		yuri: cyur
 	Notifications:
+	    AirfieldCaptured: 136
 		AllianceBroken: 044
 		AllianceFormed: 043
 		AllianceRequested: 101
@@ -56,7 +57,13 @@ Speech:
 		FirepowerUpgraded: 068
 		FirepowerTechnologyStolen: 081
 		FiveMinutesRemaining: 029
+		ForceShieldActivated: 133
+		ForceShieldReady: 132
 		FourMinutesRemaining: 030
+		GeneticMutatorDetected: 128
+		GeneticMutatorActivated: 129
+		GeneticMutatorReady: 130
+		HospitalCaptured: 134
 		IncomingTransmission: 040
 		InsufficientFunds: 050
 		IronCurtainActivated: 005
@@ -67,6 +74,7 @@ Speech:
 		LightningStormReady: 012
 		Lose: 023
 		LowPower: 053
+		MachineShopCaptured: 135
 		MissionAccomplished: 013
 		MissionFailed: 014
 		NewMissionObjectiveReceived: 083
@@ -79,6 +87,7 @@ Speech:
 		NuclearMissileLaunched: 002
 		NuclearMissileReady: 002
 		NuclearSiloDetected: 001
+		OilRefineryCaptured: 138
 		OneMinuteRemaining: 033
 		OnHold: 056
 		OreMinerOffline: 086
@@ -89,15 +98,22 @@ Speech:
 		PowerSabotaged: 095
 		PrimaryBuildingSelected: 055
 		PrimaryObjectiveAchieved: 017
+		PsychicDominatorDetected: 125
+		PsychicDominatorReady: 127
 		RadarSabotaged: 093
 		ReinforcementsArrived: 038
 		ReinforcementsReady: 121
 		Repairing: 057
 		Resign: 024
 		RequestingAlliance: 102
+		RobotTanksBackOnline: 141
+		RobotTanksOffline: 140
 		SecondObjectiveAchieved: 018
+		SecretLabCaptured: 137
 		SelectTarget: 065
 		SpeedUpgraded: 069
+		SpyPlaneEnRoute: 142
+		SpyPlaneReady: 153
 		StartGame: 120
 		StructureAbandoned: 108
 		StructureGarrisoned: 107
