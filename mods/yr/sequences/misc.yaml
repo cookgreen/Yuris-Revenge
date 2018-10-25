@@ -212,6 +212,8 @@ explosion:
 	chronosk: chronosk
 	initfire: fire01
 	psi_wave: ring1
+	psychicdomcld: pdfxcld
+	psychicdomloc: pdfxloc
 
 discus:
 	idle:

@@ -701,10 +701,19 @@ yappet:
 		Dimensions: 3,3
 	Power:
 		Amount: -200
-#	CanPowerDown:
-#		IndicatorPalette: ts-mouse
-#		PowerupSpeech: BuildingOnline
-#		PowerdownSpeech: BuildingOffline
+	ParticleSupportPower:
+		ChargeInterval: 1
+		Icon: psychicdom
+		Description: Psychic Dominator
+		LongDesc: Make the enemy feel the anger from the Yuri!
+		EndChargeSound: snukread.wav
+		LaunchSound: snuklaun.wav
+		StartFullyCharged: true
+		DisplayTimerStances: Ally, Neutral, Enemy
+		DisplayBeacon: True
+		DisplayRadarPing: True
+		Weapons: DominatorWH
+		PauseOnCondition: lowpower
 	SupportPowerChargeBar:
 
 yarock:
