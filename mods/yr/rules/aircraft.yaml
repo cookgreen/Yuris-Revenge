@@ -263,8 +263,7 @@ bpln:
 		TurnSpeed: 3
 		Speed: 140
 		RearmBuildings: gaairc, amradr
-	Selectable:
-		Bounds: 30,24
+	-Selectable:
 	Health:
 		HP: 100
 	Armor:

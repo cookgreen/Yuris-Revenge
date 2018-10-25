@@ -661,7 +661,7 @@ yagntc:
 		ValidPowerStates: Low, Critical
 	SupportPowerChargeBar:
 	TransformActorsPower:
-		ChargeInterval: 1
+		ChargeInterval: 15000
 		Icon: geneticmute
 		Description: Genetic Converter
 		LongDesc: Transform the soldiers to the powerful brute which will obey Yuri forever!
@@ -709,7 +709,7 @@ yappet:
 		Condition: lowpower
 		ValidPowerStates: Low, Critical
 	ParticleSupportPower:
-		ChargeInterval: 1
+		ChargeInterval: 15000
 		Icon: psychicdom
 		Description: Psychic Dominator
 		LongDesc: Make the enemy feel the anger from the Yuri!
