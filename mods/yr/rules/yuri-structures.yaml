@@ -656,6 +656,9 @@ yagntc:
 		Dimensions: 3,3
 	Power:
 		Amount: -200
+	GrantConditionOnPowerState@LOWPOWER:
+		Condition: lowpower
+		ValidPowerStates: Low, Critical
 	SupportPowerChargeBar:
 	TransformActorsPower:
 		ChargeInterval: 1
@@ -674,6 +677,7 @@ yagntc:
 		PauseOnCondition: lowpower
 	WithIdleOverlay@top:
 		Sequence: idle-top
+	WithNukeLaunchAnimation:
 
 yappet:
 	Inherits: ^Building
@@ -701,6 +705,9 @@ yappet:
 		Dimensions: 3,3
 	Power:
 		Amount: -200
+	GrantConditionOnPowerState@LOWPOWER:
+		Condition: lowpower
+		ValidPowerStates: Low, Critical
 	ParticleSupportPower:
 		ChargeInterval: 1
 		Icon: psychicdom
@@ -715,6 +722,7 @@ yappet:
 		Weapons: DominatorWH
 		PauseOnCondition: lowpower
 	SupportPowerChargeBar:
+	WithNukeLaunchAnimation:
 
 yarock:
 	Inherits: ^Building

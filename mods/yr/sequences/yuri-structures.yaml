@@ -514,11 +514,11 @@ yagntc:
 		Length: 1
 		ShadowStart: 3
 		Tick: 150
-	superweapon-active: yagntc_f
+	active: yagntc_f
 		Length: 8
 		ShadowStart: 16
 		Tick: 150
-	damaged-superweapon-active: yagntc_f
+	damaged-active: yagntc_f
 		Start: 8
 		Length: 8
 		ShadowStart: 24
@@ -558,11 +558,11 @@ yappet:
 		Length: 1
 		ShadowStart: 3
 		Tick: 150
-	superweapon-active: yappet_f
+	active: yappet_f
 		Length: 19
 		ShadowStart: 38
 		Tick: 150
-	damaged-superweapon-active: yappet_f
+	damaged-active: yappet_f
 		Start: 19
 		Length: 19
 		ShadowStart: 57
