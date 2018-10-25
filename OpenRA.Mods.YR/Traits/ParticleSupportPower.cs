@@ -49,6 +49,7 @@ namespace OpenRA.Mods.YR.Traits
                 throw new YamlException("Weapons Ruleset can't be empty!");
             }
             string[] weaponArray = Weapons.Split(',');
+            WeaponInfos = new List<WeaponInfo>();
             for (int i = 0; i < weaponArray.Length; i++)
             {
                 string Weapon = weaponArray[i];
