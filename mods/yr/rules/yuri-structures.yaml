@@ -665,8 +665,8 @@ yagntc:
 		Icon: geneticmute
 		Description: Genetic Converter
 		LongDesc: Transform the soldiers to the powerful brute which will obey Yuri forever!
-		EndChargeSound: snukread.wav
-		LaunchSound: snuklaun.wav
+		EndChargeSound: sgenlo1a.wav,sgenlo2a.wav,sgenlo2b.wav,sgenlo2c.wav,sgenlo3a.wav
+		LaunchSound: sgenon.wav
 		StartFullyCharged: true
 		DisplayTimerStances: Ally, Neutral, Enemy
 		DisplayBeacon: True
@@ -713,8 +713,8 @@ yappet:
 		Icon: psychicdom
 		Description: Psychic Dominator
 		LongDesc: Make the enemy feel the anger from the Yuri!
-		EndChargeSound: snukread.wav
-		LaunchSound: snuklaun.wav
+		EndChargeSound: spsylo1a.wav,spsylo2a.wav,spsylo2b.wav,spsylo2c.wav,spsylo3a.wav
+		LaunchSound: spsydom.wav
 		StartFullyCharged: true
 		DisplayTimerStances: Ally, Neutral, Enemy
 		DisplayBeacon: True

@@ -396,6 +396,7 @@ icon:
 	paradrop: paraicon
 	airborne: aparicon
 	geneticmute: muteicon
+	psychicdom: pdomicon
 
 atomic:
 	up: nkmslup
