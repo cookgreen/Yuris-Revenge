@@ -189,6 +189,7 @@ slav:
 	WithHarvestAnimation:
 	WithDockingAnimation:
 		DockSequence: idle
+		DockLoopSequence: idle
 	Armament@primary:
 		Weapon: shovel
 		RequiresCondition: !rank-elite
