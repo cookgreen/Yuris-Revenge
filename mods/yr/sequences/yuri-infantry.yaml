@@ -81,9 +81,13 @@ slav:
 		Start: 101
 	harvest:
 		Start: 116
+	empty-harvest:
+		Start: 228
+	half-harvest:
+		Start: 228
+	full-harvest:
+		Start: 228
 	shoot:
-		Start: 164
-	prone-shoot:
 		Start: 164
 	cheer:
 		Start: 276

@@ -40,6 +40,7 @@ smcv:
 	Voiced:
 		VoiceSet: MCVVoice
 	HitShape:
+	-CrewKillable:
 
 harv:
 	Inherits: ^Vehicle
@@ -98,6 +99,7 @@ harv:
 	Voiced:
 		VoiceSet: WarMinerVoice
 	HitShape:
+	-CrewKillable:
 
 dron:
 	Inherits: ^Vehicle
@@ -137,6 +139,7 @@ dron:
 	Voiced:
 		VoiceSet: TerrorDroneVoice
 	HitShape:
+	-CrewKillable:
 
 htk:
 	Inherits: ^Vehicle
@@ -190,6 +193,7 @@ htk:
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
+	CrewKillable:
 
 htnk:
 	Inherits: ^Vehicle
@@ -239,6 +243,7 @@ htnk:
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
+	CrewKillable:
 
 apoc:
 	Inherits: ^Vehicle
@@ -289,6 +294,7 @@ apoc:
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
+	-CrewKillable:
 
 ttnk:
 	Inherits: ^Vehicle
@@ -335,6 +341,7 @@ ttnk:
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
+	CrewKillable:
 
 dtruck:
 	Inherits: ^Vehicle
@@ -373,3 +380,4 @@ dtruck:
 	Voiced:
 		VoiceSet: DemolitionTruckVoice
 	HitShape:
+	-CrewKillable:

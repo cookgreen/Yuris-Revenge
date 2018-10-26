@@ -39,6 +39,7 @@ amcv:
 	Voiced:
 		VoiceSet: MCVVoice
 	HitShape:
+	-CrewKillable:
 
 cmin:
 	Inherits: ^Vehicle
@@ -87,6 +88,7 @@ cmin:
 	Voiced:
 		VoiceSet: ChronoMinerVoice
 	HitShape:
+	-CrewKillable:
 
 mtnk:
 	Inherits: ^Vehicle
@@ -135,6 +137,7 @@ mtnk:
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
+	CrewKillable:
 
 tnkd:
 	Inherits: ^Vehicle
@@ -180,6 +183,7 @@ tnkd:
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
+	-CrewKillable:
 
 fv:
 	Inherits: ^Vehicle
@@ -298,6 +302,7 @@ fv:
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
+	CrewKillable:
 
 sref:
 	Inherits: ^Vehicle
@@ -348,6 +353,7 @@ sref:
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
+	CrewKillable:
 
 mgtk:
 	Inherits: ^Vehicle
@@ -395,3 +401,4 @@ mgtk:
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
+	CrewKillable:

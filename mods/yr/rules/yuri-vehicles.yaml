@@ -146,6 +146,7 @@ ltnk:
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
+	CrewKillable:
     
 ytnk:
 	Inherits: ^Vehicle
@@ -237,6 +238,7 @@ ytnk:
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
+	CrewKillable:
     
 tele:
 	Inherits: ^Vehicle
@@ -288,6 +290,8 @@ tele:
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
+	CrewKillable:
+	
 caos:
 	Inherits: ^Vehicle
 	Valued:
@@ -336,6 +340,7 @@ caos:
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
+	-CrewKillable:
     
 mind:
 	Inherits: ^Vehicle
@@ -386,6 +391,7 @@ mind:
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
+	-CrewKillable:
 
 
 disk:

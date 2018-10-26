@@ -239,6 +239,54 @@ VirusgunE:
 		DamageTypes: VirusDeath, Prone100Percent
 	Warhead@2Eff: CreateEffect
 		Explosions: piff
+		
+
+        
+Brustgun:
+	Inherits: ^MG
+	ReloadDelay: 100
+	Range:10c0
+	Report: iviratta.wav
+	Warhead@1Dam: KillCrew
+		Damage: 125       
+		ValidTargets: Ground
+		Versus:
+			None: 100
+			Flak: 100
+			Plate: 100
+			Light: 1
+			Medium: 1
+			Heavy: 1
+			Wood: 1
+			Steel: 1
+			Concrete: 1
+			Drone: 1
+			Rocket: 100
+	Warhead@2Eff: CreateEffect
+		Explosions: initfire
+        
+BrustgunE:
+	Inherits: ^MG
+	ReloadDelay: 80
+	Range:16c0
+	Report: iviratta.wav
+	Warhead@1Dam: KillCrew
+		Damage: 125     
+		ValidTargets: Ground
+		Versus:
+			None: 100
+			Flak: 100
+			Plate: 100
+			Light: 1
+			Medium: 1
+			Heavy: 1
+			Wood: 1
+			Steel: 1
+			Concrete: 1
+			Drone: 1
+			Rocket: 100
+	Warhead@2Eff: CreateEffect
+		Explosions: initfire
         
 AGGattling:
 	Inherits: ^MG

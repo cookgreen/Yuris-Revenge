@@ -123,7 +123,7 @@ virus:
 		Queue: Infantry
 		Prerequisites: ~yabrck
 		BuildPaletteOrder: 20
-		Description: Elite sniper.\n Strong vs Infantry\n Weak vs Vehicle and Aircraft
+		Description: Virus sniper.\n Strong vs Infantry\n Weak vs Vehicle and Aircraft
 	Valued:
 		Cost: 700
 	Tooltip:
@@ -186,7 +186,6 @@ slav:
 		Voice: Attack
 	RenderSprites:
 	WithSpriteBody:
-	WithHarvestAnimation:
 	WithDockingAnimation:
 		DockSequence: idle
 		DockLoopSequence: idle
@@ -200,6 +199,8 @@ slav:
 		VoiceSet: SlaveWorkerVoice
 	WithInfantryBody
 		DefaultAttackSequence: shoot
+	WithHarvestAnimation:
+		PrefixByFullness: empty-, half-, full-
 
 yuri:
 	Inherits: ^Infantry
@@ -274,3 +275,44 @@ yuri:
 	AutoTargetPriority@DEFAULT:
 		Types: MindControl
 		RequiresCondition: !controlling
+
+julia:
+	Inherits: ^Infantry
+	Buildable:
+		Queue: Infantry
+		Prerequisites: ~yabrck
+		BuildPaletteOrder: 20
+		Description: Yuri's Elite Sniper, can kill crew of enemy vehicle effectively.
+		BuildLimit: 1
+	RenderSprites:
+		Image: Virus
+	Valued:
+		Cost: 700
+	Tooltip:
+		Name: Julia
+	DeliversCash:
+		Payload: 350
+		PlayerExperience: 20
+		Voice: Move
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Health:
+		HP: 100
+	Mobile:
+		Speed: 40
+	Passenger:
+		PipType: Green
+	RevealsShroud:
+		Range: 5c0
+	AttackFrontal:
+		Voice: Attack
+	Armament@primary:
+		Weapon: Brustgun
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: BrustgunE
+		RequiresCondition: rank-elite
+	Voiced:
+		VoiceSet: VirusVoice
+	WithInfantryBody
+		DefaultAttackSequence: shoot
