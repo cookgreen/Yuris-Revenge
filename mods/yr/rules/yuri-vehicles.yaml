@@ -341,6 +341,7 @@ caos:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
 	-CrewKillable:
+	-Capturable:
     
 mind:
 	Inherits: ^Vehicle

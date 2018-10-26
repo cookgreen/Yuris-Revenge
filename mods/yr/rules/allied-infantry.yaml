@@ -5,7 +5,7 @@ engineer:
 		Queue: Infantry
 		Prerequisites: ~barracks
 		BuildPaletteOrder: 30
-		Description: Captures enemy structures.\n  Unarmed
+		Description: Captures enemy structures and netural vehicles.\n  Unarmed
 	Valued:
 		Cost: 500
 	DeliversCash:

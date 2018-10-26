@@ -746,6 +746,9 @@
 	EditorTilesetFilter:
 		Categories: Vehicle
 	CrewKillable:
+	Capturable:
+		Types: husk
+		ValidStances: Neutral
 
 ^CivVehicle:
 	Inherits: ^Vehicle

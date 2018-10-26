@@ -140,6 +140,7 @@ dron:
 		VoiceSet: TerrorDroneVoice
 	HitShape:
 	-CrewKillable:
+	-Capturable:
 
 htk:
 	Inherits: ^Vehicle

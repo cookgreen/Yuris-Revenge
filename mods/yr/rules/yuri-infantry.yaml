@@ -42,7 +42,7 @@ yengineer:
 		Queue: Infantry
 		Prerequisites: ~yabrck
 		BuildPaletteOrder: 20
-		Description: Capture enemy structures.\n Unarmed
+		Description: Capture enemy structures and netural vehicles.\n Unarmed
 	Valued:
 		Cost: 500
 	Tooltip:
