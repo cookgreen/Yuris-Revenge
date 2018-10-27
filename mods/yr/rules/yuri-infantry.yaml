@@ -1,5 +1,6 @@
 init:
 	Inherits: ^Infantry
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Queue: Infantry
 		Prerequisites: ~yabrck
@@ -65,7 +66,6 @@ yengineer:
 	Captures:
 		Sabotage: false
 		CaptureTypes: building, husk
-	-AutoTarget:
 	RevealsShroud:
 		Range: 4c0
 	Voiced:
@@ -81,6 +81,7 @@ yengineer:
         
 brute:
 	Inherits: ^Infantry
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Queue: Infantry
 		Prerequisites: ~yabrck
@@ -119,6 +120,7 @@ brute:
 
 virus:
 	Inherits: ^Infantry
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Queue: Infantry
 		Prerequisites: ~yabrck
@@ -278,6 +280,7 @@ yuri:
 
 julia:
 	Inherits: ^Infantry
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Queue: Infantry
 		Prerequisites: ~yabrck

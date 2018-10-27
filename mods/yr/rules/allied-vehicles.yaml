@@ -93,6 +93,7 @@ cmin:
 mtnk:
 	Inherits: ^Vehicle
 	Inherits@MC: ^MindControllable
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Valued:
 		Cost: 700
 	Tooltip:
@@ -142,6 +143,7 @@ mtnk:
 tnkd:
 	Inherits: ^Vehicle
 	Inherits@MC: ^MindControllable
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Valued:
 		Cost: 900
 	Tooltip:
@@ -188,6 +190,7 @@ tnkd:
 fv:
 	Inherits: ^Vehicle
 	Inherits@MC: ^MindControllable
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Valued:
 		Cost: 600
 	Tooltip:
@@ -273,7 +276,30 @@ fv:
 #		RequiresCondition: ifv-chrono
 	AttackTurreted:
 		Voice: Attack
-	AutoTarget:
+	AutoTargetPriority@DEFAULT:
+		RequiresCondition: !stance-attackanything && !assault-move && !ifv-mg && !ifv-repair && !ifv-sniper && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-hero && !ifv-demo && !ifv-chrono
+	AutoTargetPriority@ATTACKANYTHING:
+		RequiresCondition: stance-attackanything || assault-move && !ifv-mg && !ifv-repair && !ifv-sniper && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-hero && !ifv-demo && !ifv-chrono
+	AutoTargetPriority@DEFAULT_GROUND:
+		RequiresCondition: (!stance-attackanything && !assault-move) && (ifv-mg || ifv-flak || ifv-tesla || ifv-chrono)
+		ValidTargets: Infantry, Vehicle, Water, Underwater, Defense
+		InvalidTargets: NoAutoTarget, WaterStructure
+	AutoTargetPriority@ATTACKANYTHING_GROUND:
+		RequiresCondition: (stance-attackanything || assault-move) && (ifv-mg || ifv-flak || ifv-tesla || ifv-chrono)
+		ValidTargets: Infantry, Vehicle, Water, Underwater, Structure, Defense
+		InvalidTargets: NoAutoTarget
+	AutoTargetPriority@INFONLY:
+		RequiresCondition: ifv-sniper || ifv-hero
+		ValidTargets: Infantry
+		InvalidTargets: NoAutoTarget
+	AutoTargetPriority@REPAIR:
+		RequiresCondition: ifv-repair
+		ValidTargets: Repair
+		InvalidTargets: NoAutoTarget
+	AutoTargetPriority@NOBUILDING:
+		RequiresCondition: ifv-deso
+		ValidTargets: Infantry, Vehicle
+		InvalidTargets: NoAutoTarget
 	Selectable:
 		Bounds: 64, 52, 0, -6
 	RenderSprites:
@@ -307,6 +333,7 @@ fv:
 sref:
 	Inherits: ^Vehicle
 	Inherits@MC: ^MindControllable
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 50
@@ -358,6 +385,7 @@ sref:
 mgtk:
 	Inherits: ^Vehicle
 	Inherits@MC: ^MindControllable
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 70

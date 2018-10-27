@@ -51,6 +51,7 @@ yhvr:
 bsub:
 	Inherits: ^Ship
 	Inherits@MC: ^MindControllable
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Queue: Ship
 		BuildPaletteOrder: 20

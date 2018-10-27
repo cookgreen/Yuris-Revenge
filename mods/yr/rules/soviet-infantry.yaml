@@ -2,6 +2,7 @@ e2:
 	Inherits@1: ^Infantry
 	Inherits@2: ^Parachutable
 	Inherits@MC: ^MindControllable
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Queue: Infantry
 		Prerequisites: ~nahand
@@ -46,6 +47,7 @@ flakt:
 	Inherits@1: ^Infantry
 	Inherits@2: ^Parachutable
 	Inherits@MC: ^MindControllable
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Buildable:
 		Queue: Infantry
 		Prerequisites: naradr, ~nahand
@@ -97,6 +99,7 @@ shk:
 	Inherits@1: ^Infantry
 	Inherits@2: ^Parachutable
 	Inherits@MC: ^MindControllable
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Queue: Infantry
 		BuildAtProductionType: Infantry
@@ -199,6 +202,7 @@ terror:
 
 deso:
 	Inherits: ^Infantry
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@MC: ^MindControllable
 	Buildable:
 		Queue: Infantry
@@ -296,6 +300,7 @@ ivan:
         
 boris:
 	Inherits@1: ^Infantry
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Queue: Infantry
 		Prerequisites: natech, ~nahand

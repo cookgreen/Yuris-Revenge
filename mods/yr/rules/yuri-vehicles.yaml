@@ -99,6 +99,7 @@ smin:
 ltnk:
 	Inherits: ^Vehicle
 	Inherits@MC: ^MindControllable
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Valued:
 		Cost: 700
 	Tooltip:
@@ -151,6 +152,7 @@ ltnk:
 ytnk:
 	Inherits: ^Vehicle
 	Inherits@MC: ^MindControllable
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Valued:
 		Cost: 600
 	Tooltip:
@@ -243,6 +245,7 @@ ytnk:
 tele:
 	Inherits: ^Vehicle
 	Inherits@MC: ^MindControllable
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Valued:
 		Cost: 1000
 	Tooltip:
@@ -294,6 +297,7 @@ tele:
 	
 caos:
 	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Valued:
 		Cost: 800
 	Tooltip:
@@ -397,6 +401,7 @@ mind:
 
 disk:
 	Inherits: ^Aircraft
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Valued:
 		Cost: 1750
 	Tooltip:
