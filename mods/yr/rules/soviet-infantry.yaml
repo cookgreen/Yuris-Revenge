@@ -342,7 +342,7 @@ boris:
 		Prerequisites: barracks.infiltrated
 	QuantizeFacingsFromSequence:
 		Sequence: stand
-	CarrierMaster:
+	MarkerMaster:
 		Actors: bpln, bpln
 		RespawnTicks: 300
 		InstaRepair: true

@@ -81,7 +81,6 @@
     <Compile Include="Traits\ParticleSupportPower.cs" />
     <Compile Include="Traits\RallyPointEx.cs" />
     <Compile Include="Traits\TransformActorsPower.cs" />
-    <Compile Include="Warheads\InfraredMarkerWarhead.cs" />
     <Compile Include="Warheads\KillCrewWarhead.cs" />
     <Compile Include="Warheads\MagWaveWarhead.cs" />
   </ItemGroup>

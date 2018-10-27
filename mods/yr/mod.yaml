@@ -194,6 +194,7 @@ Weapons:
 	yr|weapons/mgs.yaml
 	yr|weapons/misc.yaml
 	yr|weapons/missiles.yaml
+	yr|weapons/particles.yaml
 	yr|weapons/zaps.yaml
 
 Voices:

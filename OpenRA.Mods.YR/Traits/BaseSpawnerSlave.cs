@@ -106,9 +106,10 @@ namespace OpenRA.Mods.YR.Traits
 		}
 
 		// Make this actor attack a target.
-		Target lastTarget;
-		public void Attack(Actor self, Target target)
+		public Target lastTarget;
+		public virtual void Attack(Actor self, Target target)
 		{
+
 			// Don't have to change target or alter current activity.
 			if (!TargetSwitched(lastTarget, target))
 				return;

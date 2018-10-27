@@ -320,11 +320,11 @@ caos:
 	Turreted:
 		TurnSpeed: 5
 	Armament@primary:
-		Weapon: 105mm
+		Weapon: ChaosGasAttack
 		LocalOffset: 640,0,384
 		RequiresCondition: !rank-elite
 	Armament@elite:
-		Weapon: 105mmE
+		Weapon: ChaosGasAttack
 		LocalOffset: 640,0,384
 		RequiresCondition: rank-elite
 	AttackTurreted:

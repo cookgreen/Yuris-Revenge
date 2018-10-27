@@ -1,4 +1,17 @@
-﻿using OpenRA.Mods.Common;
+﻿#region Copyright & License Information
+/*
+ * Modded by Cook Green of YR Mod
+ * Modded from CarrierMaster.cs but a lot changed.
+ * 
+ * Copyright 2007-2017 The OpenRA Developers (see AUTHORS)
+ * This file is part of OpenRA, which is free software. It is made
+ * available to you under the terms of the GNU General Public License
+ * as published by the Free Software Foundation, either version 3 of
+ * the License, or (at your option) any later version. For more
+ * information, see COPYING.
+ */
+#endregion
+using OpenRA.Mods.Common;
 using OpenRA.Mods.Common.Activities;
 using OpenRA.Mods.Common.Effects;
 using OpenRA.Mods.Common.Traits;
@@ -42,7 +55,8 @@ namespace OpenRA.Mods.YR.Traits
         [Desc("Conditions to grant when specified actors are contained inside the transport.",
             "A dictionary of [actor id]: [condition].")]
         public readonly Dictionary<string, string> SpawnContainConditions = new Dictionary<string, string>();
-
+        [Desc("The sound will be played when mark a target")]
+        public readonly string MarkSound = "Attack";
         [GrantedConditionReference]
         public IEnumerable<string> LinterSpawnContainConditions { get { return SpawnContainConditions.Values; } }
 
@@ -57,11 +71,14 @@ namespace OpenRA.Mods.YR.Traits
 
     public class MarkerMaster : BaseSpawnerMaster, IPips, ITick, INotifyAttack, INotifyBecomingIdle
     {
+        private WPos finishEdge;
+        private WVec spawnOffset;
+        private WPos targetPos;
         class CarrierSlaveEntry : BaseSpawnerSlaveEntry
         {
             public int RearmTicks = 0;
             public bool IsLaunched = false;
-            public new CarrierSlave SpawnerSlave;
+            public new MarkerSlave SpawnerSlave;
         }
 
         readonly Dictionary<string, Stack<int>> spawnContainTokens = new Dictionary<string, Stack<int>>();
@@ -78,6 +95,45 @@ namespace OpenRA.Mods.YR.Traits
         public MarkerMaster(ActorInitializer init, MarkerMasterInfo info) : base(init, info)
         {
             Info = info;
+        }
+
+        public override void Replenish(Actor self, BaseSpawnerSlaveEntry entry)
+        {
+            if (entry.IsValid)
+                throw new InvalidOperationException("Replenish must not be run on a valid entry!");
+
+            string attacker = entry.ActorName;
+
+            Game.Sound.Play(SoundType.World, Info.MarkSound);
+
+            var aircraftInRange = new Dictionary<Actor, bool>();
+            
+            self.World.AddFrameEndTask(w =>
+            {
+                for (var i = -Info.SquadSize / 2; i <= Info.SquadSize / 2; i++)
+                {
+                    // Even-sized squads skip the lead plane
+                    if (i == 0 && (Info.SquadSize & 1) == 0)
+                        continue;
+
+                    // Includes the 90 degree rotation between body and world coordinates
+
+                    var slave = w.CreateActor(attacker, new TypeDictionary()
+                    {
+                        new OwnerInit(self.Owner)
+                    }
+                     /*, new TypeDictionary
+                    {
+                        new CenterPositionInit(startEdge + spawnOffset),
+                        new OwnerInit(self.Owner),
+                        new FacingInit(attackFacing),
+                    }*/);
+
+                    // Initialize slave entry
+                    InitializeSlaveEntry(slave, entry);
+                    entry.SpawnerSlave.LinkMaster(entry.Actor, self, this);
+                }
+            });
         }
 
         protected override void Created(Actor self)
@@ -103,7 +159,7 @@ namespace OpenRA.Mods.YR.Traits
 
             se.RearmTicks = 0;
             se.IsLaunched = false;
-            se.SpawnerSlave = slave.Trait<CarrierSlave>();
+            se.SpawnerSlave = slave.Trait<MarkerSlave>();
         }
 
         void INotifyAttack.PreparingAttack(Actor self, Target target, Armament a, Barrel barrel) { }
@@ -135,67 +191,52 @@ namespace OpenRA.Mods.YR.Traits
 
             SpawnIntoWorld(self, se.Actor, self.CenterPosition);
 
+            se.SpawnerSlave.SetSpawnInfo(finishEdge, spawnOffset, targetPos);
+
             // Queue attack order, too.
             self.World.AddFrameEndTask(w =>
             {
                 // The actor might had been trying to do something before entering the carrier.
                 // Cancel whatever it was trying to do.
                 se.SpawnerSlave.Stop(se.Actor);
-
+                se.Actor.PlayVoice(Info.MarkSound);
                 se.SpawnerSlave.Attack(se.Actor, target);
             });
         }
 
-        public void SendSlaveFromTheEdage(Actor self, WPos target)
+        public override void SpawnIntoWorld(Actor self, Actor slave, WPos centerPosition)
         {
-            for (int j = 0; j < Info.Actors.Length; j++)
+            World w = self.World;
+
+            WPos target = centerPosition;
+
+            for (var i = -Info.SquadSize / 2; i <= Info.SquadSize / 2; i++)
             {
-                string slaveName = Info.Actors[j];
                 int attackFacing = 256 * self.World.SharedRandom.Next(Info.QuantizedFacings) / Info.QuantizedFacings;
 
-                var altitude = self.World.Map.Rules.Actors[slaveName].TraitInfo<AircraftInfo>().CruiseAltitude.Length;
+                var altitude = self.World.Map.Rules.Actors[slave.Info.Name].TraitInfo<AircraftInfo>().CruiseAltitude.Length;
                 var attackRotation = WRot.FromFacing(attackFacing);
                 var delta = new WVec(0, -1024, 0).Rotate(attackRotation);
                 target = target + new WVec(0, 0, altitude);
                 var startEdge = target - (self.World.Map.DistanceToEdge(target, -delta) + Info.Cordon).Length * delta / 1024;
                 var finishEdge = target + (self.World.Map.DistanceToEdge(target, delta) + Info.Cordon).Length * delta / 1024;
 
-                var aircraftInRange = new Dictionary<Actor, bool>();
+                var so = Info.SquadOffset;
+                var spawnOffset = new WVec(i * so.Y, -Math.Abs(i) * so.X, 0).Rotate(attackRotation);
+                var targetOffset = new WVec(i * so.Y, 0, 0).Rotate(attackRotation);
 
+                this.spawnOffset = spawnOffset;
+                this.finishEdge = finishEdge;
+                this.targetPos = target;
 
-                self.World.AddFrameEndTask(w =>
-                {
-                    Actor distanceTestActor = null;
-                    for (var i = -Info.SquadSize / 2; i <= Info.SquadSize / 2; i++)
-                    {
-                        // Even-sized squads skip the lead plane
-                        if (i == 0 && (Info.SquadSize & 1) == 0)
-                            continue;
-
-                        // Includes the 90 degree rotation between body and world coordinates
-                        var so = Info.SquadOffset;
-                        var spawnOffset = new WVec(i * so.Y, -Math.Abs(i) * so.X, 0).Rotate(attackRotation);
-                        var targetOffset = new WVec(i * so.Y, 0, 0).Rotate(attackRotation);
-
-                        var a = w.CreateActor(slaveName, new TypeDictionary
-                    {
-                        new CenterPositionInit(startEdge + spawnOffset),
-                        new OwnerInit(self.Owner),
-                        new FacingInit(attackFacing),
-                    });
-
-                        var attack = a.Trait<AttackBomber>();
-                        attack.SetTarget(w, target + targetOffset);
-
-                        a.QueueActivity(new Fly(a, Target.FromPos(target + spawnOffset)));
-                        a.QueueActivity(new Fly(a, Target.FromPos(finishEdge + spawnOffset)));
-                        a.QueueActivity(new RemoveSelf());
-                        aircraftInRange.Add(a, false);
-                        distanceTestActor = a;
-                    }
-                });
+                var attack = slave.Trait<AttackPlane>();
+                attack.AttackTarget(Target.FromPos(target + targetOffset), false, true);
             }
-    }
+        }
+
+        public void SendSlaveFromTheEdage(Actor self, WPos target)
+        {
+        }
 
         public virtual void OnBecomingIdle(Actor self)
         {

@@ -263,7 +263,8 @@ bpln:
 		TurnSpeed: 3
 		Speed: 140
 		RearmBuildings: gaairc, amradr
-	-Selectable:
+	Selectable:
+		Bounds: 30,24
 	Health:
 		HP: 100
 	Armor:
@@ -295,5 +296,5 @@ bpln:
 		Weapon: MigDeath
 		EmptyWeapon: MigDeath
 	HitShape:
-	CarrierSlave:
+	MarkerSlave:
 		LandingDistance: 1c0

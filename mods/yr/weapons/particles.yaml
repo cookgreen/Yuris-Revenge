@@ -1,0 +1,22 @@
+ChaosGasAttack:
+	Range: 6c0
+	Report: vchaatta.wav
+	ValidTargets: Ground, Water
+	Warhead@1Dam: SpreadDamage
+		Spread: 3c0
+		Damage: 600
+		ValidTargets: Ground, Water
+		Versus:
+			None: 100
+			Flak: 100
+			Plate: 100
+			Light: 50
+			Medium: 50
+			Heavy: 50
+			Wood: 0
+			Steel: 0
+			Concrete: 0
+			Drone: 100
+			Rocket: 100
+	Warhead@2Eff: CreateEffect
+		Explosions: chaosgas
