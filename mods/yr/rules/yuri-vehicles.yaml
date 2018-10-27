@@ -229,7 +229,7 @@ ytnk:
 	AutoTarget:
 	RenderSprites:
 	Selectable:
-		Bounds: 64, 52, 0, -6
+		Bounds: 52, 40, 0, -6
 	RenderVoxels:
 	WithVoxelBody:
 	WithVoxelTurret:
@@ -410,7 +410,7 @@ disk:
 		TurnSpeed: 3
 		Speed: 140
 	Selectable:
-		Bounds: 30,24
+		Bounds: 78, 43, 0, -15
 	Health:
 		HP: 150
 	Armor:
@@ -438,6 +438,7 @@ disk:
 		Voice: Attack
 	AnnounceOnBuild:
 	HitShape:
+	SelfRotationCraft:
 
 diskhusk:
 	Inherits: ^PlaneHusk

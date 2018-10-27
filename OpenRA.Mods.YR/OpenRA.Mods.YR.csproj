@@ -80,6 +80,7 @@
     <Compile Include="Traits\MarkerSlave.cs" />
     <Compile Include="Traits\ParticleSupportPower.cs" />
     <Compile Include="Traits\RallyPointEx.cs" />
+    <Compile Include="Traits\SelfRotationCraft.cs" />
     <Compile Include="Traits\TransformActorsPower.cs" />
     <Compile Include="Warheads\KillCrewWarhead.cs" />
     <Compile Include="Warheads\MagWaveWarhead.cs" />
