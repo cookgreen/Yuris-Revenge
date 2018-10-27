@@ -4,50 +4,64 @@ Player:
 		Type: test
 		DefenseQueues: Support
 		BuildingCommonNames:
-			ConstructionYard: gacnst, nacnst
-			Refinery: garefn, narefn
-			Power: gapowr, napowr, nanrct
-			Barracks: gapile, nahand
-			VehiclesFactory: gaweap, naweap
-			Production: gapile, nahand, gaweap, naweap, gaairc, amradr
+			ConstructionYard: gacnst, nacnst, yacnst
+			Refinery: garefn, narefn, yarefn
+			Power: gapowr, napowr, nanrct, yapowr
+			Barracks: gapile, nahand, yabrck
+			VehiclesFactory: gaweap, naweap, yaweap
+			Production: gapile, nahand, gaweap, naweap, gaairc, amradr, yabrck, yaweap, napsis
 		UnitsCommonNames:
-			Mcv: amcv, smcv
+			Mcv: amcv, smcv, pcv
 		BuildingLimits:
 			garefn: 4
 			narefn: 4
+			yarefn: 4
 			gapowr: 8
 			napowr: 8
 			nanrct: 1
+			yapowr: 8
 			gapile: 2
 			nahand: 2
+			yabrck: 2
 			gaweap: 2
 			naweap: 2
+			yaweap: 2
 			gadept: 1
 			nadept: 1
 			gaairc: 2
 			amradr: 2
+			napsis: 1
 			naradr: 1
 			gatech: 1
 			natech: 1
+			yatech: 1
+			naindp: 1
 			gagap: 2
 		BuildingFractions:
 			garefn: 30%
 			narefn: 30%
+			yarefn: 30%
 			gapowr: 35%
 			napowr: 25%
+			yapowr: 25%
 			nanrct: 10%
 			gapile: 1%
 			nahand: 1%
+			yabrck: 1%
 			gaweap: 1%
 			naweap: 1%
+			yaweap: 1%
 			gaairc: 1%
 			amradr: 1%
 			naradr: 1%
+			napsis: 1%
 			gatech: 1%
 			natech: 1%
+			yatech: 1%
 			naclon: 1%
 			gadept: 0.1%
 			nadept: 0.1%
+			yagrnd: 0.1%
 			gapill: 10%
 			nalasr: 10%
 			nasam: 4%
@@ -57,19 +71,27 @@ Player:
 			gtgcan: 1%
 			gagap: 0.5%
 			namisl: 1%
+			yappet: 1%
+			yagntc: 1%
 		UnitsToBuild:
 			e1: 90%
 			e2: 90%
+			init: 90%
 			dog: 1%
 			flakt: 10%
+			brute: 10%
 			shk: 10%
 			ivan: 3%
 			jumpjet: 2%
 			deso: 1%
 			tany: 1%
+			boris: 1%
+			julia: 1%
 			snipe: 5%
+			virus: 5%
 			cmin: 10%
 			harv: 10%
+			smin: 10%
 			htnk: 50%
 			htk: 20%
 			mtnk: 50%
@@ -79,10 +101,16 @@ Player:
 			apoc: 10%
 			tnkd: 15%
 			ttnk: 15%
+			ltnk: 50%
+			ytnk: 15%
+			disk: 10%
+			tele: 10%
+			caos: 10%
 		UnitLimits:
 			dog: 4
 			cmin: 8
 			harv: 8
+ 			smin: 8
 		SquadSize: 5
 		SupportPowerDecision@airborne:
 			OrderName: AmericanParatroopers
@@ -101,6 +129,36 @@ Player:
 				CheckRadius: 8c0
 		SupportPowerDecision@nukepower:
 			OrderName: NukePowerInfoOrder
+			MinimumAttractiveness: 3000
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 5c0
+			Consideration@2:
+				Against: Ally
+				Types: Air, Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 7c0
+		SupportPowerDecision@psychicdomnator:
+			OrderName: ParticleSupportPowerInfoOrder
+			MinimumAttractiveness: 3000
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 5c0
+			Consideration@2:
+				Against: Ally
+				Types: Air, Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 7c0
+		SupportPowerDecision@geneticmutator:
+			OrderName: TransformActorsPowerInfoOrder
 			MinimumAttractiveness: 3000
 			Consideration@1:
 				Against: Enemy
