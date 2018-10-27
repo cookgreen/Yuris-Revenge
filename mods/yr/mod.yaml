@@ -162,8 +162,10 @@ ChromeLayout:
 	common|chrome/lobby-options.yaml
 	common|chrome/lobby-music.yaml
 	common|chrome/lobby-mappreview.yaml
+	common|chrome/lobby-servers.yaml
 	common|chrome/lobby-kickdialogs.yaml
 	common|chrome/multiplayer-browser.yaml
+	common|chrome/multiplayer-browserpanels.yaml
 	common|chrome/multiplayer-createserver.yaml
 	common|chrome/multiplayer-directconnect.yaml
 	common|chrome/map-chooser.yaml
