@@ -83,6 +83,7 @@
     <Compile Include="Traits\TransformActorsPower.cs" />
     <Compile Include="Warheads\KillCrewWarhead.cs" />
     <Compile Include="Warheads\MagWaveWarhead.cs" />
+    <Compile Include="Warheads\TransformActorWarhead.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\engine\OpenRA.Game\OpenRA.Game.csproj">
