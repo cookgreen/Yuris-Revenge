@@ -154,6 +154,71 @@ e1:
 	QuantizeFacingsFromSequence:
 		Sequence: stand
 
+ggi:
+	Inherits@1: ^Infantry
+	Inherits@2: ^Parachutable
+	Inherits@MC: ^MindControllable
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Buildable:
+		Queue: Infantry
+		Prerequisites: ~gapile
+		BuildPaletteOrder: 10
+		Description: General-purpose Anti-vehicle infantry.\n  Strong vs Vehicles, Aircraft\n  Weak vs Infantry
+	Valued:
+		Cost: 200
+	DeliversCash:
+		Payload: 100
+		PlayerExperience: 10
+		Voice: Move
+	Tooltip:
+		Name: Guardian GI
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Health:
+		HP: 125
+	Mobile:
+		Speed: 31
+		RequiresCondition: undeployed
+	Passenger:
+		PipType: Green
+	RevealsShroud:
+		Range: 5c0
+	AttackFrontal:
+		Voice: Attack
+	Armament@primary:
+		Weapon: M60
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: M60E
+		RequiresCondition: rank-elite
+##	Armament@deployed:
+##		Weapon: MissileLauncher
+##		UpgradeTypes: deployed
+##		UpgradeMinEnabledLevel: 1
+##	Armament@elite-deployed:
+##		Weapon: MissileLauncherE
+##		UpgradeTypes: eliteparaweapon
+##		UpgradeMinEnabledLevel: 1
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+##  GrantConditionOnDeploy:
+##  	DeployedCondition: deployed
+##  	UndeployedCondition: undeployed
+##  WithSpriteBody@DEPLOYED:
+##  	Sequence: deployed
+##  	RequiresCondition: deployed
+##  WithMakeAnimation@DEPLOYING:
+##  	Sequence: deployed
+##  WithIdleOverlay@DEPLOYED:
+##  	Sequence: deploy
+##  	RequiresCondition: deployed
+	Voiced:
+		VoiceSet: GGIVoice
+	ProducibleWithLevel:
+		Prerequisites: barracks.infiltrated
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+
 snipe:
 	Inherits: ^Infantry
 	Inherits@MC: ^MindControllable

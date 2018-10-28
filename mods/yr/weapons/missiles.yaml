@@ -231,3 +231,35 @@ Maverick3E:
 			Drone: 100
 			Rocket: 100
 		DamageTypes: ExplosionDeath, Prone50Percent
+        
+MissileLauncher:
+	Inherits: ^Missile
+	ReloadDelay: 40
+	Range:8c0
+	Report: iggiat2a.wav, iggiat2b.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 50 
+		Versus:
+			None: 20
+			Flak: 20
+			Plate: 20
+			Light: 100
+			Medium: 50
+			Heavy: 100
+			Wood: 10
+			Steel: 10
+			Concrete: 10
+			Drone: 100
+			Rocket: 100
+		DamageTypes: Prone50Percent
+	Warhead@2EffWater: CreateEffect
+		Explosions: tiny_grey_explosion, small_grey_explosion, small_explosion, medium_grey_explosion, large_grey_explosion, medium_explosion, large_explosion, large_twlt
+		ValidTargets: Ground, Water, Air
+        
+MissileLauncherE:
+	Inherits: MissileLauncher
+	ReloadDelay: 20
+	Range:8c0
+	Report: iggiat2a.wav, iggiat2b.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 50 

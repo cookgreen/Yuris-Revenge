@@ -205,6 +205,20 @@ GIVoice:
 		Attack: igiata, igiatb, igiatc, igiatd, igiate, igiatf
 		Feedback: igifea, igifeb
 		Die: igidia, igidib, igidic, igidid, igidie
+		Deploy: igidepa,igidepb
+		Zapped: igenzapa
+		Burned: ienadia #gotta put something as temp else game crashes
+		Melted: igenmela, igenmelb, igenmelc
+
+GGIVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: iggisea,iggiseb,iggisec,iggised,iggisee,iggisef
+		Move: iggimoa,iggimob,iggimoc,iggimod,iggimoe
+		Attack: iggiata,iggiatb,iggiatc,iggiatd,iggiate
+		Feedback: iggifea,iggifeb,iggifec,iggifed,iggifee,iggifef
+		Die: iggidia,iggidib,iggidic,iggidid,iggidie
+		Deploy: iggidea,iggideb,iggidec
 		Zapped: igenzapa
 		Burned: ienadia #gotta put something as temp else game crashes
 		Melted: igenmela, igenmelb, igenmelc
@@ -405,6 +419,9 @@ BorisVoice:
 		Feedback: iborfea,iborfeb,iborfec,iborfed
 		Die: ibordia,ibordib,ibordic,ibordid,ibordie
 		AirStrike: iboraib
+		Zapped: igenzapa
+		Burned: ienadia #gotta put something as temp else game crashes
+		Melted: igenmela, igenmelb, igenmelc
         
 YuriVoice:
 	DefaultVariant: .wav
@@ -565,6 +582,9 @@ InitiateVoice:
 		Select: iinisea ,iiniseb ,iinisec ,iinisee
 		Feedback: iinifea ,iinifeb ,iinifec ,iinifed ,iinifee
 		Die: iinidia ,iinidib ,iinidic ,iinidid ,iinidie
+		Zapped: igenzapa
+		Burned: ienadia #gotta put something as temp else game crashes
+		Melted: igenmela, igenmelb, igenmelc
 
 BruteVoice:
 	DefaultVariant: .wav
@@ -574,6 +594,9 @@ BruteVoice:
 		Select: ibrusea ,ibruseb ,ibrusec ,ibrused ,ibrusee
 		Feedback: ibrufea ,ibrufeb ,ibrufec ,ibrufed ,ibrufee
 		Die: ibrudia ,ibrudib ,ibrudic ,ibrudid ,ibrudie
+		Zapped: igenzapa
+		Burned: ienadia #gotta put something as temp else game crashes
+		Melted: igenmela, igenmelb, igenmelc
 
 VirusVoice:
 	DefaultVariant: .wav
@@ -583,6 +606,9 @@ VirusVoice:
 		Select: ivirsea ,ivirseb ,ivirsec ,ivirsed ,ivirsee
 		Feedback: ,ivirfea ,ivirfeb ,ivirfec ,ivirfed ,ivirfee
 		Die: ivirdia ,ivirdib ,ivirdic ,ivirdid ,ivirdie
+		Zapped: igenzapa
+		Burned: ienadia #gotta put something as temp else game crashes
+		Melted: igenmela, igenmelb, igenmelc
      
 SlaveWorkerVoice:
 	DefaultVariant: .wav
@@ -592,6 +618,9 @@ SlaveWorkerVoice:
 		Select: isl1sea ,isl1seb ,isl1sec ,isl1sed ,isl1see ,isl1sef
 		Feedback: isl1fea ,isl1feb ,isl1fec ,isl1fed ,isl1fee ,isl2fea ,isl2feb ,isl2fec ,isl2fed ,isl2fee
 		Die: isl2dia ,isl2dib ,isl2dic ,isl2did ,isl2die
+		Zapped: igenzapa
+		Burned: ienadia #gotta put something as temp else game crashes
+		Melted: igenmela, igenmelb, igenmelc
         
 SlaveMinerVoice:
 	DefaultVariant: .wav
