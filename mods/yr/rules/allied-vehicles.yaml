@@ -40,6 +40,8 @@ amcv:
 		VoiceSet: MCVVoice
 	HitShape:
 	-CrewKillable:
+	SelfHealing@MACHSHOP:
+		RequiresCondition: machshop
 
 cmin:
 	Inherits: ^Vehicle
@@ -89,6 +91,8 @@ cmin:
 		VoiceSet: ChronoMinerVoice
 	HitShape:
 	-CrewKillable:
+	SelfHealing@MACHSHOP:
+		RequiresCondition: machshop
 
 mtnk:
 	Inherits: ^Vehicle
@@ -139,6 +143,8 @@ mtnk:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
 	CrewKillable:
+	SelfHealing@MACHSHOP:
+		RequiresCondition: machshop
 
 tnkd:
 	Inherits: ^Vehicle
@@ -186,6 +192,8 @@ tnkd:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
 	-CrewKillable:
+	SelfHealing@MACHSHOP:
+		RequiresCondition: machshop
 
 fv:
 	Inherits: ^Vehicle
@@ -329,6 +337,8 @@ fv:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
 	CrewKillable:
+	SelfHealing@MACHSHOP:
+		RequiresCondition: machshop
 
 sref:
 	Inherits: ^Vehicle
@@ -381,6 +391,8 @@ sref:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
 	CrewKillable:
+	SelfHealing@MACHSHOP:
+		RequiresCondition: machshop
 
 mgtk:
 	Inherits: ^Vehicle
@@ -430,3 +442,5 @@ mgtk:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
 	CrewKillable:
+	SelfHealing@MACHSHOP:
+		RequiresCondition: machshop

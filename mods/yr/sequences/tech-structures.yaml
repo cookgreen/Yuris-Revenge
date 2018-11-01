@@ -92,3 +92,16 @@ caoutp:
 		Start: 1
 	flag: caoutp_f
 		Length: 16
+
+camach:
+	Defaults:
+		UseTilesetCode: true
+		Offset: 7, -40
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	flag: camach_f
+		Length: 16
+		Offset: 0, -9

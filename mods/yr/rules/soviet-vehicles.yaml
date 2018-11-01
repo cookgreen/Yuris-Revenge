@@ -41,6 +41,8 @@ smcv:
 		VoiceSet: MCVVoice
 	HitShape:
 	-CrewKillable:
+	SelfHealing@MACHSHOP:
+		RequiresCondition: machshop
 
 harv:
 	Inherits: ^Vehicle
@@ -101,6 +103,8 @@ harv:
 		VoiceSet: WarMinerVoice
 	HitShape:
 	-CrewKillable:
+	SelfHealing@MACHSHOP:
+		RequiresCondition: machshop
 
 dron:
 	Inherits: ^Vehicle
@@ -144,6 +148,8 @@ dron:
 	HitShape:
 	-CrewKillable:
 	-Capturable:
+	SelfHealing@MACHSHOP:
+		RequiresCondition: machshop
 
 htk:
 	Inherits: ^Vehicle
@@ -199,6 +205,8 @@ htk:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
 	CrewKillable:
+	SelfHealing@MACHSHOP:
+		RequiresCondition: machshop
 
 htnk:
 	Inherits: ^Vehicle
@@ -250,6 +258,8 @@ htnk:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
 	CrewKillable:
+	SelfHealing@MACHSHOP:
+		RequiresCondition: machshop
 
 apoc:
 	Inherits: ^Vehicle
@@ -302,6 +312,8 @@ apoc:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
 	-CrewKillable:
+	SelfHealing@MACHSHOP:
+		RequiresCondition: machshop
 
 ttnk:
 	Inherits: ^Vehicle
@@ -350,6 +362,8 @@ ttnk:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
 	CrewKillable:
+	SelfHealing@MACHSHOP:
+		RequiresCondition: machshop
 
 dtruck:
 	Inherits: ^Vehicle
@@ -389,3 +403,5 @@ dtruck:
 		VoiceSet: DemolitionTruckVoice
 	HitShape:
 	-CrewKillable:
+	SelfHealing@MACHSHOP:
+		RequiresCondition: machshop

@@ -149,3 +149,29 @@ caoutp:
 	Armament:
 		Weapon: RedEye2
 		LocalOffset: 500,0,900
+		
+camach:
+	Inherits: ^TechBuilding
+	Inherits@shape: ^3x2Shape
+	Selectable:
+		Bounds: 96, 104, -2, -26
+	Building:
+		Dimensions: 3,3
+		Footprint: xxx xxx xxx
+	EngineerRepairable:
+	Tooltip:
+		Name: Tech Machine Shop
+	Health:
+		HP: 1000
+	RevealsShroud:
+		Range: 4c0
+	Armor:
+		Type: Steel
+	GrantConditionOnCapture:
+		GrantCaptureCondition: machshop
+	CaptureNotification:
+		Notification: MachineShopCaptured
+		LoseNotification: TechBuildingLost
+	WithIdleOverlay@flag:
+		Sequence: flag
+		Offset: 1000,0,0

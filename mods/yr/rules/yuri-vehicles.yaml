@@ -39,6 +39,8 @@ pcv:
 	Voiced:
 		VoiceSet: MCVVoice
 	HitShape:
+	SelfHealing@MACHSHOP:
+		RequiresCondition: machshop
     
 smin:
 	Inherits: ^Vehicle
@@ -95,6 +97,8 @@ smin:
 	Voiced:
 		VoiceSet: SlaveMinerVoice
 	HitShape:
+	SelfHealing@MACHSHOP:
+		RequiresCondition: machshop
     
 ltnk:
 	Inherits: ^Vehicle
@@ -148,6 +152,8 @@ ltnk:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
 	CrewKillable:
+	SelfHealing@MACHSHOP:
+		RequiresCondition: machshop
     
 ytnk:
 	Inherits: ^Vehicle
@@ -241,6 +247,8 @@ ytnk:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
 	CrewKillable:
+	SelfHealing@MACHSHOP:
+		RequiresCondition: machshop
     
 tele:
 	Inherits: ^Vehicle
@@ -294,6 +302,8 @@ tele:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
 	CrewKillable:
+	SelfHealing@MACHSHOP:
+		RequiresCondition: machshop
 	
 caos:
 	Inherits: ^Vehicle
@@ -346,6 +356,8 @@ caos:
 	HitShape:
 	-CrewKillable:
 	-Capturable:
+	SelfHealing@MACHSHOP:
+		RequiresCondition: machshop
     
 mind:
 	Inherits: ^Vehicle
@@ -397,6 +409,8 @@ mind:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
 	-CrewKillable:
+	SelfHealing@MACHSHOP:
+		RequiresCondition: machshop
 
 
 disk:

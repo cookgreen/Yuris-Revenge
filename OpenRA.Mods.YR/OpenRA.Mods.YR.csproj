@@ -76,6 +76,7 @@
     <Compile Include="Traits\DeliversPower.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Traits\CrewKillable.cs" />
+    <Compile Include="Traits\GrantConditionOnCapture.cs" />
     <Compile Include="Traits\MarkerMaster.cs" />
     <Compile Include="Traits\MarkerSlave.cs" />
     <Compile Include="Traits\ParticleSupportPower.cs" />
