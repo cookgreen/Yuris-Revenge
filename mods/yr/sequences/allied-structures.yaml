@@ -676,3 +676,32 @@ atesla:
 		TilesetOverrides:
 			TEMPERATE: TEMPERATE
 			URBAN: URBAN
+
+garobo:
+	Defaults:
+		Offset: 0, -31
+		UseTilesetCode: true
+		TilesetOverrides:
+			TEMPERATE: GENERIC
+			URBAN: GENERIC
+	idle: ggrobo_a
+		Length: 20
+		ShadowStart: 40
+		TilesetOverrides:
+			TEMPERATE: TEMPERATE
+			URBAN: URBAN
+	damaged-idle: ggrobo_a
+		Start: 20
+		ShadowStart: 60
+		TilesetOverrides:
+			TEMPERATE: TEMPERATE
+			URBAN: URBAN
+	make: ggrobomk
+		Length: 20
+		ShadowStart: 20
+		TilesetOverrides:
+			TEMPERATE: TEMPERATE
+			URBAN: URBAN
+	icon: rbccicon
+		Offset: 0,0
+		UseTilesetCode: false

@@ -500,11 +500,11 @@ natbnk:
 		HP: 810
 	Armor:
 		Type: steel
-	Cargo:
+	BunkerCargo:
 		Types: Vehicle
-		MaxWeight: 1
+		MaxWeight: 9
 		PipCount: 1
-	AttackGarrisoned:
+	AttackBunkered:
 		Armaments: primary
 		PortOffsets: 384,0,128, 224,-341,128, -224,-341,128, -384,0,128, -224,341,128, 224,341,128
 		PortYaws: 0, 176, 341, 512, 682, 853
@@ -519,10 +519,12 @@ natbnk:
 		Footprint: xx xx
 		Dimensions: 2,2
 	Power:
-		Amount: -50
+		Amount: 0
+	AutoTarget:
 
 yaggun:
 	Inherits: ^VoxelLighting
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Buildable:
 		Queue: Support
 		BuildPaletteOrder: 30

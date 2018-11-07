@@ -287,6 +287,17 @@
 	AttackMove:
 		AssaultMoveScanCondition: assault-move
 		Voice: Attack
+        
+^AutoTargetRobotTankGroundAssaultMove:
+	AutoTarget:
+		AttackAnythingCondition: stance-attackanything && robotcenter
+	AutoTargetPriority@DEFAULT:
+		RequiresCondition: !stance-attackanything && !assault-move && robotcenter
+	AutoTargetPriority@ATTACKANYTHING:
+		RequiresCondition: (stance-attackanything || assault-move) && robotcenter
+	AttackMove:
+		AssaultMoveScanCondition: assault-move && robotcenter
+		Voice: Attack
 
 ^AutoTargetAir:
 	AutoTarget:

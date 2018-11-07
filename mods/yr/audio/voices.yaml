@@ -127,6 +127,16 @@ MirageTankVoice:
 		Move: vmirmoa,vmirmob,vmirmoc,vmirmod,vmirmoe,vmirmof,vmirmog
 		Attack: vmirata,vmiratb,vmiratc,vmiratd,vmirate
         
+RobotTankVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: vrobsela
+		Move: vrobmova,vrobmovb
+		Attack: vrobatca
+		Die: vrobdiea
+		OnLine: vrobon
+		OffLine: vroboff
+        
 SovietVehicleVoice:
 	DefaultVariant: .wav
 	Voices:

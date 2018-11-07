@@ -123,6 +123,8 @@ ltnk:
 		Payload: 700
 		PlayerExperience: 25
 		Voice: Move
+	BunkerPassenger:
+		WillDisappear: false
 	Armor:
 		Type: Heavy
 	RevealsShroud:
@@ -178,6 +180,8 @@ ytnk:
 		Payload: 600
 		PlayerExperience: 25
 		Voice: Move
+	BunkerPassenger:
+		WillDisappear: false
 	Armor:
 		Type: Heavy
 	RevealsShroud:

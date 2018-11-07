@@ -65,12 +65,17 @@
   <ItemGroup>
     <Compile Include="Activities\DeliverPower.cs" />
     <Compile Include="Activities\EnterCarrierMaster.cs" />
+    <Compile Include="Activities\EnterBunker.cs" />
     <Compile Include="Effects\RallyPointIndicatorEx.cs" />
     <Compile Include="Graphics\InfraredRenderable.cs" />
     <Compile Include="Graphics\RectangleRenderable.cs" />
+    <Compile Include="Order\EnterBunkersTargeter.cs" />
+    <Compile Include="Order\EnterBunkerTargeter.cs" />
     <Compile Include="Traits\AcceptDeliveredPowerInfo.cs" />
+    <Compile Include="Traits\AttackBunkered.cs" />
     <Compile Include="Traits\BaseSpawnerMaster.cs" />
     <Compile Include="Traits\BaseSpawnerSlave.cs" />
+    <Compile Include="Traits\BunkerCargo.cs" />
     <Compile Include="Traits\CarrierMaster.cs" />
     <Compile Include="Traits\CarrierSlave.cs" />
     <Compile Include="Traits\DeliversPower.cs" />
@@ -80,7 +85,9 @@
     <Compile Include="Traits\MarkerMaster.cs" />
     <Compile Include="Traits\MarkerSlave.cs" />
     <Compile Include="Traits\ParticleSupportPower.cs" />
+    <Compile Include="Traits\BunkerPassenger.cs" />
     <Compile Include="Traits\RallyPointEx.cs" />
+    <Compile Include="Traits\RemoteControlMaster.cs" />
     <Compile Include="Traits\SelfRotationCraft.cs" />
     <Compile Include="Traits\TransformActorsPower.cs" />
     <Compile Include="Warheads\KillCrewWarhead.cs" />

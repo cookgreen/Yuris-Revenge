@@ -119,6 +119,8 @@ mtnk:
 		Range: 8c0
 	Turreted:
 		TurnSpeed: 5
+	BunkerPassenger:
+		WillDisappear: false
 	Armament@primary:
 		Weapon: 105mm
 		LocalOffset: 640,0,384
@@ -167,6 +169,8 @@ tnkd:
 		HP: 400
 	Armor:
 		Type: Heavy
+	BunkerPassenger:
+		WillDisappear: false
 	RevealsShroud:
 		Range: 8c0
 	Armament@primary:
@@ -212,6 +216,8 @@ fv:
 		Speed: 128
 		TurnSpeed: 5
 		RequiresCondition: !notmobile && !chronodisable
+	BunkerPassenger:
+		WillDisappear: false
 	Health:
 		HP: 200
 	Armor:
@@ -367,6 +373,8 @@ sref:
 	Turreted:
 		TurnSpeed: 10
 		Offset: -30,0,85
+	BunkerPassenger:
+		WillDisappear: false
 	Armament@primary:
 		Weapon: Comet
 		LocalOffset: 640, 0, 427
@@ -418,6 +426,8 @@ mgtk:
 		Speed: 105
 	RevealsShroud:
 		Range: 9c0
+	BunkerPassenger:
+		WillDisappear: false
 	Armament@primary:
 		Weapon: MirageGun
 		LocalOffset: 640, 0, 427
@@ -442,5 +452,55 @@ mgtk:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
 	CrewKillable:
+	SelfHealing@MACHSHOP:
+		RequiresCondition: machshop
+
+robo:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetRobotTankGroundAssaultMove
+	Valued:
+		Cost: 600
+	Tooltip:
+		Name: Robot Tank
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 20
+		Prerequisites: ~gaweap, garobo
+		Description: Allied Robot Tank.\n  Will not effected by Mind Control.\n Strong vs Vehicles, Ships\n  Weak vs Infantry, Aircraft
+	Mobile:
+		Speed: 130
+		TurnSpeed: 5
+		RequiresCondition: robotcenter
+	Health:
+		HP: 180
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 8c0
+	Turreted:
+		TurnSpeed: 5
+	Armament@primary:
+		Weapon: 105mm
+		LocalOffset: 640,0,384
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: 105mmE
+		LocalOffset: 640,0,384
+		RequiresCondition: rank-elite
+	AttackTurreted:
+		Voice: Attack
+	AutoTarget:
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	RenderVoxels:
+	WithVoxelBody:
+	WithVoxelTurret:
+	Voiced:
+		VoiceSet: RobotTankVoice
+	ProducibleWithLevel:
+		Prerequisites: warfactory.infiltrated
+	HitShape:
+	-CrewKillable:
 	SelfHealing@MACHSHOP:
 		RequiresCondition: machshop

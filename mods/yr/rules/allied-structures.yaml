@@ -764,6 +764,35 @@ gaorep:
 	Power:
 		Amount: -200
 
+garobo:
+	Inherits: ^Building
+	Inherits@shape: ^2x2Shape
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 110
+		Prerequisites: gaweap, ~structures.allies
+		Description: Produce robot tank which will not be effected by mind control
+	Selectable:
+		Bounds: 96, 98, -2, -24
+	Valued:
+		Cost: 600
+	Tooltip:
+		Name: Allied Robot Control Center
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	ProvidesPrerequisite:
+	Health:
+		HP: 600
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+	Power:
+		Amount: -100
+	RemoteControlMaster:
+		GrantRemoteControlCondition: robotcenter
+
 gaspysat:
 	Inherits: ^Building
 	Inherits@shape: ^2x2Shape

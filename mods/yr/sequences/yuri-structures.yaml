@@ -6,14 +6,10 @@ yacnst:
 			TEMPERATE: GENERIC
 			URBAN: GENERIC
 	idle: yacnst_c
-		Length: 1
 		ShadowStart: 3
-		Tick: 150
 	damaged-idle: yacnst_c
 		Start: 1
-		Length: 1
 		ShadowStart: 3
-		Tick: 150
 	make: yacnstmk
 		Length: 27
 		ShadowStart: 27
