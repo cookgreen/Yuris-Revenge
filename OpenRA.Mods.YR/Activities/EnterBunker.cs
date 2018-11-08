@@ -14,6 +14,7 @@ using OpenRA.Mods.Common.Traits;
 using OpenRA.Traits;
 using OpenRA.Mods.Common.Activities;
 using OpenRA.Mods.YR.Traits;
+using OpenRA.Mods.Common.Effects;
 
 namespace OpenRA.Mods.YR.Activities
 {
@@ -21,22 +22,24 @@ namespace OpenRA.Mods.YR.Activities
 	{
 		readonly BunkerPassenger passenger;
 		readonly int maxTries;
-		Actor transport;
+		Actor bunker;
 		BunkerCargo cargo;
         bool willDisappear;
+        WPos targetPos;
 
-        public EnterBunker(Actor self, Actor transport, bool willDisappear=true, int maxTries = 0, bool repathWhileMoving = true)
-			: base(self, transport, EnterBehaviour.Exit, maxTries, repathWhileMoving)
+        public EnterBunker(Actor self, Actor bunker, WPos pos, bool willDisappear=true, int maxTries = 0, bool repathWhileMoving = true)
+			: base(self, bunker, EnterBehaviour.Exit, maxTries, repathWhileMoving)
 		{
-			this.transport = transport;
+			this.bunker = bunker;
 			this.maxTries = maxTries;
             this.willDisappear = willDisappear;
-			cargo = transport.Trait<BunkerCargo>();
+            targetPos = pos;
+			cargo = bunker.Trait<BunkerCargo>();
 			passenger = self.Trait<BunkerPassenger>();
 		}
 
 		protected override void Unreserve(Actor self, bool abort) { passenger.Unreserve(self); }
-		protected override bool CanReserve(Actor self) { return cargo.Unloading || cargo.CanLoad(transport, self); }
+		protected override bool CanReserve(Actor self) { return cargo.Unloading || cargo.CanLoad(bunker, self); }
 		protected override ReserveStatus Reserve(Actor self)
 		{
 			var status = base.Reserve(self);
@@ -51,13 +54,27 @@ namespace OpenRA.Mods.YR.Activities
 		{
 			self.World.AddFrameEndTask(w =>
 			{
-				if (self.IsDead || transport.IsDead || !cargo.CanLoad(transport, self))
+                Mobile mobile = self.TraitOrDefault<Mobile>();
+				if (self.IsDead || bunker.IsDead || !cargo.CanLoad(bunker, self))
 					return;
 
-				cargo.Load(transport, self);
+                if (!string.IsNullOrEmpty(cargo.Info.SequenceOnCargo))
+                {
+                    w.Add(new SpriteEffect(bunker.CenterPosition, w, bunker.Info.Name, cargo.Info.SequenceOnCargo, "colorpicker"));
+                }
+
+                cargo.Load(bunker, self);
                 if(willDisappear)
                 {
                     w.Remove(self);
+                }
+                else
+                {
+                    self.QueueActivity(mobile.MoveToTarget(self, Target.FromPos(targetPos)));
+                    //If didn't disappear, then move the passenger actor to the bunker center
+                    //mobile.SetPosition(self, w.Map.CellContaining(bunker.CenterPosition));
+                    passenger.GrantCondition();
+                    cargo.GrantCondition(passenger.info.GrantBunkerCondition);
                 }
 			});
 
@@ -71,7 +88,7 @@ namespace OpenRA.Mods.YR.Activities
 			var type = target.Actor.Info.Name;
 			return TryGetAlternateTargetInCircle(
 				self, passenger.Info.AlternateTransportScanRange,
-				t => { transport = t.Actor; cargo = t.Actor.Trait<BunkerCargo>(); }, // update transport and cargo
+				t => { bunker = t.Actor; cargo = t.Actor.Trait<BunkerCargo>(); }, // update transport and cargo
 				a => { var c = a.TraitOrDefault<BunkerCargo>(); return c != null && c.Info.Types.Contains(passenger.Info.CargoType) && (c.Unloading || c.CanLoad(a, self)); },
 				new Func<Actor, bool>[] { a => a.Info.Name == type }); // Prefer transports of the same type
 		}

@@ -757,6 +757,7 @@
 			Ore: 70
 			Gems: 70
 		TurnSpeed: 5
+		RequiresCondition: !bunkered
 	SelectionDecorations:
 		Palette: pips
 	Selectable:
@@ -770,6 +771,12 @@
 		Voice: Move
 		CargoType: Vehicle
 		Weight: 3
+	BunkerPassenger:
+		Voice: Move
+		CargoType: Vehicle
+		Weight: 3
+		WillDisappear: false
+		GrantBunkerCondition: bunkered
 	HiddenUnderFog:
 	WithTextControlGroupDecoration:
 	ActorLostNotification:

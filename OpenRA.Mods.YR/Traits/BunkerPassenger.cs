@@ -22,13 +22,15 @@ using OpenRA.Mods.YR.Orders;
 namespace OpenRA.Mods.YR.Traits
 {
     [Desc("This actor can enter Cargo actors.")]
-	public class BunkerPassengerInfo : ITraitInfo
-	{
+	public class BunkerPassengerInfo : ConditionalTraitInfo
+    {
 		public readonly string CargoType = null;
 		public readonly PipType PipType = PipType.Green;
 		public readonly int Weight = 1;
         [Desc("Will the actor disappear when enter bunker")]
         public readonly bool WillDisappear = true;
+        [Desc("Grant a condition when actor is bunkered")]
+        public readonly string GrantBunkerCondition = null;
 
         [Desc("Use to set when to use alternate transports (Never, Force, Default, Always).",
 			"Force - use force move modifier (Alt) to enable.",
@@ -43,15 +45,18 @@ namespace OpenRA.Mods.YR.Traits
 
 		[VoiceReference] public readonly string Voice = "Action";
 
-		public object Create(ActorInitializer init) { return new BunkerPassenger(this); }
+		public override object Create(ActorInitializer init) { return new BunkerPassenger(init, this); }
 	}
 
-	public class BunkerPassenger : IIssueOrder, IResolveOrder, IOrderVoice, INotifyRemovedFromWorld
+	public class BunkerPassenger : ConditionalTrait<BunkerPassengerInfo>, IIssueOrder, IResolveOrder, IOrderVoice, INotifyRemovedFromWorld
 	{
-		public readonly BunkerPassengerInfo Info;
-		public BunkerPassenger(BunkerPassengerInfo info)
+		public readonly BunkerPassengerInfo info;
+        private ConditionManager conditionManager;
+        private Actor self;
+		public BunkerPassenger(ActorInitializer init, BunkerPassengerInfo info) : base(info)
 		{
-			Info = info;
+			this.info = info;
+            self = init.Self;
 			Func<Actor, bool> canTarget = IsCorrectCargoType;
 			Func<Actor, bool> useEnterCursor = CanEnter;
 			Orders = new EnterAlliedActorTargeter<BunkerCargoInfo>[]
@@ -61,7 +66,19 @@ namespace OpenRA.Mods.YR.Traits
 			};
 		}
 
-		public Actor Transport;
+        protected override void Created(Actor self)
+        {
+            conditionManager = self.Trait<ConditionManager>();
+
+            base.Created(self);
+        }
+
+        public void GrantCondition()
+        {
+            conditionManager.GrantCondition(self, info.GrantBunkerCondition);
+        }
+
+        public Actor Transport;
 		public BunkerCargo ReservedCargo { get; private set; }
 
 		public IEnumerable<IOrderTargeter> Orders { get; private set; }
@@ -80,14 +97,14 @@ namespace OpenRA.Mods.YR.Traits
 			return ci.Types.Contains(Info.CargoType);
 		}
 
-		bool CanEnter(Cargo cargo)
+		bool CanEnter(BunkerCargo cargo)
 		{
 			return cargo != null && cargo.HasSpace(Info.Weight);
 		}
 
 		bool CanEnter(Actor target)
 		{
-			return CanEnter(target.TraitOrDefault<Cargo>());
+			return CanEnter(target.TraitOrDefault<BunkerCargo>());
 		}
 
 		public string VoicePhraseForOrder(Actor self, Order order)
@@ -110,7 +127,7 @@ namespace OpenRA.Mods.YR.Traits
 
 				self.CancelActivity();
 				var transports = order.OrderString == "EnterBunkers";
-				self.QueueActivity(new EnterBunker(self, order.TargetActor, Info.WillDisappear, transports ? Info.MaxAlternateTransportAttempts : 0, !transports));
+				self.QueueActivity(new EnterBunker(self, order.TargetActor, target.CenterPosition, Info.WillDisappear, transports ? Info.MaxAlternateTransportAttempts : 0, !transports));
 			}
 		}
 

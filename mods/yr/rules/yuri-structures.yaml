@@ -521,6 +521,9 @@ natbnk:
 	Power:
 		Amount: 0
 	AutoTarget:
+	WithSpriteBody@Bunkered:
+		Sequence: idle-bunkered
+		RequiresCondition: bunkered
 
 yaggun:
 	Inherits: ^VoxelLighting

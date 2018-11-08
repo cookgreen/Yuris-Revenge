@@ -119,8 +119,6 @@ mtnk:
 		Range: 8c0
 	Turreted:
 		TurnSpeed: 5
-	BunkerPassenger:
-		WillDisappear: false
 	Armament@primary:
 		Weapon: 105mm
 		LocalOffset: 640,0,384
@@ -169,8 +167,6 @@ tnkd:
 		HP: 400
 	Armor:
 		Type: Heavy
-	BunkerPassenger:
-		WillDisappear: false
 	RevealsShroud:
 		Range: 8c0
 	Armament@primary:
@@ -216,8 +212,6 @@ fv:
 		Speed: 128
 		TurnSpeed: 5
 		RequiresCondition: !notmobile && !chronodisable
-	BunkerPassenger:
-		WillDisappear: false
 	Health:
 		HP: 200
 	Armor:
@@ -373,8 +367,6 @@ sref:
 	Turreted:
 		TurnSpeed: 10
 		Offset: -30,0,85
-	BunkerPassenger:
-		WillDisappear: false
 	Armament@primary:
 		Weapon: Comet
 		LocalOffset: 640, 0, 427
@@ -426,8 +418,6 @@ mgtk:
 		Speed: 105
 	RevealsShroud:
 		Range: 9c0
-	BunkerPassenger:
-		WillDisappear: false
 	Armament@primary:
 		Weapon: MirageGun
 		LocalOffset: 640, 0, 427

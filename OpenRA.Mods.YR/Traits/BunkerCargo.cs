@@ -24,6 +24,9 @@ namespace OpenRA.Mods.YR.Traits
 	[Desc("This actor can transport Passenger actors.")]
 	public class BunkerCargoInfo : ITraitInfo, Requires<IOccupySpaceInfo>
 	{
+        [Desc("Which sequence will play when the actor is cargoed")]
+        public readonly string SequenceOnCargo = null;
+
 		[Desc("The maximum sum of Passenger.Weight that this actor can support.")]
 		public readonly int MaxWeight = 0;
 
@@ -193,7 +196,7 @@ namespace OpenRA.Mods.YR.Traits
 				self.CancelActivity();
 				if (aircraft != null)
 					self.QueueActivity(new HeliLand(self, true));
-				self.QueueActivity(new UnloadCargo(self, true));
+				self.QueueActivity(new UnloadBunkerCargo(self, true));
 			}
 		}
 
@@ -460,5 +463,10 @@ namespace OpenRA.Mods.YR.Traits
 				CurrentAdjacentCells = GetAdjacentCells();
 			}
 		}
-	}
+
+        public void GrantCondition(string grantBunkerCondition)
+        {
+            conditionManager.GrantCondition(self, grantBunkerCondition);
+        }
+    }
 }

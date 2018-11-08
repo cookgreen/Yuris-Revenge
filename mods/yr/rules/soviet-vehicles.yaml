@@ -185,8 +185,6 @@ htk:
 		UnloadTerrainTypes: Clear, Rough, Rail, Road, DirtRoad, Beach, Ore, Gems
 		UnloadVoice: Move
 		LoadingCondition: notmobile
-	BunkerPassenger:
-		WillDisappear: false
 	AttackTurreted:
 		Voice: Attack
 	AutoTarget:
@@ -231,8 +229,6 @@ htnk:
 		HP: 400
 	Armor:
 		Type: Heavy
-	BunkerPassenger:
-		WillDisappear: false
 	RevealsShroud:
 		Range: 8c0
 	Turreted:
@@ -289,8 +285,6 @@ apoc:
 		Range: 6c0
 	Turreted:
 		TurnSpeed: 5
-	BunkerPassenger:
-		WillDisappear: false
 	Armament@primary:
 		Weapon: 120mmx
 		LocalOffset: 640,0,384
@@ -339,8 +333,6 @@ ttnk:
 		Crushes: fence, crate, infantry
 	Health:
 		HP: 300
-	BunkerPassenger:
-		WillDisappear: false
 	Armor:
 		Type: Heavy
 	RevealsShroud:

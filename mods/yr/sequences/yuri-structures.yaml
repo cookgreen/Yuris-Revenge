@@ -402,6 +402,14 @@ natbnk:
 		Start: 1
 		Length: 1
 		ShadowStart: 4
+	idle-bunkered: natbnk_b
+		Start: 9
+		Length: 1
+		ShadowStart: 19
+	damaged-idle-bunkered: natbnk_b
+		Start: 19
+		Length: 1
+		ShadowStart: 29
 	build: natbnk_b
 		Length: 10
 		ShadowStart: 20
@@ -613,4 +621,23 @@ nabnkr:
 	icon: bnkricon
 		Offset: 0,0
 		UseTilesetCode: false
+
+yarock:
+	Defaults:
+		Offset: 0, -24
+		UseTilesetCode: true
+	idle: yarock
+		Length: 1
+		ShadowStart: 4
+	damaged-idle: yarock
+		Start: 1
+		Length: 1
+		ShadowStart: 5
+	idle-rocket-launched: yarock_a
+		Length: 1
+		ShadowStart: 4
+	damaged-idle-rocket-launched: yarock_a
+		Start: 1
+		Length: 1
+		ShadowStart: 5
         

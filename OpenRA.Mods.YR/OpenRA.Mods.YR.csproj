@@ -66,6 +66,7 @@
     <Compile Include="Activities\DeliverPower.cs" />
     <Compile Include="Activities\EnterCarrierMaster.cs" />
     <Compile Include="Activities\EnterBunker.cs" />
+    <Compile Include="Activities\UnloadBunkerCargo.cs" />
     <Compile Include="Effects\RallyPointIndicatorEx.cs" />
     <Compile Include="Graphics\InfraredRenderable.cs" />
     <Compile Include="Graphics\RectangleRenderable.cs" />
