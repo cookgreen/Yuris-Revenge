@@ -678,7 +678,6 @@ yagntc:
 		DisplayRadarPing: True
 		Actor: brute
 		EffectSequence: die9
-		EffectPalette: colorpicker
 		PauseOnCondition: lowpower
 	WithIdleOverlay@top:
 		Sequence: idle-top

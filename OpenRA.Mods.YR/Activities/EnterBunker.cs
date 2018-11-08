@@ -60,7 +60,7 @@ namespace OpenRA.Mods.YR.Activities
 
                 if (!string.IsNullOrEmpty(cargo.Info.SequenceOnCargo))
                 {
-                    w.Add(new SpriteEffect(bunker.CenterPosition, w, bunker.Info.Name, cargo.Info.SequenceOnCargo, "colorpicker"));
+                    w.Add(new SpriteEffect(bunker.CenterPosition, w, bunker.Info.Name, cargo.Info.SequenceOnCargo, "player" + self.Owner.InternalName));
                 }
 
                 cargo.Load(bunker, self);

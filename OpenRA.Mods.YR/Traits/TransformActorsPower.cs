@@ -36,7 +36,7 @@ namespace OpenRA.Mods.YR.Traits
         [SequenceReference("EffectImage")]
         public readonly string EffectSequence = "idle";
         [PaletteReference]
-        public readonly string EffectPalette = null;
+        public readonly string EffectPalette = "player";
         public override object Create(ActorInitializer init)
         {
             return new TransformActorsPower(init.Self, this);
@@ -82,7 +82,18 @@ namespace OpenRA.Mods.YR.Traits
                             {
                                 WPos victimPos = victimActor.CenterPosition;
                                 if (!string.IsNullOrEmpty(info.EffectSequence) && !string.IsNullOrEmpty(info.EffectPalette))
-                                    w.Add(new SpriteEffect(victimPos, w, victimActor.Info.Name, info.EffectSequence, info.EffectPalette));
+                                {
+                                    string palette = null;
+                                    if(info.EffectPalette == "player")
+                                    {
+                                        palette = "player" + self.Owner.InternalName;
+                                    }
+                                    else
+                                    {
+                                        palette = info.EffectPalette;
+                                    }
+                                    w.Add(new SpriteEffect(victimPos, w, victimActor.Info.Name, info.EffectSequence, palette));
+                                }
                                 CPos pos = victimActor.World.Map.CellContaining(victimActor.CenterPosition);
                                 dics.Add(new TypeDictionary
                                 {
