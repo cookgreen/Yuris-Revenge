@@ -10,7 +10,6 @@ release-20180307
 
 ## Requirement
 OpenRA - Version: release-20180307  
-OpenRA Ra2 mod - Version: {DEV-VERSION}
 
 ## Usage
 Run "make.cmd" and type "all" in the terminal
