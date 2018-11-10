@@ -9,7 +9,6 @@ PackageFormats: Mix, AudioBagHack
 Packages:
 	~^Content/yr
 	.
-	$ra2: ra2
 	$yr: yr
 	./mods/common: common
 	~ra2.mix
@@ -134,7 +133,6 @@ Chrome:
 Assemblies:
 	common|OpenRA.Mods.Common.dll
 	common|OpenRA.Mods.Cnc.dll
-	ra2|OpenRA.Mods.RA2.dll
 	yr|OpenRA.Mods.YR.dll
 
 ChromeLayout:

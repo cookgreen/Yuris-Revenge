@@ -444,7 +444,6 @@ tany:
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 	-TakeCover: # TODO: allow multiple sequence modifiers
-	WithSwimSuit:
 
 jumpjet:
 	Inherits: ^Infantry

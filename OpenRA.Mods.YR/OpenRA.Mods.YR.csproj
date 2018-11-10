@@ -63,11 +63,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Activities\ChronoResourceTeleport.cs" />
     <Compile Include="Activities\DeliverPower.cs" />
     <Compile Include="Activities\EnterCarrierMaster.cs" />
     <Compile Include="Activities\EnterBunker.cs" />
     <Compile Include="Activities\UnloadBunkerCargo.cs" />
     <Compile Include="Effects\RallyPointIndicatorEx.cs" />
+    <Compile Include="FileSystem\BagFileHack.cs" />
+    <Compile Include="Graphics\ArcRenderable.cs" />
     <Compile Include="Graphics\InfraredRenderable.cs" />
     <Compile Include="Graphics\RectangleRenderable.cs" />
     <Compile Include="Order\EnterBunkersTargeter.cs" />
@@ -79,16 +82,24 @@
     <Compile Include="Traits\BunkerCargo.cs" />
     <Compile Include="Traits\CarrierMaster.cs" />
     <Compile Include="Traits\CarrierSlave.cs" />
+    <Compile Include="Traits\ChronoResourceDelivery.cs" />
+    <Compile Include="Traits\Conditions\GrantTimedConditionOnDeploy.cs" />
     <Compile Include="Traits\DeliversPower.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Traits\CrewKillable.cs" />
     <Compile Include="Traits\GrantConditionOnCapture.cs" />
     <Compile Include="Traits\MarkerMaster.cs" />
     <Compile Include="Traits\MarkerSlave.cs" />
+    <Compile Include="Traits\MindControllable.cs" />
+    <Compile Include="Traits\MindController.cs" />
     <Compile Include="Traits\ParticleSupportPower.cs" />
     <Compile Include="Traits\BunkerPassenger.cs" />
+    <Compile Include="Traits\PeriodicExplosion.cs" />
     <Compile Include="Traits\RallyPointEx.cs" />
     <Compile Include="Traits\RemoteControlMaster.cs" />
+    <Compile Include="Traits\Render\WithExitOverlay.cs" />
+    <Compile Include="Traits\Render\WithMindControlArc.cs" />
+    <Compile Include="Traits\Render\WithSwimSuit.cs" />
     <Compile Include="Traits\SelfRotationCraft.cs" />
     <Compile Include="Traits\TransformActorsPower.cs" />
     <Compile Include="Warheads\KillCrewWarhead.cs" />
