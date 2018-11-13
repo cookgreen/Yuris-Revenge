@@ -527,7 +527,7 @@ natbnk:
 
 yaggun:
 	Inherits: ^VoxelLighting
-	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@AUTOTARGET: ^AutoTargetAll
 	Buildable:
 		Queue: Support
 		BuildPaletteOrder: 30
