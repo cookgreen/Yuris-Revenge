@@ -536,7 +536,9 @@ AAGattling2E:
 	ReloadDelay: 8
 	Range:8c0
 	ValidTargets: Air
-	Report: vgatlo4a.wav, vgatlo5a.wav, vgatlo5b.wav, vgatlo6a.wav
+#   OpenRA can't read these audio files 
+#	Report: vgatlo4a.wav, vgatlo5a.wav, vgatlo5b.wav, vgatlo6a.wav
+	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 25 
 		ValidTargets: Ground, Water, Air
@@ -560,7 +562,8 @@ AAGattling3E:
 	ReloadDelay: 4
 	Range:8c0
 	ValidTargets: Air
-	Report: vgatlo7a.wav, vgatlo8a.wav, vgatlo8b.wav, vgatlo9a.wav
+#	Report: vgatlo7a.wav, vgatlo8a.wav, vgatlo8b.wav, vgatlo9a.wav
+	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 25  
 		ValidTargets: Ground, Water, Air
