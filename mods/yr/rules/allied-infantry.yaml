@@ -178,7 +178,6 @@ ggi:
 		HP: 125
 	Mobile:
 		Speed: 31
-		RequiresCondition: undeployed
 	Passenger:
 		PipType: Green
 	RevealsShroud:
