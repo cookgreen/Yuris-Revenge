@@ -101,6 +101,7 @@
     <Compile Include="Traits\Render\WithMindControlArc.cs" />
     <Compile Include="Traits\Render\WithSwimSuit.cs" />
     <Compile Include="Traits\SelfRotationCraft.cs" />
+    <Compile Include="Traits\ShowWholeMap.cs" />
     <Compile Include="Traits\TransformActorsPower.cs" />
     <Compile Include="Warheads\KillCrewWarhead.cs" />
     <Compile Include="Warheads\MagWaveWarhead.cs" />
