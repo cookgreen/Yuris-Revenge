@@ -699,3 +699,11 @@ MigVoice:
 		Move: vmigmoa,vmigmob
 		Attack: vmigata,vmigatb
 		Die: vmigdia,vmigdic
+        
+HindVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: vgrssea, vgrsseb, vgrssec
+		Move: vgrsmoa, vgrsmob, vgrsmoc
+		Attack: vgrsata, vgrsatb, vgrsatc, vgrsatd
+		Die: vmigdia,vmigdic
