@@ -335,6 +335,9 @@ gaweap:
 	ProvidesPrerequisite@germany:
 		Prerequisite: vehicles.germany
 		Factions: germany
+	ProvidesPrerequisite@korea:
+		Prerequisite: vehicles.korea
+		Factions: korea
 	ProvidesPrerequisite@default:
 	Building:
 		Footprint: xxxxx xxxxx xxxxx
