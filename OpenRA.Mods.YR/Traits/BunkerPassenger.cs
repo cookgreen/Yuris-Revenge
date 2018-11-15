@@ -108,27 +108,39 @@ namespace OpenRA.Mods.YR.Traits
 		}
 
 		public string VoicePhraseForOrder(Actor self, Order order)
-		{
-			if ((order.OrderString != "EnterBunker" && order.OrderString != "EnterBunkers") ||
-				!CanEnter(order.TargetActor)) return null;
-			return Info.Voice;
-		}
+        {
+            if (order.OrderString != "EnterBunker" && order.OrderString != "EnterBunkers")
+                return null;
+
+            if (order.Target.Type != TargetType.Actor || !CanEnter(order.Target.Actor))
+                return null;
+
+            return Info.Voice;
+        }
 
 		public void ResolveOrder(Actor self, Order order)
-		{
-			if (order.OrderString == "EnterBunker" || order.OrderString == "EnterBunkers")
-			{
-				if (order.TargetActor == null) return;
-				if (!CanEnter(order.TargetActor)) return;
-				if (!IsCorrectCargoType(order.TargetActor)) return;
+        {
+            if (order.OrderString != "EnterBunker" && order.OrderString != "EnterBunkers")
+                return;
 
-				var target = Target.FromOrder(self.World, order);
-				self.SetTargetLine(target, Color.Green);
+            // Enter orders are only valid for own/allied actors,
+            // which are guaranteed to never be frozen.
+            if (order.Target.Type != TargetType.Actor)
+                return;
 
-				self.CancelActivity();
-				var transports = order.OrderString == "EnterBunkers";
-				self.QueueActivity(new EnterBunker(self, order.TargetActor, target.CenterPosition, Info.WillDisappear, transports ? Info.MaxAlternateTransportAttempts : 0, !transports));
-			}
+            var targetActor = order.Target.Actor;
+            if (!CanEnter(targetActor))
+                return;
+
+            if (!IsCorrectCargoType(targetActor))
+                return;
+
+            if (!order.Queued)
+                self.CancelActivity();
+
+            var transports = order.OrderString == "EnterBunkers";
+            self.SetTargetLine(order.Target, Color.Green);
+            self.QueueActivity(new EnterBunker(self, targetActor, targetActor.CenterPosition, Info.WillDisappear, transports ? Info.MaxAlternateTransportAttempts : 0, !transports));
 		}
 
 		public bool Reserve(Actor self, BunkerCargo cargo)

@@ -405,8 +405,9 @@ yayard:
 		Sequence: repair
 	WithProductionOverlay@lights:
 		Sequence: production-lights
-	-EmitInfantryOnSell@allies:
-	-EmitInfantryOnSell@soviets:
+	-SpawnActorsOnSell@allies:
+	-SpawnActorsOnSell@soviets:
+	-SpawnActorsOnSell@yuris:
 
 yagrnd:
 	Inherits: ^Building
@@ -436,9 +437,9 @@ yagrnd:
 	AcceptsDeliveredCash:
 	WithIdleOverlay@normal:
 		Sequence: idle-normal
-#Note: didn't support in 04e90
-#	WithAcceptDeliveredCashAnimation:
-#		Sequence: grind
+	#Note: didn't support in 04e90
+	#WithAcceptDeliveredCashAnimation:
+	#	Sequence: grind
 	Power:
 		Amount: -50
 

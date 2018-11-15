@@ -124,14 +124,7 @@ FLAMEGUY:
 	Mobile:
 		Speed: 71
 		SharesCell: true
-		TerrainSpeeds:
-			Clear: 45
-			Road: 50
-			Rail: 45
-			DirtRoad: 50
-			Rough: 40
-			Ore: 45
-			Gems: 45
+		Locomotor: flameguy
 	HiddenUnderFog:
 	RenderSprites:
 		Palette: effect

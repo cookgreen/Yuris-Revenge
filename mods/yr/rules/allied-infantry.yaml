@@ -73,7 +73,7 @@ dog:
 	AutoTarget:
 		InitialStance: AttackAnything
 	AutoTargetPriority@DEFAULT:
-		Types: Infantry
+		ValidTargets: Infantry
 	RenderSprites:
 		Image: adog
 		FactionImages:
@@ -137,14 +137,14 @@ e1:
 	Armament@elite:
 		Weapon: M60E
 		RequiresCondition: rank-elite
-#	Armament@deployed:
-#		Weapon: para
-#		UpgradeTypes: deployed
-#		UpgradeMinEnabledLevel: 1
-#	Armament@elite-deployed:
-#		Weapon: paraE
-#		UpgradeTypes: eliteparaweapon
-#		UpgradeMinEnabledLevel: 1
+	#Armament@deployed:
+	#	Weapon: para
+	#	UpgradeTypes: deployed
+	#	UpgradeMinEnabledLevel: 1
+	#Armament@elite-deployed:
+	#	Weapon: paraE
+	#	UpgradeTypes: eliteparaweapon
+	#	UpgradeMinEnabledLevel: 1
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 	Voiced:
@@ -190,27 +190,27 @@ ggi:
 	Armament@elite:
 		Weapon: M60E
 		RequiresCondition: rank-elite
-##	Armament@deployed:
-##		Weapon: MissileLauncher
-##		UpgradeTypes: deployed
-##		UpgradeMinEnabledLevel: 1
-##	Armament@elite-deployed:
-##		Weapon: MissileLauncherE
-##		UpgradeTypes: eliteparaweapon
-##		UpgradeMinEnabledLevel: 1
+	#Armament@deployed:
+	#	Weapon: MissileLauncher
+	#	UpgradeTypes: deployed
+	#	UpgradeMinEnabledLevel: 1
+	#Armament@elite-deployed:
+	#	Weapon: MissileLauncherE
+	#	UpgradeTypes: eliteparaweapon
+	#	UpgradeMinEnabledLevel: 1
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
-##  GrantConditionOnDeploy:
-##  	DeployedCondition: deployed
-##  	UndeployedCondition: undeployed
-##  WithSpriteBody@DEPLOYED:
-##  	Sequence: deployed
-##  	RequiresCondition: deployed
-##  WithMakeAnimation@DEPLOYING:
-##  	Sequence: deployed
-##  WithIdleOverlay@DEPLOYED:
-##  	Sequence: deploy
-##  	RequiresCondition: deployed
+	#GrantConditionOnDeploy:
+	#	DeployedCondition: deployed
+	#	UndeployedCondition: undeployed
+	#WithSpriteBody@DEPLOYED:
+	#	Sequence: deployed
+	#	RequiresCondition: deployed
+	#WithMakeAnimation@DEPLOYING:
+	#	Sequence: deployed
+	#WithIdleOverlay@DEPLOYED:
+	#	Sequence: deploy
+	#	RequiresCondition: deployed
 	Voiced:
 		VoiceSet: GGIVoice
 	ProducibleWithLevel:
@@ -292,8 +292,8 @@ spy:
 		Types: SpyInfiltrate
 	-WithInfantryBody:
 	WithDisguisingInfantryBody:
-		IdleAnimations: idle1,idle2
-		StandAnimations: stand
+		IdleSequences: idle1,idle2
+		StandSequences: stand
 	WithDecoration@disguise:
 		Image: pips
 		Sequence: pip-disguise
@@ -314,6 +314,7 @@ ghost:
 	Inherits: ^Infantry
 	Inherits@MC: ^MindControllable
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@SWIMSUIT: ^WithSwimSuit
 	Buildable:
 		Queue: Infantry
 		BuildAtProductionType: Infantry
@@ -340,15 +341,7 @@ ghost:
 		RequiresCondition: water-borne
 	Mobile:
 		Speed: 71
-		TerrainSpeeds:
-			Clear: 100
-			Rough: 100
-			Rail: 90
-			Road: 100
-			DirtRoad: 100
-			Ore: 90
-			Gems: 80
-			Water: 70
+		Locomotor: swimsuit
 	RevealsShroud:
 		Range: 8c0
 	Demolition:
@@ -375,12 +368,96 @@ ghost:
 		Sequence: stand
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
-	WithSwimSuit:
 	-TakeCover: # TODO: allow multiple sequence modifiers
 
+ccomand:
+	Inherits: ghost
+	Buildable:
+		BuildPaletteOrder: 170
+		Prerequisites: ~gapile, ~allies.tech.infiltrated
+		Description: Elite commando infantry, armed with\na sub machine gun and C4.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft\nSpecial Ability: Destroy Building with C4
+	Tooltip:
+		Name: Chrono Commando
+	Valued:
+		Cost: 2000
+	DeliversCash:
+		Payload: 1000
+		PlayerExperience: 100
+	Health:
+		HP: 100
+	Mobile:
+		Locomotor: foot
+	PortableChrono:
+		ChronoshiftSound: ichrmova.wav
+		DeployCursor: chronosphere
+		DeployBlockedCursor: chronosphere
+		Voice: Move
+		ChargeDelay: 300
+		TargetCursor: chronosphere
+	WithInfantryBody:
+		-RequiresCondition:
+	WithDeathAnimation@normal:
+		-RequiresCondition:
+	WithDeathAnimation@effect:
+		-RequiresCondition:
+	-GrantConditionOnTerrain@Water:
+	-WithInfantryBody@Water:
+	-WithDeathAnimation@Water:
+	-Targetable@WaterBorne:
+	TakeCover:
+		DamageModifiers:
+			Prone50Percent: 50
+			Prone70Percent: 70
+			Prone100Percent: 100
+		DamageTriggers: TriggerProne
+	RenderSprites:
+		Image: ccomand
+
+ptroop:
+	Inherits: ccomand
+	Buildable:
+		BuildPaletteOrder: 180
+		Prerequisites: ~gapile, ~soviets.tech.infiltrated
+		Description: Psychic infantry. Can mind control enemy units.\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Dogs, Terror Drones, Aircraft\nSpecial Ability: Destroy Building with C4
+	Valued:
+		Cost: 1000
+	DeliversCash:
+		Payload: 500
+		PlayerExperience: 50
+	Tooltip:
+		Name: Psi Commando
+	-PortableChrono:
+	Armament@primary:
+		Weapon: MindControl
+		MuzzleSequence: muzzle
+		LocalOffset: 0,0,960
+	-Armament@elite:
+	Demolition:
+		Voice: Attack
+	WithMuzzleOverlay:
+	MindController:
+		ControllingCondition: controlling
+		Sounds: iyurat1a.wav
+	WithMindControlArc:
+		UsePlayerColor: true
+		Offset: 0,0,960
+	AttackMove:
+		-AssaultMoveScanCondition:
+	AutoTarget:
+		-AttackAnythingCondition:
+	AutoTargetPriority@DEFAULT:
+		ValidTargets: MindControl
+		RequiresCondition: !controlling
+	-AutoTargetPriority@ATTACKANYTHING:
+	Voiced:
+		VoiceSet: YuriVoice
+	RenderSprites:
+		Image: ptroop
+	
 tany:
 	Inherits: ^Infantry
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@SWIMSUIT: ^WithSwimSuit
 	Buildable:
 		Queue: Infantry
 		BuildAtProductionType: Infantry
@@ -408,15 +485,7 @@ tany:
 		RequiresCondition: water-borne
 	Mobile:
 		Speed: 71
-		TerrainSpeeds:
-			Clear: 100
-			Rough: 100
-			Rail: 90
-			Road: 100
-			DirtRoad: 100
-			Ore: 90
-			Gems: 80
-			Water: 70
+		Locomotor: swimsuit
 	RevealsShroud:
 		Range: 6c0
 	Demolition:

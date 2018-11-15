@@ -292,7 +292,7 @@ AGGattling:
 	Inherits: ^MG
 	ReloadDelay: 16
 	Range:5c0
-#	Report: vgatlo1a.wav, vgatlo2a.wav, vgatlo2b.wav, vgatlo2c.wav, vgatlo3a.wav
+	#Report: vgatlo1a.wav, vgatlo2a.wav, vgatlo2b.wav, vgatlo2c.wav, vgatlo3a.wav
 	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 25 
@@ -316,7 +316,7 @@ AGGattling2:
 	Inherits: ^MG
 	ReloadDelay: 16
 	Range:5c0
-#	Report: vgatlo4a.wav, vgatlo5a.wav, vgatlo5b.wav, vgatlo6a.wav
+	#Report: vgatlo4a.wav, vgatlo5a.wav, vgatlo5b.wav, vgatlo6a.wav
 	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 25 
@@ -340,7 +340,7 @@ AGGattling3:
 	Inherits: ^MG
 	ReloadDelay: 16
 	Range:5c0
-#	Report: vgatlo7a.wav, vgatlo8a.wav, vgatlo8b.wav, vgatlo9a.wav
+	#Report: vgatlo7a.wav, vgatlo8a.wav, vgatlo8b.wav, vgatlo9a.wav
 	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 25 
@@ -364,7 +364,7 @@ AGGattlingE:
 	Inherits: ^MG
 	ReloadDelay: 16
 	Range:5c0
-#	Report: vgatlo1a.wav, vgatlo2a.wav, vgatlo2b.wav, vgatlo2c.wav, vgatlo3a.wav
+	#Report: vgatlo1a.wav, vgatlo2a.wav, vgatlo2b.wav, vgatlo2c.wav, vgatlo3a.wav
 	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 25 
@@ -388,7 +388,7 @@ AGGattling2E:
 	Inherits: ^MG
 	ReloadDelay: 16
 	Range:5c0
-#	Report: vgatlo4a.wav, vgatlo5a.wav, vgatlo5b.wav, vgatlo6a.wav
+	#Report: vgatlo4a.wav, vgatlo5a.wav, vgatlo5b.wav, vgatlo6a.wav
 	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 25 
@@ -412,7 +412,7 @@ AGGattling3E:
 	Inherits: ^MG
 	ReloadDelay: 16
 	Range:5c0
-#	Report: vgatlo7a.wav, vgatlo8a.wav, vgatlo8b.wav, vgatlo9a.wav
+	#Report: vgatlo7a.wav, vgatlo8a.wav, vgatlo8b.wav, vgatlo9a.wav
 	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 25 
@@ -437,7 +437,7 @@ AAGattling:
 	ReloadDelay: 16
 	Range:8c0
 	ValidTargets: Air
-#	Report: vgatlo1a.wav, vgatlo2a.wav, vgatlo2b.wav, vgatlo2c.wav, vgatlo3a.wav
+	#Report: vgatlo1a.wav, vgatlo2a.wav, vgatlo2b.wav, vgatlo2c.wav, vgatlo3a.wav
 	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 25 
@@ -462,7 +462,7 @@ AAGattling2:
 	ReloadDelay: 8
 	Range:8c0
 	ValidTargets: Air
-#	Report: vgatlo4a.wav, vgatlo5a.wav, vgatlo5b.wav, vgatlo6a.wav
+	#Report: vgatlo4a.wav, vgatlo5a.wav, vgatlo5b.wav, vgatlo6a.wav
 	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 30 
@@ -486,7 +486,7 @@ AAGattling3:
 	Inherits: ^MG
 	ReloadDelay: 4
 	Range:8c0
-#	Report: vgatlo7a.wav, vgatlo8a.wav, vgatlo8b.wav, vgatlo9a.wav
+	#Report: vgatlo7a.wav, vgatlo8a.wav, vgatlo8b.wav, vgatlo9a.wav
 	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 40 
@@ -511,7 +511,7 @@ AAGattlingE:
 	ReloadDelay: 16
 	Range:8c0
 	ValidTargets: Air
-#	Report: vgatlo1a.wav, vgatlo2a.wav, vgatlo2b.wav, vgatlo2c.wav, vgatlo3a.wav
+	#Report: vgatlo1a.wav, vgatlo2a.wav, vgatlo2b.wav, vgatlo2c.wav, vgatlo3a.wav
 	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 25 
@@ -536,8 +536,8 @@ AAGattling2E:
 	ReloadDelay: 8
 	Range:8c0
 	ValidTargets: Air
-#   OpenRA can't read these audio files 
-#	Report: vgatlo4a.wav, vgatlo5a.wav, vgatlo5b.wav, vgatlo6a.wav
+	#OpenRA can't read these audio files 
+	#Report: vgatlo4a.wav, vgatlo5a.wav, vgatlo5b.wav, vgatlo6a.wav
 	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 25 
@@ -562,7 +562,7 @@ AAGattling3E:
 	ReloadDelay: 4
 	Range:8c0
 	ValidTargets: Air
-#	Report: vgatlo7a.wav, vgatlo8a.wav, vgatlo8b.wav, vgatlo9a.wav
+	#Report: vgatlo7a.wav, vgatlo8a.wav, vgatlo8b.wav, vgatlo9a.wav
 	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 25  
@@ -587,8 +587,8 @@ AAGattCann:
 	ReloadDelay: 100
 	Range:8c0
 	ValidTargets: Air
-#   OpenRA can't read these audio files 
-#	Report: vgatlo1a.wav, vgatlo2a.wav, vgatlo2b.wav, vgatlo2c.wav, vgatlo3a.wav
+	#OpenRA can't read these audio files 
+	#Report: vgatlo1a.wav, vgatlo2a.wav, vgatlo2b.wav, vgatlo2c.wav, vgatlo3a.wav
 	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 30 
@@ -613,7 +613,7 @@ AAGattCann2:
 	ReloadDelay: 100
 	Range:8c0
 	ValidTargets: Air
-#	Report: vgatlo4a.wav, vgatlo5a.wav, vgatlo5b.wav, vgatlo6a.wav
+	#Report: vgatlo4a.wav, vgatlo5a.wav, vgatlo5b.wav, vgatlo6a.wav
 	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 30 
@@ -638,7 +638,7 @@ AAGattCann3:
 	ReloadDelay: 100
 	Range:8c0
 	ValidTargets: Air
-#	Report: vgatlo7a.wav, vgatlo8a.wav, vgatlo8b.wav, vgatlo9a.wav
+	#Report: vgatlo7a.wav, vgatlo8a.wav, vgatlo8b.wav, vgatlo9a.wav
 	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 30 
@@ -663,7 +663,7 @@ AAGattCannE:
 	ReloadDelay: 100
 	Range:8c0
 	ValidTargets: Air
-#	Report: vgatlo4a.wav, vgatlo5a.wav, vgatlo5b.wav, vgatlo6a.wav
+	#Report: vgatlo4a.wav, vgatlo5a.wav, vgatlo5b.wav, vgatlo6a.wav
 	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 30
@@ -688,7 +688,7 @@ AAGattCann2E:
 	ReloadDelay: 100
 	Range:8c0
 	ValidTargets: Air
-#	Report: vgatlo4a.wav, vgatlo5a.wav, vgatlo5b.wav, vgatlo6a.wav
+	#Report: vgatlo4a.wav, vgatlo5a.wav, vgatlo5b.wav, vgatlo6a.wav
 	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 30 
@@ -713,7 +713,7 @@ AAGattCann3E:
 	ReloadDelay: 100
 	Range:8c0
 	ValidTargets: Air
-#	Report: vgatlo7a.wav, vgatlo8a.wav, vgatlo8b.wav, vgatlo9a.wav
+	#Report: vgatlo7a.wav, vgatlo8a.wav, vgatlo8b.wav, vgatlo9a.wav
 	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 30 

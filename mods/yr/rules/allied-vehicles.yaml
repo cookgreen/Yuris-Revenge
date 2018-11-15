@@ -20,7 +20,7 @@ amcv:
 	Mobile:
 		Speed: 80
 		TurnSpeed: 5
-		Crushes: fence, crate, infantry
+		Locomotor: heavytracked
 	RevealsShroud:
 		Range: 4c0
 	MustBeDestroyed:
@@ -60,7 +60,7 @@ cmin:
 	Harvester:
 		Capacity: 20
 		Resources: Ore, Gems
-		UnloadTicksPerBale: 1
+		BaleUnloadDelay: 1
 		SearchFromProcRadius: 24
 		SearchFromOrderRadius: 12
 		HarvestVoice: Move
@@ -77,11 +77,11 @@ cmin:
 		Speed: 85
 		TurnSpeed: 8
 		WaitAverage: 0
-		Crushes: crate, infantry
+		Locomotor: tracked
 	RevealsShroud:
 		Range: 4c0
 	WithHarvestOverlay:
-		Offset: 121,0,0
+		LocalOffset: 121,0,0
 		Palette: effect
 	GainsExperience: # can get experience, i.e. speed
 	RenderSprites: # TODO: WithHarvestOverlay relies on this, but it should actually be removed
@@ -110,7 +110,7 @@ mtnk:
 	Mobile:
 		Speed: 90
 		TurnSpeed: 5
-		Crushes: fence, crate, infantry
+		Locomotor: heavytracked
 	Health:
 		HP: 300
 	Armor:
@@ -162,7 +162,7 @@ tnkd:
 	Mobile:
 		Speed: 70
 		TurnSpeed: 5
-		Crushes: fence, crate, infantry
+		Locomotor: heavytracked
 	Health:
 		HP: 400
 	Armor:
@@ -279,9 +279,9 @@ fv:
 	Armament@flak:
 		Weapon: CRFlakGuyGun
 		RequiresCondition: ifv-flak
-#	Armament@chrono:
-#		Weapon: CRNeutronRifle
-#		RequiresCondition: ifv-chrono
+	#Armament@chrono:
+	#	Weapon: CRNeutronRifle
+	#	RequiresCondition: ifv-chrono
 	AttackTurreted:
 		Voice: Attack
 	AutoTargetPriority@DEFAULT:
@@ -315,10 +315,10 @@ fv:
 	WithVoxelBody:
 	Explodes:
 		RequiresCondition: !ifv-demo
-#	Explodes@demo:
-#		Weapon: CRNuke
-#		EmptyWeapon: CRNuke
-#		RequiresCondition: ifv-demo
+	#Explodes@demo:
+	#	Weapon: CRNuke
+	#	EmptyWeapon: CRNuke
+	#	RequiresCondition: ifv-demo
 	WithVoxelTurret@default:
 		Sequence: turret-missile
 		RequiresCondition: !ifv-mg && !ifv-repair && !ifv-sniper && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-hero && !ifv-chrono
@@ -362,6 +362,7 @@ sref:
 	Mobile:
 		TurnSpeed: 6
 		Speed: 60
+		Locomotor: heavytracked
 	RevealsShroud:
 		Range: 8c0
 	Turreted:
@@ -416,6 +417,7 @@ mgtk:
 	Mobile:
 		TurnSpeed: 5
 		Speed: 105
+		Locomotor: heavytracked
 	RevealsShroud:
 		Range: 9c0
 	Armament@primary:

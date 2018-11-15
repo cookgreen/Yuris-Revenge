@@ -25,7 +25,6 @@ AssaultBolt:
 	ReloadDelay: 70
 	Range: 2c0
 	Report: iteschaa.wav
-	ValidStances: Ally
 	ValidTargets: TeslaBoost
 	Projectile: TeslaZap
 		Image: litningupg
@@ -142,7 +141,7 @@ Comet:
 	Report: vpriatta.wav
 	Projectile: LaserZap
 		Width: 50
-		BeamDuration: 15
+		Duration: 15
 		UsePlayerColor: true
 	Warhead@1Dam: SpreadDamage
 		Spread: 800
@@ -183,7 +182,7 @@ RadBeamWeapon:
 	Report: idesat1a.wav
 	Projectile: LaserZap
 		Width: 20
-		BeamDuration: 7
+		Duration: 7
 		Color: B900FF00
 	Warhead@1Dam: SpreadDamage
 		Spread: 42
@@ -214,7 +213,6 @@ NeutronRifle:
 	Range: 10c0
 	Report: ichratta.wav
 	Projectile: TeslaZap
-		Speed: 100c0
 		Palette: highlight
 	Warhead@Damage: SpreadDamage
 		Spread: 64

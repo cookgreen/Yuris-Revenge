@@ -40,12 +40,15 @@ nacnst:
 	WithIdleOverlay@normal:
 		Sequence: idle-normal
 	WithBuildingPlacedAnimation:
-	EmitInfantryOnSell@allies:
+	SpawnActorsOnSell@allies:
 		ActorTypes: e1, e1, e1, engineer
 		Factions: america, germany, england, france, korea
-	EmitInfantryOnSell@soviets:
+	SpawnActorsOnSell@soviets:
 		ActorTypes: e2, e2, e2, e2, engineer
 		Factions: cuba, libya, iraq, russia
+	SpawnActorsOnSell@yuris:
+		ActorTypes: init, init, init, init, yengineer
+		Factions: yuri
 
 napowr:
 	Inherits: ^Building
@@ -453,8 +456,9 @@ nayard:
 		Sequence: repair
 	WithProductionOverlay@lights:
 		Sequence: production-lights
-	-EmitInfantryOnSell@allies:
-	-EmitInfantryOnSell@soviets:
+	-SpawnActorsOnSell@allies:
+	-SpawnActorsOnSell@soviets:
+	-SpawnActorsOnSell@yuris:
 	RequiresBuildableArea:
 		Adjacent: 13
 
@@ -877,7 +881,7 @@ tesla:
 	AttackTesla:
 		Voice: Attack
 		MaxCharges: 3
-		ReloadTime: 120
+		ReloadDelay: 120
 		ChargeAudio: tslachg2.aud
 		PauseOnCondition: lowpower
 	AutoTarget:

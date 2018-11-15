@@ -182,7 +182,6 @@ DiskLaser:
 	Inherits: ^Missile
 	ReloadDelay: 50
 	Range:7c0
-#	Report: vgatlo1a.wav, vgatlo2a.wav, vgatlo2b.wav, vgatlo2c.wav, vgatlo3a.wav
 	Report: vfloatta.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 25 
@@ -191,7 +190,6 @@ DiskDrain:
 	Inherits: ^Missile
 	ReloadDelay: 50
 	Range:1c256
-#	Report: vgatlo4a.wav, vgatlo5a.wav, vgatlo5b.wav, vgatlo6a.wav
 	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 25 

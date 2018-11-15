@@ -1,26 +1,26 @@
 ^Palettes:
 	PaletteFromFile@terrain-temperate:
-		Name: terrain-temperate
+		Name: terrain
 		Tileset: TEMPERATE
 		Filename: isotem.pal
 		ShadowIndex: 1
 	PaletteFromFile@terrain-snow:
-		Name: terrain-snow
+		Name: terrain
 		Tileset: SNOW
 		Filename: isosno.pal
 		ShadowIndex: 1
 	PaletteFromFile@terrain-urban:
-		Name: terrain-urban
+		Name: terrain
 		Tileset: URBAN
 		Filename: isourb.pal
 		ShadowIndex: 1
 	PaletteFromFile@terrain-desert:
-		Name: terrain-desert
+		Name: terrain
 		Tileset: DESERT
 		Filename: isodes.pal
 		ShadowIndex: 1
 	PaletteFromFile@terrain-lunar:
-		Name: terrain-lunar
+		Name: terrain
 		Tileset: LUNAR
 		Filename: isolun.pal
 		ShadowIndex: 1
@@ -76,9 +76,6 @@
 		Name: player
 		Tileset: LUNAR
 		Filename: unitlun.pal
-		ShadowIndex: 1
-	PaletteFromCurrentTileset:
-		Name: terrain
 		ShadowIndex: 1
 	PaletteFromFile@chrome:
 		Name: chrome

@@ -541,7 +541,7 @@ yagntc:
 			URBAN: GENERIC
 			DESERT: GENERIC
 			LUNAR: GENERIC
-## ORA can't process yagntc shp file, use yapowr instead
+	##ORA can't process yagntc shp file, use yapowr instead
 	make: yapowrmk
 		Length: 3
 		ShadowStart: 3

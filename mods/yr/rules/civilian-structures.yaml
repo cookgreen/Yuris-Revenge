@@ -1316,6 +1316,7 @@ causfgl:
 
 carufgl:
 	Inherits: ^Flag
+	Tooltip:
 		Name: Russian Flag
 
 cairfgl:

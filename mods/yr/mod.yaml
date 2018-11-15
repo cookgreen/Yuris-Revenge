@@ -1,7 +1,7 @@
 Metadata:
 	Title: Red Alert 2 Yuri's Revenge
 	Description: Yuri has returned from shadow, it is time to take revenge!
-	Version: release-20180307
+	Version: release-20180923
 	Author: the RA2YR mod team
 
 PackageFormats: Mix, AudioBagHack
@@ -136,8 +136,10 @@ Assemblies:
 	yr|OpenRA.Mods.YR.dll
 
 ChromeLayout:
+	yr|chrome/assetbrowser.yaml
 	yr|chrome/ingame-player.yaml
 	yr|chrome/ingame-infoobjectives.yaml
+	yr|chrome/mainmenu.yaml
 	common|chrome/ingame-infostats.yaml
 	common|chrome/ingame-observerstats.yaml
 	common|chrome/musicplayer.yaml
@@ -152,7 +154,6 @@ ChromeLayout:
 	common|chrome/ingame-infobriefing.yaml
 	common|chrome/ingame-debug.yaml
 	common|chrome/ingame-perf.yaml
-	common|chrome/mainmenu.yaml
 	common|chrome/settings.yaml
 	common|chrome/credits.yaml
 	common|chrome/lobby.yaml
@@ -169,12 +170,12 @@ ChromeLayout:
 	common|chrome/map-chooser.yaml
 	common|chrome/connection.yaml
 	common|chrome/replaybrowser.yaml
-	yr|chrome/assetbrowser.yaml
 	common|chrome/missionbrowser.yaml
 	common|chrome/confirmation-dialogs.yaml
 	common|chrome/color-picker.yaml
 	common|chrome/dropdowns.yaml
 	common|chrome/editor.yaml
+	common|chrome/playerprofile.yaml
     
 Hotkeys:
 	common|hotkeys/game.yaml

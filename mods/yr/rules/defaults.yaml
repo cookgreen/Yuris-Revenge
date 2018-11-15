@@ -196,7 +196,7 @@
 		Modifier: 75
 	SelfHealing@ELITE:
 		Step: 2
-		Ticks: 100
+		Delay: 100
 		HealIfBelow: 100
 		DamageCooldown: 125
 		RequiresCondition: rank-veteran && !rank-elite
@@ -333,6 +333,8 @@
 	Inherits@3: ^IronCurtainable
 	Inherits@shape: ^1x1Shape
 	-DrawLineToTarget:
+	OwnerLostAction:
+		Action: Kill
 	SelectionDecorations:
 		Palette: pips
 	Selectable:
@@ -361,11 +363,14 @@
 		IndicatorPalette: mouse
 	EngineerRepairable:
 		Voice: Attack
-	EmitInfantryOnSell@allies:
+	SpawnActorsOnSell@allies:
 		ActorTypes: e1, e1, e1
 		Factions: america, germany, england, france, korea
-	EmitInfantryOnSell@soviets:
+	SpawnActorsOnSell@soviets:
 		ActorTypes: e2, e2, e2, e2
+		Factions: cuba, libya, iraq, russia
+	SpawnActorsOnSell@yuris:
+		ActorTypes: init, init, init
 		Factions: cuba, libya, iraq, russia
 	MustBeDestroyed:
 		RequiredForShortGame: true
@@ -386,6 +391,11 @@
 	RequiresBuildableArea:
 		AreaTypes: building
 		Adjacent: 3
+	WithBuildingRepairDecoration:
+		Image: allyrepair
+		Sequence: repair
+		ReferencePoint: Center
+		Palette: mouse
 
 ^SupportBuilding:
 	Inherits: ^Building
@@ -397,6 +407,7 @@
 
 ^CivBuilding:
 	Inherits: ^Building
+	OwnerLostAction:
 	-GivesBuildableArea:
 	-Capturable:
 	-MustBeDestroyed:
@@ -444,10 +455,10 @@
 		HP: 900
 	Armor:
 		Type: Wood
+	OwnerLostAction:
+		Action: ChangeOwner
 	RevealsShroud:
 		Range: 4c0
-	Tooltip:
-		Description: Tech Building
 	CaptureNotification:
 		Notification: TechBuildingCaptured
 		LoseNotification: TechBuildingLost
@@ -456,6 +467,8 @@
 
 ^Flag:
 	Inherits: ^CivBuilding
+	OwnerLostAction:
+		Action: ChangeOwner
 	Selectable:
 		Bounds: 50, 228, 0, 0
 	Building:
@@ -547,6 +560,8 @@
 	Inherits@4: ^ChronoDisable
 	Inherits@5: ^CrateStatModifiers
 	Health:
+	OwnerLostAction:
+		Action: Kill
 	HitShape:
 		Type: Circle
 			Radius: 128
@@ -558,14 +573,7 @@
 		Voice: Move
 		Crushes: crate
 		SharesCell: true
-		TerrainSpeeds:
-			Clear: 100
-			Rough: 100
-			Rail: 90
-			Road: 100
-			DirtRoad: 100
-			Ore: 90
-			Gems: 80
+		Locomotor: foot
 	WithTextControlGroupDecoration:
 	SelectionDecorations:
 		Palette: pips
@@ -658,6 +666,35 @@
 		ClosingSequence: close
 	ExternalCondition@PARACHUTE:
 		Condition: parachute
+		
+^WithSwimSuit:
+	WithInfantryBody:
+		RequiresCondition: !swimming
+	WithDeathAnimation@normal:
+		RequiresCondition: !swimming
+	WithDeathAnimation@effect:
+		RequiresCondition: !swimming
+	GrantConditionOnTerrain@Water:
+		TerrainTypes: Water
+		Condition: swimming
+	WithInfantryBody@Water:
+		IdleSequences: swim-idle1,swim-idle2
+		MoveSequence: swim-run
+		StandSequences: swim-stand
+		DefaultAttackSequence: swim-shoot
+		RequiresCondition: swimming
+	WithDeathAnimation@Water:
+		RequiresCondition: swimming
+		DeathSequence: swim-die
+		DeathTypes:
+			ExplosionDeath: 1
+			BulletDeath: 2
+			RadiationDeath: 1
+			PsychicDeath: 2
+			ElectroDeath: 1
+	Targetable@WaterBorne:
+		TargetTypes: Underwater
+		RequiresCondition: swimming
 
 ^CivilianInfantry:
 	Inherits: ^Infantry
@@ -744,20 +781,13 @@
 	Inherits@3: ^IronCurtainable
 	Inherits@4: ^ChronoDisable
 	Inherits@5: ^CrateStatModifiers
+	OwnerLostAction:
+		Action: Kill
 	Mobile:
 		Voice: Move
-		Crushes: crate
-		TerrainSpeeds:
-			Clear: 100
-			Rough: 100
-			Rail: 50
-			Road: 100
-			DirtRoad: 100
-			Beach: 100
-			Ore: 70
-			Gems: 70
 		TurnSpeed: 5
 		RequiresCondition: !bunkered
+		Locomotor: wheeled
 	SelectionDecorations:
 		Palette: pips
 	Selectable:
@@ -815,6 +845,8 @@
 ^CivVehicle:
 	Inherits: ^Vehicle
 	Inherits@MC: ^MindControllable
+	OwnerLostAction:
+		Action: ChangeOwner
 	Tooltip:
 		GenericName: Civilian Vehicle
 	Valued:
@@ -838,6 +870,8 @@
 
 ^NeutralAircraft:
 	Inherits@1: ^ExistsInWorld
+	OwnerLostAction:
+		Action: Kill
 	Targetable@airborne:
 		TargetTypes: Air
 		RequiresCondition: airborne
@@ -878,6 +912,8 @@
 ^Aircraft:
 	Inherits@1: ^NeutralAircraft
 	Inherits@2: ^GainsExperience
+	OwnerLostAction:
+		Action: Kill
 	WithTextControlGroupDecoration:
 
 ^Plane:
@@ -939,10 +975,8 @@
 	Inherits@5: ^CrateStatModifiers
 	Mobile:
 		Voice: Move
-		Crushes: crate
-		TerrainSpeeds:
-			Water: 100
 		TurnSpeed: 5
+		Locomotor: naval
 	LeavesTrails:
 		Image: wake
 		Palette: effect50alpha
