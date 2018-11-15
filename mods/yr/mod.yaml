@@ -207,6 +207,8 @@ TileSets:
 	yr|tilesets/temperat.yaml
 	yr|tilesets/snow.yaml
 	yr|tilesets/urban.yaml
+	yr|tilesets/desert.yaml
+	yr|tilesets/lunar.yaml
 
 MapGrid:
 	Type: RectangularIsometric
@@ -271,11 +273,15 @@ SpriteSequenceFormat: TilesetSpecificSpriteSequence
 		TEMPERATE: .tem
 		SNOW: .sno
 		URBAN: .urb
+		DESERT: .des
+		LUNAR: .lun
 	TilesetCodes:
 		GENERIC: g
 		SNOW: a
 		TEMPERATE: t
 		URBAN: u
+		DESERT: d
+		LUNAR: l
 
 ModelSequenceFormat: VoxelModelSequence
 

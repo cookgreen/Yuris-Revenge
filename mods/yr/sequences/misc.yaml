@@ -4,6 +4,8 @@ overlay:
 	build-valid-temperate:
 	build-valid-snow:
 	build-valid-urban:
+	build-valid-desert:
+	build-valid-lunar:
 	build-invalid:
 		Start: 1
 	target-select:
@@ -14,6 +16,10 @@ overlay:
 	target-valid-temperate:
 		Start: 2
 	target-valid-urban:
+		Start: 2
+	target-valid-desert:
+		Start: 2
+	target-valid-lunar:
 		Start: 2
 
 editor-overlay:

@@ -5,6 +5,8 @@ gacnst:
 		TilesetOverrides:
 			TEMPERATE: GENERIC
 			URBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
 	idle: ggcnst
 		ShadowStart: 3
 	make: ggcnstmk
@@ -13,6 +15,8 @@ gacnst:
 		TilesetOverrides:
 			TEMPERATE: TEMPERATE
 			URBAN: URBAN
+			DESERT: DESERT
+			LUNAR: LUNAR
 	damaged-idle: ggcnst
 		Start: 1
 		ShadowStart: 4
@@ -45,6 +49,8 @@ gapowr:
 		TilesetOverrides:
 			TEMPERATE: GENERIC
 			URBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
 	idle: ggpowr
 		ShadowStart: 3
 	damaged-idle: gtpowr
@@ -65,6 +71,8 @@ gapowr:
 		TilesetOverrides:
 			TEMPERATE: TEMPERATE
 			URBAN: URBAN
+			DESERT: DESERT
+			LUNAR: LUNAR
 	icon: powricon
 		Offset: 0,0
 		UseTilesetCode: false
@@ -76,6 +84,8 @@ gapile:
 		TilesetOverrides:
 			TEMPERATE: GENERIC
 			URBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
 	idle: ggpile
 		ShadowStart: 3
 	damaged-idle: ggpile
@@ -98,6 +108,8 @@ gapile:
 		TilesetOverrides:
 			TEMPERATE: TEMPERATE
 			URBAN: URBAN
+			DESERT: DESERT
+			LUNAR: LUNAR
 	icon: brrkicon
 		Offset: 0,0
 		UseTilesetCode: false
@@ -109,6 +121,8 @@ garefn:
 		TilesetOverrides:
 			TEMPERATE: GENERIC
 			URBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
 	idle: ggrefn
 		ShadowStart: 3
 	damaged-idle: ggrefn
@@ -120,6 +134,8 @@ garefn:
 		TilesetOverrides:
 			TEMPERATE: TEMPERATE
 			URBAN: URBAN
+			DESERT: DESERT
+			LUNAR: LUNAR
 	idle-drill: ggrefnl1
 		Length: 6
 		Tick: 1500
@@ -144,6 +160,8 @@ gaairc:
 		TilesetOverrides:
 			TEMPERATE: GENERIC
 			URBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
 	idle: ggairc
 		Length: 1
 	damaged-idle: ggairc
@@ -184,6 +202,8 @@ gaairc:
 		TilesetOverrides:
 			TEMPERATE: TEMPERATE
 			URBAN: URBAN
+			DESERT: DESERT
+			LUNAR: LUNAR
 	icon: heliicon
 		Offset: 0,0
 		UseTilesetCode: false
@@ -195,6 +215,8 @@ gaweap:
 		TilesetOverrides:
 			TEMPERATE: GENERIC
 			URBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
 	idle: ggweap
 		ShadowStart: 3
 		ZOffset: -1024
@@ -248,6 +270,8 @@ gaweap:
 		TilesetOverrides:
 			TEMPERATE: TEMPERATE
 			URBAN: URBAN
+			DESERT: DESERT
+			LUNAR: LUNAR
 	icon: gwepicon
 		Offset: 0,0
 		UseTilesetCode: false
@@ -259,6 +283,8 @@ gayard:
 		TilesetOverrides:
 			TEMPERATE: GENERIC
 			URBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
 	idle: ggyard
 		ShadowStart: 4
 	damaged-idle: ggyard
@@ -288,6 +314,8 @@ gayard:
 		TilesetOverrides:
 			TEMPERATE: TEMPERATE
 			URBAN: URBAN
+			DESERT: DESERT
+			LUNAR: LUNAR
 	repair: ggyard_s
 		Length: 18
 		ShadowStart: 36
@@ -306,6 +334,8 @@ gadept:
 		TilesetOverrides:
 			TEMPERATE: GENERIC
 			URBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
 	idle: ggdept_d
 		ShadowStart: 2
 	damaged-idle: ggdept_d
@@ -326,6 +356,8 @@ gadept:
 		TilesetOverrides:
 			TEMPERATE: TEMPERATE
 			URBAN: URBAN
+			DESERT: DESERT
+			LUNAR: LUNAR
 	repair: ggdept_c
 		Length: 10
 		ShadowStart: 20
@@ -346,6 +378,8 @@ gatech:
 		TilesetOverrides:
 			TEMPERATE: GENERIC
 			URBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
 	idle: ggtech
 		ShadowStart: 3
 	damaged-idle: ggtech
@@ -364,6 +398,8 @@ gatech:
 		TilesetOverrides:
 			TEMPERATE: TEMPERATE
 			URBAN: URBAN
+			DESERT: DESERT
+			LUNAR: LUNAR
 	icon: techicon
 		Offset: 0,0
 		UseTilesetCode: false
@@ -375,6 +411,8 @@ gaorep:
 		TilesetOverrides:
 			TEMPERATE: GENERIC
 			URBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
 	idle: ggorep
 		ShadowStart: 3
 	damaged-idle: ggorep
@@ -395,6 +433,8 @@ gaorep:
 		TilesetOverrides:
 			TEMPERATE: TEMPERATE
 			URBAN: URBAN
+			DESERT: DESERT
+			LUNAR: LUNAR
 	icon: gorep
 		Offset: 0,0
 		UseTilesetCode: false
@@ -421,6 +461,8 @@ gapill:
 		TilesetOverrides:
 			TEMPERATE: GENERIC
 			URBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
 	idle: ggpill
 		ShadowStart: 3
 	damaged-idle: ggpill
@@ -459,6 +501,8 @@ gapill:
 		TilesetOverrides:
 			TEMPERATE: TEMPERATE
 			URBAN: URBAN
+			DESERT: DESERT
+			LUNAR: LUNAR
 	icon: pillicon
 		Offset: 0,0
 		UseTilesetCode: false
@@ -471,6 +515,8 @@ nasam:
 		TilesetOverrides:
 			TEMPERATE: GENERIC
 			URBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
 	idle: ngsam
 		ShadowStart: 3
 	damaged-idle: ngsam
@@ -485,6 +531,8 @@ nasam:
 		TilesetOverrides:
 			TEMPERATE: TEMPERATE
 			URBAN: URBAN
+			DESERT: DESERT
+			LUNAR: LUNAR
 		ZOffset: 0
 	icon: samicon
 		Offset: 0,0
@@ -498,6 +546,8 @@ gtgcan:
 		TilesetOverrides:
 			TEMPERATE: GENERIC
 			URBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
 	idle: gggcan
 		ShadowStart: 3
 	damaged-idle: gggcan
@@ -513,6 +563,8 @@ gtgcan:
 		TilesetOverrides:
 			TEMPERATE: TEMPERATE
 			URBAN: URBAN
+			DESERT: DESERT
+			LUNAR: LUNAR
 		ZOffset: 0
 	muzzle: gcmuzzle
 		Length: *
@@ -529,6 +581,8 @@ gaspysat:
 		TilesetOverrides:
 			TEMPERATE: GENERIC
 			URBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
 	idle: ggspst
 		ShadowStart: 3
 		Tick: 180
@@ -550,6 +604,8 @@ gaspysat:
 		TilesetOverrides:
 			TEMPERATE: TEMPERATE
 			URBAN: URBAN
+			DESERT: DESERT
+			LUNAR: LUNAR
 	icon: asaticon
 		Offset: 0,0
 		UseTilesetCode: false
@@ -561,6 +617,8 @@ gagap:
 		TilesetOverrides:
 			TEMPERATE: GENERIC
 			URBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
 	idle: gggap
 		Length: 1
 		ShadowStart: 3
@@ -575,6 +633,8 @@ gagap:
 		TilesetOverrides:
 			TEMPERATE: TEMPERATE
 			URBAN: URBAN
+			DESERT: DESERT
+			LUNAR: LUNAR
 	icon: gapicon
 		Offset: 0,0
 		UseTilesetCode: false
@@ -586,6 +646,8 @@ gaweat:
 		TilesetOverrides:
 			TEMPERATE: GENERIC
 			URBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
 	idle: ggweth
 		ShadowStart: 3
 	damaged-idle: ggweth
@@ -597,6 +659,8 @@ gaweat:
 		TilesetOverrides:
 			TEMPERATE: TEMPERATE
 			URBAN: URBAN
+			DESERT: DESERT
+			LUNAR: LUNAR
 	icon: wethicon
 		Offset: 0,0
 		UseTilesetCode: false
@@ -608,6 +672,8 @@ gacsph:
 		TilesetOverrides:
 			TEMPERATE: GENERIC
 			URBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
 	idle: ggcsph
 		ShadowStart: 3
 	damaged-idle: ggcsph
@@ -628,6 +694,8 @@ gacsph:
 		TilesetOverrides:
 			TEMPERATE: TEMPERATE
 			URBAN: URBAN
+			DESERT: DESERT
+			LUNAR: LUNAR
 	icon: csphicon
 		Offset: 0,0
 		UseTilesetCode: false
@@ -639,6 +707,8 @@ atesla:
 		TilesetOverrides:
 			TEMPERATE: GENERIC
 			URBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
 	idle-normal: ggpris
 		ShadowStart: 3
 	damaged-idle-normal: ggpris
@@ -676,6 +746,8 @@ atesla:
 		TilesetOverrides:
 			TEMPERATE: TEMPERATE
 			URBAN: URBAN
+			DESERT: DESERT
+			LUNAR: LUNAR
 
 garobo:
 	Defaults:
@@ -684,12 +756,16 @@ garobo:
 		TilesetOverrides:
 			TEMPERATE: GENERIC
 			URBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
 	idle: ggrobo_a
 		Length: 20
 		ShadowStart: 40
 		TilesetOverrides:
 			TEMPERATE: TEMPERATE
 			URBAN: URBAN
+			DESERT: DESERT
+			LUNAR: LUNAR
 	damaged-idle: ggrobo_a
 		Start: 20
 		ShadowStart: 60

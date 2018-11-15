@@ -5,6 +5,8 @@ nacnst:
 		TilesetOverrides:
 			TEMPERATE: GENERIC
 			URBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
 	idle: ngcnst_c
 		Length: 1
 		ShadowStart: 4
@@ -56,6 +58,8 @@ napowr:
 		TilesetOverrides:
 			TEMPERATE: GENERIC
 			URBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
 	idle: ngpowr
 		ShadowStart: 3
 	damaged-idle: ngpowr
@@ -81,6 +85,8 @@ napowr:
 		TilesetOverrides:
 			TEMPERATE: TEMPERATE
 			URBAN: URBAN
+			DESERT: DESERT
+			LUNAR: LUNAR
 	icon: npwricon
 		Offset: 0,0
 		UseTilesetCode: false
@@ -92,6 +98,8 @@ nahand:
 		TilesetOverrides:
 			TEMPERATE: GENERIC
 			URBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
 	idle: nghand
 		ShadowStart: 3
 	damaged-idle: nghand
@@ -106,6 +114,8 @@ nahand:
 		TilesetOverrides:
 			TEMPERATE: TEMPERATE
 			URBAN: URBAN
+			DESERT: DESERT
+			LUNAR: LUNAR
 	icon: handicon
 		Offset: 0,0
 		UseTilesetCode: false
@@ -117,6 +127,8 @@ narefn:
 		TilesetOverrides:
 			TEMPERATE: GENERIC
 			URBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
 	idle: ngrefn
 		ShadowStart: 3
 	damaged-idle: ngrefn
@@ -128,6 +140,8 @@ narefn:
 		TilesetOverrides:
 			TEMPERATE: TEMPERATE
 			URBAN: URBAN
+			DESERT: DESERT
+			LUNAR: LUNAR
 	idle-drill: ngrefnl1
 		Length: 3
 		Tick: 1500
@@ -152,6 +166,8 @@ naradr:
 		TilesetOverrides:
 			TEMPERATE: GENERIC
 			URBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
 	idle: ngradr
 		ShadowStart: 3
 	damaged-idle: ngradr
@@ -175,6 +191,8 @@ naradr:
 		TilesetOverrides:
 			TEMPERATE: TEMPERATE
 			URBAN: URBAN
+			DESERT: DESERT
+			LUNAR: LUNAR
 	icon: nradicon
 		Offset: 0,0
 		UseTilesetCode: false
@@ -186,6 +204,8 @@ naweap:
 		TilesetOverrides:
 			TEMPERATE: GENERIC
 			URBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
 	idle: ngweap
 		ShadowStart: 3
 		ZOffset: -1536
@@ -239,6 +259,8 @@ naweap:
 		TilesetOverrides:
 			TEMPERATE: TEMPERATE
 			URBAN: URBAN
+			DESERT: DESERT
+			LUNAR: LUNAR
 	icon: nwepicon
 		Offset: 0,0
 		UseTilesetCode: false
@@ -250,6 +272,8 @@ nayard:
 		TilesetOverrides:
 			TEMPERATE: GENERIC
 			URBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
 	idle: ngyard
 		ShadowStart: 4
 	damaged-idle: ngyard
@@ -304,6 +328,8 @@ nadept:
 		TilesetOverrides:
 			TEMPERATE: GENERIC
 			URBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
 	idle: ngdept_b
 		Length: 10
 		ShadowStart: 20
@@ -329,6 +355,8 @@ nadept:
 		TilesetOverrides:
 			TEMPERATE: TEMPERATE
 			URBAN: URBAN
+			DESERT: DESERT
+			LUNAR: LUNAR
 	repair: ngdept_c
 		Length: 50
 		ShadowStart: 100
@@ -349,6 +377,8 @@ nanrct:
 		TilesetOverrides:
 			TEMPERATE: GENERIC
 			URBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
 	idle: ngnrct
 		ShadowStart: 3
 	damaged-idle: ngnrct
@@ -374,6 +404,8 @@ nanrct:
 		TilesetOverrides:
 			TEMPERATE: TEMPERATE
 			URBAN: URBAN
+			DESERT: DESERT
+			LUNAR: LUNAR
 	icon: nrcticon
 		Offset: 0,0
 		UseTilesetCode: false
@@ -385,6 +417,8 @@ natech:
 		TilesetOverrides:
 			TEMPERATE: GENERIC
 			URBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
 	idle: ngtech
 		ShadowStart: 3
 	damaged-idle: ngtech
@@ -399,6 +433,8 @@ natech:
 		TilesetOverrides:
 			TEMPERATE: TEMPERATE
 			URBAN: URBAN
+			DESERT: DESERT
+			LUNAR: LUNAR
 	icon: ntchicon
 		Offset: 0,0
 		UseTilesetCode: false
@@ -410,6 +446,8 @@ naclon:
 		TilesetOverrides:
 			TEMPERATE: GENERIC
 			URBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
 	idle: ngclon_a
 		Length: 11
 		ShadowStart: 22
@@ -428,6 +466,8 @@ naclon:
 		TilesetOverrides:
 			TEMPERATE: TEMPERATE
 			URBAN: URBAN
+			DESERT: URBAN
+			LUNAR: URBAN
 	icon: clonicon
 		Offset: 0,0
 		UseTilesetCode: false
@@ -439,6 +479,8 @@ napsis:
 		TilesetOverrides:
 			TEMPERATE: GENERIC
 			URBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
 	idle: ngpsis
 		ShadowStart: 3
 	damaged-idle: ngpsis
@@ -462,6 +504,8 @@ napsis:
 		TilesetOverrides:
 			TEMPERATE: TEMPERATE
 			URBAN: URBAN
+			DESERT: URBAN
+			LUNAR: URBAN
 	icon: psisicon
 		Offset: 0,0
 		UseTilesetCode: false
@@ -494,6 +538,8 @@ namisl:
 		TilesetOverrides:
 			TEMPERATE: TEMPERATE
 			URBAN: URBAN
+			DESERT: DESERT
+			LUNAR: LUNAR
 	icon: msslicon
 		Offset: 0,0
 
@@ -504,6 +550,8 @@ nairon:
 		TilesetOverrides:
 			TEMPERATE: GENERIC
 			URBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
 	idle: ngiron_a
 		Length: 11
 		ShadowStart: 22
@@ -524,6 +572,8 @@ nairon:
 		TilesetOverrides:
 			TEMPERATE: TEMPERATE
 			URBAN: URBAN
+			DESERT: DESERT
+			LUNAR: LUNAR
 	icon: ironicon
 		Offset: 0,0
 		UseTilesetCode: false
@@ -550,6 +600,8 @@ nalasr:
 		TilesetOverrides:
 			TEMPERATE: GENERIC
 			URBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
 	idle: nalasr
 		ShadowStart: 3
 	damaged-idle: nalasr
@@ -564,6 +616,8 @@ nalasr:
 		TilesetOverrides:
 			TEMPERATE: TEMPERATE
 			URBAN: URBAN
+			DESERT: DESERT
+			LUNAR: LUNAR
 		ZOffset: 0
 	icon: plticon
 		Offset: 0,0
@@ -576,6 +630,8 @@ tesla:
 		TilesetOverrides:
 			TEMPERATE: GENERIC
 			URBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
 	idle: ngtsla
 		Length: 1
 		ShadowStart: 3
@@ -611,6 +667,8 @@ tesla:
 		TilesetOverrides:
 			TEMPERATE: TEMPERATE
 			URBAN: URBAN
+			DESERT: DESERT
+			LUNAR: LUNAR
 	icon: tslaicon
 		Offset: 0,0
 		UseTilesetCode: false
@@ -623,6 +681,8 @@ naflak:
 		TilesetOverrides:
 			TEMPERATE: GENERIC
 			URBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
 	idle: ngflak
 		ShadowStart: 3
 	damaged-idle: ngflak
@@ -637,6 +697,8 @@ naflak:
 		TilesetOverrides:
 			TEMPERATE: TEMPERATE
 			URBAN: URBAN
+			DESERT: DESERT
+			LUNAR: LUNAR
 		ZOffset: 0
 	icon: flakicon
 		Offset: 0,0
