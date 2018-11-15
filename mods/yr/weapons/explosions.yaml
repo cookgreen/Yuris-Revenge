@@ -271,7 +271,6 @@ MigDeath:
 		Explosions: small_tumu
 		ValidTargets: Ground, Water
         
-
 DominatorWH:
 	ReloadDelay: 0
 	Range: 10c0
@@ -307,3 +306,10 @@ DominatorWH:
 		ValidTargets: Ground, Water
 		ImpactSounds: psiwavesound.aud
 		ImpactActors: false
+		
+Demolish:
+	Warhead@1Dam: SpreadDamage
+		DamageTypes: DefaultDeath
+	Warhead@2Eff: CreateEffect
+		Explosions: large_twlt
+		ImpactSounds: expnew09.wav
