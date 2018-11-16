@@ -227,12 +227,6 @@ Templates:
 				RightColor: 0DFA0C
 				ZOffset: -15
 				ZRamp: 0
-	Template@14:
-		Categories: ZMM Ramps
-		Id: 14
-		Images: mslop13.des
-		Size: 1, 1
-		Tiles:
 	Template@15:
 		Categories: ZMM Ramps
 		Id: 15

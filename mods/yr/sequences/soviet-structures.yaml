@@ -22,6 +22,8 @@ nacnst:
 		TilesetOverrides:
 			TEMPERATE: TEMPERATE
 			URBAN: URBAN
+			DESERT: DESERT
+			LUNAR: LUNAR
 	idle-top: ngcnst_a
 		Length: 11
 		Tick: 200
