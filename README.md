@@ -9,7 +9,7 @@ release-20180923
 release-20180923
 
 ## Requirement
-OpenRA - Version: release-20180307  
+OpenRA - Version: release-20180923 
 
 ## Usage
 Run "make.cmd" and type "all" in the terminal
