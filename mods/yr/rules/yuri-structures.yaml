@@ -541,7 +541,7 @@ yaggun:
 	RevealsShroud:
 		Range: 8c0
 	Selectable:
-		Bounds: 50, 30, 0, -12
+		Bounds: 53, 56, 0, -12
 	Building:
 		Footprint: x
 		Dimensions: 1, 1
@@ -555,7 +555,7 @@ yaggun:
 	Turreted:
 		TurnSpeed: 10
 		InitialFacing: 224
-		Offset: 320,0,-20
+		Offset: 320,-60,0
 	AttackTurreted:
 		Voice: Attack
 	Armament@pirmary:
@@ -585,6 +585,7 @@ yaggun:
 	BodyOrientation:
 		QuantizedFacings: 16
 	RenderVoxels:
+		Scale: 20
 	WithVoxelTurret:
 	WithRangeCircle:
 		Range: 6c0
@@ -620,12 +621,9 @@ yapsyt:
 		Weapon: MindControl
 		MuzzleSequence: muzzle
 		LocalOffset: 0,0,960
-		PauseOnCondition: deployed
 	WithMuzzleOverlay:
 	MindController:
-		ControllingCondition: controlling
-		Sounds: iyurat1a.wav
-	MindController:
+		Capacity: 3
 		ControllingCondition: controlling
 		Sounds: iyurat1a.wav
 	WithMindControlArc:
