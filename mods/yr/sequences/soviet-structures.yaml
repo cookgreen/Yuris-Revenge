@@ -312,6 +312,8 @@ nayard:
 		TilesetOverrides:
 			TEMPERATE: TEMPERATE
 			URBAN: URBAN
+			DESERT: DESERT
+			LUNAR: LUNAR
 	repair: ngyard_s
 		Length: 18
 		ShadowStart: 36
