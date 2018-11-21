@@ -600,7 +600,7 @@ yapsyt:
 		Prerequisites: napsis, ~structures.yuris
 		Description: Mind Control Tower
 	Selectable:
-		Bounds: 220, 155, 0, -20
+		Bounds: 69, 150, 0, -70
 	Health:
 		HP: 455
 	Armor:
@@ -611,6 +611,8 @@ yapsyt:
 		Cost: 1500
 	Tooltip
 		Name: Yuri Psychic Tower
+	AttackTurreted:
+		Voice: Attack
 	Turreted:
 		TurnSpeed: 255
 	WithIdleOverlay@top:
