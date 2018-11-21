@@ -84,6 +84,7 @@ Rules:
 	yr|rules/soviet-infantry.yaml
 	yr|rules/yuri-infantry.yaml
 	yr|rules/civilians.yaml
+	yr|rules/bridges.yaml
 	yr|rules/animals.yaml
 	yr|rules/allied-structures.yaml
 	yr|rules/soviet-structures.yaml
@@ -107,6 +108,7 @@ Sequences:
 	yr|sequences/allied-infantry.yaml
 	yr|sequences/allied-structures.yaml
 	yr|sequences/animals.yaml
+	yr|sequences/bridges.yaml
 	yr|sequences/civilians.yaml
 	yr|sequences/civilian-props.yaml
 	yr|sequences/civilian-structures.yaml

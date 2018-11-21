@@ -611,6 +611,8 @@ yapsyt:
 		Cost: 1500
 	Tooltip
 		Name: Yuri Psychic Tower
+	Turreted:
+		TurnSpeed: 255
 	WithIdleOverlay@top:
 		Sequence: idle-top
 	Power:
