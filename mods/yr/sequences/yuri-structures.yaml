@@ -17,9 +17,9 @@ yacnst:
 		ShadowStart: 27
 		TilesetOverrides:
 			TEMPERATE: TEMPERATE
-			URBAN: URBAN
-			DESERT: DESERT
-			LUNAR: LUNAR
+			URBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
 	idle-top: yacnst_a
 		Length: 2
 		Tick: 200
@@ -58,9 +58,9 @@ yapowr:
 		ShadowStart: 22
 		TilesetOverrides:
 			TEMPERATE: TEMPERATE
-			URBAN: URBAN
-			DESERT: DESERT
-			LUNAR: LUNAR
+			URBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
 	idle: yapowr
 		Length: 1
 		ShadowStart: 3
@@ -124,9 +124,9 @@ yabrck:
 		ShadowStart: 25
 		TilesetOverrides:
 			TEMPERATE: TEMPERATE
-			URBAN: URBAN
-			DESERT: DESERT
-			LUNAR: LUNAR
+			URBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
 	icon: brckicon
 		Offset: 0,0
 		UseTilesetCode: false
@@ -150,9 +150,9 @@ yarefn:
 		ShadowStart: 17
 		TilesetOverrides:
 			TEMPERATE: TEMPERATE
-			URBAN: URBAN
-			DESERT: DESERT
-			LUNAR: LUNAR
+			URBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
 	idle-processing: yarefn_a
 		Length: 2
 		ShadowStart: 2
@@ -226,9 +226,9 @@ yaweap:
 		ShadowStart: 25
 		TilesetOverrides:
 			TEMPERATE: TEMPERATE
-			URBAN: URBAN
-			DESERT: DESERT
-			LUNAR: LUNAR
+			URBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
 	icon: ywepicon
 		Offset: 0,0
 		UseTilesetCode: false
@@ -276,9 +276,9 @@ yayard:
 		ShadowStart: 25
 		TilesetOverrides:
 			TEMPERATE: TEMPERATE
-			URBAN: URBAN
-			DESERT: DESERT
-			LUNAR: LUNAR
+			URBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
 	repair: yayard_s
 		Length: 15
 		ShadowStart: 32
@@ -320,9 +320,9 @@ yagrnd:
 		ShadowStart: 30
 		TilesetOverrides:
 			TEMPERATE: TEMPERATE
-			URBAN: URBAN
-			DESERT: DESERT
-			LUNAR: LUNAR
+			URBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
 	grind: yagrnd_b
 		Length: 48
 		ShadowStart: 96
@@ -362,9 +362,9 @@ yatech:
 		ShadowStart: 25
 		TilesetOverrides:
 			TEMPERATE: TEMPERATE
-			URBAN: URBAN
-			DESERT: DESERT
-			LUNAR: LUNAR
+			URBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
 	icon: ytchicon
 		Offset: 0,0
 		UseTilesetCode: false
@@ -390,9 +390,9 @@ naindp:
 		ShadowStart: 26
 		TilesetOverrides:
 			TEMPERATE: TEMPERATE
-			URBAN: URBAN
-			DESERT: DESERT
-			LUNAR: LUNAR
+			URBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
 	idle-processing: naindp_a
 		Length: 13
 		Tick: 150
@@ -458,9 +458,9 @@ natbnk:
 		ShadowStart: 10
 		TilesetOverrides:
 			TEMPERATE: TEMPERATE
-			URBAN: URBAN
-			DESERT: DESERT
-			LUNAR: LUNAR
+			URBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
 	icon: tbnkicon
 		Offset: 0,0
 		UseTilesetCode: false
@@ -484,9 +484,9 @@ yaggun:
 		ShadowStart: 13
 		TilesetOverrides:
 			TEMPERATE: TEMPERATE
-			URBAN: URBAN
-			DESERT: DESERT
-			LUNAR: LUNAR
+			URBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
 		ZOffset: 0
 	icon: ggunicon
 		Offset: 0,0
@@ -526,9 +526,9 @@ yapsyt:
 		ShadowStart: 31
 		TilesetOverrides:
 			TEMPERATE: TEMPERATE
-			URBAN: URBAN
-			DESERT: DESERT
-			LUNAR: LUNAR
+			URBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
 	icon: psyticon
 		Offset: 0,0
 		UseTilesetCode: false
@@ -547,9 +547,9 @@ yagntc:
 		ShadowStart: 3
 		TilesetOverrides:
 			TEMPERATE: TEMPERATE
-			URBAN: URBAN
-			DESERT: DESERT
-			LUNAR: LUNAR
+			URBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
 	idle: yagntc
 		Length: 1
 		ShadowStart: 3
@@ -604,7 +604,9 @@ yappet:
 		ShadowStart: 24
 		TilesetOverrides:
 			TEMPERATE: TEMPERATE
-			URBAN: URBAN
+			URBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
 	idle: yappet_e
 		Length: 1
 		ShadowStart: 2
@@ -669,7 +671,9 @@ nabnkr:
 		ShadowStart: 25
 		TilesetOverrides:
 			TEMPERATE: TEMPERATE
-			URBAN: URBAN
+			URBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
 	icon: bnkricon
 		Offset: 0,0
 		UseTilesetCode: false
