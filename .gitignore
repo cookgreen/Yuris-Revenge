@@ -7,7 +7,6 @@ mods/*/*.dll
 mods/*/*.mdb
 mods/*/*.pdb
 mods/ra2/*
-mods/modcontent/*
 /*.dll
 /*.dll.config
 /*.so
