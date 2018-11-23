@@ -20,6 +20,10 @@ Terrain:
 		Type: Road
 		TargetTypes: Ground
 		Color: 000000
+	TerrainType@Bridge:
+		Type: Bridge
+		Color: 5A5C5A
+		TargetTypes: Ground
 	TerrainType@Rail:
 		Type: Rail
 		TargetTypes: Ground
