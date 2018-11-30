@@ -35,8 +35,12 @@ namespace OpenRA.Mods.YR.Traits
         public readonly string EffectImage = null;
         [SequenceReference("EffectImage")]
         public readonly string EffectSequence = "idle";
+
         [PaletteReference]
         public readonly string EffectPalette = "player";
+
+        [Desc("Some actor you didn't want to transform")]
+        public readonly string ExcludeActor = "brute,jumpjet";
         public override object Create(ActorInitializer init)
         {
             return new TransformActorsPower(init.Self, this);
@@ -51,10 +55,15 @@ namespace OpenRA.Mods.YR.Traits
         private List<TypeDictionary> dics;
         private TransformActorsPowerInfo info;
         private Actor self;
+        private string[] excludeActors;
         public TransformActorsPower(Actor self, TransformActorsPowerInfo info) : base(self, info)
         {
             this.self = self;
             this.info = info;
+            if(!string.IsNullOrEmpty(info.ExcludeActor))
+            {
+                excludeActors = info.ExcludeActor.Split(',');
+            }
         }
 
         public override void Activate(Actor self, Order order, SupportPowerManager manager)
@@ -78,7 +87,7 @@ namespace OpenRA.Mods.YR.Traits
                         {
                             if (!victimActor.IsDead &&
                                  victimActor.TraitsImplementing<WithInfantryBody>().Count() > 0 &&
-                                 victimActor.Info.Name != "brute")
+                                 !excludeActors.Contains(victimActor.Info.Name))
                             {
                                 WPos victimPos = victimActor.CenterPosition;
                                 if (!string.IsNullOrEmpty(info.EffectSequence) && !string.IsNullOrEmpty(info.EffectPalette))

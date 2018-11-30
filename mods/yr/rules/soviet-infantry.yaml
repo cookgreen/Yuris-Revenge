@@ -351,3 +351,4 @@ boris:
 		InstaRepair: true
 		SlaveDisposalOnKill: KillSlaves
 		SpawnAllAtOnce: true
+		SpawnerArmamentName: secondary

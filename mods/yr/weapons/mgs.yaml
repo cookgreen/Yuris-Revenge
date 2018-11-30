@@ -199,7 +199,7 @@ Virusgun:
 	Report: iviratta.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 125       
-		ValidTargets: Ground
+		ValidTargets: Infantry, Vehicle
 		Versus:
 			None: 100
 			Flak: 100
@@ -223,7 +223,7 @@ VirusgunE:
 	Report: iviratta.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 125     
-		ValidTargets: Ground
+		ValidTargets: Infantry, Vehicle
 		Versus:
 			None: 100
 			Flak: 100
@@ -240,7 +240,59 @@ VirusgunE:
 	Warhead@2Eff: CreateEffect
 		Explosions: piff
 		
-
+Geneticgun:
+	Inherits: ^MG
+	ReloadDelay: 100
+	Range:10c0
+	Report: iviratta.wav
+	Warhead@1Dam: TransformActor
+		Damage: 125       
+		ValidTargets: Infantry
+		Versus:
+			None: 100
+			Flak: 100
+			Plate: 100
+			Light: 30
+			Medium: 30
+			Heavy: 30
+			Wood: 1
+			Steel: 1
+			Concrete: 1
+			Drone: 1
+			Rocket: 100
+		Actor: brute
+		ExcludeActor: brute,jumpjet
+		Sequence: die9 
+		DamageTypes: BruteDeath, Prone100Percent
+	Warhead@2Eff: CreateEffect
+		Explosions: piff
+		
+GeneticgunE:
+	Inherits: ^MG
+	ReloadDelay: 80
+	Range:16c0
+	Report: iviratta.wav
+	Warhead@1Dam: TransformActor
+		Damage: 125       
+		ValidTargets: Infantry
+		Versus:
+			None: 100
+			Flak: 100
+			Plate: 100
+			Light: 30
+			Medium: 30
+			Heavy: 30
+			Wood: 1
+			Steel: 1
+			Concrete: 1
+			Drone: 1
+			Rocket: 100
+		Actor: brute
+		ExcludeActor: brute,jumpjet
+		Sequence: die9 
+		DamageTypes: BruteDeath, Prone100Percent
+	Warhead@2Eff: CreateEffect
+		Explosions: piff
         
 Brustgun:
 	Inherits: ^MG
@@ -249,14 +301,14 @@ Brustgun:
 	Report: iviratta.wav
 	Warhead@1Dam: KillCrew
 		Damage: 125       
-		ValidTargets: Ground
+		ValidTargets: Vehicle
 		Versus:
 			None: 100
 			Flak: 100
 			Plate: 100
-			Light: 1
-			Medium: 1
-			Heavy: 1
+			Light: 30
+			Medium: 30
+			Heavy: 30
 			Wood: 1
 			Steel: 1
 			Concrete: 1
@@ -272,14 +324,14 @@ BrustgunE:
 	Report: iviratta.wav
 	Warhead@1Dam: KillCrew
 		Damage: 125     
-		ValidTargets: Ground
+		ValidTargets: Vehicle
 		Versus:
 			None: 100
 			Flak: 100
 			Plate: 100
-			Light: 1
-			Medium: 1
-			Heavy: 1
+			Light: 30
+			Medium: 30
+			Heavy: 30
 			Wood: 1
 			Steel: 1
 			Concrete: 1
@@ -740,7 +792,7 @@ AKM:
 	Report: iboratta.wav, iborattb.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 65
-		ValidTargets: Ground, Water
+		ValidTargets: Infantry, Vehicle, Water
 		Versus:
 			None: 200
 			Flak: 200
@@ -764,7 +816,7 @@ AKME:
 	Report: iboratta.wav, iborattb.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 90
-		ValidTargets: Ground, Water
+		ValidTargets: Infantry, Vehicle, Water
 		Versus:
 			None: 200
 			Flak: 200

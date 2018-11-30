@@ -285,12 +285,12 @@ julia:
 		Queue: Infantry
 		Prerequisites: ~yabrck
 		BuildPaletteOrder: 20
-		Description: Yuri's Elite Sniper, can kill crew of enemy vehicle effectively.
+		Description: Yuri's Elite Sniper.\n Can kill crew of enemy vehicle effectively.\n Can Infect the genetic virus to enemy soldiers\n make them become powerful brute which obey Yuri forever.
 		BuildLimit: 1
 	RenderSprites:
 		Image: Virus
 	Valued:
-		Cost: 700
+		Cost: 1000
 	Tooltip:
 		Name: Julia
 	DeliversCash:
@@ -310,9 +310,15 @@ julia:
 	AttackFrontal:
 		Voice: Attack
 	Armament@primary:
+		Weapon: Geneticgun
+		RequiresCondition: !rank-elite
+	Armament@second:
 		Weapon: Brustgun
 		RequiresCondition: !rank-elite
 	Armament@elite:
+		Weapon: GeneticgunE
+		RequiresCondition: !rank-elite
+	Armament@elite-second:
 		Weapon: BrustgunE
 		RequiresCondition: rank-elite
 	Voiced:

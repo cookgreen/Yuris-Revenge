@@ -166,7 +166,7 @@
 	ReloadDelay: 60
 	Warhead@1Dam: SpreadDamage
 		Spread: 0
-		Damage: 1
+		Damage: 0
 		Versus:
 			None: 0
 			Flak: 0
@@ -179,4 +179,4 @@
 			Concrete: 1
 			Drone: 0
 			Rocket: 0
-		ValidTargets: Ground
+		ValidTargets: Structure, Defense
