@@ -371,7 +371,7 @@
 		Factions: cuba, libya, iraq, russia
 	SpawnActorsOnSell@yuris:
 		ActorTypes: init, init, init
-		Factions: cuba, libya, iraq, russia
+		Factions: yuri
 	MustBeDestroyed:
 		RequiredForShortGame: true
 	CaptureNotification:
