@@ -67,6 +67,7 @@
     <Compile Include="Activities\DeliverPower.cs" />
     <Compile Include="Activities\EnterCarrierMaster.cs" />
     <Compile Include="Activities\EnterBunker.cs" />
+    <Compile Include="Activities\ShootableBallisticMissileFly.cs" />
     <Compile Include="Activities\UnloadBunkerCargo.cs" />
     <Compile Include="Effects\RallyPointIndicatorEx.cs" />
     <Compile Include="FileSystem\BagFileHack.cs" />
@@ -75,6 +76,7 @@
     <Compile Include="Graphics\RectangleRenderable.cs" />
     <Compile Include="Order\EnterBunkersTargeter.cs" />
     <Compile Include="Order\EnterBunkerTargeter.cs" />
+    <Compile Include="Order\ShootableBallisticMissileMoveOrderTargeter.cs" />
     <Compile Include="Traits\AcceptDeliveredPowerInfo.cs" />
     <Compile Include="Traits\AttackBunkered.cs" />
     <Compile Include="Traits\BaseSpawnerMaster.cs" />
@@ -92,6 +94,8 @@
     <Compile Include="Traits\MarkerSlave.cs" />
     <Compile Include="Traits\MindControllable.cs" />
     <Compile Include="Traits\MindController.cs" />
+    <Compile Include="Traits\MissileSpawnerMaster.cs" />
+    <Compile Include="Traits\MissileSpawnerSlave.cs" />
     <Compile Include="Traits\ParticleSupportPower.cs" />
     <Compile Include="Traits\BunkerPassenger.cs" />
     <Compile Include="Traits\PeriodicExplosion.cs" />
@@ -100,6 +104,7 @@
     <Compile Include="Traits\Render\WithExitOverlay.cs" />
     <Compile Include="Traits\Render\WithMindControlArc.cs" />
     <Compile Include="Traits\SelfRotationCraft.cs" />
+    <Compile Include="Traits\ShootableBallisticMissile.cs" />
     <Compile Include="Traits\ShowWholeMap.cs" />
     <Compile Include="Traits\TransformActorsPower.cs" />
     <Compile Include="Warheads\KillCrewWarhead.cs" />
