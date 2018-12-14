@@ -340,7 +340,8 @@ namespace OpenRA.Mods.YR.Traits
 
         Pair<CPos, SubCell>[] IOccupySpace.OccupiedCells()
         {
-            throw new NotImplementedException();
+            CPos Location = self.World.Map.CellContaining(self.CenterPosition);
+            return new[] { Pair.New(Location, SubCell.FullCell) };
         }
     }
 }

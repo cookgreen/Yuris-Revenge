@@ -262,7 +262,7 @@ bpln:
 	Tooltip:
 		Name: Soviet MIG
 	Aircraft:
-		TurnSpeed: 3
+		TurnSpeed: 10
 		Speed: 140
 		RearmBuildings: gaairc, amradr
 	Selectable:
@@ -318,7 +318,6 @@ hind:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 90
-		Prerequisites: ~naweap
 		Description: Soviet Hind Transport Helicopter\nUndetectable by radar.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
 	Valued:
 		Cost: 1000
@@ -365,6 +364,32 @@ hindhusk:
 		Type: CenterPosition
 	RenderVoxels:
 		Image: hind
+		NormalsPalette: ts-normals
 	BodyOrientation:
 		UseClassicPerspectiveFudge: false
-	
+		
+v3rocket:
+	Inherits: ^ShootableMissileVoxel
+	Valued:
+		Cost: 10
+	Tooltip:
+		Name: V3 Rocket
+	Health:
+		HP: 90
+	Armor:
+		Type: Light
+	ShootableBallisticMissile:
+		LaunchAngle: 128
+		Speed: 170
+	Contrail:
+		Offset: -598,0,0
+	AttackFrontal:
+		Voice: Attack
+	Voiced:
+		VoiceSet: HindVoice
+	Selectable:
+	MissileSpawnerSlave:
+	Explodes:
+		Type: Footprint
+		Weapon: V3AmmunitionExplode
+	RejectsOrders:

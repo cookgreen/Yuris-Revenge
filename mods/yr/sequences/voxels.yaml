@@ -211,8 +211,8 @@ v3:
 	idle:
 #Needs without weapon image v3wo
 
-#v3rocket: #V3 Missile needs voxel projectiles
-#	idle:
+v3rocket: #V3 Missile needs voxel projectiles
+	idle:
 
 vlad: #Vladimir's Dreadnought SP unit
 	idle:

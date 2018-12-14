@@ -341,7 +341,7 @@ caos:
 		Weapon: ChaosGasAttack
 		LocalOffset: 640,0,384
 		RequiresCondition: rank-elite
-	AttackTurreted:
+	AttackFrontal:
 		Voice: Attack
 	AutoTarget:
 	RenderSprites:

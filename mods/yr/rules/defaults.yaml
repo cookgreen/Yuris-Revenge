@@ -1149,3 +1149,53 @@
 	EditorTilesetFilter:
 		Categories: System
 	Interactable:
+	
+^ShootableMissile:
+	Inherits@1: ^ExistsInWorld
+	Inherits@4: ^SpriteActor
+	ShootableBallisticMissile:
+		LaunchAngle: 128
+		Speed: 170
+		AirborneCondition: airborne
+	AutoTarget@GROUND:
+		TargetTypes: Ground, Repair, Vehicle
+		RequiresCondition: !airborne
+	AutoTarget@AIRBORNE:
+		TargetTypes: Air
+		RequiresCondition: airborne
+	HiddenUnderFog:
+		Type: GroundPosition
+	Tooltip:
+		GenericName: Missile
+	WithShadow:
+		Offset: 43, 128, 0
+		ZOffset: -129
+	WithFacingSpriteBody:
+	HitShape:
+	
+^ShootableMissileVoxel:
+	Inherits@1: ^ExistsInWorld
+	ShootableBallisticMissile:
+		LaunchAngle: 128
+		Speed: 170
+		AirborneCondition: airborne
+	AutoTarget@GROUND:
+		TargetTypes: Ground, Repair, Vehicle
+		RequiresCondition: !airborne
+	AutoTarget@AIRBORNE:
+		TargetTypes: Air
+		RequiresCondition: airborne
+	HiddenUnderFog:
+		Type: GroundPosition
+	Tooltip:
+		GenericName: Missile
+	WithShadow:
+		Offset: 43, 128, 0
+		ZOffset: -129
+	HitShape:
+	BodyOrientation:
+		QuantizedFacings: 0
+		CameraPitch: 90
+		UseClassicPerspectiveFudge: false
+	RenderVoxels:
+	WithVoxelBody:

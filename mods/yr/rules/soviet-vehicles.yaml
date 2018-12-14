@@ -405,3 +405,55 @@ dtruck:
 	-CrewKillable:
 	SelfHealing@MACHSHOP:
 		RequiresCondition: machshop
+
+v3:
+	Inherits: ^Vehicle
+	Inherits@MC: ^MindControllable
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: V3 Launcher
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 60
+		Prerequisites: naradr, ~naweap
+		Description: Soviet V3 Rocket Launcher\n  Strong vs Building, Infantry\n  Weak vs Vehicle, Aircraft
+	Mobile:
+		Speed: 70
+		TurnSpeed: 10
+		Crushes: fence, crate, infantry
+	Health:
+		HP: 150
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 8c0
+	Turreted:
+		TurnSpeed: 5
+	Armament@primary:
+		Weapon: V3Launcher
+		LocalOffset: 640,0,384
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: V3Launcher
+		LocalOffset: 640,0,384
+		RequiresCondition: rank-elite
+	AttackFrontal:
+		Voice: Attack
+	AutoTarget:
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	RenderVoxels:
+	WithVoxelBody:
+	Voiced:
+		VoiceSet: V3LauncherVoice
+	ProducibleWithLevel:
+		Prerequisites: warfactory.infiltrated
+	HitShape:
+	CrewKillable:
+	SelfHealing@MACHSHOP:
+		RequiresCondition: machshop
+	MissileSpawnerMaster:
+		Actors: v3rocket

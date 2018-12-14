@@ -171,6 +171,13 @@ TeslaTankVoice:
 		Select: vtessea,vtesseb,vtessec,vtessed,vtessee
 		Move: vtesmoa,vtesmob,vtesmoc,vtesmod,vtesmoe
 		Attack: vtesata,vtesatb,vtesatd,vtesate
+		
+V3LauncherVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: vv3lsea,vv3lseb,vv3lsec,vv3lsed,vv3lsee
+		Move: vv3lmob,vv3lmoc,vv3lmod,vv3lmoe
+		Attack: vv3lata,vv3latb,vv3latc,vv3latd,vv3late
 
 AlliedNavalVoice:
 	DefaultVariant: .wav
