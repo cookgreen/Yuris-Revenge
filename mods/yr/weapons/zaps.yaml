@@ -174,6 +174,50 @@ SuperComet:
 	Inherits: Comet
 	Warhead@1Dam: SpreadDamage
 		Damage: 150
+        
+DiskLaser:
+	Inherits: Comet
+	ReloadDelay: 50
+	Range:7c0
+	Report: vfloatta.wav
+	Projectile: LaserZap
+		Width: 50
+		Duration: 15
+		Color: aa7990
+		UsePlayerColor: false
+	Warhead@1Dam: SpreadDamage
+		Damage: 25 
+		DamageTypes: RadiationDeath
+	Warhead@2Eff: CreateEffect
+		-Explosions: 
+		-ImpactSounds: 
+	Warhead@3EffWater: CreateEffect
+		-Explosions:
+		-ImpactSounds:
+	Warhead@4Smu: LeaveSmudge
+		-SmudgeType:
+        
+DiskDrain:
+	Inherits: Comet
+	ReloadDelay: 50
+	Range:1c256
+	Projectile: LaserZap
+		Width: 50
+		Duration: 15
+		Color: aa7990
+		UsePlayerColor: false
+	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 25 
+		DamageTypes: RadiationDeath
+	Warhead@2Eff: CreateEffect
+		-Explosions: 
+		-ImpactSounds: 
+	Warhead@3EffWater: CreateEffect
+		-Explosions:
+		-ImpactSounds:
+	Warhead@4Smu: LeaveSmudge
+		-SmudgeType:
 
 RadBeamWeapon:
 	ValidTargets: Ground

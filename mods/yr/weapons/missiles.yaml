@@ -177,23 +177,6 @@ SubTorpedo:
 		ImpactSounds: gexpwasb.wav
 		ValidTargets: Ground
 
-        
-DiskLaser:
-	Inherits: ^Missile
-	ReloadDelay: 50
-	Range:7c0
-	Report: vfloatta.wav
-	Warhead@1Dam: SpreadDamage
-		Damage: 25 
-        
-DiskDrain:
-	Inherits: ^Missile
-	ReloadDelay: 50
-	Range:1c256
-	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
-	Warhead@1Dam: SpreadDamage
-		Damage: 25 
-
 Maverick3:
 	Inherits: Maverick
 	Report: vmigatta.wav
