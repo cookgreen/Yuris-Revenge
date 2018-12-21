@@ -1,0 +1,221 @@
+Background@VXLBROWSER_PANEL:
+	Logic: VxlBrowserLogic
+		SupportedFormats: vxl
+	X: (WINDOW_RIGHT - WIDTH) / 2
+	Y: (WINDOW_BOTTOM - HEIGHT) / 2
+	Width: 800
+	Height: 500
+	Children:
+		LogicTicker@ANIMATION_TICKER:
+		ColorPreviewManager@COLOR_MANAGER:
+		Label@ASSETBROWSER_TITLE:
+			Y: 20
+			Width: PARENT_RIGHT
+			Height: 25
+			Font: Bold
+			Align: Center
+			Text: Voxel Browser
+		Label@SOURCE_SELECTOR_DESC:
+			X: 20
+			Y: 35
+			Width: 160
+			Height: 25
+			Font: TinyBold
+			Align: Center
+			Text: Select asset source
+		DropDownButton@SOURCE_SELECTOR:
+			X: 20
+			Y: 60
+			Width: 160
+			Height: 25
+			Font: Bold
+			Text: Folders
+		ScrollPanel@ASSET_LIST:
+			X: 20
+			Y: 90
+			Width: 160
+			Height: 275
+			CollapseHiddenChildren: True
+			Children:
+				ScrollItem@ASSET_TEMPLATE:
+					Width: PARENT_RIGHT - 27
+					Height: 25
+					X: 2
+					Y: 0
+					Visible: false
+					Children:
+						Label@TITLE:
+							X: 10
+							Width: PARENT_RIGHT - 20
+							Height: 25
+		Label@FILENAME_DESC:
+			X: 20
+			Y: 370
+			Width: 160
+			Height: 25
+			Font: TinyBold
+			Align: Center
+			Text: Filter by name
+		TextField@FILENAME_INPUT:
+			X: 20
+			Y: 395
+			Width: 160
+			Height: 25
+		Label@PALETTE_DESC:
+			X: 190
+			Y: 60
+			Width: 75
+			Height: 25
+			Font: Bold
+			Align: Left
+			Text: Palette:
+		DropDownButton@PALETTE_SELECTOR:
+			X: 335
+			Y: 60
+			Width: 150
+			Height: 25
+			Font: Bold
+		Label@PLAYER_PALETTE_DESC:
+			X: 190
+			Y: 94
+			Width: 75
+			Height: 25
+			Font: Bold
+			Align: Left
+			Text: Player Palette:
+		DropDownButton@PLAYER_PALETTE_SELECTOR:
+			X: 335
+			Y: 94
+			Width: 150
+			Height: 25
+			Font: Bold
+		Label@NORMALS_PALETTE_DESC:
+			X: 190
+			Y: 128
+			Width: 75
+			Height: 25
+			Font: Bold
+			Align: Left
+			Text: Normals Palette:
+		DropDownButton@NORMALS_PALETTE_SELECTOR:
+			X: 335
+			Y: 128
+			Width: 150
+			Height: 25
+			Font: Bold
+		Label@SHADOW_PALETTE_DESC:
+			X: 190
+			Y: 162
+			Width: 150
+			Height: 25
+			Font: Bold
+			Align: Left
+			Text: Shadow Palette:
+		DropDownButton@SHADOW_PALETTE_SELECTOR:
+			X: 335
+			Y: 162
+			Width: 150
+			Height: 25
+			Font: Bold
+		Label@SCALE_DESC:
+			X: 190
+			Y: 196
+			Width: 75
+			Height: 25
+			Font: Bold
+			Align: Left
+			Text: Scale:
+		TextField@SCALE_TEXT:
+			X: 335
+			Y: 196
+			Width: 150
+			Height: 25
+			Text: 12
+		Label@LIGHTPITCH_DESC:
+			X: 190
+			Y: 230
+			Width: 75
+			Height: 25
+			Font: Bold
+			Align: Left
+			Text: Light Pitch:
+		TextField@LIGHTPITCH_TEXT:
+			X: 335
+			Y: 230
+			Width: 150
+			Height: 25
+			Text: 142
+		Label@LIGHTYAW_DESC:
+			X: 190
+			Y: 264
+			Width: 150
+			Height: 25
+			Font: Bold
+			Align: Left
+			Text: Light Yaw:
+		TextField@LIGHTYAW_TEXT:
+			X: 335
+			Y: 264
+			Width: 150
+			Height: 25
+			Text: 682
+		Label@LIGHTAMBIENTCOLOR_DESC:
+			X: 190
+			Y: 298
+			Width: 150
+			Height: 25
+			Font: Bold
+			Align: Left
+			Text: Light Ambient Color:
+		DropDownButton@LIGHT_AMBIENT_COLOR:
+			X: 335
+			Y: 298
+			Width: 80
+			Height: 25
+			Children:
+				ColorBlock@AMBIENT_COLORBLOCK:
+					X: 5
+					Y: 6
+					Width: PARENT_RIGHT - 35
+					Height: PARENT_BOTTOM - 12
+		Label@LIGHTDIFFUSECOLOR_DESC:
+			X: 190
+			Y: 332
+			Width: 150
+			Height: 25
+			Font: Bold
+			Align: Left
+			Text: Light Diffuse Color:
+		DropDownButton@LIGHT_DIFFUSE_COLOR:
+			X: 335
+			Y: 332
+			Width: 80
+			Height: 25
+			Children:
+				ColorBlock@DIFFUSE_COLORBLOCK:
+					X: 5
+					Y: 6
+					Width: PARENT_RIGHT - 35
+					Height: PARENT_BOTTOM - 12
+		Background@SPRITE_BG:
+			X: PARENT_RIGHT - WIDTH - 20
+			Y: 60
+			Width: 285
+			Height: 360
+			Background: dialog3
+			Children:
+				Voxel@VOXEL:
+					Width: PARENT_RIGHT
+					Height: PARENT_BOTTOM
+				VqaPlayer@PLAYER:
+					Width: PARENT_RIGHT
+					Height: PARENT_BOTTOM
+					AspectRatio: 1
+		Button@CLOSE_BUTTON:
+			Key: escape
+			X: PARENT_RIGHT - 180
+			Y: PARENT_BOTTOM - 45
+			Width: 160
+			Height: 25
+			Font: Bold
+			Text: Close

@@ -110,6 +110,9 @@
     <Compile Include="Warheads\KillCrewWarhead.cs" />
     <Compile Include="Warheads\MagWaveWarhead.cs" />
     <Compile Include="Warheads\TransformActorWarhead.cs" />
+    <Compile Include="Widgets\Logic\MainMenuLogic.cs" />
+    <Compile Include="Widgets\Logic\VxlBrowserLogic.cs" />
+    <Compile Include="Widgets\VoxelWidget.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\engine\OpenRA.Game\OpenRA.Game.csproj">

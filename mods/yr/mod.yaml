@@ -142,6 +142,7 @@ ChromeLayout:
 	yr|chrome/ingame-player.yaml
 	yr|chrome/ingame-infoobjectives.yaml
 	yr|chrome/mainmenu.yaml
+	yr|chrome/vxlbrowser.yaml
 	common|chrome/ingame-infostats.yaml
 	common|chrome/ingame-observerstats.yaml
 	common|chrome/musicplayer.yaml
