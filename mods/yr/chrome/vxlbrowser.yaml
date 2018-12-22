@@ -7,7 +7,8 @@ Background@VXLBROWSER_PANEL:
 	Height: 500
 	Children:
 		LogicTicker@ANIMATION_TICKER:
-		ColorPreviewManager@COLOR_MANAGER:
+		ColorPreviewManager@LIGHT_AMBIENT_COLOR_MANAGER:
+		ColorPreviewManager@LIGHT_DIFFUSE_COLOR_MANAGER:
 		Label@ASSETBROWSER_TITLE:
 			Y: 20
 			Width: PARENT_RIGHT
@@ -72,7 +73,7 @@ Background@VXLBROWSER_PANEL:
 		DropDownButton@PALETTE_SELECTOR:
 			X: 335
 			Y: 60
-			Width: 150
+			Width: 160
 			Height: 25
 			Font: Bold
 		Label@PLAYER_PALETTE_DESC:
@@ -86,7 +87,7 @@ Background@VXLBROWSER_PANEL:
 		DropDownButton@PLAYER_PALETTE_SELECTOR:
 			X: 335
 			Y: 94
-			Width: 150
+			Width: 160
 			Height: 25
 			Font: Bold
 		Label@NORMALS_PALETTE_DESC:
@@ -100,7 +101,7 @@ Background@VXLBROWSER_PANEL:
 		DropDownButton@NORMALS_PALETTE_SELECTOR:
 			X: 335
 			Y: 128
-			Width: 150
+			Width: 160
 			Height: 25
 			Font: Bold
 		Label@SHADOW_PALETTE_DESC:
@@ -114,7 +115,7 @@ Background@VXLBROWSER_PANEL:
 		DropDownButton@SHADOW_PALETTE_SELECTOR:
 			X: 335
 			Y: 162
-			Width: 150
+			Width: 160
 			Height: 25
 			Font: Bold
 		Label@SCALE_DESC:
@@ -128,7 +129,7 @@ Background@VXLBROWSER_PANEL:
 		TextField@SCALE_TEXT:
 			X: 335
 			Y: 196
-			Width: 150
+			Width: 160
 			Height: 25
 			Text: 12
 		Label@LIGHTPITCH_DESC:
@@ -142,7 +143,7 @@ Background@VXLBROWSER_PANEL:
 		TextField@LIGHTPITCH_TEXT:
 			X: 335
 			Y: 230
-			Width: 150
+			Width: 160
 			Height: 25
 			Text: 142
 		Label@LIGHTYAW_DESC:
@@ -156,7 +157,7 @@ Background@VXLBROWSER_PANEL:
 		TextField@LIGHTYAW_TEXT:
 			X: 335
 			Y: 264
-			Width: 150
+			Width: 160
 			Height: 25
 			Text: 682
 		Label@LIGHTAMBIENTCOLOR_DESC:
@@ -178,6 +179,14 @@ Background@VXLBROWSER_PANEL:
 					Y: 6
 					Width: PARENT_RIGHT - 35
 					Height: PARENT_BOTTOM - 12
+		Label@LIGHTAMBIENTCOLOR_VALUE:
+			X: 420
+			Y: 298
+			Width: 150
+			Height: 25
+			Font: Bold
+			Align: Left
+			Text: 0.6, 0.6, 0.6
 		Label@LIGHTDIFFUSECOLOR_DESC:
 			X: 190
 			Y: 332
@@ -197,10 +206,18 @@ Background@VXLBROWSER_PANEL:
 					Y: 6
 					Width: PARENT_RIGHT - 35
 					Height: PARENT_BOTTOM - 12
+		Label@LIGHTDIFFUSECOLOR_VALUE:
+			X: 420
+			Y: 332
+			Width: 150
+			Height: 25
+			Font: Bold
+			Align: Left
+			Text: 0.4, 0.4, 0.4
 		Background@SPRITE_BG:
 			X: PARENT_RIGHT - WIDTH - 20
 			Y: 60
-			Width: 285
+			Width: 275
 			Height: 360
 			Background: dialog3
 			Children:

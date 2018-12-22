@@ -27,16 +27,18 @@ namespace OpenRA.Mods.YR.Widgets.Logic
         Widget panel;
 
         TextFieldWidget filenameInput;
-        SliderWidget frameSlider;
         ScrollPanelWidget assetList;
         ScrollItemWidget template;
 
         TextFieldWidget scaleInput;
         TextFieldWidget lightPitchInput;
         TextFieldWidget lightYawInput;
+        ColorBlockWidget lightAmbientColorBlock;
+        ColorBlockWidget lightDiffuseColorBlock;
+        LabelWidget lightAmbientColorValue;
+        LabelWidget lightDiffuseColorValue;
 
         IReadOnlyPackage assetSource = null;
-        bool animateFrames = false;
 
         string currentPalette;
         string currentPlayerPalette = "player";
@@ -54,7 +56,6 @@ namespace OpenRA.Mods.YR.Widgets.Logic
         VqaPlayerWidget player = null;
         bool isVideoLoaded = false;
         bool isLoadError = false;
-        int currentFrame;
 
         [ObjectCreator.UseCtor]
         public VxlBrowserLogic(Widget widget, Action onExit, ModData modData, World world, Dictionary<string, MiniYaml> logicArgs)
@@ -62,16 +63,6 @@ namespace OpenRA.Mods.YR.Widgets.Logic
             this.world = world;
             this.modData = modData;
             panel = widget;
-
-            var ticker = panel.GetOrNull<LogicTickerWidget>("ANIMATION_TICKER");
-            //if (ticker != null)
-            //{
-            //    ticker.OnTick = () =>
-            //    {
-            //        if (animateFrames)
-            //            SelectNextFrame();
-            //    };
-            //}
 
             var sourceDropdown = panel.GetOrNull<DropDownButtonWidget>("SOURCE_SELECTOR");
             if (sourceDropdown != null)
@@ -112,9 +103,21 @@ namespace OpenRA.Mods.YR.Widgets.Logic
                 paletteDropDown.GetText = () => currentPalette;
             }
 
-            var colorPreview = panel.GetOrNull<ColorPreviewManagerWidget>("COLOR_MANAGER");
-            if (colorPreview != null)
-                colorPreview.Color = Game.Settings.Player.Color;
+            var lightAmbientColorPreview = panel.GetOrNull<ColorPreviewManagerWidget>("LIGHT_AMBIENT_COLOR_MANAGER");
+            if (lightAmbientColorPreview != null)
+                lightAmbientColorPreview.Color = HSLColor.FromRGB(
+                    Convert.ToInt32(lightAmbientColor[0] * 255),
+                    Convert.ToInt32(lightAmbientColor[1] * 255),
+                    Convert.ToInt32(lightAmbientColor[2] * 255)
+                );
+
+            var lightDiffuseColorPreview = panel.GetOrNull<ColorPreviewManagerWidget>("LIGHT_DIFFUSE_COLOR_MANAGER");
+            if (lightDiffuseColorPreview != null)
+                lightDiffuseColorPreview.Color = HSLColor.FromRGB(
+                    Convert.ToInt32(lightDiffuseColor[0] * 255),
+                    Convert.ToInt32(lightDiffuseColor[1] * 255),
+                    Convert.ToInt32(lightDiffuseColor[2] * 255)
+                );
 
             var playerPaletteDropDown = panel.GetOrNull<DropDownButtonWidget>("PLAYER_PALETTE_SELECTOR");
             if (playerPaletteDropDown != null)
@@ -153,21 +156,24 @@ namespace OpenRA.Mods.YR.Widgets.Logic
             var lightAmbientColorDropDown = panel.GetOrNull<DropDownButtonWidget>("LIGHT_AMBIENT_COLOR");
             if (lightAmbientColorDropDown != null)
             {
-                //lightAmbientColorDropDown.IsDisabled = () => currentPalette != colorPreview.PaletteName;
-                lightAmbientColorDropDown.OnMouseDown = _ => ShowLightAmbientColorDropDown(lightAmbientColorDropDown, colorPreview, world);
-                panel.Get<ColorBlockWidget>("AMBIENT_COLORBLOCK").GetColor = () => System.Drawing.Color.FromArgb(
+                lightAmbientColorDropDown.OnMouseDown = _ => ShowLightAmbientColorDropDown(lightAmbientColorDropDown, lightAmbientColorPreview, world);
+                lightAmbientColorBlock = panel.Get<ColorBlockWidget>("AMBIENT_COLORBLOCK");
+                lightAmbientColorBlock.GetColor = () => System.Drawing.Color.FromArgb(
                     Convert.ToInt32(lightAmbientColor[0] * 255),
                     Convert.ToInt32(lightAmbientColor[1] * 255),
                     Convert.ToInt32(lightAmbientColor[2] * 255)
                 );
             }
 
-            var lightDiffuseColorDropDown = panel.GetOrNull<DropDownButtonWidget>("LIGHT_AMBIENT_COLOR");
+            lightAmbientColorValue = panel.GetOrNull<LabelWidget>("LIGHTAMBIENTCOLOR_VALUE");
+            lightDiffuseColorValue = panel.GetOrNull<LabelWidget>("LIGHTDIFFUSECOLOR_VALUE");
+
+            var lightDiffuseColorDropDown = panel.GetOrNull<DropDownButtonWidget>("LIGHT_DIFFUSE_COLOR");
             if (lightDiffuseColorDropDown != null)
             {
-                //lightDiffuseColorDropDown.IsDisabled = () => currentPalette != colorPreview.PaletteName;
-                lightDiffuseColorDropDown.OnMouseDown = _ => ShowLightDiffuseColorDropDown(lightDiffuseColorDropDown, colorPreview, world);
-                panel.Get<ColorBlockWidget>("DIFFUSE_COLORBLOCK").GetColor = () => System.Drawing.Color.FromArgb(
+                lightDiffuseColorDropDown.OnMouseDown = _ => ShowLightDiffuseColorDropDown(lightDiffuseColorDropDown, lightDiffuseColorPreview, world);
+                lightDiffuseColorBlock = panel.Get<ColorBlockWidget>("DIFFUSE_COLORBLOCK");
+                lightDiffuseColorBlock.GetColor = () => System.Drawing.Color.FromArgb(
                     Convert.ToInt32(lightDiffuseColor[0] * 255),
                     Convert.ToInt32(lightDiffuseColor[1] * 255),
                     Convert.ToInt32(lightDiffuseColor[2] * 255)
@@ -218,20 +224,6 @@ namespace OpenRA.Mods.YR.Widgets.Logic
             string strLightPitch = lightPitchInput.Text;
             int.TryParse(strLightPitch, out lightPitch);
         }
-
-        //void SelectNextFrame()
-        //{
-        //    currentFrame++;
-        //    if (currentFrame >= currentVoxel.Length)
-        //        currentFrame = 0;
-        //}
-        //
-        //void SelectPreviousFrame()
-        //{
-        //    currentFrame--;
-        //    if (currentFrame < 0)
-        //        currentFrame = currentVoxel.Length - 1;
-        //}
 
         Dictionary<string, bool> assetVisByName = new Dictionary<string, bool>();
 
@@ -460,12 +452,60 @@ namespace OpenRA.Mods.YR.Widgets.Logic
 
         void ShowLightAmbientColorDropDown(DropDownButtonWidget color, ColorPreviewManagerWidget preview, World world)
         {
-            ColorPickerLogic.ShowColorDropDown(color, preview, world);
+            Action onExit = () =>
+            {
+                System.Drawing.Color c = preview.Color.RGB;
+                lightAmbientColor[0] = float.Parse((Convert.ToSingle(c.R) / 255).ToString("0.0"));
+                lightAmbientColor[1] = float.Parse((Convert.ToSingle(c.G) / 255).ToString("0.0"));
+                lightAmbientColor[2] = float.Parse((Convert.ToSingle(c.B) / 255).ToString("0.0"));
+                lightAmbientColorBlock.GetColor = () => c;
+                lightAmbientColorValue.GetText = () => string.Format("{0}, {1}, {2}", lightAmbientColor[0].ToString(), lightAmbientColor[1].ToString(), lightAmbientColor[2].ToString());
+            };
+
+            color.RemovePanel();
+
+            Action<HSLColor> onChange = c => preview.Color = c;
+            
+            var colorChooser = Game.LoadWidget(world, "COLOR_CHOOSER", null, new WidgetArgs()
+            {
+                { "onChange", onChange },
+                { "initialColor", HSLColor.FromRGB(
+                Convert.ToInt32(lightAmbientColor[0] * 255),
+                Convert.ToInt32(lightAmbientColor[1] * 255),
+                Convert.ToInt32(lightAmbientColor[2] * 255)
+                )}
+            });
+
+            color.AttachPanel(colorChooser, onExit);
         }
 
         void ShowLightDiffuseColorDropDown(DropDownButtonWidget color, ColorPreviewManagerWidget preview, World world)
         {
-            ColorPickerLogic.ShowColorDropDown(color, preview, world);
+            Action onExit = () =>
+            {
+                System.Drawing.Color c = preview.Color.RGB;
+                lightDiffuseColor[0] = float.Parse((Convert.ToSingle(c.R) / 255).ToString("0.0"));
+                lightDiffuseColor[1] = float.Parse((Convert.ToSingle(c.G) / 255).ToString("0.0"));
+                lightDiffuseColor[2] = float.Parse((Convert.ToSingle(c.B) / 255).ToString("0.0"));
+                lightDiffuseColorBlock.GetColor = () => c;
+                lightDiffuseColorValue.GetText = () => string.Format("{0}, {1}, {2}", lightDiffuseColor[0].ToString(), lightDiffuseColor[1].ToString(), lightDiffuseColor[2].ToString());
+            };
+
+            color.RemovePanel();
+
+            Action<HSLColor> onChange = c => preview.Color = c;
+
+            var colorChooser = Game.LoadWidget(world, "COLOR_CHOOSER", null, new WidgetArgs()
+            {
+                { "onChange", onChange },
+                { "initialColor", HSLColor.FromRGB(
+                Convert.ToInt32(lightDiffuseColor[0] * 255),
+                Convert.ToInt32(lightDiffuseColor[1] * 255),
+                Convert.ToInt32(lightDiffuseColor[2] * 255)
+                ) }
+            });
+
+            color.AttachPanel(colorChooser, onExit);
         }
     }
 }
