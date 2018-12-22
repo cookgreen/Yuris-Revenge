@@ -158,6 +158,6 @@ Sounds:
 		BuildPaletteOpen: uslide1
 		BuildPaletteClose: uslide2
 		TabClick: utab
-		ClickSound: uslide2
+		ClickSound: umenucl1
 		ClickDisabledSound: ugamclos
 		Beacon: ubeacon
