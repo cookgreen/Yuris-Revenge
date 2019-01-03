@@ -16,6 +16,8 @@ namespace OpenRA.Mods.YR.Widgets
         public string NormalsPalette = "normals";
         public string ShadowPalette = "shadow";
         public float Scale = 12f;
+        public int LightPitch;
+        public int LightYaw;
         public float[] lightAmbientColor = new float[] { 0.6f, 0.6f, 0.6f };
         public float[] lightDiffuseColor = new float[] { 0.4f, 0.4f, 0.4f };
         public Func<string> GetPalette;
@@ -25,6 +27,8 @@ namespace OpenRA.Mods.YR.Widgets
         public Func<float[]> GetLightAmbientColor;
         public Func<float[]> GetLightDiffuseColor;
         public Func<float> GetScale;
+        public Func<int> GetLightPitch;
+        public Func<int> GetLightYaw;
         public Func<Voxel> GetVoxel;
 
         protected readonly WorldRenderer WorldRenderer;
@@ -39,6 +43,8 @@ namespace OpenRA.Mods.YR.Widgets
             GetLightAmbientColor = () => lightAmbientColor;
             GetLightDiffuseColor = () => lightDiffuseColor;
             GetScale = () => Scale;
+            GetLightPitch = () => LightPitch;
+            GetLightYaw = () => LightYaw;
             WorldRenderer = worldRenderer;
         }
 
@@ -65,6 +71,8 @@ namespace OpenRA.Mods.YR.Widgets
         private float cachedScale;
         private float[] cachedLightAmbientColor = new float[] { 0, 0, 0};
         private float[] cachedLightDiffuseColor = new float[] { 0, 0, 0};
+        private int cachedLightPitch;
+        private int cachedLightYaw;
         private PaletteReference pr;
         private PaletteReference prPlayer;
         private PaletteReference prNormals;
@@ -82,6 +90,8 @@ namespace OpenRA.Mods.YR.Widgets
             var scale = GetScale();
             var lightAmbientColor = GetLightAmbientColor();
             var lightDiffuseColor = GetLightDiffuseColor();
+            var lightPitch = GetLightPitch();
+            var lightYaw = GetLightYaw();
 
             if (voxel == null || palette == null)
                 return;
@@ -119,8 +129,18 @@ namespace OpenRA.Mods.YR.Widgets
 
             if (scale != cachedScale)
             {
-                offset *= scale;
+                //offset *= scale;
                 cachedScale = scale;
+            }
+
+            if (lightPitch != cachedLightPitch)
+            {
+                cachedLightPitch = lightPitch;
+            }
+
+            if (lightYaw != cachedLightYaw)
+            {
+                cachedLightYaw = lightYaw;
             }
 
             if (cachedLightAmbientColor[0] != lightAmbientColor[0] || cachedLightAmbientColor[1] != lightAmbientColor[1] || cachedLightAmbientColor[2] != lightAmbientColor[2])
@@ -136,9 +156,15 @@ namespace OpenRA.Mods.YR.Widgets
             var size = new float2(voxel.Size[0] * scale, voxel.Size[1] * scale);
             ModelAnimation animation = new ModelAnimation(voxel, () => WVec.Zero, () => new List<WRot>(){ WRot.Zero }, () => false, () => 0, true);
 
+            List<ModelAnimation> components = new List<ModelAnimation>();
+            components.Add(animation);
+
+            WRot lightSource = new WRot(WAngle.Zero, new WAngle(256) - new WAngle(lightPitch), new WAngle(lightYaw));
+            WRot camera = new WRot(WAngle.Zero, new WAngle(256), new WAngle(256));
+
             Game.Renderer.WorldModelRenderer.BeginFrame();
-            Game.Renderer.WorldModelRenderer.RenderAsync(WorldRenderer, new[] { animation }, new WRot(),
-                scale, GroundNormal, new WRot(), lightAmbientColor, lightDiffuseColor, pr, prNormals, prShadow);
+            Game.Renderer.WorldModelRenderer.RenderAsync(WorldRenderer, components, camera,
+                scale, GroundNormal, lightSource, lightAmbientColor, lightDiffuseColor, pr, prNormals, prShadow);
             Game.Renderer.WorldModelRenderer.EndFrame();
         }
     }

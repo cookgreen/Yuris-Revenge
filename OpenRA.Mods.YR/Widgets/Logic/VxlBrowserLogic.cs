@@ -89,6 +89,8 @@ namespace OpenRA.Mods.YR.Widgets.Logic
                 voxelWidget.GetShadowPalette = () => currentShadowPalette;
                 voxelWidget.GetLightAmbientColor = () => lightAmbientColor;
                 voxelWidget.GetLightDiffuseColor = () => lightDiffuseColor;
+                voxelWidget.GetLightPitch = () => lightPitch;
+                voxelWidget.GetLightYaw = () => lightYaw;
                 voxelWidget.IsVisible = () => !isVideoLoaded && !isLoadError;
             }
 

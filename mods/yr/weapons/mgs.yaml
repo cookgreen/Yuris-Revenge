@@ -339,183 +339,14 @@ BrustgunE:
 			Rocket: 100
 	Warhead@2Eff: CreateEffect
 		Explosions: initfire
-        
-AGGattling:
+
+Gatting:
 	Inherits: ^MG
-	ReloadDelay: 16
-	Range:5c0
-	#Report: vgatlo1a.wav, vgatlo2a.wav, vgatlo2b.wav, vgatlo2c.wav, vgatlo3a.wav
+	ReloadDelay: 10
+	Range:7c0
 	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
-	Warhead@1Dam: SpreadDamage
-		Damage: 25 
-		ValidTargets: Ground, Water, Air
-		Versus:
-			None: 100
-			Flak: 80
-			Plate: 70
-			Light: 50
-			Medium: 30
-			Heavy: 10
-			Wood: 10
-			Steel: 5
-			Concrete: 3
-			Drone: 200
-			Rocket: 100
-	Warhead@2Eff: CreateEffect
-		Explosions: piffpiff
-        
-AGGattling2:
-	Inherits: ^MG
-	ReloadDelay: 16
-	Range:5c0
-	#Report: vgatlo4a.wav, vgatlo5a.wav, vgatlo5b.wav, vgatlo6a.wav
-	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
-	Warhead@1Dam: SpreadDamage
-		Damage: 25 
-		ValidTargets: Ground, Water, Air
-		Versus:
-			None: 100
-			Flak: 80
-			Plate: 70
-			Light: 50
-			Medium: 30
-			Heavy: 10
-			Wood: 10
-			Steel: 5
-			Concrete: 3
-			Drone: 200
-			Rocket: 100
-	Warhead@2Eff: CreateEffect
-		Explosions: piffpiff
-        
-AGGattling3:
-	Inherits: ^MG
-	ReloadDelay: 16
-	Range:5c0
-	#Report: vgatlo7a.wav, vgatlo8a.wav, vgatlo8b.wav, vgatlo9a.wav
-	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
-	Warhead@1Dam: SpreadDamage
-		Damage: 25 
-		ValidTargets: Ground, Water, Air
-		Versus:
-			None: 100
-			Flak: 80
-			Plate: 70
-			Light: 50
-			Medium: 30
-			Heavy: 10
-			Wood: 10
-			Steel: 5
-			Concrete: 3
-			Drone: 200
-			Rocket: 100
-	Warhead@2Eff: CreateEffect
-		Explosions: piffpiff
-        
-AGGattlingE:
-	Inherits: ^MG
-	ReloadDelay: 16
-	Range:5c0
-	#Report: vgatlo1a.wav, vgatlo2a.wav, vgatlo2b.wav, vgatlo2c.wav, vgatlo3a.wav
-	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
-	Warhead@1Dam: SpreadDamage
-		Damage: 25 
-		ValidTargets: Ground, Water, Air
-		Versus:
-			None: 100
-			Flak: 80
-			Plate: 70
-			Light: 50
-			Medium: 30
-			Heavy: 10
-			Wood: 10
-			Steel: 5
-			Concrete: 3
-			Drone: 200
-			Rocket: 100
-	Warhead@2Eff: CreateEffect
-		Explosions: piffpiff
-        
-AGGattling2E:
-	Inherits: ^MG
-	ReloadDelay: 16
-	Range:5c0
-	#Report: vgatlo4a.wav, vgatlo5a.wav, vgatlo5b.wav, vgatlo6a.wav
-	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
-	Warhead@1Dam: SpreadDamage
-		Damage: 25 
-		ValidTargets: Ground, Water, Air
-		Versus:
-			None: 100
-			Flak: 80
-			Plate: 70
-			Light: 50
-			Medium: 30
-			Heavy: 10
-			Wood: 10
-			Steel: 5
-			Concrete: 3
-			Drone: 200
-			Rocket: 100
-	Warhead@2Eff: CreateEffect
-		Explosions: piffpiff
-        
-AGGattling3E:
-	Inherits: ^MG
-	ReloadDelay: 16
-	Range:5c0
-	#Report: vgatlo7a.wav, vgatlo8a.wav, vgatlo8b.wav, vgatlo9a.wav
-	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
-	Warhead@1Dam: SpreadDamage
-		Damage: 25 
-		ValidTargets: Ground, Water, Air
-		Versus:
-			None: 100
-			Flak: 80
-			Plate: 70
-			Light: 50
-			Medium: 30
-			Heavy: 10
-			Wood: 10
-			Steel: 5
-			Concrete: 3
-			Drone: 200
-			Rocket: 100
-	Warhead@2Eff: CreateEffect
-		Explosions: piffpiff
-        
-AAGattling:
-	Inherits: ^MG
-	ReloadDelay: 16
-	Range:8c0
-	ValidTargets: Air
-	#Report: vgatlo1a.wav, vgatlo2a.wav, vgatlo2b.wav, vgatlo2c.wav, vgatlo3a.wav
-	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
-	Warhead@1Dam: SpreadDamage
-		Damage: 25 
-		ValidTargets: Ground, Water, Air
-		Versus:
-			None: 100
-			Flak: 80
-			Plate: 70
-			Light: 50
-			Medium: 30
-			Heavy: 10
-			Wood: 10
-			Steel: 5
-			Concrete: 3
-			Drone: 200
-			Rocket: 100
-	Warhead@2Eff: CreateEffect
-		Explosions: piffpiff
-        
-AAGattling2:
-	Inherits: ^MG
-	ReloadDelay: 8
-	Range:8c0
-	ValidTargets: Air
-	#Report: vgatlo4a.wav, vgatlo5a.wav, vgatlo5b.wav, vgatlo6a.wav
-	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
+	Projectile: Bullet
+		Speed: 100c0
 	Warhead@1Dam: SpreadDamage
 		Damage: 30 
 		ValidTargets: Ground, Water, Air
@@ -530,109 +361,119 @@ AAGattling2:
 			Steel: 5
 			Concrete: 3
 			Drone: 200
-			Rocket: 100
+			Rocket: 50
 	Warhead@2Eff: CreateEffect
-		Explosions: piffpiff
+		Explosions: piffpiff, piffpiff
+		
+AGGattling:
+	Inherits: Gatting
+	ReloadDelay: 16
+	Range:5c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 25 
+		ValidTargets: Ground, Water
+        
+AAGattling:
+	Inherits: Gatting
+	ReloadDelay: 16
+	Range:8c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 25 
+		ValidTargets: Air
+        
+AGGattling2:
+	Inherits: Gatting
+	ReloadDelay: 16
+	Range:5c0
+	#Report: vgatlo4a.wav, vgatlo5a.wav, vgatlo5b.wav, vgatlo6a.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 25 
+		ValidTargets: Ground, Water
+        
+AAGattling2:
+	Inherits: Gatting
+	ReloadDelay: 8
+	Range:8c0
+	ValidTargets: Air
+	#Report: vgatlo4a.wav, vgatlo5a.wav, vgatlo5b.wav, vgatlo6a.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 30 
+		ValidTargets: Air
+        
+AGGattling3:
+	Inherits: Gatting
+	ReloadDelay: 16
+	Range:5c0
+	#Report: vgatlo7a.wav, vgatlo8a.wav, vgatlo8b.wav, vgatlo9a.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 25 
+		ValidTargets: Ground, Water
         
 AAGattling3:
-	Inherits: ^MG
+	Inherits: Gatting
 	ReloadDelay: 4
 	Range:8c0
 	#Report: vgatlo7a.wav, vgatlo8a.wav, vgatlo8b.wav, vgatlo9a.wav
-	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 40 
 		ValidTargets: Ground, Water, Air
-		Versus:
-			None: 100
-			Flak: 80
-			Plate: 70
-			Light: 50
-			Medium: 30
-			Heavy: 10
-			Wood: 10
-			Steel: 5
-			Concrete: 3
-			Drone: 200
-			Rocket: 100
-	Warhead@2Eff: CreateEffect
-		Explosions: piffpiff
+        
+AGGattlingE:
+	Inherits: Gatting
+	ReloadDelay: 16
+	Range:5c0
+	#Report: vgatlo1a.wav, vgatlo2a.wav, vgatlo2b.wav, vgatlo2c.wav, vgatlo3a.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 25 
+		ValidTargets: Ground, Water
         
 AAGattlingE:
-	Inherits: ^MG
+	Inherits: Gatting
 	ReloadDelay: 16
 	Range:8c0
 	ValidTargets: Air
 	#Report: vgatlo1a.wav, vgatlo2a.wav, vgatlo2b.wav, vgatlo2c.wav, vgatlo3a.wav
-	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 25 
-		ValidTargets: Ground, Water, Air
-		Versus:
-			None: 100
-			Flak: 80
-			Plate: 70
-			Light: 50
-			Medium: 30
-			Heavy: 10
-			Wood: 10
-			Steel: 5
-			Concrete: 3
-			Drone: 200
-			Rocket: 100
-	Warhead@2Eff: CreateEffect
-		Explosions: piffpiff
+		ValidTargets: Air
         
-AAGattling2E:
-	Inherits: ^MG
-	ReloadDelay: 8
-	Range:8c0
-	ValidTargets: Air
-	#OpenRA can't read these audio files 
+AGGattling2E:
+	Inherits: Gatting
+	ReloadDelay: 16
+	Range:5c0
 	#Report: vgatlo4a.wav, vgatlo5a.wav, vgatlo5b.wav, vgatlo6a.wav
 	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 25 
-		ValidTargets: Ground, Water, Air
-		Versus:
-			None: 100
-			Flak: 80
-			Plate: 70
-			Light: 50
-			Medium: 30
-			Heavy: 10
-			Wood: 10
-			Steel: 5
-			Concrete: 3
-			Drone: 200
-			Rocket: 100
-	Warhead@2Eff: CreateEffect
-		Explosions: piffpiff
+		ValidTargets: Ground, Water
         
-AAGattling3E:
-	Inherits: ^MG
-	ReloadDelay: 4
+AAGattling2E:
+	Inherits: Gatting
+	ReloadDelay: 8
 	Range:8c0
 	ValidTargets: Air
+	#Report: vgatlo4a.wav, vgatlo5a.wav, vgatlo5b.wav, vgatlo6a.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 25 
+		ValidTargets: Air
+        
+AGGattling3E:
+	Inherits: Gatting
+	ReloadDelay: 16
+	Range:5c0
 	#Report: vgatlo7a.wav, vgatlo8a.wav, vgatlo8b.wav, vgatlo9a.wav
-	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 25 
+		ValidTargets: Ground, Water
+        
+AAGattling3E:
+	Inherits: Gatting
+	ReloadDelay: 4
+	Range:8c0
+	#Report: vgatlo7a.wav, vgatlo8a.wav, vgatlo8b.wav, vgatlo9a.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 25  
-		ValidTargets: Ground, Water, Air
-		Versus:
-			None: 100
-			Flak: 80
-			Plate: 70
-			Light: 50
-			Medium: 30
-			Heavy: 10
-			Wood: 10
-			Steel: 5
-			Concrete: 3
-			Drone: 200
-			Rocket: 100
-	Warhead@2Eff: CreateEffect
-		Explosions: piffpiff
+		ValidTargets: Air
         
 AAGattCann:
 	Inherits: ^MG
