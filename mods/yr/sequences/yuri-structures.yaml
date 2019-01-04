@@ -16,7 +16,7 @@ yacnst:
 		Length: 27
 		ShadowStart: 27
 		TilesetOverrides:
-			TEMPERATE: TEMPERATE
+			TEMPERATE: GENERIC
 			URBAN: GENERIC
 			DESERT: GENERIC
 			LUNAR: GENERIC
@@ -57,7 +57,7 @@ yapowr:
 		Length: 22
 		ShadowStart: 22
 		TilesetOverrides:
-			TEMPERATE: TEMPERATE
+			TEMPERATE: GENERIC
 			URBAN: GENERIC
 			DESERT: GENERIC
 			LUNAR: GENERIC
@@ -123,7 +123,7 @@ yabrck:
 		Length: 25
 		ShadowStart: 25
 		TilesetOverrides:
-			TEMPERATE: TEMPERATE
+			TEMPERATE: GENERIC
 			URBAN: GENERIC
 			DESERT: GENERIC
 			LUNAR: GENERIC
@@ -149,7 +149,7 @@ yarefn:
 		Length: 17
 		ShadowStart: 17
 		TilesetOverrides:
-			TEMPERATE: TEMPERATE
+			TEMPERATE: GENERIC
 			URBAN: GENERIC
 			DESERT: GENERIC
 			LUNAR: GENERIC
@@ -225,7 +225,7 @@ yaweap:
 		Length: 24
 		ShadowStart: 25
 		TilesetOverrides:
-			TEMPERATE: TEMPERATE
+			TEMPERATE: GENERIC
 			URBAN: GENERIC
 			DESERT: GENERIC
 			LUNAR: GENERIC
@@ -275,7 +275,7 @@ yayard:
 		Length: 24
 		ShadowStart: 25
 		TilesetOverrides:
-			TEMPERATE: TEMPERATE
+			TEMPERATE: GENERIC
 			URBAN: GENERIC
 			DESERT: GENERIC
 			LUNAR: GENERIC
@@ -389,7 +389,7 @@ naindp:
 		Length: 26
 		ShadowStart: 26
 		TilesetOverrides:
-			TEMPERATE: TEMPERATE
+			TEMPERATE: GENERIC
 			URBAN: GENERIC
 			DESERT: GENERIC
 			LUNAR: GENERIC
