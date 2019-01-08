@@ -761,27 +761,28 @@ garobo:
 	idle: ggrobo_a
 		Length: 20
 		ShadowStart: 40
+		Tick: 100
 		TilesetOverrides:
-			TEMPERATE: TEMPERATE
-			URBAN: URBAN
-			DESERT: DESERT
-			LUNAR: LUNAR
+			TEMPERATE: GENERIC
+			URBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
 	damaged-idle: ggrobo_a
 		Start: 20
 		ShadowStart: 60
 		TilesetOverrides:
-			TEMPERATE: TEMPERATE
-			URBAN: URBAN
-			DESERT: DESERT
-			LUNAR: LUNAR
+			TEMPERATE: GENERIC
+			URBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
 	make: ggrobomk
 		Length: 20
 		ShadowStart: 20
 		TilesetOverrides:
-			TEMPERATE: TEMPERATE
-			URBAN: URBAN
-			DESERT: DESERT
-			LUNAR: LUNAR
+			TEMPERATE: GENERIC
+			URBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
 	icon: rbccicon
 		Offset: 0,0
 		UseTilesetCode: false
