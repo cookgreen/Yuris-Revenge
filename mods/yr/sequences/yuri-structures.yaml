@@ -319,7 +319,7 @@ yagrnd:
 		Length: 30
 		ShadowStart: 30
 		TilesetOverrides:
-			TEMPERATE: TEMPERATE
+			TEMPERATE: GENERIC
 			URBAN: GENERIC
 			DESERT: GENERIC
 			LUNAR: GENERIC
@@ -361,7 +361,7 @@ yatech:
 		Length: 25
 		ShadowStart: 25
 		TilesetOverrides:
-			TEMPERATE: TEMPERATE
+			TEMPERATE: GENERIC
 			URBAN: GENERIC
 			DESERT: GENERIC
 			LUNAR: GENERIC
@@ -457,7 +457,7 @@ natbnk:
 		Length: 10
 		ShadowStart: 10
 		TilesetOverrides:
-			TEMPERATE: TEMPERATE
+			TEMPERATE: GENERIC
 			URBAN: GENERIC
 			DESERT: GENERIC
 			LUNAR: GENERIC
@@ -483,7 +483,7 @@ yaggun:
 		Length: 13
 		ShadowStart: 13
 		TilesetOverrides:
-			TEMPERATE: TEMPERATE
+			TEMPERATE: GENERIC
 			URBAN: GENERIC
 			DESERT: GENERIC
 			LUNAR: GENERIC
@@ -525,7 +525,7 @@ yapsyt:
 		Length: 31
 		ShadowStart: 31
 		TilesetOverrides:
-			TEMPERATE: TEMPERATE
+			TEMPERATE: GENERIC
 			URBAN: GENERIC
 			DESERT: GENERIC
 			LUNAR: GENERIC
@@ -546,7 +546,7 @@ yagntc:
 		Length: 3
 		ShadowStart: 3
 		TilesetOverrides:
-			TEMPERATE: TEMPERATE
+			TEMPERATE: GENERIC
 			URBAN: GENERIC
 			DESERT: GENERIC
 			LUNAR: GENERIC
@@ -603,7 +603,7 @@ yappet:
 		Length: 24
 		ShadowStart: 24
 		TilesetOverrides:
-			TEMPERATE: TEMPERATE
+			TEMPERATE: GENERIC
 			URBAN: GENERIC
 			DESERT: GENERIC
 			LUNAR: GENERIC
