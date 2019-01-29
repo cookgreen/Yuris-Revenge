@@ -1,23 +1,12 @@
 MapFormat: 11
-
 RequiresMod: yr
-
 Title: Allied Coop Mission 1
-
 Author: Westwood Studios
-
 Tileset: TEMPERATE
-
 MapSize: 87,142
-
 Bounds: 2,6,82,130
-
 Visibility: Lobby
-
 Categories: Cooperative Mission
-
-LockPreview: True
-
 Players:
 	PlayerReference@Neutral:
 		Name: Neutral
@@ -30,49 +19,46 @@ Players:
 		Required: True
 		LockFaction: True
 		Faction: america
-		LockTeam: True
 		LockColor: True
-		Color: 4172a2
+		Color: 4172A2
+		LockTeam: True
 		Allies: America2
 		Enemies: Soviets1, Soviets2
 	PlayerReference@America2:
-		AllowBots: True
 		Name: America2
 		Playable: True
 		Required: True
 		LockFaction: True
 		Faction: america
 		LockColor: True
-		Color: 1e787b
+		Color: 1E787B
 		LockTeam: True
 		Allies: America1
 		Enemies: Soviets1, Soviets2
 	PlayerReference@Soviets1:
 		Name: Soviets1
-		AllowBots: True
-		LockFaction: True
-		Faction: cuba
 		Playable: True
 		Required: True
+		LockFaction: True
+		Faction: cuba
 		LockColor: True
-		Color: ff0000
-		LockTeam: True
+		Color: FF0000
 		LockSpawn: True
 		Spawn: 4
+		LockTeam: True
 		Allies: Soviets2
 		Enemies: America1, America2
 	PlayerReference@Soviets2:
 		Name: Soviets2
-		AllowBots: True
-		LockFaction: True
-		Faction: cuba
 		Playable: True
 		Required: True
+		LockFaction: True
+		Faction: cuba
 		LockColor: True
-		Color: ffa500
-		LockTeam: True
+		Color: FFA500
 		LockSpawn: True
 		Spawn: 3
+		LockTeam: True
 		Allies: Soviets1
 		Enemies: America1, America2
 Actors:
@@ -81,9 +67,6 @@ Actors:
 		Owner: Neutral
 	Actor1: cabhut
 		Location: 96,-16
-		Owner: Neutral
-	Actor2: caoild
-		Location: 128,-34
 		Owner: Neutral
 	Actor3: cathosp
 		Location: 71,39
@@ -117,9 +100,6 @@ Actors:
 		Location: 91,-2
 		Owner: Neutral
 		Health: 54
-	Actor12: caoutp
-		Location: 100,-1
-		Owner: Neutral
 	Actor13: cabarn02
 		Location: 81,-2
 		Owner: Neutral
@@ -177,34 +157,10 @@ Actors:
 	Actor30: cawt01
 		Location: 91,26
 		Owner: Neutral
-	Actor31: naflak
-		Location: 120,-22
-		Owner: Neutral
-		Facing: 32
-	Actor32: naflak
-		Location: 120,-32
-		Owner: Neutral
-		Facing: 32
-	Actor33: naflak
-		Location: 122,-8
-		Owner: Neutral
-		Facing: 32
-	Actor34: naflak
-		Location: 130,-7
-		Owner: Neutral
-		Facing: 32
-	Actor35: naflak
-		Location: 118,-39
-		Owner: Neutral
-		Facing: 32
 	Actor36: cahse01
 		Location: 66,34
 		Owner: Neutral
 		Health: 62
-		Facing: 160
-	Actor37: gagate_a
-		Location: 65,-8
-		Owner: Neutral
 		Facing: 160
 	Actor38: cagard01
 		Location: 64,-8
@@ -220,14 +176,6 @@ Actors:
 		Location: 65,6
 		Owner: Neutral
 		Health: 45
-	Actor42: nalasr
-		Location: 63,-7
-		Owner: Neutral
-		Facing: 224
-	Actor43: nalasr
-		Location: 69,-7
-		Owner: Neutral
-		Facing: 224
 	Actor44: camisc05
 		Location: 147,-17
 		Owner: Neutral
@@ -246,25 +194,6 @@ Actors:
 	Actor50: camisc01
 		Location: 144,-17
 		Owner: Neutral
-	Actor51: gapowr
-		Location: 24,11
-		Owner: Neutral
-	Actor52: amradr
-		Location: 26,9
-		Owner: Neutral
-	Actor53: caoild
-		Location: 63,-12
-		Owner: Neutral
-	Actor54: caoild
-		Location: 63,-15
-		Owner: Neutral
-	Actor55: caoild
-		Location: 66,-15
-		Owner: Neutral
-	Actor56: nalasr
-		Location: 99,2
-		Owner: Neutral
-		Facing: 0
 	Actor57: car
 		Location: 65,17
 		Owner: Neutral
@@ -305,54 +234,6 @@ Actors:
 		Location: 78,-4
 		Owner: Neutral
 		Facing: 100
-	Actor68: e1
-		Location: 69,23
-		Owner: Neutral
-		Facing: 98
-	Actor69: e1
-		Location: 69,22
-		Owner: Neutral
-		Facing: 98
-	Actor70: e1
-		Location: 69,21
-		Owner: Neutral
-		Facing: 100
-	Actor71: e1
-		Location: 69,22
-		Owner: Neutral
-		Facing: 100
-	Actor72: e1
-		Location: 70,21
-		Owner: Neutral
-		Facing: 100
-	Actor73: e1
-		Location: 70,22
-		Owner: Neutral
-		Facing: 98
-	Actor74: e1
-		Location: 70,22
-		Owner: Neutral
-		Facing: 100
-	Actor75: e1
-		Location: 71,21
-		Owner: Neutral
-		Facing: 100
-	Actor76: e1
-		Location: 70,23
-		Owner: Neutral
-		Facing: 98
-	Actor77: e1
-		Location: 71,22
-		Owner: Neutral
-		Facing: 100
-	Actor78: e1
-		Location: 71,22
-		Owner: Neutral
-		Facing: 98
-	Actor79: e1
-		Location: 71,23
-		Owner: Neutral
-		Facing: 98
 	Actor80: tibtre01
 		Location: 42,14
 		Owner: Neutral
@@ -989,4 +870,112 @@ Actors:
 	Actor1014: nanrct
 		Owner: Soviets2
 		Location: 144,-15
+	Actor290: amradr
+		Owner: America1
+		Location: 26,9
+	Actor291: gapowr
+		Owner: America1
+		Location: 24,11
+	Actor279: e1
+		Owner: America2
+		Location: 69,22
+		SubCell: 2
+		Facing: 92
+		TurretFacing: 92
+	Actor280: e1
+		Owner: America2
+		Location: 69,23
+		SubCell: 2
+		Facing: 92
+		TurretFacing: 92
+	Actor281: e1
+		Owner: America2
+		Location: 69,24
+		SubCell: 2
+		Facing: 92
+		TurretFacing: 92
+	Actor282: e1
+		Owner: America2
+		Location: 70,23
+		SubCell: 2
+		Facing: 92
+		TurretFacing: 92
+	Actor283: e1
+		Owner: America2
+		Location: 71,23
+		SubCell: 2
+		Facing: 92
+		TurretFacing: 92
+	Actor284: e1
+		Owner: America2
+		Location: 70,24
+		SubCell: 2
+		Facing: 92
+		TurretFacing: 92
+	Actor285: e1
+		Owner: America2
+		Location: 71,24
+		SubCell: 2
+		Facing: 92
+		TurretFacing: 92
+	Actor286: e1
+		Owner: America2
+		Location: 70,22
+		SubCell: 2
+		Facing: 92
+		TurretFacing: 92
+	Actor287: e1
+		Owner: America2
+		Location: 71,22
+		SubCell: 2
+		Facing: 92
+		TurretFacing: 92
+	Actor288: caoild
+		Owner: Soviets1
+		Location: 63,-15
+	Actor289: caoild
+		Owner: Soviets1
+		Location: 66,-15
+	Actor292: caoild
+		Owner: Soviets1
+		Location: 63,-12
+	Actor293: nalasr
+		Owner: Soviets1
+		Location: 64,-7
+		TurretFacing: 92
+	Actor294: nalasr
+		Owner: Soviets1
+		Location: 68,-7
+		TurretFacing: 92
+	Actor295: caoild
+		Owner: Soviets2
+		Location: 128,-34
+	Actor296: naflak
+		Owner: Soviets2
+		Location: 120,-22
+		TurretFacing: 92
+	Actor297: naflak
+		Owner: Soviets2
+		Location: 122,-8
+		TurretFacing: 92
+	Actor298: naflak
+		Owner: Soviets2
+		Location: 131,-6
+		TurretFacing: 92
+	Actor299: naflak
+		Owner: Soviets2
+		Location: 119,-33
+		TurretFacing: 92
+	Actor300: naflak
+		Owner: Soviets2
+		Location: 118,-39
+		TurretFacing: 92
+	Actor301: nalasr
+		Owner: Soviets2
+		Location: 99,2
+		TurretFacing: 92
+	Actor302: caoutp
+		Owner: Soviets2
+		Location: 99,-1
+		TurretFacing: 92
 Rules: rules.yaml

@@ -316,8 +316,9 @@ hind:
 	Voiced:
 		VoiceSet: HindVoice
 	Buildable:
-		Queue: Vehicle
+		Queue: Aircraft
 		BuildPaletteOrder: 90
+		Prerequisites: ~missiononlyunit #Only can be used in Mission
 		Description: Soviet Hind Transport Helicopter\nUndetectable by radar.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
 	Valued:
 		Cost: 1000
