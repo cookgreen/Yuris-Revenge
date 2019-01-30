@@ -56,11 +56,8 @@ namespace OpenRA.Mods.YR.Traits
 		[Desc("If the SlaveMiner is idle for this long, he'll try to look for ore again at SlaveMinerShortScan range to find ore and wake up (in ticks)")]
 	    public readonly int KickDelay = 301;
 
-        [Desc("Did this actor tranforms to other actor?")]
-        public readonly bool Transform = false;
-
-        [Desc("If this actor will transform to other actor, which actor did this actor transform to?")]
-        public readonly string TransformActor = null;
+        [Desc("Play this sound when the slave is freed")]
+        public readonly string FreeSound = null;
 
 		public override object Create(ActorInitializer init) { return new SpawnerHarvesterMaster(init, this); }
 	}
@@ -322,6 +319,16 @@ namespace OpenRA.Mods.YR.Traits
                 se.Actor.QueueActivity(new FindResources(se.Actor));
             }
             refineryMaster.AssignSlavesToMaster(SlaveEntries);
+        }
+
+        public override void Killed(Actor self, AttackInfo e)
+        {
+            base.Killed(self, e);
+
+            if (!string.IsNullOrEmpty(info.FreeSound))
+            {
+                Game.Sound.Play(SoundType.World, info.FreeSound, self.CenterPosition);
+            }
         }
     }
 

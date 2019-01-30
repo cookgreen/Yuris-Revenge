@@ -204,6 +204,8 @@ slav:
 	WithHarvestAnimation:
 		PrefixByFullness: empty-, half-, full-
 	SpawnerHarvesterSlave:
+		OnMasterKilled: Free
+		OnMasterChangeOwner: Free
 
 yuri:
 	Inherits: ^Infantry

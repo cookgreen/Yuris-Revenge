@@ -28,8 +28,18 @@ these slaves can "dock" to any adjacent cells near the master.
 
 namespace OpenRA.Mods.YR.Traits
 {
+    public enum SlaveState
+    {
+        Free, //We are free, we are free!!! Change owner to the killer
+        Idle, //Nothing happen
+    }
 	public class SpawnerHarvesterSlaveInfo : BaseSpawnerSlaveInfo, Requires<HarvesterInfo>
 	{
+        [Desc("What will happen when master was killed?")]
+        public readonly SlaveState OnMasterKilled = SlaveState.Idle;
+
+        [Desc("What will happen when master is changed owner?")]
+        public readonly SlaveState OnMasterOwnerChanged = SlaveState.Idle;
 		public override object Create(ActorInitializer init)
 		{
 			return new SpawnerHarvesterSlave(init, this);
@@ -39,8 +49,11 @@ namespace OpenRA.Mods.YR.Traits
 	class SpawnerHarvesterSlave : BaseSpawnerSlave, ITick
 	{
 		SpawnerHarvesterMaster spawnerHarvesterMaster;
+        SpawnerHarvesterSlaveInfo info;
 
-		public SpawnerHarvesterSlave(ActorInitializer init, SpawnerHarvesterSlaveInfo info) : base(init, info) { }
+		public SpawnerHarvesterSlave(ActorInitializer init, SpawnerHarvesterSlaveInfo info) : base(init, info) {
+            this.info = info;
+        }
 
 		public override void LinkMaster(Actor self, Actor master, BaseSpawnerMaster spawnerMaster)
 		{
@@ -56,7 +69,27 @@ namespace OpenRA.Mods.YR.Traits
             }
 		}
 
-		public void Tick(Actor self)
+        public override void OnMasterKilled(Actor self, Actor attacker, SpawnerSlaveDisposal disposal)
+        {
+            switch(info.OnMasterKilled)
+            {
+                case SlaveState.Free:
+                    self.ChangeOwner(attacker.Owner);
+                    break;
+            }
+        }
+
+        public override void OnOwnerChanged(Actor self, Player oldOwner, Player newOwner)
+        {
+            switch(info.OnMasterOwnerChanged)
+            {
+                case SlaveState.Free:
+                    self.ChangeOwner(newOwner);
+                    break;
+            }
+        }
+
+        public void Tick(Actor self)
 		{
             // Compensate for bug #13879 (upstream).
             // https://github.com/OpenRA/OpenRA/issues/13879
