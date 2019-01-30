@@ -68,6 +68,7 @@
     <Compile Include="Activities\EnterCarrierMaster.cs" />
     <Compile Include="Activities\EnterBunker.cs" />
     <Compile Include="Activities\ShootableBallisticMissileFly.cs" />
+    <Compile Include="Activities\SpawnerHarvesterHarvest.cs" />
     <Compile Include="Activities\UnloadBunkerCargo.cs" />
     <Compile Include="Effects\RallyPointIndicatorEx.cs" />
     <Compile Include="FileSystem\BagFileHack.cs" />
@@ -106,6 +107,9 @@
     <Compile Include="Traits\SelfRotationCraft.cs" />
     <Compile Include="Traits\ShootableBallisticMissile.cs" />
     <Compile Include="Traits\ShowWholeMap.cs" />
+    <Compile Include="Traits\SpawnerHarvesterMaster.cs" />
+    <Compile Include="Traits\SpawnerHarvesterSlave.cs" />
+    <Compile Include="Traits\SpawnerRefineryMaster.cs" />
     <Compile Include="Traits\TransformActorsPower.cs" />
     <Compile Include="Warheads\KillCrewWarhead.cs" />
     <Compile Include="Warheads\MagWaveWarhead.cs" />

@@ -91,7 +91,7 @@ namespace OpenRA.Mods.YR.Traits
 	public class BaseSpawnerMaster : ConditionalTrait<BaseSpawnerMasterInfo>, INotifyCreated, INotifyKilled, INotifyOwnerChanged
 	{
 		readonly Actor self;
-		protected readonly BaseSpawnerSlaveEntry[] SlaveEntries;
+		protected BaseSpawnerSlaveEntry[] SlaveEntries;
 
 		IFacing facing;
 		ExitInfo[] exits;
@@ -110,6 +110,11 @@ namespace OpenRA.Mods.YR.Traits
 				entry.ActorName = info.Actors[i].ToLowerInvariant();
 			}
 		}
+
+        public void AssignSlavesToMaster(BaseSpawnerSlaveEntry[] SlaveEntries)
+        {
+            this.SlaveEntries = SlaveEntries;
+        }
 
 		public virtual BaseSpawnerSlaveEntry[] CreateSlaveEntries(BaseSpawnerMasterInfo info)
 		{

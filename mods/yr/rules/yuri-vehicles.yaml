@@ -99,6 +99,12 @@ smin:
 	HitShape:
 	SelfHealing@MACHSHOP:
 		RequiresCondition: machshop
+	GrantConditionOnDeploy:
+		DeployedCondition: deploy
+		UndeployedCondition: undeploy
+	SpawnerHarvesterMaster:
+		Actors: slav, slav, slav, slav, slav
+		SpawnAllAtOnce: True
     
 ltnk:
 	Inherits: ^Vehicle

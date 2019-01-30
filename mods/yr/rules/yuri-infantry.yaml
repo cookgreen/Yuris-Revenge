@@ -203,6 +203,7 @@ slav:
 		DefaultAttackSequence: shoot
 	WithHarvestAnimation:
 		PrefixByFullness: empty-, half-, full-
+	SpawnerHarvesterSlave:
 
 yuri:
 	Inherits: ^Infantry

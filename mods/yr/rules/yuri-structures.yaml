@@ -186,32 +186,15 @@ yarefn:
 		Percentage: 50
 		Notification: CreditsStolen
 		Minimum: 500
-	FreeActor:
-		Actor: slav
-		SpawnOffset: 3, 1
-		Facing: 160
-	FreeActor@2:
-		Actor: slav
-		SpawnOffset: 3, 1
-		Facing: 160
-	FreeActor@3:
-		Actor: slav
-		SpawnOffset: 3, 1
-		Facing: 160
-	FreeActor@4:
-		Actor: slav
-		SpawnOffset: 3, 1
-		Facing: 160
-	FreeActor@5:
-		Actor: slav
-		SpawnOffset: 3, 1
-		Facing: 160
 	WithIdleOverlay@processing:
 		Sequence: idle-processing
 	Power:
 		Amount: 0
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
+	SpawnerRefineryMaster:
+		Actors: slav, slav, slav, slav, slav
+		SpawnAllAtOnce: True
 
 yaweap:
 	Inherits: ^Building
