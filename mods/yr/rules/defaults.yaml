@@ -266,6 +266,16 @@
 		TargetTypes: MindControl
 		RequiresCondition: !controlled
 
+^SuperMindControllable:
+	MindControllable:
+		Condition: controlled
+	WithMindControlArc:
+		UsePlayerColor: true
+		Offset: 0,0,960
+	Targetable@SMC:
+		TargetTypes: SuperMindControl
+		RequiresCondition: !controlled
+
 ^AutoTargetGround:
 	AutoTarget:
 		AttackAnythingCondition: stance-attackanything
@@ -700,6 +710,7 @@
 	Inherits: ^Infantry
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@MC: ^MindControllable
+	Inherits@SMC: ^SuperMindControllable
 	Selectable:
 		Bounds: 20, 30, 0, -11
 	Valued:

@@ -1,6 +1,7 @@
 pcv:
 	Inherits: ^Vehicle
 	Inherits@MC: ^MindControllable
+	Inherits@SMC: ^SuperMindControllable
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 80
@@ -109,6 +110,7 @@ smin:
 ltnk:
 	Inherits: ^Vehicle
 	Inherits@MC: ^MindControllable
+	Inherits@SMC: ^SuperMindControllable
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Valued:
 		Cost: 700
@@ -164,6 +166,7 @@ ltnk:
 ytnk:
 	Inherits: ^Vehicle
 	Inherits@MC: ^MindControllable
+	Inherits@SMC: ^SuperMindControllable
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Valued:
 		Cost: 600
@@ -259,6 +262,7 @@ ytnk:
 tele:
 	Inherits: ^Vehicle
 	Inherits@MC: ^MindControllable
+	Inherits@SMC: ^SuperMindControllable
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Valued:
 		Cost: 1000
@@ -368,6 +372,7 @@ caos:
 mind:
 	Inherits: ^Vehicle
 	Inherits@MC: ^MindControllable
+	Inherits@SMC: ^SuperMindControllable
 	Valued:
 		Cost: 1750
 	Tooltip:

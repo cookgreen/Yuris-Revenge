@@ -638,6 +638,19 @@ SlaveWorkerVoice:
 		Zapped: igenzapa
 		Burned: ienadia #gotta put something as temp else game crashes
 		Melted: igenmela, igenmelb, igenmelc
+		
+YuriPrimeVoice:
+	DefaultVariant: .wav
+	Voices: 
+		Attack: iyupata,iyupatb,iyupatc,iyupatd,iyupate,iyupatf,iyupatg
+		Move: iyupmoa,iyupmob,iyupmoc,iyupmod,iyupmoe,iyupmof,iyupmog
+		Select: iyupsea,iyupseb,iyupsec,iyupsed,iyupsee,iyupsef
+		Feedback: iyupfea,iyupfeb,iyupfec 
+		Die: iyupdia,iyupdib,iyupdic,iyupdid
+		Zapped: igenzapa
+		Burned: ienadia #gotta put something as temp else game crashes
+		Melted: igenmela, igenmelb, igenmelc
+		Build: iyupcrd
         
 SlaveMinerVoice:
 	DefaultVariant: .wav

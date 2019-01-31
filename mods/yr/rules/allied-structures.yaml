@@ -1,6 +1,7 @@
 gacnst:
 	Inherits: ^Building
 	Inherits@shape: ^4x4Shape
+	Inherits@SMC: ^SuperMindControllable
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 1000
@@ -63,6 +64,7 @@ gacnst:
 gapowr:
 	Inherits: ^Building
 	Inherits@shape: ^2x2Shape
+	Inherits@SMC: ^SuperMindControllable
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 10
@@ -101,6 +103,7 @@ gapowr:
 gapile:
 	Inherits: ^Building
 	Inherits@shape: ^3x2Shape
+	Inherits@SMC: ^SuperMindControllable
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 20
@@ -127,7 +130,7 @@ gapile:
 		Type: Steel
 	RevealsShroud:
 		Range: 5c0
-	RallyPointEx:
+	RallyPoint:
 		Offset: 2,3
 		Palette: mouse
 		IsPlayerPalette: false
@@ -166,6 +169,7 @@ gapile:
 garefn:
 	Inherits: ^Building
 	Inherits@shape: ^4x3Shape
+	Inherits@SMC: ^SuperMindControllable
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 30
@@ -220,6 +224,7 @@ garefn:
 gaairc:
 	Inherits: ^Building
 	Inherits@shape: ^3x2Shape
+	Inherits@SMC: ^SuperMindControllable
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 60
@@ -300,6 +305,7 @@ gaairc:
 
 amradr:
 	Inherits: gaairc
+	Inherits@SMC: ^SuperMindControllable
 	Tooltip:
 		Name: American Airforce Command Headquarters
 	Buildable:
@@ -324,6 +330,7 @@ amradr:
 gaweap:
 	Inherits: ^Building
 	Inherits@shape: ^5x3Shape
+	Inherits@SMC: ^SuperMindControllable
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 40
@@ -351,7 +358,7 @@ gaweap:
 		Type: Wood
 	RevealsShroud:
 		Range: 4c0
-	RallyPointEx:
+	RallyPoint:
 		Offset: 5,1
 		Palette: mouse
 		IsPlayerPalette: false
@@ -389,6 +396,7 @@ gaweap:
 gayard:
 	Inherits: ^Building
 	Inherits@shape: ^4x4Shape
+	Inherits@SMC: ^SuperMindControllable
 	Valued:
 		Cost: 1000
 	Tooltip:
@@ -514,6 +522,7 @@ gayard:
 gadept:
 	Inherits: ^Building
 	Inherits@shape: ^3x3Shape
+	Inherits@SMC: ^SuperMindControllable
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 70
@@ -556,6 +565,7 @@ gadept:
 gatech:
 	Inherits: ^Building
 	Inherits@shape: ^3x2Shape
+	Inherits@SMC: ^SuperMindControllable
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 80
@@ -599,6 +609,7 @@ gawall:
 gapill:
 	Inherits: ^SupportBuilding
 	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@SMC: ^SuperMindControllable
 	Buildable:
 		Queue: Support
 		BuildPaletteOrder: 20
@@ -640,6 +651,7 @@ gapill:
 nasam:
 	Inherits: ^VoxelLighting
 	Inherits@AUTOTARGET: ^AutoTargetAir
+	Inherits@SMC: ^SuperMindControllable
 	Buildable:
 		Queue: Support
 		BuildPaletteOrder: 30
@@ -691,6 +703,7 @@ gtgcan:
 	Inherits: ^VoxelLighting
 	Inherits@shape: ^2x2Shape
 	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@SMC: ^SuperMindControllable
 	Buildable:
 		Queue: Support
 		BuildPaletteOrder: 50
@@ -744,6 +757,7 @@ gtgcan:
 gaorep:
 	Inherits: ^Building
 	Inherits@shape: ^3x3Shape
+	Inherits@SMC: ^SuperMindControllable
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 100
@@ -773,6 +787,7 @@ gaorep:
 garobo:
 	Inherits: ^Building
 	Inherits@shape: ^2x2Shape
+	Inherits@SMC: ^SuperMindControllable
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 110
@@ -802,6 +817,7 @@ garobo:
 gaspysat:
 	Inherits: ^Building
 	Inherits@shape: ^2x2Shape
+	Inherits@SMC: ^SuperMindControllable
 	Buildable:
 		Queue: Support
 		BuildPaletteOrder: 70
@@ -836,6 +852,7 @@ gaspysat:
 
 gagap:
 	Inherits: ^SupportBuilding
+	Inherits@SMC: ^SuperMindControllable
 	Valued:
 		Cost: 1000
 	Tooltip:
@@ -951,6 +968,7 @@ gacsph:
 atesla:
 	Inherits: ^SupportBuilding
 	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@SMC: ^SuperMindControllable
 	Buildable:
 		Queue: Support
 		BuildPaletteOrder: 40

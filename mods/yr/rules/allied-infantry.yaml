@@ -1,6 +1,7 @@
 engineer:
 	Inherits: ^Infantry
 	Inherits@MC: ^MindControllable
+	Inherits@SMC: ^SuperMindControllable
 	Buildable:
 		Queue: Infantry
 		Prerequisites: ~barracks
@@ -105,6 +106,7 @@ e1:
 	Inherits@1: ^Infantry
 	Inherits@2: ^Parachutable
 	Inherits@MC: ^MindControllable
+	Inherits@SMC: ^SuperMindControllable
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Queue: Infantry
@@ -158,6 +160,7 @@ ggi:
 	Inherits@1: ^Infantry
 	Inherits@2: ^Parachutable
 	Inherits@MC: ^MindControllable
+	Inherits@SMC: ^SuperMindControllable
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Queue: Infantry
@@ -221,6 +224,7 @@ ggi:
 snipe:
 	Inherits: ^Infantry
 	Inherits@MC: ^MindControllable
+	Inherits@SMC: ^SuperMindControllable
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Valued:
 		Cost: 600
@@ -313,6 +317,7 @@ spy:
 ghost:
 	Inherits: ^Infantry
 	Inherits@MC: ^MindControllable
+	Inherits@SMC: ^SuperMindControllable
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@SWIMSUIT: ^WithSwimSuit
 	Buildable:
@@ -613,6 +618,7 @@ jumpjet.husk:
 cleg:
 	Inherits: ^Infantry
 	Inherits@MC: ^MindControllable
+	Inherits@SMC: ^SuperMindControllable
 	Selectable:
 		Bounds: 20, 30, 0, -11
 	Tooltip:

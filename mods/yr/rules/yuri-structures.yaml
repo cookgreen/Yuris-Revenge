@@ -1,5 +1,6 @@
 yacnst:
 	Inherits: ^Building
+	Inherits@SMC: ^SuperMindControllable
 	Inherits@shape: ^4x4Shape
 	Buildable:
 		Queue: Building
@@ -43,6 +44,7 @@ yacnst:
 
 yapowr:
 	Inherits: ^Building
+	Inherits@SMC: ^SuperMindControllable
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 10
@@ -83,6 +85,7 @@ yapowr:
 yabrck:
 	Inherits: ^Building
 	Inherits@shape: ^2x3Shape
+	Inherits@SMC: ^SuperMindControllable
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 20
@@ -117,7 +120,7 @@ yabrck:
 		Type: steel
 	RevealsShroud:
 		Range: 5c0
-	RallyPointEx:
+	RallyPoint:
 		Offset: 2,3
 		Palette: mouse
 		IsPlayerPalette: false
@@ -145,6 +148,7 @@ yabrck:
 yarefn:
 	Inherits: ^Building
 	Inherits@shape: ^2x2Shape
+	Inherits@SMC: ^SuperMindControllable
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 30
@@ -168,7 +172,7 @@ yarefn:
 		Footprint: xx xx
 		Dimensions: 2,2
 	Refinery:
-		DockOffset: 3,1
+		DockOffset: 3,0
 		ShowTicks: True
 		TickLifetime: 30
 		TickVelocity: 1
@@ -199,6 +203,7 @@ yarefn:
 yaweap:
 	Inherits: ^Building
 	Inherits@shape: ^5x3Shape
+	Inherits@SMC: ^SuperMindControllable
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 50
@@ -222,7 +227,7 @@ yaweap:
 	Building:
 		Footprint: xxxxx xxxxx xxxxx
 		Dimensions: 5,3
-	RallyPointEx:
+	RallyPoint:
 		Offset: 6,1
 		Palette: mouse
 		IsPlayerPalette: false
@@ -257,6 +262,7 @@ yaweap:
 yayard:
 	Inherits: ^Building
 	Inherits@shape: ^4x4Shape
+	Inherits@SMC: ^SuperMindControllable
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 50
@@ -395,6 +401,7 @@ yayard:
 yagrnd:
 	Inherits: ^Building
 	Inherits@shape: ^3x3Shape
+	Inherits@SMC: ^SuperMindControllable
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 1000
@@ -429,13 +436,14 @@ yagrnd:
 yatech:
 	Inherits: ^Building
 	Inherits@shape: ^3x2Shape
+	Inherits@SMC: ^SuperMindControllable
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 1000
 		Prerequisites: yaweap, ~structures.yuris
 		Description: Provides newest technology for Yuri
 	Selectable:
-		Bounds: 128, 215, 0, -20
+		Bounds: 128, 215, 0, -80
 	Health:
 		HP: 500
 	Armor:
@@ -473,6 +481,7 @@ gafwll:
 natbnk:
 	Inherits: ^Building
 	Inherits@shape: ^2x2Shape
+	Inherits@SMC: ^SuperMindControllable
 	Buildable:
 		Queue: Support
 		BuildPaletteOrder: 20
@@ -512,6 +521,7 @@ natbnk:
 yaggun:
 	Inherits: ^VoxelLighting
 	Inherits@AUTOTARGET: ^AutoTargetAll
+	Inherits@SMC: ^SuperMindControllable
 	Buildable:
 		Queue: Support
 		BuildPaletteOrder: 30
@@ -789,6 +799,7 @@ yapppt:
 naclon:
 	Inherits: ^Building
 	Inherits@shape: ^2x2Shape
+	Inherits@SMC: ^SuperMindControllable
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 100
@@ -863,13 +874,14 @@ naclon:
 napsis:
 	Inherits: ^Building
 	Inherits@shape: ^2x2Shape
+	Inherits@SMC: ^SuperMindControllable
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 60
 		Prerequisites: yarefn, ~structures.yuris
 		Description: Detects enemy units and strikepoints
 	Valued:
-		Cost: 2000
+		Cost: 1000
 	Tooltip:
 		Name: Yuri Psychic Sensor
 	Building:

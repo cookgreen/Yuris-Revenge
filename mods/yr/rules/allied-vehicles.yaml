@@ -1,6 +1,7 @@
 amcv:
 	Inherits: ^Vehicle
 	Inherits@MC: ^MindControllable
+	Inherits@SMC: ^SuperMindControllable
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 80
@@ -97,6 +98,7 @@ cmin:
 mtnk:
 	Inherits: ^Vehicle
 	Inherits@MC: ^MindControllable
+	Inherits@SMC: ^SuperMindControllable
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Valued:
 		Cost: 700
@@ -149,6 +151,7 @@ mtnk:
 tnkd:
 	Inherits: ^Vehicle
 	Inherits@MC: ^MindControllable
+	Inherits@SMC: ^SuperMindControllable
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Valued:
 		Cost: 900
@@ -198,6 +201,7 @@ tnkd:
 fv:
 	Inherits: ^Vehicle
 	Inherits@MC: ^MindControllable
+	Inherits@SMC: ^SuperMindControllable
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Valued:
 		Cost: 600
@@ -343,6 +347,7 @@ fv:
 sref:
 	Inherits: ^Vehicle
 	Inherits@MC: ^MindControllable
+	Inherits@SMC: ^SuperMindControllable
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Queue: Vehicle
@@ -398,6 +403,7 @@ sref:
 mgtk:
 	Inherits: ^Vehicle
 	Inherits@MC: ^MindControllable
+	Inherits@SMC: ^SuperMindControllable
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Queue: Vehicle
@@ -500,6 +506,7 @@ robo:
 howi:
 	Inherits: ^Vehicle
 	Inherits@MC: ^MindControllable
+	Inherits@SMC: ^SuperMindControllable
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Valued:
 		Cost: 750
@@ -508,7 +515,7 @@ howi:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 40
-		Prerequisites: ~vehicles.korea
+		Prerequisites: ~missiononlyunit
 		Description: Long-range Artillery.\n  Strong vs Vehicles, Ships, Buildings\n  Weak vs Infantry, Aircraft
 	Mobile:
 		Speed: 65

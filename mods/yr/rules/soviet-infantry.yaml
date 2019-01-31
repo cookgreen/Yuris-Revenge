@@ -2,6 +2,7 @@ e2:
 	Inherits@1: ^Infantry
 	Inherits@2: ^Parachutable
 	Inherits@MC: ^MindControllable
+	Inherits@SMC: ^SuperMindControllable
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Queue: Infantry
@@ -47,6 +48,7 @@ flakt:
 	Inherits@1: ^Infantry
 	Inherits@2: ^Parachutable
 	Inherits@MC: ^MindControllable
+	Inherits@SMC: ^SuperMindControllable
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Buildable:
 		Queue: Infantry
@@ -98,6 +100,7 @@ shk:
 	Inherits@1: ^Infantry
 	Inherits@2: ^Parachutable
 	Inherits@MC: ^MindControllable
+	Inherits@SMC: ^SuperMindControllable
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Queue: Infantry
@@ -202,6 +205,7 @@ deso:
 	Inherits: ^Infantry
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@MC: ^MindControllable
+	Inherits@SMC: ^SuperMindControllable
 	Buildable:
 		Queue: Infantry
 		BuildAtProductionType: Infantry
@@ -248,6 +252,7 @@ deso:
 ivan:
 	Inherits: ^Infantry
 	Inherits@MC: ^MindControllable
+	Inherits@SMC: ^SuperMindControllable
 	Buildable:
 		Queue: Infantry
 		BuildAtProductionType: Infantry

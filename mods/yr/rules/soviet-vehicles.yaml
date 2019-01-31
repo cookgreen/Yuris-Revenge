@@ -1,6 +1,7 @@
 smcv:
 	Inherits: ^Vehicle
 	Inherits@MC: ^MindControllable
+	Inherits@SMC: ^SuperMindControllable
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 80
@@ -155,6 +156,7 @@ htk:
 	Inherits: ^Vehicle
 	Inherits@MC: ^MindControllable
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@SMC: ^SuperMindControllable
 	Valued:
 		Cost: 500
 	Tooltip:
@@ -211,6 +213,7 @@ htk:
 htnk:
 	Inherits: ^Vehicle
 	Inherits@MC: ^MindControllable
+	Inherits@SMC: ^SuperMindControllable
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Valued:
 		Cost: 900
@@ -318,6 +321,7 @@ apoc:
 ttnk:
 	Inherits: ^Vehicle
 	Inherits@MC: ^MindControllable
+	Inherits@SMC: ^SuperMindControllable
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Valued:
 		Cost: 1200
@@ -368,6 +372,7 @@ ttnk:
 dtruck:
 	Inherits: ^Vehicle
 	Inherits@MC: ^MindControllable
+	Inherits@SMC: ^SuperMindControllable
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 60
@@ -409,6 +414,7 @@ dtruck:
 v3:
 	Inherits: ^Vehicle
 	Inherits@MC: ^MindControllable
+	Inherits@SMC: ^SuperMindControllable
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Valued:
 		Cost: 800

@@ -152,20 +152,3 @@ boris:
 		Start: 217
 		Length: 6
 	icon: brisicon
-
-yuri:
-	Inherits: ^ArmedInfantry
-	deploy:
-		Start: 292
-		Length: 7
-	deployed:
-		Start: 299
-		Length: 2
-	undeploy:
-		Start: 301
-		Length: 6
-	cheer:
-		Start: 308
-	muzzle: yuricntl
-		Length: *
-	icon: yuriicon

@@ -92,3 +92,45 @@ slav:
 	cheer:
 		Start: 276
 	icon: e2icon
+
+yuri:
+	Inherits: ^ArmedInfantry
+	deploy:
+		Start: 292
+		Length: 7
+	deployed:
+		Start: 299
+		Length: 2
+	undeploy:
+		Start: 301
+		Length: 6
+	cheer:
+		Start: 308
+	muzzle: yuricntl
+		Length: *
+	icon: yclnicon
+	
+yurix:
+	Inherits: ^ArmedInfantry
+	idle1:
+		Start: 56
+	idle2:
+		Start: 71
+	die1:
+		Start: 134
+	die2:
+		Start: 154
+	deploy:
+		Start: 265
+		Length: 7
+	deployed:
+		Start: 272
+		Length: 2
+	undeploy:
+		Start: 274
+		Length: 6
+	cheer:
+		Start: 280
+	muzzle: yuricntl
+		Length: *
+	icon: yypricon

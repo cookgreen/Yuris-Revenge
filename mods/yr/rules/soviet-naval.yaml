@@ -1,6 +1,7 @@
 sapc:
 	Inherits: ^Ship
 	Inherits@MC: ^MindControllable
+	Inherits@SMC: ^SuperMindControllable
 	Buildable:
 		Queue: Ship
 		BuildPaletteOrder: 10
@@ -43,6 +44,7 @@ sapc:
 sub:
 	Inherits: ^Ship
 	Inherits@MC: ^MindControllable
+	Inherits@SMC: ^SuperMindControllable
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Queue: Ship
@@ -108,6 +110,7 @@ sub:
 hyd:
 	Inherits: ^Ship
 	Inherits@MC: ^MindControllable
+	Inherits@SMC: ^SuperMindControllable
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Buildable:
 		Queue: Ship

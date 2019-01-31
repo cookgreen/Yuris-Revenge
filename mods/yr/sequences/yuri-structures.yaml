@@ -92,7 +92,7 @@ yapowr:
     
 yabrck:
 	Defaults:
-		Offset: 0, -31
+		Offset: 15, -31
 		UseTilesetCode: true
 		TilesetOverrides:
 			TEMPERATE: GENERIC
@@ -338,7 +338,7 @@ yagrnd:
         
 yatech:
 	Defaults:
-		Offset: 0, -45
+		Offset: -21, -38
 		UseTilesetCode: true
 		TilesetOverrides:
 			TEMPERATE: GENERIC

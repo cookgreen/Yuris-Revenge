@@ -1,6 +1,7 @@
 lcrf:
 	Inherits: ^Ship
 	Inherits@MC: ^MindControllable
+	Inherits@SMC: ^SuperMindControllable
 	Buildable:
 		Queue: Ship
 		BuildPaletteOrder: 10
@@ -43,6 +44,7 @@ lcrf:
 dest:
 	Inherits: ^Ship
 	Inherits@MC: ^MindControllable
+	Inherits@SMC: ^SuperMindControllable
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Queue: Ship
@@ -92,6 +94,7 @@ dest:
 aegis:
 	Inherits: ^Ship
 	Inherits@MC: ^MindControllable
+	Inherits@SMC: ^SuperMindControllable
 	Inherits@AUTOTARGET: ^AutoTargetAir
 	Buildable:
 		Queue: Ship

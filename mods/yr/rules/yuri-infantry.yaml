@@ -1,6 +1,8 @@
 init:
 	Inherits: ^Infantry
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@MC: ^MindControllable
+	Inherits@SMC: ^SuperMindControllable
 	Buildable:
 		Queue: Infantry
 		Prerequisites: ~yabrck
@@ -36,9 +38,11 @@ init:
 		VoiceSet: InitiateVoice
 	WithInfantryBody
 		DefaultAttackSequence: shoot
-        
+		
 yengineer:
 	Inherits: ^Infantry
+	Inherits@MC: ^MindControllable
+	Inherits@SMC: ^SuperMindControllable
 	Buildable:
 		Queue: Infantry
 		Prerequisites: ~yabrck
@@ -82,6 +86,8 @@ yengineer:
 brute:
 	Inherits: ^Infantry
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@MC: ^MindControllable
+	Inherits@SMC: ^SuperMindControllable
 	Buildable:
 		Queue: Infantry
 		Prerequisites: ~yabrck
@@ -121,6 +127,8 @@ brute:
 virus:
 	Inherits: ^Infantry
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@MC: ^MindControllable
+	Inherits@SMC: ^SuperMindControllable
 	Buildable:
 		Queue: Infantry
 		Prerequisites: ~yabrck
@@ -161,6 +169,7 @@ slav:
 	Inherits: ^Infantry
 	Buildable:
 		BuildPaletteOrder: 20
+		Prerequisites: ~cannotbetrained
 		Description: Work for Yuri
 	Valued:
 		Cost: 700
@@ -169,7 +178,7 @@ slav:
 	Selectable:
 		Bounds: 20, 30, 0, -11
 	Harvester:
-		Capacity: 20
+		Capacity: 10
 		Resources: Ore,Gems
 		BaleUnloadDelay: 1
 		SearchFromProcRadius: 30
@@ -184,31 +193,27 @@ slav:
 		PipType: Green
 	RevealsShroud:
 		Range: 5c0
-	AttackFrontal:
-		Voice: Attack
-	RenderSprites:
 	WithSpriteBody:
 	WithDockingAnimation:
 		DockSequence: idle
 		DockLoopSequence: idle
 	Armament@primary:
 		Weapon: shovel
-		RequiresCondition: !rank-elite
-	Armament@elite:
-		Weapon: shovel
-		RequiresCondition: rank-elite
+		RequiresCondition: freed
 	Voiced:
 		VoiceSet: SlaveWorkerVoice
-	WithInfantryBody
-		DefaultAttackSequence: shoot
-	WithHarvestAnimation:
-		PrefixByFullness: empty-, half-, full-
+	AttackFrontal:
+		Voice: Attack
 	SpawnerHarvesterSlave:
 		OnMasterKilled: Free
 		OnMasterChangeOwner: Free
+		FreeCondition: freed
 
 yuri:
 	Inherits: ^Infantry
+	Inherits@MC: ^MindControllable
+	Inherits@SMC: ^SuperMindControllable
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Queue: Infantry
 		BuildAtProductionType: Infantry
@@ -222,7 +227,7 @@ yuri:
 		PlayerExperience: 60
 		Voice: Move
 	Tooltip:
-		Name: Psychic Experter
+		Name: Yuri Clone
 	Selectable:
 		Bounds: 20, 30, 0, -11
 	Voiced:
@@ -280,13 +285,92 @@ yuri:
 	AutoTargetPriority@DEFAULT:
 		Types: MindControl
 		RequiresCondition: !controlling
+		
+yuripr:
+	Inherits: ^Infantry
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Infantry
+		BuildPaletteOrder: 160
+		Prerequisites: yatech, ~yabrck
+		Description: Yuri Prime himself. Can mind control enemy units and structures.\nCan be deployed to unleash a powerful psychic wave.\n  Strong vs Infantry, Vehicles, Structures\n  Weak vs Terror Drones, Aircraft, Buildings
+		BuildLimit: 1
+	Valued:
+		Cost: 1500
+	RenderSprites:
+		Image: yurix
+	DeliversCash:
+		Payload: 600
+		PlayerExperience: 60
+		Voice: Move
+	Tooltip:
+		Name: Yuri Prime
+	Selectable:
+		Bounds: 26, 52, 0, -30
+	Voiced:
+		VoiceSet: YuriPrimeVoice
+	Health:
+		HP: 150
+	Mobile:
+		Speed: 60
+		RequiresCondition: !deployed && !deploying && !chronodisable
+	RevealsShroud:
+		Range: 12c0
+	Armor:
+		Type: None
+	Passenger:
+		PipType: Red
+	PeriodicExplosion:
+		Weapon: PsiWave
+		LocalOffset: 0,0,128
+		RequiresCondition: deployed
+	GrantTimedConditionOnDeploy:
+		DeployedTicks: 50
+		CooldownTicks: 0
+		Facing: 96
+		DeployedCondition: deployed
+		DeployingCondition: deploying
+		DeployAnimation: deploy
+		UndeployAnimation: undeploy
+		ShowSelectionBar: false
+		Voice:
+	TakeCover:
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+		IdleSequences: idle1,idle2
+		RequiresCondition: !deployed && !deploying
+	WithSpriteBody@DEPLOYED:
+		Sequence: deployed
+		RequiresCondition: deployed || deploying
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+	AttackFrontal:
+		Voice: Attack
+	Armament:
+		Weapon: SuperMindControl
+		MuzzleSequence: muzzle
+		LocalOffset: 0,0,960
+		PauseOnCondition: deployed
+	WithMuzzleOverlay:
+	MindController:
+		ControllingCondition: controlling
+		Sounds: iyurat1a.wav
+	WithMindControlArc:
+		UsePlayerColor: true
+		Offset: 0,0,960
+	AutoTarget:
+	AnnounceOnBuild:
+	AutoTargetPriority@DEFAULT:
+		Types: MindControl
+		RequiresCondition: !controlling
 
 julia:
 	Inherits: ^Infantry
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Queue: Infantry
-		Prerequisites: ~yabrck
+		Prerequisites: ~missiononlyunit
 		BuildPaletteOrder: 20
 		Description: Yuri's Elite Sniper.\n Can kill crew of enemy vehicle effectively.\n Can Infect the genetic virus to enemy soldiers\n make them become powerful brute which obey Yuri forever.
 		BuildLimit: 1
