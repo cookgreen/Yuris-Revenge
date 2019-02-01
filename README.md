@@ -12,7 +12,8 @@ release-20180923
 OpenRA - Version: release-20180923 
 
 ## Usage
-Run "make.cmd" and type "all" in the terminal
+Run "make.cmd" and type "all" in the terminal  
+Check [Wiki](https://github.com/cookgreen/yr/wiki) for more details
 
 ## Credit
 OpenRA - OpenRA development team  
