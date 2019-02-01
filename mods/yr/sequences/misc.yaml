@@ -56,6 +56,8 @@ overlay:
 		Start: 2
 	target-valid-urban:
 		Start: 2
+	target-valid-newurban:
+		Start: 2
 	target-valid-desert:
 		Start: 2
 	target-valid-lunar:

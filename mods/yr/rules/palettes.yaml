@@ -14,6 +14,11 @@
 		Tileset: URBAN
 		Filename: isourb.pal
 		ShadowIndex: 1
+	PaletteFromFile@terrain-newurban:
+		Name: terrain
+		Tileset: NEWURBAN
+		Filename: isoubn.pal
+		ShadowIndex: 1
 	PaletteFromFile@terrain-desert:
 		Name: terrain
 		Tileset: DESERT
@@ -48,6 +53,11 @@
 		Tileset: URBAN
 		Filename: cityurb.pal
 		ShadowIndex: 1
+	PaletteFromFile@newurbancity:
+		Name: city
+		Tileset: NEWURBAN
+		Filename: cityurb.pal
+		ShadowIndex: 1
 	PaletteFromFile@desertcity:
 		Name: city
 		Tileset: DESERT
@@ -61,6 +71,11 @@
 		Name: player
 		Tileset: URBAN
 		Filename: uniturb.pal
+		ShadowIndex: 1
+	PaletteFromFile@playerubn:
+		Name: player
+		Tileset: NEWURBAN
+		Filename: unitubn.pal
 		ShadowIndex: 1
 	PaletteFromFile@playersno:
 		Name: player

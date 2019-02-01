@@ -211,6 +211,7 @@ TileSets:
 	yr|tilesets/temperat.yaml
 	yr|tilesets/snow.yaml
 	yr|tilesets/urban.yaml
+	yr|tilesets/newurban.yaml
 	yr|tilesets/desert.yaml
 	yr|tilesets/lunar.yaml
 
@@ -277,6 +278,7 @@ SpriteSequenceFormat: TilesetSpecificSpriteSequence
 		TEMPERATE: .tem
 		SNOW: .sno
 		URBAN: .urb
+		NEWURBAN: .ubn
 		DESERT: .des
 		LUNAR: .lun
 	TilesetCodes:
@@ -284,6 +286,7 @@ SpriteSequenceFormat: TilesetSpecificSpriteSequence
 		SNOW: a
 		TEMPERATE: t
 		URBAN: u
+		NEWURBAN: n
 		DESERT: d
 		LUNAR: l
 
