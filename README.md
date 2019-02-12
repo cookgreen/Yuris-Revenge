@@ -16,8 +16,13 @@ Run "make.cmd" and type "all" in the terminal
 Check [Wiki](https://github.com/cookgreen/yr/wiki) for more details
 
 ## Credit
-OpenRA - OpenRA development team  
-RA2 mod for OpenRA - RA2 mod development team  
+alienfxfiend  
+finalshake  
+fusion809  
+intr  
+yaaaaa  
+
+#### Thanks to all the people who helped this mod!  
 
 ## License
 GPLv3
