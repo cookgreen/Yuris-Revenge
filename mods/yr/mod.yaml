@@ -1,7 +1,7 @@
 Metadata:
 	Title: Red Alert 2 Yuri's Revenge
 	Description: Yuri has returned from shadow, it is time to take revenge!
-	Version: release-20180923
+	Version: release-20181215
 	Author: the RA2YR mod team
 
 PackageFormats: Mix, AudioBagHack
@@ -70,7 +70,7 @@ Packages:
 
 MapFolders:
 	yr|maps: System
-	~^maps/yr/release-20180923: User
+	~^maps/yr/release-20181215: User
 
 Rules:
 	yr|rules/proxy-actors.yaml

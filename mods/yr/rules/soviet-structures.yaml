@@ -876,7 +876,7 @@ nabnkr:
 		Amount: 0
 	WithSpriteBody@Bunkered:
 		Sequence: idle-bunkered
-		RequiresCondition: infbunkered
+		RequiresCondition: bunkered
 		
 naindp:
 	Inherits: ^Building

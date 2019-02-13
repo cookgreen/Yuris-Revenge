@@ -42,7 +42,7 @@ yacnst:
 		Start: 18
 		Length: 18
 		Tick: 150
-	icon: yconicon
+	icon: xxicon
 		Offset: 0,0
 		UseTilesetCode: false
         
@@ -665,4 +665,5 @@ yarock:
 		Start: 1
 		Length: 1
 		ShadowStart: 5
+	icon: xxicon
         
