@@ -63,6 +63,10 @@ namespace OpenRA.Mods.YR.Activities
                     w.Add(new SpriteEffect(bunker.CenterPosition, w, bunker.Info.Name, cargo.Info.SequenceOnCargo, "player" + self.Owner.InternalName));
                 }
 
+                if (cargo.GetBunkeredNumber() == 0)
+                {
+                    cargo.GrantCondition(passenger.info.GrantBunkerCondition);
+                }
                 cargo.Load(bunker, self);
                 if(willDisappear)
                 {
@@ -70,11 +74,9 @@ namespace OpenRA.Mods.YR.Activities
                 }
                 else
                 {
-                    self.QueueActivity(mobile.MoveToTarget(self, Target.FromPos(targetPos)));
                     //If didn't disappear, then move the passenger actor to the bunker center
-                    //mobile.SetPosition(self, w.Map.CellContaining(bunker.CenterPosition));
+                    self.QueueActivity(mobile.MoveToTarget(self, Target.FromPos(targetPos)));
                     passenger.GrantCondition();
-                    cargo.GrantCondition(passenger.info.GrantBunkerCondition);
                 }
 			});
 

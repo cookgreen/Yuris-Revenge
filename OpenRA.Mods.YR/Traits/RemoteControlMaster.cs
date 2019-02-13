@@ -19,16 +19,20 @@ namespace OpenRA.Mods.YR.Traits
             return new RemoteControlMaster(init, this);
         }
     }
-    public class RemoteControlMaster : ConditionalTrait<RemoteControlMasterInfo>, ITick, INotifyOwnerChanged
+    public class RemoteControlMaster : ConditionalTrait<RemoteControlMasterInfo>, ITick, INotifyOwnerChanged, INotifyKilled, INotifySold
     {
         private RemoteControlMasterInfo info;
         private int conditionToken;
         private ConditionManager conditionManager;
         private Player newOwner;
         private Player oldOwner;
+        private List<Actor> slaves;
+        private Actor self;
         public RemoteControlMaster(ActorInitializer init, RemoteControlMasterInfo info) : base(info)
         {
             this.info = info;
+            slaves = new List<Actor>();
+            self = init.Self;
         }
 
         protected override void Created(Actor self)
@@ -40,9 +44,20 @@ namespace OpenRA.Mods.YR.Traits
                 //Grant condition to all actors belong to this faction
                 World w = self.World;
                 var actors = w.Actors.Where(o => o.Owner == self.Owner);
-                foreach (var remoteSlave in actors)
+                foreach (var actor in actors)
                 {
-                    conditionToken = conditionManager.GrantCondition(remoteSlave, info.GrantRemoteControlCondition);
+                    RemoteControlSlave slave = actor.TraitOrDefault<RemoteControlSlave>();
+                    if (slave == null)
+                    {
+                        continue;
+                    }
+                    if (slave.HasMaster)
+                    {
+                        continue;
+                    }
+                    slave.LinkMaster(this);
+                    slave.GrandCondition(info.GrantRemoteControlCondition);
+                    slaves.Add(actor);
                 }
             }
 
@@ -98,26 +113,29 @@ namespace OpenRA.Mods.YR.Traits
 
         public void Tick(Actor self)
         {
-            List<Actor> actors = new List<Actor>();
-            bool ret = IsDisableAllSlaves(self, out actors);
-            if (actors == null)
+            World w = self.World;
+            var actors = w.Actors.Where(o => o.Owner == self.Owner);
+            foreach (var actor in actors)
             {
-                return;
-            }
-            if(ret)
-            {
-                foreach (Actor actor in actors)
+                RemoteControlSlave slave = actor.TraitOrDefault<RemoteControlSlave>();
+                if (slave == null)
                 {
-                    conditionToken = conditionManager.RevokeCondition(actor, conditionToken);
+                    continue;
+                }
+                if (slave.HasMaster)
+                {
+                    continue;
+                }
+
+                if (slaves.Where(o => o.ActorID == actor.ActorID).Count() == 0)
+                {
+                    slave.LinkMaster(this);
+                    slave.GrandCondition(info.GrantRemoteControlCondition);
+                    slaves.Add(actor);
                 }
             }
-            else
-            {
-                foreach (Actor actor in actors)
-                {
-                    conditionToken = conditionManager.GrantCondition(actor, info.GrantRemoteControlCondition);
-                }
-            }
+
+            CheckDisableSlaves();
         }
 
         private bool IsDisableAllSlaves(Actor self, out List<Actor> actors)
@@ -146,6 +164,54 @@ namespace OpenRA.Mods.YR.Traits
                 isDisableAllSlaves = false;
             }
             return isDisableAllSlaves;
+        }
+
+        public void Killed(Actor self, AttackInfo e)
+        {
+            CheckDisableSlaves();
+        }
+
+        public void Selling(Actor self)
+        {
+        }
+
+        public void Sold(Actor self)
+        {
+            CheckDisableSlaves();
+        }
+
+        private void CheckDisableSlaves()
+        {
+            List<Actor> remoteMasterActorsInThisMap = new List<Actor>();
+            bool ret = IsDisableAllSlaves(self, out remoteMasterActorsInThisMap);
+            if (remoteMasterActorsInThisMap == null)
+            {
+                ret = true;
+            }
+            if (ret)
+            {
+                foreach (Actor slave in slaves)
+                {
+                    RemoteControlSlave s = slave.TraitOrDefault<RemoteControlSlave>();
+                    if (s != null)
+                    {
+                        s.RevokeCondition();
+                    }
+                }
+            }
+            else
+            {
+                Random rand = new Random();
+                rand.Next(0, remoteMasterActorsInThisMap.Count);
+                foreach (Actor slave in slaves)
+                {
+                    RemoteControlSlave s = slave.TraitOrDefault<RemoteControlSlave>();
+                    if (s != null && !s.HasMaster)
+                    {
+                        s.LinkMaster(remoteMasterActorsInThisMap[rand.Next()].TraitOrDefault<RemoteControlMaster>());
+                    }
+                }
+            }
         }
     }
 }

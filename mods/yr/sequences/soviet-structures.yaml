@@ -740,3 +740,86 @@ naflak:
 	icon: flakicon
 		Offset: 0,0
 		UseTilesetCode: false
+
+nabnkr:
+	Defaults:
+		Offset: 0, -24
+		UseTilesetCode: true
+		TilesetOverrides:
+			TEMPERATE: GENERIC
+			URBAN: GENERIC
+			NEWURBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
+	idle: nabnkr
+		Length: 1
+		ShadowStart: 4
+	damaged-idle: nabnkr
+		Start: 1
+		Length: 1
+		ShadowStart: 5
+	idle-bunkered: nabnkr
+		Start: 2
+		Length: 1
+		ShadowStart: 6
+	damaged-idle-bunkered: nabnkr
+		Start: 3
+		Length: 1
+		ShadowStart: 7
+	make: nabnkrmk
+		Length: 25
+		ShadowStart: 25
+		TilesetOverrides:
+			TEMPERATE: GENERIC
+			URBAN: GENERIC
+			NEWURBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
+	icon: bnkricon
+		Offset: 0,0
+		UseTilesetCode: false
+        
+naindp:
+	Defaults:
+		Offset: 0, -31
+		UseTilesetCode: true
+		TilesetOverrides:
+			TEMPERATE: GENERIC
+			URBAN: GENERIC
+			NEWURBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
+	idle: naindp
+		Length: 1
+		ShadowStart: 3
+	damaged-idle: naindp
+		Start: 1
+		Length: 1
+		ShadowStart: 4
+	make: naindpmk
+		Length: 26
+		ShadowStart: 26
+		TilesetOverrides:
+			TEMPERATE: GENERIC
+			URBAN: GENERIC
+			NEWURBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
+	idle-processing: naindp_a
+		Length: 13
+		Tick: 150
+	damaged-idle-processing: naindp_a
+		Start: 14
+		Length: 11
+		Tick: 150
+	idle-lights: naindp_b
+		Length: 26
+		ShadowStart: 26
+		Tick: 150
+	damaged-idle-lights: naindp_b
+		Length: 26
+		ShadowStart: 26
+		Tick: 150
+	icon: indpicon
+		Offset: 0,0
+		UseTilesetCode: false

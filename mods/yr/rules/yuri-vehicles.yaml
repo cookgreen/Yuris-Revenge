@@ -162,6 +162,7 @@ ltnk:
 	CrewKillable:
 	SelfHealing@MACHSHOP:
 		RequiresCondition: machshop
+	Bunkerable:
     
 ytnk:
 	Inherits: ^Vehicle
@@ -258,6 +259,7 @@ ytnk:
 	CrewKillable:
 	SelfHealing@MACHSHOP:
 		RequiresCondition: machshop
+	Bunkerable:
     
 tele:
 	Inherits: ^Vehicle

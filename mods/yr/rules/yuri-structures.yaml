@@ -497,6 +497,7 @@ natbnk:
 		Types: Vehicle
 		MaxWeight: 9
 		PipCount: 1
+		WillDisappear: false
 	AttackBunkered:
 		Armaments: primary
 		PortOffsets: 384,0,128, 224,-341,128, -224,-341,128, -384,0,128, -224,341,128, 224,341,128

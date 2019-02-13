@@ -102,6 +102,7 @@
     <Compile Include="Traits\PeriodicExplosion.cs" />
     <Compile Include="Traits\RallyPointEx.cs" />
     <Compile Include="Traits\RemoteControlMaster.cs" />
+    <Compile Include="Traits\RemoteControlSlave.cs" />
     <Compile Include="Traits\Render\WithExitOverlay.cs" />
     <Compile Include="Traits\Render\WithMindControlArc.cs" />
     <Compile Include="Traits\SelfRotationCraft.cs" />
@@ -110,6 +111,7 @@
     <Compile Include="Traits\SpawnerHarvesterMaster.cs" />
     <Compile Include="Traits\SpawnerHarvesterSlave.cs" />
     <Compile Include="Traits\SpawnerRefineryMaster.cs" />
+    <Compile Include="Traits\Bunkerable.cs" />
     <Compile Include="Traits\TransformActorsPower.cs" />
     <Compile Include="Warheads\KillCrewWarhead.cs" />
     <Compile Include="Warheads\MagWaveWarhead.cs" />

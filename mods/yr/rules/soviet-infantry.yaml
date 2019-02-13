@@ -43,6 +43,7 @@ e2:
 		Prerequisites: barracks.infiltrated
 	QuantizeFacingsFromSequence:
 		Sequence: stand
+	Bunkerable:
 
 flakt:
 	Inherits@1: ^Infantry

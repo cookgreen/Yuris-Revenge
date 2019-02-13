@@ -147,6 +147,7 @@ mtnk:
 	CrewKillable:
 	SelfHealing@MACHSHOP:
 		RequiresCondition: machshop
+	Bunkerable:
 
 tnkd:
 	Inherits: ^Vehicle
@@ -197,6 +198,7 @@ tnkd:
 	-CrewKillable:
 	SelfHealing@MACHSHOP:
 		RequiresCondition: machshop
+	Bunkerable:
 
 fv:
 	Inherits: ^Vehicle
@@ -343,6 +345,7 @@ fv:
 	CrewKillable:
 	SelfHealing@MACHSHOP:
 		RequiresCondition: machshop
+	Bunkerable:
 
 sref:
 	Inherits: ^Vehicle
@@ -399,6 +402,7 @@ sref:
 	CrewKillable:
 	SelfHealing@MACHSHOP:
 		RequiresCondition: machshop
+	Bunkerable:
 
 mgtk:
 	Inherits: ^Vehicle
@@ -452,6 +456,7 @@ mgtk:
 	CrewKillable:
 	SelfHealing@MACHSHOP:
 		RequiresCondition: machshop
+	Bunkerable:
 
 robo:
 	Inherits: ^Vehicle
@@ -502,6 +507,7 @@ robo:
 	-CrewKillable:
 	SelfHealing@MACHSHOP:
 		RequiresCondition: machshop
+	RemoteControlSlave:
 
 howi:
 	Inherits: ^Vehicle
@@ -552,3 +558,4 @@ howi:
 	-CrewKillable:
 	SelfHealing@MACHSHOP:
 		RequiresCondition: machshop
+	Bunkerable:

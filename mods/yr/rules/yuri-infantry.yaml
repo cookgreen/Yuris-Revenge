@@ -38,6 +38,7 @@ init:
 		VoiceSet: InitiateVoice
 	WithInfantryBody
 		DefaultAttackSequence: shoot
+	Bunkerable:
 		
 yengineer:
 	Inherits: ^Infantry

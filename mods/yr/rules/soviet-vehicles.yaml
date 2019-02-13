@@ -209,6 +209,7 @@ htk:
 	CrewKillable:
 	SelfHealing@MACHSHOP:
 		RequiresCondition: machshop
+	Bunkerable:
 
 htnk:
 	Inherits: ^Vehicle
@@ -263,6 +264,7 @@ htnk:
 	CrewKillable:
 	SelfHealing@MACHSHOP:
 		RequiresCondition: machshop
+	Bunkerable:
 
 apoc:
 	Inherits: ^Vehicle
@@ -317,6 +319,7 @@ apoc:
 	-CrewKillable:
 	SelfHealing@MACHSHOP:
 		RequiresCondition: machshop
+	Bunkerable:
 
 ttnk:
 	Inherits: ^Vehicle
@@ -368,6 +371,7 @@ ttnk:
 	CrewKillable:
 	SelfHealing@MACHSHOP:
 		RequiresCondition: machshop
+	Bunkerable:
 
 dtruck:
 	Inherits: ^Vehicle

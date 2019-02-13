@@ -84,17 +84,28 @@ namespace OpenRA.Mods.Common.Activities
 				var move = actor.Trait<IMove>();
 				var pos = actor.Trait<IPositionable>();
 
-				actor.CancelActivity();
+                var bunkerPassenger = actor.TraitOrDefault<BunkerPassenger>();
+                bunkerPassenger.RevokeCondition();//Disable the condition
+
+                actor.CancelActivity();
 				pos.SetVisualPosition(actor, spawn);
 				actor.QueueActivity(move.MoveIntoWorld(actor, exitSubCell.Value.First, exitSubCell.Value.Second));
 				actor.SetTargetLine(Target.FromCell(w, exitSubCell.Value.First, exitSubCell.Value.Second), Color.Green, false);
-				w.Add(actor);
+                
+                if(cargo.Info.WillDisappear)
+                    w.Add(actor);
 			});
 
 			if (!unloadAll || cargo.IsEmpty(self))
 				return NextActivity;
 
 			cargo.Unloading = true;
+
+            if (cargo.GetBunkeredNumber() == 0)
+            {
+                cargo.RevokeCondition();
+            }
+
 			return this;
 		}
 	}

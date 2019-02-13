@@ -76,7 +76,10 @@ namespace OpenRA.Mods.YR.Traits
 		[GrantedConditionReference]
 		public IEnumerable<string> LinterPassengerConditions { get { return PassengerConditions.Values; } }
 
-		public object Create(ActorInitializer init) { return new BunkerCargo(init, this); }
+        [Desc("Will the actor disappear when enter bunker")]
+        public readonly bool WillDisappear = true;
+
+        public object Create(ActorInitializer init) { return new BunkerCargo(init, this); }
 	}
 
 	public class BunkerCargo : IPips, IIssueOrder, IResolveOrder, IOrderVoice, INotifyCreated, INotifyKilled,
@@ -96,6 +99,7 @@ namespace OpenRA.Mods.YR.Traits
 		ConditionManager conditionManager;
 		int loadingToken = ConditionManager.InvalidConditionToken;
 		Stack<int> loadedTokens = new Stack<int>();
+        int bunkeredToken = ConditionManager.InvalidConditionToken;
 
 		CPos currentCell;
 		public IEnumerable<CPos> CurrentAdjacentCells { get; private set; }
@@ -242,6 +246,11 @@ namespace OpenRA.Mods.YR.Traits
 			return true;
 		}
 
+        internal int GetBunkeredNumber()
+        {
+            return cargo.Count;
+        }
+
 		internal void UnreserveSpace(Actor a)
 		{
 			if (!reserves.Contains(a))
@@ -379,7 +388,10 @@ namespace OpenRA.Mods.YR.Traits
 
 					if (!inAir && positionable.CanEnterCell(self.Location, self, false))
 					{
-						self.World.AddFrameEndTask(w => w.Add(passenger));
+                        if(Info.WillDisappear)
+                        {
+                            self.World.AddFrameEndTask(w => w.Add(passenger));
+                        }
 						var nbm = passenger.TraitOrDefault<INotifyBlockingMove>();
 						if (nbm != null)
 							nbm.OnNotifyBlockingMove(passenger, passenger);
@@ -408,12 +420,16 @@ namespace OpenRA.Mods.YR.Traits
 			if (!Info.EjectOnSell || cargo == null)
 				return;
 
-			while (!IsEmpty(self))
-				SpawnPassenger(Unload(self));
+            while (!IsEmpty(self))
+                SpawnPassenger(Unload(self));
 		}
 
 		void SpawnPassenger(Actor passenger)
 		{
+            if(!Info.WillDisappear)
+            {
+                return;
+            }
 			self.World.AddFrameEndTask(w =>
 			{
 				w.Add(passenger);
@@ -466,7 +482,13 @@ namespace OpenRA.Mods.YR.Traits
 
         public void GrantCondition(string grantBunkerCondition)
         {
-            conditionManager.GrantCondition(self, grantBunkerCondition);
+            bunkeredToken = conditionManager.GrantCondition(self, grantBunkerCondition);
+        }
+
+        public void RevokeCondition()
+        {
+            if (bunkeredToken != ConditionManager.InvalidConditionToken)
+                bunkeredToken = conditionManager.RevokeCondition(self, bunkeredToken);
         }
     }
 }

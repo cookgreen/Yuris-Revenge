@@ -27,8 +27,6 @@ namespace OpenRA.Mods.YR.Traits
 		public readonly string CargoType = null;
 		public readonly PipType PipType = PipType.Green;
 		public readonly int Weight = 1;
-        [Desc("Will the actor disappear when enter bunker")]
-        public readonly bool WillDisappear = true;
         [Desc("Grant a condition when actor is bunkered")]
         public readonly string GrantBunkerCondition = null;
 
@@ -53,6 +51,7 @@ namespace OpenRA.Mods.YR.Traits
 		public readonly BunkerPassengerInfo info;
         private ConditionManager conditionManager;
         private Actor self;
+        private int bunkeredCondToken;
 		public BunkerPassenger(ActorInitializer init, BunkerPassengerInfo info) : base(info)
 		{
 			this.info = info;
@@ -75,7 +74,12 @@ namespace OpenRA.Mods.YR.Traits
 
         public void GrantCondition()
         {
-            conditionManager.GrantCondition(self, info.GrantBunkerCondition);
+            bunkeredCondToken = conditionManager.GrantCondition(self, info.GrantBunkerCondition);
+        }
+
+        public void RevokeCondition()
+        {
+            bunkeredCondToken = conditionManager.RevokeCondition(self, bunkeredCondToken);
         }
 
         public Actor Transport;
@@ -94,7 +98,12 @@ namespace OpenRA.Mods.YR.Traits
 		bool IsCorrectCargoType(Actor target)
 		{
 			var ci = target.Info.TraitInfo<BunkerCargoInfo>();
-			return ci.Types.Contains(Info.CargoType);
+            var bk = self.TraitOrDefault<Bunkerable>();
+            if (bk == null)
+            {
+                return false;
+            }
+            return ci.Types.Contains(Info.CargoType);
 		}
 
 		bool CanEnter(BunkerCargo cargo)
@@ -138,9 +147,11 @@ namespace OpenRA.Mods.YR.Traits
             if (!order.Queued)
                 self.CancelActivity();
 
+            BunkerCargo cargo = targetActor.TraitOrDefault<BunkerCargo>();
+
             var transports = order.OrderString == "EnterBunkers";
             self.SetTargetLine(order.Target, Color.Green);
-            self.QueueActivity(new EnterBunker(self, targetActor, targetActor.CenterPosition, Info.WillDisappear, transports ? Info.MaxAlternateTransportAttempts : 0, !transports));
+            self.QueueActivity(new EnterBunker(self, targetActor, targetActor.CenterPosition, cargo.Info.WillDisappear, transports ? Info.MaxAlternateTransportAttempts : 0, !transports));
 		}
 
 		public bool Reserve(Actor self, BunkerCargo cargo)

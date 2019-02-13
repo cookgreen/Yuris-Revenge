@@ -155,6 +155,7 @@ e1:
 		Prerequisites: barracks.infiltrated
 	QuantizeFacingsFromSequence:
 		Sequence: stand
+	Bunkerable:
 
 ggi:
 	Inherits@1: ^Infantry

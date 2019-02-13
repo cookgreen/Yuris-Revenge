@@ -620,6 +620,10 @@
 	Passenger:
 		Voice: Move
 		CargoType: Infantry
+	BunkerPassenger:
+		Voice: Move
+		CargoType: Infantry
+		GrantBunkerCondition: infbunkered
 	HiddenUnderFog:
 	ActorLostNotification:
 	ProximityCaptor:
@@ -816,7 +820,6 @@
 		Voice: Move
 		CargoType: Vehicle
 		Weight: 3
-		WillDisappear: false
 		GrantBunkerCondition: bunkered
 	HiddenUnderFog:
 	WithTextControlGroupDecoration:
