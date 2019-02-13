@@ -439,8 +439,14 @@ disk:
 		Prerequisites: ~yaweap, yatech
 		Description: Yuri Laser Disk, Strong with infantry, aircraft\n Weak with vehicles
 	Aircraft:
-		TurnSpeed: 3
-		Speed: 140
+		CruiseAltitude: 4608
+		LandWhenIdle: false
+		TurnSpeed: 100
+		Speed: 48
+		CanHover: True
+		RepairBuildings:
+		RearmBuildings:
+		VTOL: true
 	Selectable:
 		Bounds: 78, 43, 0, -15
 	Health:
