@@ -843,11 +843,6 @@ napsis:
 
 yarock:
 	Inherits: ^Building
-	Buildable:
-		Queue: Building
-		BuildPaletteOrder: 1000
-		Prerequisites: ~cannotbuild
-		Description:
 	Selectable:
 		Bounds: 220, 155, 0, -20
 	Health:
@@ -860,18 +855,11 @@ yarock:
 		Cost: 600
 	Tooltip
 		Name: Rocket Launch Pad
-	ProvidesPrerequisite:
-		Prerequisite: structures.GDI
 	Power:
 		Amount: 0
 
 yacomd:
 	Inherits: ^Building
-	Buildable:
-		Queue: Building
-		BuildPaletteOrder: 1000
-		Prerequisites: ~cannotbuild
-		Description:
 	Selectable:
 		Bounds: 220, 155, 0, -20
 	Health:
@@ -884,18 +872,11 @@ yacomd:
 		Cost: 3000
 	Tooltip
 		Name: Yuri Command Center
-	ProvidesPrerequisite:
-		Prerequisite: structures.GDI
 	Power:
 		Amount: 0
 
 yapppt:
 	Inherits: ^Building
-	Buildable:
-		Queue: Building
-		BuildPaletteOrder: 1000
-		Prerequisites: ~cannotbuild
-		Description:
 	Selectable:
 		Bounds: 220, 155, 0, -20
 	Health:
