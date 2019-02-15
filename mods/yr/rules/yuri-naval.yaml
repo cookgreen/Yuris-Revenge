@@ -1,5 +1,7 @@
 yhvr:
 	Inherits: ^Ship
+	Inherits@MC: ^MindControllable
+	Inherits@SMC: ^SuperMindControllable
 	Buildable:
 		Queue: Ship
 		BuildPaletteOrder: 10
@@ -18,16 +20,7 @@ yhvr:
 	Mobile:
 		TurnSpeed: 10
 		Speed: 75
-		TerrainSpeeds:
-			Clear: 80
-			Rough: 80
-			Rail: 50
-			Road: 100
-			DirtRoad: 100
-			Beach: 60
-			Ore: 50
-			Gems: 50
-			Water: 100
+		Locomotor: lcraft
 		RequiresCondition: !notmobile
 	RevealsShroud:
 		Range: 6c0

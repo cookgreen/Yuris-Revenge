@@ -470,14 +470,15 @@ robo:
 		BuildPaletteOrder: 20
 		Prerequisites: ~gaweap, garobo
 		Description: Allied Robot Tank.\n  Will not effected by Mind Control.\n Strong vs Vehicles, Ships\n  Weak vs Infantry, Aircraft
-	Mobile:
-		Speed: 130
-		TurnSpeed: 5
-		RequiresCondition: robotcenter
 	Health:
 		HP: 180
 	Armor:
 		Type: Heavy
+	Mobile:
+		Speed: 150
+		TurnSpeed: 10
+		Locomotor: lcraft
+		RequiresCondition: robotcenter
 	RevealsShroud:
 		Range: 8c0
 	Turreted:
