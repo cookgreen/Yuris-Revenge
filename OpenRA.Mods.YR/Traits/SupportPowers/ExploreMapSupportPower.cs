@@ -37,6 +37,7 @@ namespace OpenRA.Mods.YR.Traits
     public class ExploreMapSupportPower : SupportPower
     {
         private ExploreMapSupportPowerInfo info;
+        private Shroud.SourceType type = Shroud.SourceType.Visibility;
         public ExploreMapSupportPower(Actor self, ExploreMapSupportPowerInfo info) : base(self, info)
         {
             this.info = info;
@@ -45,11 +46,22 @@ namespace OpenRA.Mods.YR.Traits
         public override void Activate(Actor self, Order order, SupportPowerManager manager)
         {
             base.Activate(self, order, manager);
+
             self.World.AddFrameEndTask(w =>
             {
-                WPos destPosition = order.Target.CenterPosition;
                 Shroud shround = self.Owner.Shroud;
+                WPos destPosition = order.Target.CenterPosition;
                 var cells = Shroud.ProjectedCellsInRange(self.World.Map, destPosition, WDist.FromCells(info.Radius));
+                try
+                {
+                    shround.AddSource(this, type, cells.ToArray());
+                }
+                catch
+                {
+                    shround.RemoveSource(this);
+                    shround.AddSource(this, type, cells.ToArray());
+                }
+                shround.ExploreProjectedCells(self.World, cells);
 
                 if (!string.IsNullOrEmpty(info.Sequence))
                 {
@@ -64,8 +76,6 @@ namespace OpenRA.Mods.YR.Traits
                     }
                     self.World.Add(new SpriteEffect(destPosition, self.World, info.Image, info.Sequence, palette));
                 }
-
-                shround.ExploreProjectedCells(self.World, cells);
             });
         }
     }

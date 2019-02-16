@@ -662,7 +662,8 @@ yagntc:
 		Condition: lowpower
 		ValidPowerStates: Low, Critical
 	SupportPowerChargeBar:
-	TransformActorsPower:
+	TransformActorsPower@Geneticconverter:
+		OrderName: Geneticconverter
 		ChargeInterval: 15000
 		Icon: geneticmute
 		Description: Genetic Converter
@@ -676,6 +677,8 @@ yagntc:
 		Actor: brute
 		EffectSequence: die9
 		PauseOnCondition: lowpower
+		Range: 5
+		Cursor: geneticmutator
 	WithIdleOverlay@top:
 		Sequence: idle-top
 	WithNukeLaunchAnimation:
@@ -709,7 +712,7 @@ yappet:
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
 		ValidPowerStates: Low, Critical
-	ParticleSupportPower:
+	ParticleSupportPower@Psychicdominator:
 		ChargeInterval: 15000
 		Icon: psychicdom
 		Description: Psychic Dominator
@@ -722,6 +725,7 @@ yappet:
 		DisplayRadarPing: True
 		Weapons: DominatorWH
 		PauseOnCondition: lowpower
+		Cursor: psyicdom
 	SupportPowerChargeBar:
 	WithNukeLaunchAnimation:
 		
@@ -840,6 +844,19 @@ napsis:
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
 		ValidPowerStates: Low, Critical
+	SupportPowerChargeBar:
+	ExploreMapSupportPower@Psychicreveal:
+		ChargeInterval: 6000
+		Icon: psychicrev
+		Description: Psychic Reveal
+		LongDesc: Use psychic technology to explore the enemy action
+		LaunchSound: spsyreve.wav
+		StartFullyCharged: true
+		DisplayBeacon: False
+		DisplayRadarPing: False
+		PauseOnCondition: lowpower
+		Cursor: explore
+		Radius: 15
 
 yarock:
 	Inherits: ^Building

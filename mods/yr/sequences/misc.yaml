@@ -406,6 +406,7 @@ icon:
 	airborne: aparicon
 	geneticmute: muteicon
 	psychicdom: pdomicon
+	psychicrev: psyricon
 
 atomic:
 	up: nkmslup

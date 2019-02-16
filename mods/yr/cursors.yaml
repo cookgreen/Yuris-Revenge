@@ -2,7 +2,7 @@ Palettes:
 	cursor: mousepal.pal
 
 Cursors:
-	mouse.shp: cursor
+	mouse.sha: cursor
 		default:
 			Start: 0
 			X: -28
@@ -286,6 +286,39 @@ Cursors:
 			Start: 392
 		joystick-tl-blocked:
 			Start: 393
+		forceshield:
+			Start: 450
+			Length: 9
+		forceshield-blocked:
+			Start: 460
+			Length: 9
+		geneticmutator:
+			Start: 470
+			Length: 9
+		mig-attack:
+			Start: 480
+			Length: 7
+		psyicdom:
+			Start: 488
+			Length: 7
+		explore: 
+			Start: 496
+			Length: 7
+		explore-minimap: 
+			Start: 515
+			Length: 1
+		spyplane: 
+			Start: 504
+			Length: 7
+		spyplane-minimap: 
+			Start: 512
+			Length: 1
+		nuke-minimap: 
+			Start: 513
+			Length: 1
+		light-storm-minimap: 
+			Start: 514
+			Length: 1
 	undeploy.shp: cursor
 		undeploy:
 			Start: 0

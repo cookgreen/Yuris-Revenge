@@ -1,6 +1,6 @@
 Background@ASSETBROWSER_PANEL:
 	Logic: AssetBrowserLogic
-		SupportedFormats: .shp, .tem, .urb, .sno
+		SupportedFormats: .shp, .tem, .urb, .sno, .sha
 	X: (WINDOW_RIGHT - WIDTH) / 2
 	Y: (WINDOW_BOTTOM - HEIGHT) / 2
 	Width: 700
