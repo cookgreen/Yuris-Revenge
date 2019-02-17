@@ -136,6 +136,13 @@ RobotTankVoice:
 		Die: vrobdiea
 		OnLine: vrobon
 		OffLine: vroboff
+
+BattleFortressVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: vbatsea,vbatseb,vbatsec,vbatsed,vbatsee,vbatsef
+		Move: vbatmoa,vbatmob,vbatmoc,vbatmod,vbatmoe
+		Attack: vbatatb,vbatatc,vbatatd,vbatate
         
 SovietVehicleVoice:
 	DefaultVariant: .wav
