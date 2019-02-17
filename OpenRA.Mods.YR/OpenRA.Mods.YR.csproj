@@ -98,6 +98,7 @@
     <Compile Include="Traits\MindController.cs" />
     <Compile Include="Traits\MissileSpawnerMaster.cs" />
     <Compile Include="Traits\MissileSpawnerSlave.cs" />
+    <Compile Include="Traits\SupportPowers\GrantExternalConditionPower.cs" />
     <Compile Include="Traits\SupportPowers\ParticleSupportPower.cs" />
     <Compile Include="Traits\BunkerPassenger.cs" />
     <Compile Include="Traits\PeriodicExplosion.cs" />

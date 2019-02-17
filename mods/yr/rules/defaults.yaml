@@ -247,6 +247,18 @@
 	ExternalCondition@INVULNERABILITY:
 		Condition: invulnerability
 
+^ForceShieldable:
+	WithColoredOverlay@forceshield:
+		Palette: forceshield
+		RequiresCondition: forceshieldability
+	DamageMultiplier@forceshield:
+		RequiresCondition: forceshieldability
+		Modifier: 0
+	TimedConditionBar:
+		Condition: forceshieldability
+	ExternalCondition@FORCESHIELDABILITY:
+		Condition: forceshieldability
+
 ^ChronoDisable:
 	TimedConditionBar@ChronoDisable:
 		Condition: chronodisable
@@ -341,6 +353,7 @@
 	Inherits@1: ^ExistsInWorld
 	Inherits@2: ^SpriteActor
 	Inherits@3: ^IronCurtainable
+	Inherits@4: ^ForceShieldable
 	Inherits@shape: ^1x1Shape
 	-DrawLineToTarget:
 	OwnerLostAction:

@@ -71,12 +71,14 @@ yapowr:
 		Sequence: idle-lights
 	Power:
 		Amount: 150
+		RequiresCondition: !outagepower
 	Cargo:
 		Types: Infantry
 		MaxWeight: 5
 		PipCount: 5
 	InfiltrateForPowerOutage:
 	AffectedByPowerOutage:
+		Condition: outagepower
 	ScalePowerWithHealth:
 	PowerTooltip:
 	Targetable:
@@ -467,6 +469,21 @@ yatech:
 		Amount: -100
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
+	GrantExternalConditionPowerEx@FORCESHIELD:
+		Icon: forceshield
+		ChargeInterval: 7500
+		Description: Force Shield
+		LongDesc: Makes a force shield for the structures to protect them\nfor 20 seconds.
+		Duration: 500
+		OnFireSound: sforceon.wav
+		DisplayRadarPing: True
+		Condition: forceshieldability
+		PauseOnCondition: lowpower
+		Range: 4
+		Cursor: forceshield
+		BlockedCursor: forceshield-blocked
+		LowPower: true
+		LowPowerDuration: 625
 
 gafwll:
 	Inherits: ^Wall

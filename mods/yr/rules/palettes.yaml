@@ -148,9 +148,15 @@
 		Alpha: 0.50
 	PaletteFromRGBA@invuln:
 		Name: invuln
-		R: 128
+		R: 0
 		G: 0
 		B: 0
+		A: 128
+	PaletteFromRGBA@forceshield:
+		Name: forceshield
+		R: 0
+		G: 0
+		B: 225
 		A: 128
 	PaletteFromRGBA@highlight:
 		Name: highlight

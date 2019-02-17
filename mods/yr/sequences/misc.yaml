@@ -407,6 +407,7 @@ icon:
 	geneticmute: muteicon
 	psychicdom: pdomicon
 	psychicrev: psyricon
+	forceshield: forcicon
 
 atomic:
 	up: nkmslup

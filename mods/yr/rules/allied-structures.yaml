@@ -91,8 +91,10 @@ gapowr:
 		Sequence: idle-glow
 	Power:
 		Amount: 200
+		RequiresCondition: !outagepower
 	InfiltrateForPowerOutage:
 	AffectedByPowerOutage:
+		Condition: outagepower
 	ScalePowerWithHealth:
 	SoundOnDamageTransition:
 		DestroyedSounds: bpowdiea.wav, bpowdieb.wav
@@ -595,6 +597,21 @@ gatech:
 		Proxy: allies.tech.infiltrated
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
+	GrantExternalConditionPowerEx@FORCESHIELD:
+		Icon: forceshield
+		ChargeInterval: 7500
+		Description: Force Shield
+		LongDesc: Makes a force shield for the structures to protect them\nfor 20 seconds.
+		Duration: 500
+		OnFireSound: sforceon.wav
+		DisplayRadarPing: True
+		Condition: forceshieldability
+		PauseOnCondition: lowpower
+		Range: 4
+		Cursor: forceshield
+		BlockedCursor: forceshield-blocked
+		LowPower: true
+		LowPowerDuration: 625
 
 gawall:
 	Inherits: ^Wall
