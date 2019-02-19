@@ -46,6 +46,7 @@ dest:
 	Inherits@MC: ^MindControllable
 	Inherits@SMC: ^SuperMindControllable
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@CHAOSGAS: ^Chaosgasable
 	Buildable:
 		Queue: Ship
 		BuildPaletteOrder: 20
@@ -96,6 +97,7 @@ aegis:
 	Inherits@MC: ^MindControllable
 	Inherits@SMC: ^SuperMindControllable
 	Inherits@AUTOTARGET: ^AutoTargetAir
+	Inherits@CHAOSGAS: ^Chaosgasable
 	Buildable:
 		Queue: Ship
 		BuildPaletteOrder: 30

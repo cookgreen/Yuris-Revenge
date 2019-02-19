@@ -3,6 +3,7 @@ init:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@MC: ^MindControllable
 	Inherits@SMC: ^SuperMindControllable
+	Inherits@CHAOSGAS: ^Chaosgasable
 	Buildable:
 		Queue: Infantry
 		Prerequisites: ~yabrck
@@ -44,6 +45,7 @@ yengineer:
 	Inherits: ^Infantry
 	Inherits@MC: ^MindControllable
 	Inherits@SMC: ^SuperMindControllable
+	Inherits@CHAOSGAS: ^Chaosgasable
 	Buildable:
 		Queue: Infantry
 		Prerequisites: ~yabrck
@@ -89,6 +91,7 @@ brute:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@MC: ^MindControllable
 	Inherits@SMC: ^SuperMindControllable
+	Inherits@CHAOSGAS: ^Chaosgasable
 	Buildable:
 		Queue: Infantry
 		Prerequisites: ~yabrck
@@ -130,6 +133,7 @@ virus:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@MC: ^MindControllable
 	Inherits@SMC: ^SuperMindControllable
+	Inherits@CHAOSGAS: ^Chaosgasable
 	Buildable:
 		Queue: Infantry
 		Prerequisites: ~yabrck
@@ -214,6 +218,7 @@ yuri:
 	Inherits: ^Infantry
 	Inherits@MC: ^MindControllable
 	Inherits@SMC: ^SuperMindControllable
+	Inherits@CHAOSGAS: ^Chaosgasable
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Queue: Infantry

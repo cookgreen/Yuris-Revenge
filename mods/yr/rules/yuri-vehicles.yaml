@@ -112,6 +112,7 @@ ltnk:
 	Inherits@MC: ^MindControllable
 	Inherits@SMC: ^SuperMindControllable
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@CHAOSGAS: ^Chaosgasable
 	Valued:
 		Cost: 700
 	Tooltip:
@@ -169,6 +170,7 @@ ytnk:
 	Inherits@MC: ^MindControllable
 	Inherits@SMC: ^SuperMindControllable
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@CHAOSGAS: ^Chaosgasable
 	Valued:
 		Cost: 600
 	Tooltip:
@@ -266,6 +268,7 @@ tele:
 	Inherits@MC: ^MindControllable
 	Inherits@SMC: ^SuperMindControllable
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@CHAOSGAS: ^Chaosgasable
 	Valued:
 		Cost: 1000
 	Tooltip:
@@ -330,8 +333,8 @@ caos:
 		Prerequisites: ~yaweap
 		Description: Yuri Chaos Drone can make chaos in enemy force\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
 	Mobile:
-		Speed: 90
-		TurnSpeed: 5
+		Speed: 300
+		TurnSpeed: 40
 		Crushes: fence, crate, infantry
 	Health:
 		HP: 200
@@ -347,12 +350,9 @@ caos:
 		TurnSpeed: 5
 	Armament@primary:
 		Weapon: ChaosGasAttack
+		MuzzleSequence: muzzle
 		LocalOffset: 640,0,384
-		RequiresCondition: !rank-elite
-	Armament@elite:
-		Weapon: ChaosGasAttack
-		LocalOffset: 640,0,384
-		RequiresCondition: rank-elite
+	WithMuzzleOverlay: 
 	AttackFrontal:
 		Voice: Attack
 	AutoTarget:
@@ -370,11 +370,15 @@ caos:
 	-Capturable:
 	SelfHealing@MACHSHOP:
 		RequiresCondition: machshop
+	GrantExternalConditionWeapon@ChaoGas:
+		Condition: chaosgasability
+		EffectDuration: 500
     
 mind:
 	Inherits: ^Vehicle
 	Inherits@MC: ^MindControllable
 	Inherits@SMC: ^SuperMindControllable
+	Inherits@CHAOSGAS: ^Chaosgasable
 	Valued:
 		Cost: 1750
 	Tooltip:
@@ -400,14 +404,18 @@ mind:
 		Range: 8c0
 	Turreted:
 		TurnSpeed: 5
-	Armament@primary:
-		Weapon: 105mm
-		LocalOffset: 640,0,384
-		RequiresCondition: !rank-elite
-	Armament@elite:
-		Weapon: 105mmE
-		LocalOffset: 640,0,384
-		RequiresCondition: rank-elite
+	Armament:
+		Weapon: MindControl
+		MuzzleSequence: muzzle
+		LocalOffset: 0,0,960
+		PauseOnCondition: deployed
+	WithMuzzleOverlay:
+	MindController:
+		ControllingCondition: controlling
+		Sounds: iyurat1a.wav
+	WithMindControlArc:
+		UsePlayerColor: true
+		Offset: 0,0,960
 	AttackTurreted:
 		Voice: Attack
 	AutoTarget:

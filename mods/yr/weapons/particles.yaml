@@ -1,11 +1,13 @@
 ChaosGasAttack:
-	Range: 6c0
+	Range: 3c0
+	ReloadDelay: 30
 	Report: vchaatta.wav
-	ValidTargets: Ground, Water
+	ValidTargets: Infantry, Vehicle, Water
+	Projectile: InstantHit
 	Warhead@1Dam: SpreadDamage
-		Spread: 3c0
-		Damage: 600
-		ValidTargets: Ground, Water
+		Spread: 0
+		Damage: 0
+		ValidTargets: Infantry, Vehicle, Water
 		Versus:
 			None: 100
 			Flak: 100
@@ -18,5 +20,3 @@ ChaosGasAttack:
 			Concrete: 0
 			Drone: 100
 			Rocket: 100
-	Warhead@2Eff: CreateEffect
-		Explosions: chaosgas

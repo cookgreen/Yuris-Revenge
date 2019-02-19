@@ -112,6 +112,7 @@ hyd:
 	Inherits@MC: ^MindControllable
 	Inherits@SMC: ^SuperMindControllable
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@CHAOSGAS: ^Chaosgasable
 	Buildable:
 		Queue: Ship
 		BuildPaletteOrder: 30

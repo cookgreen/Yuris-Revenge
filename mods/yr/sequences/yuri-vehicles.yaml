@@ -14,6 +14,8 @@ tele:
 	icon: teleicon
     
 caos:
+	muzzle: cdgas
+		Length: *
 	icon: caosicon
 
 mind:

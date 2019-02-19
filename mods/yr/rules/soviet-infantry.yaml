@@ -4,6 +4,7 @@ e2:
 	Inherits@MC: ^MindControllable
 	Inherits@SMC: ^SuperMindControllable
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@CHAOSGAS: ^Chaosgasable
 	Buildable:
 		Queue: Infantry
 		Prerequisites: ~nahand
@@ -51,6 +52,7 @@ flakt:
 	Inherits@MC: ^MindControllable
 	Inherits@SMC: ^SuperMindControllable
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@CHAOSGAS: ^Chaosgasable
 	Buildable:
 		Queue: Infantry
 		Prerequisites: naradr, ~nahand
@@ -103,6 +105,7 @@ shk:
 	Inherits@MC: ^MindControllable
 	Inherits@SMC: ^SuperMindControllable
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@CHAOSGAS: ^Chaosgasable
 	Buildable:
 		Queue: Infantry
 		BuildAtProductionType: Infantry
@@ -162,6 +165,7 @@ shk:
 
 terror:
 	Inherits: ^Infantry
+	Inherits@CHAOSGAS: ^Chaosgasable
 	Buildable:
 		Queue: Infantry
 		BuildAtProductionType: Infantry
@@ -207,6 +211,7 @@ deso:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@MC: ^MindControllable
 	Inherits@SMC: ^SuperMindControllable
+	Inherits@CHAOSGAS: ^Chaosgasable
 	Buildable:
 		Queue: Infantry
 		BuildAtProductionType: Infantry
@@ -254,6 +259,7 @@ ivan:
 	Inherits: ^Infantry
 	Inherits@MC: ^MindControllable
 	Inherits@SMC: ^SuperMindControllable
+	Inherits@CHAOSGAS: ^Chaosgasable
 	Buildable:
 		Queue: Infantry
 		BuildAtProductionType: Infantry

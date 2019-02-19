@@ -259,6 +259,15 @@
 	ExternalCondition@FORCESHIELDABILITY:
 		Condition: forceshieldability
 
+^Chaosgasable:
+	WithColoredOverlay@chaosgas:
+		Palette: chaosgas
+		RequiresCondition: chaosgasability
+	TimedConditionBar:
+		Condition: chaosgasability
+	ExternalCondition@CHAOSGASABILITY:
+		Condition: chaosgasability
+
 ^ChronoDisable:
 	TimedConditionBar@ChronoDisable:
 		Condition: chronodisable
@@ -872,6 +881,7 @@
 ^CivVehicle:
 	Inherits: ^Vehicle
 	Inherits@MC: ^MindControllable
+	Inherits@MC: ^SuperMindControllable
 	OwnerLostAction:
 		Action: ChangeOwner
 	Tooltip:
@@ -1000,6 +1010,7 @@
 	Inherits@3: ^IronCurtainable
 	Inherits@4: ^ChronoDisable
 	Inherits@5: ^CrateStatModifiers
+	Inherits@6: ^Chaosgasable
 	Mobile:
 		Voice: Move
 		TurnSpeed: 5

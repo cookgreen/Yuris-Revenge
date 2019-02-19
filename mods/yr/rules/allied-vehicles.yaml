@@ -100,6 +100,7 @@ mtnk:
 	Inherits@MC: ^MindControllable
 	Inherits@SMC: ^SuperMindControllable
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@CHAOSGAS: ^Chaosgasable
 	Valued:
 		Cost: 700
 	Tooltip:
@@ -154,6 +155,7 @@ tnkd:
 	Inherits@MC: ^MindControllable
 	Inherits@SMC: ^SuperMindControllable
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@CHAOSGAS: ^Chaosgasable
 	Valued:
 		Cost: 900
 	Tooltip:
@@ -205,6 +207,7 @@ fv:
 	Inherits@MC: ^MindControllable
 	Inherits@SMC: ^SuperMindControllable
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@CHAOSGAS: ^Chaosgasable
 	Valued:
 		Cost: 600
 	Tooltip:
@@ -352,6 +355,7 @@ sref:
 	Inherits@MC: ^MindControllable
 	Inherits@SMC: ^SuperMindControllable
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@CHAOSGAS: ^Chaosgasable
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 50
@@ -409,6 +413,7 @@ mgtk:
 	Inherits@MC: ^MindControllable
 	Inherits@SMC: ^SuperMindControllable
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@CHAOSGAS: ^Chaosgasable
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 70
@@ -515,6 +520,7 @@ howi:
 	Inherits@MC: ^MindControllable
 	Inherits@SMC: ^SuperMindControllable
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@CHAOSGAS: ^Chaosgasable
 	Valued:
 		Cost: 750
 	Tooltip:
@@ -566,6 +572,7 @@ bfrt:
 	Inherits@MC: ^MindControllable
 	Inherits@SMC: ^SuperMindControllable
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@CHAOSGAS: ^Chaosgasable
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 70

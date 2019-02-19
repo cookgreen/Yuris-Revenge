@@ -86,6 +86,7 @@
     <Compile Include="Traits\CarrierMaster.cs" />
     <Compile Include="Traits\CarrierSlave.cs" />
     <Compile Include="Traits\ChronoResourceDelivery.cs" />
+    <Compile Include="Traits\Conditions\GrantExternalConditionWeapon.cs" />
     <Compile Include="Traits\Conditions\GrantTimedConditionOnDeploy.cs" />
     <Compile Include="Traits\DeliversPower.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

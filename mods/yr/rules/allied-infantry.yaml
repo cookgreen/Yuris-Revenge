@@ -2,6 +2,7 @@ engineer:
 	Inherits: ^Infantry
 	Inherits@MC: ^MindControllable
 	Inherits@SMC: ^SuperMindControllable
+	Inherits@CHAOSGAS: ^Chaosgasable
 	Buildable:
 		Queue: Infantry
 		Prerequisites: ~barracks
@@ -108,6 +109,7 @@ e1:
 	Inherits@MC: ^MindControllable
 	Inherits@SMC: ^SuperMindControllable
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@CHAOSGAS: ^Chaosgasable
 	Buildable:
 		Queue: Infantry
 		Prerequisites: ~gapile
@@ -163,6 +165,7 @@ ggi:
 	Inherits@MC: ^MindControllable
 	Inherits@SMC: ^SuperMindControllable
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@CHAOSGAS: ^Chaosgasable
 	Buildable:
 		Queue: Infantry
 		Prerequisites: ~gapile
@@ -227,6 +230,7 @@ snipe:
 	Inherits@MC: ^MindControllable
 	Inherits@SMC: ^SuperMindControllable
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@CHAOSGAS: ^Chaosgasable
 	Valued:
 		Cost: 600
 	DeliversCash:
@@ -321,6 +325,7 @@ ghost:
 	Inherits@SMC: ^SuperMindControllable
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@SWIMSUIT: ^WithSwimSuit
+	Inherits@CHAOSGAS: ^Chaosgasable
 	Buildable:
 		Queue: Infantry
 		BuildAtProductionType: Infantry
@@ -378,6 +383,7 @@ ghost:
 
 ccomand:
 	Inherits: ghost
+	Inherits@CHAOSGAS: ^Chaosgasable
 	Buildable:
 		BuildPaletteOrder: 170
 		Prerequisites: ~gapile, ~allies.tech.infiltrated
@@ -421,6 +427,7 @@ ccomand:
 
 ptroop:
 	Inherits: ccomand
+	Inherits@CHAOSGAS: ^Chaosgasable
 	Buildable:
 		BuildPaletteOrder: 180
 		Prerequisites: ~gapile, ~soviets.tech.infiltrated
