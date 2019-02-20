@@ -267,6 +267,8 @@
 		Condition: chaosgasability
 	ExternalCondition@CHAOSGASABILITY:
 		Condition: chaosgasability
+	Berserkable:
+		RequiresCondition: chaosgasability
 
 ^ChronoDisable:
 	TimedConditionBar@ChronoDisable:

@@ -82,6 +82,7 @@
     <Compile Include="Traits\AttackBunkered.cs" />
     <Compile Include="Traits\BaseSpawnerMaster.cs" />
     <Compile Include="Traits\BaseSpawnerSlave.cs" />
+    <Compile Include="Traits\Berserkable.cs" />
     <Compile Include="Traits\BunkerCargo.cs" />
     <Compile Include="Traits\CarrierMaster.cs" />
     <Compile Include="Traits\CarrierSlave.cs" />
