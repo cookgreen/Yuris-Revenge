@@ -354,7 +354,7 @@ namespace OpenRA.Mods.YR.Traits
 				return false;
 
 			var res = self.World.WorldActor.Trait<ResourceLayer>().GetRenderedResource(location);
-			var info = self.Info.TraitInfo<SpawnerHarvesterMasterInfo>();
+			var info = self.Info.TraitInfo<SpawnerRefineryMasterInfo>();
 
 			if (res == null || !info.Resources.Contains(res.Info.Type))
 				return false;

@@ -4,6 +4,7 @@ using OpenRA.Primitives;
 using OpenRA.Traits;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,9 @@ namespace OpenRA.Mods.YR.Traits
 {
     public class SpawnerRefineryMasterInfo : BaseSpawnerMasterInfo
     {
+        [Desc("Which resources it can harvest. Make sure slaves can mine these too!")]
+        public readonly HashSet<string> Resources = new HashSet<string>();
+
         [Desc("Play this sound when the slave is freed")]
         public readonly string FreeSound = null;
         public override object Create(ActorInitializer init)
@@ -20,23 +24,23 @@ namespace OpenRA.Mods.YR.Traits
         }
     }
 
-    public class SpawnerRefineryMaster : BaseSpawnerMaster, INotifyTransform, INotifyBuildingPlaced, ITick
+    public class SpawnerRefineryMaster : BaseSpawnerMaster, INotifyTransform, INotifyBuildingPlaced, ITick, IIssueOrder, IResolveOrder
     {
         public MiningState MiningState = MiningState.Mining;
         public CPos? LastOrderLocation = null;
         private SpawnerRefineryMasterInfo info;
+        readonly ResourceLayer resLayer;
         int respawnTicks = 0;
+
+        public IEnumerable<IOrderTargeter> Orders
+        {
+            get { yield return new SpawnerHarvestOrderTargeter(); }
+        }
+
         public SpawnerRefineryMaster(ActorInitializer init, SpawnerRefineryMasterInfo info) : base(init, info)
         {
-            for (int i = 0; i < SlaveEntries.Length; i++)
-            {
-                if(SlaveEntries[i].IsValid)
-                {
-                    continue;
-                }
-                Replenish(init.Self, SlaveEntries[i]);
-            }
             this.info = info;
+            resLayer = init.Self.World.WorldActor.Trait<ResourceLayer>();
         }
 
         void INotifyTransform.AfterTransform(Actor toActor)
@@ -73,17 +77,53 @@ namespace OpenRA.Mods.YR.Traits
 
             self.World.AddFrameEndTask(w =>
             {
-                // Move into world, if not. Ground units get stuck without this.
-                if (Info.SpawnIsGroundUnit)
-                {
-                    var mv = se.Actor.Trait<IMove>().MoveIntoWorld(slave, self.Location);
-                    if (mv != null)
-                        slave.QueueActivity(mv);
-                }
-
-                AssignTargetForSpawned(slave, targetLocation);
                 slave.QueueActivity(new FindResources(slave));
             });
+        }
+
+        void HandleSpawnerHarvest(Actor self, Order order)
+        {
+            //allowKicks = true;
+
+            // state == Deploying implies order string of SpawnerHarvestDeploying
+            // and must not cancel deploy activity!
+            if (MiningState != MiningState.Deploying)
+                self.CancelActivity();
+
+            MiningState = MiningState.Scan;
+
+            //self.QueueActivity(new SpawnerHarvesterHarvest(self));
+            self.SetTargetLine(Target.FromCell(self.World, LastOrderLocation.Value), Color.Red);
+
+            // Assign new targets for slaves too.
+            foreach (var se in SlaveEntries)
+            {
+                if (se.IsValid && se.Actor.IsInWorld)
+                {
+                    LastOrderLocation = ResolveHarvestLocation(se.Actor, order);
+                    AssignTargetForSpawned(se.Actor, LastOrderLocation.Value);
+                }
+            }
+        }
+
+        CPos ResolveHarvestLocation(Actor self, Order order)
+        {
+            Mobile mobile = self.Trait<Mobile>();
+
+            if (order.TargetLocation == CPos.Zero)
+                return self.Location;
+
+            var loc = order.TargetLocation;
+
+            var territory = self.World.WorldActor.TraitOrDefault<ResourceClaimLayer>();
+            if (territory != null)
+            {
+                // Find the nearest claimable cell to the order location (useful for group-select harvest):
+                return mobile.NearestCell(loc, p => mobile.CanEnterCell(p), 1, 6);
+            }
+
+            // Find the nearest cell to the order location (useful for group-select harvest):
+            return mobile.NearestCell(loc, p => mobile.CanEnterCell(p), 1, 6);
         }
 
         void AssignTargetForSpawned(Actor slave, CPos targetLocation)
@@ -136,6 +176,24 @@ namespace OpenRA.Mods.YR.Traits
             {
                 Game.Sound.Play(SoundType.World, info.FreeSound, self.CenterPosition);
             }
+        }
+
+        public void ResolveOrder(Actor self, Order order)
+        {
+            if (order.OrderString == "SpawnerHarvest")
+                HandleSpawnerHarvest(self, order);
+            else if (order.OrderString == "Stop" || order.OrderString == "Move")
+            {
+                // Disable "smart idle"
+                MiningState = MiningState.Scan;
+            }
+        }
+
+        public Order IssueOrder(Actor self, IOrderTargeter order, Target target, bool queued)
+        {
+            if (order.OrderID == "SpawnerHarvest")
+                return new Order(order.OrderID, self, target, queued);
+            return null;
         }
     }
 }
