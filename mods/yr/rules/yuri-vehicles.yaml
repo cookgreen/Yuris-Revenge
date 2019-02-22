@@ -277,7 +277,7 @@ tele:
 		Queue: Vehicle
 		BuildPaletteOrder: 20
 		Prerequisites: ~yaweap
-		Description: Yuri Magnetron Tank.\n  Strong vs Vehicles, Ships\n  Weak vs Infantry, Aircraft
+		Description: Yuri Magnetron Tank. Powerful sige weapon.\n  Strong vs structures\n  Weak vs Infantry, Vehicle, Aircraft and Ships
 	Mobile:
 		Speed: 90
 		TurnSpeed: 5
@@ -294,6 +294,7 @@ tele:
 		Range: 8c0
 	Turreted:
 		TurnSpeed: 5
+		Offset: -400,0,0
 	Armament@primary:
 		Weapon: 105mm
 		LocalOffset: 640,0,384
