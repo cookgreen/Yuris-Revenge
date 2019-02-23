@@ -951,8 +951,6 @@
 ^Aircraft:
 	Inherits@1: ^NeutralAircraft
 	Inherits@2: ^GainsExperience
-	OwnerLostAction:
-		Action: Kill
 	WithTextControlGroupDecoration:
 
 ^Plane:
