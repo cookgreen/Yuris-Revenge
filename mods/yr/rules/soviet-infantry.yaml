@@ -162,6 +162,7 @@ shk:
 		Prerequisites: barracks.infiltrated
 	QuantizeFacingsFromSequence:
 		Sequence: stand
+	-Crushable:
 
 terror:
 	Inherits: ^Infantry
@@ -254,6 +255,7 @@ deso:
 		Prerequisites: barracks.infiltrated
 	QuantizeFacingsFromSequence:
 		Sequence: stand
+	-Crushable:
 
 ivan:
 	Inherits: ^Infantry
@@ -307,6 +309,7 @@ ivan:
 		IdleSequences: idle1,idle2
 	QuantizeFacingsFromSequence:
 		Sequence: stand
+	-Crushable:
         
 boris:
 	Inherits@1: ^Infantry
@@ -364,3 +367,4 @@ boris:
 		SlaveDisposalOnKill: KillSlaves
 		SpawnAllAtOnce: true
 		SpawnerArmamentName: secondary
+	-Crushable:

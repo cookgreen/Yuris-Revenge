@@ -93,6 +93,7 @@ gapowr:
 		Amount: 200
 		RequiresCondition: !outagepower
 	InfiltrateForPowerOutage:
+		Types: SpyInfiltrate
 	AffectedByPowerOutage:
 		Condition: outagepower
 	ScalePowerWithHealth:
@@ -164,6 +165,7 @@ gapile:
 	Power:
 		Amount: -10
 	InfiltrateForSupportPower:
+		Types: SpyInfiltrate
 		Proxy: barracks.infiltrated
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
@@ -206,6 +208,7 @@ garefn:
 	CustomSellValue:
 		Value: 300
 	InfiltrateForCash:
+		Types: SpyInfiltrate
 		Percentage: 50
 		Notification: CreditsStolen
 		Minimum: 500
@@ -281,17 +284,21 @@ gaairc:
 		Amount: -50
 	Reservable:
 	Exit@1:
-		SpawnOffset: -350,350,0
+		SpawnOffset: -370,370,0
 		MoveIntoWorld: false
+		Facing: 224
 	Exit@2:
-		SpawnOffset: 600,220,0
+		SpawnOffset: 370,-370,0
 		MoveIntoWorld: false
+		Facing: 224
 	Exit@3:
-		SpawnOffset: 200,820,0
+		SpawnOffset: 1000,370,0
 		MoveIntoWorld: false
+		Facing: 224
 	Exit@4:
-		SpawnOffset: 200,-300,0
+		SpawnOffset: 350,1000,0
 		MoveIntoWorld: false
+		Facing: 224
 	Production:
 		Produces: Aircraft
 	ProductionBar:
@@ -304,6 +311,7 @@ gaairc:
 		ZOffset: 256
 		RequiresCondition: primary
 	InfiltrateForExploration:
+		Types: SpyInfiltrate
 
 amradr:
 	Inherits: gaairc
@@ -352,7 +360,7 @@ gaweap:
 		Factions: korea
 	ProvidesPrerequisite@default:
 	Building:
-		Footprint: xxxxx xxxxx xxxxx
+		Footprint: xxxx= xxxx= xxxx=
 		Dimensions: 5,3
 	Health:
 		HP: 1000
@@ -391,6 +399,7 @@ gaweap:
 	Power:
 		Amount: -25
 	InfiltrateForSupportPower:
+		Types: SpyInfiltrate
 		Proxy: warfactory.infiltrated
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
@@ -594,6 +603,7 @@ gatech:
 	Power:
 		Amount: -100
 	InfiltrateForSupportPower:
+		Types: SpyInfiltrate
 		Proxy: allies.tech.infiltrated
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
@@ -692,6 +702,7 @@ nasam:
 	Turreted:
 		TurnSpeed: 10
 		InitialFacing: 224
+		PreviewFacing: 224
 		Offset: 550,0,0
 	AttackTurreted:
 		Voice: Attack
@@ -744,6 +755,7 @@ gtgcan:
 	Turreted:
 		TurnSpeed: 10
 		InitialFacing: 224
+		PreviewFacing: 224
 		Offset: 400,0,0
 	AttackTurreted:
 		Voice: Attack
@@ -994,7 +1006,7 @@ atesla:
 	Valued:
 		Cost: 1500
 	Tooltip:
-		Name: Prism Cannon
+		Name: Prism Tower
 	Building:
 		Footprint: x
 		Dimensions: 1, 1

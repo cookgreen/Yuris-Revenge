@@ -314,6 +314,9 @@ apoc:
 	WithVoxelBody:
 	WithVoxelTurret:
 	WithVoxelBarrel:
+	Explodes:
+		Weapon: ApocExplode
+		EmptyWeapon: ApocExplode
 	Voiced:
 		VoiceSet: ApocalypseTankVoice
 	ProducibleWithLevel:

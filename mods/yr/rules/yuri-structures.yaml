@@ -77,6 +77,7 @@ yapowr:
 		MaxWeight: 5
 		PipCount: 5
 	InfiltrateForPowerOutage:
+		Types: SpyInfiltrate
 	AffectedByPowerOutage:
 		Condition: outagepower
 	ScalePowerWithHealth:
@@ -143,6 +144,7 @@ yabrck:
 	Power:
 		Amount: -10
 	InfiltrateForSupportPower:
+		Types: SpyInfiltrate
 		Proxy: barracks.infiltrated
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
@@ -189,6 +191,7 @@ yarefn:
 	CustomSellValue:
 		Value: 300
 	InfiltrateForCash:
+		Types: SpyInfiltrate
 		Percentage: 50
 		Notification: CreditsStolen
 		Minimum: 500
@@ -227,7 +230,7 @@ yaweap:
 	RevealsShroud:
 		Range: 4c0
 	Building:
-		Footprint: xxxxx xxxxx xxxxx
+		Footprint: xxxx= xxxx= xxxx=
 		Dimensions: 5,3
 	RallyPoint:
 		Offset: 6,1
@@ -257,6 +260,7 @@ yaweap:
 	Power:
 		Amount: -25
 	InfiltrateForSupportPower:
+		Types: SpyInfiltrate
 		Proxy: warfactory.infiltrated
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
@@ -462,6 +466,7 @@ yatech:
 	ProvidesPrerequisite:
 		Prerequisite: yatech
 	InfiltrateForSupportPower:
+		Types: SpyInfiltrate
 		Proxy: yuris.tech.infiltrated
 	WithIdleOverlay@critical:
 		Sequence: critical-idle
@@ -813,7 +818,7 @@ naclon:
 		SpawnOffset: 0,0,0
 		ExitCell: 2, 2
 	Production:
-		Produces:
+		Produces: Dummy
 	RallyPoint:
 		Offset: 3,3
 		Palette: mouse

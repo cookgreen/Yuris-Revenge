@@ -127,6 +127,7 @@ brute:
 		VoiceSet: BruteVoice
 	WithInfantryBody
 		DefaultAttackSequence: shoot
+	-Crushable:
 
 virus:
 	Inherits: ^Infantry
@@ -370,6 +371,7 @@ yuripr:
 	AutoTargetPriority@DEFAULT:
 		Types: MindControl
 		RequiresCondition: !controlling
+	-Crushable:
 
 julia:
 	Inherits: ^Infantry
@@ -418,3 +420,4 @@ julia:
 		VoiceSet: VirusVoice
 	WithInfantryBody
 		DefaultAttackSequence: shoot
+	-Crushable:

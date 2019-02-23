@@ -177,6 +177,10 @@ SubTorpedo:
 		ImpactSounds: gexpwasb.wav
 		ValidTargets: Ground
 
+SubTorpedoE:
+	Inherits: SubTorpedo
+	Burst: 2
+
 Maverick3:
 	Inherits: Maverick
 	Report: vmigatta.wav

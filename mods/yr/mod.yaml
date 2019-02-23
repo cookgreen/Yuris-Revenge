@@ -66,6 +66,7 @@ Packages:
 	yr|bits/cameos
 	yr|bits/structures
 	yr|bits/animations
+	yr|bits/projectiles
 	yr|uibits
 
 MapFolders:

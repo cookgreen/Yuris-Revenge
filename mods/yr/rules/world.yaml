@@ -361,6 +361,7 @@ World:
 	ObjectivesPanel:
 		PanelName: SKIRMISH_STATS
 	LoadWidgetAtGameStart:
+	CliffBackImpassabilityLayer:
 
 EditorWorld:
 	Inherits: ^BaseWorld

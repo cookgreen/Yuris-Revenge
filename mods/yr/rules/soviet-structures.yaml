@@ -83,6 +83,7 @@ napowr:
 		Amount: 150
 		RequiresCondition: !outagepower
 	InfiltrateForPowerOutage:
+		Types: SpyInfiltrate
 	AffectedByPowerOutage:
 		Condition: outagepower
 	ScalePowerWithHealth:
@@ -180,6 +181,7 @@ nahand:
 		Amount: -10
 	ConditionManager:
 	InfiltrateForSupportPower:
+		Types: SpyInfiltrate
 		Proxy: barracks.infiltrated
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
@@ -222,6 +224,7 @@ narefn:
 	CustomSellValue:
 		Value: 300
 	InfiltrateForCash:
+		Types: SpyInfiltrate
 		Percentage: 50
 		Notification: CreditsStolen
 		Minimum: 500
@@ -277,6 +280,7 @@ naradr:
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
 	InfiltrateForExploration:
+		Types: SpyInfiltrate
 	Power:
 		Amount: -50
 
@@ -303,7 +307,7 @@ naweap:
 		Factions: russia
 	ProvidesPrerequisite@default:
 	Building:
-		Footprint: xxxxx xxxxx xxxxx
+		Footprint: xxxx= xxxx= xxxx=
 		Dimensions: 5,3
 	Health:
 		HP: 1000
@@ -339,6 +343,7 @@ naweap:
 	Power:
 		Amount: -25
 	InfiltrateForSupportPower:
+		Types: SpyInfiltrate
 		Proxy: warfactory.infiltrated
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
@@ -550,6 +555,7 @@ nanrct:
 		Amount: 2000
 		RequiresCondition: !outagepower
 	InfiltrateForPowerOutage:
+		Types: SpyInfiltrate
 	AffectedByPowerOutage:
 		Condition: outagepower
 	ScalePowerWithHealth:
@@ -587,6 +593,7 @@ natech:
 	Power:
 		Amount: -100
 	InfiltrateForSupportPower:
+		Types: SpyInfiltrate
 		Proxy: soviets.tech.infiltrated
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
@@ -799,7 +806,7 @@ tesla:
 		Voice: Attack
 		MaxCharges: 3
 		ReloadDelay: 120
-		ChargeAudio: tslachg2.aud
+		ChargeAudio: btespow.wav
 		PauseOnCondition: lowpower
 	AutoTarget:
 	GrantConditionOnPowerState@LOWPOWER:
