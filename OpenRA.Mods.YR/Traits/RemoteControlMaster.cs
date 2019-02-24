@@ -135,6 +135,15 @@ namespace OpenRA.Mods.YR.Traits
                 }
             }
 
+            for (int i = slaves.Count - 1; i >= 0; i--)
+            {
+                Actor s = slaves[i];
+                if (!s.IsInWorld || s.IsDead)
+                {
+                    slaves.RemoveAt(i);
+                }
+            }
+
             CheckDisableSlaves();
         }
 
