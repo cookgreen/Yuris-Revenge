@@ -50,6 +50,8 @@ dlph:
 e1:
 	Inherits: ^ArmedInfantry
 	Defaults: gi
+	dot: dot
+		ZOffset: -9999
 	run:
 		Tick: 120
 	deployed:
