@@ -221,9 +221,13 @@ MissileLauncher:
 	Inherits: ^Missile
 	ReloadDelay: 40
 	Range:8c0
+	Projectile: Missile
+		Speed: 160
+		Arm: 2
+		HorizontalRateOfTurn: 6
 	Report: iggiat2a.wav, iggiat2b.wav
 	Warhead@1Dam: SpreadDamage
-		Damage: 50 
+		Damage: 40 
 		Versus:
 			None: 20
 			Flak: 20

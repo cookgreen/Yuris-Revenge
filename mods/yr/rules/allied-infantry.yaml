@@ -154,7 +154,7 @@ e1:
 		CanDeployOnRamps: True
 		Facing: 128
 		RequiresCondition: !parachute
-    GrantCondition:
+	GrantCondition:
 		Condition: editorhack
 	WithInfantryBody@Editor: # HACK: negative conditions don't count in EnabledByDefault, we can use this duplicate WIB to render it on map editor
 		DefaultAttackSequence: shoot
@@ -223,11 +223,12 @@ ggi:
 	Tooltip:
 		Name: Guardian GI
 	Selectable:
-		Bounds: 20, 30, 0, -11
+		Bounds: 39, 37, 0, -11
 	Health:
 		HP: 125
 	Mobile:
 		Speed: 31
+		RequiresCondition: !chronodisable && undeployed
 	Passenger:
 		PipType: Green
 	RevealsShroud:
@@ -236,31 +237,65 @@ ggi:
 		Voice: Attack
 	Armament@primary:
 		Weapon: M60
-		RequiresCondition: !rank-elite
+		RequiresCondition: !rank-elite && !deployed
 	Armament@elite:
 		Weapon: M60E
-		RequiresCondition: rank-elite
-	#Armament@deployed:
-	#	Weapon: MissileLauncher
-	#	UpgradeTypes: deployed
-	#	UpgradeMinEnabledLevel: 1
-	#Armament@elite-deployed:
-	#	Weapon: MissileLauncherE
-	#	UpgradeTypes: eliteparaweapon
-	#	UpgradeMinEnabledLevel: 1
+		RequiresCondition: rank-elite && !deployed
+	Armament@deployed:
+		Weapon: MissileLauncher
+		Name: deployed
+		LocalOffset: 0, 0, 750
+		RequiresCondition: !rank-elite && deployed
+	Armament@elite-deployed:
+		Weapon: MissileLauncherE
+		Name: deployed
+		RequiresCondition: rank-elite && deployed
+	GrantConditionOnDeploy:
+		DeployedCondition: deployed
+		UndeployedCondition: undeployed
+		CanDeployOnRamps: True
+		Facing: 128
+		RequiresCondition: !parachute
+	GrantCondition:
+		Condition: editorhack
+	WithInfantryBody@Editor: # HACK: negative conditions don't count in EnabledByDefault, we can use this duplicate WIB to render it on map editor
+		DefaultAttackSequence: shoot
+		RequiresCondition: !editorhack
+	WithInfantryBody:
+		RequiresCondition: undeployed
+	WithMakeAnimation:
+		Sequence: deploy
+		BodyNames: dot
+	Turreted:
+		RealignDelay: -1
+		TurnSpeed: 50
+		InitialFacing: 128
+	WithSpriteTurret@idle:
+		Sequence: deployed
+		RequiresCondition: deployed && !animate-turret
+	WithSpriteTurret@animated:
+		RequiresCondition: deployed && animate-turret
+		Sequence: shoot-deployed
+	WithSpriteBody:
+		Sequence: dot
+		Name: dot
+	AttackFrontal:
+		Voice: Attack
+		RequiresCondition: undeployed
+	AttackTurreted@deployed:
+		Armaments: deployed
+		Voice: Attack
+		RequiresCondition: deployed
+	GrantConditionOnAttack:
+		Condition: animate-turret
+		RevokeDelay: 10
+		ArmamentNames: deployed
+	RejectsOrders@deployment:
+		Reject: Move, EnterTransport, EnterTransports
+		RequiresCondition: deployed
+	-TakeCover: # TODO: needs to be conditional so we can disable when deployed    
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
-	#GrantConditionOnDeploy:
-	#	DeployedCondition: deployed
-	#	UndeployedCondition: undeployed
-	#WithSpriteBody@DEPLOYED:
-	#	Sequence: deployed
-	#	RequiresCondition: deployed
-	#WithMakeAnimation@DEPLOYING:
-	#	Sequence: deployed
-	#WithIdleOverlay@DEPLOYED:
-	#	Sequence: deploy
-	#	RequiresCondition: deployed
 	Voiced:
 		VoiceSet: GGIVoice
 	ProducibleWithLevel:
