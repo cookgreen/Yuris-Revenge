@@ -3,13 +3,13 @@
 Port Yuri's Revenge to OpenRA Engine
 
 ## MOD Version
-release-20180923
+release-20181215
 
 ## Engine Version
-release-20180923
+release-20181215
 
 ## Requirement
-OpenRA - Version: release-20180923 
+OpenRA - Version: release-20181215
 
 ## Usage
 Run "make.cmd" and type "all" in the terminal  
