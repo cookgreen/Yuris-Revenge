@@ -219,6 +219,7 @@ Maverick3E:
         
 MissileLauncher:
 	Inherits: ^Missile
+	ValidTargets: Ground, Air, Water
 	ReloadDelay: 40
 	Range:8c0
 	Projectile: Missile
@@ -242,7 +243,7 @@ MissileLauncher:
 			Rocket: 100
 		DamageTypes: Prone50Percent
 	Warhead@2EffWater: CreateEffect
-		Explosions: tiny_grey_explosion, small_grey_explosion, small_explosion, medium_grey_explosion, large_grey_explosion, medium_explosion, large_explosion, large_twlt
+		Explosions: tiny_grey_explosion, small_grey_explosion, small_explosion
 		ValidTargets: Ground, Water, Air
         
 MissileLauncherE:
