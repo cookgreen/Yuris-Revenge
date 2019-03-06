@@ -452,5 +452,5 @@ v3rocket:
 	MissileSpawnerSlave:
 	Explodes:
 		Type: Footprint
-		Weapon: V3AmmunitionExplode
+		Weapon: V3WH
 	RejectsOrders:
