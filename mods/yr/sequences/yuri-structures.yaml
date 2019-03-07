@@ -365,13 +365,13 @@ yatech:
 	damaged-idle: yatech
 		Start: 1
 		ShadowStart: 4
-	critical-idle: yatech_a
-		Length: 31
+	idle-critical: yatech_a
+		Length: 32
 		ShadowStart: 64
-	damaged-critical-idle: yatech_a
-		Start: 31
-		Length: 31
-		ShadowStart: 64
+	damaged-idle-critical: yatech_a
+		Start: 32
+		Length: 32
+		ShadowStart: 96
 	make: yatechmk
 		Length: 25
 		ShadowStart: 25

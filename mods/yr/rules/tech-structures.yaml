@@ -106,6 +106,8 @@ cathosp:
 
 caoutp:
 	Inherits: ^TechBuilding
+	Selectable:
+		Bounds: 178, 180, 0, -38
 	Tooltip:
 		Name: Tech Outpost
 	Armor:

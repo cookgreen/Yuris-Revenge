@@ -433,9 +433,8 @@ yagrnd:
 	AcceptsDeliveredCash:
 	WithIdleOverlay@normal:
 		Sequence: idle-normal
-	#Note: didn't support in 04e90
-	#WithAcceptDeliveredCashAnimation:
-	#	Sequence: grind
+	WithAcceptDeliveredCashAnimation:
+		Sequence: grind
 	Power:
 		Amount: -50
 
@@ -469,7 +468,7 @@ yatech:
 		Types: SpyInfiltrate
 		Proxy: yuris.tech.infiltrated
 	WithIdleOverlay@critical:
-		Sequence: critical-idle
+		Sequence: idle-critical
 	Power:
 		Amount: -100
 	Targetable:
