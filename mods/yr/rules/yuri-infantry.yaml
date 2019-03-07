@@ -40,6 +40,11 @@ init:
 	WithInfantryBody
 		DefaultAttackSequence: shoot
 	Bunkerable:
+	BunkerPassenger:
+		Voice: Move
+		CargoType: Infantry
+		GrantBunkerCondition: bunkered
+		Accepter: nabnkr, bfrt
 		
 yengineer:
 	Inherits: ^Infantry
@@ -128,6 +133,7 @@ brute:
 	WithInfantryBody
 		DefaultAttackSequence: shoot
 	-Crushable:
+	-BunkerPassenger:
 
 virus:
 	Inherits: ^Infantry
@@ -170,6 +176,11 @@ virus:
 		VoiceSet: VirusVoice
 	WithInfantryBody
 		DefaultAttackSequence: shoot
+	BunkerPassenger:
+		Voice: Move
+		CargoType: Infantry
+		GrantBunkerCondition: bunkered
+		Accepter: bfrt
         
 slav:
 	Inherits: ^Infantry
@@ -214,6 +225,7 @@ slav:
 		OnMasterKilled: Free
 		OnMasterChangeOwner: Free
 		FreeCondition: freed
+	-BunkerPassenger:
 
 yuri:
 	Inherits: ^Infantry
@@ -292,6 +304,11 @@ yuri:
 	AutoTargetPriority@DEFAULT:
 		Types: MindControl
 		RequiresCondition: !controlling
+	BunkerPassenger:
+		Voice: Move
+		CargoType: Infantry
+		GrantBunkerCondition: bunkered
+		Accepter: bfrt
 		
 yuripr:
 	Inherits: ^Infantry
@@ -372,6 +389,11 @@ yuripr:
 		Types: MindControl
 		RequiresCondition: !controlling
 	-Crushable:
+	BunkerPassenger:
+		Voice: Move
+		CargoType: Infantry
+		GrantBunkerCondition: bunkered
+		Accepter: bfrt
 
 julia:
 	Inherits: ^Infantry
@@ -421,3 +443,8 @@ julia:
 	WithInfantryBody
 		DefaultAttackSequence: shoot
 	-Crushable:
+	BunkerPassenger:
+		Voice: Move
+		CargoType: Infantry
+		GrantBunkerCondition: bunkered
+		Accepter: bfrt

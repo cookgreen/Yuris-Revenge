@@ -13,3 +13,7 @@ allies.tech.infiltrated:
 soviets.tech.infiltrated:
 	AlwaysVisible:
 	ProvidesPrerequisite:
+
+yuris.tech.infiltrated:
+	AlwaysVisible:
+	ProvidesPrerequisite:

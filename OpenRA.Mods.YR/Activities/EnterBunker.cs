@@ -63,10 +63,10 @@ namespace OpenRA.Mods.YR.Activities
                     w.Add(new SpriteEffect(bunker.CenterPosition, w, bunker.Info.Name, cargo.Info.SequenceOnCargo, "player" + self.Owner.InternalName));
                 }
 
-                if (cargo.GetBunkeredNumber() == 0)
-                {
-                    cargo.GrantCondition(passenger.info.GrantBunkerCondition);
-                }
+                //if (cargo.GetBunkeredNumber() == 0)
+                //{
+                //    cargo.GrantCondition(passenger.info.GrantBunkerCondition);
+                //}
                 cargo.Load(bunker, self);
                 if(willDisappear)
                 {

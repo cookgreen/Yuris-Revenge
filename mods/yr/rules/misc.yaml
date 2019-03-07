@@ -69,6 +69,7 @@ pcv.colorpicker:
 	RenderVoxels:
 		Image: pcv
 		Palette: colorpicker
+	-Buildable:
 
 SROCK01:
 	Inherits: ^Rock

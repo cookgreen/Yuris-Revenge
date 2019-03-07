@@ -200,7 +200,11 @@ e1:
 		Prerequisites: barracks.infiltrated
 	QuantizeFacingsFromSequence:
 		Sequence: stand
-	Bunkerable:
+	BunkerPassenger:
+		Voice: Move
+		CargoType: Infantry
+		GrantBunkerCondition: bunkered
+		Accepter: nabnkr, bfrt
 
 ggi:
 	Inherits@1: ^Infantry
@@ -302,6 +306,11 @@ ggi:
 		Prerequisites: barracks.infiltrated
 	QuantizeFacingsFromSequence:
 		Sequence: stand
+	BunkerPassenger:
+		Voice: Move
+		CargoType: Infantry
+		GrantBunkerCondition: bunkered
+		Accepter: nabnkr, bfrt
 
 snipe:
 	Inherits: ^Infantry
@@ -344,6 +353,11 @@ snipe:
 		Prerequisites: barracks.infiltrated
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
+	BunkerPassenger:
+		Voice: Move
+		CargoType: Infantry
+		GrantBunkerCondition: bunkered
+		Accepter: bfrt
 
 spy:
 	Inherits: ^Infantry
@@ -396,6 +410,7 @@ spy:
 		Voice: Action
 	QuantizeFacingsFromSequence:
 		Sequence: stand
+	-BunkerPassenger:
 
 ghost:
 	Inherits: ^Infantry
@@ -458,6 +473,11 @@ ghost:
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 	-TakeCover: # TODO: allow multiple sequence modifiers
+	BunkerPassenger:
+		Voice: Move
+		CargoType: Infantry
+		GrantBunkerCondition: bunkered
+		Accepter: bfrt
 
 ccomand:
 	Inherits: ghost

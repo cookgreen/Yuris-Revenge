@@ -269,6 +269,14 @@
 		Condition: chaosgasability
 	Berserkable:
 		RequiresCondition: chaosgasability
+		
+^Diskdrainshutdownpowerable:
+	TimedConditionBar:
+		Condition: diskdrainability
+	ExternalCondition@DISKDRAINABILITY:
+		Condition: diskdrainability
+	ShutdownPower:
+		RequiresCondition: diskdrainability
 
 ^ChronoDisable:
 	TimedConditionBar@ChronoDisable:
@@ -648,6 +656,7 @@
 		Voice: Move
 		CargoType: Infantry
 		GrantBunkerCondition: bunkered
+		Accepter: nabnkr
 	HiddenUnderFog:
 	ActorLostNotification:
 	ProximityCaptor:
@@ -770,6 +779,7 @@
 		IdleSequences: idle1
 	EditorTilesetFilter:
 		Categories: Civilian infantry
+	-BunkerPassenger:
 
 ^Animal:
 	Inherits: ^Infantry
@@ -845,6 +855,7 @@
 		CargoType: Vehicle
 		Weight: 3
 		GrantBunkerCondition: bunkered
+		Accepter: natbnk
 	HiddenUnderFog:
 	WithTextControlGroupDecoration:
 	ActorLostNotification:

@@ -45,6 +45,11 @@ e2:
 	QuantizeFacingsFromSequence:
 		Sequence: stand
 	Bunkerable:
+	BunkerPassenger:
+		Voice: Move
+		CargoType: Infantry
+		GrantBunkerCondition: bunkered
+		Accepter: nabnkr, brft
 
 flakt:
 	Inherits@1: ^Infantry
@@ -98,6 +103,11 @@ flakt:
 		Prerequisites: barracks.infiltrated
 	QuantizeFacingsFromSequence:
 		Sequence: stand
+	BunkerPassenger:
+		Voice: Move
+		CargoType: Infantry
+		GrantBunkerCondition: bunkered
+		Accepter: nabnkr, bfrt
 
 shk:
 	Inherits@1: ^Infantry
@@ -163,6 +173,11 @@ shk:
 	QuantizeFacingsFromSequence:
 		Sequence: stand
 	-Crushable:
+	BunkerPassenger:
+		Voice: Move
+		CargoType: Infantry
+		GrantBunkerCondition: bunkered
+		Accepter: bfrt
 
 terror:
 	Inherits: ^Infantry
@@ -206,6 +221,7 @@ terror:
 	-TakeCover:
 	QuantizeFacingsFromSequence:
 		Sequence: stand
+	-BunkerPassenger:
 
 deso:
 	Inherits: ^Infantry
@@ -256,6 +272,11 @@ deso:
 	QuantizeFacingsFromSequence:
 		Sequence: stand
 	-Crushable:
+	BunkerPassenger:
+		Voice: Move
+		CargoType: Infantry
+		GrantBunkerCondition: bunkered
+		Accepter: bfrt
 
 ivan:
 	Inherits: ^Infantry
@@ -310,6 +331,7 @@ ivan:
 	QuantizeFacingsFromSequence:
 		Sequence: stand
 	-Crushable:
+	-BunkerPassenger:
         
 boris:
 	Inherits@1: ^Infantry
@@ -368,3 +390,8 @@ boris:
 		SpawnAllAtOnce: true
 		SpawnerArmamentName: secondary
 	-Crushable:
+	BunkerPassenger:
+		Voice: Move
+		CargoType: Infantry
+		GrantBunkerCondition: bunkered
+		Accepter: bfrt

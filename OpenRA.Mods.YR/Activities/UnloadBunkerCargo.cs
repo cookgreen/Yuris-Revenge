@@ -101,10 +101,10 @@ namespace OpenRA.Mods.Common.Activities
 
 			cargo.Unloading = true;
 
-            if (cargo.GetBunkeredNumber() == 0)
-            {
-                cargo.RevokeCondition();
-            }
+            //if (cargo.GetBunkeredNumber() == 0)
+            //{
+            //    cargo.RevokeCondition();
+            //}
 
 			return this;
 		}

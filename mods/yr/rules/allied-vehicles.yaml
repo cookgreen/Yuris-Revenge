@@ -611,6 +611,15 @@ bfrt:
 		EmptyWeapon: UnitExplodeSmall
 	RenderSprites:
 	RenderVoxels:
+	BunkerCargo:
+		Types: Infantry
+		MaxWeight: 5
+		PipCount: 5 
+	AttackBunkered:
+		Armaments: primary
+		PortOffsets: 384,0,128, 224,-341,128, -224,-341,128, -384,0,128, -224,341,128, 224,341,128/*TODO: Need to confirm all five attack port*/
+		PortYaws: 0, 176, 341, 512, 682, 853
+		PortCones: 88, 88, 88, 88, 88, 88
 	WithVoxelBody:
 	Voiced:
 		VoiceSet: BattleFortressVoice
@@ -620,3 +629,4 @@ bfrt:
 	CrewKillable:
 	SelfHealing@MACHSHOP:
 		RequiresCondition: machshop
+	-BunkerPassenger:

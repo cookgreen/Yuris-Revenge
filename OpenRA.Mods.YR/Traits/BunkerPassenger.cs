@@ -43,6 +43,9 @@ namespace OpenRA.Mods.YR.Traits
 
 		[VoiceReference] public readonly string Voice = "Action";
 
+        [Desc("Whose actors can accept this actor?")]
+        public readonly string[] Accepter = null;
+
 		public override object Create(ActorInitializer init) { return new BunkerPassenger(init, this); }
 	}
 
@@ -79,6 +82,14 @@ namespace OpenRA.Mods.YR.Traits
 
         public void RevokeCondition()
         {
+            if (bunkeredCondToken == ConditionManager.InvalidConditionToken)
+            {
+                return;
+            }
+            if (!conditionManager.TokenValid(self, bunkeredCondToken))
+            {
+                return;
+            }
             bunkeredCondToken = conditionManager.RevokeCondition(self, bunkeredCondToken);
         }
 
@@ -98,11 +109,22 @@ namespace OpenRA.Mods.YR.Traits
 		bool IsCorrectCargoType(Actor target)
 		{
 			var ci = target.Info.TraitInfo<BunkerCargoInfo>();
-            var bk = self.TraitOrDefault<Bunkerable>();
-            if (bk == null)
+            
+            bool canAccept = false;
+            //this actor are not welcomed by the target actor
+            for (int i = 0; i < info.Accepter.Length; i++)
+            {
+                if (info.Accepter[i] == target.Info.Name)
+                {
+                    canAccept = true;
+                    break;
+                }
+            }
+            if (!canAccept)
             {
                 return false;
             }
+
             return ci.Types.Contains(Info.CargoType);
 		}
 
