@@ -17,6 +17,8 @@ shad:
 		BuildPaletteOrder: 90
 		Prerequisites: ~gaweap
 		Description: Infantry Transport Helicopter\nUndetectable by radar.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+	Selectable:
+		Bounds: 119, 58, 0, -20
 	Valued:
 		Cost: 1000
 	RevealsShroud:
@@ -76,7 +78,9 @@ zep:
 		Queue: Vehicle
 		BuildPaletteOrder: 90
 		Prerequisites: ~naweap, natech
+		Description: Soviet heavy bomber\n  Strong vs Infantry, Vehicle, Ship and Structure\n Weak vs Aircraft
 	Selectable:
+		Bounds: 149, 86, 0, -11
 	Aircraft:
 		CruiseAltitude: 5600
 		TurnSpeed: 5
@@ -360,6 +364,7 @@ bpln:
 	HitShape:
 	MarkerSlave:
 		LandingDistance: 1c0
+	RejectsOrders:
 		
 hind:
 	Inherits: ^Aircraft
@@ -371,21 +376,22 @@ hind:
 		HP: 175
 	Armor:
 		Type: Light
+	Selectable:
+		Bounds: 87, 62, 0, -21
 	Armament:
 		Weapon: BlackHawkCannon
 	Voiced:
 		VoiceSet: HindVoice
 	Buildable:
-		Queue: Aircraft
+		Queue: Vehicle
 		BuildPaletteOrder: 90
 		Prerequisites: ~missiononlyunit #Only can be used in Mission
-		Description: Soviet Hind Transport Helicopter\nUndetectable by radar.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+		Description: Soviet Hind Transport Helicopter\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
 	Valued:
 		Cost: 1000
 	RevealsShroud:
 		Range: 7c0
 		Type: CenterPosition
-	-AppearsOnRadar:
 	AttackFrontal:
 		Voice: Attack
 	Aircraft:
@@ -442,6 +448,8 @@ v3rocket:
 	ShootableBallisticMissile:
 		LaunchAngle: 128
 		Speed: 170
+	Selectable:
+		Bounds: 65, 33, -10, -11
 	Contrail:
 		Offset: -598,0,0
 	AttackFrontal:
