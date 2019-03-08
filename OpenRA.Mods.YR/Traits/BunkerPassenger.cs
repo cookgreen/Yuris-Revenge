@@ -46,7 +46,10 @@ namespace OpenRA.Mods.YR.Traits
         [Desc("Whose actors can accept this actor?")]
         public readonly string[] Accepter = null;
 
-		public override object Create(ActorInitializer init) { return new BunkerPassenger(init, this); }
+        [Desc("The weapon will be used when enter a bunker")]
+        public readonly string[] Armaments = { "primary" };
+
+        public override object Create(ActorInitializer init) { return new BunkerPassenger(init, this); }
 	}
 
 	public class BunkerPassenger : ConditionalTrait<BunkerPassengerInfo>, IIssueOrder, IResolveOrder, IOrderVoice, INotifyRemovedFromWorld

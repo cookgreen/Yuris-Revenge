@@ -104,12 +104,14 @@ namespace OpenRA.Mods.YR.Traits
 
 		void INotifyPassengerEntered.OnPassengerEntered(Actor self, Actor passenger)
 		{
+            BunkerPassenger bunkerPassenger = passenger.Trait<BunkerPassenger>();
+
 			paxFacing.Add(passenger, passenger.Trait<IFacing>());
 			paxPos.Add(passenger, passenger.Trait<IPositionable>());
 			paxRender.Add(passenger, passenger.Trait<RenderSprites>());
 			armaments.AddRange(
 				passenger.TraitsImplementing<Armament>()
-				.Where(a => Info.Armaments.Contains(a.Info.Name)));
+				.Where(a => bunkerPassenger.Info.Armaments.Contains(a.Info.Name)));
 		}
 
 		void INotifyPassengerExited.OnPassengerExited(Actor self, Actor passenger)

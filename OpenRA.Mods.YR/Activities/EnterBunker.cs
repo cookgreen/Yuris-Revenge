@@ -68,7 +68,8 @@ namespace OpenRA.Mods.YR.Activities
                 //    cargo.GrantCondition(passenger.info.GrantBunkerCondition);
                 //}
                 cargo.Load(bunker, self);
-                if(willDisappear)
+                passenger.GrantCondition();
+                if (willDisappear)
                 {
                     w.Remove(self);
                 }
@@ -76,7 +77,6 @@ namespace OpenRA.Mods.YR.Activities
                 {
                     //If didn't disappear, then move the passenger actor to the bunker center
                     self.QueueActivity(mobile.MoveToTarget(self, Target.FromPos(targetPos)));
-                    passenger.GrantCondition();
                 }
 			});
 

@@ -249,11 +249,11 @@ ggi:
 		Weapon: MissileLauncher
 		Name: deployed
 		LocalOffset: 0, 0, 750
-		RequiresCondition: !rank-elite && deployed
+		RequiresCondition: (!rank-elite && deployed) || bunkered
 	Armament@elite-deployed:
 		Weapon: MissileLauncherE
 		Name: deployed
-		RequiresCondition: rank-elite && deployed
+		RequiresCondition: (rank-elite && deployed) || bunkered
 	GrantConditionOnDeploy:
 		DeployedCondition: deployed
 		UndeployedCondition: undeployed
@@ -311,6 +311,7 @@ ggi:
 		CargoType: Infantry
 		GrantBunkerCondition: bunkered
 		Accepter: nabnkr, bfrt
+		Armaments: deployed
 
 snipe:
 	Inherits: ^Infantry
