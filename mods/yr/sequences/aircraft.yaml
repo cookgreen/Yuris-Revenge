@@ -30,3 +30,11 @@ bpln:
 
 v3rocket:
 	icon: xxicon
+	
+schp:
+	icon: schpicon
+	
+schd:
+	make: schpdel
+		Length: *
+	icon: schpicon

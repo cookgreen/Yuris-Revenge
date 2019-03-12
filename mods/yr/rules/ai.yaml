@@ -97,6 +97,7 @@ Player:
 			htnk: 50%
 			htk: 20%
 			mtnk: 50%
+			schp: 10%
 			fv: 20%
 			sref: 10%
 			mgtk: 10%

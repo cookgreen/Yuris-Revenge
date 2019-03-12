@@ -185,6 +185,15 @@ V3LauncherVoice:
 		Select: vv3lsea,vv3lseb,vv3lsec,vv3lsed,vv3lsee
 		Move: vv3lmob,vv3lmoc,vv3lmod,vv3lmoe
 		Attack: vv3lata,vv3latb,vv3latc,vv3latd,vv3late
+		
+SiegeChopperVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: vchosea,vchoseb,vchosec,vchosed,vchosee
+		Move: vchomoa,vchomob,vchomoc,vchomod,vchomoe
+		Attack: vchoa2a,vchoa2b,vchoa2c,vchoa2d $vchoa2e,vchoa2e #Attack Land
+		Attack-Air: vchoa1a,vchoa1b,vchoa1c,vchoa1d,vchoa1e
+		Die: vchodia,vchodib,vchodic,vchodid,vchodie
 
 AlliedNavalVoice:
 	DefaultVariant: .wav

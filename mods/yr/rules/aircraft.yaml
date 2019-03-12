@@ -462,3 +462,127 @@ v3rocket:
 		Type: Footprint
 		Weapon: V3WH
 	RejectsOrders:
+	
+schp:
+	Inherits: ^Aircraft
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@MC: ^MindControllable
+	Tooltip:
+		Name: Soviet Siege Chopper
+	Health:
+		HP: 300
+	Armor:
+		Type: Light
+	Armament@primary:
+		Weapon: BlackHawkCannon
+		RequiresCondition: !rank-elite && !deployed
+	Armament@primary-elite:
+		Weapon: BlackHawkCannonE
+		RequiresCondition: rank-elite && !deployed
+	Armament@second:
+		Weapon: 160mm
+		RequiresCondition: !rank-elite && deployed
+	Armament@second-elite:
+		Weapon: 160mmE
+		RequiresCondition: rank-elite && deployed
+	Voiced:
+		VoiceSet: SiegeChopperVoice
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 90
+		Prerequisites: ~naweap
+		Description: Soviet Siege Chopper\n  Strong vs Infantry, Structures\n  Weak vs Vehicles, Aircraft
+	Selectable:
+		Bounds: 119, 58, 0, -20
+	Valued:
+		Cost: 1000
+	RevealsShroud:
+		Range: 7c0
+		Type: CenterPosition
+	AttackHeli:
+		Voice: Attack
+	Aircraft:
+		CruiseAltitude: 3072
+		LandWhenIdle: true
+		LandableTerrainTypes: Clear, Rough, Road, DirtRoad, Ore, Gems
+		TurnSpeed: 6
+		Speed: 180
+		AltitudeVelocity: 120
+		CruisingCondition: cruising
+	RenderSprites:
+	WithVoxelWalkerBody:
+		TickRate: 1
+	Hovers@CRUISING:
+		RequiresCondition: cruising
+		OffsetModifier: -45
+	SpawnActorOnDeath:
+		Actor: schphusk
+	HitShape:
+	Transforms:
+		Voice: Move
+		IntoActor: schd
+		Facing: 96
+		DeployCursor: deploy
+		NoTransformNotification: BuildingCannotPlaceAudio
+	
+schd:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@MC: ^MindControllable
+	Tooltip:
+		Name: Soviet Siege Chopper
+	Health:
+		HP: 300
+	Armor:
+		Type: Light
+	Armament@primary:
+		Weapon: 160mm
+		RequiresCondition: !rank-elite
+	Armament@primary-elite:
+		Weapon: 160mmE
+		RequiresCondition: rank-elite
+	Mobile:
+		Speed: 0
+	Voiced:
+		VoiceSet: SiegeChopperVoice
+	Selectable:
+		Bounds: 119, 58, 0, -20
+	Valued:
+		Cost: 1000
+	RevealsShroud:
+		Range: 7c0
+		Type: CenterPosition
+	Turreted:
+		TurnSpeed: 10
+	AttackTurreted:
+		Voice: Attack
+	WithVoxelBody:
+	WithVoxelTurret:
+	RenderSprites:
+		TickRate: 1
+	Hovers@CRUISING:
+		RequiresCondition: cruising
+		OffsetModifier: -45
+	HitShape:
+	Transforms:
+		Voice: Move
+		IntoActor: schp
+		Facing: 96
+		DeployCursor: undeploy
+
+schphusk:
+	Inherits: ^HelicopterHusk
+	Tooltip:
+		Name: Soviet Siege Chopper
+	Aircraft:
+		TurnSpeed: 10
+		Speed: 100
+	FallsToEarth:
+		Explosion: UnitExplode
+	RevealsShroud:
+		Range: 7c0
+		Type: CenterPosition
+	RenderVoxels:
+		Image: schp
+	BodyOrientation:
+		UseClassicPerspectiveFudge: false
