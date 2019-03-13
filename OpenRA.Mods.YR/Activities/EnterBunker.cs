@@ -63,10 +63,23 @@ namespace OpenRA.Mods.YR.Activities
                     w.Add(new SpriteEffect(bunker.CenterPosition, w, bunker.Info.Name, cargo.Info.SequenceOnCargo, "player" + self.Owner.InternalName));
                 }
 
-                //if (cargo.GetBunkeredNumber() == 0)
-                //{
-                //    cargo.GrantCondition(passenger.info.GrantBunkerCondition);
-                //}
+                if (cargo.GetBunkeredNumber() == 0)
+                {
+                    if (cargo.Info.ChangeOwnerWhenGarrison)
+                    {
+                        bunker.ChangeOwner(self.Owner);
+                    }
+
+                    if (!string.IsNullOrEmpty(cargo.Info.StructureGarrisonSound))
+                    {
+                        Game.Sound.PlayToPlayer(SoundType.World, self.Owner, cargo.Info.StructureGarrisonSound);
+                    }
+
+                    if (!string.IsNullOrEmpty(cargo.Info.StructureGarrisonedNotification))
+                    {
+                        Game.Sound.PlayNotification(self.World.Map.Rules, self.Owner, "Speech", cargo.Info.StructureGarrisonedNotification, self.Owner.Faction.InternalName);
+                    }
+                }
                 cargo.Load(bunker, self);
                 passenger.GrantCondition();
                 if (willDisappear)

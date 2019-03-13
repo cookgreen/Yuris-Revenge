@@ -101,10 +101,30 @@ namespace OpenRA.Mods.Common.Activities
 
 			cargo.Unloading = true;
 
-            //if (cargo.GetBunkeredNumber() == 0)
-            //{
-            //    cargo.RevokeCondition();
-            //}
+            if (cargo.GetBunkeredNumber() == 0)
+            {
+                if (cargo.Info.ChangeOwnerWhenGarrison)
+                {
+                    Player neutralPlayer = null;
+
+                    Player[] players = this.self.World.Players;
+                    for (int i = 0; i < players.Length; i++)
+                    {
+                        if (players[i].InternalName == "Neutral")
+                        {
+                            neutralPlayer = players[i];
+                            break;
+                        }
+                    }
+
+                    this.self.ChangeOwner(neutralPlayer);
+                }
+                
+                if (!string.IsNullOrEmpty(cargo.Info.StructureAbandonedNotification))
+                {
+                    Game.Sound.PlayNotification(self.World.Map.Rules, self.Owner, "Speech", cargo.Info.StructureAbandonedNotification, self.Owner.Faction.InternalName);
+                }
+            }
 
 			return this;
 		}

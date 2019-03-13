@@ -49,7 +49,7 @@ e2:
 		Voice: Move
 		CargoType: Infantry
 		GrantBunkerCondition: bunkered
-		Accepter: nabnkr, brft
+		Accepter: nabnkr, bfrt, garrisonable-building
 
 flakt:
 	Inherits@1: ^Infantry
@@ -107,7 +107,7 @@ flakt:
 		Voice: Move
 		CargoType: Infantry
 		GrantBunkerCondition: bunkered
-		Accepter: nabnkr, bfrt
+		Accepter: nabnkr, bfrt, garrisonable-building
 
 shk:
 	Inherits@1: ^Infantry

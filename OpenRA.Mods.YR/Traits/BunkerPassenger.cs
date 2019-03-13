@@ -117,7 +117,8 @@ namespace OpenRA.Mods.YR.Traits
             //this actor are not welcomed by the target actor
             for (int i = 0; i < info.Accepter.Length; i++)
             {
-                if (info.Accepter[i] == target.Info.Name)
+                if (info.Accepter[i] == target.Info.Name  || 
+                    info.Accepter[i] == ci.GrantAccepter)
                 {
                     canAccept = true;
                     break;

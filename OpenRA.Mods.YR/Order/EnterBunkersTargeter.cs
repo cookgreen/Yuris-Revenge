@@ -23,15 +23,23 @@ namespace OpenRA.Mods.YR.Orders
 	public class EnterBunkersTargeter : EnterAlliedActorTargeter<BunkerCargoInfo>
 	{
 		readonly AlternateTransportsMode mode;
+        Func<Actor, bool> canTarget;
 
-		public EnterBunkersTargeter(string order, int priority,
+        public EnterBunkersTargeter(string order, int priority,
 			Func<Actor, bool> canTarget, Func<Actor, bool> useEnterCursor,
 			AlternateTransportsMode mode)
-			: base(order, priority, canTarget, useEnterCursor) { this.mode = mode; }
+			: base(order, priority, canTarget, useEnterCursor)
+        {
+            this.mode = mode;
+            this.canTarget = canTarget;
+        }
 
 		public override bool CanTargetActor(Actor self, Actor target, TargetModifiers modifiers, ref string cursor)
-		{
-			switch (mode)
+        {
+            if (target.Owner.InternalName == "Neutral" && target.Info.HasTraitInfo<BunkerCargoInfo>() && canTarget(target))
+                return true;
+
+            switch (mode)
 			{
 				case AlternateTransportsMode.None:
 					return false;
@@ -45,9 +53,9 @@ namespace OpenRA.Mods.YR.Orders
 					break;
 				case AlternateTransportsMode.Always:
 					break;
-			}
+            }
 
-			return base.CanTargetActor(self, target, modifiers, ref cursor);
+            return base.CanTargetActor(self, target, modifiers, ref cursor);
 		}
 	}
 }

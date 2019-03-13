@@ -204,7 +204,7 @@ e1:
 		Voice: Move
 		CargoType: Infantry
 		GrantBunkerCondition: bunkered
-		Accepter: nabnkr, bfrt
+		Accepter: nabnkr, bfrt, garrisonable-building
 
 ggi:
 	Inherits@1: ^Infantry
@@ -310,7 +310,7 @@ ggi:
 		Voice: Move
 		CargoType: Infantry
 		GrantBunkerCondition: bunkered
-		Accepter: nabnkr, bfrt
+		Accepter: nabnkr, bfrt, garrisonable-building
 		Armaments: deployed
 
 snipe:
@@ -346,6 +346,10 @@ snipe:
 		Type: None
 	Armament@primary:
 		Weapon: awp
+		RequiresCondition: !rank-elite
+	Armament@primary-elite:
+		Weapon: awpE
+		RequiresCondition: rank-elite
 	AttackFrontal:
 		Voice: Attack
 	Voiced:

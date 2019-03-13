@@ -79,6 +79,18 @@ namespace OpenRA.Mods.YR.Traits
         [Desc("Will the actor disappear when enter bunker")]
         public readonly bool WillDisappear = true;
 
+        [Desc("Grant an accepter name")]
+        public readonly string GrantAccepter = null;
+
+        [Desc("Will this actor change owner to the garrisoned actor")]
+        public readonly bool ChangeOwnerWhenGarrison = false;
+
+        public readonly string StructureGarrisonSound = null;
+
+        public readonly string StructureGarrisonedNotification = null;
+
+        public readonly string StructureAbandonedNotification = null;
+
         public object Create(ActorInitializer init) { return new BunkerCargo(init, this); }
 	}
 
