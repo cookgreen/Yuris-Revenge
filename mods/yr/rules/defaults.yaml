@@ -468,6 +468,9 @@
 		Name: Civilian Building
 	EditorTilesetFilter:
 		Categories: Civilian building
+		
+^GarrisonableBuilding:
+	Inherits: ^CivBuilding
 	BunkerCargo:
 		Types: Infantry
 		MaxWeight: 10
