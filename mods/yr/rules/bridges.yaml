@@ -167,27 +167,32 @@ lobrdg_r_sw:
 		NeighbourOffsets: 1,-1
 	EditorOnlyTooltip:
 		Name: Bridge Ramp
+	
+^ElevatedBridgePlaceholder:
+	AlwaysVisible:
+	RenderSprites:
+		Palette: terrain
+	WithSpriteBody:
+	AppearsOnRadar:
+	RadarColorFromTerrain:
+		Terrain: Bridge
+	BodyOrientation:
+		UseClassicPerspectiveFudge: false
+		QuantizedFacings: 1
+	Tooltip:
+		Name: Concrete Bridge
+	Immobile:
+		OccupiesSpace: false
+	EditorTilesetFilter:
+		Categories: Bridge
+	Interactable:
+		Bounds: 96, 144
+
+bridge1:
+	Inherits: ^ElevatedBridgePlaceholder
 
 bridge2:
-	Inherits: ^LowBridge
-	Tooltip:
-		Name: Bridge
-	Building:
-		Footprint: ___
-		Dimensions: 3, 1
-	GroundLevelBridge:
-		NeighbourOffsets: 1,-1, 1,1
-	-WithSpriteBody:
-	WithBridgeSpriteBody:
-		AOffset: 1,-1
-		BOffset: 1,1
-		Sequences: idle
-		ADestroyedSequences: adead
-		BDestroyedSequences: bdead
-		ABDestroyedSequences: abdead
-	ShakeOnDeath:
-		Duration: 15
-		Intensity: 6
+	Inherits: ^ElevatedBridgePlaceholder
 		
 lobrdb_a:
 	Inherits: ^LowBridge

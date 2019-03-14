@@ -95,7 +95,7 @@ caoutp:
 
 camach:
 	Defaults:
-		UseTilesetCode: true
+		UseTilesetCode: false
 		Offset: 7, -40
 	idle:
 		ShadowStart: 4

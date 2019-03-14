@@ -65,6 +65,11 @@ lobrdg_r_sw:
 bridge2:
 	Inherits: ^bridge
 	idle: bridge
+		Start: 9
+		
+bridge1:
+	Inherits: ^bridge
+	idle: bridge
 	
 lobrdb_a:
 	Inherits: ^bridge
