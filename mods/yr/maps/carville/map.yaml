@@ -1,0 +1,173 @@
+MapFormat: 11
+RequiresMod: yr
+Title: Carville
+Author: Westwood Studios
+Tileset: SNOW
+MapSize: 80,172
+Bounds: 2,6,76,148
+Visibility: Lobby
+Categories: Conquest
+Players:
+	PlayerReference@Neutral:
+		Name: Neutral
+		OwnsWorld: True
+		NonCombatant: True
+		Faction: Random
+	PlayerReference@Creeps:
+		Name: Creeps
+		NonCombatant: True
+		Faction: Random
+		Enemies: Multi0, Multi1, Multi2, Multi3
+	PlayerReference@Multi0:
+		Name: Multi0
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi1:
+		Name: Multi1
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi2:
+		Name: Multi2
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi3:
+		Name: Multi3
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+Actors:
+	Actor0: cabhut
+		Location: 116,27
+		Owner: Neutral
+	Actor1: cabhut
+		Location: 106,34
+		Owner: Neutral
+	Actor2: cabhut
+		Location: 100,17
+		Owner: Neutral
+	Actor3: cabhut
+		Location: 91,17
+		Owner: Neutral
+	Actor4: cabhut
+		Location: 73,-12
+		Owner: Neutral
+	Actor5: cabhut
+		Location: 63,-13
+		Owner: Neutral
+	Actor6: cabhut
+		Location: 46,-20
+		Owner: Neutral
+	Actor7: cabhut
+		Location: 56,-31
+		Owner: Neutral
+	Actor8: cabhut
+		Location: 68,34
+		Owner: Neutral
+	Actor9: cabhut
+		Location: 108,-22
+		Owner: Neutral
+	Actor10: cabhut
+		Location: 78,10
+		Owner: Neutral
+	Actor11: cabhut
+		Location: 82,0
+		Owner: Neutral
+	Actor12: caoild
+		Location: 72,24
+		Owner: Neutral
+	Actor13: caoild
+		Location: 67,18
+		Owner: Neutral
+	Actor14: caoild
+		Location: 91,-15
+		Owner: Neutral
+	Actor15: caoild
+		Location: 93,-11
+		Owner: Neutral
+	Actor16: caoild
+		Location: 104,19
+		Owner: Neutral
+	Actor17: caoild
+		Location: 100,23
+		Owner: Neutral
+	Actor18: caoild
+		Location: 106,-29
+		Owner: Neutral
+	Actor19: caoild
+		Location: 112,-25
+		Owner: Neutral
+	Actor20: caoild
+		Location: 60,30
+		Owner: Neutral
+	Actor21: caoild
+		Location: 64,36
+		Owner: Neutral
+	Actor22: caoild
+		Location: 61,-19
+		Owner: Neutral
+	Actor23: caoild
+		Location: 57,-15
+		Owner: Neutral
+	Actor24: caoild
+		Location: 150,-2
+		Owner: Neutral
+	Actor25: caoild
+		Location: 77,70
+		Owner: Neutral
+	Actor26: caoild
+		Location: 87,-64
+		Owner: Neutral
+	Actor27: caoild
+		Location: 14,6
+		Owner: Neutral
+	Actor28: caoutp
+		Location: 72,-5
+		Owner: Neutral
+	Actor29: caoutp
+		Location: 87,14
+		Owner: Neutral
+	Actor30: caairp
+		Location: 82,-9
+		Owner: Neutral
+	Actor31: caairp
+		Location: 79,18
+		Owner: Neutral
+	Actor32: tibtre01
+		Location: 142,-4
+		Owner: Neutral
+	Actor33: tibtre01
+		Location: 80,67
+		Owner: Neutral
+	Actor34: tibtre01
+		Location: 19,7
+		Owner: Neutral
+	Actor35: tibtre01
+		Location: 90,-56
+		Owner: Neutral
+	Actor36: mpspawn
+		Location: 48,7
+		Owner: Neutral
+	Actor37: mpspawn
+		Location: 78,-30
+		Owner: Neutral
+	Actor38: mpspawn
+		Location: 109,0
+		Owner: Neutral
+	Actor39: mpspawn
+		Location: 82,38
+		Owner: Neutral
+	Actor40: waypoint
+		Location: 77,-2
+		Owner: Neutral
+	Actor41: waypoint
+		Location: 82,3
+		Owner: Neutral
+Rules:
+	World:
+		GlobalLightingPaletteEffect:
+			Ambient: 0.75
+			Red: 0.68
+			Green: 0.68
