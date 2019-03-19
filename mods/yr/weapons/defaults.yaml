@@ -75,17 +75,22 @@
 		Shadow: true
 		Image: DRAGON
 		Palette: ra
-		ContrailLength: 16
+		ContrailLength: 8
+		ContrailWidth: 24
+		CruiseAltitude: 4352
+		VerticalRateOfTurn: 55
 		HorizontalRateOfTurn: 55
 		Speed: 100
 		RangeLimit: 14c409
 		TerrainHeightAware: true
+		AllowSnapping: true
 
 ^AAMissile:
 	Inherits: ^Missile
 	ValidTargets: Air
 	Warhead@1Dam: SpreadDamage
-		Spread: 120
+		Spread: 0c307
+		Falloff: 100, 0
 		Damage: 75
 		ValidTargets: Air
 		Versus:

@@ -216,35 +216,50 @@ Maverick3E:
 			Drone: 100
 			Rocket: 100
 		DamageTypes: ExplosionDeath, Prone50Percent
-        
+
 MissileLauncher:
 	Inherits: ^Missile
 	ValidTargets: Ground, Air, Water
 	ReloadDelay: 40
-	Range:8c0
+	Range: 6c0
 	Projectile: Missile
-		Speed: 160
+		Speed: 512
 		Arm: 2
-		HorizontalRateOfTurn: 6
+		RangeLimit: 14c512
+		ContrailColor: D8D8FF
+		MinimumLaunchAngle: 255
+		MaximumLaunchAngle: 255
+		MaximumLaunchSpeed: 384
+		MinimumLaunchSpeed: 384
 	Report: iggiat2a.wav, iggiat2b.wav
 	Warhead@1Dam: SpreadDamage
-		Damage: 40 
+		Spread: 0c128
+		Falloff: 100, 83, 67, 50, 0
+		Damage: 40
+		ValidTargets: Ground, Air
 		Versus:
-			None: 20
-			Flak: 20
-			Plate: 20
-			Light: 100
-			Medium: 50
+			None: 15
+			Flak: 15
+			Plate: 10
+			Light: 75
+			Medium: 100
 			Heavy: 100
-			Wood: 10
-			Steel: 10
-			Concrete: 10
-			Drone: 100
+			Wood: 55
+			Steel: 75
+			Concrete: 50
+			Drone: 40
 			Rocket: 100
-		DamageTypes: Prone50Percent
-	Warhead@2EffWater: CreateEffect
-		Explosions: tiny_grey_explosion, small_grey_explosion, small_explosion
-		ValidTargets: Ground, Water, Air
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+	Warhead@2Eff: CreateEffect
+		Explosions: small_grey_explosion
+		ImpactSounds: gexpifva.wav
+		ValidTargets: Ground, Air
+	Warhead@3EffWater: CreateEffect
+		Explosions: small_watersplash
+		ImpactSounds: gexpwasa.wav
+		ValidTargets: Water
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: SmallCrater
         
 MissileLauncherE:
 	Inherits: MissileLauncher
