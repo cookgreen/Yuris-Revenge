@@ -21,7 +21,7 @@ namespace OpenRA.Mods.YR.Traits
         }
     }
     /// <summary>
-    /// This kind of craft can make rotation itself
+    /// This kind of craft can rotate itself
     /// </summary>
     public class SelfRotationCraft : ConditionalTrait<SelfRotationCraftInfo>, ITick
     {
@@ -52,6 +52,15 @@ namespace OpenRA.Mods.YR.Traits
 
         public void Tick(Actor self)
         {
+            /*
+             * TODO: rotate when is moving
+             * 
+             * OpenRA don't have moving event to catch
+             * and the flying activity seems to force aircraft not to rotate
+             * maybe need a new trait?
+             * maybe need engine update?
+             * 
+             */
             plane.Facing += rotFacing;
             if (plane.Facing >= cycleFacing)
             {
