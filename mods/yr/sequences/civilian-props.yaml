@@ -2,7 +2,9 @@ hdstn01:
 	Defaults:
 		UseTilesetExtension: true
 		TilesetOverrides:
-			NEWURBAN: GENERIC
+			DESERT: URBAN
+			NEWURBAN: URBAN
+			LUNAR: URBAN
 	idle:
 		ShadowStart: 1
 
@@ -10,7 +12,9 @@ lt_gen01:
 	Defaults:
 		UseTilesetExtension: true
 		TilesetOverrides:
+			DESERT: URBAN
 			NEWURBAN: URBAN
+			LUNAR: URBAN
 	idle:
 		ShadowStart: 1
 
@@ -18,7 +22,9 @@ lt_gen02:
 	Defaults:
 		UseTilesetExtension: true
 		TilesetOverrides:
+			DESERT: URBAN
 			NEWURBAN: URBAN
+			LUNAR: URBAN
 	idle:
 		ShadowStart: 1
 
@@ -26,7 +32,9 @@ lt_gen03:
 	Defaults:
 		UseTilesetExtension: true
 		TilesetOverrides:
+			DESERT: URBAN
 			NEWURBAN: URBAN
+			LUNAR: URBAN
 	idle:
 		ShadowStart: 1
 
@@ -34,7 +42,9 @@ lt_gen04:
 	Defaults:
 		UseTilesetExtension: true
 		TilesetOverrides:
+			DESERT: URBAN
 			NEWURBAN: URBAN
+			LUNAR: URBAN
 	idle:
 		ShadowStart: 1
 
@@ -42,7 +52,9 @@ lt_sgn01:
 	Defaults:
 		UseTilesetExtension: true
 		TilesetOverrides:
+			DESERT: URBAN
 			NEWURBAN: URBAN
+			LUNAR: URBAN
 	idle:
 		ShadowStart: 1
 
@@ -50,7 +62,9 @@ lt_sgn02:
 	Defaults:
 		UseTilesetExtension: true
 		TilesetOverrides:
+			DESERT: URBAN
 			NEWURBAN: URBAN
+			LUNAR: URBAN
 	idle:
 		ShadowStart: 1
 
@@ -58,7 +72,9 @@ lt_sgn03:
 	Defaults:
 		UseTilesetExtension: true
 		TilesetOverrides:
+			DESERT: URBAN
 			NEWURBAN: URBAN
+			LUNAR: URBAN
 	idle:
 		ShadowStart: 1
 
@@ -66,76 +82,87 @@ lt_sgn04:
 	Defaults:
 		UseTilesetExtension: true
 		TilesetOverrides:
+			DESERT: URBAN
 			NEWURBAN: URBAN
+			LUNAR: URBAN
 	idle:
 
 lt_eur01:
 	Defaults:
 		UseTilesetExtension: true
 		TilesetOverrides:
+			DESERT: URBAN
 			NEWURBAN: URBAN
+			LUNAR: URBAN
 	idle:
 		ShadowStart: 1
-		UseTilesetCode: false
 
 lt_eur02:
 	Defaults:
 		UseTilesetExtension: true
 		TilesetOverrides:
+			DESERT: URBAN
 			NEWURBAN: URBAN
+			LUNAR: URBAN
 	idle:
 		ShadowStart: 1
-		UseTilesetCode: false
 
 pole01:
 	Defaults:
 		UseTilesetExtension: true
 		TilesetOverrides:
+			DESERT: URBAN
 			NEWURBAN: URBAN
+			LUNAR: URBAN
 	idle:
 		ShadowStart: 1
-		UseTilesetCode: false
 
 pole02:
 	Defaults:
 		UseTilesetExtension: true
 		TilesetOverrides:
+			DESERT: URBAN
 			NEWURBAN: URBAN
+			LUNAR: URBAN
 	idle:
 		ShadowStart: 1
-		UseTilesetCode: false
 
 sign01:
 	Defaults:
 		UseTilesetExtension: true
 		TilesetOverrides:
+			DESERT: URBAN
 			NEWURBAN: URBAN
+			LUNAR: URBAN
 	idle:
 		ShadowStart: 1
-		UseTilesetCode: false
 
 sign02:
 	Defaults:
 		UseTilesetExtension: true
 		TilesetOverrides:
+			DESERT: URBAN
 			NEWURBAN: URBAN
+			LUNAR: URBAN
 	idle:
 		ShadowStart: 1
-		UseTilesetCode: false
 
 sign03:
 	Defaults:
 		UseTilesetExtension: true
 		TilesetOverrides:
+			DESERT: URBAN
 			NEWURBAN: URBAN
+			LUNAR: URBAN
 	idle:
-		UseTilesetCode: false
 
 sign04:
 	Defaults:
 		UseTilesetExtension: true
 		TilesetOverrides:
+			DESERT: URBAN
 			NEWURBAN: URBAN
+			LUNAR: URBAN
 	idle:
 		ShadowStart: 1
 
@@ -143,7 +170,9 @@ sign05:
 	Defaults:
 		UseTilesetExtension: true
 		TilesetOverrides:
+			DESERT: URBAN
 			NEWURBAN: URBAN
+			LUNAR: URBAN
 	idle:
 		ShadowStart: 1
 
@@ -151,7 +180,9 @@ sign06:
 	Defaults:
 		UseTilesetExtension: true
 		TilesetOverrides:
+			DESERT: URBAN
 			NEWURBAN: URBAN
+			LUNAR: URBAN
 	idle:
 		ShadowStart: 1
 
@@ -159,93 +190,102 @@ camsc01:
 	Defaults:
 		UseTilesetCode: true
 		TilesetOverrides:
-			NEWURBAN: GENERIC
+			DESERT: URBAN
+			NEWURBAN: URBAN
+			LUNAR: URBAN
 	idle:
 		ShadowStart: 3
-		UseTilesetCode: false
 
 camsc02:
 	Defaults:
 		UseTilesetCode: true
 		TilesetOverrides:
-			NEWURBAN: GENERIC
+			DESERT: URBAN
+			NEWURBAN: URBAN
+			LUNAR: URBAN
 	idle:
 		ShadowStart: 3
-		UseTilesetCode: false
 
 camsc03:
 	Defaults:
 		UseTilesetCode: true
 		TilesetOverrides:
-			NEWURBAN: GENERIC
+			DESERT: URBAN
+			NEWURBAN: URBAN
+			LUNAR: URBAN
 	idle:
 		ShadowStart: 3
-		UseTilesetCode: false
 
 camsc04:
 	Defaults:
 		UseTilesetCode: true
 		TilesetOverrides:
-			NEWURBAN: GENERIC
+			DESERT: URBAN
+			NEWURBAN: URBAN
+			LUNAR: URBAN
 	idle:
 		ShadowStart: 3
-		UseTilesetCode: false
 
 camsc05:
 	Defaults:
 		UseTilesetCode: true
 		TilesetOverrides:
-			NEWURBAN: GENERIC
+			DESERT: URBAN
+			NEWURBAN: URBAN
+			LUNAR: URBAN
 	idle:
 		ShadowStart: 3
-		UseTilesetCode: false
 
 camsc06:
 	Defaults:
 		UseTilesetCode: true
 		TilesetOverrides:
-			NEWURBAN: GENERIC
+			DESERT: URBAN
+			NEWURBAN: URBAN
+			LUNAR: URBAN
 	idle:
 		ShadowStart: 3
-		UseTilesetCode: false
 	idle-fire: camsc06a
 		Length: 4
 		ShadowStart: 4
 		Tick: 80
-		UseTilesetCode: false
 
 camsc11:
 	Defaults:
 		UseTilesetCode: true
 		TilesetOverrides:
-			NEWURBAN: GENERIC
+			DESERT: URBAN
+			NEWURBAN: URBAN
+			LUNAR: URBAN
 	idle:
 		ShadowStart: 3
-		UseTilesetCode: false
 
 camsc12:
 	Defaults:
 		UseTilesetCode: true
 		TilesetOverrides:
-			NEWURBAN: GENERIC
+			DESERT: URBAN
+			NEWURBAN: URBAN
+			LUNAR: URBAN
 	idle:
 		ShadowStart: 3
-		UseTilesetCode: false
 
 camsc13:
 	Defaults:
 		UseTilesetCode: true
 		TilesetOverrides:
-			NEWURBAN: GENERIC
+			DESERT: URBAN
+			NEWURBAN: URBAN
+			LUNAR: URBAN
 	idle:
 		ShadowStart: 3
-		UseTilesetCode: false
-
 trff01:
 	Defaults:
 		UseTilesetExtension: true
 		TilesetOverrides:
+			DESERT: URBAN
 			NEWURBAN: URBAN
+			LUNAR: URBAN
 	idle:
 		ShadowStart: 1
 
@@ -253,7 +293,9 @@ trff02:
 	Defaults:
 		UseTilesetExtension: true
 		TilesetOverrides:
+			DESERT: URBAN
 			NEWURBAN: URBAN
+			LUNAR: URBAN
 	idle:
 		ShadowStart: 1
 
@@ -261,7 +303,9 @@ trff03:
 	Defaults:
 		UseTilesetExtension: true
 		TilesetOverrides:
+			DESERT: URBAN
 			NEWURBAN: URBAN
+			LUNAR: URBAN
 	idle:
 		ShadowStart: 1
 
@@ -269,7 +313,9 @@ trff04:
 	Defaults:
 		UseTilesetExtension: true
 		TilesetOverrides:
+			DESERT: URBAN
 			NEWURBAN: URBAN
+			LUNAR: URBAN
 	idle:
 		ShadowStart: 1
 
@@ -277,90 +323,100 @@ camisc01:
 	Defaults:
 		UseTilesetCode: true
 		TilesetOverrides:
-			NEWURBAN: GENERIC
+			DESERT: URBAN
+			NEWURBAN: URBAN
+			LUNAR: URBAN
 	idle:
 		ShadowStart: 3
-		UseTilesetCode: false
 
 camisc02:
 	Defaults:
 		UseTilesetCode: true
 		TilesetOverrides:
-			NEWURBAN: GENERIC
+			DESERT: URBAN
+			NEWURBAN: URBAN
+			LUNAR: URBAN
 	idle:
-		UseTilesetCode: false
 
 camisc03:
 	Defaults:
 		UseTilesetCode: true
 		TilesetOverrides:
-			NEWURBAN: GENERIC
+			DESERT: URBAN
+			NEWURBAN: URBAN
+			LUNAR: URBAN
 	idle:
 		ShadowStart: 3
-		UseTilesetCode: false
 
 camisc04:
 	Defaults:
 		UseTilesetCode: true
 		TilesetOverrides:
-			NEWURBAN: GENERIC
+			DESERT: URBAN
+			NEWURBAN: URBAN
+			LUNAR: URBAN
 	idle:
 		ShadowStart: 3
-		UseTilesetCode: false
 
 camisc05:
 	Defaults:
 		UseTilesetCode: true
 		TilesetOverrides:
-			NEWURBAN: GENERIC
+			DESERT: URBAN
+			NEWURBAN: URBAN
+			LUNAR: URBAN
 	idle:
 		ShadowStart: 3
-		UseTilesetCode: false
 
 camisc06:
 	Defaults:
 		UseTilesetCode: true
 		TilesetOverrides:
-			NEWURBAN: GENERIC
+			DESERT: URBAN
+			NEWURBAN: URBAN
+			LUNAR: URBAN
 	idle:
 		ShadowStart: 3
-		UseTilesetCode: false
 
 caeuro05:
 	Defaults:
 		UseTilesetCode: true
 		TilesetOverrides:
-			NEWURBAN: GENERIC
+			DESERT: URBAN
+			NEWURBAN: URBAN
+			LUNAR: URBAN
 	idle:
 		ShadowStart: 3
-		UseTilesetCode: false
 
 capark01:
 	Defaults:
 		UseTilesetCode: true
 		TilesetOverrides:
-			NEWURBAN: GENERIC
+			DESERT: URBAN
+			NEWURBAN: URBAN
+			LUNAR: URBAN
 	idle:
 		ShadowStart: 3
-		UseTilesetCode: false
 
 capark02:
 	Defaults:
 		UseTilesetCode: true
 		TilesetOverrides:
-			NEWURBAN: GENERIC
+			DESERT: URBAN
+			NEWURBAN: URBAN
+			LUNAR: URBAN
 	idle:
 		ShadowStart: 3
-		UseTilesetCode: false
 
 capark03:
 	Defaults:
 		UseTilesetCode: true
 		TilesetOverrides:
-			NEWURBAN: GENERIC
+			DESERT: URBAN
+			NEWURBAN: URBAN
+			LUNAR: URBAN
 	idle:
 		ShadowStart: 3
-		UseTilesetCode: false
 
 ammo01:
 	idle:
@@ -374,12 +430,13 @@ gagate_a:
 	Defaults:
 		UseTilesetCode: true
 		TilesetOverrides:
-			NEWURBAN: GENERIC
+			DESERT: URBAN
+			NEWURBAN: URBAN
+			LUNAR: URBAN
 		Offset: 0, -15
 	idle:
 		Length: 10
 		ShadowStart: 21
-		UseTilesetCode: false
 	make: gagate_a
 		Start: 10
 		Length: -10
@@ -389,6 +446,8 @@ spkr01:
 	Defaults:
 		AddExtension: false
 		TilesetOverrides:
-			NEWURBAN: GENERIC
+			DESERT: URBAN
+			NEWURBAN: URBAN
+			LUNAR: URBAN
 	idle: spkr01.urb
 		ShadowStart: 1
