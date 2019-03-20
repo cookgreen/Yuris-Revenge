@@ -133,9 +133,9 @@ crate:
 
 rank:
 	veteran: pips
-		Start: 13
-	elite: pips
 		Start: 14
+	elite: pips
+		Start: 15
 
 mpspawn:
 	idle:

@@ -64,22 +64,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Activities\ChronoResourceTeleport.cs" />
-    <Compile Include="Activities\DeliverPower.cs" />
     <Compile Include="Activities\EnterCarrierMaster.cs" />
     <Compile Include="Activities\EnterBunker.cs" />
     <Compile Include="Activities\ShootableBallisticMissileFly.cs" />
     <Compile Include="Activities\SpawnerHarvesterHarvest.cs" />
     <Compile Include="Activities\TractionFallToEarth.cs" />
     <Compile Include="Activities\UnloadBunkerCargo.cs" />
-    <Compile Include="Effects\RallyPointIndicatorEx.cs" />
     <Compile Include="FileSystem\BagFileHack.cs" />
     <Compile Include="Graphics\ArcRenderable.cs" />
-    <Compile Include="Graphics\InfraredRenderable.cs" />
     <Compile Include="Graphics\WithTractionShadow.cs" />
     <Compile Include="Order\EnterBunkersTargeter.cs" />
     <Compile Include="Order\EnterBunkerTargeter.cs" />
     <Compile Include="Order\ShootableBallisticMissileMoveOrderTargeter.cs" />
-    <Compile Include="Traits\AcceptDeliveredPowerInfo.cs" />
     <Compile Include="Traits\AttackBunkered.cs" />
     <Compile Include="Traits\BaseSpawnerMaster.cs" />
     <Compile Include="Traits\BaseSpawnerSlave.cs" />
@@ -90,7 +86,6 @@
     <Compile Include="Traits\ChronoResourceDelivery.cs" />
     <Compile Include="Traits\Conditions\GrantExternalConditionWeapon.cs" />
     <Compile Include="Traits\Conditions\GrantTimedConditionOnDeploy.cs" />
-    <Compile Include="Traits\DeliversPower.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Traits\CrewKillable.cs" />
     <Compile Include="Traits\SupportPowers\ExploreMapSupportPower.cs" />
@@ -105,7 +100,6 @@
     <Compile Include="Traits\SupportPowers\ParticleSupportPower.cs" />
     <Compile Include="Traits\BunkerPassenger.cs" />
     <Compile Include="Traits\PeriodicExplosion.cs" />
-    <Compile Include="Traits\RallyPointEx.cs" />
     <Compile Include="Traits\RemoteControlMaster.cs" />
     <Compile Include="Traits\RemoteControlSlave.cs" />
     <Compile Include="Traits\Render\WithExitOverlay.cs" />
@@ -119,9 +113,8 @@
     <Compile Include="Traits\Bunkerable.cs" />
     <Compile Include="Traits\SupportPowers\TransformActorsPower.cs" />
     <Compile Include="Traits\Tractable.cs" />
-    <Compile Include="Traits\TractorWarhead.cs" />
+    <Compile Include="Warheads\TractorWarhead.cs" />
     <Compile Include="Warheads\KillCrewWarhead.cs" />
-    <Compile Include="Warheads\MagWaveWarhead.cs" />
     <Compile Include="Warheads\TransformActorWarhead.cs" />
     <Compile Include="Widgets\Logic\MainMenuLogic.cs" />
     <Compile Include="Widgets\Logic\VxlBrowserLogic.cs" />
@@ -141,6 +134,7 @@
       <Name>OpenRA.Mods.Common</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
