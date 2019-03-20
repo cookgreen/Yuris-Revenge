@@ -50,11 +50,13 @@ bsub:
 		Queue: Ship
 		BuildPaletteOrder: 20
 		Prerequisites: ~yayard
-		Description: Basic Yuri Navy unit\nCan detect other submarines and Giant Squids.\n  Strong vs Ships\n  Weak vs Ground units, Aircraft\nSpecial Ability: Submerge
+		Description: Basic Yuri Navy unit\nCan detect other submarines and Giant Squids.\nCan fire missile to attack targets on the ground.\n  Strong vs Ships， Ground units\n  Weak vs Aircraft\nSpecial Ability: Submerge
 	Valued:
 		Cost: 2000
 	Tooltip:
 		Name: Yuri Boomer
+	Selectable:
+		Bounds: 70, 60, 0, -6
 	Health:
 		HP: 1200
 	Armor:
@@ -83,9 +85,15 @@ bsub:
 		Condition: uncloak-critical-damage
 		ValidDamageStates: Critical
 	Armament:
-		Weapon: SubTorpedo
+		Weapon: BoomerTorpedo
 		LocalOffset: 768,0,0
 		FireDelay: 2
+		RequiresCondition: !rank-elite
+	Armament@Elite:
+		Weapon: BoomerTorpedoE
+		LocalOffset: 768,0,0
+		FireDelay: 2
+		RequiresCondition: rank-elite
 	AttackFrontal:
 		Voice: Attack
 	AutoTarget:
@@ -106,3 +114,6 @@ bsub:
 	Voiced:
 		VoiceSet: BoomerVoice
 	HitShape:
+	MissileSpawnerMaster:
+		SpawnerArmamentName: second
+		Actors: cmisl, cmisl

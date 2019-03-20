@@ -293,7 +293,7 @@ V3Launcher:
 	Warhead@2Eff: CreateEffect
 		-Explosions:
 		ValidTargets: Ground, Water
-        
+
 HornetBomb:
 	Inherits: ^Missile
 	ReloadDelay: 3
@@ -334,3 +334,62 @@ HornetBomb:
 		ValidTargets: Water
 	Warhead@4Smu: LeaveSmudge
 		SmudgeType: SmallCrater
+
+BoomerTorpedo:
+	ReloadDelay: 120
+	Range: 7c0
+	Report: vbooat2a.wav
+	ValidTargets: Water, Underwater
+	Burst: 1
+	BurstDelays: 20
+	Projectile: Missile
+		Image: missile
+		Speed: 102
+		TrailImage: bbblelrg
+		HorizontalRateOfTurn: 12
+		RangeLimit: 8c409
+		BoundToTerrainType: Water
+		Palette: shadow
+		TerrainHeightAware: true
+	Warhead@1Dam: SpreadDamage
+		Spread: 426
+		Damage: 60
+		ValidTargets: Water, Underwater, Bridge
+		Versus:
+			None: 100
+			Flak: 100
+			Plate: 100
+			Light: 75
+			Medium: 100
+			Heavy: 100
+			Wood: 65
+			Steel: 65
+			Concrete: 60
+			Drone: 25
+			Rocket: 100
+		DamageTypes: ExplosionDeath
+	Warhead@2EffWater: CreateEffect
+		Explosions: large_watersplash
+		ImpactSounds: gexpwasa.wav
+		ValidTargets: Water
+	Warhead@3EffGround: CreateEffect
+		Explosions: medium_clsn
+		ImpactSounds: gexpwasb.wav
+		ValidTargets: Ground
+
+BoomerTorpedoE:
+	Inherits: SubTorpedo
+	Burst: 4
+		
+CruiseLauncher:
+	Inherits: ^LargeBullet
+	Range: 20c0
+	ReloadDelay: 30
+	Report: vbooat1a.wav
+	ValidTargets: Infantry, Vehicle, Structure
+	Burst: 2
+	Warhead@1Dam: SpreadDamage
+		Damage: 1
+		ValidTargets: Ground
+	Warhead@2Eff: CreateEffect
+		-Explosions:

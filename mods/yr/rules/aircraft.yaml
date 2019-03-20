@@ -449,7 +449,7 @@ v3rocket:
 		LaunchAngle: 128
 		Speed: 170
 	Selectable:
-		Bounds: 65, 33, -10, -11
+		Bounds: 30, 24, -10, -11
 	Contrail:
 		Offset: -598,0,0
 	AttackFrontal:
@@ -586,3 +586,33 @@ schphusk:
 		Image: schp
 	BodyOrientation:
 		UseClassicPerspectiveFudge: false
+
+cmisl:
+	Inherits: ^ShootableMissileVoxel
+	Valued:
+		Cost: 10
+	Tooltip:
+		Name: Cruise Missile
+	Health:
+		HP: 90
+	Armor:
+		Type: Light
+	ShootableBallisticMissile:
+		LaunchAngle: 128
+		Speed: 170
+	Selectable:
+		Bounds: 30, 24, -10, -11
+	Contrail:
+		Offset: -598,0,0
+	AttackFrontal:
+		Voice: Attack
+	Voiced:
+		VoiceSet: HindVoice
+	Selectable:
+	MissileSpawnerSlave:
+	Explodes:
+		Type: Footprint
+		Weapon: V3WH
+	RenderVoxels:
+		Image: bsubmisl
+	RejectsOrders:
