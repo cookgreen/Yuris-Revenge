@@ -69,12 +69,13 @@
     <Compile Include="Activities\EnterBunker.cs" />
     <Compile Include="Activities\ShootableBallisticMissileFly.cs" />
     <Compile Include="Activities\SpawnerHarvesterHarvest.cs" />
+    <Compile Include="Activities\TractionFallToEarth.cs" />
     <Compile Include="Activities\UnloadBunkerCargo.cs" />
     <Compile Include="Effects\RallyPointIndicatorEx.cs" />
     <Compile Include="FileSystem\BagFileHack.cs" />
     <Compile Include="Graphics\ArcRenderable.cs" />
     <Compile Include="Graphics\InfraredRenderable.cs" />
-    <Compile Include="Graphics\RectangleRenderable.cs" />
+    <Compile Include="Graphics\WithTractionShadow.cs" />
     <Compile Include="Order\EnterBunkersTargeter.cs" />
     <Compile Include="Order\EnterBunkerTargeter.cs" />
     <Compile Include="Order\ShootableBallisticMissileMoveOrderTargeter.cs" />
@@ -117,6 +118,8 @@
     <Compile Include="Traits\SpawnerRefineryMaster.cs" />
     <Compile Include="Traits\Bunkerable.cs" />
     <Compile Include="Traits\SupportPowers\TransformActorsPower.cs" />
+    <Compile Include="Traits\Tractable.cs" />
+    <Compile Include="Traits\TractorWarhead.cs" />
     <Compile Include="Warheads\KillCrewWarhead.cs" />
     <Compile Include="Warheads\MagWaveWarhead.cs" />
     <Compile Include="Warheads\TransformActorWarhead.cs" />

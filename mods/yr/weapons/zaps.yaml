@@ -268,3 +268,81 @@ NeutronRifle:
 	Warhead@Stars: CreateEffect
 		Explosions: chronosk
 		ValidTargets: Ground, Water
+		
+MagneShake:
+	ReloadDelay: 110
+	Range: 10c0
+	Report: vmagat2a.wav
+	ValidTargets: Structure
+	Projectile: AreaBeam
+		Speed: 0c128
+		Duration: 111
+		DamageInterval: 25
+		Width: 384
+		Shape: Flat
+		ZOffset: 2047
+		BeyondTargetRange: 0c256
+		Blockable: true
+		TrackTarget: true
+		Color: F500F550
+	Warhead@1Dam: SpreadDamage
+		Spread: 2
+		Damage: 80
+		Versus:
+			None: 0
+			Flak: 0
+			Plate: 0
+			Light: 0
+			Medium: 100
+			Heavy: 0
+			Wood: 100
+			Steel: 100
+			Concrete: 100
+			Drone: 0
+			Rocket: 0
+		
+MagnetronZapEffect:
+	ReloadDelay: 15
+	Range: 10c0
+	Report: tslachg2.aud
+	ValidTargets: Tractable
+	Projectile: AreaBeam
+		Speed: 0c128
+		Duration: 111
+		DamageInterval: 25
+		Width: 384
+		Shape: Flat
+		ZOffset: 2047
+		BeyondTargetRange: 0c256
+		Blockable: true
+		TrackTarget: true
+		Color: F500F550
+	Warhead@1Dam: SpreadDamage
+		Range: 0, 32
+		Falloff: 100, 100
+		Damage: 0
+		AffectsParent: false
+		DamageTypes: SmallExplosionDeath
+		ValidTargets: Tractable
+
+MagnetronTract:
+	ReloadDelay: 15
+	Range: 10c0
+	ValidTargets: Tractable
+	TargetActorCenter: true
+	Projectile: InstantHit
+	Warhead@1Tract: Tractor
+		Spread: 0
+		ValidTargets: Tractable
+		CruiseSpeedMultiplier: 1
+		DamageTypes: DefaultDeath
+
+MagnetronLift:
+	Inherits: MagnetronTract
+	Warhead@1Tract: Tractor
+		CruiseSpeedMultiplier: 0
+
+MagnetronRepel:
+	Inherits: MagnetronTract
+	Warhead@1Tract: Tractor
+		CruiseSpeedMultiplier: -1

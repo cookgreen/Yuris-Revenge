@@ -296,13 +296,23 @@ tele:
 		TurnSpeed: 5
 		Offset: -400,0,0
 	Armament@primary:
-		Weapon: 105mm
-		LocalOffset: 640,0,384
-		RequiresCondition: !rank-elite
-	Armament@elite:
-		Weapon: 105mmE
-		LocalOffset: 640,0,384
-		RequiresCondition: rank-elite
+		Weapon: MagneShake
+		LocalOffset: 720,0,1000
+	Armament@effect:
+		Weapon: MagnetronZapEffect
+		LocalOffset: 720,0,1000
+	Armament@tract:
+		Weapon: MagnetronTract
+		LocalOffset: 720,0,1000
+		RequiresCondition: stance-defend
+	Armament@repel:
+		Weapon: MagnetronRepel
+		LocalOffset: 720,0,1000
+		RequiresCondition: stance-holdfire
+	Armament@lift:
+		Weapon: MagnetronLift
+		LocalOffset: 720,0,1000
+		RequiresCondition: !stance-defend && !stance-holdfire
 	AttackTurreted:
 		Voice: Attack
 	AutoTarget:
@@ -316,6 +326,9 @@ tele:
 		VoiceSet: MagnetronVoice
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
+	AutoTarget:
+		DefendCondition: stance-defend
+		HoldFireCondition: stance-holdfire
 	HitShape:
 	CrewKillable:
 	SelfHealing@MACHSHOP:

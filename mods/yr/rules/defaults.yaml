@@ -277,6 +277,22 @@
 		Condition: diskdrainability
 	ShutdownPower:
 		RequiresCondition: diskdrainability
+		
+^Tractable:
+	Tractable:
+		TractingCondition: tracting
+		AirborneCondition: airborne
+		MinAirborneAltitude: 128
+		RequiresCondition: !invulnerability
+	RejectsOrders@tracting:
+		RequiresCondition: tracting
+	Targetable@AIRBORNE:
+		TargetTypes: Air, Tractable
+		RequiresCondition: airborne
+	WithTractionShadow:
+		Offset: 43, 128, 0
+		ZOffset: -129
+		RequiresCondition: tracting
 
 ^ChronoDisable:
 	TimedConditionBar@ChronoDisable:
@@ -845,6 +861,7 @@
 	Inherits@3: ^IronCurtainable
 	Inherits@4: ^ChronoDisable
 	Inherits@5: ^CrateStatModifiers
+	Inherits@6: ^Tractable
 	OwnerLostAction:
 		Action: Kill
 	Mobile:

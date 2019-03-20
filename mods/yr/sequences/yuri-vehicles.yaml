@@ -19,6 +19,8 @@ caos:
 	icon: caosicon
 
 mind:
+	muzzle: yuricntl
+		Length: *
 	icon: mindicon
     
 disk:
