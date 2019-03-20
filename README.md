@@ -18,8 +18,11 @@ Check [Wiki](https://github.com/cookgreen/yr/wiki) for more details
 ## Credit
 alienfxfiend  
 finalshake  
+forcecore  
 fusion809  
+Gyula Zimmermann(Graion Dilach)  
 intr  
+MustafaTR  
 yaaaaa  
 
 #### Thanks to all the people who helped this mod!  
