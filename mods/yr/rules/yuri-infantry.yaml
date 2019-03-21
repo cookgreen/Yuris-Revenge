@@ -402,7 +402,7 @@ julia:
 		Queue: Infantry
 		Prerequisites: ~missiononlyunit
 		BuildPaletteOrder: 20
-		Description: Yuri's Elite Sniper.\n Can kill crew of enemy vehicle effectively.\n Can Infect the genetic virus to enemy soldiers\n make them become powerful brute which obey Yuri forever.
+		Description: Yuri's Elite Sniper.\n Can kill crew of enemy vehicle effectively.\n Can hide herself but will show up when attack\n Can Infect the genetic virus to enemy soldiers\n make them become powerful brute which obey Yuri forever.
 		BuildLimit: 1
 	RenderSprites:
 		Image: Virus
@@ -448,3 +448,8 @@ julia:
 		CargoType: Infantry
 		GrantBunkerCondition: bunkered
 		Accepter: bfrt
+	Variety:
+		IsPlayerPalette: true
+		VarietyCondition: varing
+	Targetable: 
+		RequiresCondition: !varing

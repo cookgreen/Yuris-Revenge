@@ -406,7 +406,6 @@ sref:
 	CrewKillable:
 	SelfHealing@MACHSHOP:
 		RequiresCondition: machshop
-	Bunkerable:
 
 mgtk:
 	Inherits: ^Vehicle
@@ -462,6 +461,12 @@ mgtk:
 	SelfHealing@MACHSHOP:
 		RequiresCondition: machshop
 	Bunkerable:
+	Variety:
+		Actor: tree28
+		UnvarietyOn: Move
+		VarietyCondition: varing
+	Targetable: 
+		RequiresCondition: !varing
 
 robo:
 	Inherits: ^Vehicle
@@ -565,7 +570,6 @@ howi:
 	-CrewKillable:
 	SelfHealing@MACHSHOP:
 		RequiresCondition: machshop
-	Bunkerable:
 
 bfrt:
 	Inherits: ^Vehicle
