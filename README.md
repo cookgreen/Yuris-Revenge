@@ -2,17 +2,13 @@
 ## Introduction
 Port Yuri's Revenge to OpenRA Engine
 
-## MOD Version
+## Version
 release-20181215
 
-## Engine Version
-release-20181215
-
-## Requirement
-OpenRA - Version: release-20181215
-
-## Usage
+## Build
 Run "make.cmd" and type "all" in the terminal  
+
+## Install the content
 Check [Wiki](https://github.com/cookgreen/yr/wiki) for more details
 
 ## Credit
