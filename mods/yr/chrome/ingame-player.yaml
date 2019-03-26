@@ -588,8 +588,8 @@ Container@PLAYER_WIDGETS:
 									ImageCollection: production-icons
 						Button@SCROLL_UP_BUTTON:
 							Logic: AddFactionSuffixLogic
-							X: 74
-							Y: PARENT_BOTTOM + 36
+							X: 91
+							Y: PARENT_BOTTOM + 454
 							Width: 77
 							Height: 27
 							VisualHeight: 0
@@ -598,8 +598,8 @@ Container@PLAYER_WIDGETS:
 							TooltipContainer: TOOLTIP_CONTAINER
 						Button@SCROLL_DOWN_BUTTON:
 							Logic: AddFactionSuffixLogic
-							X: 74
-							Y: PARENT_BOTTOM + 36
+							X: 14
+							Y: PARENT_BOTTOM + 454
 							Width: 77
 							Height: 27
 							VisualHeight: 0

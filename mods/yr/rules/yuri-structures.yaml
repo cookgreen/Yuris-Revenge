@@ -2,11 +2,6 @@ yacnst:
 	Inherits: ^Building
 	Inherits@SMC: ^SuperMindControllable
 	Inherits@shape: ^4x4Shape
-	Buildable:
-		Queue: Building
-		BuildPaletteOrder: 1000
-		Prerequisites: ~disabled
-		Description:
 	Building:
 		Footprint: xxxx xxxx xxxx xxxx
 		Dimensions: 4,4
