@@ -184,10 +184,6 @@ virus:
         
 slav:
 	Inherits: ^Infantry
-	Buildable:
-		BuildPaletteOrder: 20
-		Prerequisites: ~cannotbetrained
-		Description: Work for Yuri
 	Valued:
 		Cost: 700
 	Tooltip:

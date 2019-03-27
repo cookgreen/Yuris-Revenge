@@ -274,7 +274,7 @@ MagneShake:
 	Range: 10c0
 	Report: vmagat2a.wav
 	ValidTargets: Structure
-	Projectile: AreaBeam
+	Projectile: AreaBeam#TODO: need to rewrite a new warhead to make it more looks like the original
 		Speed: 0c128
 		Duration: 111
 		DamageInterval: 25
@@ -304,11 +304,11 @@ MagneShake:
 MagnetronZapEffect:
 	ReloadDelay: 15
 	Range: 10c0
-	Report: tslachg2.aud
+	Report: vmagat2a.wav
 	ValidTargets: Tractable
-	Projectile: AreaBeam
+	Projectile: AreaBeam#TODO: need to rewrite a new warhead to make it more looks like the original
 		Speed: 0c128
-		Duration: 111
+		Duration: 15
 		DamageInterval: 25
 		Width: 384
 		Shape: Flat
@@ -328,12 +328,12 @@ MagnetronZapEffect:
 MagnetronTract:
 	ReloadDelay: 15
 	Range: 10c0
-	ValidTargets: Tractable
+	ValidTargets: Vehicle
 	TargetActorCenter: true
 	Projectile: InstantHit
 	Warhead@1Tract: Tractor
 		Spread: 0
-		ValidTargets: Tractable
+		ValidTargets: Vehicle
 		CruiseSpeedMultiplier: 1
 		DamageTypes: DefaultDeath
 

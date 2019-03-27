@@ -283,7 +283,7 @@
 		TractingCondition: tracting
 		AirborneCondition: airborne
 		MinAirborneAltitude: 128
-		RequiresCondition: !invulnerability
+		RequiresCondition: !invulnerability && tracting
 	RejectsOrders@tracting:
 		RequiresCondition: tracting
 	Targetable@AIRBORNE:

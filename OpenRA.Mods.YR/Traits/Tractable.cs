@@ -91,6 +91,9 @@ namespace OpenRA.Mods.Yupgi_alert.Traits
 
 		void ITick.Tick(Actor self)
 		{
+            if (IsTraitDisabled)
+                return;
+
 			--timeoutTicks;
 
 			// Check if we are tracted or not.
