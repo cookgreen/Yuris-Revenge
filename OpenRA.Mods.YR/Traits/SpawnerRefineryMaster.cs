@@ -1,5 +1,6 @@
 ﻿using OpenRA.Mods.Common.Activities;
 using OpenRA.Mods.Common.Traits;
+using OpenRA.Mods.YR.Activities;
 using OpenRA.Primitives;
 using OpenRA.Traits;
 using System;
@@ -15,6 +16,21 @@ namespace OpenRA.Mods.YR.Traits
     {
         [Desc("Which resources it can harvest. Make sure slaves can mine these too!")]
         public readonly HashSet<string> Resources = new HashSet<string>();
+        
+        [Desc("When deployed, use this scan radius.")]
+        public readonly int ShortScanRadius = 8;
+
+        [Desc("Look this far when Searching for Ore (in Cells)")]
+        public readonly int LongScanRadius = 24;
+
+        [Desc("Look this far when trying to find a deployable position from the target resource patch")]
+        public readonly int DeployScanRadius = 8; // 8 * 8 * 3 should be enough candidates, seriously.
+
+        [Desc("If no resource within range at each kick, move.")]
+        public readonly int KickScanRadius = 5;
+
+        [Desc("If the SlaveMiner is idle for this long, he'll try to look for ore again at SlaveMinerShortScan range to find ore and wake up (in ticks)")]
+        public readonly int KickDelay = 20;
 
         [Desc("Play this sound when the slave is freed")]
         public readonly string FreeSound = null;
@@ -24,23 +40,30 @@ namespace OpenRA.Mods.YR.Traits
         }
     }
 
-    public class SpawnerRefineryMaster : BaseSpawnerMaster, INotifyTransform, INotifyBuildingPlaced, ITick, IIssueOrder, IResolveOrder
+    public class SpawnerRefineryMaster : BaseSpawnerMaster, INotifyTransform, INotifyBuildingPlaced, ITick, IIssueOrder, IResolveOrder, INotifyIdle
     {
+        /*When transformed complete, it must be mining state*/
         public MiningState MiningState = MiningState.Mining;
         public CPos? LastOrderLocation = null;
         private SpawnerRefineryMasterInfo info;
         readonly ResourceLayer resLayer;
         int respawnTicks = 0;
+        int kickTicks;
+        bool allowKicks = true; // allow kicks?
+        Transforms transforms;
+        bool force = false;
+        CPos? forceMovePos = null;
 
         public IEnumerable<IOrderTargeter> Orders
         {
-            get { yield return new SpawnerHarvestOrderTargeter(); }
+            get { yield return new SpawnerRefineryOrderTargeter(); }
         }
 
         public SpawnerRefineryMaster(ActorInitializer init, SpawnerRefineryMasterInfo info) : base(init, info)
         {
             this.info = info;
             resLayer = init.Self.World.WorldActor.Trait<ResourceLayer>();
+            transforms = init.Self.Trait<Transforms>();
         }
 
         void INotifyTransform.AfterTransform(Actor toActor)
@@ -51,9 +74,19 @@ namespace OpenRA.Mods.YR.Traits
             {
                 se.SpawnerSlave.LinkMaster(se.Actor, toActor, harvesterMaster);
                 se.SpawnerSlave.Stop(se.Actor);
-                se.Actor.QueueActivity(new Follow(se.Actor, Target.FromActor(toActor), WDist.FromCells(1), WDist.FromCells(3)));
+                if (!se.Actor.IsDead)
+                    se.Actor.QueueActivity(new Follow(se.Actor, Target.FromActor(toActor), WDist.FromCells(1), WDist.FromCells(3)));
             }
             harvesterMaster.AssignSlavesToMaster(SlaveEntries);
+            if (force)
+            {
+                harvesterMaster.LastOrderLocation = forceMovePos;
+                toActor.QueueActivity(new SpawnerHarvesterHarvest(toActor));
+            }
+            else
+            {
+                toActor.QueueActivity(new SpawnerHarvesterHarvest(toActor));
+            }
         }
 
         public void BeforeTransform(Actor self)
@@ -61,9 +94,23 @@ namespace OpenRA.Mods.YR.Traits
 
         }
 
-       void INotifyBuildingPlaced.BuildingPlaced(Actor self)
-       {
-       }
+        public bool CanHarvestCell(Actor self, CPos cell)
+        {
+            // Resources only exist in the ground layer
+            if (cell.Layer != 0)
+                return false;
+
+            var resType = resLayer.GetResource(cell);
+            if (resType == null)
+                return false;
+
+            // Can the harvester collect this kind of resource?
+            return info.Resources.Contains(resType.Info.Type);
+        }
+
+        void INotifyBuildingPlaced.BuildingPlaced(Actor self)
+        {
+        }
 
         void INotifyTransform.OnTransform(Actor self)
         {
@@ -83,27 +130,15 @@ namespace OpenRA.Mods.YR.Traits
 
         void HandleSpawnerHarvest(Actor self, Order order)
         {
-            //allowKicks = true;
+            //Maybe player have a better idea, let's move
+            ForceMove(order.TargetLocation);
+        }
 
-            // state == Deploying implies order string of SpawnerHarvestDeploying
-            // and must not cancel deploy activity!
-            if (MiningState != MiningState.Deploying)
-                self.CancelActivity();
-
-            MiningState = MiningState.Scan;
-
-            //self.QueueActivity(new SpawnerHarvesterHarvest(self));
-            self.SetTargetLine(Target.FromCell(self.World, LastOrderLocation.Value), Color.Red);
-
-            // Assign new targets for slaves too.
-            foreach (var se in SlaveEntries)
-            {
-                if (se.IsValid && se.Actor.IsInWorld)
-                {
-                    LastOrderLocation = ResolveHarvestLocation(se.Actor, order);
-                    AssignTargetForSpawned(se.Actor, LastOrderLocation.Value);
-                }
-            }
+        public void ForceMove(CPos pos)
+        {
+            force = true;
+            forceMovePos = pos;
+            transforms.DeployTransform(true);
         }
 
         CPos ResolveHarvestLocation(Actor self, Order order)
@@ -180,7 +215,7 @@ namespace OpenRA.Mods.YR.Traits
 
         public void ResolveOrder(Actor self, Order order)
         {
-            if (order.OrderString == "SpawnerHarvest")
+            if (order.OrderString == "SpawnerRefineryHarvest")
                 HandleSpawnerHarvest(self, order);
             else if (order.OrderString == "Stop" || order.OrderString == "Move")
             {
@@ -191,9 +226,64 @@ namespace OpenRA.Mods.YR.Traits
 
         public Order IssueOrder(Actor self, IOrderTargeter order, Target target, bool queued)
         {
-            if (order.OrderID == "SpawnerHarvest")
+            if (order.OrderID == "SpawnerRefineryHarvest")
                 return new Order(order.OrderID, self, target, queued);
             return null;
+        }
+
+        public void TickIdle(Actor self)
+        {
+            // wake up on idle for long (to find new resource patch. i.e., kick)
+            if (allowKicks && self.IsIdle)
+                kickTicks--;
+            else
+                kickTicks = info.KickDelay;
+
+            if (kickTicks <= 0)
+            {
+                kickTicks = info.KickDelay;
+                MiningState = MiningState.Kick;
+                self.QueueActivity(new SpawnerRefineryHarvest(self));
+            }
+        }
+
+        public BaseSpawnerSlaveEntry[] GetSlaves()
+        {
+            return SlaveEntries;
+        }
+    }
+
+    class SpawnerRefineryOrderTargeter : IOrderTargeter
+    {
+        public string OrderID { get { return "SpawnerRefineryHarvest"; } }
+        public int OrderPriority { get { return 10; } }
+        public bool IsQueued { get; protected set; }
+        public bool TargetOverridesSelection(TargetModifiers modifiers) { return true; }
+
+        public bool CanTarget(Actor self, Target target, List<Actor> othersAtTarget, ref TargetModifiers modifiers, ref string cursor)
+        {
+            if (target.Type != TargetType.Terrain)
+                return false;
+
+            if (modifiers.HasModifier(TargetModifiers.ForceMove))
+                return false;
+
+            var location = self.World.Map.CellContaining(target.CenterPosition);
+
+            // Don't leak info about resources under the shroud
+            if (!self.Owner.Shroud.IsExplored(location))
+                return false;
+
+            var res = self.World.WorldActor.Trait<ResourceLayer>().GetRenderedResource(location);
+            var info = self.Info.TraitInfo<SpawnerRefineryMasterInfo>();
+
+            if (res == null || !info.Resources.Contains(res.Info.Type))
+                return false;
+
+            cursor = "harvest";
+            IsQueued = modifiers.HasModifier(TargetModifiers.ForceQueue);
+
+            return true;
         }
     }
 }

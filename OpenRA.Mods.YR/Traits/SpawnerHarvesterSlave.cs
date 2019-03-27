@@ -61,7 +61,6 @@ namespace OpenRA.Mods.YR.Traits
             // Link master for the harvester trait.
             try
             {
-                self.Trait<Harvester>().OwnerLinkedProc = Master;
                 spawnerHarvesterMaster = Master.Trait<SpawnerHarvesterMaster>();
             }
             catch

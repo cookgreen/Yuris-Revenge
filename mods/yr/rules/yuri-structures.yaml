@@ -196,9 +196,13 @@ yarefn:
 		Amount: 0
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
+	GrantConditionOnDeploy:
+		DeployedCondition: deploy
+		UndeployedCondition: undeploy
 	SpawnerRefineryMaster:
 		Actors: slav, slav, slav, slav, slav
 		SpawnAllAtOnce: True
+		Resources: Ore,Gems,Tiberium
 
 yaweap:
 	Inherits: ^Building

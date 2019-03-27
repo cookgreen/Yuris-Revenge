@@ -105,7 +105,8 @@ smin:
 		UndeployedCondition: undeploy
 	SpawnerHarvesterMaster:
 		Actors: slav, slav, slav, slav, slav
-		SpawnAllAtOnce: True
+		Resources: Ore,Gems,Tiberium
+		DeployScanRadius: 20
     
 ltnk:
 	Inherits: ^Vehicle

@@ -68,7 +68,8 @@ namespace OpenRA.Mods.YR.Traits
 		TryDeploy, // Try to deploy
 		Deploying, // Playing deploy animation.
 		Mining, // Slaves are mining. We get kicked sometimes to move closer to ore.
-		Kick // Check if there's ore field is close enough.
+		Kick, // Check if there's ore field is close enough.
+        Undeploy,//Ready to transform
 	}
 
 	public class SpawnerHarvesterMaster : BaseSpawnerMaster, INotifyBuildComplete, INotifyIdle,
@@ -316,9 +317,11 @@ namespace OpenRA.Mods.YR.Traits
             {
                 se.SpawnerSlave.LinkMaster(se.Actor, toActor, refineryMaster);
                 se.SpawnerSlave.Stop(se.Actor);
-                se.Actor.QueueActivity(new FindResources(se.Actor));
+                if(!se.Actor.IsDead)
+                    se.Actor.QueueActivity(new FindResources(se.Actor));
             }
             refineryMaster.AssignSlavesToMaster(SlaveEntries);
+            toActor.QueueActivity(new SpawnerRefineryHarvest(toActor));
         }
 
         public override void Killed(Actor self, AttackInfo e)
@@ -354,7 +357,7 @@ namespace OpenRA.Mods.YR.Traits
 				return false;
 
 			var res = self.World.WorldActor.Trait<ResourceLayer>().GetRenderedResource(location);
-			var info = self.Info.TraitInfo<SpawnerRefineryMasterInfo>();
+			var info = self.Info.TraitInfo<SpawnerHarvesterMasterInfo>();
 
 			if (res == null || !info.Resources.Contains(res.Info.Type))
 				return false;

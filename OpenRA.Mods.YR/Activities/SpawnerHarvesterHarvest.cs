@@ -30,6 +30,9 @@ using OpenRA.Traits;
 
 namespace OpenRA.Mods.YR.Activities
 {
+    /// <summary>
+    /// Harvester Master Vehicle can find the resource
+    /// </summary>
 	public class SpawnerHarvesterHarvest : Activity
 	{	
 		readonly SpawnerHarvesterMaster harv;
@@ -40,6 +43,7 @@ namespace OpenRA.Mods.YR.Activities
 		readonly IPathFinder pathFinder;
 		readonly DomainIndex domainIndex;
 		readonly GrantConditionOnDeploy deploy;
+        readonly Transforms tranforms;
 
 		CPos? avoidCell;
 
@@ -53,7 +57,9 @@ namespace OpenRA.Mods.YR.Activities
 			claimLayer = self.World.WorldActor.TraitOrDefault<ResourceClaimLayer>();
 			pathFinder = self.World.WorldActor.Trait<IPathFinder>();
 			domainIndex = self.World.WorldActor.Trait<DomainIndex>();
-		}
+            tranforms = self.Trait<Transforms>();
+
+        }
 
 		public SpawnerHarvesterHarvest(Actor self, CPos avoidCell)
 			: this(self)
@@ -100,7 +106,7 @@ namespace OpenRA.Mods.YR.Activities
 			self.SetTargetLine(Target.FromCell(self.World, closestHarvestablePosition.Value), Color.Red, false);
 
 			// Calculate best depoly position.
-			var deployPosition = CalcDeployPosition(self, closestHarvestablePosition.Value);
+			var deployPosition = CalcTransformPosition(self, closestHarvestablePosition.Value);
 
 			// Just sit there until we can. Won't happen unless the map is filled with units.
 			if (deployPosition == null)
@@ -109,21 +115,7 @@ namespace OpenRA.Mods.YR.Activities
 				state = MiningState.Scan;
 				return this;
 			}
-
-			// I could be in deployed state and given this order.
-			if (deploy.DeployState == DeployState.Deployed)
-			{
-				if ((deployPosition.Value - self.Location).LengthSquared <= harvInfo.KickScanRadius * harvInfo.KickScanRadius)
-				{
-					// New target near enough. Stay.
-					state = MiningState.Mining;
-					return this;
-				}
-				else
-				{
-					return UndeployAndGo(self, out state);
-				}
-			}
+			//}
 
 			// TODO: The harvest-deliver-return sequence is a horrible mess of duplicated code and edge-cases
 			var notify = self.TraitsImplementing<INotifyHarvesterAction>();
@@ -161,11 +153,12 @@ namespace OpenRA.Mods.YR.Activities
 			}
 
 			// Issue deploy order and enter deploying state.
-			if (deploy.DeployState == DeployState.Undeployed)
-			{
-				IsInterruptible = false;
-				QueueChild(new DeployForGrantedCondition(self, deploy));
-			}
+			//if (deploy. == DeployState.Undeployed)
+			//{
+			IsInterruptible = false;
+            
+            tranforms.DeployTransform(true);
+			//}
 
 			state = MiningState.Deploying;
 			return this;
@@ -181,15 +174,15 @@ namespace OpenRA.Mods.YR.Activities
 				return this;
 			}
 
-			// deploy failure.
-			if (deploy.DeployState == DeployState.Undeployed)
-			{
-				QueueChild(new Wait(15));
-				state = MiningState.TryDeploy;
-				return this;
-			}
+            // deploy failure.
+            if (!tranforms.CanDeploy())
+            {
+                QueueChild(new Wait(15));
+                state = MiningState.Scan;
+                return this;
+            }
 
-			state = MiningState.Mining;
+            state = MiningState.Mining;
 			return this;
 		}
 
@@ -248,17 +241,20 @@ namespace OpenRA.Mods.YR.Activities
 			}
 		}
 
-		// Find a nearest deployable position from harvestablePos
-		CPos? CalcDeployPosition(Actor self, CPos harvestablePos)
+		// Find a nearest Transformable position from harvestablePos
+		CPos? CalcTransformPosition(Actor self, CPos harvestablePos)
 		{
-			// FindTilesInAnnulus gives sorted cells by distance :) Nice.
-			foreach (var tile in self.World.Map.FindTilesInAnnulus(harvestablePos, 0, harvInfo.DeployScanRadius))
-				if (deploy.IsValidTerrain(tile) && mobile.CanEnterCell(tile))
+            var transformActorInfo = self.World.Map.Rules.Actors[tranforms.Info.IntoActor];
+            var transformBuildingInfo = transformActorInfo.TraitInfoOrDefault<BuildingInfo>();
+
+            // FindTilesInAnnulus gives sorted cells by distance :) Nice.
+            foreach (var tile in self.World.Map.FindTilesInAnnulus(harvestablePos, 0, harvInfo.DeployScanRadius))
+				if (deploy.IsValidTerrain(tile) && mobile.CanEnterCell(tile) && self.World.CanPlaceBuilding(tile + tranforms.Info.Offset, transformActorInfo, transformBuildingInfo, self))
 					return tile;
 
 			// Try broader search if unable to find deploy location
 			foreach (var tile in self.World.Map.FindTilesInAnnulus(harvestablePos, harvInfo.DeployScanRadius, harvInfo.LongScanRadius))
-				if (deploy.IsValidTerrain(tile) && mobile.CanEnterCell(tile))
+				if (deploy.IsValidTerrain(tile) && mobile.CanEnterCell(tile) && self.World.CanPlaceBuilding(tile + tranforms.Info.Offset, transformActorInfo, transformBuildingInfo, self))
 					return tile;
 
 			return null;
