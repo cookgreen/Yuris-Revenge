@@ -639,9 +639,10 @@ AKM:
 	ReloadDelay: 20
 	Range:7c0
 	Report: iboratta.wav, iborattb.wav
+	ValidTargets: Infantry, Vehicle, Ship
 	Warhead@1Dam: SpreadDamage
 		Damage: 65
-		ValidTargets: Infantry, Vehicle, Water
+		ValidTargets: Infantry, Vehicle, Ship
 		Versus:
 			None: 200
 			Flak: 200
@@ -663,9 +664,10 @@ AKME:
 	ReloadDelay: 20
 	Range:9c0
 	Report: iboratta.wav, iborattb.wav
+	ValidTargets: Infantry, Vehicle, Ship
 	Warhead@1Dam: SpreadDamage
 		Damage: 90
-		ValidTargets: Infantry, Vehicle, Water
+		ValidTargets: Infantry, Vehicle, Ship
 		Versus:
 			None: 200
 			Flak: 200

@@ -164,6 +164,12 @@
 		G: 0
 		B: 0
 		A: 128
+	PaletteFromRGBA@marker:
+		Name: marker
+		R: 120
+		G: 0
+		B: 0
+		A: 128
 	PaletteFromRGBA@highlight:
 		Name: highlight
 		R: 255

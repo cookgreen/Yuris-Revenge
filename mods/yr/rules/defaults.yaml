@@ -293,6 +293,13 @@
 		Offset: 43, 128, 0
 		ZOffset: -129
 		RequiresCondition: tracting
+		
+^Markerable:
+	WithColoredOverlay@marker:
+		Palette: marker
+		RequiresCondition: markerability
+	ExternalCondition@MARKERABILITY:
+		Condition: markerability
 
 ^ChronoDisable:
 	TimedConditionBar@ChronoDisable:
@@ -389,6 +396,7 @@
 	Inherits@2: ^SpriteActor
 	Inherits@3: ^IronCurtainable
 	Inherits@4: ^ForceShieldable
+	Inherits@5: ^Markerable
 	Inherits@shape: ^1x1Shape
 	-DrawLineToTarget:
 	OwnerLostAction:

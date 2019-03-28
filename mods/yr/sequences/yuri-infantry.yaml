@@ -44,6 +44,7 @@ brute:
 		Start: 101
 	shoot:
 		Start: 116
+		Length: 10
 	paradrop:
 		Start: 284
 	cheer:

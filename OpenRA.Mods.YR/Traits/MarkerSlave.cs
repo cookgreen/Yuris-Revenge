@@ -74,17 +74,7 @@ namespace OpenRA.Mods.YR.Traits
             // Proceed with enter, if already at it.
             if (self.CurrentActivity is EnterCarrierMaster)
                 return;
-
-            // Cancel whatever else self was doing and return
-
-            //var tgt = Target.FromActor(Master);
-            //
-            //if (self.TraitOrDefault<AttackPlane>() != null) // Let attack planes approach me first, before landing.
-            //    self.QueueActivity(new Fly(self, tgt, WDist.Zero, Info.LandingDistance));
-            //
-            //self.QueueActivity(new EnterCarrierMaster(self, Master, spawnerMaster, EnterBehaviour.Exit, Info.CloseEnoughDistance));
             
-
             self.CancelActivity();
 
             self.QueueActivity(new Fly(self, Target.FromPos(targetPos + spawnOffset)));

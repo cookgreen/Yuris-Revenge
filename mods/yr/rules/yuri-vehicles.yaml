@@ -72,7 +72,7 @@ smin:
 	Armor:
 		Type: Medium
 	Mobile:
-		Speed: 85
+		Speed: 45
 		TurnSpeed: 8
 		WaitAverage: 0
 		Crushes: crate, infantry
@@ -124,7 +124,7 @@ ltnk:
 		Prerequisites: ~yaweap
 		Description: Basic Yuri Tank.\n  Strong vs Vehicle\n  Weak vs Infantry, Aircraft
 	Mobile:
-		Speed: 90
+		Speed: 105
 		TurnSpeed: 5
 		Crushes: fence, crate, infantry
 	Health:
@@ -280,7 +280,7 @@ tele:
 		Prerequisites: ~yaweap
 		Description: Yuri Magnetron Tank. Powerful sige weapon.\n  Strong vs structures\n  Weak vs Infantry, Vehicle, Aircraft and Ships
 	Mobile:
-		Speed: 90
+		Speed: 75
 		TurnSpeed: 5
 		Crushes: fence, crate, infantry
 	DeliversCash:
@@ -404,7 +404,7 @@ mind:
 		Prerequisites: ~yaweap
 		Description: Yuri MindControl Vehicle.\n  Strong vs Infantry, Vehicles, Ships\n  Weak vs Aircraft
 	Mobile:
-		Speed: 90
+		Speed: 60
 		TurnSpeed: 5
 		Crushes: fence, crate, infantry
 	Health:
@@ -465,7 +465,7 @@ disk:
 		CruiseAltitude: 4608
 		LandWhenIdle: false
 		TurnSpeed: 100
-		Speed: 48
+		Speed: 200
 		CanHover: True
 		RepairBuildings:
 		RearmBuildings:

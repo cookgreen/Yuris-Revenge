@@ -248,7 +248,7 @@ deso:
 	Health:
 		HP: 150
 	Mobile:
-		Speed: 41
+		Speed: 60
 	RevealsShroud:
 		Range: 6c0
 	Armor:
@@ -355,7 +355,7 @@ boris:
 	Health:
 		HP: 200
 	Mobile:
-		Speed: 30
+		Speed: 75
 	Passenger:
 		PipType: Red
 	RevealsShroud:
@@ -370,9 +370,11 @@ boris:
 		RequiresCondition: rank-elite
 	Armament@secondary:
 		Weapon: Flare
+		Name: secondary
 		RequiresCondition: !rank-elite
 	Armament@secondary-elite:
 		Weapon: FlareE
+		Name: secondary-elite
 		RequiresCondition: rank-elite
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
@@ -395,3 +397,8 @@ boris:
 		CargoType: Infantry
 		GrantBunkerCondition: bunkered
 		Accepter: bfrt
+	GrantExternalConditionWeapon:
+		Condition: markerability
+		ArmamentName: secondary
+		ArmamentType: Single
+		DamageRangeType: Target

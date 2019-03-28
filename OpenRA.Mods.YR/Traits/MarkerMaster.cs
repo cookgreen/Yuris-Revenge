@@ -110,29 +110,14 @@ namespace OpenRA.Mods.YR.Traits
             
             self.World.AddFrameEndTask(w =>
             {
-                for (var i = -Info.SquadSize / 2; i <= Info.SquadSize / 2; i++)
+                var slave = w.CreateActor(attacker, new TypeDictionary()
                 {
-                    // Even-sized squads skip the lead plane
-                    if (i == 0 && (Info.SquadSize & 1) == 0)
-                        continue;
+                    new OwnerInit(self.Owner)
+                });
 
-                    // Includes the 90 degree rotation between body and world coordinates
-
-                    var slave = w.CreateActor(attacker, new TypeDictionary()
-                    {
-                        new OwnerInit(self.Owner)
-                    }
-                     /*, new TypeDictionary
-                    {
-                        new CenterPositionInit(startEdge + spawnOffset),
-                        new OwnerInit(self.Owner),
-                        new FacingInit(attackFacing),
-                    }*/);
-
-                    // Initialize slave entry
-                    InitializeSlaveEntry(slave, entry);
-                    entry.SpawnerSlave.LinkMaster(entry.Actor, self, this);
-                }
+                // Initialize slave entry
+                InitializeSlaveEntry(slave, entry);
+                entry.SpawnerSlave.LinkMaster(entry.Actor, self, this);
             });
         }
 
@@ -189,6 +174,7 @@ namespace OpenRA.Mods.YR.Traits
             if (Info.LaunchingCondition != null)
                 conditionManager.GrantCondition(self, Info.LaunchingCondition/*, Info.LaunchingTicks*/);
 
+            //Spawn the attackers into world
             SpawnIntoWorld(self, se.Actor, self.CenterPosition);
 
             se.SpawnerSlave.SetSpawnInfo(finishEdge, spawnOffset, targetPos);
@@ -248,7 +234,9 @@ namespace OpenRA.Mods.YR.Traits
             // Tell launched slaves to come back and enter me.
             foreach (var se in slaveEntries)
                 if (se.IsLaunched && se.IsValid)
-                    se.SpawnerSlave.EnterSpawner(se.Actor);
+                {
+                    se.SpawnerSlave.EnterSpawner(se.Actor);//The existed slave will leave, so we need to recall them
+                }
         }
 
         public override void OnSlaveKilled(Actor self, Actor slave)

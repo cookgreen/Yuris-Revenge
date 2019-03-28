@@ -22,7 +22,7 @@ init:
 	Health:
 		HP: 100
 	Mobile:
-		Speed: 40
+		Speed: 60
 	Passenger:
 		PipType: Green
 	RevealsShroud:
@@ -65,7 +65,7 @@ yengineer:
 	Health:
 		HP: 75
 	Mobile:
-		Speed: 40
+		Speed: 60
 	DeliversCash:
 		Payload: 250
 		PlayerExperience: 25
@@ -115,7 +115,7 @@ brute:
 	Health:
 		HP: 200
 	Mobile:
-		Speed: 60
+		Speed: 90
 	Passenger:
 		PipType: Green
 	RevealsShroud:
@@ -127,6 +127,12 @@ brute:
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: PunchE
+		RequiresCondition: rank-elite
+	Armament@second:
+		Weapon: Smash
+		RequiresCondition: !rank-elite
+	Armament@second-elite:
+		Weapon: SmashE
 		RequiresCondition: rank-elite
 	Voiced:
 		VoiceSet: BruteVoice
@@ -159,7 +165,7 @@ virus:
 	Health:
 		HP: 100
 	Mobile:
-		Speed: 40
+		Speed: 60
 	Passenger:
 		PipType: Green
 	RevealsShroud:
@@ -201,7 +207,7 @@ slav:
 	Health:
 		HP: 100
 	Mobile:
-		Speed: 50
+		Speed: 45
 	Passenger:
 		PipType: Green
 	RevealsShroud:
@@ -333,7 +339,7 @@ yuripr:
 	Health:
 		HP: 150
 	Mobile:
-		Speed: 60
+		Speed: 90
 		RequiresCondition: !deployed && !deploying && !chronodisable
 	RevealsShroud:
 		Range: 12c0

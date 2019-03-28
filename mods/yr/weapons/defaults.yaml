@@ -169,6 +169,12 @@
 ^Maker:
 	Range: 12c0
 	ReloadDelay: 60
+	ValidTargets: Structure
+	Projectile: LaserZap
+		Width: 20
+		Duration: 15
+		Color: ff000000
+		UsePlayerColor: false
 	Warhead@1Dam: SpreadDamage
 		Spread: 0
 		Damage: 0
@@ -184,4 +190,4 @@
 			Concrete: 1
 			Drone: 0
 			Rocket: 0
-		ValidTargets: Structure, Defense
+		ValidTargets: Structure
