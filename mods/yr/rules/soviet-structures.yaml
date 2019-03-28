@@ -283,6 +283,17 @@ naradr:
 		Types: SpyInfiltrate
 	Power:
 		Amount: -50
+	AirstrikePower@spyplane:
+		OrderName: SovietSpyPlane
+		Icon: spyp
+		ChargeInterval: 3750
+		Description: Spy Plane
+		LongDesc: Reveals an area of the map\nand cloaked enemy units.
+		SelectTargetSpeechNotification: SelectTarget
+		EndChargeSpeechNotification: SpyPlaneReady
+		UnitType: spyp
+		QuantizedFacings: 8
+		Cursor: spyplane
 
 naweap:
 	Inherits: ^Building

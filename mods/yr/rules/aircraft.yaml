@@ -327,7 +327,7 @@ bpln:
 		Name: Soviet MIG
 	Aircraft:
 		TurnSpeed: 10
-		Speed: 140
+		Speed: 240
 		RearmBuildings: gaairc, amradr
 	Selectable:
 		Bounds: 30,24
@@ -590,7 +590,7 @@ schphusk:
 cmisl:
 	Inherits: ^ShootableMissileVoxel
 	Valued:
-		Cost: 10
+		Cost: 1
 	Tooltip:
 		Name: Cruise Missile
 	Health:
@@ -615,4 +615,35 @@ cmisl:
 		Weapon: V3WH
 	RenderVoxels:
 		Image: bsubmisl
+	RejectsOrders:
+
+spyp:
+	Inherits: ^Aircraft
+	Valued:
+		Cost: 1
+	Tooltip:
+		Name: Soviet Spy Plane
+	Aircraft:
+		CruiseAltitude: 5600
+		TurnSpeed: 5
+		Speed: 225
+	Health:
+		HP: 400
+	RevealsShroud:
+		Range: 6c0
+		Type: CenterPosition
+	AttackFrontal:
+		Voice: Attack
+	AttackBomber:
+		FacingTolerance: 20
+		Armaments: primary
+		Voice: Attack
+	RenderSprites:
+	RenderVoxels:
+	WithVoxelBody:
+	HitShape:
+	Interactable:
+	Armament@primary:
+		Weapon: SpyCameraWeapon
+	-Selectable:
 	RejectsOrders:

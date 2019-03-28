@@ -87,3 +87,13 @@ HornetLauncher:
 	Projectile: InstantHit
 	Warhead@1Dam: TargetDamage
 		ValidTargets: Ground, Water
+		
+SpyCameraWeapon:
+	ReloadDelay: 30
+	Range: 20c0
+	Burst: 1
+	Report: vspysnap.wav
+	ValidTargets: Ground, Water
+	Projectile: InstantHit
+	Warhead@1Dam: TargetDamage
+		Damage: 0
