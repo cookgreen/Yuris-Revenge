@@ -295,3 +295,27 @@ MirageGunE:
 160mmE:
 	Inherits: 160mm
 	Burst: 2
+
+ArtilleryCannon:
+	Inherits: ^Artillery
+	MinRange: 4c0
+	Range: 12c0
+	ReloadDelay: 60
+	
+ArtilleryCannonE:
+	Inherits: ^Artillery
+	MinRange: 3c0
+	Range: 15c0
+	ReloadDelay: 70
+	
+ArtilleryCannonBeacon:
+	Inherits: ArtilleryCannon
+	Range: 100c0
+	ReloadDelay: 100
+	ValidTargets: Beacon
+	
+ArtilleryCannonBeaconE:
+	Inherits: ArtilleryCannonE
+	Range: 120c0
+	ReloadDelay: 120
+	ValidTargets: Beacon

@@ -569,37 +569,70 @@ yaggun:
 	Turreted:
 		TurnSpeed: 10
 		InitialFacing: 224
-		Offset: 320,-70,-10
+		Offset: 320,-50,-10
 	AttackTurreted:
 		Voice: Attack
-	Armament@pirmary:
+	Armament@primary:
 		Weapon: AGGattling
-	Armament@pirmary:
-		Weapon: AGGattlingE
-	Armament@second:
+		LocalOffset: 640,0,384
+		RequiresCondition: !rank-elite && stage-1
+	Armament@primary-elite:
+		Weapon: AGGattling
+		LocalOffset: 640,0,384
+		RequiresCondition: rank-elite && stage-1
+	Armament@primary-stage-2:
 		Weapon: AGGattling2
-	Armament@second:
+		LocalOffset: 640,0,384
+		RequiresCondition: !rank-elite && stage-2
+	Armament@primary-elite-stage-2:
 		Weapon: AGGattling2E
-	Armament@third:
+		LocalOffset: 640,0,384
+		RequiresCondition: rank-elite && stage-2
+	Armament@primary-stage-3:
 		Weapon: AGGattling3
-	Armament@third:
+		LocalOffset: 640,0,384
+		RequiresCondition: !rank-elite && stage-3
+	Armament@primary-elite-stage-3:
 		Weapon: AGGattling3E
-	Armament@pirmary-aa:
+		LocalOffset: 640,0,384
+		RequiresCondition: rank-elite && stage-3
+	Armament@second-stage-1:
 		Weapon: AAGattling
-	Armament@pirmary-aa-elite:
+		LocalOffset: 640,0,384
+		RequiresCondition: !rank-elite && stage-1
+	Armament@second-elite-stage-1:
 		Weapon: AAGattlingE
-	Armament@second-aa:
+		LocalOffset: 640,0,384
+		RequiresCondition: rank-elite && stage-1
+	Armament@second-stage-2:
 		Weapon: AAGattling2
-	Armament@second-aa-elite:
+		LocalOffset: 640,0,384
+		RequiresCondition: !rank-elite && stage-2
+	Armament@second-elite-stage-2:
 		Weapon: AAGattling2E
-	Armament@third-aa:
+		LocalOffset: 640,0,384
+		RequiresCondition: rank-elite && stage-2
+	Armament@second-stage-3:
 		Weapon: AAGattling3
-	Armament@third-aa-elite:
+		LocalOffset: 640,0,384
+		RequiresCondition: !rank-elite && stage-3
+	Armament@second-elite-stage-3:
 		Weapon: AAGattling3E
+		LocalOffset: 640,0,384
+		RequiresCondition: rank-elite && stage-3
+	GrantConditionOnStage: 
+		Conditions:
+			stage-1: 200
+			stage-2: 300
+			stage-3: 400
 	BodyOrientation:
 		QuantizedFacings: 16
 	RenderVoxels:
-		Scale: 20
+		Scale: 18
+		LightYaw: 800
+		LightPitch: 120
+		LightAmbientColor: -1.3,-1.3,-1.3
+		LightDiffuseColor: 1.8, 1.8, 1.8
 	WithVoxelTurret:
 	WithRangeCircle:
 		Range: 6c0

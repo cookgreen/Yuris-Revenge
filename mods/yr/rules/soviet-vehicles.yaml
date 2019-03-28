@@ -254,6 +254,7 @@ htnk:
 	Selectable:
 		Bounds: 64, 52, 0, -6
 	RenderVoxels:
+		LightAmbientColor: -0.8,-0.8,-0.8
 		NormalsPalette: ts-normals
 	WithVoxelBody:
 	WithVoxelTurret:
@@ -311,6 +312,7 @@ apoc:
 	Selectable:
 		Bounds: 64, 52, 0, -6
 	RenderVoxels:
+		LightAmbientColor: -0.8,-0.8,-0.8
 	WithVoxelBody:
 	WithVoxelTurret:
 	WithVoxelBarrel:

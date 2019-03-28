@@ -93,6 +93,8 @@ smin:
 	GainsExperience: # can get experience, i.e. speed
 	RenderSprites: # TODO: WithHarvestOverlay relies on this, but it should actually be removed
 	RenderVoxels:
+		LightAmbientColor: -0.7,-0.7,-0.7
+		LightDiffuseColor: 1.5,1.5,1.5
 	WithVoxelBody:
 	WithVoxelTurret:
 	Voiced:
@@ -197,54 +199,59 @@ ytnk:
 		Range: 8c0
 	Turreted:
 		TurnSpeed: 5
-	Armament@primary:
+	Armament@primary-stage-1:
 		Weapon: AGGattling
 		LocalOffset: 640,0,384
-		RequiresCondition: !rank-elite
-	Armament@primary-elite:
+		RequiresCondition: !rank-elite && stage-1
+	Armament@primary-elite-stage-1:
 		Weapon: AGGattling
 		LocalOffset: 640,0,384
-		RequiresCondition: rank-elite
-	Armament@second:
+		RequiresCondition: rank-elite && stage-1
+	Armament@primary-stage-2:
 		Weapon: AGGattling2
 		LocalOffset: 640,0,384
-		RequiresCondition: !rank-elite
-	Armament@second-elite:
+		RequiresCondition: !rank-elite && stage-2
+	Armament@primary-elite-stage-2:
 		Weapon: AGGattling2E
 		LocalOffset: 640,0,384
-		RequiresCondition: rank-elite
-	Armament@third:
+		RequiresCondition: rank-elite && stage-2
+	Armament@primary-stage-3:
 		Weapon: AGGattling3
 		LocalOffset: 640,0,384
-		RequiresCondition: !rank-elite
-	Armament@third-elite:
+		RequiresCondition: !rank-elite && stage-3
+	Armament@primary-elite-stage-3:
 		Weapon: AGGattling3E
 		LocalOffset: 640,0,384
-		RequiresCondition: rank-elite
-	Armament@forth:
+		RequiresCondition: rank-elite && stage-3
+	Armament@second-stage-1:
 		Weapon: AAGattling
 		LocalOffset: 640,0,384
-		RequiresCondition: !rank-elite
-	Armament@forth-elite:
+		RequiresCondition: !rank-elite && stage-1
+	Armament@second-elite-stage-1:
 		Weapon: AAGattlingE
 		LocalOffset: 640,0,384
-		RequiresCondition: rank-elite
-	Armament@fifth:
+		RequiresCondition: rank-elite && stage-1
+	Armament@second-stage-2:
 		Weapon: AAGattling2
 		LocalOffset: 640,0,384
-		RequiresCondition: !rank-elite
-	Armament@fifth-elite:
+		RequiresCondition: !rank-elite && stage-2
+	Armament@second-elite-stage-2:
 		Weapon: AAGattling2E
 		LocalOffset: 640,0,384
-		RequiresCondition: rank-elite
-	Armament@sixth:
+		RequiresCondition: rank-elite && stage-2
+	Armament@second-stage-3:
 		Weapon: AAGattling3
 		LocalOffset: 640,0,384
-		RequiresCondition: !rank-elite
-	Armament@sixth-elite:
+		RequiresCondition: !rank-elite && stage-3
+	Armament@second-elite-stage-3:
 		Weapon: AAGattling3E
 		LocalOffset: 640,0,384
-		RequiresCondition: rank-elite
+		RequiresCondition: rank-elite && stage-3
+	GrantConditionOnStage:
+		Conditions:
+			stage-1: 200
+			stage-2: 300
+			stage-3: 400
 	AttackTurreted:
 		Voice: Attack
 	AutoTarget:
@@ -252,6 +259,8 @@ ytnk:
 	Selectable:
 		Bounds: 52, 40, 0, -6
 	RenderVoxels:
+		LightAmbientColor: -0.6,-0.6,-0.6
+		LightDiffuseColor: 1.6,1.6,1.6
 	WithVoxelBody:
 	WithVoxelTurret:
 	Voiced:
@@ -438,6 +447,8 @@ mind:
 	Selectable:
 		Bounds: 64, 52, 0, -6
 	RenderVoxels:
+		LightAmbientColor: -0.6,-0.6,-0.6
+		LightDiffuseColor: 1.6,1.6,1.6
 	WithVoxelBody:
 	Voiced:
 		VoiceSet: MasterMindVoice

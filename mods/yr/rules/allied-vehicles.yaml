@@ -137,6 +137,7 @@ mtnk:
 	Selectable:
 		Bounds: 64, 52, 0, -6
 	RenderVoxels:
+		LightAmbientColor: -0.7,-0.7,-0.7
 	WithVoxelBody:
 	WithVoxelTurret:
 	WithVoxelBarrel:
@@ -546,12 +547,20 @@ howi:
 	RevealsShroud:
 		Range: 8c0
 	Armament@primary:
-		Weapon: sabot
-		LocalOffset: 640,0,384
+		Weapon: ArtilleryCannon
+		LocalOffset: 840,0,1100
 		RequiresCondition: !rank-elite
-	Armament@elite:
-		Weapon: sabotE
-		LocalOffset: 640,0,384
+	Armament@primary-elite:
+		Weapon: ArtilleryCannonE
+		LocalOffset: 840,0,1100
+		RequiresCondition: rank-elite
+	Armament@second:
+		Weapon: ArtilleryCannonBeacon
+		LocalOffset: 840,0,1100
+		RequiresCondition: !rank-elite
+	Armament@second-elite:
+		Weapon: ArtilleryCannonBeaconE
+		LocalOffset: 840,0,1100
 		RequiresCondition: rank-elite
 	AttackFrontal:
 		Voice: Attack
@@ -560,6 +569,8 @@ howi:
 	Selectable:
 		Bounds: 64, 52, 0, -6
 	RenderVoxels:
+		LightAmbientColor: -0.6,-0.6,-0.6
+		LightDiffuseColor: 1.3, 1.3, 1.3
 		NormalsPalette: ts-normals
 	WithVoxelBody:
 	Voiced:

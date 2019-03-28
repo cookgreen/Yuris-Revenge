@@ -90,6 +90,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Traits\CrewKillable.cs" />
     <Compile Include="Traits\DetectVariety.cs" />
+    <Compile Include="Traits\GrantConditionOnStage.cs" />
     <Compile Include="Traits\SupportPowers\ExploreMapSupportPower.cs" />
     <Compile Include="Traits\GrantConditionOnCapture.cs" />
     <Compile Include="Traits\MarkerMaster.cs" />

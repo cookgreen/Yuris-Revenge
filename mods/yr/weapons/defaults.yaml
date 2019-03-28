@@ -65,6 +65,48 @@
 		Explosions: small_watersplash
 		ImpactSounds: gexpwasa.wav
 		ValidTargets: Water
+		
+^Artillery:
+	MinRange: 4c0
+	Range: 10c0
+	ReloadDelay: 30
+	Report: ra_tank5.aud
+	TargetActorCenter: true
+	Projectile: Bullet
+		ContrailWidth: 20
+		ContrailLength: 15
+		Speed: 204
+		Image: 120mm
+		Blockable: false
+		LaunchAngle: 62
+		Inaccuracy: 1c938
+		Shadow: True
+		Palette: ra
+	ValidTargets: Ground, Water
+	Warhead@1Dam: SpreadDamage
+		Spread: 426
+		Damage: 200
+		Versus:
+			None: 30
+			Flak: 30
+			Plate: 30
+			Light: 40
+			Medium: 40
+			Heavy: 40
+			Wood: 100
+			Steel: 100
+			Concrete: 60
+			Drone: 100
+			Rocket: 100
+		DamageTypes: Prone50Percent, TriggerProne, SmallExplosionDeath
+	Warhead@3Eff: CreateEffect
+		Explosions: medium_explosion
+		ValidTargets: Ground, Ship, Trees
+		ImpactSounds: ra_kaboom15.aud
+	Warhead@4EffWater: CreateEffect
+		Explosions: small_watersplash
+		ValidTargets: Water, Underwater
+		InvalidTargets: Ship, Structure, Bridge
 
 ^Missile:
 	ReloadDelay: 60

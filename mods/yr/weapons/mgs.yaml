@@ -371,7 +371,7 @@ Gatting:
 			Drone: 200
 			Rocket: 50
 	Warhead@2Eff: CreateEffect
-		Explosions: piffpiff, piffpiff
+		Explosions: piffpiff
 		
 AGGattling:
 	Inherits: Gatting
