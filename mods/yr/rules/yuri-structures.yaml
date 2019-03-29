@@ -776,9 +776,14 @@ yappet:
 		DisplayTimerStances: Ally, Neutral, Enemy
 		DisplayBeacon: True
 		DisplayRadarPing: True
-		Weapons: DominatorWH
+		Weapons: 
+			DominatorWH: 0, 0, 0
 		PauseOnCondition: lowpower
 		Cursor: psyicdom
+		EnvironmentEffectType: Dominator
+		ChangeOwner: true
+		ChangeTargets: Infantry
+		ChangeRange: 2
 	SupportPowerChargeBar:
 	WithNukeLaunchAnimation:
 		

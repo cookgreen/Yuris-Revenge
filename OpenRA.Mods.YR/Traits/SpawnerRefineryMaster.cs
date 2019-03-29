@@ -12,11 +12,8 @@ using System.Threading.Tasks;
 
 namespace OpenRA.Mods.YR.Traits
 {
-    public class SpawnerRefineryMasterInfo : BaseSpawnerMasterInfo
+    public class SpawnerRefineryMasterInfo : SpawnerHarvestResourceInfo
     {
-        [Desc("Which resources it can harvest. Make sure slaves can mine these too!")]
-        public readonly HashSet<string> Resources = new HashSet<string>();
-        
         [Desc("When deployed, use this scan radius.")]
         public readonly int ShortScanRadius = 8;
 
@@ -56,7 +53,7 @@ namespace OpenRA.Mods.YR.Traits
 
         public IEnumerable<IOrderTargeter> Orders
         {
-            get { yield return new SpawnerRefineryOrderTargeter(); }
+            get { yield return new SpawnerResourceHarvestOrderTargeter<SpawnerRefineryMasterInfo>("SpawnerRefineryHarvest"); }
         }
 
         public SpawnerRefineryMaster(ActorInitializer init, SpawnerRefineryMasterInfo info) : base(init, info)
@@ -250,40 +247,6 @@ namespace OpenRA.Mods.YR.Traits
         public BaseSpawnerSlaveEntry[] GetSlaves()
         {
             return SlaveEntries;
-        }
-    }
-
-    class SpawnerRefineryOrderTargeter : IOrderTargeter
-    {
-        public string OrderID { get { return "SpawnerRefineryHarvest"; } }
-        public int OrderPriority { get { return 10; } }
-        public bool IsQueued { get; protected set; }
-        public bool TargetOverridesSelection(TargetModifiers modifiers) { return true; }
-
-        public bool CanTarget(Actor self, Target target, List<Actor> othersAtTarget, ref TargetModifiers modifiers, ref string cursor)
-        {
-            if (target.Type != TargetType.Terrain)
-                return false;
-
-            if (modifiers.HasModifier(TargetModifiers.ForceMove))
-                return false;
-
-            var location = self.World.Map.CellContaining(target.CenterPosition);
-
-            // Don't leak info about resources under the shroud
-            if (!self.Owner.Shroud.IsExplored(location))
-                return false;
-
-            var res = self.World.WorldActor.Trait<ResourceLayer>().GetRenderedResource(location);
-            var info = self.Info.TraitInfo<SpawnerRefineryMasterInfo>();
-
-            if (res == null || !info.Resources.Contains(res.Info.Type))
-                return false;
-
-            cursor = "harvest";
-            IsQueued = modifiers.HasModifier(TargetModifiers.ForceQueue);
-
-            return true;
         }
     }
 }

@@ -210,3 +210,7 @@
 	FlashPaletteEffect@NUKE:
 		Type: Nuke
 		Length: 90
+	EnvironmentPaletteEffect@DOMINATOR:
+		Type: Dominator
+		Color: d7000050
+		Length: 90

@@ -44,13 +44,18 @@ namespace OpenRA.Mods.RA2.Traits
 		[Desc("PipType to use for indicating unused mindcontrol slots.")]
 		public readonly PipType PipTypeEmpty = PipType.Transparent;
 
-		public override object Create(ActorInitializer init) { return new MindController(init.Self, this); }
+        public readonly bool Overload = false;
+
+        public readonly string OverloadCondition = null;
+
+        public override object Create(ActorInitializer init) { return new MindController(init.Self, this); }
 	}
 
-	public class MindController : PausableConditionalTrait<MindControllerInfo>, INotifyAttack, IPips, INotifyKilled, INotifyActorDisposing, INotifyCreated
+	public class MindController : PausableConditionalTrait<MindControllerInfo>, INotifyAttack, IPips, INotifyKilled, INotifyActorDisposing, INotifyCreated, ITick
 	{
 		readonly MindControllerInfo info;
 		readonly List<Actor> slaves = new List<Actor>();
+        int mindControlOverloadConditionToken = ConditionManager.InvalidConditionToken;
 
 		Stack<int> controllingTokens = new Stack<int>();
 		ConditionManager conditionManager;
@@ -152,7 +157,7 @@ namespace OpenRA.Mods.RA2.Traits
 			if (mindControllable.IsTraitDisabled || mindControllable.IsTraitPaused)
 				return;
 
-			if (info.Capacity > 0 && !info.DiscardOldest && slaves.Count() >= info.Capacity)
+			if (info.Capacity > 0 && !info.DiscardOldest && slaves.Count() >= info.Capacity && !info.Overload)
 				return;
 
 			slaves.Add(target.Actor);
@@ -164,7 +169,11 @@ namespace OpenRA.Mods.RA2.Traits
 
 			if (info.Capacity > 0 && info.DiscardOldest && slaves.Count() > info.Capacity)
 				slaves[0].Trait<MindControllable>().RevokeMindControl(slaves[0]);
-		}
+
+
+            if (info.Capacity > 0 && info.Overload && slaves.Count() > info.Capacity && mindControlOverloadConditionToken == ConditionManager.InvalidConditionToken)
+                mindControlOverloadConditionToken = conditionManager.GrantCondition(self, info.OverloadCondition); //Overload!
+        }
 
 		void ReleaseSlaves(Actor self)
 		{
@@ -195,5 +204,17 @@ namespace OpenRA.Mods.RA2.Traits
 		{
 			ReleaseSlaves(self);
 		}
-	}
+
+        public void Tick(Actor self)
+        {
+            if (info.Capacity > 0 && info.Overload && slaves.Count() > info.Capacity && mindControlOverloadConditionToken == ConditionManager.InvalidConditionToken)
+            {
+                mindControlOverloadConditionToken = conditionManager.GrantCondition(self, info.OverloadCondition); //Overload!
+            }
+            else if (info.Capacity > 0 && info.Overload && slaves.Count() <= info.Capacity && mindControlOverloadConditionToken != ConditionManager.InvalidConditionToken)
+            {
+                mindControlOverloadConditionToken = conditionManager.RevokeCondition(self, mindControlOverloadConditionToken);//Safe
+            }
+        }
+    }
 }

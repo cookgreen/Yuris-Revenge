@@ -30,13 +30,16 @@ then you need to modify harvester logics, which is the very core of the engine!
 
 namespace OpenRA.Mods.YR.Traits
 {
-	[Desc("This actor is a harvester that uses its spawns to indirectly harvest resources. i.e., Slave Miner.")]
-	public class SpawnerHarvesterMasterInfo : BaseSpawnerMasterInfo, Requires<IOccupySpaceInfo>, Requires<GrantConditionOnDeployInfo>
+    public class SpawnerHarvestResourceInfo : BaseSpawnerMasterInfo
+    {
+        [Desc("Which resources it can harvest. Make sure slaves can mine these too!")]
+        public readonly HashSet<string> Resources = new HashSet<string>();
+    }
+
+    [Desc("This actor is a harvester that uses its spawns to indirectly harvest resources. i.e., Slave Miner.")]
+	public class SpawnerHarvesterMasterInfo : SpawnerHarvestResourceInfo, Requires<IOccupySpaceInfo>, Requires<GrantConditionOnDeployInfo>
 	{
 		[VoiceReference] public readonly string HarvestVoice = "Action";
-
-		[Desc("Which resources it can harvest. Make sure slaves can mine these too!")]
-		public readonly HashSet<string> Resources = new HashSet<string>();
 
 		[Desc("Automatically search for resources on creation?")]
 		public readonly bool SearchOnCreation = true;
@@ -86,7 +89,7 @@ namespace OpenRA.Mods.YR.Traits
 
 		public IEnumerable<IOrderTargeter> Orders
 		{
-			get { yield return new SpawnerHarvestOrderTargeter(); }
+			get { yield return new SpawnerResourceHarvestOrderTargeter<SpawnerHarvesterMasterInfo>("SpawnerHarvest"); }
 		}
 
 		int respawnTicks; // allowed to spawn a new slave when <= 0.
@@ -335,9 +338,15 @@ namespace OpenRA.Mods.YR.Traits
         }
     }
 
-	class SpawnerHarvestOrderTargeter : IOrderTargeter
-	{
-		public string OrderID { get { return "SpawnerHarvest"; } }
+	class SpawnerResourceHarvestOrderTargeter<T> : IOrderTargeter where T : SpawnerHarvestResourceInfo
+    {
+        private string orderID;
+        public SpawnerResourceHarvestOrderTargeter(string orderID)
+        {
+            this.orderID = orderID;
+        }
+
+        public string OrderID { get { return orderID; } }
 		public int OrderPriority { get { return 10; } }
 		public bool IsQueued { get; protected set; }
 		public bool TargetOverridesSelection(TargetModifiers modifiers) { return true; }
@@ -357,7 +366,7 @@ namespace OpenRA.Mods.YR.Traits
 				return false;
 
 			var res = self.World.WorldActor.Trait<ResourceLayer>().GetRenderedResource(location);
-			var info = self.Info.TraitInfo<SpawnerHarvesterMasterInfo>();
+			var info = self.Info.TraitInfo<T>();
 
 			if (res == null || !info.Resources.Contains(res.Info.Type))
 				return false;

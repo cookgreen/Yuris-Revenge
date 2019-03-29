@@ -289,14 +289,14 @@ MigDeath:
         
 DominatorWH:
 	ReloadDelay: 0
-	Range: 10c0
+	Range: 5c0
 	Projectile: Bullet
 		Speed: 425
 		Blockable: false
 	Warhead@1Dam: SpreadDamage
 		Delay: 5
 		Spread: 1c0
-		Damage: 600
+		Damage: 450
 		Versus:
 			None: 0
 			Flak: 0

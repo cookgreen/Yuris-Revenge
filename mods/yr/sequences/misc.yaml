@@ -261,7 +261,11 @@ explosion:
 	initfire: fire01
 	psi_wave: ring1
 	psychicdomcld: pdfxcld
+		Offset: 0, -100
+		Tick: 50
 	psychicdomloc: pdfxloc
+		Offset: 0, 50
+		Tick: 50
 	chaosgas: cdgas
 
 discus:

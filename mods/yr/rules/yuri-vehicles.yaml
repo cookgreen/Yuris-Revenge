@@ -400,8 +400,6 @@ caos:
     
 mind:
 	Inherits: ^Vehicle
-	Inherits@MC: ^MindControllable
-	Inherits@SMC: ^SuperMindControllable
 	Inherits@CHAOSGAS: ^Chaosgasable
 	Valued:
 		Cost: 1750
@@ -432,11 +430,13 @@ mind:
 		Weapon: MindControl
 		MuzzleSequence: muzzle
 		LocalOffset: 0,0,960
-		PauseOnCondition: deployed
 	WithMuzzleOverlay:
 	MindController:
+		Capacity: 3
 		ControllingCondition: controlling
 		Sounds: iyurat1a.wav
+		Overload: true
+		OverloadCondition: mind-control-overload
 	WithMindControlArc:
 		UsePlayerColor: true
 		Offset: 0,0,960
@@ -456,6 +456,10 @@ mind:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
 	-CrewKillable:
+	SelfHealing:
+	SelfHealing@Overload:
+		PercentageStep: -5
+		RequiresCondition: mind-control-overload
 	SelfHealing@MACHSHOP:
 		RequiresCondition: machshop
 
