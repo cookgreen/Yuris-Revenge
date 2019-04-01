@@ -138,19 +138,22 @@ namespace OpenRA.Mods.YR.Traits
 
                 PlayLaunchSounds();
 
-                EnvironmentPaletteEffect environmentEffect = null;
-                var effetcs = w.WorldActor.TraitsImplementing<EnvironmentPaletteEffect>();
-                foreach (var effect in effetcs)
+                if (!string.IsNullOrEmpty(info.EnvironmentEffectType))
                 {
-                    if (effect.Info.Type == info.EnvironmentEffectType)
+                    EnvironmentPaletteEffect environmentEffect = null;
+                    var effetcs = w.WorldActor.TraitsImplementing<EnvironmentPaletteEffect>();
+                    foreach (var effect in effetcs)
                     {
-                        environmentEffect = effect;
-                        break;
+                        if (effect.Info.Type == info.EnvironmentEffectType)
+                        {
+                            environmentEffect = effect;
+                            break;
+                        }
                     }
-                }
-                if (environmentEffect != null)
-                {
-                    environmentEffect.Enable(-1);
+                    if (environmentEffect != null)
+                    {
+                        environmentEffect.Enable(-1);
+                    }
                 }
 
                 for (int i = 0; i < info.WeaponInfos.Count; i++)

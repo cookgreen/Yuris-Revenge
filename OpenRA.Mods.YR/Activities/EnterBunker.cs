@@ -15,37 +15,43 @@ using OpenRA.Traits;
 using OpenRA.Mods.Common.Activities;
 using OpenRA.Mods.YR.Traits;
 using OpenRA.Mods.Common.Effects;
+using OpenRA.Graphics;
+using OpenRA.Mods.Common.Traits.Render;
 
 namespace OpenRA.Mods.YR.Activities
 {
 	class EnterBunker : Enter
 	{
-		readonly BunkerPassenger passenger;
+		readonly BunkerPassenger bunkerPassenger;
 		readonly int maxTries;
-		Actor bunker;
-		BunkerCargo cargo;
+		Actor bunkerActor;
+		BunkerCargo bunkerCargo;
         bool willDisappear;
         WPos targetPos;
+        RenderSprites rs;
+        Animation bunkerAnimation;
 
-        public EnterBunker(Actor self, Actor bunker, WPos pos, bool willDisappear=true, int maxTries = 0, bool repathWhileMoving = true)
-			: base(self, bunker, EnterBehaviour.Exit, maxTries, repathWhileMoving)
+        public EnterBunker(Actor passengerActor, Actor bunkerActor, WPos pos, bool willDisappear=true, int maxTries = 0, bool repathWhileMoving = true)
+			: base(passengerActor, bunkerActor, EnterBehaviour.Exit, maxTries, repathWhileMoving)
 		{
-			this.bunker = bunker;
-			this.maxTries = maxTries;
+			this.bunkerActor = bunkerActor;
+			bunkerCargo = bunkerActor.Trait<BunkerCargo>();
+            bunkerPassenger = passengerActor.Trait<BunkerPassenger>();
+            this.maxTries = maxTries;
             this.willDisappear = willDisappear;
             targetPos = pos;
-			cargo = bunker.Trait<BunkerCargo>();
-			passenger = self.Trait<BunkerPassenger>();
-		}
+            rs = bunkerActor.TraitOrDefault<RenderSprites>();
+            bunkerAnimation = new Animation(bunkerActor.World, bunkerActor.Info.Name);
+        }
 
-		protected override void Unreserve(Actor self, bool abort) { passenger.Unreserve(self); }
-		protected override bool CanReserve(Actor self) { return cargo.Unloading || cargo.CanLoad(bunker, self); }
+		protected override void Unreserve(Actor self, bool abort) { bunkerPassenger.Unreserve(self); }
+		protected override bool CanReserve(Actor self) { return bunkerCargo.Unloading || bunkerCargo.CanLoad(bunkerActor, self); }
 		protected override ReserveStatus Reserve(Actor self)
 		{
 			var status = base.Reserve(self);
 			if (status != ReserveStatus.Ready)
 				return status;
-			if (passenger.Reserve(self, cargo))
+			if (bunkerPassenger.Reserve(self, bunkerCargo))
 				return ReserveStatus.Ready;
 			return ReserveStatus.Pending;
 		}
@@ -55,33 +61,34 @@ namespace OpenRA.Mods.YR.Activities
 			self.World.AddFrameEndTask(w =>
 			{
                 Mobile mobile = self.TraitOrDefault<Mobile>();
-				if (self.IsDead || bunker.IsDead || !cargo.CanLoad(bunker, self))
+				if (self.IsDead || bunkerActor.IsDead || !bunkerCargo.CanLoad(bunkerActor, self))
 					return;
 
-                if (!string.IsNullOrEmpty(cargo.Info.SequenceOnCargo))
+                if (!string.IsNullOrEmpty(bunkerCargo.Info.SequenceOnCargo))
                 {
-                    w.Add(new SpriteEffect(bunker.CenterPosition, w, bunker.Info.Name, cargo.Info.SequenceOnCargo, "player" + self.Owner.InternalName));
+                    w.Add(new SpriteEffect(bunkerActor.CenterPosition, w, bunkerActor.Info.Name, bunkerCargo.Info.SequenceOnCargo, "player" + self.Owner.InternalName));
                 }
 
-                if (cargo.GetBunkeredNumber() == 0)
+                if (bunkerCargo.GetBunkeredNumber() == 0)
                 {
-                    if (cargo.Info.ChangeOwnerWhenGarrison)
+                    bunkerCargo.ChangeState(BunkerState.Bunkered);
+                    if (bunkerCargo.Info.ChangeOwnerWhenGarrison)
                     {
-                        bunker.ChangeOwner(self.Owner);
+                        bunkerActor.ChangeOwner(self.Owner);
                     }
 
-                    if (!string.IsNullOrEmpty(cargo.Info.StructureGarrisonSound))
+                    if (!string.IsNullOrEmpty(bunkerCargo.Info.StructureGarrisonSound))
                     {
-                        Game.Sound.PlayToPlayer(SoundType.World, self.Owner, cargo.Info.StructureGarrisonSound);
+                        Game.Sound.PlayToPlayer(SoundType.World, self.Owner, bunkerCargo.Info.StructureGarrisonSound);
                     }
 
-                    if (!string.IsNullOrEmpty(cargo.Info.StructureGarrisonedNotification))
+                    if (!string.IsNullOrEmpty(bunkerCargo.Info.StructureGarrisonedNotification))
                     {
-                        Game.Sound.PlayNotification(self.World.Map.Rules, self.Owner, "Speech", cargo.Info.StructureGarrisonedNotification, self.Owner.Faction.InternalName);
+                        Game.Sound.PlayNotification(self.World.Map.Rules, self.Owner, "Speech", bunkerCargo.Info.StructureGarrisonedNotification, self.Owner.Faction.InternalName);
                     }
                 }
-                cargo.Load(bunker, self);
-                passenger.GrantCondition();
+                bunkerCargo.Load(bunkerActor, self);
+                bunkerPassenger.GrantCondition();
                 if (willDisappear)
                 {
                     w.Remove(self);
@@ -89,7 +96,8 @@ namespace OpenRA.Mods.YR.Activities
                 else
                 {
                     //If didn't disappear, then move the passenger actor to the bunker center
-                    self.QueueActivity(mobile.MoveToTarget(self, Target.FromPos(targetPos)));
+                    self.QueueActivity(mobile.VisualMove(self, self.CenterPosition, bunkerActor.CenterPosition));
+                    mobile.SetVisualPosition(self, bunkerActor.CenterPosition);
                 }
 			});
 
@@ -102,9 +110,9 @@ namespace OpenRA.Mods.YR.Activities
 				return false;
 			var type = target.Actor.Info.Name;
 			return TryGetAlternateTargetInCircle(
-				self, passenger.Info.AlternateTransportScanRange,
-				t => { bunker = t.Actor; cargo = t.Actor.Trait<BunkerCargo>(); }, // update transport and cargo
-				a => { var c = a.TraitOrDefault<BunkerCargo>(); return c != null && c.Info.Types.Contains(passenger.Info.CargoType) && (c.Unloading || c.CanLoad(a, self)); },
+				self, bunkerPassenger.Info.AlternateTransportScanRange,
+				t => { bunkerActor = t.Actor; bunkerCargo = t.Actor.Trait<BunkerCargo>(); }, // update transport and cargo
+				a => { var c = a.TraitOrDefault<BunkerCargo>(); return c != null && c.Info.Types.Contains(bunkerPassenger.Info.CargoType) && (c.Unloading || c.CanLoad(a, self)); },
 				new Func<Actor, bool>[] { a => a.Info.Name == type }); // Prefer transports of the same type
 		}
 	}

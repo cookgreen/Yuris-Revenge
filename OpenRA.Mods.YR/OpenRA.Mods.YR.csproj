@@ -124,6 +124,7 @@
     <Compile Include="Widgets\Logic\MainMenuLogic.cs" />
     <Compile Include="Widgets\Logic\VxlBrowserLogic.cs" />
     <Compile Include="Widgets\VoxelWidget.cs" />
+    <Compile Include="WithBuildingPlacedOverlayConditional.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\engine\OpenRA.Game\OpenRA.Game.csproj">

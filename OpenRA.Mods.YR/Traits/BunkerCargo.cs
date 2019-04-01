@@ -18,9 +18,16 @@ using OpenRA.Primitives;
 using OpenRA.Traits;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.Common;
+using OpenRA.Mods.Common.Traits.Render;
 
 namespace OpenRA.Mods.YR.Traits
 {
+    public enum BunkerState
+    {
+        NonBunkered,
+        Bunkered
+    }
+
 	[Desc("This actor can transport Passenger actors.")]
 	public class BunkerCargoInfo : ITraitInfo, Requires<IOccupySpaceInfo>
 	{
@@ -91,11 +98,18 @@ namespace OpenRA.Mods.YR.Traits
 
         public readonly string StructureAbandonedNotification = null;
 
+        [Desc("Play when bunkered")]
+        public readonly string BunkeredSequence = null;
+
+        [Desc("Play when not bunkered")]
+        public readonly string BunkerNotSequence = null;
+
         public object Create(ActorInitializer init) { return new BunkerCargo(init, this); }
 	}
 
 	public class BunkerCargo : IPips, IIssueOrder, IResolveOrder, IOrderVoice, INotifyCreated, INotifyKilled,
-		INotifyOwnerChanged, INotifyAddedToWorld, ITick, INotifySold, INotifyActorDisposing, IIssueDeployOrder
+		INotifyOwnerChanged, INotifyAddedToWorld, ITick, INotifySold, INotifyActorDisposing, IIssueDeployOrder, 
+        INotifyBuildComplete
 	{
 		public readonly BunkerCargoInfo Info;
 		readonly Actor self;
@@ -104,6 +118,8 @@ namespace OpenRA.Mods.YR.Traits
 		readonly Dictionary<string, Stack<int>> passengerTokens = new Dictionary<string, Stack<int>>();
 		readonly Lazy<IFacing> facing;
 		readonly bool checkTerrainType;
+        WithSpriteBody wsb;
+        BunkerState bunkerState;
 
 		int totalWeight = 0;
 		int reservedWeight = 0;
@@ -118,6 +134,7 @@ namespace OpenRA.Mods.YR.Traits
 		public bool Unloading { get; internal set; }
 		public IEnumerable<Actor> Passengers { get { return cargo; } }
 		public int PassengerCount { get { return cargo.Count; } }
+        private bool buildComplete = false;
 
 		public BunkerCargo(ActorInitializer init, BunkerCargoInfo info)
 		{
@@ -125,6 +142,8 @@ namespace OpenRA.Mods.YR.Traits
 			Info = info;
 			Unloading = false;
 			checkTerrainType = info.UnloadTerrainTypes.Count > 0;
+            wsb = self.TraitOrDefault<WithSpriteBody>();
+            bunkerState = BunkerState.NonBunkered;
 
 			if (init.Contains<RuntimeCargoInit>())
 			{
@@ -298,9 +317,44 @@ namespace OpenRA.Mods.YR.Traits
 
 		public Actor Unload(Actor self)
 		{
-			var a = cargo.Pop();
+            var a = cargo.Pop();
 
-			totalWeight -= GetWeight(a);
+            if (GetBunkeredNumber() == 0)
+            {
+                if (!string.IsNullOrEmpty(Info.SequenceOnCargo))
+                {
+                    PlayBunkeringAnimationBackward(() => {
+                        ChangeState(BunkerState.NonBunkered);
+                    });
+                }
+                else
+                {
+                    ChangeState(BunkerState.NonBunkered);
+                }
+                if (Info.ChangeOwnerWhenGarrison)
+                {
+                    Player neutralPlayer = null;
+
+                    Player[] players = this.self.World.Players;
+                    for (int i = 0; i < players.Length; i++)
+                    {
+                        if (players[i].InternalName == "Neutral")
+                        {
+                            neutralPlayer = players[i];
+                            break;
+                        }
+                    }
+
+                    this.self.ChangeOwner(neutralPlayer);
+                }
+
+                if (!string.IsNullOrEmpty(Info.StructureAbandonedNotification))
+                {
+                    Game.Sound.PlayNotification(self.World.Map.Rules, self.Owner, "Speech", Info.StructureAbandonedNotification, self.Owner.Faction.InternalName);
+                }
+            }
+
+            totalWeight -= GetWeight(a);
 
 			SetPassengerFacing(a);
 
@@ -501,6 +555,46 @@ namespace OpenRA.Mods.YR.Traits
         {
             if (bunkeredToken != ConditionManager.InvalidConditionToken)
                 bunkeredToken = conditionManager.RevokeCondition(self, bunkeredToken);
+        }
+
+        public void ChangeState(BunkerState bunkered)
+        {
+            if (buildComplete)
+            {
+                switch (bunkered)
+                {
+                    case BunkerState.NonBunkered:
+                        if (!string.IsNullOrEmpty(Info.BunkerNotSequence))
+                        {
+                            wsb.PlayCustomAnimationRepeating(self, Info.BunkerNotSequence);
+                        }
+                        break;
+                    case BunkerState.Bunkered:
+                        if (!string.IsNullOrEmpty(Info.BunkeredSequence))
+                        {
+                            wsb.PlayCustomAnimationRepeating(self, Info.BunkeredSequence);
+                        }
+                        break;
+                }
+            }
+            bunkerState = bunkered;
+        }
+
+        public void PlayBunkeringAnimationBackward(Action after)
+        {
+            if (!string.IsNullOrEmpty(Info.SequenceOnCargo))
+            {
+                wsb.PlayCustomAnimationBackwards(self, Info.SequenceOnCargo, () =>
+                {
+                    wsb.CancelCustomAnimation(self);
+                    after();
+                });
+            }
+        }
+
+        void INotifyBuildComplete.BuildingComplete(Actor self)
+        {
+            buildComplete = true;
         }
     }
 }

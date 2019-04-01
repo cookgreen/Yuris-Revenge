@@ -32,6 +32,9 @@ yacnst:
 		Sequence: idle-top
 	WithIdleOverlay@normal:
 		Sequence: idle-normal
+		RequiresCondition: !placing#This need to be conditional when place building
+	WithBuildingPlacedOverlayConditional:
+		PlacingCondition: placing
 	ProvidesPrerequisite:
 		Prerequisite: structures.yuris
 	Power:
@@ -499,45 +502,44 @@ gafwll:
 		Name: Yuri Citadel Wall
 
 natbnk:
-	Inherits: ^Building
+	Inherits: ^SupportBuilding
 	Inherits@shape: ^2x2Shape
 	Inherits@SMC: ^SuperMindControllable
+	Tooltip
+		Name: Yuri Tank Bunker
+	Valued
+		Cost: 400
 	Buildable:
 		Queue: Support
 		BuildPaletteOrder: 20
 		Prerequisites: yabrck, ~structures.yuris
 		Description: Make the Yuri tank more powerful
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
 	Selectable:
 		Bounds: 120, 53, 0, -5
 	Health:
 		HP: 1000
 	Armor:
 		Type: steel
+	RevealsShroud:
+		Range: 8c0
 	BunkerCargo:
 		Types: Vehicle
 		MaxWeight: 9
 		PipCount: 1
 		WillDisappear: false
+		SequenceOnCargo: build
+		BunkerNotSequence: idle
+		BunkeredSequence: idle-bunkered
 	AttackBunkered:
 		Armaments: primary
 		PortOffsets: 384,0,128, 224,-341,128, -224,-341,128, -384,0,128, -224,341,128, 224,341,128
 		PortYaws: 0, 176, 341, 512, 682, 853
 		PortCones: 88, 88, 88, 88, 88, 88
-	RevealsShroud:
-		Range: 8c0
-	Valued
-		Cost: 400
-	Tooltip
-		Name: Yuri Tank Bunker
-	Building:
-		Footprint: xx xx
-		Dimensions: 2,2
 	Power:
 		Amount: 0
-	AutoTarget:
-	WithSpriteBody@Bunkered:
-		Sequence: idle-bunkered
-		RequiresCondition: bunkered
 
 yaggun:
 	Inherits: ^VoxelLighting
