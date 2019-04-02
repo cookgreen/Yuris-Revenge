@@ -147,10 +147,7 @@ BlackHawkCannon:
 		Damage: 25
 
 BlackHawkCannonE:
-	Inherits: ^MG
-	ReloadDelay: 40
-	Range: 6c0
-	Report: vblhatta.wav, vblhattb.wav
+	Inherits: BlackHawkCannon
 	Warhead@1Dam: SpreadDamage
 		Damage: 40
         
@@ -174,31 +171,16 @@ PsychicJab:
 			Concrete: 25
 			Drone: 100
 			Rocket: 100
+		DamageTypes: FlameDeath
 	Warhead@2Eff: CreateEffect
 		Explosions: initfire
         
 PsychicJabE:
-	Inherits: ^MG
+	Inherits: PsychicJab
 	ReloadDelay: 10
 	Range:6c0
-	Report: iiniatta.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 30
-		ValidTargets: Ground, Water
-		Versus:
-			None: 100
-			Flak: 80
-			Plate: 80
-			Light: 50
-			Medium: 25
-			Heavy: 25
-			Wood: 75
-			Steel: 50
-			Concrete: 25
-			Drone: 100
-			Rocket: 100
-	Warhead@2Eff: CreateEffect
-		Explosions: initfire
         
 Virusgun:
 	Inherits: ^MG
@@ -225,28 +207,9 @@ Virusgun:
 		Explosions: piff
         
 VirusgunE:
-	Inherits: ^MG
+	Inherits: Virusgun
 	ReloadDelay: 80
 	Range:16c0
-	Report: iviratta.wav
-	Warhead@1Dam: SpreadDamage
-		Damage: 125     
-		ValidTargets: Infantry, Vehicle
-		Versus:
-			None: 100
-			Flak: 100
-			Plate: 100
-			Light: 1
-			Medium: 1
-			Heavy: 1
-			Wood: 1
-			Steel: 1
-			Concrete: 1
-			Drone: 1
-			Rocket: 100
-		DamageTypes: VirusDeath, Prone100Percent
-	Warhead@2Eff: CreateEffect
-		Explosions: piff
 		
 Geneticgun:
 	Inherits: ^MG
@@ -276,31 +239,9 @@ Geneticgun:
 		Explosions: piff
 		
 GeneticgunE:
-	Inherits: ^MG
+	Inherits: Geneticgun
 	ReloadDelay: 80
 	Range:16c0
-	Report: iviratta.wav
-	Warhead@1Dam: TransformActor
-		Damage: 125       
-		ValidTargets: Infantry
-		Versus:
-			None: 100
-			Flak: 100
-			Plate: 100
-			Light: 30
-			Medium: 30
-			Heavy: 30
-			Wood: 1
-			Steel: 1
-			Concrete: 1
-			Drone: 1
-			Rocket: 100
-		Actor: brute
-		ExcludeActor: brute,jumpjet
-		Sequence: die9 
-		DamageTypes: BruteDeath, Prone100Percent
-	Warhead@2Eff: CreateEffect
-		Explosions: piff
         
 Brustgun:
 	Inherits: ^MG
@@ -326,27 +267,9 @@ Brustgun:
 		Explosions: initfire
         
 BrustgunE:
-	Inherits: ^MG
+	Inherits: Brustgun
 	ReloadDelay: 80
 	Range:16c0
-	Report: iviratta.wav
-	Warhead@1Dam: KillCrew
-		Damage: 125     
-		ValidTargets: Vehicle
-		Versus:
-			None: 100
-			Flak: 100
-			Plate: 100
-			Light: 30
-			Medium: 30
-			Heavy: 30
-			Wood: 1
-			Steel: 1
-			Concrete: 1
-			Drone: 1
-			Rocket: 100
-	Warhead@2Eff: CreateEffect
-		Explosions: initfire
 
 Gatting:
 	Inherits: ^MG
@@ -660,27 +583,7 @@ AKM:
 	Warhead@3Eff: CreateEffect
 		Explosions: piffpiff
 AKME:
-	Inherits: ^MG
-	ReloadDelay: 20
+	Inherits: AKM
 	Range:9c0
-	Report: iboratta.wav, iborattb.wav
-	ValidTargets: Infantry, Vehicle, Ship
 	Warhead@1Dam: SpreadDamage
 		Damage: 90
-		ValidTargets: Infantry, Vehicle, Ship
-		Versus:
-			None: 200
-			Flak: 200
-			Plate: 100
-			Light: 50
-			Medium: 50
-			Heavy: 50
-			Wood: 1
-			Steel: 1
-			Concrete: 1
-			Drone: 100
-			Rocket: 100
-	Warhead@2Eff: CreateEffect
-		Explosions: piffpiff
-	Warhead@3Eff: CreateEffect
-		Explosions: piffpiff

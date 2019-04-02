@@ -1,5 +1,5 @@
 init:
-	Inherits: ^BasicInfantry
+	Inherits: ^ArmedInfantry
 	run:
 		Tick: 120
 	idle1:
@@ -12,10 +12,8 @@ init:
 		Start: 154
 	shoot:
 		Start: 209
-		Length: 6
 	prone-shoot:
 		Start: 257
-		Length: 6
 	paradrop:
 		Start: 305
 	cheer:
