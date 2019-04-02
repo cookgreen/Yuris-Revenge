@@ -606,3 +606,16 @@ Container@PLAYER_WIDGETS:
 							Background: scrolldown-buttons
 							TooltipText: Scroll down
 							TooltipContainer: TOOLTIP_CONTAINER
+				Container@POWER_BAR:
+					X: 5
+					Width: 15
+					Height: PARENT_BOTTOM - 53
+					Logic: IngamePowerLogic
+					Children:
+						ResourceBarSprite@POWERBAR:
+							X: 1
+							Y: 1
+							Width: PARENT_RIGHT-2
+							Height: PARENT_BOTTOM-2
+							TooltipContainer: TOOLTIP_CONTAINER
+							TooltipTemplate: SIMPLE_TOOLTIP

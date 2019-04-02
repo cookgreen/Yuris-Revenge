@@ -121,10 +121,12 @@
     <Compile Include="Warheads\TractorWarhead.cs" />
     <Compile Include="Warheads\KillCrewWarhead.cs" />
     <Compile Include="Warheads\TransformActorWarhead.cs" />
+    <Compile Include="Widgets\Logic\IngamePowerLogic.cs" />
     <Compile Include="Widgets\Logic\MainMenuLogic.cs" />
     <Compile Include="Widgets\Logic\VxlBrowserLogic.cs" />
+    <Compile Include="Widgets\ResourceBarSpriteWidget.cs" />
     <Compile Include="Widgets\VoxelWidget.cs" />
-    <Compile Include="WithBuildingPlacedOverlayConditional.cs" />
+    <Compile Include="Traits\WithBuildingPlacedOverlayConditional.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\engine\OpenRA.Game\OpenRA.Game.csproj">
