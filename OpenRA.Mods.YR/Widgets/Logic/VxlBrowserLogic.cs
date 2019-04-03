@@ -26,8 +26,8 @@ namespace OpenRA.Mods.YR.Widgets.Logic
 
         Widget panel;
 
-        TextFieldWidget filenameInput;
-        ScrollPanelWidget assetList;
+        TextFieldWidget unitnameInput;
+        ScrollPanelWidget unitList;
         ScrollItemWidget template;
 
         TextFieldWidget scaleInput;
@@ -50,8 +50,7 @@ namespace OpenRA.Mods.YR.Widgets.Logic
         float[] lightAmbientColor = new float[] {0.6f, 0.6f, 0.6f };
         float[] lightDiffuseColor = new float[] { 0.4f, 0.4f, 0.4f };
 
-        string currentFilename;
-        IReadOnlyPackage currentPackage;
+        string currentUnitname;
         Voxel currentVoxel;
         VqaPlayerWidget player = null;
         bool isVideoLoaded = false;
@@ -63,20 +62,6 @@ namespace OpenRA.Mods.YR.Widgets.Logic
             this.world = world;
             this.modData = modData;
             panel = widget;
-
-            var sourceDropdown = panel.GetOrNull<DropDownButtonWidget>("SOURCE_SELECTOR");
-            if (sourceDropdown != null)
-            {
-                sourceDropdown.OnMouseDown = _ => ShowSourceDropdown(sourceDropdown);
-                sourceDropdown.GetText = () =>
-                {
-                    var name = assetSource != null ? Platform.UnresolvePath(assetSource.Name) : "All Packages";
-                    if (name.Length > 15)
-                        name = "..." + name.Substring(name.Length - 15);
-
-                    return name;
-                };
-            }
 
             var voxelWidget = panel.GetOrNull<VoxelWidget>("VOXEL");
             if (voxelWidget != null)
@@ -182,9 +167,9 @@ namespace OpenRA.Mods.YR.Widgets.Logic
                 );
             }
 
-            filenameInput = panel.Get<TextFieldWidget>("FILENAME_INPUT");
-            filenameInput.OnTextEdited = () => ApplyFilter();
-            filenameInput.OnEscKey = filenameInput.YieldKeyboardFocus;
+            unitnameInput = panel.Get<TextFieldWidget>("FILENAME_INPUT");
+            unitnameInput.OnTextEdited = () => ApplyFilter();
+            unitnameInput.OnEscKey = unitnameInput.YieldKeyboardFocus;
 
             if (logicArgs.ContainsKey("SupportedFormats"))
                 allowedExtensions = FieldLoader.GetValue<string[]>("SupportedFormats", logicArgs["SupportedFormats"].Value);
@@ -194,7 +179,7 @@ namespace OpenRA.Mods.YR.Widgets.Logic
             acceptablePackages = modData.ModFiles.MountedPackages.Where(p =>
                 p.Contents.Any(c => allowedExtensions.Contains(Path.GetExtension(c).ToLowerInvariant())));
 
-            assetList = panel.Get<ScrollPanelWidget>("ASSET_LIST");
+            unitList = panel.Get<ScrollPanelWidget>("ASSET_LIST");
             template = panel.Get<ScrollItemWidget>("ASSET_TEMPLATE");
             PopulateAssetList();
 
@@ -227,11 +212,11 @@ namespace OpenRA.Mods.YR.Widgets.Logic
             int.TryParse(strLightPitch, out lightPitch);
         }
 
-        Dictionary<string, bool> assetVisByName = new Dictionary<string, bool>();
+        Dictionary<string, bool> unitVisByName = new Dictionary<string, bool>();
 
         bool FilterAsset(string filename)
         {
-            var filter = filenameInput.Text;
+            var filter = unitnameInput.Text;
 
             if (string.IsNullOrWhiteSpace(filter))
                 return true;
@@ -244,41 +229,41 @@ namespace OpenRA.Mods.YR.Widgets.Logic
 
         void ApplyFilter()
         {
-            assetVisByName.Clear();
-            assetList.Layout.AdjustChildren();
-            assetList.ScrollToTop();
+            unitVisByName.Clear();
+            unitList.Layout.AdjustChildren();
+            unitList.ScrollToTop();
 
             // Select the first visible
-            var firstVisible = assetVisByName.FirstOrDefault(kvp => kvp.Value);
+            var firstVisible = unitVisByName.FirstOrDefault(kvp => kvp.Value);
             IReadOnlyPackage package;
-            string filename;
+            string unitname;
 
-            if (firstVisible.Key != null && modData.DefaultFileSystem.TryGetPackageContaining(firstVisible.Key, out package, out filename))
-                LoadAsset(package, filename);
+            if (firstVisible.Key != null && modData.DefaultFileSystem.TryGetPackageContaining(firstVisible.Key, out package, out unitname))
+                LoadUnit(unitname);
         }
 
-        void AddAsset(ScrollPanelWidget list, string filepath, IReadOnlyPackage package, ScrollItemWidget template)
+        void AddUnit(ScrollPanelWidget list, string unitname, ScrollItemWidget template)
         {
             var item = ScrollItemWidget.Setup(template,
-                () => currentFilename == filepath && currentPackage == package,
-                () => { LoadAsset(package, filepath); });
+                () => currentUnitname == unitname,
+                () => { LoadUnit(unitname); });
 
-            item.Get<LabelWidget>("TITLE").GetText = () => filepath;
+            item.Get<LabelWidget>("TITLE").GetText = () => unitname;
             item.IsVisible = () =>
             {
                 bool visible;
-                if (assetVisByName.TryGetValue(filepath, out visible))
+                if (unitVisByName.TryGetValue(unitname, out visible))
                     return visible;
 
-                visible = FilterAsset(filepath);
-                assetVisByName.Add(filepath, visible);
+                visible = FilterAsset(unitname);
+                unitVisByName.Add(unitname, visible);
                 return visible;
             };
 
             list.AddChild(item);
         }
 
-        bool LoadAsset(IReadOnlyPackage package, string filename)
+        bool LoadUnit(string unitname)
         {
             if (isVideoLoaded)
             {
@@ -287,43 +272,22 @@ namespace OpenRA.Mods.YR.Widgets.Logic
                 isVideoLoaded = false;
             }
 
-            if (string.IsNullOrEmpty(filename))
-                return false;
-
-            if (!package.Contains(filename))
+            if (string.IsNullOrEmpty(unitname))
                 return false;
 
             isLoadError = false;
 
             try
             {
-                currentPackage = package;
-                currentFilename = filename;
-                var prefix = "";
-                var fs = modData.DefaultFileSystem as OpenRA.FileSystem.FileSystem;
+                currentUnitname = unitname;
 
-                if (fs != null)
-                {
-                    prefix = fs.GetPrefix(package);
-                    if (prefix != null)
-                        prefix += "|";
-                }
-
-                VxlReader vxl;
-                HvaReader hva;
-                string filenameWithoutExtension = Path.GetFileNameWithoutExtension(filename);
-                using (var s = modData.DefaultFileSystem.Open(filenameWithoutExtension + ".vxl"))
-                    vxl = new VxlReader(s);
-                using (var s = modData.DefaultFileSystem.Open(filenameWithoutExtension + ".hva"))
-                    hva = new HvaReader(s, filenameWithoutExtension + ".hva");
-                VoxelLoader loader = new VoxelLoader(modData.DefaultFileSystem);
-                currentVoxel = new Voxel(loader, vxl, hva);
+                currentVoxel = (Voxel)world.ModelCache.GetModelSequence(currentUnitname, "idle");
             }
             catch (Exception ex)
             {
                 isLoadError = true;
                 Log.AddChannel("vxlbrowser", "vxlbrowser.log");
-                Log.Write("vxlbrowser", "Error reading {0}:{3} {1}{3}{2}", filename, ex.Message, ex.StackTrace, Environment.NewLine);
+                Log.Write("vxlbrowser", "Error reading {0}:{3} {1}{3}{2}", unitname, ex.Message, ex.StackTrace, Environment.NewLine);
 
                 return false;
             }
@@ -349,34 +313,19 @@ namespace OpenRA.Mods.YR.Widgets.Logic
 
         void PopulateAssetList()
         {
-            assetList.RemoveChildren();
+            unitList.RemoveChildren();
 
-            var files = new SortedList<string, List<IReadOnlyPackage>>();
+            var units = new SortedList<string, string>();
 
-            if (assetSource != null)
-                foreach (var content in assetSource.Contents)
-                    files.Add(content, new List<IReadOnlyPackage> { assetSource });
-            else
+            var modelSequences = world.Map.Rules.ModelSequences;
+            foreach (var modelSequence in modelSequences)
             {
-                foreach (var mountedPackage in modData.ModFiles.MountedPackages)
-                {
-                    foreach (var content in mountedPackage.Contents)
-                    {
-                        if (!files.ContainsKey(content))
-                            files.Add(content, new List<IReadOnlyPackage> { mountedPackage });
-                        else
-                            files[content].Add(mountedPackage);
-                    }
-                }
+                units.Add(modelSequence.Key, modelSequence.Key);
             }
 
-            foreach (var file in files.OrderBy(s => s.Key))
+            foreach (var unit in units.OrderBy(s => s.Key))
             {
-                if (!allowedExtensions.Any(ext => file.Key.EndsWith(ext, true, CultureInfo.InvariantCulture)))
-                    continue;
-
-                foreach (var package in file.Value)
-                    AddAsset(assetList, file.Key, package, template);
+                AddUnit(unitList, unit.Key, template);
             }
         }
 

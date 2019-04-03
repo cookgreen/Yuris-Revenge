@@ -1,8 +1,10 @@
 ﻿using OpenRA.Graphics;
 using OpenRA.Mods.Cnc.Graphics;
+using OpenRA.Mods.Common.Graphics;
 using OpenRA.Widgets;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,6 +32,11 @@ namespace OpenRA.Mods.YR.Widgets
         public Func<int> GetLightPitch;
         public Func<int> GetLightYaw;
         public Func<Voxel> GetVoxel;
+        public int2 PreviewOffset { get; private set; }
+        public int2 IdealPreviewSize { get; private set; }
+
+        private World world;
+        IFinalizedRenderable[] renderables;
 
         protected readonly WorldRenderer WorldRenderer;
 
@@ -46,6 +53,7 @@ namespace OpenRA.Mods.YR.Widgets
             GetLightPitch = () => LightPitch;
             GetLightYaw = () => LightYaw;
             WorldRenderer = worldRenderer;
+            world = worldRenderer.World;
         }
 
         protected VoxelWidget(VoxelWidget other)
@@ -82,6 +90,30 @@ namespace OpenRA.Mods.YR.Widgets
 
         public override void Draw()
         {
+            if (renderables == null)
+            {
+                return;
+            }
+
+            var scale = 1f;
+            var origin = RenderOrigin + new int2(RenderBounds.Size.Width / 2, RenderBounds.Size.Height / 2);
+
+            // The scale affects world -> screen transform, which we don't want when drawing the (fixed) UI.
+            if (scale != 1f)
+                origin = (1f / scale * origin.ToFloat2()).ToInt2();
+
+            Game.Renderer.Flush();
+            Game.Renderer.SetViewportParams(-origin - PreviewOffset, scale);
+
+            foreach (var r in renderables)
+                r.Render(WorldRenderer);
+            
+            Game.Renderer.Flush();
+            Game.Renderer.SetViewportParams(WorldRenderer.Viewport.TopLeft, WorldRenderer.Viewport.Zoom);
+        }
+
+        public override void PrepareRenderables()
+        {
             var voxel = GetVoxel();
             var palette = GetPalette();
             var playerPalette = GetPlayerPalette();
@@ -104,9 +136,13 @@ namespace OpenRA.Mods.YR.Widgets
 
             if (palette != cachedPalette)
             {
+                if (string.IsNullOrEmpty(palette) && string.IsNullOrEmpty(playerPalette))
+                {
+                    return;
+                }
                 string paletteName = string.IsNullOrEmpty(palette) ? playerPalette : palette;
                 pr = WorldRenderer.Palette(paletteName);
-                cachedPalette = palette;
+                cachedPalette = paletteName;
             }
 
             if (playerPalette != cachedPlayerPalette)
@@ -152,20 +188,63 @@ namespace OpenRA.Mods.YR.Widgets
             {
                 cachedLightDiffuseColor = lightDiffuseColor;
             }
+            if (cachedVoxel == null)
+            {
+                return;
+            }
+            var size = new float2(cachedVoxel.Size[0] * cachedScale, cachedVoxel.Size[1] * cachedScale);
+            ModelAnimation animation = new ModelAnimation(
+                cachedVoxel, 
+                () => WVec.Zero, 
+                () => new List<WRot>() {
+                    new WRot(
+                        new WAngle(-45),
+                        new WAngle(-30),
+                        new WAngle(360)
+                    )
+                }, 
+                () => false, 
+                () => 0, 
+                true);
+            
+            ModelPreview preview = new ModelPreview(
+                new ModelAnimation[] { animation }, WVec.Zero, 0,
+                cachedScale,
+                new WAngle(cachedLightPitch), 
+                new WAngle(cachedLightYaw),
+                cachedLightAmbientColor,
+                cachedLightDiffuseColor,
+                new WAngle(),
+                pr,
+                prNormals,
+                prShadow);
 
-            var size = new float2(voxel.Size[0] * scale, voxel.Size[1] * scale);
-            ModelAnimation animation = new ModelAnimation(voxel, () => WVec.Zero, () => new List<WRot>(){ WRot.Zero }, () => false, () => 0, true);
+            List<ModelPreview> previews = new List<ModelPreview>() {
+                preview
+            };
 
-            List<ModelAnimation> components = new List<ModelAnimation>();
-            components.Add(animation);
 
-            WRot lightSource = new WRot(WAngle.Zero, new WAngle(256) - new WAngle(lightPitch), new WAngle(lightYaw));
-            WRot camera = new WRot(WAngle.Zero, new WAngle(256), new WAngle(256));
+            // Calculate the preview bounds
+            PreviewOffset = int2.Zero;
+            IdealPreviewSize = int2.Zero;
 
-            Game.Renderer.WorldModelRenderer.BeginFrame();
-            Game.Renderer.WorldModelRenderer.RenderAsync(WorldRenderer, components, camera,
-                scale, GroundNormal, lightSource, lightAmbientColor, lightDiffuseColor, pr, prNormals, prShadow);
-            Game.Renderer.WorldModelRenderer.EndFrame();
+            var rs = previews.SelectMany(p => p.ScreenBounds(WorldRenderer, WPos.Zero));
+
+            if (rs.Any())
+            {
+                var b = rs.First();
+                foreach (var rr in rs.Skip(1))
+                    b = Rectangle.Union(b, rr);
+
+                IdealPreviewSize = new int2(b.Width, b.Height);
+                PreviewOffset = -new int2(b.Left, b.Top) - IdealPreviewSize / 2;
+            }
+
+            renderables = previews
+                .SelectMany(p => p.Render(WorldRenderer, WPos.Zero))
+                .OrderBy(WorldRenderer.RenderableScreenZPositionComparisonKey)
+                .Select(r => r.PrepareRender(WorldRenderer))
+                .ToArray();
         }
     }
 }

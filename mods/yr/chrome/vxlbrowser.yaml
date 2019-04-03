@@ -16,26 +16,11 @@ Background@VXLBROWSER_PANEL:
 			Font: Bold
 			Align: Center
 			Text: Voxel Browser
-		Label@SOURCE_SELECTOR_DESC:
-			X: 20
-			Y: 35
-			Width: 160
-			Height: 25
-			Font: TinyBold
-			Align: Center
-			Text: Select asset source
-		DropDownButton@SOURCE_SELECTOR:
+		ScrollPanel@ASSET_LIST:
 			X: 20
 			Y: 60
 			Width: 160
-			Height: 25
-			Font: Bold
-			Text: Folders
-		ScrollPanel@ASSET_LIST:
-			X: 20
-			Y: 90
-			Width: 160
-			Height: 275
+			Height: 305
 			CollapseHiddenChildren: True
 			Children:
 				ScrollItem@ASSET_TEMPLATE:

@@ -149,7 +149,7 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 				assetBrowserButton.OnClick = () =>
 				{
 					SwitchMenu(MenuType.None);
-					Game.OpenWindow("ASSETBROWSER_PANEL", new WidgetArgs
+					Game.OpenWindow("VXLBROWSER_PANEL", new WidgetArgs
 					{
 						{ "onExit", () => SwitchMenu(MenuType.Extras) },
 					});
