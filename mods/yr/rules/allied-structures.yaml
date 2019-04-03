@@ -394,8 +394,16 @@ gaweap:
 		Sequence: bib
 	WithExitOverlay@top-vehicles:
 		Sequence: build-top
+		RequiresCondition: !roof-open
 	WithExitOverlay@ramp:
 		Sequence: build-ramp
+		RequiresCondition: !roof-open
+	WithIdleOverlay@air-open:
+		Sequence: build-air-open
+		RequiresCondition: roof-open
+	WithIdleOverlay@air-inside:
+		Sequence: build-air-inside
+		RequiresCondition: roof-open
 	Power:
 		Amount: -25
 	InfiltrateForSupportPower:
@@ -403,6 +411,10 @@ gaweap:
 		Proxy: warfactory.infiltrated
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
+	GrantConditionOnProduction:
+		UnitNames: zep, shad, schp, disk, hind
+		Condition: roof-open
+		ConditionDelay: 50
 
 gayard:
 	Inherits: ^Building

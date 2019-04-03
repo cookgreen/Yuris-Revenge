@@ -345,12 +345,20 @@ naweap:
 	ProductionBar:
 	WithExitOverlay@door:
 		Sequence: build-door
+		RequiresCondition: !roof-open
 	WithExitOverlay@top-vehicles:
 		Sequence: build-top
+		RequiresCondition: !roof-open
 	WithIdleOverlay@lights:
 		Sequence: idle-lights
 	WithIdleOverlay@bib:
 		Sequence: bib
+	WithIdleOverlay@air-open:
+		Sequence: build-air-open
+		RequiresCondition: roof-open
+	WithIdleOverlay@air-inside:
+		Sequence: build-air-inside
+		RequiresCondition: roof-open
 	Power:
 		Amount: -25
 	InfiltrateForSupportPower:
@@ -358,6 +366,10 @@ naweap:
 		Proxy: warfactory.infiltrated
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
+	GrantConditionOnProduction:
+		UnitNames: zep, shad, schp, disk, hind
+		Condition: roof-open
+		ConditionDelay: 50
 
 nayard:
 	Inherits: ^Building

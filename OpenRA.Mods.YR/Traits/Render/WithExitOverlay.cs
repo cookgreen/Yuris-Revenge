@@ -15,11 +15,12 @@ using OpenRA.Graphics;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.Common.Traits.Render;
 using OpenRA.Traits;
+using OpenRA.Support;
 
 namespace OpenRA.Mods.RA2.Traits
 {
 	[Desc("Renders an animation when when the actor is leaving from a production building.")]
-	public class WithExitOverlayInfo : ITraitInfo, Requires<RenderSpritesInfo>, Requires<BodyOrientationInfo>
+	public class WithExitOverlayInfo : ConditionalTraitInfo, Requires<RenderSpritesInfo>, Requires<BodyOrientationInfo>
 	{
 		[Desc("Sequence name to use")]
 		[SequenceReference] public readonly string Sequence = "exit-overlay";
@@ -33,16 +34,16 @@ namespace OpenRA.Mods.RA2.Traits
 		[Desc("Custom palette is a player palette BaseName")]
 		public readonly bool IsPlayerPalette = false;
 
-		public object Create(ActorInitializer init) { return new WithExitOverlay(init.Self, this); }
+        public override object Create(ActorInitializer init) { return new WithExitOverlay(init.Self, this); }
 	}
 
-	public class WithExitOverlay : INotifyDamageStateChanged, INotifyBuildComplete, INotifySold, INotifyProduction, ITick
+	public class WithExitOverlay : ConditionalTrait<WithExitOverlayInfo>, INotifyDamageStateChanged, INotifyBuildComplete, INotifySold, INotifyProduction, ITick
 	{
 		readonly Animation overlay;
 		bool buildComplete, enable;
 		CPos exit;
 
-		public WithExitOverlay(Actor self, WithExitOverlayInfo info)
+		public WithExitOverlay(Actor self, WithExitOverlayInfo info) : base(info)
 		{
 			var rs = self.Trait<RenderSprites>();
 			var body = self.Trait<BodyOrientation>();
