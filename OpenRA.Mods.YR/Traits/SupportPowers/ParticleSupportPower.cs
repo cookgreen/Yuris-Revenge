@@ -189,18 +189,25 @@ namespace OpenRA.Mods.YR.Traits
                     var aliveActors = w.FindActorsInCircle(targetPos, WDist.FromCells(info.ChangeRange));
                     foreach (Actor aliveActor in aliveActors)
                     {
-                        TargetableInfo ti = aliveActor.Info.TraitInfo<TargetableInfo>();
-                        if (ti == null)
+                        try
+                        {
+                            TargetableInfo ti = aliveActor.Info.TraitInfo<TargetableInfo>();
+                            if (ti == null)
+                            {
+                                continue;
+                            }
+                            foreach (var tti in ti.GetTargetTypes())
+                            {
+                                if (info.ChangeTargets.Contains(tti) && aliveActor.Owner.Stances[self.Owner] == Stance.Enemy)
+                                {
+                                    aliveActor.ChangeOwner(self.Owner);
+                                    break;
+                                }
+                            }
+                        }
+                        catch
                         {
                             continue;
-                        }
-                        foreach (var tti in ti.GetTargetTypes())
-                        {
-                            if (info.ChangeTargets.Contains(tti) && aliveActor.Owner.Stances[self.Owner] == Stance.Enemy)
-                            {
-                                aliveActor.ChangeOwner(self.Owner);
-                                break;
-                            }
                         }
                     }
                 }

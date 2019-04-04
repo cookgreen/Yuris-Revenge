@@ -154,7 +154,7 @@ Player:
 					Types: Structure
 					Attractiveness: 1
 					TargetMetric: Value
-					CheckRadius: 5c0
+					CheckRadius: 8c0
 				Consideration@2:
 					Against: Ally
 					Types: Air, Ground, Water
@@ -163,13 +163,13 @@ Player:
 					CheckRadius: 7c0
 			geneticmutator:
 				OrderName: TransformActorsPowerInfoOrder
-				MinimumAttractiveness: 3000
+				MinimumAttractiveness: 1500
 				Consideration@1:
 					Against: Enemy
-					Types: Structure
+					Types: Infantry
 					Attractiveness: 1
 					TargetMetric: Value
-					CheckRadius: 5c0
+					CheckRadius: 8c0
 				Consideration@2:
 					Against: Ally
 					Types: Air, Ground, Water

@@ -149,7 +149,7 @@ virus:
 	Inherits@CHAOSGAS: ^Chaosgasable
 	Buildable:
 		Queue: Infantry
-		Prerequisites: ~yabrck
+		Prerequisites: napsis, ~yabrck
 		BuildPaletteOrder: 20
 		Description: Virus sniper.\n Strong vs Infantry\n Weak vs Vehicle and Aircraft
 	Valued:

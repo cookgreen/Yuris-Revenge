@@ -187,9 +187,10 @@ Virusgun:
 	ReloadDelay: 100
 	Range:10c0
 	Report: iviratta.wav
+	ValidTargets: Infantry
 	Warhead@1Dam: SpreadDamage
 		Damage: 125       
-		ValidTargets: Infantry, Vehicle
+		ValidTargets: Infantry
 		Versus:
 			None: 100
 			Flak: 100
@@ -216,6 +217,7 @@ Geneticgun:
 	ReloadDelay: 100
 	Range:10c0
 	Report: iviratta.wav
+	ValidTargets: Infantry
 	Warhead@1Dam: TransformActor
 		Damage: 125       
 		ValidTargets: Infantry
@@ -248,6 +250,7 @@ Brustgun:
 	ReloadDelay: 100
 	Range:10c0
 	Report: iviratta.wav
+	ValidTargets: Vehicle
 	Warhead@1Dam: KillCrew
 		Damage: 125       
 		ValidTargets: Vehicle

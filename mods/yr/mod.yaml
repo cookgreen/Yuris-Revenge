@@ -4,7 +4,7 @@ Metadata:
 	Version: release-20181215
 	Author: the RA2YR mod team
 
-PackageFormats: Mix, AudioBagHack
+PackageFormats: Mix, AudioBag
 
 Packages:
 	~^Content/yr
