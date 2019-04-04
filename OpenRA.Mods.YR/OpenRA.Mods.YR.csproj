@@ -127,7 +127,7 @@
     <Compile Include="Widgets\Logic\VxlBrowserLogic.cs" />
     <Compile Include="Widgets\ResourceBarSpriteWidget.cs" />
     <Compile Include="Widgets\VoxelWidget.cs" />
-    <Compile Include="Traits\WithBuildingPlacedOverlayConditional.cs" />
+    <Compile Include="Traits\Render\WithBuildingPlacedOverlayConditional.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\engine\OpenRA.Game\OpenRA.Game.csproj">

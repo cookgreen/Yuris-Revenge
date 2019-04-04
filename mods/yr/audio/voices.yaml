@@ -743,3 +743,20 @@ HindVoice:
 		Move: vgrsmoa, vgrsmob, vgrsmoc
 		Attack: vgrsata, vgrsatb, vgrsatc, vgrsatd
 		Die: vmigdia,vmigdic
+		
+MummyVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: gmumsela, gmumselb, gmumselc
+		Move: gmummova, gmummovd
+		Attack: gmumatta, gmumattb, gmumattc
+		Die: gmumdiea, gmumdieb, gmumdiec, gmumdied
+		
+EinsteinVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: ieinsea, ieinseb, ieinsec, ieinsed, ieinsee
+		Move: ieinmoa, ieinmob, ieinmoc, ieinmod, ieinmoe
+		Attack: ieinata, ieinatb, ieinatc, ieinatd, ieinate
+		Feedback: ieinfea, ieinfeb, ieinfec, ieinfed, ieinfee
+		Die: ieindia, ieindib, ieindic, ieindid, ieindie

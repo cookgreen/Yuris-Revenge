@@ -53,94 +53,24 @@ SquidPunch:
 	Warhead@1Dam: SpreadDamage
 		Damage: 50
 		ValidTargets: Water, Underwater
-        
+		
 Punch:
-	Inherits: AlligatorBite
-	ReloadDelay: 60
-	Range: 1c496
-	Report: brucra.wav, ibrucrb.wav, ibrucrc.wav, ibrucrd.wav
+	Inherits: ^Punch
+	Report: ibrucra.wav, ibrucrb.wav, ibrucrc.wav, ibrucrd.wav
 	Warhead@1Dam: SpreadDamage
-		Damage: 100
-		ValidTargets: Infantry, Structure
-		Versus:
-			None: 100
-			Flak: 100
-			Plate: 100
-			Light: 0
-			Medium: 0
-			Heavy: 0
-			Wood: 30
-			Steel: 30
-			Concrete: 20
-			Drone: 200
-			Rocket: 100
 		DamageTypes: BruteDeath
         
 PunchE:
-	Inherits: AlligatorBite
-	ReloadDelay: 60
-	Range: 1c496
-	Report: brucra.wav, ibrucrb.wav, ibrucrc.wav, ibrucrd.wav
-	Warhead@1Dam: SpreadDamage
-		Damage: 100
-		ValidTargets: Infantry, Structure
-		Versus:
-			None: 100
-			Flak: 100
-			Plate: 100
-			Light: 0
-			Medium: 0
-			Heavy: 0
-			Wood: 30
-			Steel: 30
-			Concrete: 20
-			Drone: 200
-			Rocket: 100
-		DamageTypes: BruteDeath
+	Inherits: Punch
         
 Smash:
-	Inherits: AlligatorBite
-	ReloadDelay: 60
-	Range: 1c496
-	Report: brucra.wav, ibrucrb.wav, ibrucrc.wav, ibrucrd.wav
+	Inherits: ^Smash
+	Report: ibrucra.wav, ibrucrb.wav, ibrucrc.wav, ibrucrd.wav
 	Warhead@1Dam: SpreadDamage
-		Damage: 100
-		ValidTargets: Vehicle
-		Versus:
-			None: 0
-			Flak: 0
-			Plate: 0
-			Light: 100
-			Medium: 20
-			Heavy: 100
-			Wood: 0
-			Steel: 0
-			Concrete: 0
-			Drone: 0
-			Rocket: 0
 		DamageTypes: BruteDeath
         
 SmashE:
-	Inherits: AlligatorBite
-	ReloadDelay: 60
-	Range: 1c496
-	Report: brucra.wav, ibrucrb.wav, ibrucrc.wav, ibrucrd.wav
-	Warhead@1Dam: SpreadDamage
-		Damage: 100
-		ValidTargets: Vehicle
-		Versus:
-			None: 0
-			Flak: 0
-			Plate: 0
-			Light: 100
-			Medium: 20
-			Heavy: 100
-			Wood: 0
-			Steel: 0
-			Concrete: 0
-			Drone: 0
-			Rocket: 0
-		DamageTypes: BruteDeath
+	Inherits: Smash
         
 shovel:
 	Inherits: AlligatorBite
@@ -165,3 +95,15 @@ shovel:
 		Explosions: piffpiff
 	Warhead@3Eff: CreateEffect
 		Explosions: piffpiff
+
+Mummypunch:
+	Inherits: ^Punch
+	Report: ibruatta, ibruattb, ibruattc, ibruattd, ibruatte, ibruattf
+	Warhead@1Dam: SpreadDamage
+		DamageTypes: BulletDeath
+        
+MummySmash:
+	Inherits: ^Smash
+	Report: ibruatta, ibruattb, ibruattc, ibruattd, ibruatte, ibruattf
+	Warhead@1Dam: SpreadDamage
+		DamageTypes: BulletDeath

@@ -96,3 +96,31 @@ pres:
 	Inherits: ^CivilianInfantry
 	Tooltip:
 		Name: President
+		
+mumy:
+	Inherits: ^CivilianInfantry
+	Valued:
+		Cost: 100
+	Tooltip:
+		Name: Evil Mummy
+	Mobile:
+		Speed: 45
+	Health:
+		HP: 400
+	Armor:
+		Type: Plate
+	Armament@primary:
+		Weapon: Mummypunch
+	Armament@secondary:
+		Weapon: Mummysmash
+	Voiced:
+		VoiceSet: MummyVoice
+	
+eins:
+	Inherits: ^CivilianInfantry
+	Tooltip:
+		Name: Albert Einstein
+	Mobile:
+		Speed: 60
+	Voiced:
+		VoiceSet: EinsteinVoice
