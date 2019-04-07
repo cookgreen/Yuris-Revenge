@@ -303,6 +303,7 @@ AGGattling:
 	Inherits: Gatting
 	ReloadDelay: 16
 	Range:5c0
+	ValidTargets: Ground, Water
 	Warhead@1Dam: SpreadDamage
 		Damage: 25 
 		ValidTargets: Ground, Water
@@ -311,6 +312,7 @@ AAGattling:
 	Inherits: Gatting
 	ReloadDelay: 16
 	Range:8c0
+	ValidTargets: Air
 	Warhead@1Dam: SpreadDamage
 		Damage: 25 
 		ValidTargets: Air
@@ -320,6 +322,7 @@ AGGattling2:
 	ReloadDelay: 16
 	Range:5c0
 	#Report: vgatlo4a.wav, vgatlo5a.wav, vgatlo5b.wav, vgatlo6a.wav
+	ValidTargets: Ground, Water
 	Warhead@1Dam: SpreadDamage
 		Damage: 25 
 		ValidTargets: Ground, Water
@@ -338,6 +341,7 @@ AGGattling3:
 	Inherits: Gatting
 	ReloadDelay: 16
 	Range:5c0
+	ValidTargets: Ground, Water
 	#Report: vgatlo7a.wav, vgatlo8a.wav, vgatlo8b.wav, vgatlo9a.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 25 
@@ -347,15 +351,17 @@ AAGattling3:
 	Inherits: Gatting
 	ReloadDelay: 4
 	Range:8c0
+	ValidTargets: Air
 	#Report: vgatlo7a.wav, vgatlo8a.wav, vgatlo8b.wav, vgatlo9a.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 40 
-		ValidTargets: Ground, Water, Air
+		ValidTargets: Air
         
 AGGattlingE:
 	Inherits: Gatting
 	ReloadDelay: 16
 	Range:5c0
+	ValidTargets: Ground, Water
 	#Report: vgatlo1a.wav, vgatlo2a.wav, vgatlo2b.wav, vgatlo2c.wav, vgatlo3a.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 25 
@@ -375,6 +381,7 @@ AGGattling2E:
 	Inherits: Gatting
 	ReloadDelay: 16
 	Range:5c0
+	ValidTargets: Ground, Water
 	#Report: vgatlo4a.wav, vgatlo5a.wav, vgatlo5b.wav, vgatlo6a.wav
 	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	Warhead@1Dam: SpreadDamage
@@ -395,6 +402,7 @@ AGGattling3E:
 	Inherits: Gatting
 	ReloadDelay: 16
 	Range:5c0
+	ValidTargets: Ground, Water
 	#Report: vgatlo7a.wav, vgatlo8a.wav, vgatlo8b.wav, vgatlo9a.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 25 
@@ -404,6 +412,7 @@ AAGattling3E:
 	Inherits: Gatting
 	ReloadDelay: 4
 	Range:8c0
+	ValidTargets: Air
 	#Report: vgatlo7a.wav, vgatlo8a.wav, vgatlo8b.wav, vgatlo9a.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 25  

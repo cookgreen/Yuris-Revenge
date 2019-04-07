@@ -964,3 +964,39 @@ naindp:
 		Sequence: idle-lights
 	Power:
 		Amount: -200
+        
+napsya:
+	Inherits: ^Building
+	Selectable:
+		Bounds: 220, 155, 0, -20
+	Health:
+		HP: 1000
+	Armor:
+		Type: Concrete
+	RevealsShroud:
+		Range: 6c0
+	Tooltip
+		Name: Psychic Amplifier
+	Power:
+		Amount: -100
+	WithIdleOverlay@active:
+		Sequence: idle-active
+        
+napsyb:
+	Inherits: ^Building
+	Selectable:
+		Bounds: 220, 155, 0, -20
+	Health:
+		HP: 750
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 6c0
+	Valued
+		Cost: 1000
+	Tooltip
+		Name: Psychic Beacon
+	Power:
+		Amount: -100
+	WithIdleOverlay@active:
+		Sequence: idle-active

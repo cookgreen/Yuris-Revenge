@@ -2,36 +2,279 @@ MapFormat: 11
 
 RequiresMod: yr
 
-Title: Blank
+Title: Shell Map
 
-Author: Matthias Mailänder
+Author: Cook Green
 
-Tileset: SNOW
+Tileset: DESERT
 
-MapSize: 130,146
+MapSize: 50,100
 
-Bounds: 1,1,128,144
+Bounds: 2,4,46,96
 
 Visibility: Shellmap
 
 Categories: Shellmap
 
 Players:
-	PlayerReference@Neutral:
-		Name: Neutral
+	PlayerReference@Allies:
+		Name: Allies
+		Faction: Random
+		LockColor: True
+		Color: 0062ff
+		Enemies: Yuri
+	PlayerReference@Soviets:
+		Name: Soviets
+		Faction: Random
+		LockColor: True
+		Color: ff0000
+		Enemies: Yuri
+	PlayerReference@Yuri:
+		Name: Yuri
 		OwnsWorld: True
 		NonCombatant: True
 		Faction: Random
-	PlayerReference@Creeps:
-		Name: Creeps
-		NonCombatant: True
-		Faction: Random
-
+		LockColor: True
+		Color: 7a51a8
+		Enemies: Allies, Soviets
 Actors:
+	Actor0: yapsyt
+		Location: 68,0
+		Owner: Yuri
+		Facing: 160
+	Actor1: yabrck
+		Location: 58,-1
+		Owner: Yuri
+		Facing: 160
+	Actor2: yapowr
+		Location: 60,-13
+		Owner: Yuri
+		Facing: 160
+	Actor3: yacnst
+		Location: 51,-7
+		Owner: Yuri
+		Facing: 160
+	Actor4: yapsyt
+		Location: 68,-11
+		Owner: Yuri
+		Facing: 160
+	Actor5: yaggun
+		Location: 66,-3
+		Owner: Yuri
+		Facing: 160
+	Actor6: yaggun
+		Location: 66,-9
+		Owner: Yuri
+		Facing: 160
+	PsychicBeacon: napsyb
+		Location: 59,-6
+		Owner: Yuri
+		Facing: 160
+	Actor8: yapowr
+		Location: 63,-13
+		Owner: Yuri
+		Facing: 160
+	Actor9: yapowr
+		Location: 62,-11
+		Owner: Yuri
+		Facing: 160
+	Actor10: yapowr
+		Location: 55,-10
+		Owner: Yuri
+		Facing: 160
+	Actor11: yapowr
+		Location: 51,-1
+		Owner: Yuri
+		Facing: 160
+	Actor12: yaggun
+		Location: 62,-5
+		Owner: Yuri
+		Facing: 160
+	Actor13: yaggun
+		Location: 59,-8
+		Owner: Yuri
+		Facing: 160
+	Actor14: yaggun
+		Location: 57,-6
+		Owner: Yuri
+		Facing: 160
+	Actor15: yaggun
+		Location: 60,-3
+		Owner: Yuri
+		Facing: 160
+	Actor16: yapowr
+		Location: 54,-1
+		Owner: Yuri
+		Facing: 160
+	Actor17: yapowr
+		Location: 51,3
+		Owner: Yuri
+		Facing: 160
+	Actor18: yapowr
+		Location: 54,3
+		Owner: Yuri
+		Facing: 160
+	Actor19: yaweap
+		Location: 58,5
+		Owner: Yuri
+		Facing: 160
+	Actor20: yagrnd
+		Location: 63,1
+		Owner: Yuri
+		Facing: 160
+	Actor21: yapowr
+		Location: 59,-11
+		Owner: Yuri
+		Facing: 160
+	Actor22: yapowr
+		Location: 64,6
+		Owner: Yuri
+		Facing: 160
+	Actor23: yapowr
+		Location: 56,7
+		Owner: Yuri
+		Facing: 160
+	Actor24: yapowr
+		Location: 60,10
+		Owner: Yuri
+		Facing: 160
+	Actor25: yapowr
+		Location: 48,-5
+		Owner: Yuri
+		Facing: 160
+	Actor26: yapowr
+		Location: 46,-3
+		Owner: Yuri
+		Facing: 160
+	Actor27: yapowr
+		Location: 48,4
+		Owner: Yuri
+		Facing: 160
+	Actor28: yapowr
+		Location: 47,1
+		Owner: Yuri
+		Facing: 160
+	Actor29: yapowr
+		Location: 52,7
+		Owner: Yuri
+		Facing: 160
+	Actor30: yapowr
+		Location: 54,11
+		Owner: Yuri
+		Facing: 160
+	Actor31: yapowr
+		Location: 56,10
+		Owner: Yuri
+		Facing: 160
+	Actor32: yapowr
+		Location: 48,10
+		Owner: Yuri
+		Facing: 160
+	Actor33: yapowr
+		Location: 48,7
+		Owner: Yuri
+		Facing: 160
+	Actor34: mind
+		Location: 66,-11
+		Owner: Yuri
+		Facing: 160
+	Actor35: mind
+		Location: 66,0
+		Owner: Yuri
+		Facing: 160
+	Actor36: tele
+		Location: 64,-8
+		Owner: Yuri
+		Facing: 160
+	Actor37: tele
+		Location: 64,-5
+		Owner: Yuri
+		Facing: 160
+	Actor38: init
+		Location: 62,-3
+		Owner: Yuri
+		Facing: 98
+	Actor39: virus
+		Location: 66,-6
+		Owner: Yuri
+		Facing: 97
+	Actor40: init
+		Location: 62,-7
+		Owner: Yuri
+		Facing: 97
+	Actor41: init
+		Location: 57,-3
+		Owner: Yuri
+	Actor42: init
+		Location: 57,-11
+		Owner: Yuri
+		Facing: 97
+	Actor43: init
+		Location: 53,-9
+		Owner: Yuri
+		Facing: 97
+	wall1: gafwll
+		Location: 61,-4
+		Owner: Yuri
+		Facing: 160
+	wall2: gafwll
+		Location: 60,-4
+		Owner: Yuri
+		Facing: 160
+	wall3: gafwll
+		Location: 59,-4
+		Owner: Yuri
+		Facing: 160
+	wall4: gafwll
+		Location: 58,-4
+		Owner: Yuri
+		Facing: 160
+	wall5: gafwll
+		Location: 58,-5
+		Owner: Yuri
+		Facing: 160
+	wall6: gafwll
+		Location: 58,-6
+		Owner: Yuri
+		Facing: 160
+	wall7: gafwll
+		Location: 58,-7
+		Owner: Yuri
+		Facing: 160
+	wall8: gafwll
+		Location: 59,-7
+		Owner: Yuri
+		Facing: 160
+	wall9: gafwll
+		Location: 60,-7
+		Owner: Yuri
+		Facing: 160
+	wall10: gafwll
+		Location: 61,-7
+		Owner: Yuri
+		Facing: 160
+	Actor44: gafwll
+		Location: 61,-6
+		Owner: Yuri
+		Facing: 160
+	Actor45: gafwll
+		Location: 61,-5
+		Owner: Yuri
+		Facing: 160
+	allieswaypoint1: waypoint
+		Location: 81,-13
+		Owner: Allies
+	allieswaypoint2: waypoint
+		Location: 85,-9
+		Owner: Allies
+	sovwaypoint1: waypoint
+		Location: 80,17
+		Owner: Soviets
+	sovwaypoint2: waypoint
+		Location: 85,12
+		Owner: Soviets
+	sovwaypoint3: waypoint
+		Location: 75,22
+		Owner: Soviets
 
-Rules:
-	World:
-		-StartGameNotification:
-		MusicPlaylist:
-			StartingMusic: intro
-			LoopStartingMusic: true
+Rules: rules.yaml

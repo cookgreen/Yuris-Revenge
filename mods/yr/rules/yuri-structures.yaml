@@ -589,58 +589,75 @@ yaggun:
 	Armament@primary:
 		Weapon: AGGattling
 		LocalOffset: 640,0,384
+		MuzzleSequence: muzzle
+		MuzzleSplitFacings: 8
 		RequiresCondition: !rank-elite && stage-1
 	Armament@primary-elite:
 		Weapon: AGGattling
 		LocalOffset: 640,0,384
+		MuzzleSequence: muzzle
+		MuzzleSplitFacings: 8
 		RequiresCondition: rank-elite && stage-1
 	Armament@primary-stage-2:
 		Weapon: AGGattling2
 		LocalOffset: 640,0,384
+		MuzzleSequence: muzzle-stage-2
 		RequiresCondition: !rank-elite && stage-2
 	Armament@primary-elite-stage-2:
 		Weapon: AGGattling2E
 		LocalOffset: 640,0,384
+		MuzzleSequence: muzzle-stage-2
 		RequiresCondition: rank-elite && stage-2
 	Armament@primary-stage-3:
 		Weapon: AGGattling3
 		LocalOffset: 640,0,384
+		MuzzleSequence: muzzle-stage-3
 		RequiresCondition: !rank-elite && stage-3
 	Armament@primary-elite-stage-3:
 		Weapon: AGGattling3E
 		LocalOffset: 640,0,384
+		MuzzleSequence: muzzle-stage-3
 		RequiresCondition: rank-elite && stage-3
 	Armament@second-stage-1:
 		Weapon: AAGattling
 		LocalOffset: 640,0,384
+		MuzzleSequence: muzzle
+		MuzzleSplitFacings: 8
 		RequiresCondition: !rank-elite && stage-1
 	Armament@second-elite-stage-1:
 		Weapon: AAGattlingE
 		LocalOffset: 640,0,384
+		MuzzleSequence: muzzle
+		MuzzleSplitFacings: 8
 		RequiresCondition: rank-elite && stage-1
 	Armament@second-stage-2:
 		Weapon: AAGattling2
 		LocalOffset: 640,0,384
+		MuzzleSequence: muzzle-stage-2
 		RequiresCondition: !rank-elite && stage-2
 	Armament@second-elite-stage-2:
 		Weapon: AAGattling2E
 		LocalOffset: 640,0,384
+		MuzzleSequence: muzzle-stage-2
 		RequiresCondition: rank-elite && stage-2
 	Armament@second-stage-3:
 		Weapon: AAGattling3
 		LocalOffset: 640,0,384
+		MuzzleSequence: muzzle-stage-3
 		RequiresCondition: !rank-elite && stage-3
 	Armament@second-elite-stage-3:
 		Weapon: AAGattling3E
 		LocalOffset: 640,0,384
+		MuzzleSequence: muzzle-stage-3
 		RequiresCondition: rank-elite && stage-3
 	GrantConditionOnStage: 
 		Conditions:
 			stage-1: 200
-			stage-2: 300
-			stage-3: 400
+			stage-2: 400
+			stage-3: 600
 	BodyOrientation:
 		QuantizedFacings: 16
+	WithMuzzleOverlay:
 	RenderVoxels:
 		Scale: 18
 		LightYaw: 800

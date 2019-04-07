@@ -43,7 +43,7 @@ Container@MAINMENU:
 							Y: 20
 							Width: 200
 							Height: 30
-							Text: OpenRA
+							Text: OpenRA Yuri's Revenge
 							Align: Center
 							Font: Bold
 						Button@SINGLEPLAYER_BUTTON:
@@ -160,14 +160,14 @@ Container@MAINMENU:
 							Y: 180
 							Width: 140
 							Height: 30
-							Text: Voxel Browser
+							Text: Asset Browser
 							Font: Bold
-						Button@CREDITS_BUTTON:
+						Button@VOXELBROWSER_BUTTON:
 							X: PARENT_RIGHT / 2 - WIDTH / 2
 							Y: 220
 							Width: 140
 							Height: 30
-							Text: Credits
+							Text: Voxel Browser
 							Font: Bold
 						Button@BACK_BUTTON:
 							X: PARENT_RIGHT / 2 - WIDTH / 2
