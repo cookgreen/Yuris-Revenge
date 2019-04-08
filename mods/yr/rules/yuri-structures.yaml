@@ -87,6 +87,7 @@ yabrck:
 	Inherits: ^Building
 	Inherits@shape: ^2x3Shape
 	Inherits@SMC: ^SuperMindControllable
+	Inherits@MAINTENANCE: ^Maintenancable
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 20
@@ -211,6 +212,7 @@ yaweap:
 	Inherits: ^Building
 	Inherits@shape: ^5x3Shape
 	Inherits@SMC: ^SuperMindControllable
+	Inherits@MAINTENANCE: ^Maintenancable
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 50

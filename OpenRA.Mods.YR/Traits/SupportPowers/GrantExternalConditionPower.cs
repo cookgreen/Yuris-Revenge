@@ -48,6 +48,9 @@ namespace OpenRA.Mods.YR.Traits
         [Desc("If cause low power, when will it end?")]
         public readonly int LowPowerDuration = 0;
 
+        [Desc("Should this support power effect to all actors with external condition?")]
+        public readonly bool EffectToAll = false;
+
 		public override object Create(ActorInitializer init) { return new GrantExternalConditionPowerEx(init.Self, this); }
 	}
 
@@ -79,16 +82,25 @@ namespace OpenRA.Mods.YR.Traits
 
 			Game.Sound.Play(SoundType.World, info.OnFireSound, self.World.Map.CenterOfCell(order.TargetLocation));
 
-			foreach (var a in UnitsInRange(order.TargetLocation))
-			{
-				var external = a.TraitsImplementing<ExternalCondition>()
-					.FirstOrDefault(t => t.Info.Condition == info.Condition && t.CanGrantCondition(a, self));
+            IEnumerable<Actor> actors = null;
+            if (!info.EffectToAll)
+            {
+                actors = UnitsInRange(order.TargetLocation);
+            }
+            else
+            {
+                actors = self.World.Actors.Where(o => o.Owner.IsAlliedWith(self.Owner));
+            }
+            foreach (var actor in actors)
+            {
+                var external = actor.TraitsImplementing<ExternalCondition>()
+                    .FirstOrDefault(t => t.Info.Condition == info.Condition && t.CanGrantCondition(actor, self));
 
-				if (external != null)
-					external.GrantCondition(a, self, info.Duration);
-			}
+                if (external != null)
+                    external.GrantCondition(actor, self, info.Duration);
+            }
 
-            if(info.LowPower)
+            if (info.LowPower)
             {
                 powerMgr.TriggerPowerOutage(info.LowPowerDuration);
             }

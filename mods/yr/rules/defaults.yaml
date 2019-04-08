@@ -329,6 +329,20 @@
 	Targetable@SMC:
 		TargetTypes: SuperMindControl
 		RequiresCondition: !controlled
+		
+^Maintenancable:
+	Production:
+		PauseOnCondition: maintenanceability
+	TimedConditionBar:
+		Condition: maintenanceability
+	WithColoredOverlay@MAINTENANCE:
+		RequiresCondition: maintenanceability
+	ExternalCondition@MAINTENANCABLE:
+		Condition: maintenanceability
+	CashTrickler:
+		Interval: 100
+		Amount: 3000
+		RequiresCondition: maintenanceability
 
 ^AutoTargetGround:
 	AutoTarget:

@@ -107,6 +107,7 @@ gapile:
 	Inherits: ^Building
 	Inherits@shape: ^3x2Shape
 	Inherits@SMC: ^SuperMindControllable
+	Inherits@MAINTENANCE: ^Maintenancable
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 20
@@ -341,6 +342,7 @@ gaweap:
 	Inherits: ^Building
 	Inherits@shape: ^5x3Shape
 	Inherits@SMC: ^SuperMindControllable
+	Inherits@MAINTENANCE: ^Maintenancable
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 40
@@ -683,6 +685,7 @@ gapill:
 	WithRangeCircle:
 		Range: 6c0
 		Type: pillbox
+	WithMuzzleOverlay:
 	AutoTarget:
 	RequiresBuildableArea:
 		Adjacent: 5
