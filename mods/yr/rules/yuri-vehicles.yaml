@@ -201,51 +201,51 @@ ytnk:
 		TurnSpeed: 5
 	Armament@primary-stage-1:
 		Weapon: AGGattling
-		LocalOffset: 640,0,384
+		LocalOffset: 700,100,10, 700,-100,10
 		RequiresCondition: !rank-elite && stage-1
 	Armament@primary-elite-stage-1:
 		Weapon: AGGattling
-		LocalOffset: 640,0,384
+		LocalOffset: 700,100,10, 700,-100,10
 		RequiresCondition: rank-elite && elite-stage-1
 	Armament@primary-stage-2:
 		Weapon: AGGattling2
-		LocalOffset: 640,0,384
+		LocalOffset: 700,100,10, 700,-100,10
 		RequiresCondition: !rank-elite && stage-2
 	Armament@primary-elite-stage-2:
 		Weapon: AGGattling2E
-		LocalOffset: 640,0,384
+		LocalOffset: 700,100,10, 700,-100,10
 		RequiresCondition: rank-elite && elite-stage-2
 	Armament@primary-stage-3:
 		Weapon: AGGattling3
-		LocalOffset: 640,0,384
+		LocalOffset: 700,100,10, 700,-100,10
 		RequiresCondition: !rank-elite && stage-3
 	Armament@primary-elite-stage-3:
 		Weapon: AGGattling3E
-		LocalOffset: 640,0,384
+		LocalOffset: 700,100,10, 700,-100,10
 		RequiresCondition: rank-elite && elite-stage-3
 	Armament@second-stage-1:
 		Weapon: AAGattling
-		LocalOffset: 640,0,384
+		LocalOffset: 700,100,10, 700,-100,10
 		RequiresCondition: !rank-elite && stage-1
 	Armament@second-elite-stage-1:
 		Weapon: AAGattlingE
-		LocalOffset: 640,0,384
+		LocalOffset: 700,100,10, 700,-100,10
 		RequiresCondition: rank-elite && elite-stage-1
 	Armament@second-stage-2:
 		Weapon: AAGattling2
-		LocalOffset: 640,0,384
+		LocalOffset: 700,100,10, 700,-100,10
 		RequiresCondition: !rank-elite && stage-2
 	Armament@second-elite-stage-2:
 		Weapon: AAGattling2E
-		LocalOffset: 640,0,384
+		LocalOffset: 700,100,10, 700,-100,10
 		RequiresCondition: rank-elite && elite-stage-2
 	Armament@second-stage-3:
 		Weapon: AAGattling3
-		LocalOffset: 640,0,384
+		LocalOffset: 700,100,10, 700,-100,10
 		RequiresCondition: !rank-elite && stage-3
 	Armament@second-elite-stage-3:
 		Weapon: AAGattling3E
-		LocalOffset: 640,0,384
+		LocalOffset: 700,100,10, 700,-100,10
 		RequiresCondition: rank-elite && elite-stage-3
 	GrantConditionOnStage:
 		Conditions:
@@ -408,6 +408,7 @@ caos:
 mind:
 	Inherits: ^Vehicle
 	Inherits@CHAOSGAS: ^Chaosgasable
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Valued:
 		Cost: 1750
 	Tooltip:

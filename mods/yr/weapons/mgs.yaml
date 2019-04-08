@@ -278,6 +278,7 @@ Gatting:
 	Inherits: ^MG
 	ReloadDelay: 10
 	Range:7c0
+	Brust: 2
 	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	Projectile: Bullet
 		Speed: 100c0
