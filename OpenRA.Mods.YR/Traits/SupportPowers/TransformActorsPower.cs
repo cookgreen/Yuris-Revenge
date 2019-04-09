@@ -23,9 +23,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OpenRA.Mods.YR.Traits
+namespace OpenRA.Mods.YR.Traits.SupportPowers
 {
-    public class TransformActorsPowerInfo : SupportPowerInfo
+    public class TransformActorsPowerInfo : SupportPowerWithNotifyInfo
     {
         [Desc("Which actor did you want to transfrom to?")]
         public readonly string Actor = null;
@@ -49,7 +49,7 @@ namespace OpenRA.Mods.YR.Traits
     /// <summary>
     /// Transform the victim actors to other actors
     /// </summary>
-    public class TransformActorsPower : SupportPower, ITick
+    public class TransformActorsPower : SupportPowerWithNotify, ITick
     {
         private int delay = -1;
         private List<TypeDictionary> dics;

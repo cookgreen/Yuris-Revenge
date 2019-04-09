@@ -23,7 +23,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OpenRA.Mods.YR.Traits
+namespace OpenRA.Mods.YR.Traits.SupportPowers
 {
     public class WeaponBrust
     {
@@ -69,7 +69,7 @@ namespace OpenRA.Mods.YR.Traits
             offsetZ = positionOffset[2];
         }
     }
-    public class ParticleSupportPowerInfo : SupportPowerInfo, IRulesetLoaded
+    public class ParticleSupportPowerInfo : SupportPowerWithNotifyInfo, IRulesetLoaded
     {
         [Desc("What weapons will attack the target in the range?")]
         //Weapon-Offset dictionary
@@ -119,7 +119,7 @@ namespace OpenRA.Mods.YR.Traits
             return new ParticleSupportPower(init.Self, this);
         }
     }
-    public class ParticleSupportPower : SupportPower
+    public class ParticleSupportPower : SupportPowerWithNotify
     {
         private ParticleSupportPowerInfo info;
 

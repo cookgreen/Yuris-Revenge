@@ -93,6 +93,7 @@
     <Compile Include="Traits\EnvironmentPaletteEffect.cs" />
     <Compile Include="Traits\GrantConditionOnProduction.cs" />
     <Compile Include="Traits\GrantConditionOnStage.cs" />
+    <Compile Include="Traits\Render\WithSuperPowerAnimation.cs" />
     <Compile Include="Traits\SupportPowers\ExploreMapSupportPower.cs" />
     <Compile Include="Traits\GrantConditionOnCapture.cs" />
     <Compile Include="Traits\MarkerMaster.cs" />
@@ -116,6 +117,7 @@
     <Compile Include="Traits\SpawnerHarvesterSlave.cs" />
     <Compile Include="Traits\SpawnerRefineryMaster.cs" />
     <Compile Include="Traits\Bunkerable.cs" />
+    <Compile Include="Traits\SupportPowers\SupportPowerWithNotify.cs" />
     <Compile Include="Traits\SupportPowers\TransformActorsPower.cs" />
     <Compile Include="Traits\Tractable.cs" />
     <Compile Include="Traits\Variety.cs" />

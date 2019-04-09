@@ -2,10 +2,10 @@ Player:
 	ModularBot@testai:
 		Name: Test AI
 		Type: test
-	GrantConditionOnBotOwner@testai:
+	GrantConditionOnBotOwner@test:
 		Condition: enable-test-ai
-		Bots: testai
-	SupportPowerBotModule:
+		Bots: test
+	SupportPowerBotModule@test:
 		RequiresCondition: enable-test-ai
 		Decisions:
 			airborne:
@@ -68,14 +68,12 @@ Player:
 					Attractiveness: -10
 					TargetMetric: Value
 					CheckRadius: 7c0
-	HarvesterBotModule:
+	HarvesterBotModule@test:
 		RequiresCondition: enable-test-ai
 		HarvesterTypes: cmin, harv, smin
 		RefineryTypes: garefn, narefn, yarefn
-	BaseBuilderBotModule@testai:
+	BaseBuilderBotModule@test:
 		RequiresCondition: enable-test-ai
-		BuildingQueues: Building.Allies, Building.Soviets, Building.Yuris
-		DefenseQueues: Defence.Allies, Defence.Soviets, Defence.Yuris
 		MinimumExcessPower: 30
 		MaximumExcessPower: 210
 		ExcessPowerIncrement: 30
@@ -85,7 +83,7 @@ Player:
 		PowerTypes: gapowr, napowr, nanrct, yapowr
 		BarracksTypes: gapile, nahand, yabrck
 		VehiclesFactoryTypes: gaweap, naweap, yaweap
-		ProductionTypes: gapile, nahand, gaweap, naweap, gaairc, amradr, yabrck, yaweap, napsis
+		ProductionTypes: gapile, nahand, gaweap, naweap, gaairc, amradr, yabrck, yaweap
 		BuildingLimits:
 			garefn: 4
 			narefn: 4
@@ -147,16 +145,22 @@ Player:
 			namisl: 1
 			yappet: 1
 			yagntc: 1
-	BuildingRepairBotModule@testai:
+	McvManagerBotModule@test:
 		RequiresCondition: enable-test-ai
-	SquadManagerBotModule@testai:
+		McvTypes: amcv, smcv, pcv
+		ConstructionYardTypes: gacnst, nacnst, yacnst
+		McvFactoryTypes: gaweap, naweap, yaweap
+	BuildingRepairBotModule@test:
 		RequiresCondition: enable-test-ai
-		SquadSize: 15
+	SquadManagerBotModule@test:
+		RequiresCondition: enable-test-ai
+		SquadSize: 5
+		RushAttackScanRadius: 30
+		ProtectUnitScanRadius: 25
 		ExcludeFromSquadsTypes: cmin, harv, smin, amcv, smcv, pcv
 		ConstructionYardTypes: gacnst, nacnst, yacnst
-	UnitBuilderBotModule@testai:
+	UnitBuilderBotModule@test:
 		RequiresCondition: enable-test-ai
-		UnitQueues: Vehicle.Allies, Vehicle.Soviets, Vehicle.Yuris, Infantry.Allies, Infantry.Soviets, Infantry.Yuris, Aircraft.Allies, Aircraft.Soviets, Aircraft.Yuris
 		UnitsToBuild:
 			e1: 90
 			e2: 90
@@ -197,8 +201,3 @@ Player:
 			cmin: 8
 			harv: 8
 			smin: 8
-	McvManagerBotModule:
-		RequiresCondition: enable-test-ai
-		McvTypes: amcv, smcv, pcv
-		ConstructionYardTypes: gacnst, nacnst, yacnst
-		McvFactoryTypes: gaweap, naweap, yaweap

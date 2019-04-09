@@ -33,17 +33,19 @@ nacnst:
 		Facing: 96
 		DeployCursor: undeploy
 	ProductionQueue@Building:
-		Type: Building.Soviets
+		Type: Building
 	ProductionQueue@Support:
-		Type: Support.Soviets
+		Type: Support
 	ProductionBar@Building:
-		ProductionType: Building.Soviets
+		ProductionType: Building
 	ProductionBar@Support:
-		ProductionType: Support.Soviets
+		ProductionType: Support
 	WithIdleOverlay@top:
 		Sequence: idle-top
+		RequiresCondition: !build-incomplete
 	WithIdleOverlay@normal:
 		Sequence: idle-normal
+		RequiresCondition: !build-incomplete
 	WithBuildingPlacedAnimation:
 	SpawnActorsOnSell@allies:
 		ActorTypes: e1, e1, e1, engineer
@@ -83,6 +85,7 @@ napowr:
 		Range: 4c0
 	WithIdleOverlay@lights:
 		Sequence: idle-lights
+		RequiresCondition: !build-incomplete
 	Power:
 		Amount: 150
 		RequiresCondition: !outagepower
@@ -243,8 +246,10 @@ narefn:
 	WithDockedOverlay:
 	WithIdleOverlay@bib:
 		Sequence: idle-bib
+		RequiresCondition: !build-incomplete
 	WithIdleOverlay@drill:
 		Sequence: idle-drill
+		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -50
 	Targetable:
@@ -284,7 +289,8 @@ naradr:
 		Range: 10c0
 	WithIdleOverlay@dish:
 		Sequence: idle-dish
-		PauseOnCondition: lowpower
+		PauseOnCondition: lowpower 
+		RequiresCondition: !build-incomplete
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
 	InfiltrateForExploration:
@@ -357,20 +363,22 @@ naweap:
 		ProductionType: Vehicle.Soviets
 	WithExitOverlay@door:
 		Sequence: build-door
-		RequiresCondition: !roof-open
+		RequiresCondition: !roof-open && !build-incomplete
 	WithExitOverlay@top-vehicles:
 		Sequence: build-top
-		RequiresCondition: !roof-open
+		RequiresCondition: !roof-open && !build-incomplete
 	WithIdleOverlay@lights:
 		Sequence: idle-lights
+		RequiresCondition: !build-incomplete
 	WithIdleOverlay@bib:
 		Sequence: bib
+		RequiresCondition: !build-incomplete
 	WithIdleOverlay@air-open:
 		Sequence: build-air-open
-		RequiresCondition: roof-open
+		RequiresCondition: roof-open && !build-incomplete
 	WithIdleOverlay@air-inside:
 		Sequence: build-air-inside
-		RequiresCondition: roof-open
+		RequiresCondition: roof-open && !build-incomplete
 	Power:
 		Amount: -25
 	InfiltrateForSupportPower:
@@ -502,12 +510,15 @@ nayard:
 		Amount: -20
 	WithIdleOverlay@crane:
 		Sequence: idle-crane
+		RequiresCondition: !build-incomplete
 	WithIdleOverlay@waves:
 		Sequence: idle-waves
+		RequiresCondition: !build-incomplete
 	WithRepairOverlay:
 		Sequence: repair
 	WithProductionOverlay@lights:
 		Sequence: production-lights
+		RequiresCondition: !build-incomplete
 	-SpawnActorsOnSell@allies:
 	-SpawnActorsOnSell@soviets:
 	-SpawnActorsOnSell@yuris:
@@ -550,8 +561,10 @@ nadept:
 		FinishRepairingNotification: UnitRepaired
 	WithIdleOverlay@normal:
 		Sequence: idle-normal
+		RequiresCondition: !build-incomplete
 	WithIdleOverlay@bib:
 		Sequence: bib
+		RequiresCondition: !build-incomplete
 	WithResupplyAnimation:
 		Sequence: repair
 	Power:
@@ -585,6 +598,7 @@ nanrct:
 		Range: 5c0
 	WithIdleOverlay@lights:
 		Sequence: idle-lights
+		RequiresCondition: !build-incomplete
 	Explodes:
 		Type: CenterPosition
 		Weapon: NukePayload
@@ -858,7 +872,7 @@ tesla:
 		Amount: -75
 	WithIdleOverlay@powered:
 		Sequence: idle-powered
-		RequiresCondition: !lowpower
+		RequiresCondition: !lowpower && !build-incomplete
 	ExternalCondition@CHARGED:
 		Condition: charged
 
@@ -975,8 +989,10 @@ naindp:
 		Prerequisite: naindp
 	WithIdleOverlay@processing:
 		Sequence: idle-processing
+		RequiresCondition: !build-incomplete
 	WithIdleOverlay@lights:
 		Sequence: idle-lights
+		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -200
 	GrantExternalConditionPowerEx@MAINTENANCE:
@@ -1026,3 +1042,4 @@ napsyb:
 		Amount: -100
 	WithIdleOverlay@active:
 		Sequence: idle-active
+		RequiresCondition: !build-incomplete

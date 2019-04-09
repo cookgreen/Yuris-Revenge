@@ -25,18 +25,19 @@ yacnst:
 		Facing: 96
 		DeployCursor: undeploy
 	ProductionQueue@Building:
-		Type: Building.Yuris
+		Type: Building
 	ProductionQueue@Support:
-		Type: Support.Yuris
+		Type: Support
 	ProductionBar@Building:
-		ProductionType: Building.Yuris
+		ProductionType: Building
 	ProductionBar@Support:
-		ProductionType: Support.Yuris
+		ProductionType: Support
 	WithIdleOverlay@top:
 		Sequence: idle-top
+		RequiresCondition: !build-incomplete
 	WithIdleOverlay@normal:
 		Sequence: idle-normal
-		RequiresCondition: !placing #This need to be conditional when place building
+		RequiresCondition: !placing && !build-incomplete #This need to be conditional when place building
 	WithBuildingPlacedOverlayConditional:
 		PlacingCondition: placing
 	ProvidesPrerequisite:
@@ -71,6 +72,7 @@ yapowr:
 		Range: 4c0
 	WithIdleOverlay@lights:
 		Sequence: idle-lights
+		RequiresCondition: !build-incomplete
 	Power:
 		Amount: 150
 		RequiresCondition: !outagepower
@@ -147,6 +149,7 @@ yabrck:
 		ExitCell: 2, 2
 	WithIdleOverlay@training:
 		Sequence: idle-training
+		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -10
 	InfiltrateForSupportPower:
@@ -203,6 +206,7 @@ yarefn:
 		Minimum: 500
 	WithIdleOverlay@processing:
 		Sequence: idle-processing
+		RequiresCondition: !build-incomplete
 	Power:
 		Amount: 0
 	Targetable:
@@ -263,20 +267,22 @@ yaweap:
 		RequiresCondition: primary
 	WithExitOverlay@door:
 		Sequence: build-door
-		RequiresCondition: !roof-open
+		RequiresCondition: !roof-open && !build-incomplete
 	WithExitOverlay@top-vehicles:
 		Sequence: build-top
-		RequiresCondition: !roof-open
+		RequiresCondition: !roof-open && !build-incomplete
 	WithIdleOverlay@lights:
 		Sequence: idle-lights
+		RequiresCondition: !build-incomplete
 	WithIdleOverlay@bib:
 		Sequence: bib
+		RequiresCondition: !build-incomplete
 	WithIdleOverlay@air-open:
 		Sequence: build-air-open
-		RequiresCondition: roof-open
+		RequiresCondition: roof-open && !build-incomplete
 	WithIdleOverlay@air-inside:
 		Sequence: build-air-inside
-		RequiresCondition: roof-open
+		RequiresCondition: roof-open && !build-incomplete
 	ProductionBar:
 		ProductionType: Vehicle.Yuris
 	Power:
@@ -423,12 +429,15 @@ yayard:
 		Amount: -20
 	WithIdleOverlay@crane:
 		Sequence: idle-crane
+		RequiresCondition: !build-incomplete
 	WithIdleOverlay@waves:
 		Sequence: idle-waves
+		RequiresCondition: !build-incomplete
 	WithRepairOverlay:
 		Sequence: repair
 	WithProductionOverlay@lights:
 		Sequence: production-lights
+		RequiresCondition: !build-incomplete
 	-SpawnActorsOnSell@allies:
 	-SpawnActorsOnSell@soviets:
 	-SpawnActorsOnSell@yuris:
@@ -498,6 +507,7 @@ yatech:
 		Proxy: yuris.tech.infiltrated
 	WithIdleOverlay@critical:
 		Sequence: idle-critical
+		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -100
 	Targetable:
@@ -756,8 +766,6 @@ yagntc:
 	Building:
 		Footprint: xxx xxx xxx
 		Dimensions: 3,3
-	Power:
-		Amount: -200
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
 		ValidPowerStates: Low, Critical
@@ -770,7 +778,6 @@ yagntc:
 		LongDesc: Transform the soldiers to the powerful brute which will obey Yuri forever!
 		EndChargeSound: sgenlo1a.wav,sgenlo2a.wav,sgenlo2b.wav,sgenlo2c.wav,sgenlo3a.wav
 		LaunchSound: sgenon.wav
-		StartFullyCharged: true
 		DisplayTimerStances: Ally, Neutral, Enemy
 		DisplayBeacon: True
 		DisplayRadarPing: True
@@ -781,7 +788,16 @@ yagntc:
 		Cursor: geneticmutator
 	WithIdleOverlay@top:
 		Sequence: idle-top
-	WithNukeLaunchAnimation:
+		RequiresCondition: !build-incomplete
+	WithSupportPowerAnimation:
+		OrderName: Geneticconverter
+		IdleSequence: idle
+		ChargedSequence: charged
+		ActiveSequence: active
+		DeactiveSequence: deactive
+		Condition: build-incomplete
+	Power:
+		Amount: -200
 
 yappet:
 	Inherits: ^Building
@@ -813,13 +829,13 @@ yappet:
 		Condition: lowpower
 		ValidPowerStates: Low, Critical
 	ParticleSupportPower@Psychicdominator:
+		OrderName: Psychicdominator
 		ChargeInterval: 15000
 		Icon: psychicdom
 		Description: Psychic Dominator
 		LongDesc: Make the enemy feel the anger from the Yuri!
 		EndChargeSound: spsylo1a.wav,spsylo2a.wav,spsylo2b.wav,spsylo2c.wav,spsylo3a.wav
 		LaunchSound: spsydom.wav
-		StartFullyCharged: true
 		DisplayTimerStances: Ally, Neutral, Enemy
 		DisplayBeacon: True
 		DisplayRadarPing: True
@@ -832,7 +848,13 @@ yappet:
 		ChangeTargets: Infantry
 		ChangeRange: 2
 	SupportPowerChargeBar:
-	WithNukeLaunchAnimation:
+	WithSupportPowerAnimation:
+		OrderName: Psychicdominator
+		IdleSequence: idle
+		ChargedSequence: charged
+		ActiveSequence: active
+		DeactiveSequence: deactive
+		Condition: build-incomplete
 		
 naclon:
 	Inherits: ^Building
@@ -944,6 +966,7 @@ napsis:
 	WithIdleOverlay@spin:
 		Sequence: idle-spin
 		PauseOnCondition: lowpower
+		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -100
 	GrantConditionOnPowerState@LOWPOWER:
@@ -956,7 +979,6 @@ napsis:
 		Description: Psychic Reveal
 		LongDesc: Use psychic technology to explore the enemy action
 		LaunchSound: spsyreve.wav
-		StartFullyCharged: true
 		DisplayBeacon: False
 		DisplayRadarPing: False
 		PauseOnCondition: lowpower
