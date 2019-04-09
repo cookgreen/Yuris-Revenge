@@ -71,7 +71,7 @@ Packages:
 
 MapFolders:
 	yr|maps: System
-	~^maps/yr/release-20181215: User
+	~^maps/yr/release-20190314: User
 
 Rules:
 	yr|rules/proxy-actors.yaml
