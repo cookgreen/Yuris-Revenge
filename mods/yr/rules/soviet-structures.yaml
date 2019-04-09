@@ -32,10 +32,14 @@ nacnst:
 		Offset: 1,1
 		Facing: 96
 		DeployCursor: undeploy
+	ProductionQueue@Building:
+		Type: Building.Soviets
+	ProductionQueue@Support:
+		Type: Support.Soviets
 	ProductionBar@Building:
-		ProductionType: Building
+		ProductionType: Building.Soviets
 	ProductionBar@Support:
-		ProductionType: Support
+		ProductionType: Support.Soviets
 	WithIdleOverlay@top:
 		Sequence: idle-top
 	WithIdleOverlay@normal:
@@ -165,6 +169,8 @@ nahand:
 		ExitCell: 2, 2
 	Production:
 		Produces: Infantry
+	ProductionQueue:
+		Type: Infantry.Soviets
 	PrimaryBuilding:
 		PrimaryCondition: primary
 	RallyPoint:
@@ -178,7 +184,7 @@ nahand:
 		ZOffset: 256
 		RequiresCondition: primary
 	ProductionBar:
-		ProductionType: Infantry
+		ProductionType: Infantry.Soviets
 	Power:
 		Amount: -10
 	ConditionManager:
@@ -337,6 +343,8 @@ naweap:
 		ExitCell: 5,1
 	Production:
 		Produces: Vehicle
+	ProductionQueue:
+		Type: Vehicle.Soviets
 	PrimaryBuilding:
 		PrimaryCondition: primary
 	WithTextDecoration@primary:
@@ -346,7 +354,7 @@ naweap:
 		ZOffset: 256
 		RequiresCondition: primary
 	ProductionBar:
-		ProductionType: Vehicle
+		ProductionType: Vehicle.Soviets
 	WithExitOverlay@door:
 		Sequence: build-door
 		RequiresCondition: !roof-open
@@ -472,6 +480,8 @@ nayard:
 		ExitCell: 5,5
 	Production:
 		Produces: Ship
+	ProductionQueue:
+		Type: Naval.Soviets
 	PrimaryBuilding:
 		PrimaryCondition: primary
 	WithTextDecoration@primary:
@@ -487,7 +497,7 @@ nayard:
 	RepairsUnits:
 		FinishRepairingNotification: UnitRepaired
 	ProductionBar:
-		ProductionType: Naval
+		ProductionType: Naval.Soviets
 	Power:
 		Amount: -20
 	WithIdleOverlay@crane:

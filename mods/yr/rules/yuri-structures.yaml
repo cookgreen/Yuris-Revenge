@@ -24,10 +24,14 @@ yacnst:
 		Offset: 1,1
 		Facing: 96
 		DeployCursor: undeploy
+	ProductionQueue@Building:
+		Type: Building.Yuris
+	ProductionQueue@Support:
+		Type: Support.Yuris
 	ProductionBar@Building:
-		ProductionType: Building
+		ProductionType: Building.Yuris
 	ProductionBar@Support:
-		ProductionType: Support
+		ProductionType: Support.Yuris
 	WithIdleOverlay@top:
 		Sequence: idle-top
 	WithIdleOverlay@normal:
@@ -117,8 +121,10 @@ yabrck:
 		RequiresCondition: primary
 	Production:
 		Produces: Infantry
+	ProductionQueue:
+		Type: Infantry.Yuris
 	ProductionBar:
-		ProductionType: Infantry
+		ProductionType: Infantry.Yuris
 	Armor:
 		Type: steel
 	RevealsShroud:
@@ -245,6 +251,8 @@ yaweap:
 		ExitCell: 5,1
 	Production:
 		Produces: Vehicle
+	ProductionQueue:
+		Type: Vehicle.Yuris
 	PrimaryBuilding:
 		PrimaryCondition: primary
 	WithTextDecoration@primary:
@@ -270,7 +278,7 @@ yaweap:
 		Sequence: build-air-inside
 		RequiresCondition: roof-open
 	ProductionBar:
-		ProductionType: Vehicle
+		ProductionType: Vehicle.Yuris
 	Power:
 		Amount: -25
 	InfiltrateForSupportPower:
@@ -393,6 +401,8 @@ yayard:
 		ExitCell: 5,5
 	Production:
 		Produces: Ship
+	ProductionQueue:
+		Type: Naval.Yuris
 	PrimaryBuilding:
 		PrimaryCondition: primary
 	WithTextDecoration@primary:
@@ -408,7 +418,7 @@ yayard:
 	RepairsUnits:
 		FinishRepairingNotification: UnitRepaired
 	ProductionBar:
-		ProductionType: Naval
+		ProductionType: Naval.Yuris
 	Power:
 		Amount: -20
 	WithIdleOverlay@crane:
