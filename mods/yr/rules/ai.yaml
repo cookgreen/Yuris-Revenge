@@ -74,7 +74,7 @@ Player:
 		RefineryTypes: garefn, narefn, yarefn
 	BaseBuilderBotModule@test:
 		RequiresCondition: enable-test-ai
-		MinimumExcessPower: 30
+		MinimumExcessPower: 60
 		MaximumExcessPower: 210
 		ExcessPowerIncrement: 30
 		ExcessPowerIncreaseThreshold: 4

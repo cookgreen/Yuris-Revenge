@@ -48,7 +48,10 @@ namespace OpenRA.Mods.YR.Traits
                 {
                     if (conditionToken != ConditionManager.InvalidConditionToken)
                     {
-                        conditionToken = conditionManager.RevokeCondition(self, conditionToken);
+                        self.World.AddFrameEndTask(w =>
+                        {
+                            conditionToken = conditionManager.RevokeCondition(self, conditionToken);
+                        });
                     }
 
                     delay = -1;
