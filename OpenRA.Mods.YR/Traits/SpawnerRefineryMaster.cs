@@ -72,7 +72,7 @@ namespace OpenRA.Mods.YR.Traits
                 se.SpawnerSlave.LinkMaster(se.Actor, toActor, harvesterMaster);
                 se.SpawnerSlave.Stop(se.Actor);
                 if (!se.Actor.IsDead)
-                    se.Actor.QueueActivity(new Follow(se.Actor, Target.FromActor(toActor), WDist.FromCells(1), WDist.FromCells(3)));
+                    se.Actor.QueueActivity(new Follow(se.Actor, Target.FromActor(toActor), WDist.FromCells(1), WDist.FromCells(3), null));
             }
             harvesterMaster.AssignSlavesToMaster(SlaveEntries);
             if (force)

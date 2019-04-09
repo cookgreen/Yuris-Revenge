@@ -16,7 +16,7 @@ V3AmmunitionExplode:
 	Warhead@1Eff: CreateEffect
 		Explosions: terrorist_explosion
 		
- BuildingExplode:
+BuildingExplode:
 	Inherits: UnitExplodeSmall
 	Warhead@1Eff: CreateEffect
 		Explosions: building, large_bang, large_brnl, verylarge_clsn, large_tumu
@@ -256,7 +256,7 @@ demobomb:
 		SmudgeType: LargeScorch
 		Size: 2
 		Delay: 15
-        
+		
 
 MigDeath:
 	ReloadDelay: 0
@@ -286,7 +286,7 @@ MigDeath:
 		Delay: 0
 		Explosions: small_tumu
 		ValidTargets: Ground, Water
-        
+		
 DominatorWH:
 	ReloadDelay: 0
 	Range: 5c0

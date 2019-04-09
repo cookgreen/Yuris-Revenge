@@ -85,6 +85,7 @@ cmin:
 		LocalOffset: 121,0,0
 		Palette: effect
 	GainsExperience: # can get experience, i.e. speed
+		LevelUpImage: crate-effects
 	RenderSprites: # TODO: WithHarvestOverlay relies on this, but it should actually be removed
 	RenderVoxels:
 	WithVoxelUnloadBody:
@@ -466,7 +467,7 @@ mgtk:
 		Actor: tree28
 		UnvarietyOn: Move
 		VarietyCondition: varing
-	Targetable: 
+	Targetable:
 		RequiresCondition: !varing
 
 robo:
@@ -629,7 +630,7 @@ bfrt:
 	BunkerCargo:
 		Types: Infantry
 		MaxWeight: 5
-		PipCount: 5 
+		PipCount: 5
 	AttackBunkered:
 		Armaments: primary
 		PortOffsets: 384,0,128, 224,-341,128, -224,-341,128, -384,0,128, -224,341,128, 224,341,128/*TODO: Need to confirm all five attack port*/

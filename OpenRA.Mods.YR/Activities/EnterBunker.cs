@@ -32,7 +32,7 @@ namespace OpenRA.Mods.YR.Activities
         Animation bunkerAnimation;
 
         public EnterBunker(Actor passengerActor, Actor bunkerActor, WPos pos, bool willDisappear=true, int maxTries = 0, bool repathWhileMoving = true)
-			: base(passengerActor, bunkerActor, EnterBehaviour.Exit, maxTries, repathWhileMoving)
+			: base(passengerActor, Target.FromActor(bunkerActor))
 		{
 			this.bunkerActor = bunkerActor;
 			bunkerCargo = bunkerActor.Trait<BunkerCargo>();
@@ -44,9 +44,9 @@ namespace OpenRA.Mods.YR.Activities
             bunkerAnimation = new Animation(bunkerActor.World, bunkerActor.Info.Name);
         }
 
-		protected override void Unreserve(Actor self, bool abort) { bunkerPassenger.Unreserve(self); }
-		protected override bool CanReserve(Actor self) { return bunkerCargo.Unloading || bunkerCargo.CanLoad(bunkerActor, self); }
-		protected override ReserveStatus Reserve(Actor self)
+		protected void Unreserve(Actor self, bool abort) { bunkerPassenger.Unreserve(self); }
+		protected bool CanReserve(Actor self) { return bunkerCargo.Unloading || bunkerCargo.CanLoad(bunkerActor, self); }
+		/*protected ReserveStatus Reserve(Actor self)
 		{
 			var status = base.Reserve(self);
 			if (status != ReserveStatus.Ready)
@@ -54,9 +54,9 @@ namespace OpenRA.Mods.YR.Activities
 			if (bunkerPassenger.Reserve(self, bunkerCargo))
 				return ReserveStatus.Ready;
 			return ReserveStatus.Pending;
-		}
+		}*/
 
-		protected override void OnInside(Actor self)
+		protected void OnInside(Actor self)
 		{
 			self.World.AddFrameEndTask(w =>
 			{
@@ -101,10 +101,10 @@ namespace OpenRA.Mods.YR.Activities
                 }
 			});
 
-			Done(self);
+			//Done(self);
 		}
 
-		protected override bool TryGetAlternateTarget(Actor self, int tries, ref Target target)
+		/*protected bool TryGetAlternateTarget(Actor self, int tries, ref Target target)
 		{
 			if (tries > maxTries)
 				return false;
@@ -114,6 +114,36 @@ namespace OpenRA.Mods.YR.Activities
 				t => { bunkerActor = t.Actor; bunkerCargo = t.Actor.Trait<BunkerCargo>(); }, // update transport and cargo
 				a => { var c = a.TraitOrDefault<BunkerCargo>(); return c != null && c.Info.Types.Contains(bunkerPassenger.Info.CargoType) && (c.Unloading || c.CanLoad(a, self)); },
 				new Func<Actor, bool>[] { a => a.Info.Name == type }); // Prefer transports of the same type
-		}
-	}
+		}*/
+
+        protected override void OnEnterComplete(Actor self, Actor targetActor)
+        {
+            base.OnEnterComplete(self, targetActor);
+        }
+
+        protected override void OnFirstRun(Actor self)
+        {
+            base.OnFirstRun(self);
+        }
+
+        protected override void OnLastRun(Actor self)
+        {
+            base.OnLastRun(self);
+        }
+
+        protected override void OnCancel(Actor self)
+        {
+            base.OnCancel(self);
+        }
+
+        protected override bool TryStartEnter(Actor self, Actor targetActor)
+        {
+            return base.TryStartEnter(self, targetActor);
+        }
+
+        protected override void TickInner(Actor self, Target target, bool targetIsDeadOrHiddenActor)
+        {
+            base.TickInner(self, target, targetIsDeadOrHiddenActor);
+        }
+    }
 }

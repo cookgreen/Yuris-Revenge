@@ -211,10 +211,12 @@ terror:
 	Explodes:
 		Weapon: TerrorBomb
 		EmptyWeapon: TerrorBomb
-	AttackSuicides:
-		Voice: Attack
 	AttackFrontal:
 		Voice: Attack
+	GrantConditionOnAttack:
+		Condition: triggered
+	KillsSelf:
+		RequiresCondition: triggered
 	WithInfantryBody:
 	Voiced:
 		VoiceSet: TerroristVoice
@@ -332,7 +334,7 @@ ivan:
 		Sequence: stand
 	-Crushable:
 	-BunkerPassenger:
-        
+		
 boris:
 	Inherits@1: ^Infantry
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove

@@ -123,8 +123,9 @@
 		BasePalette: effect
 		Alpha: 0.5
 	PaletteFromFile@mousepal:
-		Name: mouse
+		Name: cursor
 		Filename: mousepal.pal
+		CursorPalette: true
 	PaletteFromFile@ts-mousepal:
 		Name: ts-mouse
 		Filename: ts-mousepal.pal

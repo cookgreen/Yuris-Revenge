@@ -1,8 +1,8 @@
 Metadata:
 	Title: Red Alert 2 Yuri's Revenge
-	Description: Yuri has returned from shadow, it is time to take revenge!
-	Version: release-20181215
-	Author: the RA2YR mod team
+	Version: release-20190314
+	Website: https://github.com/cookgreen/yr
+	WebIcon32: https://raw.githubusercontent.com/cookgreen/yr/master/mods/yr/logo.png
 
 PackageFormats: Mix, AudioBag
 

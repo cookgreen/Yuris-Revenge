@@ -161,6 +161,7 @@ gapile:
 		ZOffset: 256
 		RequiresCondition: primary
 	ProductionBar:
+		ProductionType: Infantry
 	WithIdleOverlay@flag:
 		Sequence: idle-flag
 	Power:
@@ -303,6 +304,7 @@ gaairc:
 	Production:
 		Produces: Aircraft
 	ProductionBar:
+		ProductionType: Aircraft
 	PrimaryBuilding:
 		PrimaryCondition: primary
 	WithTextDecoration@primary:
@@ -388,6 +390,7 @@ gaweap:
 		ZOffset: 256
 		RequiresCondition: primary
 	ProductionBar:
+		ProductionType: Vehicle
 	WithIdleOverlay@flag:
 		Sequence: idle-flag
 	WithIdleOverlay@fan:
@@ -530,6 +533,7 @@ gayard:
 	RepairsUnits:
 		FinishRepairingNotification: UnitRepaired
 	ProductionBar:
+		ProductionType: Naval
 	Power:
 		Amount: -20
 	WithIdleOverlay@crane:
@@ -580,7 +584,7 @@ gadept:
 		Sequence: idle-side
 	WithIdleOverlay@bib:
 		Sequence: bib
-	WithRepairAnimation:
+	WithResupplyAnimation:
 		Sequence: repair
 	Power:
 		Amount: -25

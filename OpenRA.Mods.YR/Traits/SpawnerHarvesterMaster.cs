@@ -75,7 +75,7 @@ namespace OpenRA.Mods.YR.Traits
         Undeploy,//Ready to transform
 	}
 
-	public class SpawnerHarvesterMaster : BaseSpawnerMaster, INotifyBuildComplete, INotifyIdle,
+	public class SpawnerHarvesterMaster : BaseSpawnerMaster, INotifyIdle,
 		ITick, IIssueOrder, IResolveOrder, IOrderVoice, INotifyDeployComplete, INotifyTransform
 	{
 		readonly SpawnerHarvesterMasterInfo info;
@@ -106,13 +106,6 @@ namespace OpenRA.Mods.YR.Traits
 
 			kickTicks = info.KickDelay;
 		}
-
-		void INotifyBuildComplete.BuildingComplete(Actor self)
-		{
-			// Search for resources upon creation.
-			if (info.SearchOnCreation)
-				self.QueueActivity(new SpawnerHarvesterHarvest(self));
-		}	
 
 		// Modify Harvester trait's states to do the mining.
 		void AssignTargetForSpawned(Actor slave, CPos targetLocation)
@@ -286,7 +279,7 @@ namespace OpenRA.Mods.YR.Traits
 			foreach (var se in SlaveEntries)
 			{
 				se.SpawnerSlave.Stop(se.Actor);
-				se.Actor.QueueActivity(new Follow(se.Actor, Target.FromActor(self), WDist.FromCells(1), WDist.FromCells(3)));
+				se.Actor.QueueActivity(new Follow(se.Actor, Target.FromActor(self), WDist.FromCells(1), WDist.FromCells(3), null));
 			}
 		}
 

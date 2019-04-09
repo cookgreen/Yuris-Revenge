@@ -13,11 +13,11 @@ yacnst:
 		Type: concrete
 	RevealsShroud:
 		Range: 8c0
-	Valued
+	Valued:
 		Cost: 3000
 	Production:
 		Produces: Building,Support
-	Tooltip
+	Tooltip:
 		Name: Yuri Construction Yard
 	Transforms:
 		IntoActor: pcv
@@ -32,7 +32,7 @@ yacnst:
 		Sequence: idle-top
 	WithIdleOverlay@normal:
 		Sequence: idle-normal
-		RequiresCondition: !placing#This need to be conditional when place building
+		RequiresCondition: !placing #This need to be conditional when place building
 	WithBuildingPlacedOverlayConditional:
 		PlacingCondition: placing
 	ProvidesPrerequisite:
@@ -51,9 +51,9 @@ yapowr:
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
-	Valued
+	Valued:
 		Cost: 600
-	Tooltip
+	Tooltip:
 		Name: Yuri Bio Reactor
 	ProvidesPrerequisite:
 		Prerequisite: power
@@ -97,9 +97,9 @@ yabrck:
 		Bounds: 132, 134, -28, -28
 	Health:
 		HP: 500
-	Valued
+	Valued:
 		Cost: 500
-	Tooltip
+	Tooltip:
 		Name: Yuri Barracks
 	ProvidesPrerequisite:
 		Prerequisite: yabrck
@@ -118,6 +118,7 @@ yabrck:
 	Production:
 		Produces: Infantry
 	ProductionBar:
+		ProductionType: Infantry
 	Armor:
 		Type: steel
 	RevealsShroud:
@@ -159,9 +160,9 @@ yarefn:
 		Description: Provides credits for Yuri
 	Selectable:
 		Bounds: 70, 50, 0, -20
-	Valued
+	Valued:
 		Cost: 1500
-	Tooltip
+	Tooltip:
 		Name: Yuri Ore Refinery
 	Health:
 		HP: 2000
@@ -220,9 +221,9 @@ yaweap:
 		Description: Produces Yuri Vehicles
 	Selectable:
 		Bounds: 196, 178, -6, -48
-	Valued
+	Valued:
 		Cost: 2000
-	Tooltip
+	Tooltip:
 		Name: Yuri War Factory
 	ProvidesPrerequisite@default:
 	Health:
@@ -269,6 +270,7 @@ yaweap:
 		Sequence: build-air-inside
 		RequiresCondition: roof-open
 	ProductionBar:
+		ProductionType: Vehicle
 	Power:
 		Amount: -25
 	InfiltrateForSupportPower:
@@ -298,9 +300,9 @@ yayard:
 		Type: concrete
 	RevealsShroud:
 		Range: 8c0
-	Valued
+	Valued:
 		Cost: 1000
-	Tooltip
+	Tooltip:
 		Name: Yuri Submarine Pen
 	ProvidesPrerequisite:
 		Prerequisite: yayard
@@ -406,6 +408,7 @@ yayard:
 	RepairsUnits:
 		FinishRepairingNotification: UnitRepaired
 	ProductionBar:
+		ProductionType: Naval
 	Power:
 		Amount: -20
 	WithIdleOverlay@crane:
@@ -437,9 +440,9 @@ yagrnd:
 		Type: wood
 	RevealsShroud:
 		Range: 8c0
-	Valued
+	Valued:
 		Cost: 600
-	Tooltip
+	Tooltip:
 		Name: Yuri Grinder
 	Building:
 		Footprint: xxx xxx xxx
@@ -471,9 +474,9 @@ yatech:
 		Type: wood
 	RevealsShroud:
 		Range: 8c0
-	Valued
+	Valued:
 		Cost: 2000
-	Tooltip
+	Tooltip:
 		Name: Yuri Battle Lab
 	Building:
 		Footprint: xxx xxx
@@ -512,16 +515,16 @@ gafwll:
 		BuildPaletteOrder: 10
 		Prerequisites: yabrck, ~structures.yuris
 		Description: Protect Yuri Base
-	Tooltip
+	Tooltip:
 		Name: Yuri Citadel Wall
 
 natbnk:
 	Inherits: ^SupportBuilding
 	Inherits@shape: ^2x2Shape
 	Inherits@SMC: ^SuperMindControllable
-	Tooltip
+	Tooltip:
 		Name: Yuri Tank Bunker
-	Valued
+	Valued:
 		Cost: 400
 	Buildable:
 		Queue: Support
@@ -576,9 +579,9 @@ yaggun:
 		Footprint: x
 		Dimensions: 1, 1
 		Adjacent: 5
-	Valued
+	Valued:
 		Cost: 1000
-	Tooltip
+	Tooltip:
 		Name: Yuri Gattling Cannon
 	Turreted:
 		TurnSpeed: 10
@@ -650,7 +653,7 @@ yaggun:
 		LocalOffset: 700,300,10, 700,-300,10
 		MuzzleSequence: muzzle-stage-3
 		RequiresCondition: rank-elite && stage-3
-	GrantConditionOnStage: 
+	GrantConditionOnStage:
 		Conditions:
 			stage-1: 200
 			stage-2: 400
@@ -688,9 +691,9 @@ yapsyt:
 		Type: steel
 	RevealsShroud:
 		Range: 8c0
-	Valued
+	Valued:
 		Cost: 1500
-	Tooltip
+	Tooltip:
 		Name: Yuri Psychic Tower
 	AttackTurreted:
 		Voice: Attack
@@ -736,9 +739,9 @@ yagntc:
 		Type: concrete
 	RevealsShroud:
 		Range: 8c0
-	Valued
+	Valued:
 		Cost: 2500
-	Tooltip
+	Tooltip:
 		Name: Yuri Genetic Mutator Device
 	Building:
 		Footprint: xxx xxx xxx
@@ -787,9 +790,9 @@ yappet:
 		Type: concrete
 	RevealsShroud:
 		Range: 8c0
-	Valued
+	Valued:
 		Cost: 5000
-	Tooltip
+	Tooltip:
 		Name: Yuri Puppet Master
 	Building:
 		Footprint: xxx xxx xxx
@@ -810,7 +813,7 @@ yappet:
 		DisplayTimerStances: Ally, Neutral, Enemy
 		DisplayBeacon: True
 		DisplayRadarPing: True
-		Weapons: 
+		Weapons:
 			DominatorWH: 0, 0, 0
 		PauseOnCondition: lowpower
 		Cursor: psyicdom
@@ -960,9 +963,9 @@ yarock:
 		Type: wood
 	RevealsShroud:
 		Range: 8c0
-	Valued
+	Valued:
 		Cost: 600
-	Tooltip
+	Tooltip:
 		Name: Rocket Launch Pad
 	Power:
 		Amount: 0
@@ -977,9 +980,9 @@ yacomd:
 		Type: concrete
 	RevealsShroud:
 		Range: 8c0
-	Valued
+	Valued:
 		Cost: 3000
-	Tooltip
+	Tooltip:
 		Name: Yuri Command Center
 	Power:
 		Amount: 0
@@ -994,9 +997,9 @@ yapppt:
 		Type: wood
 	RevealsShroud:
 		Range: 8c0
-	Valued
+	Valued:
 		Cost: 0
-	Tooltip
+	Tooltip:
 		Name: Partially Built Psychic Dominator
 	Power:
 		Amount: 0

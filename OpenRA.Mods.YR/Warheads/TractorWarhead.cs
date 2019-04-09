@@ -24,21 +24,17 @@ namespace OpenRA.Mods.Common.Warheads
 		[Desc("Let his be -1, 0, 1, or anything else to modify the traction speed.")]
 		public readonly int CruiseSpeedMultiplier = 1;
 
-		public override void DoImpact(Target target, Actor firedBy, IEnumerable<int> damageModifiers)
-		{
-			if (target.Type == TargetType.Actor)
-				DoImpact(target.Actor, firedBy, damageModifiers);
-		}
+		public override void DoImpact(WPos pos, Actor firedBy, IEnumerable<int> damageModifiers)
+        {
+            var victims = firedBy.World.FindActorsOnCircle(pos, WDist.FromCells(1));
+            foreach (var victim in victims)
+            {
+                var targetTractable = victim.TraitOrDefault<Tractable>();
+                if (targetTractable == null)
+                    return;
 
-		public override void DoImpact(WPos pos, Actor firedBy, IEnumerable<int> damageModifiers) { }
-
-		public override void DoImpact(Actor victim, Actor firedBy, IEnumerable<int> damageModifiers)
-		{
-			var targetTractable = victim.TraitOrDefault<Tractable>();
-			if (targetTractable == null)
-				return;
-
-			targetTractable.Tract(victim, firedBy, CruiseSpeedMultiplier);
-		}
+                targetTractable.Tract(victim, firedBy, CruiseSpeedMultiplier);
+            }
+        }
 	}
 }

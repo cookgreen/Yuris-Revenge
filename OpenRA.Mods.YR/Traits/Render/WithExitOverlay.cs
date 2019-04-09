@@ -37,7 +37,7 @@ namespace OpenRA.Mods.RA2.Traits
         public override object Create(ActorInitializer init) { return new WithExitOverlay(init.Self, this); }
 	}
 
-	public class WithExitOverlay : ConditionalTrait<WithExitOverlayInfo>, INotifyDamageStateChanged, INotifyBuildComplete, INotifySold, INotifyProduction, ITick
+	public class WithExitOverlay : ConditionalTrait<WithExitOverlayInfo>, INotifyDamageStateChanged, INotifySold, INotifyProduction, ITick
 	{
 		readonly Animation overlay;
 		bool buildComplete, enable;
@@ -59,11 +59,6 @@ namespace OpenRA.Mods.RA2.Traits
 				() => !buildComplete || !enable);
 
 			rs.Add(anim, info.Palette, info.IsPlayerPalette);
-		}
-
-		void INotifyBuildComplete.BuildingComplete(Actor self)
-		{
-			buildComplete = true;
 		}
 
 		void INotifySold.Sold(Actor self) { }

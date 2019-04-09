@@ -174,11 +174,11 @@ SuperComet:
 	Inherits: Comet
 	Warhead@1Dam: SpreadDamage
 		Damage: 150
-        
+		
 DiskLaser:
 	Inherits: Comet
 	ReloadDelay: 50
-	Range:7c0
+	Range: 7c0
 	Report: vfloatta.wav
 	Projectile: LaserZap
 		Width: 50
@@ -186,21 +186,21 @@ DiskLaser:
 		Color: aa7990
 		UsePlayerColor: false
 	Warhead@1Dam: SpreadDamage
-		Damage: 25 
+		Damage: 25
 		DamageTypes: RadiationDeath
 	Warhead@2Eff: CreateEffect
-		-Explosions: 
-		-ImpactSounds: 
+		-Explosions:
+		-ImpactSounds:
 	Warhead@3EffWater: CreateEffect
 		-Explosions:
 		-ImpactSounds:
 	Warhead@4Smu: LeaveSmudge
 		-SmudgeType:
-        
+		
 DiskDrain:
 	Inherits: Comet
 	ReloadDelay: 50
-	Range:1c256
+	Range: 1c256
 	Projectile: LaserZap
 		Width: 50
 		Duration: 15
@@ -208,11 +208,11 @@ DiskDrain:
 		UsePlayerColor: false
 	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	Warhead@1Dam: SpreadDamage
-		Damage: 25 
+		Damage: 25
 		DamageTypes: RadiationDeath
 	Warhead@2Eff: CreateEffect
-		-Explosions: 
-		-ImpactSounds: 
+		-Explosions:
+		-ImpactSounds:
 	Warhead@3EffWater: CreateEffect
 		-Explosions:
 		-ImpactSounds:
@@ -274,7 +274,7 @@ MagneShake:
 	Range: 10c0
 	Report: vmagat2a.wav
 	ValidTargets: Structure
-	Projectile: AreaBeam#TODO: need to rewrite a new warhead to make it more looks like the original
+	Projectile: AreaBeam #TODO: need to rewrite a new warhead to make it more looks like the original
 		Speed: 0c128
 		Duration: 111
 		DamageInterval: 25
@@ -306,7 +306,7 @@ MagnetronZapEffect:
 	Range: 10c0
 	Report: vmagat2a.wav
 	ValidTargets: Tractable
-	Projectile: AreaBeam#TODO: need to rewrite a new warhead to make it more looks like the original
+	Projectile: AreaBeam #TODO: need to rewrite a new warhead to make it more looks like the original
 		Speed: 0c128
 		Duration: 15
 		DamageInterval: 25

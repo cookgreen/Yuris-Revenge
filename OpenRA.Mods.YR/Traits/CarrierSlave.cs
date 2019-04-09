@@ -70,7 +70,7 @@ namespace OpenRA.Mods.YR.Traits
 
 			var tgt = Target.FromActor(Master);
 
-			if (self.TraitOrDefault<AttackPlane>() != null) // Let attack planes approach me first, before landing.
+			if (self.TraitOrDefault<AttackAircraft>() != null) // Let attack planes approach me first, before landing.
 				self.QueueActivity(new Fly(self, tgt, WDist.Zero, Info.LandingDistance));
 
 			self.QueueActivity(new EnterCarrierMaster(self, Master, spawnerMaster, EnterBehaviour.Exit, Info.CloseEnoughDistance));
@@ -88,7 +88,7 @@ namespace OpenRA.Mods.YR.Traits
 			if (ammoPools.Length == 0)
 				return false;
 
-			return ammoPools.All(x => !x.AutoReloads && !x.HasAmmo());
+			return ammoPools.All(x => /*!x.AutoReloads &&*/ !x.HasAmmo());
 		}
 
 		public virtual void OnBecomingIdle(Actor self)

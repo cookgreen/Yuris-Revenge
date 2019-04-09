@@ -108,8 +108,7 @@ namespace OpenRA.Mods.YR.Traits
 	}
 
 	public class BunkerCargo : IPips, IIssueOrder, IResolveOrder, IOrderVoice, INotifyCreated, INotifyKilled,
-		INotifyOwnerChanged, INotifyAddedToWorld, ITick, INotifySold, INotifyActorDisposing, IIssueDeployOrder, 
-        INotifyBuildComplete
+		INotifyOwnerChanged, INotifyAddedToWorld, ITick, INotifySold, INotifyActorDisposing, IIssueDeployOrder
 	{
 		public readonly BunkerCargoInfo Info;
 		readonly Actor self;
@@ -213,9 +212,9 @@ namespace OpenRA.Mods.YR.Traits
 			return null;
 		}
 
-		Order IIssueDeployOrder.IssueDeployOrder(Actor self)
+		Order IIssueDeployOrder.IssueDeployOrder(Actor self, bool queued)
 		{
-			return new Order("Unload", self, false);
+			return new Order("Unload", self, queued);
 		}
 
 		bool IIssueDeployOrder.CanIssueDeployOrder(Actor self) { return true; }
@@ -590,11 +589,6 @@ namespace OpenRA.Mods.YR.Traits
                     after();
                 });
             }
-        }
-
-        void INotifyBuildComplete.BuildingComplete(Actor self)
-        {
-            buildComplete = true;
         }
     }
 }

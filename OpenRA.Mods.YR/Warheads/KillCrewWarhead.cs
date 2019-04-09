@@ -40,8 +40,5 @@ namespace OpenRA.Mods.YR.Warheads
                 }
             }
         }
-        public override void DoImpact(Actor victim, Actor firedBy, IEnumerable<int> damageModifiers)
-        {
-        }
     }
 }

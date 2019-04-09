@@ -215,7 +215,7 @@ namespace OpenRA.Mods.YR.Traits
                 this.finishEdge = finishEdge;
                 this.targetPos = target;
 
-                var attack = slave.Trait<AttackPlane>();
+                var attack = slave.Trait<AttackAircraft>();
                 attack.AttackTarget(Target.FromPos(target + targetOffset), false, true);
             }
         }

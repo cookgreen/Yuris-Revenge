@@ -178,6 +178,7 @@ nahand:
 		ZOffset: 256
 		RequiresCondition: primary
 	ProductionBar:
+		ProductionType: Infantry
 	Power:
 		Amount: -10
 	ConditionManager:
@@ -345,6 +346,7 @@ naweap:
 		ZOffset: 256
 		RequiresCondition: primary
 	ProductionBar:
+		ProductionType: Vehicle
 	WithExitOverlay@door:
 		Sequence: build-door
 		RequiresCondition: !roof-open
@@ -485,6 +487,7 @@ nayard:
 	RepairsUnits:
 		FinishRepairingNotification: UnitRepaired
 	ProductionBar:
+		ProductionType: Naval
 	Power:
 		Amount: -20
 	WithIdleOverlay@crane:
@@ -539,7 +542,7 @@ nadept:
 		Sequence: idle-normal
 	WithIdleOverlay@bib:
 		Sequence: bib
-	WithRepairAnimation:
+	WithResupplyAnimation:
 		Sequence: repair
 	Power:
 		Amount: -25
@@ -889,7 +892,7 @@ nalasr:
 		Range: 6c0
 		Type: pillbox
 	AutoTarget:
-    
+	
 nabnkr:
 	Inherits: ^Building
 	Inherits@shape: ^2x2Shape
@@ -908,7 +911,7 @@ nabnkr:
 	BunkerCargo:
 		Types: Infantry
 		MaxWeight: 6
-		PipCount: 6 
+		PipCount: 6
 		StructureGarrisonedNotification: StructureGarrisoned
 		StructureAbandonedNotification: StructureAbandoned
 		BunkerNotSequence: idle
@@ -920,9 +923,9 @@ nabnkr:
 		PortCones: 88, 88, 88, 88, 88, 88
 	RevealsShroud:
 		Range: 8c0
-	Valued
+	Valued:
 		Cost: 600
-	Tooltip
+	Tooltip:
 		Name: Soviet Battle Bunker
 	Building:
 		Footprint: xx xx
@@ -954,9 +957,9 @@ naindp:
 		Type: wood
 	RevealsShroud:
 		Range: 8c0
-	Valued
+	Valued:
 		Cost: 2500
-	Tooltip
+	Tooltip:
 		Name: Soviet Industrial Plant
 	ProvidesPrerequisite:
 		Prerequisite: naindp
@@ -977,7 +980,7 @@ naindp:
 		Condition: maintenanceability
 		PauseOnCondition: lowpower
 		EffectToAll: true
-        
+		
 napsya:
 	Inherits: ^Building
 	Selectable:
@@ -988,13 +991,13 @@ napsya:
 		Type: Concrete
 	RevealsShroud:
 		Range: 6c0
-	Tooltip
+	Tooltip:
 		Name: Psychic Amplifier
 	Power:
 		Amount: -100
 	WithIdleOverlay@active:
 		Sequence: idle-active
-        
+		
 napsyb:
 	Inherits: ^Building
 	Selectable:
@@ -1005,9 +1008,9 @@ napsyb:
 		Type: Wood
 	RevealsShroud:
 		Range: 6c0
-	Valued
+	Valued:
 		Cost: 1000
-	Tooltip
+	Tooltip:
 		Name: Psychic Beacon
 	Power:
 		Amount: -100

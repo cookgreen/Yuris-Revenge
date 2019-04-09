@@ -19,14 +19,15 @@ using OpenRA.Traits;
 using OpenRA.Mods.YR.Activities;
 using System;
 using OpenRA.Mods.YR.Orders;
+using System.Drawing;
 
 /* Works without base engine modification */
 
 namespace OpenRA.Mods.YR.Traits
 {
 	[Desc("This unit, when ordered to move, will fly in ballistic path then will detonate itself upon reaching target.")]
-	public class ShootableBallisticMissileInfo : ITraitInfo, IMoveInfo, IPositionableInfo, IFacingInfo,
-		UsesInit<LocationInit>, UsesInit<FacingInit>
+	public class ShootableBallisticMissileInfo : ITraitInfo, IMoveInfo, IPositionableInfo, IFacingInfo
+		
 	{
 		[Desc("Projectile speed in WDist / tick, two values indicate variable velocity.")]
 		public readonly int Speed = 17;
@@ -342,6 +343,31 @@ namespace OpenRA.Mods.YR.Traits
         {
             CPos Location = self.World.Map.CellContaining(self.CenterPosition);
             return new[] { Pair.New(Location, SubCell.FullCell) };
+        }
+
+        public Activity MoveWithinRange(Target target, WDist range, WPos? initialTargetPosition = default(WPos?), Color? targetLineColor = default(Color?))
+        {
+            return null;
+        }
+
+        public Activity MoveWithinRange(Target target, WDist minRange, WDist maxRange, WPos? initialTargetPosition = default(WPos?), Color? targetLineColor = default(Color?))
+        {
+            return null;
+        }
+
+        public Activity MoveFollow(Actor self, Target target, WDist minRange, WDist maxRange, WPos? initialTargetPosition = default(WPos?), Color? targetLineColor = default(Color?))
+        {
+            return null;
+        }
+
+        public Activity MoveToTarget(Actor self, Target target, WPos? initialTargetPosition = default(WPos?), Color? targetLineColor = default(Color?))
+        {
+            return null;
+        }
+
+        public int EstimatedMoveDuration(Actor self, WPos fromPos, WPos toPos)
+        {
+            return (toPos - fromPos).Length / Info.Speed;
         }
     }
 }
