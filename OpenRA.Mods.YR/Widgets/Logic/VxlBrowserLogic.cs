@@ -424,7 +424,8 @@ namespace OpenRA.Mods.YR.Widgets.Logic
                 Convert.ToInt32(lightAmbientColor[0] * 255),
                 Convert.ToInt32(lightAmbientColor[1] * 255),
                 Convert.ToInt32(lightAmbientColor[2] * 255)
-                )}
+                )},
+                { "initialFaction", null }
             });
 
             color.AttachPanel(colorChooser, onExit);
@@ -453,7 +454,8 @@ namespace OpenRA.Mods.YR.Widgets.Logic
                 Convert.ToInt32(lightDiffuseColor[0] * 255),
                 Convert.ToInt32(lightDiffuseColor[1] * 255),
                 Convert.ToInt32(lightDiffuseColor[2] * 255)
-                ) }
+                ) },
+                { "initialFaction", null }
             });
 
             color.AttachPanel(colorChooser, onExit);
