@@ -1,4 +1,5 @@
-﻿/*
+﻿#region Copyright & License Information
+/*
  * Modded by Cook Green of YR Mod
  * Modded from Cloak.cs but some changed.
  * 
@@ -9,6 +10,7 @@
  * the License, or (at your option) any later version. For more
  * information, see COPYING.
  */
+#endregion
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Traits;
 using System;
