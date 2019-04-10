@@ -75,7 +75,7 @@
     <Compile Include="Activities\UnloadBunkerCargo.cs" />
     <Compile Include="FileSystem\BagFile.cs" />
     <Compile Include="Graphics\ArcRenderable.cs" />
-    <Compile Include="Graphics\WithTractionShadow.cs" />
+    <Compile Include="Traits\Render\WithTractionShadow.cs" />
     <Compile Include="Order\EnterBunkersTargeter.cs" />
     <Compile Include="Order\EnterBunkerTargeter.cs" />
     <Compile Include="Order\ShootableBallisticMissileMoveOrderTargeter.cs" />
