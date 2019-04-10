@@ -248,17 +248,6 @@ namespace OpenRA.Mods.YR.Traits
 				var mv = slave.Trait<IMove>();
 				slave.QueueActivity(mv.MoveIntoWorld(slave, location));
 
-				// Move to rally point if any.
-				if (rallyPoint != null)
-                {
-                    //rallyPoint.(self, slave);
-                }
-                else
-				{
-					// Move to a valid position, if no rally point.
-					slave.QueueActivity(mv.MoveTo(location, 2));
-				}
-
 				w.Add(slave);
 			});
 		}
