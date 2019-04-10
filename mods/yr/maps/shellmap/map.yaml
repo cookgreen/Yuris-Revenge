@@ -23,12 +23,14 @@ Players:
 		LockColor: True
 		Color: 0062ff
 		Enemies: Yuri
+		Bot: shellmap
 	PlayerReference@Soviets:
 		Name: Soviets
 		Faction: Random
 		LockColor: True
 		Color: ff0000
 		Enemies: Yuri
+		Bot: shellmap
 	PlayerReference@Yuri:
 		Name: Yuri
 		OwnsWorld: True
@@ -37,6 +39,7 @@ Players:
 		LockColor: True
 		Color: 7a51a8
 		Enemies: Allies, Soviets
+		Bot: shellmap
 Actors:
 	Actor0: yapsyt
 		Location: 68,0

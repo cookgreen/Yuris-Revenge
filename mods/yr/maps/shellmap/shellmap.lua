@@ -7,7 +7,7 @@ allies_unit_types_2_3 = {"tnkd"}
 sov_unit_type = {"schp"} --[[Soviets only send air force in this operation]]
 
 BindActorTriggers = function(a)
-	a.AttackMove(PsychicBeacon.Location) --[[Allies and Soviets need to destroy the Psychic Beacon firstly , or they will be controlled by Yuri]]
+	a.Attack(PsychicBeacon) --[[Allies and Soviets need to destroy the Psychic Beacon firstly , or they will be controlled by Yuri]]
 end
 
 SendAlliesUnits = function(entryCell, unitTypes, interval)

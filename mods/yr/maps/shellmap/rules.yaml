@@ -1,5 +1,8 @@
 Player:
 	-ConquestVictoryConditions:
+	ModularBot@SHELLMAPAI:
+		Name: Shellmap Player AI
+		Type: Shellmap
 
 World:
 	-CrateSpawner:
