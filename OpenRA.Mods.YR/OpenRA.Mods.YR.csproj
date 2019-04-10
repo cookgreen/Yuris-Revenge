@@ -66,6 +66,7 @@
     <Compile Include="Activities\ChronoResourceTeleport.cs" />
     <Compile Include="Activities\EnterCarrierMaster.cs" />
     <Compile Include="Activities\EnterBunker.cs" />
+    <Compile Include="Activities\MarkerSlaveLeave.cs" />
     <Compile Include="Activities\ShootableBallisticMissileFly.cs" />
     <Compile Include="Activities\SpawnerRefineryHarvest.cs" />
     <Compile Include="Activities\SpawnerHarvesterHarvest.cs" />

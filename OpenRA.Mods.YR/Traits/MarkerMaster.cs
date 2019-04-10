@@ -170,6 +170,11 @@ namespace OpenRA.Mods.YR.Traits
 
             se.IsLaunched = true; // mark as launched
 
+            if (se.SpawnerSlave.NeedToReload())
+            {
+                se.SpawnerSlave.Reload();
+            }
+
             // Launching condition is timed, so not saving the token.
             if (Info.LaunchingCondition != null)
                 conditionManager.GrantCondition(self, Info.LaunchingCondition/*, Info.LaunchingTicks*/);
