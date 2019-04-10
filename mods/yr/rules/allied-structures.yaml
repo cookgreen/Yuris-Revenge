@@ -438,7 +438,7 @@ gaweap:
 		Proxy: warfactory.infiltrated
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
-	GrantConditionOnProduction:
+	GrantConditionOnProductionToSelf:
 		UnitNames: zep, shad, schp, disk, hind
 		Condition: roof-open
 		ConditionDelay: 50

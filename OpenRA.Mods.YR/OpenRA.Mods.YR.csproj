@@ -92,7 +92,7 @@
     <Compile Include="Traits\CrewKillable.cs" />
     <Compile Include="Traits\DetectVariety.cs" />
     <Compile Include="Traits\EnvironmentPaletteEffect.cs" />
-    <Compile Include="Traits\GrantConditionOnProduction.cs" />
+    <Compile Include="Traits\GrantConditionOnProductionToSelf.cs" />
     <Compile Include="Traits\GrantConditionOnStage.cs" />
     <Compile Include="Traits\Render\WithSuperPowerAnimation.cs" />
     <Compile Include="Traits\SupportPowers\ExploreMapSupportPower.cs" />

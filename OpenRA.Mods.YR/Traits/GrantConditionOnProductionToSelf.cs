@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace OpenRA.Mods.YR.Traits
 {
-    public class GrantConditionOnProductionInfo : ConditionalTraitInfo
+    public class GrantConditionOnProductionToSelfInfo : ConditionalTraitInfo
     {
         [Desc("The condition will be granted when these units were produced")]
         public string[] UnitNames;
@@ -20,17 +20,17 @@ namespace OpenRA.Mods.YR.Traits
         public int ConditionDelay = 100;
         public override object Create(ActorInitializer init)
         {
-            return new GrantConditionOnProduction(init, this);
+            return new GrantConditionOnProductionToSelf(init, this);
         }
     }
 
-    public class GrantConditionOnProduction : ConditionalTrait<GrantConditionOnProductionInfo>, INotifyProduction, ITick
+    public class GrantConditionOnProductionToSelf : ConditionalTrait<GrantConditionOnProductionToSelfInfo>, INotifyProduction, ITick
     {
         private int delay = -1;
         private ConditionManager conditionManager;
-        private GrantConditionOnProductionInfo info;
+        private GrantConditionOnProductionToSelfInfo info;
         private int conditionToken = ConditionManager.InvalidConditionToken;
-        public GrantConditionOnProduction(ActorInitializer init, GrantConditionOnProductionInfo info) : base(info)
+        public GrantConditionOnProductionToSelf(ActorInitializer init, GrantConditionOnProductionToSelfInfo info) : base(info)
         {
             this.info = info;
         }
