@@ -279,7 +279,7 @@ Gatting:
 	ReloadDelay: 10
 	Range: 7c0
 	Brust: 2
-	Report: vgatlo1a, vgatlo2a, vgatlo2b, vgatlo2c, vgatlo3a
+	Report: vgatlo1a.wav, vgatlo2a.wav, vgatlo2b.wav, vgatlo2c.wav, vgatlo3a.wav
 	Projectile: Bullet
 		Speed: 100c0
 	Warhead@1Dam: SpreadDamage
@@ -321,7 +321,7 @@ AAGattling:
 AGGattling2:
 	Inherits: Gatting
 	ReloadDelay: 16
-	Report: vgatlo4a, vgatlo5a, vgatlo5b, vgatlo6a 
+	Report: vgatlo4a.wav, vgatlo5a.wav, vgatlo5b.wav, vgatlo6a.wav
 	Range: 5c0
 	ValidTargets: Ground, Water
 	Warhead@1Dam: SpreadDamage
@@ -343,7 +343,7 @@ AGGattling3:
 	Inherits: Gatting
 	ReloadDelay: 16
 	Range: 5c0
-	Report: vgatlo7a, vgatlo8a, vgatlo8b, vgatlo9a 
+	Report: vgatlo7a.wav, vgatlo8a.wav, vgatlo8b.wav, vgatlo9a.wav
 	ValidTargets: Ground, Water
 	Warhead@1Dam: SpreadDamage
 		Damage: 25
@@ -353,7 +353,7 @@ AAGattling3:
 	Inherits: Gatting
 	ReloadDelay: 4
 	Range: 8c0
-	Report: vgatlo7a, vgatlo8a, vgatlo8b, vgatlo9a 
+	Report: vgatlo7a.wav, vgatlo8a.wav, vgatlo8b.wav, vgatlo9a.wav
 	ValidTargets: Air
 	Warhead@1Dam: SpreadDamage
 		Damage: 40
@@ -382,7 +382,7 @@ AGGattling2E:
 	ReloadDelay: 16
 	Range: 5c0
 	ValidTargets: Ground, Water
-	Report: vgatlo4a, vgatlo5a, vgatlo5b, vgatlo6a 
+	Report: vgatlo4a.wav, vgatlo5a.wav, vgatlo5b.wav, vgatlo6a.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 25
 		ValidTargets: Ground, Water
@@ -392,7 +392,7 @@ AAGattling2E:
 	ReloadDelay: 8
 	Range: 8c0
 	ValidTargets: Air
-	Report: vgatlo4a, vgatlo5a, vgatlo5b, vgatlo6a 
+	Report: vgatlo4a.wav, vgatlo5a.wav, vgatlo5b.wav, vgatlo6a.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 25
 		ValidTargets: Air
@@ -402,7 +402,7 @@ AGGattling3E:
 	ReloadDelay: 16
 	Range: 5c0
 	ValidTargets: Ground, Water
-	Report: vgatlo7a, vgatlo8a, vgatlo8b, vgatlo9a 
+	Report: vgatlo7a.wav, vgatlo8a.wav, vgatlo8b.wav, vgatlo9a.wav 
 	Warhead@1Dam: SpreadDamage
 		Damage: 25
 		ValidTargets: Ground, Water
@@ -412,7 +412,7 @@ AAGattling3E:
 	ReloadDelay: 4
 	Range: 8c0
 	ValidTargets: Air
-	Report: vgatlo7a, vgatlo8a, vgatlo8b, vgatlo9a 
+	Report: vgatlo7a.wav, vgatlo8a.wav, vgatlo8b.wav, vgatlo9a.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 25
 		ValidTargets: Air

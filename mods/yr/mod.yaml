@@ -63,10 +63,14 @@ Packages:
 	~audio.bag
 	~thememd.mix
 	yr|bits
-	yr|bits/cameos
-	yr|bits/structures
 	yr|bits/animations
+	yr|bits/audio
+	yr|bits/cameos
+	yr|bits/misc
+	yr|bits/palettes
 	yr|bits/projectiles
+	yr|bits/structures
+	yr|bits/units
 	yr|uibits
 
 MapFolders:
