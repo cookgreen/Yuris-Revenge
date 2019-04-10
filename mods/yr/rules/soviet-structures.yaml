@@ -809,6 +809,7 @@ naflak:
 		QuantizedFacings: 16
 	RenderVoxels:
 	WithVoxelTurret:
+		RequiresCondition: !build-incomplete
 	WithRangeCircle:
 		Range: 12c0
 		Type: flakcannon

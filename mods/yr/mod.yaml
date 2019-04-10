@@ -270,7 +270,7 @@ Fonts:
 
 SupportsMapsFrom: yr
 
-SoundFormats: Aud, Wav
+SoundFormats: Aud, WavHack
 
 SpriteFormats: ShpTS, TmpTS, ShpTD, PngSheet
 

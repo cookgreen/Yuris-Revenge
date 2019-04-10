@@ -73,6 +73,8 @@
     <Compile Include="Activities\SpawnerHarvesterHarvest.cs" />
     <Compile Include="Activities\TractionFallToEarth.cs" />
     <Compile Include="Activities\UnloadBunkerCargo.cs" />
+    <Compile Include="AudioLoaders\WavHackLoader.cs" />
+    <Compile Include="FileFormats\WavHackReader.cs" />
     <Compile Include="FileSystem\BagFile.cs" />
     <Compile Include="Graphics\ArcRenderable.cs" />
     <Compile Include="Traits\Render\WithTractionShadow.cs" />
