@@ -498,11 +498,11 @@ robo:
 	Armament@primary:
 		Weapon: 105mm
 		LocalOffset: 640,0,384
-		RequiresCondition: !rank-elite
+		RequiresCondition: !rank-elite && robotcenter
 	Armament@elite:
 		Weapon: 105mmE
 		LocalOffset: 640,0,384
-		RequiresCondition: rank-elite
+		RequiresCondition: rank-elite && robotcenter
 	AttackTurreted:
 		Voice: Attack
 	AutoTarget:
@@ -521,6 +521,11 @@ robo:
 	SelfHealing@MACHSHOP:
 		RequiresCondition: machshop
 	RemoteControlSlave:
+		Condition: robotcenter
+	WithColoredOverlay@robotankoffline:
+		RequiresCondition: !robotcenter
+	RejectsOrders@robotankoffline:
+		RequiresCondition: !robotcenter
 
 howi:
 	Inherits: ^Vehicle
