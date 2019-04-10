@@ -30,6 +30,10 @@ gacnst:
 		Offset: 1,1
 		Facing: 96
 		DeployCursor: undeploy
+	ProductionQueue@Building:
+		Type: Building
+	ProductionQueue@Support:
+		Type: Support
 	ProductionBar@Building:
 		ProductionType: Building
 	ProductionBar@Support:
@@ -40,6 +44,7 @@ gacnst:
 	WithIdleOverlay@fans:
 		Sequence: idle-fans
 		PauseOnCondition: lowpower
+		RequiresCondition: !build-incomplete
 	WithBuildingPlacedOverlay:
 	ProvidesPrerequisite:
 		Prerequisite: structures.allies
@@ -89,6 +94,7 @@ gapowr:
 		Range: 4c0
 	WithIdleOverlay@glow:
 		Sequence: idle-glow
+		RequiresCondition: !build-incomplete
 	Power:
 		Amount: 200
 		RequiresCondition: !outagepower
@@ -152,6 +158,8 @@ gapile:
 		ExitCell: 2, 2
 	Production:
 		Produces: Infantry
+	ProductionQueue:
+		Type: Infantry.Allies
 	PrimaryBuilding:
 		PrimaryCondition: primary
 	WithTextDecoration@primary:
@@ -161,8 +169,10 @@ gapile:
 		ZOffset: 256
 		RequiresCondition: primary
 	ProductionBar:
+		ProductionType: Infantry.Allies
 	WithIdleOverlay@flag:
 		Sequence: idle-flag
+		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -10
 	InfiltrateForSupportPower:
@@ -220,8 +230,10 @@ garefn:
 	WithDockedOverlay:
 	WithIdleOverlay@bib:
 		Sequence: idle-bib
+		RequiresCondition: !build-incomplete
 	WithIdleOverlay@drill:
 		Sequence: idle-drill
+		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -50
 	Targetable:
@@ -270,15 +282,19 @@ gaairc:
 	WithIdleOverlay@top:
 		Sequence: idle-top
 		PauseOnCondition: lowpower
+		RequiresCondition: !build-incomplete
 	WithIdleOverlay@bottom:
 		Sequence: idle-bottom
 		PauseOnCondition: lowpower
+		RequiresCondition: !build-incomplete
 	WithIdleOverlay@mid:
 		Sequence: idle-mid
 		PauseOnCondition: lowpower
+		RequiresCondition: !build-incomplete
 	WithIdleOverlay@dish:
 		Sequence: idle-dish
 		PauseOnCondition: lowpower
+		RequiresCondition: !build-incomplete
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
 	Power:
@@ -302,7 +318,10 @@ gaairc:
 		Facing: 224
 	Production:
 		Produces: Aircraft
+	ProductionQueue:
+		Type: Aircraft.Allies
 	ProductionBar:
+		ProductionType: Aircraft.Allies
 	PrimaryBuilding:
 		PrimaryCondition: primary
 	WithTextDecoration@primary:
@@ -379,6 +398,8 @@ gaweap:
 		ExitCell: 4,1
 	Production:
 		Produces: Vehicle
+	ProductionQueue:
+		Type: Vehicle.Allies
 	PrimaryBuilding:
 		PrimaryCondition: primary
 	WithTextDecoration@primary:
@@ -388,24 +409,28 @@ gaweap:
 		ZOffset: 256
 		RequiresCondition: primary
 	ProductionBar:
+		ProductionType: Vehicle.Allies
 	WithIdleOverlay@flag:
 		Sequence: idle-flag
+		RequiresCondition: !build-incomplete
 	WithIdleOverlay@fan:
 		Sequence: overlay-fan
+		RequiresCondition: !build-incomplete
 	WithIdleOverlay@bib:
 		Sequence: bib
+		RequiresCondition: !build-incomplete
 	WithExitOverlay@top-vehicles:
 		Sequence: build-top
-		RequiresCondition: !roof-open
+		RequiresCondition: !roof-open && !build-incomplete
 	WithExitOverlay@ramp:
 		Sequence: build-ramp
-		RequiresCondition: !roof-open
+		RequiresCondition: !roof-open && !build-incomplete
 	WithIdleOverlay@air-open:
 		Sequence: build-air-open
-		RequiresCondition: roof-open
+		RequiresCondition: roof-open && !build-incomplete
 	WithIdleOverlay@air-inside:
 		Sequence: build-air-inside
-		RequiresCondition: roof-open
+		RequiresCondition: roof-open && !build-incomplete
 	Power:
 		Amount: -25
 	InfiltrateForSupportPower:
@@ -413,7 +438,7 @@ gaweap:
 		Proxy: warfactory.infiltrated
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
-	GrantConditionOnProduction:
+	GrantConditionOnProductionToSelf:
 		UnitNames: zep, shad, schp, disk, hind
 		Condition: roof-open
 		ConditionDelay: 50
@@ -515,6 +540,8 @@ gayard:
 		ExitCell: 5,5
 	Production:
 		Produces: Ship
+	ProductionQueue:
+		Type: Naval.Allies
 	PrimaryBuilding:
 		PrimaryCondition: primary
 	WithTextDecoration@primary:
@@ -530,12 +557,15 @@ gayard:
 	RepairsUnits:
 		FinishRepairingNotification: UnitRepaired
 	ProductionBar:
+		ProductionType: Naval.Allies
 	Power:
 		Amount: -20
 	WithIdleOverlay@crane:
 		Sequence: idle-crane
+		RequiresCondition: !build-incomplete
 	WithIdleOverlay@waves:
 		Sequence: idle-waves
+		RequiresCondition: !build-incomplete
 	WithRepairOverlay:
 		Sequence: repair
 	-SpawnActorsOnSell@allies:
@@ -578,9 +608,11 @@ gadept:
 		FinishRepairingNotification: UnitRepaired
 	WithIdleOverlay@side:
 		Sequence: idle-side
+		RequiresCondition: !build-incomplete
 	WithIdleOverlay@bib:
 		Sequence: bib
-	WithRepairAnimation:
+		RequiresCondition: !build-incomplete
+	WithResupplyAnimation:
 		Sequence: repair
 	Power:
 		Amount: -25
@@ -614,6 +646,7 @@ gatech:
 		Range: 6c0
 	WithIdleOverlay@lights:
 		Sequence: idle-lights
+		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -100
 	InfiltrateForSupportPower:
@@ -988,6 +1021,7 @@ gacsph:
 		Amount: -200
 	WithIdleOverlay:
 		Sequence: idle-dome
+		RequiresCondition: !build-incomplete
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
 		ValidPowerStates: Low, Critical
@@ -1051,8 +1085,10 @@ atesla:
 	WithIdleOverlay@normal:
 		Sequence: idle-normal
 		PauseOnCondition: lowpower
+		RequiresCondition: !build-incomplete
 	WithSpriteBody:
 		PauseOnCondition: lowpower
+		RequiresCondition: !build-incomplete
 	WithRangeCircle:
 		Range: 8c0
 		Type: prismcannon

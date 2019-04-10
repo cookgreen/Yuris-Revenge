@@ -207,7 +207,7 @@
 	Warhead@2Eff: CreateEffect
 		Explosions: tesla_impact
 		ValidTargets: Ground, Water
-        
+		
 ^Maker:
 	Range: 12c0
 	ReloadDelay: 60
@@ -233,7 +233,7 @@
 			Drone: 0
 			Rocket: 0
 		ValidTargets: Structure
-        
+		
 ^Punch:
 	ReloadDelay: 60
 	Range: 1c496

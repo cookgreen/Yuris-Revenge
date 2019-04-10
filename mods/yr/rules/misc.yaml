@@ -6,7 +6,7 @@ mpspawn:
 	RenderSpritesEditorOnly:
 	WithSpriteBody:
 	QuantizeFacingsFromSequence:
-	EditorTilesetFilter:
+	MapEditorData:
 		Categories: System
 
 waypoint:
@@ -17,7 +17,7 @@ waypoint:
 	RenderSpritesEditorOnly:
 	WithSpriteBody:
 	QuantizeFacingsFromSequence:
-	EditorTilesetFilter:
+	MapEditorData:
 		Categories: System
 
 crate:
@@ -38,7 +38,7 @@ crate:
 		UseCashTick: yes
 	RevealMapCrateAction:
 		SelectionShares: 2
-		Effect: reveal-map
+		Sequence: reveal-map
 	LevelUpCrateAction:
 		SelectionShares: 25
 	GiveMcvCrateAction@soviets:
@@ -116,7 +116,7 @@ CAMERA:
 		Image: camera
 	EditorOnlyTooltip:
 		Name: (reveals area to owner)
-	EditorTilesetFilter:
+	MapEditorData:
 		Categories: System
 
 FLAMEGUY:

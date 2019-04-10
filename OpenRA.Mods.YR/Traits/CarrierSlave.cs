@@ -19,6 +19,7 @@ using OpenRA.Mods.Common.Activities;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Traits;
 using OpenRA.Mods.YR.Activities;
+using System;
 
 /*
 Works without base engine modification.
@@ -42,15 +43,15 @@ namespace OpenRA.Mods.YR.Traits
 	}
 
 	public class CarrierSlave : BaseSpawnerSlave, INotifyBecomingIdle
-	{
-		public CarrierSlaveInfo Info { get; private set; }
-
-		readonly AmmoPool[] ammoPools;
-
-		CarrierMaster spawnerMaster;
+    {
+        private readonly AmmoPool[] ammoPools;
+        private CarrierMaster spawnerMaster;
+        private Actor self;
+        public CarrierSlaveInfo Info { get; private set; }
 
 		public CarrierSlave(ActorInitializer init, CarrierSlaveInfo info) : base(init, info)
 		{
+            self = init.Self ;
 			Info = info;
 			ammoPools = init.Self.TraitsImplementing<AmmoPool>().ToArray();
 		}
@@ -70,7 +71,7 @@ namespace OpenRA.Mods.YR.Traits
 
 			var tgt = Target.FromActor(Master);
 
-			if (self.TraitOrDefault<AttackPlane>() != null) // Let attack planes approach me first, before landing.
+			if (self.TraitOrDefault<AttackAircraft>() != null) // Let attack planes approach me first, before landing.
 				self.QueueActivity(new Fly(self, tgt, WDist.Zero, Info.LandingDistance));
 
 			self.QueueActivity(new EnterCarrierMaster(self, Master, spawnerMaster, EnterBehaviour.Exit, Info.CloseEnoughDistance));
@@ -82,18 +83,26 @@ namespace OpenRA.Mods.YR.Traits
 			this.spawnerMaster = spawnerMaster as CarrierMaster;
 		}
 
-		bool NeedToReload(Actor self)
+		public bool NeedToReload()
 		{
 			// The unit may not have ammo but will have unlimited ammunitions.
 			if (ammoPools.Length == 0)
 				return false;
 
-			return ammoPools.All(x => !x.AutoReloads && !x.HasAmmo());
+			return ammoPools.All(x => /*!x.AutoReloads &&*/ !x.HasAmmo());
 		}
 
 		public virtual void OnBecomingIdle(Actor self)
 		{
 			EnterSpawner(self);
 		}
-	}
+
+        public void Reload()
+        {
+            foreach (var ammoPool in ammoPools)
+            {
+                ammoPool.GiveAmmo(self, ammoPool.Info.Ammo);
+            }
+        }
+    }
 }

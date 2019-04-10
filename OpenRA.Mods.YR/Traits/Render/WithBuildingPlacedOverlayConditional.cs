@@ -35,7 +35,7 @@ namespace OpenRA.Mods.YR
             return new WithBuildingPlacedOverlayConditional(init.Self, this);
         }
     }
-    public class WithBuildingPlacedOverlayConditional : ConditionalTrait<WithBuildingPlacedOverlayConditionalInfo>, INotifyBuildComplete, INotifySold, INotifyDamageStateChanged, INotifyBuildingPlaced, INotifyTransform
+    public class WithBuildingPlacedOverlayConditional : ConditionalTrait<WithBuildingPlacedOverlayConditionalInfo>, INotifySold, INotifyDamageStateChanged, INotifyBuildingPlaced, INotifyTransform
     {
         readonly Animation overlay;
         bool buildComplete;
@@ -58,12 +58,6 @@ namespace OpenRA.Mods.YR
 
             overlay.PlayThen(info.Sequence, () => visible = false);
             rs.Add(anim, info.Palette, info.IsPlayerPalette);
-        }
-
-        void INotifyBuildComplete.BuildingComplete(Actor self)
-        {
-            buildComplete = true;
-            visible = false;
         }
 
         protected override void Created(Actor self)

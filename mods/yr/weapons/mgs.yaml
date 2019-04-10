@@ -150,14 +150,14 @@ BlackHawkCannonE:
 	Inherits: BlackHawkCannon
 	Warhead@1Dam: SpreadDamage
 		Damage: 40
-        
+		
 PsychicJab:
 	Inherits: ^MG
 	ReloadDelay: 15
-	Range:4c512
+	Range: 4c512
 	Report: iiniatta.wav
 	Warhead@1Dam: SpreadDamage
-		Damage: 25       
+		Damage: 25
 		ValidTargets: Ground, Water
 		Versus:
 			None: 100
@@ -174,22 +174,22 @@ PsychicJab:
 		DamageTypes: FlameDeath
 	Warhead@2Eff: CreateEffect
 		Explosions: initfire
-        
+		
 PsychicJabE:
 	Inherits: PsychicJab
 	ReloadDelay: 10
-	Range:6c0
+	Range: 6c0
 	Warhead@1Dam: SpreadDamage
 		Damage: 30
-        
+		
 Virusgun:
 	Inherits: ^MG
 	ReloadDelay: 100
-	Range:10c0
+	Range: 10c0
 	Report: iviratta.wav
 	ValidTargets: Infantry
 	Warhead@1Dam: SpreadDamage
-		Damage: 125       
+		Damage: 125
 		ValidTargets: Infantry
 		Versus:
 			None: 100
@@ -206,20 +206,20 @@ Virusgun:
 		DamageTypes: VirusDeath, Prone100Percent
 	Warhead@2Eff: CreateEffect
 		Explosions: piff
-        
+		
 VirusgunE:
 	Inherits: Virusgun
 	ReloadDelay: 80
-	Range:16c0
+	Range: 16c0
 		
 Geneticgun:
 	Inherits: ^MG
 	ReloadDelay: 100
-	Range:10c0
+	Range: 10c0
 	Report: iviratta.wav
 	ValidTargets: Infantry
 	Warhead@1Dam: TransformActor
-		Damage: 125       
+		Damage: 125
 		ValidTargets: Infantry
 		Versus:
 			None: 100
@@ -235,7 +235,7 @@ Geneticgun:
 			Rocket: 100
 		Actor: brute
 		ExcludeActor: brute,jumpjet
-		Sequence: die9 
+		Sequence: die9
 		DamageTypes: BruteDeath, Prone100Percent
 	Warhead@2Eff: CreateEffect
 		Explosions: piff
@@ -243,16 +243,16 @@ Geneticgun:
 GeneticgunE:
 	Inherits: Geneticgun
 	ReloadDelay: 80
-	Range:16c0
-        
+	Range: 16c0
+		
 Brustgun:
 	Inherits: ^MG
 	ReloadDelay: 100
-	Range:10c0
+	Range: 10c0
 	Report: iviratta.wav
 	ValidTargets: Vehicle
 	Warhead@1Dam: KillCrew
-		Damage: 125       
+		Damage: 125
 		ValidTargets: Vehicle
 		Versus:
 			None: 100
@@ -268,22 +268,22 @@ Brustgun:
 			Rocket: 100
 	Warhead@2Eff: CreateEffect
 		Explosions: initfire
-        
+		
 BrustgunE:
 	Inherits: Brustgun
 	ReloadDelay: 80
-	Range:16c0
+	Range: 16c0
 
 Gatting:
 	Inherits: ^MG
 	ReloadDelay: 10
-	Range:7c0
+	Range: 7c0
 	Brust: 2
 	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	Projectile: Bullet
 		Speed: 100c0
 	Warhead@1Dam: SpreadDamage
-		Damage: 30 
+		Damage: 30
 		ValidTargets: Ground, Water, Air
 		Versus:
 			None: 100
@@ -303,132 +303,132 @@ Gatting:
 AGGattling:
 	Inherits: Gatting
 	ReloadDelay: 16
-	Range:5c0
+	Range: 5c0
 	ValidTargets: Ground, Water
 	Warhead@1Dam: SpreadDamage
-		Damage: 25 
+		Damage: 25
 		ValidTargets: Ground, Water
-        
+		
 AAGattling:
 	Inherits: Gatting
 	ReloadDelay: 16
-	Range:8c0
+	Range: 8c0
 	ValidTargets: Air
 	Warhead@1Dam: SpreadDamage
-		Damage: 25 
+		Damage: 25
 		ValidTargets: Air
-        
+		
 AGGattling2:
 	Inherits: Gatting
 	ReloadDelay: 16
-	Range:5c0
+	Range: 5c0
 	#Report: vgatlo4a.wav, vgatlo5a.wav, vgatlo5b.wav, vgatlo6a.wav
 	ValidTargets: Ground, Water
 	Warhead@1Dam: SpreadDamage
-		Damage: 25 
+		Damage: 25
 		ValidTargets: Ground, Water
-        
+		
 AAGattling2:
 	Inherits: Gatting
 	ReloadDelay: 8
-	Range:8c0
+	Range: 8c0
 	ValidTargets: Air
 	#Report: vgatlo4a.wav, vgatlo5a.wav, vgatlo5b.wav, vgatlo6a.wav
 	Warhead@1Dam: SpreadDamage
-		Damage: 30 
+		Damage: 30
 		ValidTargets: Air
-        
+		
 AGGattling3:
 	Inherits: Gatting
 	ReloadDelay: 16
-	Range:5c0
+	Range: 5c0
 	ValidTargets: Ground, Water
 	#Report: vgatlo7a.wav, vgatlo8a.wav, vgatlo8b.wav, vgatlo9a.wav
 	Warhead@1Dam: SpreadDamage
-		Damage: 25 
+		Damage: 25
 		ValidTargets: Ground, Water
-        
+		
 AAGattling3:
 	Inherits: Gatting
 	ReloadDelay: 4
-	Range:8c0
+	Range: 8c0
 	ValidTargets: Air
 	#Report: vgatlo7a.wav, vgatlo8a.wav, vgatlo8b.wav, vgatlo9a.wav
 	Warhead@1Dam: SpreadDamage
-		Damage: 40 
+		Damage: 40
 		ValidTargets: Air
-        
+		
 AGGattlingE:
 	Inherits: Gatting
 	ReloadDelay: 16
-	Range:5c0
+	Range: 5c0
 	ValidTargets: Ground, Water
 	#Report: vgatlo1a.wav, vgatlo2a.wav, vgatlo2b.wav, vgatlo2c.wav, vgatlo3a.wav
 	Warhead@1Dam: SpreadDamage
-		Damage: 25 
+		Damage: 25
 		ValidTargets: Ground, Water
-        
+		
 AAGattlingE:
 	Inherits: Gatting
 	ReloadDelay: 16
-	Range:8c0
+	Range: 8c0
 	ValidTargets: Air
 	#Report: vgatlo1a.wav, vgatlo2a.wav, vgatlo2b.wav, vgatlo2c.wav, vgatlo3a.wav
 	Warhead@1Dam: SpreadDamage
-		Damage: 25 
+		Damage: 25
 		ValidTargets: Air
-        
+		
 AGGattling2E:
 	Inherits: Gatting
 	ReloadDelay: 16
-	Range:5c0
+	Range: 5c0
 	ValidTargets: Ground, Water
 	#Report: vgatlo4a.wav, vgatlo5a.wav, vgatlo5b.wav, vgatlo6a.wav
 	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	Warhead@1Dam: SpreadDamage
-		Damage: 25 
+		Damage: 25
 		ValidTargets: Ground, Water
-        
+		
 AAGattling2E:
 	Inherits: Gatting
 	ReloadDelay: 8
-	Range:8c0
+	Range: 8c0
 	ValidTargets: Air
 	#Report: vgatlo4a.wav, vgatlo5a.wav, vgatlo5b.wav, vgatlo6a.wav
 	Warhead@1Dam: SpreadDamage
-		Damage: 25 
+		Damage: 25
 		ValidTargets: Air
-        
+		
 AGGattling3E:
 	Inherits: Gatting
 	ReloadDelay: 16
-	Range:5c0
+	Range: 5c0
 	ValidTargets: Ground, Water
 	#Report: vgatlo7a.wav, vgatlo8a.wav, vgatlo8b.wav, vgatlo9a.wav
 	Warhead@1Dam: SpreadDamage
-		Damage: 25 
+		Damage: 25
 		ValidTargets: Ground, Water
-        
+		
 AAGattling3E:
 	Inherits: Gatting
 	ReloadDelay: 4
-	Range:8c0
+	Range: 8c0
 	ValidTargets: Air
 	#Report: vgatlo7a.wav, vgatlo8a.wav, vgatlo8b.wav, vgatlo9a.wav
 	Warhead@1Dam: SpreadDamage
-		Damage: 25  
+		Damage: 25
 		ValidTargets: Air
-        
+		
 AAGattCann:
 	Inherits: ^MG
 	ReloadDelay: 100
-	Range:8c0
+	Range: 8c0
 	ValidTargets: Air
 	#OpenRA can't read these audio files 
 	#Report: vgatlo1a.wav, vgatlo2a.wav, vgatlo2b.wav, vgatlo2c.wav, vgatlo3a.wav
 	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	Warhead@1Dam: SpreadDamage
-		Damage: 30 
+		Damage: 30
 		ValidTargets: Ground, Water, Air
 		Versus:
 			None: 100
@@ -448,12 +448,12 @@ AAGattCann:
 AAGattCann2:
 	Inherits: ^MG
 	ReloadDelay: 100
-	Range:8c0
+	Range: 8c0
 	ValidTargets: Air
 	#Report: vgatlo4a.wav, vgatlo5a.wav, vgatlo5b.wav, vgatlo6a.wav
 	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	Warhead@1Dam: SpreadDamage
-		Damage: 30 
+		Damage: 30
 		ValidTargets: Ground, Water, Air
 		Versus:
 			None: 100
@@ -469,16 +469,16 @@ AAGattCann2:
 			Rocket: 100
 	Warhead@2Eff: CreateEffect
 		Explosions: piffpiff
-       
+	
 AAGattCann3:
 	Inherits: ^MG
 	ReloadDelay: 100
-	Range:8c0
+	Range: 8c0
 	ValidTargets: Air
 	#Report: vgatlo7a.wav, vgatlo8a.wav, vgatlo8b.wav, vgatlo9a.wav
 	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	Warhead@1Dam: SpreadDamage
-		Damage: 30 
+		Damage: 30
 		ValidTargets: Ground, Water, Air
 		Versus:
 			None: 100
@@ -494,11 +494,11 @@ AAGattCann3:
 			Rocket: 100
 	Warhead@2Eff: CreateEffect
 		Explosions: piffpiff
-        
+		
 AAGattCannE:
 	Inherits: ^MG
 	ReloadDelay: 100
-	Range:8c0
+	Range: 8c0
 	ValidTargets: Air
 	#Report: vgatlo4a.wav, vgatlo5a.wav, vgatlo5b.wav, vgatlo6a.wav
 	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
@@ -523,12 +523,12 @@ AAGattCannE:
 AAGattCann2E:
 	Inherits: ^MG
 	ReloadDelay: 100
-	Range:8c0
+	Range: 8c0
 	ValidTargets: Air
 	#Report: vgatlo4a.wav, vgatlo5a.wav, vgatlo5b.wav, vgatlo6a.wav
 	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	Warhead@1Dam: SpreadDamage
-		Damage: 30 
+		Damage: 30
 		ValidTargets: Ground, Water, Air
 		Versus:
 			None: 100
@@ -544,16 +544,16 @@ AAGattCann2E:
 			Rocket: 100
 	Warhead@2Eff: CreateEffect
 		Explosions: piffpiff
-       
+	
 AAGattCann3E:
 	Inherits: ^MG
 	ReloadDelay: 100
-	Range:8c0
+	Range: 8c0
 	ValidTargets: Air
 	#Report: vgatlo7a.wav, vgatlo8a.wav, vgatlo8b.wav, vgatlo9a.wav
 	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	Warhead@1Dam: SpreadDamage
-		Damage: 30 
+		Damage: 30
 		ValidTargets: Ground, Water, Air
 		Versus:
 			None: 100
@@ -569,11 +569,11 @@ AAGattCann3E:
 			Rocket: 100
 	Warhead@2Eff: CreateEffect
 		Explosions: piffpiff
-        
+		
 AKM:
 	Inherits: ^MG
 	ReloadDelay: 20
-	Range:7c0
+	Range: 7c0
 	Report: iboratta.wav, iborattb.wav
 	ValidTargets: Infantry, Vehicle, Ship
 	Warhead@1Dam: SpreadDamage
@@ -597,6 +597,6 @@ AKM:
 		Explosions: piffpiff
 AKME:
 	Inherits: AKM
-	Range:9c0
+	Range: 9c0
 	Warhead@1Dam: SpreadDamage
 		Damage: 90

@@ -89,7 +89,7 @@ namespace OpenRA.Mods.YR.Traits
             }
             else
             {
-                actors = self.World.Actors.Where(o => o.Owner.IsAlliedWith(self.Owner));
+                actors = self.World.Actors.Where(o => o.Owner == self.Owner);
             }
             foreach (var actor in actors)
             {

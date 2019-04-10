@@ -1,5 +1,8 @@
 #region Copyright & License Information
 /*
+ * Written by Cook Green of YR Mod
+ * Follows GPLv3 License as the OpenRA engine:
+ * 
  * Copyright 2007-2017 The OpenRA Developers (see AUTHORS)
  * This file is part of OpenRA, which is free software. It is made
  * available to you under the terms of the GNU General Public License
@@ -108,8 +111,7 @@ namespace OpenRA.Mods.YR.Traits
 	}
 
 	public class BunkerCargo : IPips, IIssueOrder, IResolveOrder, IOrderVoice, INotifyCreated, INotifyKilled,
-		INotifyOwnerChanged, INotifyAddedToWorld, ITick, INotifySold, INotifyActorDisposing, IIssueDeployOrder, 
-        INotifyBuildComplete
+		INotifyOwnerChanged, INotifyAddedToWorld, ITick, INotifySold, INotifyActorDisposing, IIssueDeployOrder
 	{
 		public readonly BunkerCargoInfo Info;
 		readonly Actor self;
@@ -213,9 +215,9 @@ namespace OpenRA.Mods.YR.Traits
 			return null;
 		}
 
-		Order IIssueDeployOrder.IssueDeployOrder(Actor self)
+		Order IIssueDeployOrder.IssueDeployOrder(Actor self, bool queued)
 		{
-			return new Order("Unload", self, false);
+			return new Order("Unload", self, queued);
 		}
 
 		bool IIssueDeployOrder.CanIssueDeployOrder(Actor self) { return true; }
@@ -590,11 +592,6 @@ namespace OpenRA.Mods.YR.Traits
                     after();
                 });
             }
-        }
-
-        void INotifyBuildComplete.BuildingComplete(Actor self)
-        {
-            buildComplete = true;
         }
     }
 }

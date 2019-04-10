@@ -122,6 +122,10 @@
 		Name: effect50alpha
 		BasePalette: effect
 		Alpha: 0.5
+	PaletteFromFile@cursor:
+		Name: cursor
+		Filename: mousepal.pal
+		CursorPalette: true
 	PaletteFromFile@mousepal:
 		Name: mouse
 		Filename: mousepal.pal

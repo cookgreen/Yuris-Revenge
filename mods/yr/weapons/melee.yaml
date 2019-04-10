@@ -59,19 +59,19 @@ Punch:
 	Report: ibrucra.wav, ibrucrb.wav, ibrucrc.wav, ibrucrd.wav
 	Warhead@1Dam: SpreadDamage
 		DamageTypes: BruteDeath
-        
+		
 PunchE:
 	Inherits: Punch
-        
+		
 Smash:
 	Inherits: ^Smash
 	Report: ibrucra.wav, ibrucrb.wav, ibrucrc.wav, ibrucrd.wav
 	Warhead@1Dam: SpreadDamage
 		DamageTypes: BruteDeath
-        
+		
 SmashE:
 	Inherits: Smash
-        
+		
 shovel:
 	Inherits: AlligatorBite
 	ReloadDelay: 30
@@ -101,7 +101,7 @@ Mummypunch:
 	Report: ibruatta, ibruattb, ibruattc, ibruattd, ibruatte, ibruattf
 	Warhead@1Dam: SpreadDamage
 		DamageTypes: BulletDeath
-        
+		
 MummySmash:
 	Inherits: ^Smash
 	Report: ibruatta, ibruattb, ibruattc, ibruattd, ibruatte, ibruattf

@@ -6,7 +6,7 @@ yhvr:
 		Queue: Ship
 		BuildPaletteOrder: 10
 		Prerequisites: ~yayard
-		Description:Yuri naval transport.\nCan carry yuri infantry and yuri vehicles.\n  Unarmed
+		Description: Yuri naval transport.\nCan carry yuri infantry and yuri vehicles.\n  Unarmed
 	Valued:
 		Cost: 900
 	Tooltip:
@@ -80,7 +80,7 @@ bsub:
 		CloakedCondition: underwater
 		UncloakOn: Damage
 		IsPlayerPalette: true
-		RequiresCondition: !uncloak-critical-damage
+		PauseOnCondition: !(!uncloak-critical-damage)
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: uncloak-critical-damage
 		ValidDamageStates: Critical

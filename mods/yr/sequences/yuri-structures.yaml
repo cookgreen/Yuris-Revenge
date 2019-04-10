@@ -593,24 +593,34 @@ yagntc:
 		Length: 1
 		ShadowStart: 3
 		Tick: 150
+	charged: yagntc_f
+		Length: 15
+		ShadowStart: 62
+		Tick: 50
+	damaged-charged: yagntc_f
+		Start: 31
+		Length: 15
+		ShadowStart: 93
+		Tick: 50
 	active: yagntc_f
-		Length: 8
-		ShadowStart: 16
-		Tick: 150
+		Start: 15
+		Length: 15
+		ShadowStart: 78
+		Tick: 50
 	damaged-active: yagntc_f
-		Start: 8
-		Length: 8
-		ShadowStart: 24
-		Tick: 150
-	superweapon-reset: yagntc_h
+		Start: 46
+		Length: 15
+		ShadowStart: 109
+		Tick: 50
+	deactive: yagntc_h
 		Length: 31
 		ShadowStart: 63
-		Tick: 150
-	damaged-superweapon-reset: yagntc_h
+		Tick: 50
+	damaged-deactive: yagntc_h
 		Start: 31
 		Length: 31
 		ShadowStart: 93
-		Tick: 150
+		Tick: 50
 	icon: gtncicon
 		Offset: 0,0
 		UseTilesetCode: false
@@ -643,29 +653,29 @@ yappet:
 		Length: 1
 		ShadowStart: 3
 		Tick: 150
-	active: yappet_f
+	charged: yappet_f
 		Length: 19
 		ShadowStart: 38
 		Tick: 150
-	damaged-active: yappet_f
+	damaged-charged: yappet_f
 		Start: 19
 		Length: 19
 		ShadowStart: 57
 		Tick: 150
-	superweapon-idle: yappet_g
+	active: yappet_g
 		Length: 8
 		ShadowStart: 16
 		Tick: 150
-	damaged-superweapon-idle: yappet_g
+	damaged-active: yappet_g
 		Start: 8
 		Length: 8
 		ShadowStart: 24
 		Tick: 150
-	superweapon-reset: yappet_h
+	deactive: yappet_h
 		Length: 19
 		ShadowStart: 38
 		Tick: 150
-	damaged-superweapon-reset: yappet_h
+	damaged-deactive: yappet_h
 		Start: 19
 		Length: 19
 		ShadowStart: 57

@@ -44,58 +44,60 @@ namespace OpenRA.Mods.YR.Activities
 		readonly CarrierMaster spawnerMaster;
 
 		public EnterCarrierMaster(Actor self, Actor master, CarrierMaster spawnerMaster, EnterBehaviour enterBehaviour, WDist closeEnoughDist)
-			: base(self, master, enterBehaviour)
+			: base(self, Target.FromActor(master))
 		{
 			this.master = master;
 			this.spawnerMaster = spawnerMaster;
 		}
 
-		protected override bool CanReserve(Actor self)
-		{
-			return true; // Slaves are always welcome.
-		}
+        protected override void OnEnterComplete(Actor self, Actor targetActor)
+        {
+            // Master got killed :(
+            if (master.IsDead)
+                return;
 
-		protected override ReserveStatus Reserve(Actor self)
-		{
-			// TryReserveElseTryAlternateReserve calls Reserve and
-			// the default inplementation of Reserve() returns TooFar when
-			// the aircraft carrier is hovering over a building.
-			// Since spawners don't need reservation (and have no reservation trait),
-			// just return Ready so that spawner can enter no matter where the spawner is.
-			return ReserveStatus.Ready;
-		}
+            // Load this thingy.
+            // Issue attack move to the rally point.
+            self.World.AddFrameEndTask(w =>
+            {
+                if (self.IsDead || master.IsDead)
+                    return;
 
-		protected override void OnInside(Actor self)
-		{
-			// Master got killed :(
-			if (master.IsDead)
-				return;
+                spawnerMaster.PickupSlave(master, self);
+                w.Remove(self);
 
-			Done(self); // Stop slaves from exiting.
+                // Insta repair.
+                if (spawnerMaster.Info.InstaRepair)
+                {
+                    var health = self.Trait<Health>();
+                    self.InflictDamage(self, new Damage(-health.MaxHP));
+                }
+            });
+        }
 
-			// Load this thingy.
-			// Issue attack move to the rally point.
-			self.World.AddFrameEndTask(w =>
-			{
-				if (self.IsDead || master.IsDead)
-					return;
+        protected override void OnFirstRun(Actor self)
+        {
+            base.OnFirstRun(self);
+        }
 
-				spawnerMaster.PickupSlave(master, self);
-				w.Remove(self);
+        protected override void OnLastRun(Actor self)
+        {
+            base.OnLastRun(self);
+        }
 
-				// Insta repair.
-				if (spawnerMaster.Info.InstaRepair)
-				{
-					var health = self.Trait<Health>();
-					self.InflictDamage(self, new Damage(-health.MaxHP));
-				}
+        protected override void OnCancel(Actor self)
+        {
+            base.OnCancel(self);
+        }
 
-				// Insta re-arm. (Delayed launching is handled at spawner.)
-				//var ammoPools = self.TraitsImplementing<AmmoPool>().Where(p => !p.Info.SelfReloads).ToArray();
-				//if (ammoPools != null)
-				//	foreach (var pool in ammoPools)
-				//		while (pool.GiveAmmo()); // fill 'er up.
-			});
-		}
-	}
+        protected override bool TryStartEnter(Actor self, Actor targetActor)
+        {
+            return base.TryStartEnter(self, targetActor);
+        }
+
+        protected override void TickInner(Actor self, Target target, bool targetIsDeadOrHiddenActor)
+        {
+            base.TickInner(self, target, targetIsDeadOrHiddenActor);
+        }
+    }
 }

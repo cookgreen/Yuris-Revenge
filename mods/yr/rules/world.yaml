@@ -178,7 +178,7 @@
 		Name: Yuri Country
 		InternalName: yuri
 		Side: Yuris
-		Description: 
+		Description:
 	ResourceType@Ore:
 		ResourceType: 1
 		Palette: resource
@@ -203,6 +203,7 @@
 		AllowedTerrainTypes: Clear, Rough, Road
 		AllowUnderActors: false
 		TerrainType: Gems
+	TerrainRenderer:
 
 World:
 	Inherits: ^BaseWorld

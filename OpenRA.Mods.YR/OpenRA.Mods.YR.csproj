@@ -66,6 +66,8 @@
     <Compile Include="Activities\ChronoResourceTeleport.cs" />
     <Compile Include="Activities\EnterCarrierMaster.cs" />
     <Compile Include="Activities\EnterBunker.cs" />
+    <Compile Include="Activities\MarkerSlaveLeave.cs" />
+    <Compile Include="Activities\RemoteControlSlaveProductionComplete.cs" />
     <Compile Include="Activities\ShootableBallisticMissileFly.cs" />
     <Compile Include="Activities\SpawnerRefineryHarvest.cs" />
     <Compile Include="Activities\SpawnerHarvesterHarvest.cs" />
@@ -73,7 +75,7 @@
     <Compile Include="Activities\UnloadBunkerCargo.cs" />
     <Compile Include="FileSystem\BagFile.cs" />
     <Compile Include="Graphics\ArcRenderable.cs" />
-    <Compile Include="Graphics\WithTractionShadow.cs" />
+    <Compile Include="Traits\Render\WithTractionShadow.cs" />
     <Compile Include="Order\EnterBunkersTargeter.cs" />
     <Compile Include="Order\EnterBunkerTargeter.cs" />
     <Compile Include="Order\ShootableBallisticMissileMoveOrderTargeter.cs" />
@@ -91,8 +93,9 @@
     <Compile Include="Traits\CrewKillable.cs" />
     <Compile Include="Traits\DetectVariety.cs" />
     <Compile Include="Traits\EnvironmentPaletteEffect.cs" />
-    <Compile Include="Traits\GrantConditionOnProduction.cs" />
+    <Compile Include="Traits\GrantConditionOnProductionToSelf.cs" />
     <Compile Include="Traits\GrantConditionOnStage.cs" />
+    <Compile Include="Traits\Render\WithSuperPowerAnimation.cs" />
     <Compile Include="Traits\SupportPowers\ExploreMapSupportPower.cs" />
     <Compile Include="Traits\GrantConditionOnCapture.cs" />
     <Compile Include="Traits\MarkerMaster.cs" />
@@ -116,6 +119,7 @@
     <Compile Include="Traits\SpawnerHarvesterSlave.cs" />
     <Compile Include="Traits\SpawnerRefineryMaster.cs" />
     <Compile Include="Traits\Bunkerable.cs" />
+    <Compile Include="Traits\SupportPowers\SupportPowerWithNotify.cs" />
     <Compile Include="Traits\SupportPowers\TransformActorsPower.cs" />
     <Compile Include="Traits\Tractable.cs" />
     <Compile Include="Traits\Variety.cs" />

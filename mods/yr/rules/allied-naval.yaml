@@ -209,7 +209,7 @@ dlph:
 		Voice: Attack
 		RepairBuildings: gayard, nayard
 	HitShape:
-    
+	
 carrier:
 	Inherits: ^Ship
 	Inherits@MC: ^MindControllable

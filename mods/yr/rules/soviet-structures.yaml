@@ -32,14 +32,20 @@ nacnst:
 		Offset: 1,1
 		Facing: 96
 		DeployCursor: undeploy
+	ProductionQueue@Building:
+		Type: Building
+	ProductionQueue@Support:
+		Type: Support
 	ProductionBar@Building:
 		ProductionType: Building
 	ProductionBar@Support:
 		ProductionType: Support
 	WithIdleOverlay@top:
 		Sequence: idle-top
+		RequiresCondition: !build-incomplete
 	WithIdleOverlay@normal:
 		Sequence: idle-normal
+		RequiresCondition: !build-incomplete
 	WithBuildingPlacedAnimation:
 	SpawnActorsOnSell@allies:
 		ActorTypes: e1, e1, e1, engineer
@@ -79,6 +85,7 @@ napowr:
 		Range: 4c0
 	WithIdleOverlay@lights:
 		Sequence: idle-lights
+		RequiresCondition: !build-incomplete
 	Power:
 		Amount: 150
 		RequiresCondition: !outagepower
@@ -165,6 +172,8 @@ nahand:
 		ExitCell: 2, 2
 	Production:
 		Produces: Infantry
+	ProductionQueue:
+		Type: Infantry.Soviets
 	PrimaryBuilding:
 		PrimaryCondition: primary
 	RallyPoint:
@@ -178,6 +187,7 @@ nahand:
 		ZOffset: 256
 		RequiresCondition: primary
 	ProductionBar:
+		ProductionType: Infantry.Soviets
 	Power:
 		Amount: -10
 	ConditionManager:
@@ -236,8 +246,10 @@ narefn:
 	WithDockedOverlay:
 	WithIdleOverlay@bib:
 		Sequence: idle-bib
+		RequiresCondition: !build-incomplete
 	WithIdleOverlay@drill:
 		Sequence: idle-drill
+		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -50
 	Targetable:
@@ -277,7 +289,8 @@ naradr:
 		Range: 10c0
 	WithIdleOverlay@dish:
 		Sequence: idle-dish
-		PauseOnCondition: lowpower
+		PauseOnCondition: lowpower 
+		RequiresCondition: !build-incomplete
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
 	InfiltrateForExploration:
@@ -336,6 +349,8 @@ naweap:
 		ExitCell: 5,1
 	Production:
 		Produces: Vehicle
+	ProductionQueue:
+		Type: Vehicle.Soviets
 	PrimaryBuilding:
 		PrimaryCondition: primary
 	WithTextDecoration@primary:
@@ -345,22 +360,25 @@ naweap:
 		ZOffset: 256
 		RequiresCondition: primary
 	ProductionBar:
+		ProductionType: Vehicle.Soviets
 	WithExitOverlay@door:
 		Sequence: build-door
-		RequiresCondition: !roof-open
+		RequiresCondition: !roof-open && !build-incomplete
 	WithExitOverlay@top-vehicles:
 		Sequence: build-top
-		RequiresCondition: !roof-open
+		RequiresCondition: !roof-open && !build-incomplete
 	WithIdleOverlay@lights:
 		Sequence: idle-lights
+		RequiresCondition: !build-incomplete
 	WithIdleOverlay@bib:
 		Sequence: bib
+		RequiresCondition: !build-incomplete
 	WithIdleOverlay@air-open:
 		Sequence: build-air-open
-		RequiresCondition: roof-open
+		RequiresCondition: roof-open && !build-incomplete
 	WithIdleOverlay@air-inside:
 		Sequence: build-air-inside
-		RequiresCondition: roof-open
+		RequiresCondition: roof-open && !build-incomplete
 	Power:
 		Amount: -25
 	InfiltrateForSupportPower:
@@ -368,7 +386,7 @@ naweap:
 		Proxy: warfactory.infiltrated
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
-	GrantConditionOnProduction:
+	GrantConditionOnProductionToSelf:
 		UnitNames: zep, shad, schp, disk, hind
 		Condition: roof-open
 		ConditionDelay: 50
@@ -470,6 +488,8 @@ nayard:
 		ExitCell: 5,5
 	Production:
 		Produces: Ship
+	ProductionQueue:
+		Type: Naval.Soviets
 	PrimaryBuilding:
 		PrimaryCondition: primary
 	WithTextDecoration@primary:
@@ -485,16 +505,20 @@ nayard:
 	RepairsUnits:
 		FinishRepairingNotification: UnitRepaired
 	ProductionBar:
+		ProductionType: Naval.Soviets
 	Power:
 		Amount: -20
 	WithIdleOverlay@crane:
 		Sequence: idle-crane
+		RequiresCondition: !build-incomplete
 	WithIdleOverlay@waves:
 		Sequence: idle-waves
+		RequiresCondition: !build-incomplete
 	WithRepairOverlay:
 		Sequence: repair
 	WithProductionOverlay@lights:
 		Sequence: production-lights
+		RequiresCondition: !build-incomplete
 	-SpawnActorsOnSell@allies:
 	-SpawnActorsOnSell@soviets:
 	-SpawnActorsOnSell@yuris:
@@ -537,9 +561,11 @@ nadept:
 		FinishRepairingNotification: UnitRepaired
 	WithIdleOverlay@normal:
 		Sequence: idle-normal
+		RequiresCondition: !build-incomplete
 	WithIdleOverlay@bib:
 		Sequence: bib
-	WithRepairAnimation:
+		RequiresCondition: !build-incomplete
+	WithResupplyAnimation:
 		Sequence: repair
 	Power:
 		Amount: -25
@@ -572,6 +598,7 @@ nanrct:
 		Range: 5c0
 	WithIdleOverlay@lights:
 		Sequence: idle-lights
+		RequiresCondition: !build-incomplete
 	Explodes:
 		Type: CenterPosition
 		Weapon: NukePayload
@@ -845,7 +872,7 @@ tesla:
 		Amount: -75
 	WithIdleOverlay@powered:
 		Sequence: idle-powered
-		RequiresCondition: !lowpower
+		RequiresCondition: !lowpower && !build-incomplete
 	ExternalCondition@CHARGED:
 		Condition: charged
 
@@ -889,7 +916,7 @@ nalasr:
 		Range: 6c0
 		Type: pillbox
 	AutoTarget:
-    
+	
 nabnkr:
 	Inherits: ^Building
 	Inherits@shape: ^2x2Shape
@@ -908,7 +935,7 @@ nabnkr:
 	BunkerCargo:
 		Types: Infantry
 		MaxWeight: 6
-		PipCount: 6 
+		PipCount: 6
 		StructureGarrisonedNotification: StructureGarrisoned
 		StructureAbandonedNotification: StructureAbandoned
 		BunkerNotSequence: idle
@@ -920,9 +947,9 @@ nabnkr:
 		PortCones: 88, 88, 88, 88, 88, 88
 	RevealsShroud:
 		Range: 8c0
-	Valued
+	Valued:
 		Cost: 600
-	Tooltip
+	Tooltip:
 		Name: Soviet Battle Bunker
 	Building:
 		Footprint: xx xx
@@ -954,16 +981,18 @@ naindp:
 		Type: wood
 	RevealsShroud:
 		Range: 8c0
-	Valued
+	Valued:
 		Cost: 2500
-	Tooltip
+	Tooltip:
 		Name: Soviet Industrial Plant
 	ProvidesPrerequisite:
 		Prerequisite: naindp
 	WithIdleOverlay@processing:
 		Sequence: idle-processing
+		RequiresCondition: !build-incomplete
 	WithIdleOverlay@lights:
 		Sequence: idle-lights
+		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -200
 	GrantExternalConditionPowerEx@MAINTENANCE:
@@ -977,7 +1006,7 @@ naindp:
 		Condition: maintenanceability
 		PauseOnCondition: lowpower
 		EffectToAll: true
-        
+		
 napsya:
 	Inherits: ^Building
 	Selectable:
@@ -988,13 +1017,13 @@ napsya:
 		Type: Concrete
 	RevealsShroud:
 		Range: 6c0
-	Tooltip
+	Tooltip:
 		Name: Psychic Amplifier
 	Power:
 		Amount: -100
 	WithIdleOverlay@active:
 		Sequence: idle-active
-        
+		
 napsyb:
 	Inherits: ^Building
 	Selectable:
@@ -1005,11 +1034,12 @@ napsyb:
 		Type: Wood
 	RevealsShroud:
 		Range: 6c0
-	Valued
+	Valued:
 		Cost: 1000
-	Tooltip
+	Tooltip:
 		Name: Psychic Beacon
 	Power:
 		Amount: -100
 	WithIdleOverlay@active:
 		Sequence: idle-active
+		RequiresCondition: !build-incomplete

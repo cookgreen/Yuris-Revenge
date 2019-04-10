@@ -37,7 +37,7 @@ init:
 		RequiresCondition: rank-elite
 	Voiced:
 		VoiceSet: InitiateVoice
-	WithInfantryBody
+	WithInfantryBody:
 		DefaultAttackSequence: shoot
 	Bunkerable:
 	BunkerPassenger:
@@ -90,7 +90,8 @@ yengineer:
 		Sequence: stand
 	WithInfantryBody:
 		DefaultAttackSequence: stand
-        
+		
+	CaptureManager:
 brute:
 	Inherits: ^Infantry
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
@@ -136,7 +137,7 @@ brute:
 		RequiresCondition: rank-elite
 	Voiced:
 		VoiceSet: BruteVoice
-	WithInfantryBody
+	WithInfantryBody:
 		DefaultAttackSequence: shoot
 	-Crushable:
 	-BunkerPassenger:
@@ -180,14 +181,14 @@ virus:
 		RequiresCondition: rank-elite
 	Voiced:
 		VoiceSet: VirusVoice
-	WithInfantryBody
+	WithInfantryBody:
 		DefaultAttackSequence: shoot
 	BunkerPassenger:
 		Voice: Move
 		CargoType: Infantry
 		GrantBunkerCondition: bunkered
 		Accepter: bfrt
-        
+		
 slav:
 	Inherits: ^Infantry
 	Valued:
@@ -386,7 +387,8 @@ yuripr:
 		UsePlayerColor: true
 		Offset: 0,0,960
 	AutoTarget:
-	AnnounceOnBuild:
+	VoiceAnnouncement:
+		Voice: Build
 	AutoTargetPriority@DEFAULT:
 		Types: MindControl
 		RequiresCondition: !controlling
@@ -442,7 +444,7 @@ julia:
 		RequiresCondition: rank-elite
 	Voiced:
 		VoiceSet: VirusVoice
-	WithInfantryBody
+	WithInfantryBody:
 		DefaultAttackSequence: shoot
 	-Crushable:
 	BunkerPassenger:
@@ -453,5 +455,5 @@ julia:
 	Variety:
 		IsPlayerPalette: true
 		VarietyCondition: varing
-	Targetable: 
+	Targetable:
 		RequiresCondition: !varing

@@ -13,3 +13,6 @@ Metrics:
 	FactionSuffix-yuri: yuris
 	IncompatibleVersionColor: D3D3D3
 	IncompatibleProtectedGameColor: B22222
+	ChatLineSound: ChatLine
+	ClickDisabledSound: ClickDisabledSound
+	ClickSound: ClickSound

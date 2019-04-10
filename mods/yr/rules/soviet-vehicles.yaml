@@ -412,12 +412,17 @@ dtruck:
 	Explodes:
 		Weapon: demobomb
 		EmptyWeapon: demobomb
-	AttackSuicides:
+	AttackFrontal:
 		Voice: Attack
+	GrantConditionOnAttack:
+		Condition: triggered
+	KillsSelf:
+		RequiresCondition: triggered
 	RenderSprites:
 	RenderVoxels:
 	WithVoxelBody:
-	AnnounceOnBuild:
+	VoiceAnnouncement:
+		Voice: Build
 	Voiced:
 		VoiceSet: DemolitionTruckVoice
 	HitShape:

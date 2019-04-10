@@ -42,6 +42,7 @@ engineer:
 		Sequence: stand
 	WithInfantryBody:
 		DefaultAttackSequence: stand
+	CaptureManager:
 
 dog:
 	Inherits: ^Infantry
@@ -619,7 +620,8 @@ tany:
 		RequiresCondition: rank-elite
 	AttackFrontal:
 		Voice: Attack
-	AnnounceOnBuild:
+	VoiceAnnouncement:
+		Voice: Build
 	Voiced:
 		VoiceSet: TanyaVoice
 	ProducibleWithLevel:
@@ -674,8 +676,6 @@ jumpjet:
 		AltitudeVelocity: 83
 		Voice: Move
 		AirborneCondition: airborne
-		RepairBuildings:
-		RearmBuildings:
 		CanHover: True
 		IdealSeparation: 512
 		TakeOffOnResupply: true
@@ -708,6 +708,11 @@ jumpjet:
 	-Passenger:
 	SpawnActorOnDeath:
 		Actor: jumpjet.husk
+	Repairable:
+		RepairBuildings:
+		Voice: Move
+	Rearmable:
+		RearmActors:
 
 jumpjet.husk:
 	Inherits: ^HelicopterHusk

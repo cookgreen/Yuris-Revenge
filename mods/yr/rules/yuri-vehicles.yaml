@@ -42,7 +42,7 @@ pcv:
 	HitShape:
 	SelfHealing@MACHSHOP:
 		RequiresCondition: machshop
-    
+	
 smin:
 	Inherits: ^Vehicle
 	Buildable:
@@ -91,6 +91,7 @@ smin:
 	RevealsShroud:
 		Range: 4c0
 	GainsExperience: # can get experience, i.e. speed
+		LevelUpImage: crate-effects
 	RenderSprites: # TODO: WithHarvestOverlay relies on this, but it should actually be removed
 	RenderVoxels:
 		LightAmbientColor: -0.7,-0.7,-0.7
@@ -109,7 +110,7 @@ smin:
 		Actors: slav, slav, slav, slav, slav
 		Resources: Ore,Gems,Tiberium
 		DeployScanRadius: 20
-    
+	
 ltnk:
 	Inherits: ^Vehicle
 	Inherits@MC: ^MindControllable
@@ -167,7 +168,7 @@ ltnk:
 	SelfHealing@MACHSHOP:
 		RequiresCondition: machshop
 	Bunkerable:
-    
+	
 ytnk:
 	Inherits: ^Vehicle
 	Inherits@MC: ^MindControllable
@@ -279,7 +280,7 @@ ytnk:
 	SelfHealing@MACHSHOP:
 		RequiresCondition: machshop
 	Bunkerable:
-    
+	
 tele:
 	Inherits: ^Vehicle
 	Inherits@MC: ^MindControllable
@@ -383,7 +384,7 @@ caos:
 		Weapon: ChaosGasAttack
 		MuzzleSequence: muzzle
 		LocalOffset: 640,0,384
-	WithMuzzleOverlay: 
+	WithMuzzleOverlay:
 	AttackFrontal:
 		Voice: Attack
 	AutoTarget:
@@ -404,7 +405,7 @@ caos:
 	GrantExternalConditionWeapon@ChaoGas:
 		Condition: chaosgasability
 		EffectDuration: 500
-    
+	
 mind:
 	Inherits: ^Vehicle
 	Inherits@CHAOSGAS: ^Chaosgasable
@@ -490,8 +491,6 @@ disk:
 		TurnSpeed: 100
 		Speed: 200
 		CanHover: True
-		RepairBuildings:
-		RearmBuildings:
 		VTOL: true
 	Selectable:
 		Bounds: 78, 43, 0, -15
@@ -506,7 +505,7 @@ disk:
 		Weapon: DiskLaser
 	Armament@second:
 		Weapon: DiskDrain
-	AttackPlane:
+	AttackAircraft:
 		FacingTolerance: 20
 		Voice: Attack
 	Voiced:
@@ -520,9 +519,14 @@ disk:
 	WithVoxelTurret:
 	AttackTurreted:
 		Voice: Attack
-	AnnounceOnBuild:
+	VoiceAnnouncement:
+		Voice: Build
 	HitShape:
 	SelfRotationCraft:
+	Repairable:
+		RepairBuildings:
+	Rearmable:
+		RearmActors:
 
 diskhusk:
 	Inherits: ^PlaneHusk

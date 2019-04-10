@@ -40,15 +40,17 @@ namespace OpenRA.Mods.YR.Traits
     public class MarkerSlave : BaseSpawnerSlave, INotifyBecomingIdle
     {
         public MarkerSlaveInfo Info { get; private set; }
+        private readonly AmmoPool[] ammoPools;
         private WPos finishEdge;
         private WVec spawnOffset;
         private WPos targetPos;
-        readonly AmmoPool[] ammoPools;
+        private Actor self;
 
         MarkerMaster spawnerMaster;
 
         public MarkerSlave(ActorInitializer init, MarkerSlaveInfo info) : base(init, info)
         {
+            self = init.Self;
             Info = info;
             ammoPools = init.Self.TraitsImplementing<AmmoPool>().ToArray();
         }
@@ -79,7 +81,7 @@ namespace OpenRA.Mods.YR.Traits
 
             self.QueueActivity(new Fly(self, Target.FromPos(targetPos + spawnOffset)));
             self.QueueActivity(new Fly(self, Target.FromPos(finishEdge + spawnOffset)));
-            self.QueueActivity(new RemoveSelf());
+            self.QueueActivity(new MarkerSlaveLeave(self, Master));
         }
 
         public override void LinkMaster(Actor self, Actor master, BaseSpawnerMaster spawnerMaster)
@@ -88,18 +90,26 @@ namespace OpenRA.Mods.YR.Traits
             this.spawnerMaster = spawnerMaster as MarkerMaster;
         }
 
-        bool NeedToReload(Actor self)
+        public bool NeedToReload()
         {
             // The unit may not have ammo but will have unlimited ammunitions.
             if (ammoPools.Length == 0)
                 return false;
 
-            return ammoPools.All(x => !x.AutoReloads && !x.HasAmmo());
+            return ammoPools.All(x => !x.HasAmmo());
         }
 
         public virtual void OnBecomingIdle(Actor self)
         {
             EnterSpawner(self);
+        }
+
+        public void Reload()
+        {
+            foreach (var ammoPool in ammoPools)
+            {
+                ammoPool.GiveAmmo(self, ammoPool.Info.Ammo);
+            }
         }
     }
 }

@@ -827,13 +827,7 @@ naindp:
 napsya:
 	Defaults:
 		Offset: 1, -31
-		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
+		UseTilesetCode: false
 	idle: napsya
 		Length: 1
 		ShadowStart: 3
@@ -854,13 +848,7 @@ napsya:
 napsyb:
 	Defaults:
 		Offset: 1, -31
-		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
+		UseTilesetCode: false
 	idle: napsyb
 		Length: 1
 		ShadowStart: 3
@@ -880,9 +868,3 @@ napsyb:
 	make: napsybmk
 		Length: 24
 		ShadowStart: 24
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC

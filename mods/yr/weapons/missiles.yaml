@@ -260,14 +260,14 @@ MissileLauncher:
 		ValidTargets: Water
 	Warhead@4Smu: LeaveSmudge
 		SmudgeType: SmallCrater
-        
+		
 MissileLauncherE:
 	Inherits: MissileLauncher
 	ReloadDelay: 20
-	Range:8c0
+	Range: 8c0
 	Report: iggiat2a.wav, iggiat2b.wav
 	Warhead@1Dam: SpreadDamage
-		Damage: 50 
+		Damage: 50
 		
 V3Launcher:
 	Inherits: ^LargeBullet

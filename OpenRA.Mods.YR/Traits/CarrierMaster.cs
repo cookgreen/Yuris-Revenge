@@ -132,8 +132,14 @@ namespace OpenRA.Mods.YR.Traits
 
 			carrierSlaveEntry.IsLaunched = true; // mark as launched
 
-			// Launching condition is timed, so not saving the token.
-			if (Info.LaunchingCondition != null)
+            if (carrierSlaveEntry.SpawnerSlave.NeedToReload())
+            {
+                //We meed ammo!!!
+                carrierSlaveEntry.SpawnerSlave.Reload();
+            }
+
+            // Launching condition is timed, so not saving the token.
+            if (Info.LaunchingCondition != null)
 				conditionManager.GrantCondition(self, Info.LaunchingCondition); // TODO removed Info.LaunchingTicks
 
 			SpawnIntoWorld(self, carrierSlaveEntry.Actor, self.CenterPosition);
