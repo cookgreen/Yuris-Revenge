@@ -529,17 +529,21 @@ yapsyt:
 	idle-top: yapsyt_a
 		Length: 26
 		ShadowStart: 78
+		UseTilesetCode: false
 	damaged-idle-top: yapsyt_a
 		Start: 52
 		Length: 26
-		ShadowStart: 78#Actual frame count is 155, but ORA can only read 0~103
+		ShadowStart: 130
+		UseTilesetCode: false
 	idle-full: yapsyt_b
 		Length: 26
 		ShadowStart: 26
+		UseTilesetCode: false
 	damaged-idle-full: yapsyt_a
 		Start: 26
 		Length: 26
-		ShadowStart: 78#Actual frame count is 155, but ORA can only read 0~103
+		ShadowStart: 104
+		UseTilesetCode: false
 	muzzle: yuricntl
 		Length: *
 		UseTilesetCode: false

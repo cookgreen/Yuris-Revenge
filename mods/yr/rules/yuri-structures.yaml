@@ -723,6 +723,7 @@ yapsyt:
 		TurnSpeed: 255
 	WithIdleOverlay@top:
 		Sequence: idle-top
+		PauseOnCondition: lowpower
 		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -100
@@ -740,6 +741,9 @@ yapsyt:
 	WithMindControlArc:
 		UsePlayerColor: true
 		Offset: 0,0,960
+	GrantConditionOnPowerState@LOWPOWER:
+		Condition: lowpower
+		ValidPowerStates: Low, Critical
 	AutoTarget:
 	AutoTargetPriority@DEFAULT:
 		Types: MindControl
