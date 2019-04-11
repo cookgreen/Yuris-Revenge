@@ -329,8 +329,10 @@ bpln:
 	Tooltip:
 		Name: Soviet MIG
 	Aircraft:
+		CruiseAltitude: 4096
 		TurnSpeed: 10
 		Speed: 240
+		CanHover: true
 	Selectable:
 		Bounds: 30,24
 	Health:
@@ -342,11 +344,14 @@ bpln:
 		Type: CenterPosition
 	Armament@primary:
 		Weapon: Maverick3
+		PauseOnCondition: !ammo
 	Armament@primary-elite:
 		Weapon: Maverick3E
+		PauseOnCondition: !ammo
 	AttackAircraft:
 		FacingTolerance: 20
 		Voice: Attack
+		Armaments: primary
 	Voiced:
 		VoiceSet: MigVoice
 	AmmoPool:
@@ -367,9 +372,18 @@ bpln:
 	MarkerSlave:
 		LandingDistance: 1c0
 	RejectsOrders:
-		
-	Rearmable:
-		RearmActors: gaairc, amradr
+	SpawnActorOnDeath:
+		Actor: bplnhusk
+
+bplnhusk:
+	Inherits: ^PlaneHusk
+	Tooltip:
+		Name: Soviet MIG
+	Aircraft:
+		TurnSpeed: 5
+		Speed: 180
+	RenderVoxels:
+		Image: bpln
 hind:
 	Inherits: ^Aircraft
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
