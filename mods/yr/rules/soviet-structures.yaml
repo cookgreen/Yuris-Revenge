@@ -996,17 +996,6 @@ naindp:
 		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -200
-	GrantExternalConditionPowerEx@MAINTENANCE:
-		Icon: maintenance
-		ChargeInterval: 11250
-		Description: Maintenance
-		LongDesc: Pause all productions, and increase 3000 credits
-		Duration: 500
-		DisplayTimerStances: Ally, Neutral, Enemy
-		DisplayRadarPing: True
-		Condition: maintenanceability
-		PauseOnCondition: lowpower
-		EffectToAll: true
 		
 napsya:
 	Inherits: ^Building
