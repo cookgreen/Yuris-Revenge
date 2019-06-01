@@ -41,7 +41,6 @@ smcv:
 	Voiced:
 		VoiceSet: MCVVoice
 	HitShape:
-	-CrewKillable:
 	SelfHealing@MACHSHOP:
 		RequiresCondition: machshop
 
@@ -103,7 +102,6 @@ harv:
 	Voiced:
 		VoiceSet: WarMinerVoice
 	HitShape:
-	-CrewKillable:
 	SelfHealing@MACHSHOP:
 		RequiresCondition: machshop
 
@@ -147,8 +145,6 @@ dron:
 	Voiced:
 		VoiceSet: TerrorDroneVoice
 	HitShape:
-	-CrewKillable:
-	-Capturable:
 	SelfHealing@MACHSHOP:
 		RequiresCondition: machshop
 
@@ -207,7 +203,6 @@ htk:
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
-	CrewKillable:
 	SelfHealing@MACHSHOP:
 		RequiresCondition: machshop
 	Bunkerable:
@@ -264,7 +259,6 @@ htnk:
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
-	CrewKillable:
 	SelfHealing@MACHSHOP:
 		RequiresCondition: machshop
 	Bunkerable:
@@ -324,7 +318,6 @@ apoc:
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
-	-CrewKillable:
 	SelfHealing@MACHSHOP:
 		RequiresCondition: machshop
 	Bunkerable:
@@ -377,7 +370,6 @@ ttnk:
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
-	CrewKillable:
 	SelfHealing@MACHSHOP:
 		RequiresCondition: machshop
 	Bunkerable:
@@ -426,7 +418,6 @@ dtruck:
 	Voiced:
 		VoiceSet: DemolitionTruckVoice
 	HitShape:
-	-CrewKillable:
 	SelfHealing@MACHSHOP:
 		RequiresCondition: machshop
 
@@ -478,7 +469,6 @@ v3:
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
-	CrewKillable:
 	SelfHealing@MACHSHOP:
 		RequiresCondition: machshop
 	MissileSpawnerMaster:

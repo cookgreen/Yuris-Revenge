@@ -211,68 +211,6 @@ VirusgunE:
 	Inherits: Virusgun
 	ReloadDelay: 80
 	Range: 16c0
-		
-Geneticgun:
-	Inherits: ^MG
-	ReloadDelay: 100
-	Range: 10c0
-	Report: iviratta.wav
-	ValidTargets: Infantry
-	Warhead@1Dam: TransformActor
-		Damage: 125
-		ValidTargets: Infantry
-		Versus:
-			None: 100
-			Flak: 100
-			Plate: 100
-			Light: 30
-			Medium: 30
-			Heavy: 30
-			Wood: 1
-			Steel: 1
-			Concrete: 1
-			Drone: 1
-			Rocket: 100
-		Actor: brute
-		ExcludeActor: brute,jumpjet
-		Sequence: die9
-		DamageTypes: BruteDeath, Prone100Percent
-	Warhead@2Eff: CreateEffect
-		Explosions: piff
-		
-GeneticgunE:
-	Inherits: Geneticgun
-	ReloadDelay: 80
-	Range: 16c0
-		
-Brustgun:
-	Inherits: ^MG
-	ReloadDelay: 100
-	Range: 10c0
-	Report: iviratta.wav
-	ValidTargets: Vehicle
-	Warhead@1Dam: KillCrew
-		Damage: 125
-		ValidTargets: Vehicle
-		Versus:
-			None: 100
-			Flak: 100
-			Plate: 100
-			Light: 30
-			Medium: 30
-			Heavy: 30
-			Wood: 1
-			Steel: 1
-			Concrete: 1
-			Drone: 1
-			Rocket: 100
-	Warhead@2Eff: CreateEffect
-		Explosions: initfire
-		
-BrustgunE:
-	Inherits: Brustgun
-	ReloadDelay: 80
-	Range: 16c0
 
 Gatting:
 	Inherits: ^MG

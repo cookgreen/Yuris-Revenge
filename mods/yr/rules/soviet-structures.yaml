@@ -104,7 +104,6 @@ nahand:
 	Inherits: ^Building
 	Inherits@shape: ^2x2Shape
 	Inherits@SMC: ^SuperMindControllable
-	Inherits@MAINTENANCE: ^Maintenancable
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 20
@@ -313,7 +312,6 @@ naweap:
 	Inherits: ^Building
 	Inherits@shape: ^5x3Shape
 	Inherits@SMC: ^SuperMindControllable
-	Inherits@MAINTENANCE: ^Maintenancable
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 40
@@ -968,9 +966,6 @@ naindp:
 		Prerequisites: natech, ~structures.soviets
 		Description: Provides credits for Soviet War machine.
 		BuildLimit: 1
-	CashTrickler:
-		Interval: 100
-		Amount: 20
 	Selectable:
 		Bounds: 178, 173, 0, -20
 	Building:

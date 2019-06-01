@@ -113,7 +113,6 @@ gapile:
 	Inherits: ^Building
 	Inherits@shape: ^3x2Shape
 	Inherits@SMC: ^SuperMindControllable
-	Inherits@MAINTENANCE: ^Maintenancable
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 20
@@ -361,7 +360,6 @@ gaweap:
 	Inherits: ^Building
 	Inherits@shape: ^5x3Shape
 	Inherits@SMC: ^SuperMindControllable
-	Inherits@MAINTENANCE: ^Maintenancable
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 40

@@ -40,7 +40,6 @@ amcv:
 	Voiced:
 		VoiceSet: MCVVoice
 	HitShape:
-	-CrewKillable:
 	SelfHealing@MACHSHOP:
 		RequiresCondition: machshop
 
@@ -92,7 +91,6 @@ cmin:
 	Voiced:
 		VoiceSet: ChronoMinerVoice
 	HitShape:
-	-CrewKillable:
 	SelfHealing@MACHSHOP:
 		RequiresCondition: machshop
 
@@ -147,7 +145,6 @@ mtnk:
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
-	CrewKillable:
 	SelfHealing@MACHSHOP:
 		RequiresCondition: machshop
 	Bunkerable:
@@ -199,7 +196,6 @@ tnkd:
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
-	-CrewKillable:
 	SelfHealing@MACHSHOP:
 		RequiresCondition: machshop
 	Bunkerable:
@@ -347,7 +343,6 @@ fv:
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
-	CrewKillable:
 	SelfHealing@MACHSHOP:
 		RequiresCondition: machshop
 	Bunkerable:
@@ -405,7 +400,6 @@ sref:
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
-	CrewKillable:
 	SelfHealing@MACHSHOP:
 		RequiresCondition: machshop
 
@@ -459,7 +453,6 @@ mgtk:
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
-	CrewKillable:
 	SelfHealing@MACHSHOP:
 		RequiresCondition: machshop
 	Bunkerable:
@@ -517,7 +510,6 @@ robo:
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
-	-CrewKillable:
 	SelfHealing@MACHSHOP:
 		RequiresCondition: machshop
 	RemoteControlSlave:
@@ -586,7 +578,6 @@ bfrt:
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
-	CrewKillable:
 	SelfHealing@MACHSHOP:
 		RequiresCondition: machshop
 	-BunkerPassenger:
