@@ -459,7 +459,6 @@ mind:
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
-	-CrewKillable:
 	SelfHealing:
 	SelfHealing@Overload:
 		PercentageStep: -5
