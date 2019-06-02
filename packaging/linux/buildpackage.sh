@@ -97,8 +97,8 @@ install -m 0755 temp.desktop "${BUILTDIR}/openra-${MOD_ID}.desktop"
 sed "s/{MODID}/${MOD_ID}/g" include/mod-mimeinfo.xml.in | sed "s/{TAG}/${TAG}/g" > temp.xml
 install -Dm 0755 temp.xml "${BUILTDIR}/usr/share/mime/packages/openra-${MOD_ID}.xml"
 
-install -Dm644 "${PACKAGING_DIR}/../../mods/yr/logo.png" "${BUILTDIR}/usr/share/icons/hicolor/32x32/apps/openra-${MOD_ID}.png"
-install -m644 "${PACKAGING_DIR}/../../mods/yr/logo.png" "${BUILTDIR}/openra-${MOD_ID}.png"
+install -Dm644 "${PACKAGING_DIR}/../../mods/yr/icon.png" "${BUILTDIR}/usr/share/icons/hicolor/32x32/apps/openra-${MOD_ID}.png"
+install -m644 "${PACKAGING_DIR}/../../mods/yr/icon.png" "${BUILTDIR}/openra-${MOD_ID}.png"
 
 install -d "${BUILTDIR}/usr/bin"
 
