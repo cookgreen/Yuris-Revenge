@@ -298,6 +298,10 @@ SpriteSequenceFormat: TilesetSpecificSpriteSequence
 ModelSequenceFormat: VoxelModelSequence
 
 GameSpeeds:
+	slowex:
+		Name: Extreme Slow
+		Timestep: 120
+		OrderLatency: 2
 	slowest:
 		Name: Slowest
 		Timestep: 80
@@ -321,6 +325,10 @@ GameSpeeds:
 	fastest:
 		Name: Fastest
 		Timestep: 20
+		OrderLatency: 6
+	fastex:
+		Name: Extreme Fast
+		Timestep: 10
 		OrderLatency: 6
 
 ModContent:
