@@ -73,6 +73,8 @@
     <Compile Include="Activities\SpawnerHarvesterHarvest.cs" />
     <Compile Include="Activities\TractionFallToEarth.cs" />
     <Compile Include="Activities\UnloadBunkerCargo.cs" />
+    <Compile Include="AS\Warheads\RevealShroudWarhead.cs" />
+    <Compile Include="AS\Warheads\WarheadAS.cs" />
     <Compile Include="AudioLoaders\WavHackLoader.cs" />
     <Compile Include="FileFormats\WavHackReader.cs" />
     <Compile Include="FileSystem\BagFile.cs" />
