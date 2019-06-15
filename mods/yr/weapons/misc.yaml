@@ -95,5 +95,5 @@ SpyCameraWeapon:
 	Report: vspysnap.wav
 	ValidTargets: Ground, Water
 	Projectile: InstantHit
-	Warhead@1Dam: TargetDamage
-		Damage: 0
+	Warhead@1Dam: RevealShroud
+		Radius: 6c0

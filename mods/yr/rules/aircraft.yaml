@@ -579,9 +579,6 @@ spyp:
 		Speed: 225
 	Health:
 		HP: 400
-	RevealsShroud:
-		Range: 6c0
-		Type: CenterPosition
 	AttackBomber:
 		FacingTolerance: 20
 		Armaments: primary
