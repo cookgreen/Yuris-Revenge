@@ -94,6 +94,11 @@ SpyCameraWeapon:
 	Burst: 1
 	Report: vspysnap.wav
 	ValidTargets: Ground, Water
-	Projectile: InstantHit
+	Projectile: GravityBomb
+		Velocity: 0, 0, -999
+		Acceleration: 0, 0, -999
+		Palette: player
+		IsPlayerPalette: true
+		Arm: 10
 	Warhead@1Dam: RevealShroud
 		Radius: 6c0

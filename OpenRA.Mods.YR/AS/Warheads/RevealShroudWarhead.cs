@@ -38,7 +38,7 @@ namespace OpenRA.Mods.AS.Warheads
 
 			if (!firedBy.IsDead)
 			{
-				firedBy.World.AddFrameEndTask(w => w.Add(new RevealShroudEffect(firedBy.CenterPosition, Radius,
+				firedBy.World.AddFrameEndTask(w => w.Add(new RevealShroudEffect(target.CenterPosition, Radius,
 					RevealGeneratedShroud ? Shroud.SourceType.Visibility : Shroud.SourceType.PassiveVisibility,
 					firedBy.Owner, RevealStances, duration: Duration)));
 			}
