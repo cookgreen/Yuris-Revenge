@@ -11,6 +11,7 @@
 ^SpriteActor:
 	BodyOrientation:
 		UseClassicPerspectiveFudge: false
+		CameraPitch: 85
 	QuantizeFacingsFromSequence:
 	RenderSprites:
 
@@ -910,7 +911,7 @@
 	Guardable:
 	BodyOrientation:
 		QuantizedFacings: 0
-		CameraPitch: 90
+		CameraPitch: 85
 		UseClassicPerspectiveFudge: false
 	Explodes:
 		Weapon: UnitExplodeSmall
@@ -978,7 +979,7 @@
 	ActorLostNotification:
 	BodyOrientation:
 		QuantizedFacings: 0
-		CameraPitch: 90
+		CameraPitch: 85
 		UseClassicPerspectiveFudge: false
 	Guard:
 		Voice: Attack
@@ -1027,7 +1028,7 @@
 	WithVoxelBody:
 	BodyOrientation:
 		QuantizedFacings: 0
-		CameraPitch: 90
+		CameraPitch: 85
 	Aircraft:
 	HiddenUnderFog:
 		Type: CenterPosition
@@ -1091,7 +1092,7 @@
 	Guardable:
 	BodyOrientation:
 		QuantizedFacings: 0
-		CameraPitch: 90
+		CameraPitch: 85
 		UseClassicPerspectiveFudge: false
 	Tooltip:
 		GenericName: Ship
@@ -1285,7 +1286,7 @@
 	HitShape:
 	BodyOrientation:
 		QuantizedFacings: 0
-		CameraPitch: 90
+		CameraPitch: 85
 		UseClassicPerspectiveFudge: false
 	RenderVoxels:
 	WithVoxelBody:
