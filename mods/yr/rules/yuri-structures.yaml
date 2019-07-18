@@ -60,7 +60,7 @@ yapowr:
 	Valued:
 		Cost: 600
 	Tooltip:
-		Name: Yuri Bio Reactor
+		Name: Bio Reactor
 	ProvidesPrerequisite:
 		Prerequisite: power
 	Selectable:
@@ -172,7 +172,7 @@ yarefn:
 	Valued:
 		Cost: 1500
 	Tooltip:
-		Name: Yuri Ore Refinery
+		Name: Slave Miner
 	Health:
 		HP: 2000
 	Armor:
@@ -316,7 +316,7 @@ yayard:
 	Valued:
 		Cost: 1000
 	Tooltip:
-		Name: Yuri Submarine Pen
+		Name: Yuri Naval Yard
 	ProvidesPrerequisite:
 		Prerequisite: yayard
 	Power:
@@ -461,7 +461,7 @@ yagrnd:
 	Valued:
 		Cost: 600
 	Tooltip:
-		Name: Yuri Grinder
+		Name: Grinder
 	Building:
 		Footprint: xxx xxx xxx
 		Dimensions: 3,3
@@ -535,14 +535,14 @@ gafwll:
 		Prerequisites: yabrck, ~structures.yuris
 		Description: Protect Yuri Base
 	Tooltip:
-		Name: Yuri Citadel Wall
+		Name: Citadel Walls
 
 natbnk:
 	Inherits: ^SupportBuilding
 	Inherits@shape: ^2x2Shape
 	Inherits@SMC: ^SuperMindControllable
 	Tooltip:
-		Name: Yuri Tank Bunker
+		Name: Tank Bunker
 	Valued:
 		Cost: 400
 	Buildable:
@@ -602,7 +602,7 @@ yaggun:
 	Valued:
 		Cost: 1000
 	Tooltip:
-		Name: Yuri Gattling Cannon
+		Name: Gattling Cannon
 	Turreted:
 		TurnSpeed: 10
 		InitialFacing: 224
@@ -717,7 +717,7 @@ yapsyt:
 	Valued:
 		Cost: 1500
 	Tooltip:
-		Name: Yuri Psychic Tower
+		Name: Psychic Tower
 	AttackTurreted:
 		Voice: Attack
 	Turreted:
@@ -770,7 +770,7 @@ yagntc:
 	Valued:
 		Cost: 2500
 	Tooltip:
-		Name: Yuri Genetic Mutator Device
+		Name: Genetic Mutator
 	Building:
 		Footprint: xxx xxx xxx
 		Dimensions: 3,3
@@ -827,7 +827,7 @@ yappet:
 	Valued:
 		Cost: 5000
 	Tooltip:
-		Name: Yuri Puppet Master
+		Name: Psychic Dominator
 	Building:
 		Footprint: xxx xxx xxx
 		Dimensions: 3,3
@@ -948,7 +948,7 @@ napsis:
 	Valued:
 		Cost: 1000
 	Tooltip:
-		Name: Yuri Psychic Sensor
+		Name: Psychic Radar
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
@@ -1003,7 +1003,7 @@ yarock:
 	Valued:
 		Cost: 600
 	Tooltip:
-		Name: Rocket Launch Pad
+		Name: Unknown Building
 	Power:
 		Amount: 0
 

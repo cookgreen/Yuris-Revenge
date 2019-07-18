@@ -12,7 +12,7 @@ init:
 	Valued:
 		Cost: 200
 	Tooltip:
-		Name: Yuri Initiate
+		Name: Initiate
 	DeliversCash:
 		Payload: 100
 		PlayerExperience: 5
@@ -59,7 +59,7 @@ yengineer:
 	Valued:
 		Cost: 500
 	Tooltip:
-		Name: Yuri Engineer
+		Name: Engineer
 	Selectable:
 		Bounds: 20, 30, 0, -11
 	Health:
@@ -106,7 +106,7 @@ brute:
 	Valued:
 		Cost: 500
 	Tooltip:
-		Name: Yuri Brute
+		Name: Brute
 	DeliversCash:
 		Payload: 250
 		PlayerExperience: 10
@@ -156,7 +156,7 @@ virus:
 	Valued:
 		Cost: 700
 	Tooltip:
-		Name: Yuri Virus
+		Name: Virus
 	DeliversCash:
 		Payload: 350
 		PlayerExperience: 20
@@ -194,7 +194,7 @@ slav:
 	Valued:
 		Cost: 700
 	Tooltip:
-		Name: Yuri Slave Worker
+		Name: Slave
 	Selectable:
 		Bounds: 20, 30, 0, -11
 	Harvester:

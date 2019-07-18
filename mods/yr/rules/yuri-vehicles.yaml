@@ -10,7 +10,7 @@ pcv:
 	Valued:
 		Cost: 3000
 	Tooltip:
-		Name: Yuri Mobile Construction Vehicle
+		Name: Yuri MCV
 	Selectable:
 		Priority: 4
 		Bounds: 68, 56, 0, -7
@@ -76,6 +76,8 @@ smin:
 		TurnSpeed: 8
 		WaitAverage: 0
 		Crushes: crate, infantry
+	ProvidesPrerequisite:
+		Prerequisite: yarefn
 	Turreted:
 		TurnSpeed: 5
 	Armament@primary:
@@ -292,7 +294,7 @@ tele:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 20
-		Prerequisites: ~yaweap
+		Prerequisites: ~yaweap, napsis
 		Description: Yuri Magnetron Tank. Powerful sige weapon.\n  Strong vs structures\n  Weak vs Infantry, Vehicle, Aircraft and Ships
 	Mobile:
 		Speed: 75
@@ -412,7 +414,7 @@ mind:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 20
-		Prerequisites: ~yaweap
+		Prerequisites: ~yaweap, yatech
 		Description: Yuri MindControl Vehicle.\n  Strong vs Infantry, Vehicles, Ships\n  Weak vs Aircraft
 	Mobile:
 		Speed: 60
