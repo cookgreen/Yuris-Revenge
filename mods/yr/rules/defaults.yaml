@@ -273,12 +273,8 @@
 		RequiresCondition: chaosgasability
 		
 ^Diskdrainshutdownpowerable:
-	TimedConditionBar:
-		Condition: diskdrainability
 	ExternalCondition@DISKDRAINABILITY:
 		Condition: diskdrainability
-	ShutdownPower:
-		RequiresCondition: diskdrainability
 		
 ^Tractable:
 	Tractable:

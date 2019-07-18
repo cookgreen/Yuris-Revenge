@@ -489,7 +489,7 @@ disk:
 	Selectable:
 		Bounds: 78, 43, 0, -15
 	Health:
-		HP: 150
+		HP: 600
 	Armor:
 		Type: Light
 	RevealsShroud:
@@ -499,6 +499,9 @@ disk:
 		Weapon: DiskLaser
 	Armament@second:
 		Weapon: DiskDrain
+		MuzzleSequence: muzzle
+		LocalOffset: 0,0,-200
+	WithMuzzleOverlay:
 	AttackAircraft:
 		FacingTolerance: 20
 		Voice: Attack
@@ -521,13 +524,30 @@ disk:
 		RepairBuildings:
 	Rearmable:
 		RearmActors:
+	GrantExternalConditionWeapon:
+		Condition: diskdrainability
+		ArmamentType: Single
+		DamageRangeType: Target
+	SpawnActorOnDeath:
+		Actor: diskhusk
 
 diskhusk:
-	Inherits: ^PlaneHusk
+	Inherits: ^HelicopterHusk
 	Tooltip:
-		Name: Harrier
+		Name: Floating Disk
+	Turreted:
+		TurnSpeed: 5
+	RevealsShroud:
+		Range: 6c0
+		Type: CenterPosition
+	FallsToEarth:
+		Explosion: UnitExplode
 	Aircraft:
 		TurnSpeed: 5
 		Speed: 140
 	RenderVoxels:
-		Image: falc
+		Image: disk
+	WithVoxelTurret:
+	SelfRotationCraft:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: false

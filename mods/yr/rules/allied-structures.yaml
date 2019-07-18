@@ -70,6 +70,7 @@ gapowr:
 	Inherits: ^Building
 	Inherits@shape: ^2x2Shape
 	Inherits@SMC: ^SuperMindControllable
+	Inherits@DISKDRAIN: ^Diskdrainshutdownpowerable
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 10
@@ -107,7 +108,7 @@ gapowr:
 		DestroyedSounds: bpowdiea.wav, bpowdieb.wav
 	PowerTooltip:
 	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
+		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate, powerplant
 
 gapile:
 	Inherits: ^Building
@@ -236,7 +237,7 @@ garefn:
 	Power:
 		Amount: -50
 	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
+		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate, refinery
 
 gaairc:
 	Inherits: ^Building
@@ -772,6 +773,8 @@ nasam:
 		ValidPowerStates: Low, Critical
 	RequiresBuildableArea:
 		Adjacent: 5
+	Targetable:
+		TargetTypes: powerable-defense
 
 gtgcan:
 	Inherits: ^VoxelLighting
@@ -828,6 +831,8 @@ gtgcan:
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
 		ValidPowerStates: Low, Critical
+	Targetable:
+		TargetTypes: powerable-defense
 
 gaorep:
 	Inherits: ^Building

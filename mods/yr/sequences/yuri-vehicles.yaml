@@ -54,6 +54,8 @@ mind:
 	icon: mindicon
     
 disk:
+	muzzle: diskray
+		Length: 4
 	icon: diskicon
 
 yhvr:

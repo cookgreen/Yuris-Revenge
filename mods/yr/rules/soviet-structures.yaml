@@ -61,6 +61,7 @@ napowr:
 	Inherits: ^Building
 	Inherits@shape: ^3x2Shape
 	Inherits@SMC: ^SuperMindControllable
+	Inherits@DISKDRAIN: ^Diskdrainshutdownpowerable
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 10
@@ -98,7 +99,7 @@ napowr:
 		DestroyedSounds: bpowdiea.wav, bpowdieb.wav
 	PowerTooltip:
 	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
+		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate, powerplant
 
 nahand:
 	Inherits: ^Building
@@ -252,7 +253,7 @@ narefn:
 	Power:
 		Amount: -50
 	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
+		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate, refinery
 
 naradr:
 	Inherits: ^Building
@@ -572,6 +573,7 @@ nanrct:
 	Inherits: ^Building
 	Inherits@shape: ^4x4Shape
 	Inherits@SMC: ^SuperMindControllable
+	Inherits@DISKDRAIN: ^Diskdrainshutdownpowerable
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 90
@@ -613,7 +615,7 @@ nanrct:
 		DestroyedSounds: bpowdiea.wav, bpowdieb.wav
 	PowerTooltip:
 	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
+		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate, powerplant
 
 natech:
 	Inherits: ^Building
@@ -817,6 +819,8 @@ naflak:
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
 		ValidPowerStates: Low, Critical
+	Targetable:
+		TargetTypes: powerable-defense
 
 tesla:
 	Inherits: ^SupportBuilding
@@ -874,6 +878,8 @@ tesla:
 		RequiresCondition: !lowpower && !build-incomplete
 	ExternalCondition@CHARGED:
 		Condition: charged
+	Targetable:
+		TargetTypes: powerable-defense
 
 nalasr:
 	Inherits: ^VoxelLighting

@@ -48,6 +48,7 @@ yacnst:
 yapowr:
 	Inherits: ^Building
 	Inherits@SMC: ^SuperMindControllable
+	Inherits@DISKDRAIN: ^Diskdrainshutdownpowerable
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 10
@@ -87,7 +88,7 @@ yapowr:
 	ScalePowerWithHealth:
 	PowerTooltip:
 	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
+		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate, powerplant
 
 yabrck:
 	Inherits: ^Building
@@ -209,7 +210,7 @@ yarefn:
 	Power:
 		Amount: 0
 	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
+		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate, refinery
 	GrantConditionOnDeploy:
 		DeployedCondition: deploy
 		UndeployedCondition: undeploy
@@ -694,6 +695,8 @@ yaggun:
 	AutoTarget:
 	Power:
 		Amount: -50
+	Targetable:
+		TargetTypes: powerable-defense
 
 yapsyt:
 	Inherits: ^SupportBuilding
