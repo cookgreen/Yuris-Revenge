@@ -177,6 +177,7 @@ SuperComet:
 		
 DiskLaser:
 	Inherits: Comet
+	InvalidTargets: powerplant, refinery, powerable-defense
 	ReloadDelay: 50
 	Range: 7c0
 	Report: vfloatta.wav
@@ -199,12 +200,16 @@ DiskLaser:
 		
 DiskDrain:
 	ValidTargets: powerplant, refinery, powerable-defense
-	ReloadDelay: 50
-	Range: 1c256
+	ReloadDelay: 4
+	Range: 0c256
+	MinRange: 0c001
 	Projectile: InstantHit
-	Report: vflolo4a.wav vflolo5a.wav vflolo5b.wav vflolo6a.wav
-	Warhead@1Dam: SpreadDamage
-		Damage: 0
+	Warhead@1Dam: GrantExternalCondition
+		Condition: diskdrainability
+	Warhead@2Eff: CreateEffect
+		Delay: 0
+		Explosions: diskray
+		ImpactActors: false
 
 RadBeamWeapon:
 	ValidTargets: Ground

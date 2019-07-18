@@ -270,6 +270,10 @@ explosion:
 		Offset: 0, 50
 		Tick: 50
 	chaosgas: cdgas
+	diskray: diskray
+		Length: 4
+		Offset: 0, -80
+		Tick: 50
 
 discus:
 	idle:

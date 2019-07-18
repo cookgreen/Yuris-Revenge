@@ -273,9 +273,13 @@
 		RequiresCondition: chaosgasability
 		
 ^Diskdrainshutdownpowerable:
-	ExternalCondition@DISKDRAINABILITY:
+	ExternalCondition@diskdrainability:
 		Condition: diskdrainability
-		
+        
+^Diskdraintransfercashable:
+	ExternalCondition@diskdrainability:
+		Condition: diskdrainability
+    
 ^Tractable:
 	Tractable:
 		TractingCondition: tracting

@@ -10,7 +10,7 @@ pcv:
 	Valued:
 		Cost: 3000
 	Tooltip:
-		Name: Yuri MCV
+		Name: Mobile Construction Vehicle
 	Selectable:
 		Priority: 4
 		Bounds: 68, 56, 0, -7
@@ -502,7 +502,7 @@ disk:
 	Armament@second:
 		Weapon: DiskDrain
 		MuzzleSequence: muzzle
-		LocalOffset: 0,0,-200
+		LocalOffset: 0,0,-300
 	WithMuzzleOverlay:
 	AttackAircraft:
 		FacingTolerance: 20
@@ -526,10 +526,6 @@ disk:
 		RepairBuildings:
 	Rearmable:
 		RearmActors:
-	GrantExternalConditionWeapon:
-		Condition: diskdrainability
-		ArmamentType: Single
-		DamageRangeType: Target
 	SpawnActorOnDeath:
 		Actor: diskhusk
 
