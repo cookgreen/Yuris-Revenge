@@ -1,6 +1,7 @@
-# Yuri's Revenge Mod for OpenRA
+# OpenRA Red Alert 2 Yuri's Revenge
+
 ## Introduction
-Port Yuri's Revenge to OpenRA Engine
+A Red Alert 2 Yuri's Revenge mod for OpenRA Engine
 
 ## Version
 release-20190314
