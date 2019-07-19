@@ -79,6 +79,8 @@
     <Compile Include="FileFormats\WavHackReader.cs" />
     <Compile Include="FileSystem\BagFile.cs" />
     <Compile Include="Graphics\ArcRenderable.cs" />
+    <Compile Include="Traits\GrantConditionOnAttackType.cs" />
+    <Compile Include="Traits\GrantConditionWhenCashflow.cs" />
     <Compile Include="Traits\Render\WithTractionShadow.cs" />
     <Compile Include="Order\EnterBunkersTargeter.cs" />
     <Compile Include="Order\EnterBunkerTargeter.cs" />
@@ -91,8 +93,8 @@
     <Compile Include="Traits\CarrierMaster.cs" />
     <Compile Include="Traits\CarrierSlave.cs" />
     <Compile Include="Traits\ChronoResourceDelivery.cs" />
-    <Compile Include="Traits\Conditions\GrantExternalConditionWeapon.cs" />
-    <Compile Include="Traits\Conditions\GrantTimedConditionOnDeploy.cs" />
+    <Compile Include="Traits\GrantExternalConditionWeapon.cs" />
+    <Compile Include="Traits\GrantTimedConditionOnDeploy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Traits\CrewKillable.cs" />
     <Compile Include="Traits\DetectVariety.cs" />
@@ -100,6 +102,7 @@
     <Compile Include="Traits\GrantConditionOnProductionToSelf.cs" />
     <Compile Include="Traits\GrantConditionOnStage.cs" />
     <Compile Include="Traits\Render\WithSuperPowerAnimation.cs" />
+    <Compile Include="Traits\ShutdownPower.cs" />
     <Compile Include="Traits\SupportPowers\ExploreMapSupportPower.cs" />
     <Compile Include="Traits\GrantConditionOnCapture.cs" />
     <Compile Include="Traits\MarkerMaster.cs" />

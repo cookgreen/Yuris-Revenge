@@ -201,6 +201,7 @@ narefn:
 	Inherits: ^Building
 	Inherits@shape: ^4x3Shape
 	Inherits@SMC: ^SuperMindControllable
+	Inherits@DISKDRAIN: ^Diskdraintransfercashable
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 30
@@ -253,7 +254,7 @@ narefn:
 	Power:
 		Amount: -50
 	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate, refinery
+		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
 
 naradr:
 	Inherits: ^Building

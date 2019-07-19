@@ -275,10 +275,23 @@
 ^Diskdrainshutdownpowerable:
 	ExternalCondition@diskdrainability:
 		Condition: diskdrainability
+	ShutdownPower:
+		Duration: 10
+		RequiresCondition: diskdrainability
         
 ^Diskdraintransfercashable:
 	ExternalCondition@diskdrainability:
 		Condition: diskdrainability
+	GrantConditionWhenCashflow:
+		LowCashCondition: lowcash
+		NormalCashCondition: normalcash
+	CashTrickler:
+		Interval: 30
+		Amount: -30
+		RequiresCondition: diskdrainability && !lowcash
+	Targetable@REFIMERY:
+		TargetTypes: refinery
+		RequiresCondition: normalcash
     
 ^Tractable:
 	Tractable:

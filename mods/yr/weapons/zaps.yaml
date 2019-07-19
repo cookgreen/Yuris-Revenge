@@ -176,7 +176,7 @@ SuperComet:
 		Damage: 150
 		
 DiskLaser:
-	Inherits: Comet
+	ValidTargets: Ground, Water
 	InvalidTargets: powerplant, refinery, powerable-defense
 	ReloadDelay: 50
 	Range: 7c0
@@ -189,14 +189,6 @@ DiskLaser:
 	Warhead@1Dam: SpreadDamage
 		Damage: 25
 		DamageTypes: RadiationDeath
-	Warhead@2Eff: CreateEffect
-		-Explosions:
-		-ImpactSounds:
-	Warhead@3EffWater: CreateEffect
-		-Explosions:
-		-ImpactSounds:
-	Warhead@4Smu: LeaveSmudge
-		-SmudgeType:
 		
 DiskDrain:
 	ValidTargets: powerplant, refinery, powerable-defense

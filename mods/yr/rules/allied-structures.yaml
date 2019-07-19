@@ -185,6 +185,7 @@ garefn:
 	Inherits: ^Building
 	Inherits@shape: ^4x3Shape
 	Inherits@SMC: ^SuperMindControllable
+	Inherits@DISKDRAIN: ^Diskdraintransfercashable
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 30
@@ -237,7 +238,7 @@ garefn:
 	Power:
 		Amount: -50
 	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate, refinery
+		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
 
 gaairc:
 	Inherits: ^Building

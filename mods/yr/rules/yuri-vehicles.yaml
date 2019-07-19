@@ -179,7 +179,7 @@ ytnk:
 	Valued:
 		Cost: 600
 	Tooltip:
-		Name: Gattling Tank
+		Name: Gatling Tank
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 20
@@ -500,6 +500,7 @@ disk:
 	Armament@primary:
 		Weapon: DiskLaser
 	Armament@second:
+		Name: secondary
 		Weapon: DiskDrain
 		MuzzleSequence: muzzle
 		LocalOffset: 0,0,-300
@@ -528,6 +529,15 @@ disk:
 		RearmActors:
 	SpawnActorOnDeath:
 		Actor: diskhusk
+	GrantConditionOnAttackType:
+		Condition: diskdrainabilitytransfercash
+		ArmamentNames: secondary
+		CheckTargetTypes: true
+		TargetTypes: refinery
+	CashTrickler:
+		Interval: 30
+		Amount: 30
+		RequiresCondition: diskdrainabilitytransfercash
 
 diskhusk:
 	Inherits: ^HelicopterHusk

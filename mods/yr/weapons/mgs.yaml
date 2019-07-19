@@ -212,7 +212,7 @@ VirusgunE:
 	ReloadDelay: 80
 	Range: 16c0
 
-Gatting:
+^Gatling:
 	Inherits: ^MG
 	ReloadDelay: 10
 	Range: 7c0
@@ -239,7 +239,7 @@ Gatting:
 		Explosions: piffpiff
 		
 AGGattling:
-	Inherits: Gatting
+	Inherits: ^Gatling
 	ReloadDelay: 16
 	Range: 5c0
 	ValidTargets: Ground, Water
@@ -248,7 +248,7 @@ AGGattling:
 		ValidTargets: Ground, Water
 		
 AAGattling:
-	Inherits: Gatting
+	Inherits: ^Gatling
 	ReloadDelay: 16
 	Range: 8c0
 	ValidTargets: Air
@@ -257,7 +257,7 @@ AAGattling:
 		ValidTargets: Air
 		
 AGGattling2:
-	Inherits: Gatting
+	Inherits: ^Gatling
 	ReloadDelay: 16
 	Report: vgatlo4a.wav, vgatlo5a.wav, vgatlo5b.wav, vgatlo6a.wav
 	Range: 5c0
@@ -267,7 +267,7 @@ AGGattling2:
 		ValidTargets: Ground, Water
 		
 AAGattling2:
-	Inherits: Gatting
+	Inherits: ^Gatling
 	ReloadDelay: 8
 	Range: 8c0
 	Report: vgatlo4a, vgatlo5a, vgatlo5b, vgatlo6a 
@@ -278,7 +278,7 @@ AAGattling2:
 		ValidTargets: Air
 		
 AGGattling3:
-	Inherits: Gatting
+	Inherits: ^Gatling
 	ReloadDelay: 16
 	Range: 5c0
 	Report: vgatlo7a.wav, vgatlo8a.wav, vgatlo8b.wav, vgatlo9a.wav
@@ -288,7 +288,7 @@ AGGattling3:
 		ValidTargets: Ground, Water
 		
 AAGattling3:
-	Inherits: Gatting
+	Inherits: ^Gatling
 	ReloadDelay: 4
 	Range: 8c0
 	Report: vgatlo7a.wav, vgatlo8a.wav, vgatlo8b.wav, vgatlo9a.wav
@@ -298,7 +298,7 @@ AAGattling3:
 		ValidTargets: Air
 		
 AGGattlingE:
-	Inherits: Gatting
+	Inherits: ^Gatling
 	ReloadDelay: 16
 	Range: 5c0
 	ValidTargets: Ground, Water
@@ -307,7 +307,7 @@ AGGattlingE:
 		ValidTargets: Ground, Water
 		
 AAGattlingE:
-	Inherits: Gatting
+	Inherits: ^Gatling
 	ReloadDelay: 16
 	Range: 8c0
 	ValidTargets: Air
@@ -316,7 +316,7 @@ AAGattlingE:
 		ValidTargets: Air
 		
 AGGattling2E:
-	Inherits: Gatting
+	Inherits: ^Gatling
 	ReloadDelay: 16
 	Range: 5c0
 	ValidTargets: Ground, Water
@@ -326,7 +326,7 @@ AGGattling2E:
 		ValidTargets: Ground, Water
 		
 AAGattling2E:
-	Inherits: Gatting
+	Inherits: ^Gatling
 	ReloadDelay: 8
 	Range: 8c0
 	ValidTargets: Air
@@ -336,7 +336,7 @@ AAGattling2E:
 		ValidTargets: Air
 		
 AGGattling3E:
-	Inherits: Gatting
+	Inherits: ^Gatling
 	ReloadDelay: 16
 	Range: 5c0
 	ValidTargets: Ground, Water
@@ -346,7 +346,7 @@ AGGattling3E:
 		ValidTargets: Ground, Water
 		
 AAGattling3E:
-	Inherits: Gatting
+	Inherits: ^Gatling
 	ReloadDelay: 4
 	Range: 8c0
 	ValidTargets: Air
