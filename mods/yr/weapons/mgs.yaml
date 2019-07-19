@@ -216,7 +216,7 @@ VirusgunE:
 	Inherits: ^MG
 	ReloadDelay: 10
 	Range: 7c0
-	Brust: 2
+	Burst: 2
 	Report: vgatlo1a.wav, vgatlo2a.wav, vgatlo2b.wav, vgatlo2c.wav, vgatlo3a.wav
 	Projectile: Bullet
 		Speed: 100c0
