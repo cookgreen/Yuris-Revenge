@@ -62,6 +62,7 @@ Packages:
 	~urbann.mix
 	~audio.bag
 	~thememd.mix
+	~movmd03.mix
 	yr|bits
 	yr|bits/animations
 	yr|bits/audio
@@ -271,6 +272,9 @@ Fonts:
 	TinyBold:
 		Font: common|FreeSansBold.ttf
 		Size:10
+
+Missions:
+	yr|missions.yaml
 
 SupportsMapsFrom: yr
 

@@ -1,0 +1,12 @@
+World:
+	GlobalLightingPaletteEffect:
+		Ambient: 0.8
+		Red: 0.88
+		Green: 0.88
+		Blue: 0.88
+	MissionData:
+		Briefing: The world is in ruin. Yuri is poised to rule unchallenged. Only a daring Allied plan to travel back in time stands between Yuri and total domination. But Yuri must pay for his betrayal at Soviet hands, not Allied. We must capture the Time Machine and travel back ourselves. \nObjective 1: Destroy the Allied Navy and Grand Cannons. \nObjective 2: Destroy Pill Boxes around Time Machine to capture it. \nObjective 3: Capture 4 Power Plants to Power Time Machine. \nObjective 4: Take Control of Soviet Base and use it to Destroy the Psychic Dominator.
+		BriefingVideo: s01_f00e.bik
+		StartVideo: 
+		WinVideo: 
+		LossVideo: 
