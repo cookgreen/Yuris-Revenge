@@ -3173,13 +3173,6 @@ casanf01:
 	Defaults:
 		Offset: 15,-37
 		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			SNOW: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
 	idle:
 		ShadowStart: 4
 	damaged-idle:
@@ -3195,13 +3188,6 @@ casanf02:
 	Defaults:
 		Offset: 0,-45
 		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			SNOW: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
 	idle:
 		ShadowStart: 4
 	damaged-idle:
@@ -3217,13 +3203,6 @@ casanf03:
 	Defaults:
 		Offset: 15,-37
 		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			SNOW: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
 	idle:
 		ShadowStart: 4
 	damaged-idle:
@@ -3239,13 +3218,6 @@ casanf05:
 	Defaults:
 		Offset: -30,-75
 		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			SNOW: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
 	idle:
 		ShadowStart: 4
 	damaged-idle:
@@ -3261,13 +3233,6 @@ casanf06:
 	Defaults:
 		Offset: -15,-37
 		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			SNOW: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
 	idle:
 		ShadowStart: 4
 	damaged-idle:
@@ -3283,13 +3248,6 @@ casanf07:
 	Defaults:
 		Offset: -15,-37
 		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			SNOW: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
 	idle:
 		ShadowStart: 4
 	damaged-idle:
@@ -3305,13 +3263,6 @@ casanf08:
 	Defaults:
 		Offset: 0,-45
 		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			SNOW: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
 	idle:
 		ShadowStart: 4
 	damaged-idle:
@@ -3326,12 +3277,6 @@ casanf15:
 	Defaults:
 		Offset: 0,-15
 		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: NEWURBAN
-			SNOW: NEWURBAN
-			URBAN: NEWURBAN
-			DESERT: NEWURBAN
-			LUNAR: NEWURBAN
 	idle:
 		ShadowStart: 4
 	damaged-idle:
@@ -3346,12 +3291,6 @@ casanf16:
 	Defaults:
 		Offset: 0,-15
 		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: NEWURBAN
-			SNOW: NEWURBAN
-			URBAN: NEWURBAN
-			DESERT: NEWURBAN
-			LUNAR: NEWURBAN
 	idle:
 		ShadowStart: 4
 	damaged-idle:
@@ -3367,11 +3306,6 @@ casanf17:
 	Defaults:
 		Offset: 0,-45
 		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: NEWURBAN
-			URBAN: NEWURBAN
-			DESERT: NEWURBAN
-			LUNAR: NEWURBAN
 	idle:
 		ShadowStart: 4
 	damaged-idle:
@@ -3387,11 +3321,6 @@ casanf18:
 	Defaults:
 		Offset: 45,-52
 		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: NEWURBAN
-			URBAN: NEWURBAN
-			DESERT: NEWURBAN
-			LUNAR: NEWURBAN
 	idle:
 		ShadowStart: 4
 	damaged-idle:
@@ -3407,11 +3336,6 @@ casydn02:
 	Defaults:
 		Offset: 0,-45
 		UseTilesetCode: true
-		TilesetOverrides:
-			SNOW: NEWURBAN
-			URBAN: NEWURBAN
-			DESERT: NEWURBAN
-			LUNAR: NEWURBAN
 	idle:
 		ShadowStart: 4
 	damaged-idle:
@@ -3427,11 +3351,6 @@ casydn03:
 	Defaults:
 		Offset: -30,-75
 		UseTilesetCode: true
-		TilesetOverrides:
-			SNOW: NEWURBAN
-			URBAN: NEWURBAN
-			DESERT: NEWURBAN
-			LUNAR: NEWURBAN
 	idle:
 		ShadowStart: 4
 	damaged-idle:
@@ -3457,10 +3376,6 @@ caseat01:
 	Defaults:
 		Offset: 0,-30
 		UseTilesetCode: true
-		TilesetOverrides:
-			SNOW: NEWURBAN
-			DESERT: NEWURBAN
-			LUNAR: NEWURBAN
 	idle:
 		ShadowStart: 4
 	damaged-idle:
@@ -3476,11 +3391,6 @@ caseat02:
 	Defaults:
 		Offset: 0,-60
 		UseTilesetCode: true
-		TilesetOverrides:
-			SNOW: NEWURBAN
-			URBAN: NEWURBAN
-			DESERT: NEWURBAN
-			LUNAR: NEWURBAN
 	idle:
 		ShadowStart: 4
 	damaged-idle:
@@ -3503,10 +3413,6 @@ catran01:
 	Defaults:
 		Offset: 0,-30
 		UseTilesetCode: true
-		TilesetOverrides:
-			URBAN: TEMPERATE
-			DESERT: TEMPERATE
-			LUNAR: TEMPERATE
 	idle:
 		ShadowStart: 4
 	damaged-idle:
@@ -3522,10 +3428,6 @@ catran02:
 	Defaults:
 		Offset: 0,-30
 		UseTilesetCode: true
-		TilesetOverrides:
-			URBAN: TEMPERATE
-			DESERT: TEMPERATE
-			LUNAR: TEMPERATE
 	idle:
 		ShadowStart: 4
 	damaged-idle:
@@ -3540,10 +3442,6 @@ catran03:
 	Defaults:
 		Offset: 0,-60
 		UseTilesetCode: true
-		TilesetOverrides:
-			URBAN: TEMPERATE
-			DESERT: TEMPERATE
-			LUNAR: TEMPERATE
 	idle:
 		ShadowStart: 4
 	damaged-idle:
@@ -3558,12 +3456,6 @@ catime01:
 	Defaults:
 		Offset: 15,-52
 		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
 	idle:
 		ShadowStart: 3
 	damaged-idle:
@@ -3574,12 +3466,6 @@ catime02:
 	Defaults:
 		Offset: 15,-52
 		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
 	idle:
 		ShadowStart: 3
 	damaged-idle:
