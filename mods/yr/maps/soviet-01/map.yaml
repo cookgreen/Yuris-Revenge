@@ -1,30 +1,60 @@
 MapFormat: 11
+
 RequiresMod: yr
+
 Title: Soviet Mission 01 - Operation: Time Shift
+
 Author: Westwood Studios
+
 Tileset: NEWURBAN
+
 MapSize: 58,280
+
 Bounds: 4,29,52,178
+
 Visibility: MissionSelector
+
 Categories: Campaign
+
 Players:
 	PlayerReference@Neutral:
 		Name: Neutral
 		OwnsWorld: True
 		NonCombatant: True
+		Faction: Soviets
+	PlayerReference@Allies:
+		Name: Allies
+		Bot: campaign
 		Faction: Random
-	PlayerReference@Creeps:
-		Name: Creeps
+		LockColor: True
+		Color: 0062FF
+		Enemies: Yuri, Soviets
+	PlayerReference@Yuri:
+		Name: Yuri
+		Bot: campaign
+		OwnsWorld: True
 		NonCombatant: True
 		Faction: Random
+		LockColor: True
+		Color: 7A51A8
+		Enemies: Allies, Soviets
+	PlayerReference@Soviets:
+		Name: Soviets
+		Faction: Random
+		LockColor: True
+		Color: FF0000
+		Enemies: Yuri, Allies
+		Playable: True
+		AllowBots: False
+		Required: True
 Actors:
 	Actor0: gtgcan
 		Location: 73,39
-		Owner: Neutral
 		Facing: 320
+		Owner: Allies
 	Actor1: gtgcan
 		Location: 69,35
-		Owner: Neutral
+		Owner: Allies
 	Actor2: catexs07
 		Location: 104,47
 		Owner: Neutral
@@ -177,54 +207,54 @@ Actors:
 		Health: 95
 	Actor41: yappet
 		Location: 17,-10
-		Owner: Neutral
+		Owner: Yuri
 	Actor42: cachig01
 		Location: 110,70
 		Owner: Neutral
 		Health: 22
 	Actor43: yaggun
 		Location: 41,6
-		Owner: Neutral
+		Owner: Yuri
 		Facing: 150
 	Actor44: yaggun
 		Location: 36,1
-		Owner: Neutral
+		Owner: Yuri
 		Facing: 325
 	Actor45: yaggun
 		Location: 50,5
-		Owner: Neutral
+		Owner: Yuri
 		Facing: 160
 	Actor46: yaggun
 		Location: 46,19
-		Owner: Neutral
+		Owner: Yuri
 		Facing: 224
 	Actor47: yaggun
 		Location: 42,2
-		Owner: Neutral
+		Owner: Yuri
 		Facing: 128
 	Actor48: yaggun
 		Location: 42,21
-		Owner: Neutral
+		Owner: Yuri
 		Facing: 192
 	Actor49: yaggun
 		Location: 34,5
-		Owner: Neutral
+		Owner: Yuri
 		Facing: 320
 	Actor50: yaggun
 		Location: 39,0
-		Owner: Neutral
+		Owner: Yuri
 		Facing: 102
 	Actor51: yaggun
 		Location: 50,2
-		Owner: Neutral
+		Owner: Yuri
 		Facing: 160
 	Actor52: yaggun
 		Location: 52,16
-		Owner: Neutral
+		Owner: Yuri
 		Facing: 160
 	Actor53: yaggun
 		Location: 49,11
-		Owner: Neutral
+		Owner: Yuri
 		Facing: 160
 	Actor54: cagas01
 		Location: 110,49
@@ -255,29 +285,29 @@ Actors:
 		Owner: Neutral
 	Actor62: yaggun
 		Location: 38,21
-		Owner: Neutral
 		Facing: 224
+		Owner: Yuri
 	Actor63: yaggun
 		Location: 49,18
-		Owner: Neutral
 		Facing: 224
+		Owner: Yuri
 	Actor64: yaggun
 		Location: 34,18
-		Owner: Neutral
 		Facing: 256
+		Owner: Yuri
 	Actor65: yaggun
 		Location: 32,12
-		Owner: Neutral
 		Facing: 320
+		Owner: Yuri
 	Actor66: gagate_a
 		Location: 140,48
 		Owner: Neutral
 	Actor67: gapill
 		Location: 131,41
-		Owner: Neutral
+		Owner: Allies
 	Actor68: gapill
 		Location: 131,45
-		Owner: Neutral
+		Owner: Allies
 	Actor69: gapill
 		Location: 145,39
 		Owner: Neutral
@@ -292,16 +322,16 @@ Actors:
 		Owner: Neutral
 	Actor73: nasam
 		Location: 136,46
-		Owner: Neutral
+		Owner: Allies
 	Actor74: nasam
 		Location: 144,46
-		Owner: Neutral
+		Owner: Allies
 	Actor75: nasam
 		Location: 136,36
-		Owner: Neutral
+		Owner: Allies
 	Actor76: nasam
 		Location: 136,29
-		Owner: Neutral
+		Owner: Allies
 	Actor77: catech01
 		Location: 136,32
 		Owner: Neutral
@@ -345,7 +375,7 @@ Actors:
 		Owner: Neutral
 	Actor90: yapppt
 		Location: 38,11
-		Owner: Neutral
+		Owner: Yuri
 	Actor91: camisc02
 		Location: 43,10
 		Owner: Neutral
@@ -366,38 +396,38 @@ Actors:
 		Owner: Neutral
 	Actor97: yaggun
 		Location: 44,17
-		Owner: Neutral
+		Owner: Yuri
 	Actor98: yaggun
 		Location: 41,14
-		Owner: Neutral
 		Facing: 192
+		Owner: Yuri
 	Actor99: yaggun
 		Location: 37,10
-		Owner: Neutral
 		Facing: 320
+		Owner: Yuri
 	Actor100: yaggun
 		Location: 41,10
-		Owner: Neutral
 		Facing: 128
+		Owner: Yuri
 	Actor101: yaggun
 		Location: 37,14
 		Owner: Neutral
 		Facing: 256
 	Actor102: yaggun
 		Location: 46,11
-		Owner: Neutral
 		Facing: 128
+		Owner: Yuri
 	Actor103: yaggun
 		Location: 46,8
-		Owner: Neutral
 		Facing: 128
+		Owner: Yuri
 	Actor104: yaggun
 		Location: 36,18
-		Owner: Neutral
 		Facing: 256
+		Owner: Yuri
 	Actor105: gadept
 		Location: 136,38
-		Owner: Neutral
+		Owner: Allies
 	Actor106: camisc05
 		Location: 149,41
 		Owner: Neutral
@@ -418,8 +448,8 @@ Actors:
 		Owner: Neutral
 	Actor112: nanrct
 		Location: 47,14
-		Owner: Neutral
 		Health: 50
+		Owner: Yuri
 	Actor113: castl01
 		Location: 77,21
 		Owner: Neutral
@@ -430,42 +460,42 @@ Actors:
 		Health: 25
 	Actor115: dest
 		Location: 37,25
-		Owner: Neutral
 		Health: 0
+		Owner: Allies
 	Actor116: carrier
 		Location: 63,25
-		Owner: Neutral
 		Facing: 256
+		Owner: Allies
 	Actor117: carrier
 		Location: 64,27
-		Owner: Neutral
 		Facing: 288
+		Owner: Allies
 	Actor118: dest
 		Location: 63,20
-		Owner: Neutral
 		Facing: 256
+		Owner: Allies
 	Actor119: dest
 		Location: 63,29
-		Owner: Neutral
 		Facing: 288
+		Owner: Allies
 	Actor120: dest
 		Location: 63,22
-		Owner: Neutral
 		Facing: 288
+		Owner: Allies
 	Actor121: cona
 		Location: 115,23
 		Owner: Neutral
 		Facing: 160
 	Actor122: aegis
 		Location: 40,25
-		Owner: Neutral
 		Health: 6
 		Facing: 320
+		Owner: Allies
 	Actor123: carrier
 		Location: 45,27
-		Owner: Neutral
 		Health: 0
 		Facing: 128
+		Owner: Allies
 	Actor124: car
 		Location: 101,40
 		Owner: Neutral
@@ -576,64 +606,64 @@ Actors:
 		Facing: 288
 	Actor153: e1
 		Location: 140,50
-		Owner: Neutral
 		Facing: 98
+		Owner: Allies
 	Actor154: e1
 		Location: 139,50
-		Owner: Neutral
 		Facing: 98
+		Owner: Allies
 	Actor155: e1
 		Location: 141,50
-		Owner: Neutral
 		Facing: 98
+		Owner: Allies
 	Actor156: ggi
 		Location: 139,51
-		Owner: Neutral
 		Facing: 100
+		Owner: Allies
 	Actor157: ggi
 		Location: 140,51
-		Owner: Neutral
 		Facing: 100
+		Owner: Allies
 	Actor158: e1
 		Location: 132,24
-		Owner: Neutral
 		Facing: 98
+		Owner: Allies
 	Actor159: e1
 		Location: 132,25
-		Owner: Neutral
 		Facing: 98
+		Owner: Allies
 	Actor160: e1
 		Location: 132,26
-		Owner: Neutral
 		Facing: 98
+		Owner: Allies
 	Actor161: ggi
 		Location: 131,24
-		Owner: Neutral
 		Facing: 98
+		Owner: Allies
 	Actor162: ggi
 		Location: 131,25
-		Owner: Neutral
 		Facing: 98
+		Owner: Allies
 	Actor163: e1
 		Location: 133,31
-		Owner: Neutral
 		Facing: 100
+		Owner: Allies
 	Actor164: e1
 		Location: 133,32
-		Owner: Neutral
 		Facing: 100
+		Owner: Allies
 	Actor165: e1
 		Location: 133,33
-		Owner: Neutral
 		Facing: 100
+		Owner: Allies
 	Actor166: ggi
 		Location: 132,31
-		Owner: Neutral
 		Facing: 100
+		Owner: Allies
 	Actor167: ggi
 		Location: 132,32
-		Owner: Neutral
 		Facing: 99
+		Owner: Allies
 	Actor168: e2
 		Location: 186,84
 		Owner: Neutral
@@ -2064,7 +2094,7 @@ Actors:
 		Owner: Neutral
 	Actor642: waypoint
 		Location: 48,15
-		Owner: Neutral
+		Owner: Yuri
 	Actor643: waypoint
 		Location: 21,13
 		Owner: Neutral
@@ -2986,4 +3016,4 @@ Actors:
 	Actor949: trock02
 		Location: 175,102
 		Owner: Neutral
-Rules: rules.yaml
+Rules: yr|rules/campaign-rules.yaml, rules.yaml

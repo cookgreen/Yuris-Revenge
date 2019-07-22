@@ -156,7 +156,7 @@ ChromeLayout:
 	common|chrome/ingame.yaml
 	common|chrome/ingame-observer.yaml
 	common|chrome/ingame-chat.yaml
-	common|chrome/ingame-fmvplayer.yaml
+	yr|chrome/ingame-binkplayer.yaml
 	common|chrome/ingame-menu.yaml
 	common|chrome/ingame-info.yaml
 	common|chrome/ingame-infoscripterror.yaml
@@ -179,7 +179,7 @@ ChromeLayout:
 	common|chrome/map-chooser.yaml
 	common|chrome/connection.yaml
 	common|chrome/replaybrowser.yaml
-	common|chrome/missionbrowser.yaml
+	yr|chrome/missionbrowser.yaml
 	common|chrome/confirmation-dialogs.yaml
 	common|chrome/color-picker.yaml
 	common|chrome/dropdowns.yaml

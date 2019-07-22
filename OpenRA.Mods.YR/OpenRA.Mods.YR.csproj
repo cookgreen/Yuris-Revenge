@@ -37,6 +37,7 @@
     <PlatformTarget>x86</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <OutputPath>bin\x86\Release\</OutputPath>
@@ -138,6 +139,7 @@
     <Compile Include="Widgets\BinkPlayerWidget.cs" />
     <Compile Include="Widgets\Logic\IngamePowerLogic.cs" />
     <Compile Include="Widgets\Logic\MainMenuLogic.cs" />
+    <Compile Include="Widgets\Logic\NewMissionBrowserLogic.cs" />
     <Compile Include="Widgets\Logic\VxlBrowserLogic.cs" />
     <Compile Include="Widgets\ResourceBarSpriteWidget.cs" />
     <Compile Include="Widgets\VoxelWidget.cs" />
@@ -157,7 +159,6 @@
       <Name>OpenRA.Mods.Common</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

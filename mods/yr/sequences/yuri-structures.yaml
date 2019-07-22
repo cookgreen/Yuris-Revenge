@@ -713,4 +713,17 @@ yarock:
 		Length: 1
 		ShadowStart: 5
 	icon: xxicon
+
+yapppt:
+	Defaults:
+		Offset: 0, -24
+		UseTilesetCode: false
+	idle: yapppt
+		Length: 1
+		ShadowStart: 3
+	damaged-idle: yapppt
+		Start: 1
+		Length: 1
+		ShadowStart: 4
+	icon: xxicon
         
