@@ -356,53 +356,66 @@ Actors:
 		Health: 25
 	Actor82: yaggun
 		Location: 38,21
-		Owner: Neutral
 		Facing: 224
+		Faction: Soviets
+		Owner: Yuri
 	Actor83: yaggun
 		Location: 49,18
-		Owner: Neutral
 		Facing: 224
+		Faction: Soviets
+		Owner: Yuri
 	Actor84: yaggun
 		Location: 34,18
-		Owner: Neutral
 		Facing: 256
+		Faction: Soviets
+		Owner: Yuri
 	Actor85: yaggun
 		Location: 32,12
-		Owner: Neutral
 		Facing: 320
+		Faction: Soviets
+		Owner: Yuri
 	Actor86: gagate_a
 		Location: 140,48
 		Owner: Neutral
 	Actor87: gapill
 		Location: 131,41
-		Owner: Neutral
+		Faction: Soviets
+		Owner: Allies
 	Actor88: gapill
 		Location: 131,45
-		Owner: Neutral
+		Faction: Soviets
+		Owner: Allies
 	Actor89: gapill
 		Location: 145,39
-		Owner: Neutral
+		Faction: Soviets
+		Owner: Allies
 	Actor90: gapill
 		Location: 142,41
-		Owner: Neutral
+		Faction: Soviets
+		Owner: Allies
 	Actor91: gapill
 		Location: 143,37
-		Owner: Neutral
+		Faction: Soviets
+		Owner: Allies
 	Actor92: gapill
 		Location: 140,39
 		Owner: Neutral
 	Actor93: nasam
 		Location: 136,46
-		Owner: Neutral
+		Faction: Soviets
+		Owner: Allies
 	Actor94: nasam
 		Location: 144,46
-		Owner: Neutral
+		Faction: Soviets
+		Owner: Allies
 	Actor95: nasam
 		Location: 136,36
-		Owner: Neutral
+		Faction: Soviets
+		Owner: Allies
 	Actor96: nasam
 		Location: 136,29
-		Owner: Neutral
+		Faction: Soviets
+		Owner: Allies
 	Actor97: catech01
 		Location: 136,32
 		Owner: Neutral
@@ -414,16 +427,20 @@ Actors:
 		Owner: Neutral
 	Actor100: camach
 		Location: 141,33
-		Owner: Neutral
+		Faction: Soviets
+		Owner: Allies
 	Actor101: camisc06
 		Location: 139,28
-		Owner: Neutral
+		Faction: Soviets
+		Owner: Allies
 	Actor102: camisc06
 		Location: 136,26
-		Owner: Neutral
+		Faction: Soviets
+		Owner: Allies
 	Actor103: camisc06
 		Location: 139,30
-		Owner: Neutral
+		Faction: Soviets
+		Owner: Allies
 	Actor104: cachig01
 		Location: 100,23
 		Owner: Neutral
@@ -464,7 +481,8 @@ Actors:
 		Owner: Neutral
 	Actor116: yapppt
 		Location: 38,11
-		Owner: Neutral
+		Faction: Soviets
+		Owner: Yuri
 	Actor117: casanf05
 		Location: 37,16
 		Owner: Neutral
@@ -507,31 +525,37 @@ Actors:
 		Facing: 192
 	Actor130: yaggun
 		Location: 37,10
-		Owner: Neutral
 		Facing: 320
+		Faction: Soviets
+		Owner: Yuri
 	Actor131: yaggun
 		Location: 41,10
-		Owner: Neutral
 		Facing: 128
+		Faction: Soviets
+		Owner: Yuri
 	Actor132: yaggun
 		Location: 37,14
 		Owner: Neutral
 		Facing: 256
 	Actor133: yaggun
 		Location: 46,11
-		Owner: Neutral
 		Facing: 128
+		Faction: Soviets
+		Owner: Yuri
 	Actor134: yaggun
 		Location: 46,8
-		Owner: Neutral
 		Facing: 128
+		Faction: Soviets
+		Owner: Yuri
 	Actor135: yaggun
 		Location: 36,18
-		Owner: Neutral
 		Facing: 256
+		Faction: Soviets
+		Owner: Yuri
 	Actor136: gadept
 		Location: 136,38
-		Owner: Neutral
+		Faction: Soviets
+		Owner: Allies
 	Actor137: catime01
 		Location: 141,38
 		Owner: Neutral
@@ -558,8 +582,9 @@ Actors:
 		Owner: Neutral
 	Actor145: nanrct
 		Location: 47,14
-		Owner: Neutral
 		Health: 50
+		Faction: Soviets
+		Owner: Yuri
 	Actor146: castl01
 		Location: 77,21
 		Owner: Neutral
@@ -570,43 +595,50 @@ Actors:
 		Health: 25
 	Actor148: dest
 		Location: 37,25
-		Owner: Neutral
 		Health: 0
-	Actor149: carrier
+		Faction: Soviets
+		Owner: Allies
+	allied_carrier02: carrier
 		Location: 63,25
-		Owner: Neutral
 		Facing: 256
-	Actor150: carrier
+		Faction: Soviets
+		Owner: Allies
+	allied_carrier01: carrier
 		Location: 64,27
-		Owner: Neutral
 		Facing: 288
+		Faction: Soviets
+		Owner: Allies
 	Actor151: dest
 		Location: 63,20
-		Owner: Neutral
 		Facing: 256
+		Faction: Soviets
+		Owner: Allies
 	Actor152: dest
 		Location: 63,29
-		Owner: Neutral
 		Facing: 288
+		Faction: Soviets
+		Owner: Allies
 	Actor153: dest
 		Location: 63,22
-		Owner: Neutral
 		Facing: 288
+		Faction: Soviets
+		Owner: Allies
 	Actor154: cona
 		Location: 115,23
 		Owner: Neutral
 		Facing: 160
 	allied_aiegs01: aegis
 		Location: 40,25
-		Owner: Neutral
 		Health: 6
 		Facing: 320
-	Actor156: carrier
+		Faction: Soviets
+		Owner: Allies
 	allied_carrier03: carrier
 		Location: 45,27
-		Owner: Neutral
 		Health: 0
 		Facing: 128
+		Faction: Soviets
+		Owner: Allies
 	Actor157: car
 		Location: 101,40
 		Owner: Neutral
@@ -3147,7 +3179,8 @@ Actors:
 		Owner: Neutral
 	Actor989: gawall
 		Location: 132,45
-		Owner: Neutral
+		Faction: Soviets
+		Owner: Allies
 	Actor990: cafncp
 		Location: 133,44
 		Owner: Neutral

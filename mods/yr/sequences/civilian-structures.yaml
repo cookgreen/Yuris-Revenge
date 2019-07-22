@@ -3455,7 +3455,7 @@ catran03:
 catime01:
 	Defaults:
 		Offset: 15,-52
-		UseTilesetCode: true
+		UseTilesetCode: false
 	idle:
 		ShadowStart: 3
 	damaged-idle:
@@ -3465,7 +3465,7 @@ catime01:
 catime02:
 	Defaults:
 		Offset: 15,-52
-		UseTilesetCode: true
+		UseTilesetCode: false
 	idle:
 		ShadowStart: 3
 	damaged-idle:

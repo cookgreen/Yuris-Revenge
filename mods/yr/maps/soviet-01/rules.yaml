@@ -15,36 +15,24 @@ World:
 
 ^gapowr:
 	Inherits: ^Building
-	Inherits@shape: ^2x3Shape
-	Inherits@SMC: ^SuperMindControllable
-	Inherits@DISKDRAIN: ^Diskdrainshutdownpowerable
+	Inherits@shape: ^2x2Shape
 	Selectable:
-		Bounds: 96, 98, -2, -24
-	Valued:
-		Cost: 800
+		Bounds: 96, 104, -2, -26
 	Tooltip:
 		Name: Tech Power
 	ProvidesPrerequisite:
 		Prerequisite: power
 	Building:
 		Footprint: xx xx
-		Dimensions: 2,2
+		Dimensions: 2, 2
 	Health:
-		HP: 750
+		HP: 5000
 	Armor:
-		Type: Wood
+		Type: Concrete
 	RevealsShroud:
 		Range: 4c0
-	WithIdleOverlay@glow:
-		Sequence: idle-glow
-		RequiresCondition: !build-incomplete
 	Power:
 		Amount: 200
-		RequiresCondition: !outagepower
-	InfiltrateForPowerOutage:
-		Types: SpyInfiltrate
-	AffectedByPowerOutage:
-		Condition: outagepower
 	ScalePowerWithHealth:
 	SoundOnDamageTransition:
 		DestroyedSounds: bpowdiea.wav, bpowdieb.wav

@@ -16,10 +16,12 @@ CheckAlliedForce = function()
 		totalnum = totalnum + 1
 		if alliedunit.IsDead then
 			deadnum = deadnum + 1
+		end
 	end)
 	if deadnum == totalnum then --[[All dead, Objective 1 was completed]]
 		player.MarkCompletedObjective(DestroyAlliedForceObjective)
 		SendSovietReforcement()
+	end
 end
 
 CheckPower = function()
