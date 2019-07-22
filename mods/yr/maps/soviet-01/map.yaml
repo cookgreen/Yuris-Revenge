@@ -1,21 +1,12 @@
 MapFormat: 11
-
 RequiresMod: yr
-
 Title: Soviet Mission 01 - Operation: Time Shift
-
 Author: Westwood Studios
-
 Tileset: NEWURBAN
-
 MapSize: 58,280
-
 Bounds: 4,29,52,178
-
 Visibility: MissionSelector
-
 Categories: Campaign
-
 Players:
 	PlayerReference@Neutral:
 		Name: Neutral
@@ -40,19 +31,19 @@ Players:
 		Enemies: Allies, Soviets
 	PlayerReference@Soviets:
 		Name: Soviets
+		AllowBots: False
+		Playable: True
+		Required: True
 		Faction: Random
 		LockColor: True
 		Color: FF0000
 		Enemies: Yuri, Allies
-		Playable: True
-		AllowBots: False
-		Required: True
 Actors:
-	Actor0: gtgcan
+	allied_grandcannon02: gtgcan
 		Location: 73,39
 		Facing: 320
 		Owner: Allies
-	Actor1: gtgcan
+	allied_grandcannon01: gtgcan
 		Location: 69,35
 		Owner: Allies
 	Actor2: catexs07
@@ -458,27 +449,27 @@ Actors:
 		Location: 93,14
 		Owner: Neutral
 		Health: 25
-	Actor115: dest
+	allied_destroyer04: dest
 		Location: 37,25
 		Health: 0
 		Owner: Allies
-	Actor116: carrier
+	allied_carrier01: carrier
 		Location: 63,25
 		Facing: 256
 		Owner: Allies
-	Actor117: carrier
+	allied_carrier02: carrier
 		Location: 64,27
 		Facing: 288
 		Owner: Allies
-	Actor118: dest
+	allied_destroyer01: dest
 		Location: 63,20
 		Facing: 256
 		Owner: Allies
-	Actor119: dest
+	allied_destroyer03: dest
 		Location: 63,29
 		Facing: 288
 		Owner: Allies
-	Actor120: dest
+	allied_destroyer02: dest
 		Location: 63,22
 		Facing: 288
 		Owner: Allies
@@ -486,12 +477,12 @@ Actors:
 		Location: 115,23
 		Owner: Neutral
 		Facing: 160
-	Actor122: aegis
+	allied_aiegs01: aegis
 		Location: 40,25
 		Health: 6
 		Facing: 320
 		Owner: Allies
-	Actor123: carrier
+	allied_carrier03: carrier
 		Location: 45,27
 		Health: 0
 		Facing: 128

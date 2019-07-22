@@ -33,15 +33,6 @@
 	die6: electro
 		Length: *
 		Tick: 80
-	die7: virusd
-		Length: *
-		Tick: 80
-	die8: brutdie
-		Length: *
-		Tick: 80
-	die9: gendeath
-		Length: *
-		Tick: 80
 	paradrop:
 
 ^ProneInfantry:
@@ -66,6 +57,34 @@
 	Inherits@1: ^BasicInfantry
 	Inherits@2: ^ProneInfantry
 
+^CivInfantry:
+	Inherits: ^Infantry
+	Inherits@MC: ^MindControllable
+	-idle2:
+	die1:
+		Start: 71
+	die2:
+		Start: 71
+	-standup:
+	-liedown:
+	prone-stand:
+		Frames: 182, 188, 194, 200, 206, 212, 218, 224
+	prone-run:
+		Start: 182
+	shoot:
+		Start: 86
+		Length: 6
+		Facings: 8
+	cheer:
+		Start: 230
+		Length: 8
+	panic-stand:
+		Facings: 8
+	panic-run:
+		Start: 134
+		Length: 6
+		Facings: 8
+
 ^ArmedInfantry:
 	Inherits: ^Infantry
 	shoot:
@@ -84,3 +103,42 @@
 		Start: 276
 	cheer:
 		Start: 293
+
+^MindControllable:
+	mindcontrol: yuricntl
+		Length: *
+		Offset: 0, -24, 24
+		UseTilesetCode: false
+
+^Fence:
+	Defaults:
+		Offset: 0,-15
+	idle:
+		Length: 16
+		ShadowStart: 32
+	damaged-idle:
+		Start: 16
+		Length: 16
+		ShadowStart: 48
+	icon: wallicon
+		Offset: 0,0
+		UseTilesetCode: false
+
+^Flag:
+	Defaults:
+		Offset: 0,-15
+	idle: causfgl
+		ShadowStart: 4
+		UseTilesetCode: true
+	damaged-idle: causfgl
+		Start: 1
+		ShadowStart: 5
+		UseTilesetCode: true
+	flag:
+		Length: 16
+		ShadowStart: 16
+
+^GarrisonableBuilding:
+	garrisoned:
+		Start: 2
+		ShadowStart: 6

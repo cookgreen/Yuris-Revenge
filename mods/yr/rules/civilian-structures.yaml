@@ -2,45 +2,96 @@ cafncb:
 	Inherits: ^Fence
 	Tooltip:
 		Name: Black Fence
-		Description: Fence.\nCrushable by vehicles.
+	LineBuild:
+		NodeTypes: cafncb
+	LineBuildNode:
+		Types: cafncb
+	WithWallSpriteBody:
+		Type: cafncb
 
 cafncw:
 	Inherits: ^Fence
 	Tooltip:
 		Name: White Fence
-		Description: Fence.\nCrushable by vehicles.
+	LineBuild:
+		NodeTypes: cafncw
+	LineBuildNode:
+		Types: cafncw
+	WithWallSpriteBody:
+		Type: cafncw
+
+cafnck:
+	Inherits: ^Fence
+	Tooltip:
+		Name: Brown Fence
+	LineBuild:
+		NodeTypes: cafnck
+	LineBuildNode:
+		Types: cafnck
+	WithWallSpriteBody:
+		Type: cafnck
+
+cafncy:
+	Inherits: ^Fence
+	Tooltip:
+		Name: Yellow Fence
+	LineBuild:
+		NodeTypes: cafncy
+	LineBuildNode:
+		Types: cafncy
+	WithWallSpriteBody:
+		Type: cafncy
+
+cafncg:
+	Inherits: ^Fence
+	Tooltip:
+		Name: Green Fence
+	LineBuild:
+		NodeTypes: cafncg
+	LineBuildNode:
+		Types: cafncg
+	WithWallSpriteBody:
+		Type: cafncg
+
+cafncm:
+	Inherits: ^Fence
+	Tooltip:
+		Name: Purple Fence
+	LineBuild:
+		NodeTypes: cafncm
+	LineBuildNode:
+		Types: cafncm
+	WithWallSpriteBody:
+		Type: cafncm
 
 gasand:
 	Inherits: ^Fence
 	Tooltip:
 		Name: Sandbags
-		Description: Sandbags.\nCrushable by vehicles.
 	SoundOnDamageTransition:
 		DamagedSounds: gsancrua.wav, gsancrub.wav
 		DestroyedSounds: gsancrua.wav, gsancrub.wav
-
-cabhut:
-	Inherits: ^CivBuilding
-	Tooltip:
-		Name: Bridge Repair Hut
-	Health:
-		HP: 2000
-	MapEditorData:
-		Categories: System
+	LineBuild:
+		NodeTypes: gasand
+	LineBuildNode:
+		Types: gasand
+	WithWallSpriteBody:
+		Type: gasand
 
 cafncp:
 	Inherits: ^Fence
 	Tooltip:
 		Name: Prison Camp Fence
-		Description: Fence.\nCrushable by vehicles.
+	LineBuild:
+		NodeTypes: cafncp
+	LineBuildNode:
+		Types: cafncp
+	WithWallSpriteBody:
+		Type: cafncp
 
 cahse01:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x2Shape
-	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 600
 	Building:
 		Dimensions: 3,2
 		Footprint: xxx xxx
@@ -59,8 +110,6 @@ cahse01.rubble:
 cahse02:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x2Shape
-	RevealsShroud:
-		Range: 6c0
 	Health:
 		HP: 400
 	Building:
@@ -81,8 +130,6 @@ cahse02.rubble:
 cahse03:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x4Shape
-	RevealsShroud:
-		Range: 6c0
 	Health:
 		HP: 400
 	Building:
@@ -104,9 +151,7 @@ cahse04:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x2Shape
 	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 400
+		Range: 8c0
 	Building:
 		Dimensions: 3,2
 		Footprint: xxx xxx
@@ -125,8 +170,6 @@ cahse04.rubble:
 cahse05:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^1x2Shape
-	RevealsShroud:
-		Range: 6c0
 	Health:
 		HP: 300
 	Building:
@@ -147,13 +190,12 @@ cahse05.rubble:
 cahse06:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^2x1Shape
-	RevealsShroud:
-		Range: 6c0
 	Health:
 		HP: 300
 	Building:
 		Dimensions: 2,1
 		Footprint: xx
+	
 	SpawnActorOnDeath:
 		Actor: cahse06.rubble
 
@@ -169,8 +211,6 @@ cahse06.rubble:
 cahse07:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^2x3Shape
-	RevealsShroud:
-		Range: 6c0
 	Health:
 		HP: 600
 	Building:
@@ -193,9 +233,9 @@ cawt01:
 	Tooltip:
 		Name: Water Tower
 	Armor:
-		Type: Steel
+		Type: Concrete
 	RevealsShroud:
-		Range: 6c0
+		Range: 8c0
 	Health:
 		HP: 400
 
@@ -205,9 +245,9 @@ cats01:
 	Tooltip:
 		Name: Twin Silos
 	Armor:
-		Type: Steel
+		Type: Concrete
 	RevealsShroud:
-		Range: 6c0
+		Range: 8c0
 	Health:
 		HP: 300
 	Building:
@@ -215,17 +255,16 @@ cats01:
 		Footprint: xx xx
 
 cabarn02:
-	Inherits: ^CivBuilding
+	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^2x2Shape
 	Tooltip:
 		Name: Barn
-	RevealsShroud:
-		Range: 6c0
 	Health:
 		HP: 500
 	Building:
 		Dimensions: 2,2
 		Footprint: xx xx
+	
 
 cawash01:
 	Inherits: ^CivBuilding
@@ -240,7 +279,7 @@ cawash01:
 	Armor:
 		Type: Concrete
 	RevealsShroud:
-		Range: 6c0
+		Range: 8c0
 	SpawnActorOnDeath:
 		Actor: cawash01.rubble
 
@@ -259,12 +298,6 @@ cawash03:
 	Building:
 		Footprint: xxxx xxxx xxxx
 		Dimensions: 4, 3
-	Health:
-		HP: 1000
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
 	SpawnActorOnDeath:
 		Actor: cawash03.rubble
 
@@ -283,12 +316,6 @@ cawash04:
 	Building:
 		Footprint: xxxx xxxx xxxx xxxx
 		Dimensions: 4, 4
-	Health:
-		HP: 1000
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
 	SpawnActorOnDeath:
 		Actor: cawash04.rubble
 
@@ -307,12 +334,6 @@ cawash05:
 	Building:
 		Footprint: xxxx xxxx
 		Dimensions: 4, 2
-	Health:
-		HP: 1000
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
 	SpawnActorOnDeath:
 		Actor: cawash05.rubble
 
@@ -328,12 +349,6 @@ cawash05.rubble:
 cawash06:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^4x4Shape
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 1000
 	Building:
 		Dimensions: 4,4
 		Footprint: xxxx xxxx xxxx xxxx
@@ -355,12 +370,6 @@ cawash07:
 	Building:
 		Footprint: xxx xxx xxx
 		Dimensions: 3, 3
-	Health:
-		HP: 1000
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
 	SpawnActorOnDeath:
 		Actor: cawash07.rubble
 
@@ -376,12 +385,6 @@ cawash07.rubble:
 cawash08:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x4Shape
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 1000
 	Building:
 		Dimensions: 3,4
 		Footprint: xxx xxx xxx xxx
@@ -403,12 +406,6 @@ cawash09:
 	Building:
 		Footprint: xxx xxx xxx
 		Dimensions: 3, 3
-	Health:
-		HP: 1000
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
 	SpawnActorOnDeath:
 		Actor: cawash09.rubble
 
@@ -427,12 +424,6 @@ cawash10:
 	Building:
 		Footprint: xxxx xxxx xxxx xxxx
 		Dimensions: 4, 4
-	Health:
-		HP: 1000
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
 	SpawnActorOnDeath:
 		Actor: cawash10.rubble
 
@@ -451,12 +442,6 @@ cawash11:
 	Building:
 		Footprint: xxxx xxxx xxxx xxxx
 		Dimensions: 4, 4
-	Health:
-		HP: 1000
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
 	SpawnActorOnDeath:
 		Actor: cawash11.rubble
 
@@ -470,7 +455,7 @@ cawash11.rubble:
 		Image: cawash11
 
 cawsh12:
-	Inherits: ^GarrisonableBuilding
+	Inherits: ^CivBuilding
 	Inherits@shape: ^3x3Shape
 	Building:
 		Footprint: xxx xxx xxx
@@ -482,13 +467,13 @@ cawsh12:
 	Armor:
 		Type: Concrete
 	RevealsShroud:
-		Range: 6c0
+		Range: 8c0
 	Turreted:
 		TurnSpeed: 255
 	BodyOrientation:
 		QuantizedFacings: 8
 	Cargo:
-		Types: Infantry
+		Types: Garrisoner
 		MaxWeight: 5
 		PipCount: 5
 	AttackGarrisoned:
@@ -512,12 +497,6 @@ cawsh12.rubble:
 cawash13:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x4Shape
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 1000
 	Building:
 		Dimensions: 3,4
 		Footprint: xxx xxx xxx xxx
@@ -589,7 +568,7 @@ cawash16:
 	Armor:
 		Type: Concrete
 	RevealsShroud:
-		Range: 6c0
+		Range: 8c0
 	Health:
 		HP: 1000
 	Building:
@@ -612,12 +591,6 @@ cawash17:
 	Inherits@shape: ^6x4Shape
 	Tooltip:
 		Name: Smithsonian Natural History Museum
-	Armor:
-		Type: Concrete
-	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 1000
 	Building:
 		Dimensions: 6,4
 		Footprint: xxxxxx xxxxxx xxxxxx xxxxxx
@@ -641,7 +614,7 @@ cawash18:
 	Armor:
 		Type: Concrete
 	RevealsShroud:
-		Range: 6c0
+		Range: 8c0
 	Health:
 		HP: 200
 	Building:
@@ -660,12 +633,14 @@ cawash19:
 	Armor:
 		Type: Concrete
 	RevealsShroud:
-		Range: 6c0
+		Range: 8c0
 	Health:
 		HP: 500
 	Building:
 		Dimensions: 4,4
 		Footprint: xxxx xxxx xxxx xxxx
+	WithIdleOverlay@flag:
+		Sequence: idle-flag
 	SpawnActorOnDeath:
 		Actor: cawash19.rubble
 
@@ -684,12 +659,6 @@ canewy01:
 	Building:
 		Footprint: xxxx xxxx xxxx xxxx
 		Dimensions: 4, 4
-	Health:
-		HP: 1000
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 4c0
 	SpawnActorOnDeath:
 		Actor: canewy01.rubble
 
@@ -710,7 +679,7 @@ canewy04:
 	Armor:
 		Type: Concrete
 	RevealsShroud:
-		Range: 4c0
+		Range: 8c0
 	Health:
 		HP: 1000
 	Building:
@@ -718,6 +687,8 @@ canewy04:
 		Footprint: xxx xxx xxx
 	SpawnActorOnDeath:
 		Actor: canewy04.rubble
+	RenderSprites:
+		Palette: liberty
 
 canewy04.rubble:
 	Inherits: ^Rubble
@@ -729,14 +700,14 @@ canewy04.rubble:
 		Image: canewy04
 
 canewy05:
-	Inherits: ^GarrisonableBuilding
+	Inherits: ^CivBuilding
 	Inherits@shape: ^2x2Shape
 	Tooltip:
 		Name: World Trade Center
 	Armor:
 		Type: Concrete
 	RevealsShroud:
-		Range: 4c0
+		Range: 10c0
 	Health:
 		HP: 1000
 	Building:
@@ -746,12 +717,6 @@ canewy05:
 canewy06:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x3Shape
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 1000
 	Building:
 		Dimensions: 3,3
 		Footprint: xxx xxx xxx
@@ -770,12 +735,6 @@ canewy06.rubble:
 canewy07:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x3Shape
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 1000
 	Building:
 		Dimensions: 3,3
 		Footprint: xxx xxx xxx
@@ -794,12 +753,6 @@ canewy07.rubble:
 canewy08:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x3Shape
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 1000
 	Building:
 		Dimensions: 3,3
 		Footprint: xxx xxx xxx
@@ -818,12 +771,6 @@ canewy08.rubble:
 canewy10:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x2Shape
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 1000
 	Building:
 		Dimensions: 3,2
 		Footprint: xxx xxx
@@ -842,12 +789,6 @@ canewy10.rubble:
 canewy11:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x2Shape
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 1000
 	Building:
 		Dimensions: 3,2
 		Footprint: xxx xxx
@@ -866,12 +807,6 @@ canewy11.rubble:
 canewy12:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^2x3Shape
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 1000
 	Building:
 		Dimensions: 2,3
 		Footprint: xx xx xx
@@ -890,12 +825,6 @@ canewy12.rubble:
 canewy13:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x3Shape
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 1000
 	Building:
 		Dimensions: 3,3
 		Footprint: xxx xxx xxx
@@ -914,12 +843,6 @@ canewy13.rubble:
 canewy14:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x3Shape
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 1000
 	Building:
 		Dimensions: 3,3
 		Footprint: xxx xxx xxx
@@ -938,12 +861,6 @@ canewy14.rubble:
 canewy15:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x3Shape
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 1000
 	Building:
 		Dimensions: 3,3
 		Footprint: xxx xxx xxx
@@ -962,12 +879,6 @@ canewy15.rubble:
 canewy16:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^2x2Shape
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 1000
 	Building:
 		Dimensions: 2,2
 		Footprint: xx xx
@@ -986,12 +897,6 @@ canewy16.rubble:
 canewy17:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^2x2Shape
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 1000
 	Building:
 		Dimensions: 2,2
 		Footprint: xx xx
@@ -1010,12 +915,6 @@ canewy17.rubble:
 canewy18:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^2x2Shape
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 1000
 	Building:
 		Dimensions: 2,2
 		Footprint: xx xx
@@ -1036,12 +935,6 @@ canewy20:
 	Inherits@shape: ^3x5Shape
 	Tooltip:
 		Name: Warehouse
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 1000
 	Building:
 		Dimensions: 3,5
 		Footprint: xxx xxx xxx xxx xxx
@@ -1062,12 +955,6 @@ canewy21:
 	Inherits@shape: ^5x3Shape
 	Tooltip:
 		Name: Warehouse
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 1000
 	Building:
 		Dimensions: 5,3
 		Footprint: xxxxx xxxxx xxxxx
@@ -1088,12 +975,6 @@ caswst01:
 	Inherits@shape: ^2x3Shape
 	Tooltip:
 		Name: Southwest Building
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 4c0
-	Health:
-		HP: 1000
 	Building:
 		Dimensions: 2,3
 		Footprint: xx xx xx
@@ -1119,15 +1000,11 @@ caarmy01:
 		Name: Army Tent
 	Health:
 		HP: 200
-	RevealsShroud:
-		Range: 6c0
 
 caarmy02:
 	Inherits: ^GarrisonableBuilding
 	Tooltip:
 		Name: Army Tent
-	RevealsShroud:
-		Range: 6c0
 	Health:
 		HP: 200
 
@@ -1135,8 +1012,6 @@ caarmy03:
 	Inherits: ^GarrisonableBuilding
 	Tooltip:
 		Name: Army Tent
-	RevealsShroud:
-		Range: 6c0
 	Health:
 		HP: 200
 
@@ -1144,25 +1019,15 @@ caarmy04:
 	Inherits: ^GarrisonableBuilding
 	Tooltip:
 		Name: Army Tent
-	RevealsShroud:
-		Range: 6c0
 	Health:
 		HP: 200
 
 cawa2a:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^4x4Shape
-	Valued:
-		Cost: 2000
 	Building:
 		Footprint: xxxx xxxx xxxx xxxx
 		Dimensions: 4, 4
-	Health:
-		HP: 600
-	Armor:
-		Type: Concrete
-	RevealsShroud:
-		Range: 6c0
 	SpawnActorOnDeath:
 		Actor: cawa2a.rubble
 
@@ -1178,17 +1043,9 @@ cawa2a.rubble:
 cawa2b:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^4x4Shape
-	Valued:
-		Cost: 2000
 	Building:
 		Footprint: xxxx xxxx xxxx xxxx
 		Dimensions: 4, 4
-	Health:
-		HP: 600
-	Armor:
-		Type: Concrete
-	RevealsShroud:
-		Range: 6c0
 	SpawnActorOnDeath:
 		Actor: cawa2b.rubble
 
@@ -1204,17 +1061,9 @@ cawa2b.rubble:
 cawa2c:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^4x4Shape
-	Valued:
-		Cost: 2000
 	Building:
 		Footprint: xxxx xxxx xxxx xxxx
 		Dimensions: 4, 4
-	Health:
-		HP: 600
-	Armor:
-		Type: Concrete
-	RevealsShroud:
-		Range: 6c0
 	SpawnActorOnDeath:
 		Actor: cawa2c.rubble
 
@@ -1230,17 +1079,9 @@ cawa2c.rubble:
 cawa2d:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^4x4Shape
-	Valued:
-		Cost: 2000
 	Building:
 		Footprint: xxxx xxxx xxxx xxxx
 		Dimensions: 4, 4
-	Health:
-		HP: 600
-	Armor:
-		Type: Concrete
-	RevealsShroud:
-		Range: 6c0
 	SpawnActorOnDeath:
 		Actor: cawa2d.rubble
 
@@ -1263,8 +1104,6 @@ cafarm01:
 		Name: Farm
 	Health:
 		HP: 400
-	RevealsShroud:
-		Range: 4c0
 
 cafarm02:
 	Inherits: ^CivBuilding
@@ -1288,15 +1127,12 @@ cafarm06:
 	Inherits@shape: ^2x2Shape
 	Tooltip:
 		Name: Lighthouse
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
 	Health:
 		HP: 500
 	Building:
 		Dimensions: 2,2
 		Footprint: xx xx
+	
 	SpawnActorOnDeath:
 		Actor: cafarm06.rubble
 
@@ -1312,12 +1148,12 @@ cafarm06.rubble:
 causfgl:
 	Inherits: ^Flag
 	Tooltip:
-		Name: US Flag
+		Name: American Flag
 
 carufgl:
 	Inherits: ^Flag
 	Tooltip:
-		Name: Russian Flag
+		Name: Soviet Flag
 
 cairfgl:
 	Inherits: ^Flag
@@ -1332,7 +1168,7 @@ capofgl:
 caskfgl:
 	Inherits: ^Flag
 	Tooltip:
-		Name: South Korean Flag
+		Name: Korean Flag
 
 calbfgl:
 	Inherits: ^Flag
@@ -1359,6 +1195,76 @@ caukfgl:
 	Tooltip:
 		Name: British Flag
 
+cavnfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Vietnamese Flag
+
+caicfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Icelandic Flag
+
+canwfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Norwegian Flag
+
+caswfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Swedish Flag
+
+cafifgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Finnish Flag
+
+caesfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Estonian Flag
+
+calafgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Latvian Flag
+
+califgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Lithuanian Flag
+
+canlfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Dutch Flag
+
+caeifgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Irish Flag
+
+canlfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Dutch Flag
+
+caspfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Spanish Flag
+
+cajpfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Japanese Flag
+
+cangfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Nigerian Flag
+
 cacolo01:
 	Inherits: ^CivBuilding
 	Inherits@shape: ^5x3Shape
@@ -1372,7 +1278,7 @@ cacolo01:
 	Armor:
 		Type: Concrete
 	RevealsShroud:
-		Range: 6c0
+		Range: 8c0
 	SpawnActorOnDeath:
 		Actor: cacolo01.rubble
 
@@ -1386,19 +1292,13 @@ cacolo01.rubble:
 		Image: cacolo01
 
 caind01:
-	Inherits: ^CivBuilding
+	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^4x4Shape
 	Building:
 		Footprint: xxxx xxxx xxxx xxxx
 		Dimensions: 4, 4
 	Tooltip:
 		Name: Factory
-	Health:
-		HP: 1000
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
 	SpawnActorOnDeath:
 		Actor: caind01.rubble
 
@@ -1419,12 +1319,6 @@ calab:
 		Dimensions: 3, 4
 	Tooltip:
 		Name: Einstein's Lab
-	Health:
-		HP: 1000
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
 	SpawnActorOnDeath:
 		Actor: calab.rubble
 
@@ -1445,10 +1339,6 @@ cagas01:
 		Dimensions: 3, 3
 	Tooltip:
 		Name: Gas Station
-	Health:
-		HP: 1000
-	RevealsShroud:
-		Range: 6c0
 	SpawnActorOnDeath:
 		Actor: cagas01.rubble
 
@@ -1468,7 +1358,7 @@ galite:
 	Valued:
 		Cost: 200
 	RevealsShroud:
-		Range: 0c0
+		Range: 8c0
 	Health:
 		HP: 600
 	Power:
@@ -1484,12 +1374,12 @@ galite:
 		Categories: Decoration
 
 cacity01:
-	Inherits: ^GarrisonableBuilding
+	Inherits: ^CivBuilding
 	Inherits@shape: ^4x4Shape
 	Armor:
-		Type: Steel
+		Type: Concrete
 	RevealsShroud:
-		Range: 4c0
+		Range: 8c0
 	Health:
 		HP: 1000
 	Building:
@@ -1500,12 +1390,12 @@ cacity01:
 		Palette: city
 
 cacity02:
-	Inherits: ^GarrisonableBuilding
+	Inherits: ^CivBuilding
 	Inherits@shape: ^5x4Shape
 	Armor:
-		Type: Steel
+		Type: Concrete
 	RevealsShroud:
-		Range: 4c0
+		Range: 8c0
 	Health:
 		HP: 1000
 	Building:
@@ -1516,12 +1406,12 @@ cacity02:
 		Palette: city
 
 cacity03:
-	Inherits: ^GarrisonableBuilding
+	Inherits: ^CivBuilding
 	Inherits@shape: ^3x3Shape
 	Armor:
-		Type: Steel
+		Type: Concrete
 	RevealsShroud:
-		Range: 4c0
+		Range: 8c0
 	Health:
 		HP: 1000
 	Building:
@@ -1532,12 +1422,12 @@ cacity03:
 		Palette: city
 
 cacity04:
-	Inherits: ^GarrisonableBuilding
+	Inherits: ^CivBuilding
 	Inherits@shape: ^4x4Shape
 	Armor:
-		Type: Steel
+		Type: Concrete
 	RevealsShroud:
-		Range: 4c0
+		Range: 8c0
 	Health:
 		HP: 1000
 	Building:
@@ -1548,14 +1438,14 @@ cacity04:
 		Palette: city
 
 city05:
-	Inherits: ^GarrisonableBuilding
+	Inherits: ^CivBuilding
 	Inherits@shape: ^4x4Shape
 	Tooltip:
 		Name: Battersea Power Station
 	Armor:
-		Type: Steel
+		Type: Concrete
 	RevealsShroud:
-		Range: 4c0
+		Range: 8c0
 	Health:
 		HP: 1000
 	Building:
@@ -1569,11 +1459,7 @@ catech01:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x3Shape
 	Tooltip:
-		Name: Communications
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 4c0
+		Name: Communications Center
 	Health:
 		HP: 400
 	Building:
@@ -1594,12 +1480,6 @@ catech01.rubble:
 catexs01:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^2x2Shape
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 4c0
-	Health:
-		HP: 1000
 	Building:
 		Dimensions: 2,2
 		Footprint: xx xx
@@ -1622,10 +1502,8 @@ catexs02:
 		Name: Alamo
 	Armor:
 		Type: Concrete
-	RevealsShroud:
-		Range: 6c0
 	Health:
-		HP: 2000
+		HP: 1000
 	Building:
 		Dimensions: 4,4
 		Footprint: xxxx xxxx xxxx xxxx
@@ -1644,12 +1522,6 @@ catexs02.rubble:
 catexs03:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x3Shape
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 1000
 	Building:
 		Dimensions: 3,3
 		Footprint: xxx xxx xxx
@@ -1668,12 +1540,6 @@ catexs03.rubble:
 catexs04:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x3Shape
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 1000
 	Building:
 		Dimensions: 3,3
 		Footprint: xxx xxx xxx
@@ -1692,12 +1558,6 @@ catexs04.rubble:
 catexs05:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x3Shape
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 1000
 	Building:
 		Dimensions: 3,3
 		Footprint: xxx xxx xxx
@@ -1716,12 +1576,6 @@ catexs05.rubble:
 catexs06:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x3Shape
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 1000
 	Building:
 		Dimensions: 3,3
 		Footprint: xxx xxx xxx
@@ -1740,12 +1594,6 @@ catexs06.rubble:
 catexs07:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x3Shape
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 1000
 	Building:
 		Dimensions: 3,3
 		Footprint: xxx xxx xxx
@@ -1764,12 +1612,6 @@ catexs07.rubble:
 catexs08:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^2x3Shape
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 1000
 	Building:
 		Dimensions: 2,3
 		Footprint: xx xx xx
@@ -1791,7 +1633,7 @@ capars01:
 	Tooltip:
 		Name: Eiffel Tower
 	Armor:
-		Type: Steel
+		Type: Concrete
 	Health:
 		HP: 3000
 	Power:
@@ -1814,12 +1656,6 @@ capars01.rubble:
 capars02:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^6x4Shape
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 1000
 	Building:
 		Dimensions: 6,4
 		Footprint: xxxxxx xxxxxx xxxxxx xxxxxx
@@ -1838,10 +1674,6 @@ capars02.rubble:
 capars04:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x3Shape
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
 	Health:
 		HP: 500
 	Building:
@@ -1862,10 +1694,6 @@ capars04.rubble:
 capars05:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x3Shape
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
 	Health:
 		HP: 500
 	Building:
@@ -1886,10 +1714,6 @@ capars05.rubble:
 capars06:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x3Shape
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
 	Health:
 		HP: 500
 	Building:
@@ -1912,7 +1736,7 @@ capars07:
 	Tooltip:
 		Name: Phone Booth
 	RevealsShroud:
-		Range: 6c0
+		Range: 8c0
 	Health:
 		HP: 100
 	MapEditorData:
@@ -1921,12 +1745,6 @@ capars07:
 capars08:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^6x4Shape
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 1000
 	Building:
 		Dimensions: 6,4
 		Footprint: xxxxxx xxxxxx xxxxxx xxxxxx
@@ -1945,12 +1763,6 @@ capars08.rubble:
 capars09:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^6x4Shape
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 1000
 	Building:
 		Dimensions: 6,4
 		Footprint: xxxxxx xxxxxx xxxxxx xxxxxx
@@ -1971,10 +1783,6 @@ capars10:
 	Inherits@shape: ^4x3Shape
 	Tooltip:
 		Name: Bistro
-	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 1000
 	Building:
 		Dimensions: 4,3
 		Footprint: xxxx xxxx xxxx
@@ -1998,7 +1806,7 @@ capars11:
 	Armor:
 		Type: Concrete
 	RevealsShroud:
-		Range: 6c0
+		Range: 8c0
 	Health:
 		HP: 1000
 	Building:
@@ -2017,14 +1825,10 @@ capars11.rubble:
 		Image: capars11
 
 capars12:
-	Inherits: ^CivBuilding
+	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x5Shape
 	Tooltip:
 		Name: Notre Dame
-	Armor:
-		Type: Concrete
-	RevealsShroud:
-		Range: 6c0
 	Health:
 		HP: 1000
 	Building:
@@ -2047,12 +1851,6 @@ capars13:
 	Inherits@shape: ^3x4Shape
 	Tooltip:
 		Name: Bistro
-	Armor:
-		Type: Concrete
-	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 1000
 	Building:
 		Dimensions: 3,4
 		Footprint: xxx xxx xxx xxx
@@ -2073,12 +1871,6 @@ capars14:
 	Inherits@shape: ^4x3Shape
 	Tooltip:
 		Name: Bistro
-	Armor:
-		Type: Concrete
-	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 1000
 	Building:
 		Dimensions: 4,3
 		Footprint: xxxx xxxx xxxx
@@ -2099,8 +1891,6 @@ cafrma:
 	Inherits@shape: ^2x2Shape
 	Tooltip:
 		Name: Farmhouse
-	RevealsShroud:
-		Range: 4c0
 	Health:
 		HP: 400
 	Building:
@@ -2112,7 +1902,7 @@ cafrmb:
 	Tooltip:
 		Name: Outhouse
 	RevealsShroud:
-		Range: 4c0
+		Range: 8c0
 	Health:
 		HP: 50
 	MapEditorData:
@@ -2123,12 +1913,8 @@ caprs03:
 	Inherits@shape: ^6x4Shape
 	Tooltip:
 		Name: Louvre
-	Armor:
-		Type: Concrete
-	RevealsShroud:
-		Range: 6c0
 	Health:
-		HP: 500
+		HP: 800
 	Building:
 		Dimensions: 6,4
 		Footprint: xxxxxx xxxxxx xxxxxx xxxxxx
@@ -2149,9 +1935,9 @@ cagard01:
 	Tooltip:
 		Name: Guard Shack
 	Armor:
-		Type: Steel
+		Type: Concrete
 	RevealsShroud:
-		Range: 6c0
+		Range: 8c0
 	Health:
 		HP: 100
 	WithIdleOverlay@flag:
@@ -2160,14 +1946,10 @@ cagard01:
 		Categories: Decoration
 
 carus01:
-	Inherits: ^CivBuilding
+	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^4x4Shape
 	Tooltip:
-		Name: Basil's Cathedral
-	Armor:
-		Type: Concrete
-	RevealsShroud:
-		Range: 6c0
+		Name: St. Basil's Cathedral
 	Health:
 		HP: 1000
 	Building:
@@ -2186,7 +1968,7 @@ carus01.rubble:
 		Image: carus01
 
 carus02a:
-	Inherits: ^GarrisonableBuilding
+	Inherits: ^CivBuilding
 	Armor:
 		Type: Concrete
 	Health:
@@ -2207,7 +1989,7 @@ carus02a.rubble:
 		RequireTilesets: SNOW
 
 carus02b:
-	Inherits: ^GarrisonableBuilding
+	Inherits: ^CivBuilding
 	Armor:
 		Type: Concrete
 	Health:
@@ -2224,13 +2006,9 @@ carus02b.rubble:
 		Image: carus02b
 
 carus02g:
-	Inherits: ^CivBuilding
+	Inherits: ^GarrisonableBuilding
 	Tooltip:
 		Name: Kremlin Wall Clock Tower
-	Armor:
-		Type: Concrete
-	RevealsShroud:
-		Range: 6c0
 	Health:
 		HP: 1000
 	SpawnActorOnDeath:
@@ -2244,14 +2022,10 @@ carus02g.rubble:
 		Image: carus02g
 
 carus03:
-	Inherits: ^CivBuilding
+	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^2x5Shape
 	Tooltip:
 		Name: Kremlin Palace
-	Armor:
-		Type: Concrete
-	RevealsShroud:
-		Range: 6c0
 	Health:
 		HP: 1000
 	Building:
@@ -2272,12 +2046,6 @@ carus03.rubble:
 carus04:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^4x4Shape
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 1000
 	Building:
 		Dimensions: 4,4
 		Footprint: xxxx xxxx xxxx xxxx
@@ -2296,12 +2064,6 @@ carus04.rubble:
 carus05:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^4x4Shape
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 1000
 	Building:
 		Dimensions: 4,4
 		Footprint: xxxx xxxx xxxx xxxx
@@ -2309,7 +2071,7 @@ carus05:
 		Actor: carus05.rubble
 
 carus05.rubble:
-	Inherits: ^GarrisonableBuilding
+	Inherits: ^Rubble
 	Inherits@shape: ^4x4Shape
 	Building:
 		Dimensions: 4,4
@@ -2320,12 +2082,6 @@ carus05.rubble:
 carus06:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^4x4Shape
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 1000
 	Building:
 		Dimensions: 4,4
 		Footprint: xxxx xxxx xxxx xxxx
@@ -2343,12 +2099,7 @@ carus06.rubble:
 
 carus08:
 	Inherits: ^GarrisonableBuilding
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 1000
+	
 	SpawnActorOnDeath:
 		Actor: carus08.rubble
 
@@ -2360,15 +2111,10 @@ carus08.rubble:
 carus09:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^2x1Shape
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 1000
 	Building:
 		Dimensions: 2,1
 		Footprint: xx
+	
 	SpawnActorOnDeath:
 		Actor: carus09.rubble
 
@@ -2384,15 +2130,10 @@ carus09.rubble:
 carus10:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^1x2Shape
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 1000
 	Building:
 		Dimensions: 1,2
 		Footprint: x x
+	
 	SpawnActorOnDeath:
 		Actor: carus10.rubble
 
@@ -2408,15 +2149,10 @@ carus10.rubble:
 carus11:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^2x1Shape
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 1000
 	Building:
 		Dimensions: 2,1
 		Footprint: xx
+	
 	SpawnActorOnDeath:
 		Actor: carus11.rubble
 
@@ -2432,12 +2168,6 @@ carus11.rubble:
 camiam01:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^4x2Shape
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 1000
 	Building:
 		Dimensions: 4,2
 		Footprint: xxxx xxxx
@@ -2456,12 +2186,6 @@ camiam01.rubble:
 camiam02:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^4x2Shape
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 1000
 	Building:
 		Dimensions: 4,2
 		Footprint: xxxx xxxx
@@ -2480,12 +2204,6 @@ camiam02.rubble:
 camiam03:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^2x3Shape
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 1000
 	Building:
 		Dimensions: 2,3
 		Footprint: xx xx xx
@@ -2502,11 +2220,9 @@ camiam03.rubble:
 		Image: camiam03
 
 camiam04:
-	Inherits: ^CivBuilding
+	Inherits: ^GarrisonableBuilding
 	Tooltip:
 		Name: Lifeguard Hut
-	RevealsShroud:
-		Range: 6c0
 	Health:
 		HP: 200
 	MapEditorData:
@@ -2515,12 +2231,6 @@ camiam04:
 camiam05:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x4Shape
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 1000
 	Building:
 		Dimensions: 3,4
 		Footprint: xxx xxx xxx xxx
@@ -2539,12 +2249,6 @@ camiam05.rubble:
 camiam06:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^4x4Shape
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 1000
 	Building:
 		Dimensions: 4,4
 		Footprint: xxxx xxxx xxxx xxxx
@@ -2562,12 +2266,7 @@ camiam06.rubble:
 
 camiam07:
 	Inherits: ^GarrisonableBuilding
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 1000
+	Inherits@shape: ^4x4Shape
 	Building:
 		Dimensions: 4,4
 		Footprint: xxxx xxxx xxxx xxxx
@@ -2588,9 +2287,9 @@ camiam08:
 	Tooltip:
 		Name: Arizona Memorial
 	Armor:
-		Type: Steel
+		Type: Concrete
 	RevealsShroud:
-		Range: 6c0
+		Range: 8c0
 	Health:
 		HP: 1000
 	Building:
@@ -2611,12 +2310,6 @@ camiam08.rubble:
 canwy05:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^4x4Shape
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 1000
 	Building:
 		Dimensions: 4,4
 		Footprint: xxxx xxxx xxxx xxxx
@@ -2635,10 +2328,6 @@ canwy05.rubble:
 canwy09:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^2x3Shape
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
 	Health:
 		HP: 400
 	Building:
@@ -2659,10 +2348,6 @@ canwy09.rubble:
 canwy22:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x3Shape
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
 	Health:
 		HP: 400
 	Building:
@@ -2683,10 +2368,6 @@ canwy22.rubble:
 canwy23:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x2Shape
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
 	Health:
 		HP: 400
 	Building:
@@ -2707,10 +2388,6 @@ canwy23.rubble:
 canwy24:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x3Shape
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
 	Health:
 		HP: 400
 	Building:
@@ -2731,10 +2408,6 @@ canwy24.rubble:
 canwy25:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x3Shape
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
 	Health:
 		HP: 400
 	Building:
@@ -2755,10 +2428,6 @@ canwy25.rubble:
 canwy26:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^5x3Shape
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
 	Health:
 		HP: 400
 	Building:
@@ -2784,7 +2453,7 @@ camex01:
 	Armor:
 		Type: Concrete
 	RevealsShroud:
-		Range: 12c0
+		Range: 8c0
 	Health:
 		HP: 2000
 	Building:
@@ -2803,16 +2472,10 @@ camex01.rubble:
 		Image: camex01
 
 camex02:
-	Inherits: ^CivBuilding
+	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^6x4Shape
 	Tooltip:
 		Name: Mayan Castillo
-	Armor:
-		Type: Concrete
-	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 1000
 	Building:
 		Dimensions: 6,4
 		Footprint: xxxxxx xxxxxx xxxxxx xxxxxx
@@ -2836,7 +2499,7 @@ camex03:
 	Armor:
 		Type: Concrete
 	RevealsShroud:
-		Range: 6c0
+		Range: 8c0
 	Health:
 		HP: 1000
 	Building:
@@ -2862,7 +2525,7 @@ camex04:
 	Armor:
 		Type: Concrete
 	RevealsShroud:
-		Range: 6c0
+		Range: 8c0
 	Health:
 		HP: 1000
 	Building:
@@ -2888,7 +2551,7 @@ camex05:
 	Armor:
 		Type: Concrete
 	RevealsShroud:
-		Range: 6c0
+		Range: 8c0
 	Health:
 		HP: 1000
 	Building:
@@ -2911,8 +2574,6 @@ caeur1:
 	Inherits@shape: ^2x2Shape
 	Tooltip:
 		Name: Cottage
-	RevealsShroud:
-		Range: 6c0
 	Health:
 		HP: 300
 	Building:
@@ -2935,8 +2596,6 @@ caeur2:
 	Inherits@shape: ^2x2Shape
 	Tooltip:
 		Name: Cottage
-	RevealsShroud:
-		Range: 6c0
 	Health:
 		HP: 300
 	Building:
@@ -2957,10 +2616,6 @@ caeur2.rubble:
 caeur04:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^4x3Shape
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
 	Health:
 		HP: 400
 	Building:
@@ -2981,12 +2636,6 @@ caeur04.rubble:
 cachig01:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x2Shape
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 1000
 	Building:
 		Dimensions: 3,2
 		Footprint: xxx xxx
@@ -3005,12 +2654,6 @@ cachig01.rubble:
 cachig02:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^2x3Shape
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 1000
 	Building:
 		Dimensions: 2,3
 		Footprint: xx xx xx
@@ -3029,12 +2672,6 @@ cachig02.rubble:
 cachig03:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x2Shape
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 1000
 	Building:
 		Dimensions: 3,2
 		Footprint: xxx xxx
@@ -3051,16 +2688,10 @@ cachig03.rubble:
 		Image: cachig03
 
 cachig04:
-	Inherits: ^CivBuilding
+	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^2x2Shape
 	Tooltip:
 		Name: Associates Center
-	Armor:
-		Type: Concrete
-	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 1000
 	Building:
 		Dimensions: 2,2
 		Footprint: xx xx
@@ -3081,10 +2712,8 @@ cachig05:
 	Inherits@shape: ^4x4Shape
 	Tooltip:
 		Name: Sears Tower
-	Armor:
-		Type: Concrete
 	RevealsShroud:
-		Range: 6c0
+		Range: 10c0
 	Health:
 		HP: 1000
 	Building:
@@ -3108,7 +2737,7 @@ cachig06:
 	Tooltip:
 		Name: Water Tower
 	Armor:
-		Type: Steel
+		Type: Concrete
 	Health:
 		HP: 1000
 	Building:
@@ -3129,12 +2758,6 @@ cachig06.rubble:
 castl01:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^4x4Shape
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 1000
 	Building:
 		Dimensions: 4,4
 		Footprint: xxxx xxxx xxxx xxxx
@@ -3153,12 +2776,6 @@ castl01.rubble:
 castl02:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^4x4Shape
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 1000
 	Building:
 		Dimensions: 4,4
 		Footprint: xxxx xxxx xxxx xxxx
@@ -3177,12 +2794,6 @@ castl02.rubble:
 castl03:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^4x4Shape
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 1000
 	Building:
 		Dimensions: 4,4
 		Footprint: xxxx xxxx xxxx xxxx
@@ -3201,12 +2812,6 @@ castl03.rubble:
 castl04:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^2x6Shape
-	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 1000
 	Building:
 		Dimensions: 2,6
 		Footprint: xx xx xx xx xx xx
@@ -3227,10 +2832,6 @@ castl05a:
 	Inherits@shape: ^4x4Shape
 	Tooltip:
 		Name: Busch Stadium
-	Armor:
-		Type: Concrete
-	RevealsShroud:
-		Range: 6c0
 	Health:
 		HP: 600
 	Building:
@@ -3253,10 +2854,6 @@ castl05b:
 	Inherits@shape: ^4x4Shape
 	Tooltip:
 		Name: Busch Stadium
-	Armor:
-		Type: Concrete
-	RevealsShroud:
-		Range: 6c0
 	Health:
 		HP: 600
 	Building:
@@ -3279,10 +2876,6 @@ castl05c:
 	Inherits@shape: ^4x4Shape
 	Tooltip:
 		Name: Busch Stadium
-	Armor:
-		Type: Concrete
-	RevealsShroud:
-		Range: 6c0
 	Health:
 		HP: 600
 	Building:
@@ -3305,10 +2898,6 @@ castl05d:
 	Inherits@shape: ^4x4Shape
 	Tooltip:
 		Name: Busch Stadium
-	Armor:
-		Type: Concrete
-	RevealsShroud:
-		Range: 6c0
 	Health:
 		HP: 600
 	Building:
@@ -3331,10 +2920,6 @@ castl05e:
 	Inherits@shape: ^4x4Shape
 	Tooltip:
 		Name: Busch Stadium
-	Armor:
-		Type: Concrete
-	RevealsShroud:
-		Range: 6c0
 	Health:
 		HP: 600
 	Building:
@@ -3357,10 +2942,6 @@ castl05f:
 	Inherits@shape: ^4x4Shape
 	Tooltip:
 		Name: Busch Stadium
-	Armor:
-		Type: Concrete
-	RevealsShroud:
-		Range: 6c0
 	Health:
 		HP: 600
 	Building:
@@ -3383,10 +2964,6 @@ castl05g:
 	Inherits@shape: ^4x4Shape
 	Tooltip:
 		Name: Busch Stadium
-	Armor:
-		Type: Concrete
-	RevealsShroud:
-		Range: 6c0
 	Health:
 		HP: 600
 	Building:
@@ -3409,10 +2986,6 @@ castl05h:
 	Inherits@shape: ^4x4Shape
 	Tooltip:
 		Name: Busch Stadium
-	Armor:
-		Type: Concrete
-	RevealsShroud:
-		Range: 6c0
 	Health:
 		HP: 600
 	Building:
@@ -3435,45 +3008,36 @@ camsc07:
 	Inherits@shape: ^2x2Shape
 	Tooltip:
 		Name: Thatched Hut Chief
-	Armor:
-		Type: Concrete
-	RevealsShroud:
-		Range: 6c0
 	Health:
 		HP: 600
 	Building:
 		Dimensions: 2,2
 		Footprint: xx xx
+	
 
 camsc08:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^2x2Shape
 	Tooltip:
 		Name: Thatched Hut
-	RevealsShroud:
-		Range: 6c0
 	Health:
 		HP: 200
+	
 
 camsc09:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^2x2Shape
 	Tooltip:
 		Name: Thatched Hut
-	RevealsShroud:
-		Range: 6c0
 	Health:
 		HP: 200
+	
 
 camsc10:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^4x4Shape
 	Tooltip:
 		Name: McBurger Kong
-	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 1000
 	Building:
 		Dimensions: 4,4
 		Footprint: xxxx xxxx xxxx xxxx
@@ -3495,11 +3059,7 @@ cabunk01:
 	Tooltip:
 		Name: Concrete Bunker
 	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 2000
+		Type: Concrete
 	Building:
 		Dimensions: 2,2
 		Footprint: xx xx
@@ -3521,11 +3081,7 @@ cabunk02:
 	Tooltip:
 		Name: Concrete Bunker
 	Armor:
-		Type: Steel
-	RevealsShroud:
-		Range: 6c0
-	Health:
-		HP: 2000
+		Type: Concrete
 	Building:
 		Dimensions: 2,2
 		Footprint: xx xx
@@ -3540,3 +3096,1231 @@ cabunk02.rubble:
 		Footprint: __ __
 	RenderSprites:
 		Image: cabunk02
+
+# Yuri's Revenge Buildings
+cabunk03:
+	Inherits: ^GarrisonableBuilding
+	Inherits@shape: ^2x2Shape
+	Tooltip:
+		Name: Concrete Bunker
+	Armor:
+		Type: Concrete
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+	SpawnActorOnDeath:
+		Actor: cabunk03.rubble
+
+cabunk03.rubble:
+	Inherits: ^Rubble
+	Inherits@shape: ^2x2Shape
+	Building:
+		Dimensions: 2,2
+		Footprint: __ __
+	RenderSprites:
+		Image: cabunk03
+
+cabunk04:
+	Inherits: ^GarrisonableBuilding
+	Inherits@shape: ^2x2Shape
+	Tooltip:
+		Name: Concrete Bunker
+	Armor:
+		Type: Concrete
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+	SpawnActorOnDeath:
+		Actor: cabunk04.rubble
+
+cabunk04.rubble:
+	Inherits: ^Rubble
+	Inherits@shape: ^2x2Shape
+	Building:
+		Dimensions: 2,2
+		Footprint: __ __
+	RenderSprites:
+		Image: cabunk04
+
+camorr01:
+	Inherits: ^GarrisonableBuilding
+	Inherits@shape: ^3x3Shape
+	Tooltip:
+		Name: Building
+	Building:
+		Dimensions: 3,3
+		Footprint: xxx xxx xxx
+	SpawnActorOnDeath:
+		Actor: camorr01.rubble
+
+camorr01.rubble:
+	Inherits: ^Rubble
+	Inherits@shape: ^3x3Shape
+	Building:
+		Dimensions: 3,3
+		Footprint: ___ ___ ___
+	RenderSprites:
+		Image: camorr01
+
+camorr02:
+	Inherits: ^GarrisonableBuilding
+	Inherits@shape: ^3x3Shape
+	Tooltip:
+		Name: Building
+	Building:
+		Dimensions: 3,3
+		Footprint: xxx xxx xxx
+	SpawnActorOnDeath:
+		Actor: camorr02.rubble
+
+camorr02.rubble:
+	Inherits: ^Rubble
+	Inherits@shape: ^3x3Shape
+	Building:
+		Dimensions: 3,3
+		Footprint: ___ ___ ___
+	RenderSprites:
+		Image: camorr02
+
+camorr03:
+	Inherits: ^GarrisonableBuilding
+	Inherits@shape: ^3x3Shape
+	Tooltip:
+		Name: Building
+	Building:
+		Dimensions: 3,3
+		Footprint: xxx xxx xxx
+	SpawnActorOnDeath:
+		Actor: camorr03.rubble
+
+camorr03.rubble:
+	Inherits: ^Rubble
+	Inherits@shape: ^3x3Shape
+	Building:
+		Dimensions: 3,3
+		Footprint: ___ ___ ___
+	RenderSprites:
+		Image: camorr03
+
+camorr04:
+	Inherits: ^GarrisonableBuilding
+	Inherits@shape: ^3x3Shape
+	Tooltip:
+		Name: Building
+	Building:
+		Dimensions: 3,3
+		Footprint: xxx xxx xxx
+	SpawnActorOnDeath:
+		Actor: camorr04.rubble
+
+camorr04.rubble:
+	Inherits: ^Rubble
+	Inherits@shape: ^3x3Shape
+	Building:
+		Dimensions: 3,3
+		Footprint: ___ ___ ___
+	RenderSprites:
+		Image: camorr04
+
+camorr05:
+	Inherits: ^GarrisonableBuilding
+	Inherits@shape: ^3x3Shape
+	Tooltip:
+		Name: Building
+	Building:
+		Dimensions: 3,3
+		Footprint: xxx xxx xxx
+	SpawnActorOnDeath:
+		Actor: camorr05.rubble
+
+camorr05.rubble:
+	Inherits: ^Rubble
+	Inherits@shape: ^3x3Shape
+	Building:
+		Dimensions: 3,3
+		Footprint: ___ ___ ___
+	RenderSprites:
+		Image: camorr05
+
+camorr06:
+	Inherits: ^GarrisonableBuilding
+	Inherits@shape: ^3x3Shape
+	Tooltip:
+		Name: Building
+	Building:
+		Dimensions: 3,3
+		Footprint: xxx xxx xxx
+	SpawnActorOnDeath:
+		Actor: camorr06.rubble
+
+camorr06.rubble:
+	Inherits: ^Rubble
+	Inherits@shape: ^3x3Shape
+	Building:
+		Dimensions: 3,3
+		Footprint: ___ ___ ___
+	RenderSprites:
+		Image: camorr06
+
+camorr07:
+	Inherits: ^GarrisonableBuilding
+	Inherits@shape: ^3x3Shape
+	Tooltip:
+		Name: Building
+	Building:
+		Dimensions: 3,3
+		Footprint: xxx xxx xxx
+	SpawnActorOnDeath:
+		Actor: camorr07.rubble
+
+camorr07.rubble:
+	Inherits: ^Rubble
+	Inherits@shape: ^3x3Shape
+	Building:
+		Dimensions: 3,3
+		Footprint: ___ ___ ___
+	RenderSprites:
+		Image: camorr07
+
+camorr08:
+	Inherits: ^GarrisonableBuilding
+	Inherits@shape: ^3x3Shape
+	Tooltip:
+		Name: Building
+	Building:
+		Dimensions: 3,3
+		Footprint: xxx xxx xxx
+	SpawnActorOnDeath:
+		Actor: camorr08.rubble
+
+camorr08.rubble:
+	Inherits: ^Rubble
+	Inherits@shape: ^3x3Shape
+	Building:
+		Dimensions: 3,3
+		Footprint: ___ ___ ___
+	RenderSprites:
+		Image: camorr08
+
+camorr09:
+	Inherits: ^GarrisonableBuilding
+	Inherits@shape: ^3x3Shape
+	Tooltip:
+		Name: Building
+	Building:
+		Dimensions: 3,3
+		Footprint: xxx xxx xxx
+	SpawnActorOnDeath:
+		Actor: camorr09.rubble
+
+camorr09.rubble:
+	Inherits: ^Rubble
+	Inherits@shape: ^3x3Shape
+	Building:
+		Dimensions: 3,3
+		Footprint: ___ ___ ___
+	RenderSprites:
+		Image: camorr09
+
+camorr10:
+	Inherits: ^GarrisonableBuilding
+	Inherits@shape: ^3x3Shape
+	Tooltip:
+		Name: Building
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+	SpawnActorOnDeath:
+		Actor: camorr10.rubble
+
+camorr10.rubble:
+	Inherits: ^Rubble
+	Inherits@shape: ^3x3Shape
+	Building:
+		Dimensions: 2,2
+		Footprint: __ __
+	RenderSprites:
+		Image: camorr10
+
+cala01:
+	Inherits: ^GarrisonableBuilding
+	Inherits@shape: ^3x3Shape
+	Tooltip:
+		Name: Building
+	Building:
+		Dimensions: 3,3
+		Footprint: xxx xxx xxx
+	SpawnActorOnDeath:
+		Actor: cala01.rubble
+
+cala01.rubble:
+	Inherits: ^Rubble
+	Inherits@shape: ^3x3Shape
+	Building:
+		Dimensions: 3,3
+		Footprint: ___ ___ ___
+	RenderSprites:
+		Image: cala01
+
+cala03:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^3x1Shape
+	Tooltip:
+		Name: Hollywood Sign
+	Building:
+		Dimensions: 3,1
+		Footprint: xxx
+	SpawnActorOnDeath:
+		Actor: cala03.rubble
+
+cala03.rubble:
+	Inherits: ^Rubble
+	Inherits@shape: ^3x1Shape
+	Building:
+		Dimensions: 3,1
+		Footprint: ___
+	RenderSprites:
+		Image: cala03
+
+cala04:
+	Inherits: ^GarrisonableBuilding
+	Inherits@shape: ^4x4Shape
+	Tooltip:
+		Name: Hollywood Bowl
+	Building:
+		Dimensions: 4,4
+		Footprint: xxxx xxxx xxxx xxxx
+	SpawnActorOnDeath:
+		Actor: cala04.rubble
+
+cala04.rubble:
+	Inherits: ^Rubble
+	Inherits@shape: ^4x4Shape
+	Building:
+		Dimensions: 4,4
+		Footprint: ____ ____ ____ ____
+	RenderSprites:
+		Image: cala04
+
+cala05:
+	Inherits: ^GarrisonableBuilding
+	Inherits@shape: ^4x4Shape
+	Tooltip:
+		Name: LAX
+	Building:
+		Dimensions: 4,4
+		Footprint: xxxx xxxx xxxx xxxx
+	SpawnActorOnDeath:
+		Actor: cala05.rubble
+
+cala05.rubble:
+	Inherits: ^Rubble
+	Inherits@shape: ^4x4Shape
+	Building:
+		Dimensions: 4,4
+		Footprint: ____ ____ ____ ____
+	RenderSprites:
+		Image: cala05
+
+cala06:
+	Inherits: ^GarrisonableBuilding
+	Inherits@shape: ^2x3Shape
+	Tooltip:
+		Name: LAX Control Tower
+	Building:
+		Dimensions: 2,3
+		Footprint: xx xx xx
+	SpawnActorOnDeath:
+		Actor: cala06.rubble
+
+cala06.rubble:
+	Inherits: ^Rubble
+	Inherits@shape: ^2x3Shape
+	Building:
+		Dimensions: 2,3
+		Footprint: __ __ __
+	RenderSprites:
+		Image: cala06
+
+cala07:
+	Inherits: ^GarrisonableBuilding
+	Inherits@shape: ^3x3Shape
+	Tooltip:
+		Name: Movie Theater
+	Building:
+		Dimensions: 3,3
+		Footprint: xxx xxx xxx
+	SpawnActorOnDeath:
+		Actor: cala07.rubble
+
+cala07.rubble:
+	Inherits: ^Rubble
+	Inherits@shape: ^3x3Shape
+	Building:
+		Dimensions: 3,3
+		Footprint: ___ ___ ___
+	RenderSprites:
+		Image: cala07
+
+cala08:
+	Inherits: ^GarrisonableBuilding
+	Inherits@shape: ^4x2Shape
+	Tooltip:
+		Name: Car Dealership
+	Building:
+		Dimensions: 4,2
+		Footprint: xxxx xxxx
+	SpawnActorOnDeath:
+		Actor: cala08.rubble
+
+cala08.rubble:
+	Inherits: ^Rubble
+	Inherits@shape: ^4x2Shape
+	Building:
+		Dimensions: 4,2
+		Footprint: ____ ____
+	RenderSprites:
+		Image: cala08
+
+cala09:
+	Inherits: ^GarrisonableBuilding
+	Inherits@shape: ^3x3Shape
+	Tooltip:
+		Name: Convenience Store
+	Building:
+		Dimensions: 3,3
+		Footprint: xxx xxx xxx
+	SpawnActorOnDeath:
+		Actor: cala09.rubble
+
+cala09.rubble:
+	Inherits: ^Rubble
+	Inherits@shape: ^3x3Shape
+	Building:
+		Dimensions: 3,3
+		Footprint: ___ ___ ___
+	RenderSprites:
+		Image: cala09
+
+cala10:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^1x3Shape
+	Tooltip:
+		Name: Billboard
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 8c0
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,3
+		Footprint: x x x
+	SpawnActorOnDeath:
+		Actor: cala10.rubble
+
+cala10.rubble:
+	Inherits: ^Rubble
+	Inherits@shape: ^1x3Shape
+	Building:
+		Dimensions: 1,3
+		Footprint: _ _ _
+	RenderSprites:
+		Image: cala10
+
+cala11:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^3x4Shape
+	Tooltip:
+		Name: Hollywood Bowl
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 8c0
+	Health:
+		HP: 1000
+	Building:
+		Dimensions: 3,4
+		Footprint: xxx xxx xxx xxx
+	SpawnActorOnDeath:
+		Actor: cala11.rubble
+
+cala11.rubble:
+	Inherits: ^Rubble
+	Inherits@shape: ^3x4Shape
+	Building:
+		Dimensions: 3,4
+		Footprint: ___ ___ ___ ___
+	RenderSprites:
+		Image: cala11
+
+cala12:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^3x4Shape
+	Tooltip:
+		Name: Hollywood Bowl
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 8c0
+	Health:
+		HP: 1000
+	Building:
+		Dimensions: 3,4
+		Footprint: xxx xxx xxx xxx
+	SpawnActorOnDeath:
+		Actor: cala12.rubble
+
+cala12.rubble:
+	Inherits: ^Rubble
+	Inherits@shape: ^3x4Shape
+	Building:
+		Dimensions: 3,4
+		Footprint: ___ ___ ___ ___
+	RenderSprites:
+		Image: cala12
+
+cala13:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^3x1Shape
+	Tooltip:
+		Name: Hollywood Sign
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 8c0
+	Health:
+		HP: 1000
+	Building:
+		Dimensions: 3,1
+		Footprint: xxx
+	SpawnActorOnDeath:
+		Actor: cala13.rubble
+
+cala13.rubble:
+	Inherits: ^Rubble
+	Inherits@shape: ^3x1Shape
+	Building:
+		Dimensions: 3,1
+		Footprint: ___
+	RenderSprites:
+		Image: cala13
+
+cala14:
+	Inherits: ^GarrisonableBuilding
+	Inherits@shape: ^3x3Shape
+	Tooltip:
+		Name: Mini Mall
+	Building:
+		Dimensions: 3,3
+		Footprint: xxx xxx xxx
+	SpawnActorOnDeath:
+		Actor: cala14.rubble
+
+cala14.rubble:
+	Inherits: ^Rubble
+	Inherits@shape: ^3x3Shape
+	Building:
+		Dimensions: 3,3
+		Footprint: ___ ___ ___
+	RenderSprites:
+		Image: cala14
+
+cala15:
+	Inherits: ^GarrisonableBuilding
+	Inherits@shape: ^3x3Shape
+	Tooltip:
+		Name: Mini Mall
+	Building:
+		Dimensions: 3,3
+		Footprint: xxx xxx xxx
+	SpawnActorOnDeath:
+		Actor: cala15.rubble
+
+cala15.rubble:
+	Inherits: ^Rubble
+	Inherits@shape: ^3x3Shape
+	Building:
+		Dimensions: 3,3
+		Footprint: ___ ___ ___
+	RenderSprites:
+		Image: cala15
+
+caegyp01:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^4x4Shape
+	Tooltip:
+		Name: Pyramid
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 8c0
+	Health:
+		HP: 1000
+	Building:
+		Dimensions: 4,4
+		Footprint: xxxx xxxx xxxx xxxx
+	SpawnActorOnDeath:
+		Actor: caegyp01.rubble
+
+caegyp01.rubble:
+	Inherits: ^Rubble
+	Inherits@shape: ^4x4Shape
+	Building:
+		Dimensions: 4,4
+		Footprint: ____ ____ ____ ____
+	RenderSprites:
+		Image: caegyp01
+
+caegyp02:
+	Inherits: ^GarrisonableBuilding
+	Inherits@shape: ^4x4Shape
+	Tooltip:
+		Name: Pyramid
+	Building:
+		Dimensions: 4,4
+		Footprint: xxxx xxxx xxxx xxxx
+	SpawnActorOnDeath:
+		Actor: caegyp02.rubble
+
+caegyp02.rubble:
+	Inherits: ^Rubble
+	Inherits@shape: ^4x4Shape
+	Building:
+		Dimensions: 4,4
+		Footprint: ____ ____ ____ ____
+	RenderSprites:
+		Image: caegyp02
+
+caegyp03:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^4x2Shape
+	Tooltip:
+		Name: Sphinx
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 8c0
+	Health:
+		HP: 1000
+	Building:
+		Dimensions: 4,2
+		Footprint: xxxx xxxx
+	SpawnActorOnDeath:
+		Actor: caegyp02.rubble
+
+caegyp03.rubble:
+	Inherits: ^Rubble
+	Inherits@shape: ^4x2Shape
+	Building:
+		Dimensions: 4,2
+		Footprint: ____ ____
+	RenderSprites:
+		Image: caegyp02
+
+caegyp04:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^4x4Shape
+	Tooltip:
+		Name: Pyramid
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 8c0
+	Health:
+		HP: 1000
+	Building:
+		Dimensions: 4,4
+		Footprint: xxxx xxxx xxxx xxxx
+	SpawnActorOnDeath:
+		Actor: caegyp04.rubble
+
+caegyp04.rubble:
+	Inherits: ^Rubble
+	Inherits@shape: ^4x4Shape
+	Building:
+		Dimensions: 4,4
+		Footprint: ____ ____ ____ ____
+	RenderSprites:
+		Image: caegyp04
+
+caegyp05:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^4x4Shape
+	Tooltip:
+		Name: Pyramid
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 8c0
+	Health:
+		HP: 1000
+	Building:
+		Dimensions: 4,4
+		Footprint: xxxx xxxx xxxx xxxx
+	SpawnActorOnDeath:
+		Actor: caegyp05.rubble
+
+caegyp05.rubble:
+	Inherits: ^Rubble
+	Inherits@shape: ^4x4Shape
+	Building:
+		Dimensions: 4,4
+		Footprint: ____ ____ ____ ____
+	RenderSprites:
+		Image: caegyp05
+
+caegyp06:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^4x4Shape
+	Tooltip:
+		Name: Pyramid
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 8c0
+	Health:
+		HP: 1000
+	Building:
+		Dimensions: 4,4
+		Footprint: xxxx xxxx xxxx xxxx
+	SpawnActorOnDeath:
+		Actor: caegyp06.rubble
+
+caegyp06.rubble:
+	Inherits: ^Rubble
+	Inherits@shape: ^4x4Shape
+	Building:
+		Dimensions: 4,4
+		Footprint: ____ ____ ____ ____
+	RenderSprites:
+		Image: caegyp06
+
+calond01:
+	Inherits: ^GarrisonableBuilding
+	Inherits@shape: ^2x3Shape
+	Tooltip:
+		Name: Building
+	Building:
+		Dimensions: 2,3
+		Footprint: xx xx xx
+	SpawnActorOnDeath:
+		Actor: calond01.rubble
+
+calond01.rubble:
+	Inherits: ^Rubble
+	Inherits@shape: ^2x3Shape
+	Building:
+		Dimensions: 2,3
+		Footprint: __ __ __
+	RenderSprites:
+		Image: calond01
+
+calond03:
+	Inherits: ^GarrisonableBuilding
+	Inherits@shape: ^2x3Shape
+	Tooltip:
+		Name: Building
+	Building:
+		Dimensions: 2,3
+		Footprint: xx xx xx
+	SpawnActorOnDeath:
+		Actor: calond03.rubble
+
+calond03.rubble:
+	Inherits: ^Rubble
+	Inherits@shape: ^2x3Shape
+	Building:
+		Dimensions: 2,3
+		Footprint: __ __ __
+	RenderSprites:
+		Image: calond03
+
+calond04:
+	Inherits: ^GarrisonableBuilding
+	Inherits@shape: ^6x4Shape
+	Tooltip:
+		Name: British Parlaiment
+	Building:
+		Dimensions: 6,4
+		Footprint: xxxxxx xxxxxx xxxxxx xxxxxx
+	SpawnActorOnDeath:
+		Actor: calond04.rubble
+
+calond04.rubble:
+	Inherits: ^Rubble
+	Inherits@shape: ^6x4Shape
+	Building:
+		Dimensions: 6,4
+		Footprint: ______ ______ ______ ______
+	RenderSprites:
+		Image: calond04
+
+calond05:
+	Inherits: ^GarrisonableBuilding
+	Tooltip:
+		Name: Big Ben
+	RevealsShroud:
+		Range: 10c0
+	Health:
+		HP: 1000
+	SpawnActorOnDeath:
+		Actor: calond05.rubble
+
+calond05.rubble:
+	Inherits: ^Rubble
+	Building:
+		Dimensions: 1,1
+		Footprint: _
+	RenderSprites:
+		Image: calond05
+
+calond06:
+	Inherits: ^GarrisonableBuilding
+	Inherits@shape: ^4x4Shape
+	Tooltip:
+		Name: Tower of London
+	Health:
+		HP: 1000
+	Building:
+		Dimensions: 4,4
+		Footprint: xxxx xxxx xxxx xxxx
+	WithIdleOverlay@flag:
+		Sequence: idle-flag
+	SpawnActorOnDeath:
+		Actor: calond06.rubble
+
+calond06.rubble:
+	Inherits: ^Rubble
+	Inherits@shape: ^4x4Shape
+	Building:
+		Dimensions: 4,4
+		Footprint: ____ ____ ____ ____
+	RenderSprites:
+		Image: calond06
+
+casanf01:
+	Inherits: ^GarrisonableBuilding
+	Inherits@shape: ^2x3Shape
+	Tooltip:
+		Name: Building
+	Building:
+		Dimensions: 2,3
+		Footprint: xx xx xx
+	SpawnActorOnDeath:
+		Actor: casanf01.rubble
+
+casanf01.rubble:
+	Inherits: ^Rubble
+	Inherits@shape: ^2x3Shape
+	Building:
+		Dimensions: 2,3
+		Footprint: __ __ __
+	RenderSprites:
+		Image: casanf01
+
+casanf02:
+	Inherits: ^GarrisonableBuilding
+	Inherits@shape: ^3x3Shape
+	Tooltip:
+		Name: Building
+	Building:
+		Dimensions: 3,3
+		Footprint: xxx xxx xxx
+	SpawnActorOnDeath:
+		Actor: casanf02.rubble
+
+casanf02.rubble:
+	Inherits: ^Rubble
+	Inherits@shape: ^3x3Shape
+	Building:
+		Dimensions: 3,3
+		Footprint: ___ ___ ___
+	RenderSprites:
+		Image: casanf02
+
+casanf03:
+	Inherits: ^GarrisonableBuilding
+	Inherits@shape: ^2x3Shape
+	Tooltip:
+		Name: Building
+	Building:
+		Dimensions: 2,3
+		Footprint: xx xx xx
+	SpawnActorOnDeath:
+		Actor: casanf03.rubble
+
+casanf03.rubble:
+	Inherits: ^Rubble
+	Inherits@shape: ^2x3Shape
+	Building:
+		Dimensions: 2,3
+		Footprint: __ __ __
+	RenderSprites:
+		Image: casanf03
+
+casanf05:
+	Inherits: ^GarrisonableBuilding
+	Inherits@shape: ^6x4Shape
+	Tooltip:
+		Name: Alcatraz
+	Health:
+		HP: 1000
+	Building:
+		Dimensions: 6,4
+		Footprint: xxxxxx xxxxxx xxxxxx xxxxxx
+	SpawnActorOnDeath:
+		Actor: casanf05.rubble
+
+casanf05.rubble:
+	Inherits: ^Rubble
+	Inherits@shape: ^6x4Shape
+	Building:
+		Dimensions: 6,4
+		Footprint: ______ ______ ______ ______
+	RenderSprites:
+		Image: casanf05
+
+casanf06:
+	Inherits: ^GarrisonableBuilding
+	Inherits@shape: ^3x2Shape
+	Tooltip:
+		Name: Building
+	Building:
+		Dimensions: 3,2
+		Footprint: xxx xxx
+	SpawnActorOnDeath:
+		Actor: casanf06.rubble
+
+casanf06.rubble:
+	Inherits: ^Rubble
+	Inherits@shape: ^3x2Shape
+	Building:
+		Dimensions: 3,2
+		Footprint: ___ ___
+	RenderSprites:
+		Image: casanf06
+
+casanf07:
+	Inherits: ^GarrisonableBuilding
+	Inherits@shape: ^3x2Shape
+	Tooltip:
+		Name: Building
+	Building:
+		Dimensions: 3,2
+		Footprint: xxx xxx
+	SpawnActorOnDeath:
+		Actor: casanf07.rubble
+
+casanf07.rubble:
+	Inherits: ^Rubble
+	Inherits@shape: ^3x2Shape
+	Building:
+		Dimensions: 3,2
+		Footprint: ___ ___
+	RenderSprites:
+		Image: casanf07
+
+casanf08:
+	Inherits: ^GarrisonableBuilding
+	Inherits@shape: ^3x3Shape
+	Tooltip:
+		Name: Building
+	Building:
+		Dimensions: 3,3
+		Footprint: xxx xxx xxx
+	SpawnActorOnDeath:
+		Actor: casanf08.rubble
+
+casanf08.rubble:
+	Inherits: ^Rubble
+	Inherits@shape: ^3x3Shape
+	Building:
+		Dimensions: 3,3
+		Footprint: ___ ___ ___
+	RenderSprites:
+		Image: casanf08
+
+casanf15:
+	Inherits: ^CivBuilding
+	Tooltip:
+		Name: Alcatraz Water Tower
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 8c0
+	Health:
+		HP: 1000
+	SpawnActorOnDeath:
+		Actor: casanf15.rubble
+
+casanf15.rubble:
+	Inherits: ^Rubble
+	Building:
+		Dimensions: 1,1
+		Footprint: _
+	RenderSprites:
+		Image: casanf15
+
+casanf16:
+	Inherits: ^CivBuilding
+	Tooltip:
+		Name: Light House
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 8c0
+	Health:
+		HP: 1000
+	SpawnActorOnDeath:
+		Actor: casanf16.rubble
+
+casanf16.rubble:
+	Inherits: ^Rubble
+	Building:
+		Dimensions: 1,1
+		Footprint: _
+	RenderSprites:
+		Image: casanf16
+
+casanf17:
+	Inherits: ^GarrisonableBuilding
+	Inherits@shape: ^3x3Shape
+	Tooltip:
+		Name: Building
+	Building:
+		Dimensions: 3,3
+		Footprint: xxx xxx xxx
+	SpawnActorOnDeath:
+		Actor: casanf17.rubble
+
+casanf17.rubble:
+	Inherits: ^Rubble
+	Building:
+		Dimensions: 3,3
+		Footprint: ___ ___ ___
+	RenderSprites:
+		Image: casanf17
+
+casanf18:
+	Inherits: ^GarrisonableBuilding
+	Inherits@shape: ^2x5Shape
+	Tooltip:
+		Name: Building
+	Building:
+		Dimensions: 2,5
+		Footprint: xx xx xx xx xx
+	SpawnActorOnDeath:
+		Actor: casanf18.rubble
+
+casanf18.rubble:
+	Inherits: ^Rubble
+	Inherits@shape: ^2x5Shape
+	Building:
+		Dimensions: 2,5
+		Footprint: __ __ __ __ __
+	RenderSprites:
+		Image: casanf18
+
+casydn02:
+	Inherits: ^GarrisonableBuilding
+	Inherits@shape: ^3x3Shape
+	Tooltip:
+		Name: McRoo Burger
+	Building:
+		Dimensions: 3,3
+		Footprint: xxx xxx xxx
+	SpawnActorOnDeath:
+		Actor: casydn02.rubble
+
+casydn02.rubble:
+	Inherits: ^Rubble
+	Building:
+		Dimensions: 3,3
+		Footprint: ___ ___ ___
+	RenderSprites:
+		Image: casydn02
+
+casydn03:
+	Inherits: ^GarrisonableBuilding
+	Inherits@shape: ^6x4Shape
+	Tooltip:
+		Name: Sydney Opera House
+	Health:
+		HP: 1000
+	Building:
+		Dimensions: 6,4
+		Footprint: xxxxxx xxxxxx xxxxxx xxxxxx
+	SpawnActorOnDeath:
+		Actor: casydn03.rubble
+
+casydn03.rubble:
+	Inherits: ^Rubble
+	Building:
+		Dimensions: 6,4
+		Footprint: ______ ______ ______ ______
+	RenderSprites:
+		Image: casydn03
+
+calunr01:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^2x2Shape
+	Tooltip:
+		Name: Lunar Lander
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 8c0
+	Health:
+		HP: 250
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+
+calunr02:
+	Inherits: ^CivBuilding
+	Tooltip:
+		Name: American Flag
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 8c0
+	Health:
+		HP: 100
+
+caseat01:
+	Inherits: ^GarrisonableBuilding
+	Inherits@shape: ^2x2Shape
+	Tooltip:
+		Name: Seattle Space Needle
+	RevealsShroud:
+		Range: 10c0
+	Health:
+		HP: 1000
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+	SpawnActorOnDeath:
+		Actor: caseat01.rubble
+
+caseat01.rubble:
+	Inherits: ^Rubble
+	Building:
+		Dimensions: 2,2
+		Footprint: __ __
+	RenderSprites:
+		Image: caseat01
+
+caseat02:
+	Inherits: ^GarrisonableBuilding
+	Inherits@shape: ^4x4Shape
+	Tooltip:
+		Name: MassiveSoft Campus
+	Building:
+		Dimensions: 4,4
+		Footprint: xxxx xxxx xxxx xxxx
+	WithIdleOverlay@globe:
+		Sequence: idle-globe
+	SpawnActorOnDeath:
+		Actor: caseat02.rubble
+
+caseat02.rubble:
+	Inherits: ^Rubble
+	Building:
+		Dimensions: 4,4
+		Footprint: ____ ____ ____ ____
+	RenderSprites:
+		Image: caseat02
+
+catran01:
+	Inherits: ^GarrisonableBuilding
+	Inherits@shape: ^2x2Shape
+	Tooltip:
+		Name: Crypt
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+	SpawnActorOnDeath:
+		Actor: catran01.rubble
+
+catran01.rubble:
+	Inherits: ^Rubble
+	Building:
+		Dimensions: 2,2
+		Footprint: __ __
+	RenderSprites:
+		Image: catran01
+
+catran02:
+	Inherits: ^GarrisonableBuilding
+	Inherits@shape: ^2x2Shape
+	Tooltip:
+		Name: Crypt
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+	SpawnActorOnDeath:
+		Actor: catran02.rubble
+
+catran02.rubble:
+	Inherits: ^Rubble
+	Building:
+		Dimensions: 2,2
+		Footprint: __ __
+	RenderSprites:
+		Image: catran02
+
+catran03:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^4x4Shape
+	Tooltip:
+		Name: Yuri's Fortress
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 8c0
+	Health:
+		HP: 1000
+	Building:
+		Dimensions: 4,4
+		Footprint: xxxx xxxx xxxx xxxx
+	SpawnActorOnDeath:
+		Actor: catran03.rubble
+
+catran03.rubble:
+	Inherits: ^Rubble
+	Building:
+		Dimensions: 4,4
+		Footprint: ____ ____ ____ ____
+	RenderSprites:
+		Image: catran03
+
+catime01:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^3x4Shape
+	Tooltip:
+		Name: Time Machine
+	Armor:
+		Type: Steel
+	RevealsShroud:
+		Range: 8c0
+	Health:
+		HP: 1000
+	Building:
+		Dimensions: 3,4
+		Footprint: xxx xxx xxx xxx
+
+catime02:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^3x4Shape
+	Tooltip:
+		Name: Time Machine
+	Armor:
+		Type: Steel
+	RevealsShroud:
+		Range: 8c0
+	Health:
+		HP: 1000
+	Building:
+		Dimensions: 3,4
+		Footprint: xxx xxx xxx xxx

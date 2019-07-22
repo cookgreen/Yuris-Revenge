@@ -110,6 +110,7 @@ Rules:
 	yr|rules/civilian-naval.yaml
 
 Sequences:
+	yr|sequences/misc.yaml
 	yr|sequences/aircraft.yaml
 	yr|sequences/allied-infantry.yaml
 	yr|sequences/allied-structures.yaml
@@ -119,7 +120,6 @@ Sequences:
 	yr|sequences/civilian-props.yaml
 	yr|sequences/civilian-structures.yaml
 	yr|sequences/defaults.yaml
-	yr|sequences/misc.yaml
 	yr|sequences/soviet-infantry.yaml
 	yr|sequences/soviet-structures.yaml
 	yr|sequences/tech-structures.yaml

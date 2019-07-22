@@ -182,3 +182,46 @@ camach:
 	WithIdleOverlay@flag:
 		Sequence: flag
 		Offset: 1000,0,0
+        
+capowr:
+	Inherits: ^TechBuilding
+	Inherits@shape: ^2x2Shape
+	Selectable:
+		Bounds: 96, 104, -2, -26
+	Building:
+		Footprint: xx xx
+		Dimensions: 2, 2
+	EngineerRepairable:
+	Tooltip:
+		Name: Tech Power Plant
+	TooltipDescription:
+		Description: Provides 200 power.
+	Health:
+		HP: 750
+	RevealsShroud:
+		Range: 6c0
+	Armor:
+		Type: Wood
+	WithIdleOverlay@flag:
+		Sequence: flag
+		Offset: 1000,0,0
+	Power:
+		Amount: 400
+
+caslab:
+	Inherits: ^TechBuilding
+	Inherits@shape: ^3x3Shape
+	Building:
+		Footprint: xxx xxx xxx
+		Dimensions: 3, 3
+	Tooltip:
+		Name: Tech Secret Lab
+	TooltipDescription:
+		Description: Allow construction of a new 3rd tier vehicle.
+	Health:
+		HP: 1250
+	Armor:
+		Type: Concrete
+	WithIdleOverlay@flag:
+		Sequence: flag
+	ProvidesPrerequisite@buildingname:
