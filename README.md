@@ -32,7 +32,7 @@ Copy all required mixes into your content folder.
 The mixes inside of `Game1.CAB` are `ra2.mix` and `language.mix`. Copy those two into your content folder.  
 For the soundtrack you want `theme.mix` from your CD.  
 
-Locate `Game6.CAB` on Original `Yuri's Revenge` CD in the `INSTALL/` directory.  
+Locate `Game6.CAB` on Original `Red Alert 2 Yuri's Revenge` CD in the `INSTALL/` directory.  
 Copy all required mixes into your content folder.  
 The mixes inside of `Game6.CAB` are `ra2md.mix` and `langmd.mix`. Copy those two into your content folder.  
 For the soundtrack you want `thememd.mix` from your CD.  
