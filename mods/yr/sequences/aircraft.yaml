@@ -35,6 +35,7 @@ schp:
 	icon: schpicon
 	
 schd:
-	make: schpdel
-		Length: *
+	make: schpdepl
+		Length: 11
+		ShadowStart: 11
 	icon: schpicon
