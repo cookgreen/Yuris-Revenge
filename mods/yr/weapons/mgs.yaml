@@ -204,7 +204,9 @@ Virusgun:
 			Drone: 1
 			Rocket: 100
 		DamageTypes: VirusDeath, Prone100Percent
-	Warhead@2Eff: CreateEffect
+	Warhead@2Dam: SpawnActor
+		Actors: viruscloud
+	Warhead@3Eff: CreateEffect
 		Explosions: piff
 		
 VirusgunE:

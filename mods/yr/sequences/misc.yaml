@@ -508,4 +508,12 @@ flameguy:
 		Start: 44
 		Facings: 1
 		Length: 104
+        
+viruscloud:
+	idle: txgasg
+		Length: *
+		Tick: 200
+		ZOffset: 4096
+	die: txgasg
+
 

@@ -2513,145 +2513,145 @@ cabunk04:
 		ShadowStart: 7
 		ZOffset: -3c0
 
-camorr01:
-	Inherits: ^GarrisonableBuilding
-	Defaults: cgmorr01
-		Offset: 0,-30
-	idle:
-		ShadowStart: 4
-	damaged-idle:
-		Start: 1
-		ShadowStart: 5
-	rubble:
-		Start: 3
-		ShadowStart: 7
-		ZOffset: -3c0
+#camorr01:
+#	Inherits: ^GarrisonableBuilding
+#	Defaults:
+#		Offset: 0,-30
+#	idle:
+#		ShadowStart: 4
+#	damaged-idle:
+#		Start: 1
+#		ShadowStart: 5
+#	rubble:
+#		Start: 3
+#		ShadowStart: 7
+#		ZOffset: -3c0
 
-camorr02:
-	Inherits: ^GarrisonableBuilding
-	Defaults: cgmorr02
-		Offset: 0,-30
-	idle:
-		ShadowStart: 4
-	damaged-idle:
-		Start: 1
-		ShadowStart: 5
-	rubble:
-		Start: 3
-		ShadowStart: 7
-		ZOffset: -3c0
+#camorr02:
+#	Inherits: ^GarrisonableBuilding
+#	Defaults:
+#		Offset: 0,-30
+#	idle:
+#		ShadowStart: 4
+#	damaged-idle:
+#		Start: 1
+#		ShadowStart: 5
+#	rubble:
+#		Start: 3
+#		ShadowStart: 7
+#		ZOffset: -3c0
 
-camorr03:
-	Inherits: ^GarrisonableBuilding
-	Defaults: cgmorr03
-		Offset: 0,-30
-	idle:
-		ShadowStart: 4
-	damaged-idle:
-		Start: 1
-		ShadowStart: 5
-	rubble:
-		Start: 3
-		ShadowStart: 7
-		ZOffset: -3c0
-
-camorr04:
-	Inherits: ^GarrisonableBuilding
-	Defaults: cgmorr04
-		Offset: 0,-30
-	idle:
-		ShadowStart: 4
-	damaged-idle:
-		Start: 1
-		ShadowStart: 5
-	rubble:
-		Start: 3
-		ShadowStart: 7
-		ZOffset: -3c0
-
-camorr05:
-	Inherits: ^GarrisonableBuilding
-	Defaults: cgmorr05
-		Offset: 0,-30
-	idle:
-		ShadowStart: 4
-	damaged-idle:
-		Start: 1
-		ShadowStart: 5
-	rubble:
-		Start: 3
-		ShadowStart: 7
-		ZOffset: -3c0
-
-camorr06:
-	Inherits: ^GarrisonableBuilding
-	Defaults: cgmorr06
-		Offset: 0,-30
-	idle:
-		ShadowStart: 4
-	damaged-idle:
-		Start: 1
-		ShadowStart: 5
-	rubble:
-		Start: 3
-		ShadowStart: 7
-		ZOffset: -3c0
-
-camorr07:
-	Inherits: ^GarrisonableBuilding
-	Defaults: cgmorr07
-		Offset: 0,-30
-	idle:
-		ShadowStart: 4
-	damaged-idle:
-		Start: 1
-		ShadowStart: 5
-	rubble:
-		Start: 3
-		ShadowStart: 7
-		ZOffset: -3c0
-
-camorr08:
-	Inherits: ^GarrisonableBuilding
-	Defaults: cgmorr08
-		Offset: 0,-30
-	idle:
-		ShadowStart: 4
-	damaged-idle:
-		Start: 1
-		ShadowStart: 5
-	rubble:
-		Start: 3
-		ShadowStart: 7
-		ZOffset: -3c0
-
-camorr09:
-	Inherits: ^GarrisonableBuilding
-	Defaults: cgmorr09
-		Offset: 0,-30
-	idle:
-		ShadowStart: 4
-	damaged-idle:
-		Start: 1
-		ShadowStart: 5
-	rubble:
-		Start: 3
-		ShadowStart: 7
-		ZOffset: -3c0
-
-camorr10:
-	Inherits: ^GarrisonableBuilding
-	Defaults: cgmorr10
-		Offset: 0,-30
-	idle:
-		ShadowStart: 4
-	damaged-idle:
-		Start: 1
-		ShadowStart: 5
-	rubble:
-		Start: 3
-		ShadowStart: 7
-		ZOffset: -3c0
+#camorr03:
+#	Inherits: ^GarrisonableBuilding
+#	Defaults:
+#		Offset: 0,-30
+#	idle:
+#		ShadowStart: 4
+#	damaged-idle:
+#		Start: 1
+#		ShadowStart: 5
+#	rubble:
+#		Start: 3
+#		ShadowStart: 7
+#		ZOffset: -3c0
+#
+#camorr04:
+#	Inherits: ^GarrisonableBuilding
+#	Defaults:
+#		Offset: 0,-30
+#	idle:
+#		ShadowStart: 4
+#	damaged-idle:
+#		Start: 1
+#		ShadowStart: 5
+#	rubble:
+#		Start: 3
+#		ShadowStart: 7
+#		ZOffset: -3c0
+#
+#camorr05:
+#	Inherits: ^GarrisonableBuilding
+#	Defaults:
+#		Offset: 0,-30
+#	idle:
+#		ShadowStart: 4
+#	damaged-idle:
+#		Start: 1
+#		ShadowStart: 5
+#	rubble:
+#		Start: 3
+#		ShadowStart: 7
+#		ZOffset: -3c0
+#
+#camorr06:
+#	Inherits: ^GarrisonableBuilding
+#	Defaults:
+#		Offset: 0,-30
+#	idle:
+#		ShadowStart: 4
+#	damaged-idle:
+#		Start: 1
+#		ShadowStart: 5
+#	rubble:
+#		Start: 3
+#		ShadowStart: 7
+#		ZOffset: -3c0
+#
+#camorr07:
+#	Inherits: ^GarrisonableBuilding
+#	Defaults:
+#		Offset: 0,-30
+#	idle:
+#		ShadowStart: 4
+#	damaged-idle:
+#		Start: 1
+#		ShadowStart: 5
+#	rubble:
+#		Start: 3
+#		ShadowStart: 7
+#		ZOffset: -3c0
+#
+#camorr08:
+#	Inherits: ^GarrisonableBuilding
+#	Defaults:
+#		Offset: 0,-30
+#	idle:
+#		ShadowStart: 4
+#	damaged-idle:
+#		Start: 1
+#		ShadowStart: 5
+#	rubble:
+#		Start: 3
+#		ShadowStart: 7
+#		ZOffset: -3c0
+#
+#camorr09:
+#	Inherits: ^GarrisonableBuilding
+#	Defaults:
+#		Offset: 0,-30
+#	idle:
+#		ShadowStart: 4
+#	damaged-idle:
+#		Start: 1
+#		ShadowStart: 5
+#	rubble:
+#		Start: 3
+#		ShadowStart: 7
+#		ZOffset: -3c0
+#
+#camorr10:
+#	Inherits: ^GarrisonableBuilding
+#	Defaults:
+#		Offset: 0,-30
+#	idle:
+#		ShadowStart: 4
+#	damaged-idle:
+#		Start: 1
+#		ShadowStart: 5
+#	rubble:
+#		Start: 3
+#		ShadowStart: 7
+#		ZOffset: -3c0
 
 cala01:
 	Inherits: ^GarrisonableBuilding
@@ -2816,24 +2816,24 @@ cala09:
 		ShadowStart: 7
 		ZOffset: -3c0
 
-cala10:
-	Defaults:
-		Offset: 30,-30
-		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-	idle: cgla10_a
-		Length: 45
-		ShadowStart: 45
-		Ticks: 80
-	rubble:
-		Start: 3
-		ShadowStart: 7
-		ZOffset: -3c0
+#cala10:
+#	Defaults:
+#		Offset: 30,-30
+#		UseTilesetCode: true
+#		TilesetOverrides:
+#			TEMPERATE: GENERIC
+#			URBAN: GENERIC
+#			NEWURBAN: GENERIC
+#			DESERT: GENERIC
+#			LUNAR: GENERIC
+#	idle: cgla10_a
+#		Length: 45
+#		ShadowStart: 45
+#		Ticks: 80
+#	rubble:
+#		Start: 3
+#		ShadowStart: 7
+#		ZOffset: -3c0
 
 cala11:
 	Defaults:

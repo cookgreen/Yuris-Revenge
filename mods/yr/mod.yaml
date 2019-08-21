@@ -23,6 +23,7 @@ Packages:
 	~conquer.mix: conquer
 	~generic.mix
 	~isogen.mix
+	~isogenmd.mix
 	~isosnow.mix
 	~isotemp.mix
 	~isourb.mix
