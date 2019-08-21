@@ -150,7 +150,6 @@ namespace OpenRA.Mods.YR.Activities
                 choosenSlave = slaves[0];
 
                 var mobile = choosenSlave.Actor.Trait<Mobile>();
-                var mobileInfo = choosenSlave.Actor.Info.TraitInfo<MobileInfo>();
 
                 var transformActorInfo = self.World.Map.Rules.Actors[tranforms.Info.IntoActor];
                 var transformBuildingInfo = transformActorInfo.TraitInfoOrDefault<BuildingInfo>();
