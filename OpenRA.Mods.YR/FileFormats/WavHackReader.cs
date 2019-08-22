@@ -75,7 +75,6 @@ namespace OpenRA.Mods.YR.FileFormats
                         break;
                     case "LIST":
                         var listChunkSize = s.ReadInt32();
-                        var typeID = s.ReadInt32();
                         s.ReadBytes(listChunkSize);
                         break;
                     case "cue ":
