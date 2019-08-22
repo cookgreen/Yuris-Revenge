@@ -129,7 +129,6 @@ namespace OpenRA.Mods.YR.FileFormats
         void LoadFrame()
         {
             stream.Seek(frameIndexTable.Indices[CurrentFrame].Offset, SeekOrigin.Begin);
-            byte[] bytes = stream.ReadBytes(1);
         }
         public void Reset()
         {
