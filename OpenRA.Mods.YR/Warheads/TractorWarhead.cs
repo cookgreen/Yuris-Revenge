@@ -13,10 +13,12 @@
 #endregion
 
 using System.Collections.Generic;
-using OpenRA.Mods.Yupgi_alert.Traits;
 using OpenRA.Traits;
+using OpenRA.Mods.YR.Traits;
+using OpenRA.Mods.Common;
+using OpenRA.Mods.Common.Warheads;
 
-namespace OpenRA.Mods.Common.Warheads
+namespace OpenRA.Mods.YR.Warheads
 {
 	[Desc("Can this warhead lift the actor that has Tractable trait and move it next to self by force?")]
 	public class TractorWarhead : DamageWarhead

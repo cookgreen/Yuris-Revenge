@@ -19,8 +19,11 @@ using System.Linq;
 using System.Net;
 using OpenRA.Primitives;
 using OpenRA.Widgets;
+using OpenRA.Mods.Common;
+using OpenRA.Mods.Common.Widgets;
+using OpenRA.Mods.Common.Widgets.Logic;
 
-namespace OpenRA.Mods.Common.Widgets.Logic
+namespace OpenRA.Mods.YR.Widgets.Logic
 {
 	[SuppressMessage("StyleCop.CSharp.OrderingRules", "SA1203:ConstantsMustAppearBeforeFields",
 		Justification = "SystemInformation version should be defined next to the dictionary it refers to.")]

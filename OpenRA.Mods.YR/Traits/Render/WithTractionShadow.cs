@@ -20,8 +20,9 @@ using System.Drawing;
 using System.Linq;
 using OpenRA.Graphics;
 using OpenRA.Traits;
+using OpenRA.Mods.Common.Traits;
 
-namespace OpenRA.Mods.Common.Traits.Render
+namespace OpenRA.Mods.YR.Traits.Render
 {
 	[Desc("Clones the actor sprite with another palette below it.")]
 	public class WithTractionShadowInfo : ConditionalTraitInfo

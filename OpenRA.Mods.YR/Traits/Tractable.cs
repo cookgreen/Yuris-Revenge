@@ -15,10 +15,10 @@
 #endregion
 using OpenRA.GameRules;
 using OpenRA.Mods.Common.Traits;
-using OpenRA.Mods.Yupgi_alert.Activities;
+using OpenRA.Mods.YR.Activities;
 using OpenRA.Traits;
 
-namespace OpenRA.Mods.Yupgi_alert.Traits
+namespace OpenRA.Mods.YR.Traits
 {
 	[Desc("Can this actor be tracted with a traction beam?")]
 	public class TractableInfo : ConditionalTraitInfo

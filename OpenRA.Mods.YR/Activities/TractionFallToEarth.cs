@@ -17,10 +17,10 @@
 using System.Linq;
 using OpenRA.Activities;
 using OpenRA.Mods.Common.Traits;
-using OpenRA.Mods.Yupgi_alert.Traits;
+using OpenRA.Mods.YR.Traits;
 using OpenRA.Traits;
 
-namespace OpenRA.Mods.Yupgi_alert.Activities
+namespace OpenRA.Mods.YR.Activities
 {
 	public class TractionFallToEarth : Activity
 	{

@@ -143,7 +143,7 @@
     <Compile Include="Warheads\TransformActorWarhead.cs" />
     <Compile Include="Widgets\BinkPlayerWidget.cs" />
     <Compile Include="Widgets\Logic\IngamePowerLogic.cs" />
-    <Compile Include="Widgets\Logic\MainMenuLogic.cs" />
+    <Compile Include="Widgets\Logic\NewMainMenuLogic.cs" />
     <Compile Include="Widgets\Logic\NewMissionBrowserLogic.cs" />
     <Compile Include="Widgets\Logic\VxlBrowserLogic.cs" />
     <Compile Include="Widgets\ResourceBarSpriteWidget.cs" />

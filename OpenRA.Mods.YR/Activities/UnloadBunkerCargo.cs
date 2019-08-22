@@ -17,8 +17,10 @@ using OpenRA.Mods.Common.Traits;
 using OpenRA.Primitives;
 using OpenRA.Traits;
 using OpenRA.Mods.YR.Traits;
+using OpenRA.Mods.Common;
+using OpenRA.Mods.Common.Activities;
 
-namespace OpenRA.Mods.Common.Activities
+namespace OpenRA.Mods.YR.Activities
 {
 	public class UnloadBunkerCargo : Activity
 	{
