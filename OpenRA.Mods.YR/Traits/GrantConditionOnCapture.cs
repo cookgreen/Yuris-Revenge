@@ -62,7 +62,6 @@ namespace OpenRA.Mods.YR.Traits
             {
                 return;
             }
-            World w = self.World;
             if (thisPlayer != newOwner)
             {
                 thisPlayer = newOwner;
