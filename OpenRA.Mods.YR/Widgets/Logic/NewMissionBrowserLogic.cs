@@ -208,9 +208,6 @@ namespace OpenRA.Mods.YR.Widgets.Logic
 			var difficultyDisabled = true;
 			var difficulties = new Dictionary<string, string>();
 
-			var briefingVideo = "";
-			var briefingVideoVisible = false;
-
 			var infoVideo = "";
 			var infoVideoVisible = false;
 
@@ -229,8 +226,8 @@ namespace OpenRA.Mods.YR.Widgets.Logic
 				var missionData = preview.Rules.Actors["world"].TraitInfoOrDefault<MissionDataInfo>();
 				if (missionData != null)
 				{
-					briefingVideo = missionData.BriefingVideo;
-					briefingVideoVisible = briefingVideo != null;
+					//briefingVideo = missionData.BriefingVideo;
+					//briefingVideoVisible = briefingVideo != null;
 
 					infoVideo = missionData.BackgroundVideo;
 					infoVideoVisible = infoVideo != null;
