@@ -151,37 +151,6 @@ namespace OpenRA.Mods.YR.Traits
             transforms.DeployTransform(true);
         }
 
-        CPos ResolveHarvestLocation(Actor self, Order order)
-        {
-            Mobile mobile = self.Trait<Mobile>();
-
-            if (order.TargetLocation == CPos.Zero)
-                return self.Location;
-
-            var loc = order.TargetLocation;
-
-            var territory = self.World.WorldActor.TraitOrDefault<ResourceClaimLayer>();
-            if (territory != null)
-            {
-                // Find the nearest claimable cell to the order location (useful for group-select harvest):
-                return mobile.NearestCell(loc, p => mobile.CanEnterCell(p), 1, 6);
-            }
-
-            // Find the nearest cell to the order location (useful for group-select harvest):
-            return mobile.NearestCell(loc, p => mobile.CanEnterCell(p), 1, 6);
-        }
-
-        void AssignTargetForSpawned(Actor slave, CPos targetLocation)
-        {
-            var sh = slave.Trait<Harvester>();
-
-            // set target spot to mine
-            sh.LastOrderLocation = targetLocation;
-
-            // This prevents harvesters returning to an empty patch when the player orders them to a new patch:
-            sh.LastHarvestedCell = sh.LastOrderLocation;
-        }
-
         public void Tick(Actor self)
         {
             respawnTicks--;

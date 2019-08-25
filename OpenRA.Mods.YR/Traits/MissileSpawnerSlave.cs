@@ -35,7 +35,7 @@ namespace OpenRA.Mods.YR.Traits
 
 	public class MissileSpawnerSlave : BaseSpawnerSlave
 	{
-		public CarrierSlaveInfo Info { get; private set; }
+		public CarrierSlaveInfo Info { get; set; }
 
 		public MissileSpawnerSlave(ActorInitializer init, MissileSpawnerSlaveInfo info) : base(init, info) { }
 	}

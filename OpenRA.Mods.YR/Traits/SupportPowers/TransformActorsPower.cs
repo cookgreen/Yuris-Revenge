@@ -130,7 +130,7 @@ namespace OpenRA.Mods.YR.Traits.SupportPowers
                     {
                         foreach (TypeDictionary dic in dics)
                         {
-                            var actor = w.CreateActor(info.Actor, dic);
+                            w.CreateActor(info.Actor, dic);
                         }
                         delay = -1;
                     });

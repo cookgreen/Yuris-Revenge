@@ -79,7 +79,6 @@ namespace OpenRA.Mods.YR.Traits
 
         public void OnOwnerChanged(Actor self, Player oldOwner, Player newOwner)
         {
-            World w = self.World;
             if (this.newOwner != newOwner)
             {
                 this.newOwner = newOwner;

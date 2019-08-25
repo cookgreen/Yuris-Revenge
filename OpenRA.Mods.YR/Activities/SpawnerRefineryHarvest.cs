@@ -41,8 +41,6 @@ namespace OpenRA.Mods.YR.Activities
 		readonly ResourceClaimLayer claimLayer;
 		readonly IPathFinder pathFinder;
 		readonly DomainIndex domainIndex;
-		readonly GrantConditionOnDeploy deploy;
-        readonly Transforms tranforms;
         int lastScanRange = 1;
 
 		CPos? avoidCell;
@@ -51,11 +49,9 @@ namespace OpenRA.Mods.YR.Activities
 		{
 			harv = self.Trait<SpawnerRefineryMaster>();
 			harvInfo = self.Info.TraitInfo<SpawnerRefineryMasterInfo>();
-			deploy = self.Trait<GrantConditionOnDeploy>();
 			claimLayer = self.World.WorldActor.TraitOrDefault<ResourceClaimLayer>();
 			pathFinder = self.World.WorldActor.Trait<IPathFinder>();
 			domainIndex = self.World.WorldActor.Trait<DomainIndex>();
-            tranforms = self.Trait<Transforms>();
             lastScanRange = harvInfo.LongScanRadius;
         }
 
@@ -63,16 +59,6 @@ namespace OpenRA.Mods.YR.Activities
 			: this(self)
 		{
 			this.avoidCell = avoidCell;
-		}
-
-		void UndeployAndGo(Actor self, out MiningState state)
-		{
-            foreach(var se in harv.GetSlaves())
-            {
-                se.Actor.Trait<Harvester>().LinkedProc = null;
-            }
-            state = MiningState.Undeploy;
-            tranforms.DeployTransform(true);
 		}
 
 		Activity MiningTick(Actor self, out MiningState state)
@@ -138,33 +124,6 @@ namespace OpenRA.Mods.YR.Activities
                 default:
 					return null;
 			}
-		}
-
-        // Find a nearest Transformable position from harvestablePos
-        CPos? CalcTransformPosition(Actor self, CPos harvestablePos)
-		{
-            BaseSpawnerSlaveEntry choosenSlave = null;
-            var slaves = harv.GetSlaves();
-            if (slaves.Length > 0)
-            {
-                choosenSlave = slaves[0];
-
-                var mobile = choosenSlave.Actor.Trait<Mobile>();
-
-                var transformActorInfo = self.World.Map.Rules.Actors[tranforms.Info.IntoActor];
-                var transformBuildingInfo = transformActorInfo.TraitInfoOrDefault<BuildingInfo>();
-
-                // FindTilesInAnnulus gives sorted cells by distance :) Nice.
-                foreach (var tile in self.World.Map.FindTilesInAnnulus(harvestablePos, 0, harvInfo.DeployScanRadius))
-                    if (deploy.IsValidTerrain(tile) && mobile.CanEnterCell(tile) && self.World.CanPlaceBuilding(tile + tranforms.Info.Offset, transformActorInfo, transformBuildingInfo, self))
-                        return tile;
-
-                // Try broader search if unable to find deploy location
-                foreach (var tile in self.World.Map.FindTilesInAnnulus(harvestablePos, harvInfo.DeployScanRadius, harvInfo.LongScanRadius))
-                    if (deploy.IsValidTerrain(tile) && mobile.CanEnterCell(tile) && self.World.CanPlaceBuilding(tile + tranforms.Info.Offset, transformActorInfo, transformBuildingInfo, self))
-                        return tile;
-            }
-			return null;
 		}
 
 		/// <summary>

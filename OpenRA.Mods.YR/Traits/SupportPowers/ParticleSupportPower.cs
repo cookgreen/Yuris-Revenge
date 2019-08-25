@@ -133,7 +133,6 @@ namespace OpenRA.Mods.YR.Traits.SupportPowers
             base.Activate(self, order, manager);
 
             self.World.AddFrameEndTask(w => {
-                WPos location = self.CenterPosition;
                 WPos targetPos = order.Target.CenterPosition;
 
                 PlayLaunchSounds();

@@ -18,11 +18,9 @@ namespace OpenRA.Mods.YR.Activities
 {
     class MarkerSlaveLeave : Activity
     {
-        private Actor self;
         private Actor master;
         public MarkerSlaveLeave(Actor self, Actor master)
         {
-            this.self = self;
             this.master = master;
         }
 

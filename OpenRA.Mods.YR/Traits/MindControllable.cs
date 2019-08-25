@@ -61,8 +61,6 @@ namespace OpenRA.Mods.RA2.Traits
 				creatorOwner = self.Owner;
 
 			controlChanging = true;
-
-			var oldOwner = self.Owner;
 			self.ChangeOwner(master.Owner);
 
 			UnlinkMaster(self, this.master);

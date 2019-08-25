@@ -41,7 +41,6 @@ namespace OpenRA.Mods.YR.FileFormats
         public int Width;
         public int Height;
         private Stream stream;
-        private Dictionary<int, uint> frameOffsetDic;
         private BinkFrameIndexTable frameIndexTable;
 
         public BinkReader(Stream stream)
@@ -49,7 +48,6 @@ namespace OpenRA.Mods.YR.FileFormats
             this.stream = stream;
             frameIndexTable = new BinkFrameIndexTable();
             AudioTracks = new List<BinkAudioTrack>();
-            frameOffsetDic = new Dictionary<int, uint>();
             byte[] buffer = new byte[3];
             stream.Read(buffer, 0, 3);
             string signature = Encoding.UTF8.GetString(buffer);
@@ -134,16 +132,6 @@ namespace OpenRA.Mods.YR.FileFormats
         {
             CurrentFrame = 0;
             LoadFrame();
-        }
-
-        private void DecodeBinkAudio()
-        {
-
-        }
-
-        private void DecodeBinkFrame()
-        {
-
         }
     }
 }

@@ -95,7 +95,6 @@ namespace OpenRA.Mods.YR.Traits
 
 		IFacing facing;
 		ExitInfo[] exits;
-		RallyPoint rallyPoint;
 
 		public BaseSpawnerMaster(ActorInitializer init, BaseSpawnerMasterInfo info) : base(info)
 		{
@@ -132,7 +131,6 @@ namespace OpenRA.Mods.YR.Traits
 
 			facing = self.TraitOrDefault<IFacing>();
 			exits = self.Info.TraitInfos<ExitInfo>().ToArray();
-			rallyPoint = self.TraitOrDefault<RallyPoint>();
 
 			// Spawn initial load.
 			int burst = Info.InitialActorCount == -1 ? Info.Actors.Length : Info.InitialActorCount;

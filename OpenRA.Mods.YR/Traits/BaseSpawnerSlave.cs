@@ -142,10 +142,10 @@ namespace OpenRA.Mods.YR.Traits
 		}
 
         // DUMMY FUNCTION to suppress masterDeadToken assigned but unused warning (== error for Travis).
-        void OnNewMaster(Actor self, Actor master)
-        {
-            conditionManager.RevokeCondition(self, masterDeadToken);
-        }
+        //void OnNewMaster(Actor self, Actor master)
+        //{
+        //    conditionManager.RevokeCondition(self, masterDeadToken);
+        //}
 
 		public virtual void OnMasterKilled(Actor self, Actor attacker, SpawnerSlaveDisposal disposal)
 		{

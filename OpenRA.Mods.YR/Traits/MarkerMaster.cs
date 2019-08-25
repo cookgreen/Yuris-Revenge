@@ -105,8 +105,6 @@ namespace OpenRA.Mods.YR.Traits
             string attacker = entry.ActorName;
 
             Game.Sound.Play(SoundType.World, Info.MarkSound);
-
-            var aircraftInRange = new Dictionary<Actor, bool>();
             
             self.World.AddFrameEndTask(w =>
             {
@@ -197,7 +195,6 @@ namespace OpenRA.Mods.YR.Traits
 
         public override void SpawnIntoWorld(Actor self, Actor slave, WPos centerPosition)
         {
-            World w = self.World;
 
             WPos target = centerPosition;
 
@@ -209,7 +206,7 @@ namespace OpenRA.Mods.YR.Traits
                 var attackRotation = WRot.FromFacing(attackFacing);
                 var delta = new WVec(0, -1024, 0).Rotate(attackRotation);
                 target = target + new WVec(0, 0, altitude);
-                var startEdge = target - (self.World.Map.DistanceToEdge(target, -delta) + Info.Cordon).Length * delta / 1024;
+                //var startEdge = target - (self.World.Map.DistanceToEdge(target, -delta) + Info.Cordon).Length * delta / 1024;
                 var finishEdge = target + (self.World.Map.DistanceToEdge(target, delta) + Info.Cordon).Length * delta / 1024;
 
                 var so = Info.SquadOffset;

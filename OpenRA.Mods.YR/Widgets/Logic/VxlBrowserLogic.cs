@@ -51,8 +51,6 @@ namespace OpenRA.Mods.YR.Widgets.Logic
         LabelWidget lightAmbientColorValue;
         LabelWidget lightDiffuseColorValue;
 
-        IReadOnlyPackage assetSource = null;
-
         string currentPalette;
         string currentPlayerPalette = "player";
         string currentNormalsPalette = "normals";
@@ -305,22 +303,6 @@ namespace OpenRA.Mods.YR.Widgets.Logic
                 return false;
             }
 
-            return true;
-        }
-
-        bool ShowSourceDropdown(DropDownButtonWidget dropdown)
-        {
-            Func<IReadOnlyPackage, ScrollItemWidget, ScrollItemWidget> setupItem = (source, itemTemplate) =>
-            {
-                var item = ScrollItemWidget.Setup(itemTemplate,
-                    () => assetSource == source,
-                    () => { assetSource = source; PopulateAssetList(); });
-                item.Get<LabelWidget>("LABEL").GetText = () => source != null ? Platform.UnresolvePath(source.Name) : "All Packages";
-                return item;
-            };
-
-            var sources = new[] { (IReadOnlyPackage)null }.Concat(acceptablePackages);
-            dropdown.ShowDropDown("LABEL_DROPDOWN_TEMPLATE", 280, sources, setupItem);
             return true;
         }
 

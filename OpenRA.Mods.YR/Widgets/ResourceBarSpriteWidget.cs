@@ -58,7 +58,6 @@ namespace OpenRA.Mods.YR.Widgets
             if (Orientation == ResourceBarOrientation.Vertical)
             {
                 var tl = new float2(b.X, (int)float2.Lerp(b.Bottom, b.Top, providedFrac));
-                var br = tl + new float2(b.Width, (int)(providedFrac * b.Height));
                 switch(powerState)
                 {
                     case "low":
@@ -84,7 +83,6 @@ namespace OpenRA.Mods.YR.Widgets
             else
             {
                 var tl = new float2(b.X, b.Y);
-                var br = tl + new float2((int)(providedFrac * b.Width), b.Height);
                 switch (powerState)
                 {
                     case "low":
@@ -98,7 +96,6 @@ namespace OpenRA.Mods.YR.Widgets
                         break;
                 }
                 var x = float2.Lerp(b.Left, b.Right, usedFrac) - s.Size.X / 2;
-                var y = (b.Bottom + b.Top - s.Size.Y) / 2;
                 var totalX = b.Left;
                 var totalNum = (totalX - x) / s.Size.X;
                 for (int i = 0; i < totalNum; i++)

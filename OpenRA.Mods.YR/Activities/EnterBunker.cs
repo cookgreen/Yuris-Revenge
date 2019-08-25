@@ -23,13 +23,9 @@ namespace OpenRA.Mods.YR.Activities
 	class EnterBunker : Enter
 	{
 		readonly BunkerPassenger bunkerPassenger;
-		readonly int maxTries;
 		Actor bunkerActor;
 		BunkerCargo bunkerCargo;
         bool willDisappear;
-        WPos targetPos;
-        RenderSprites rs;
-        Animation bunkerAnimation;
 
         public EnterBunker(Actor passengerActor, Actor bunkerActor, WPos pos, bool willDisappear=true, int maxTries = 0, bool repathWhileMoving = true)
 			: base(passengerActor, Target.FromActor(bunkerActor))
@@ -37,11 +33,7 @@ namespace OpenRA.Mods.YR.Activities
 			this.bunkerActor = bunkerActor;
 			bunkerCargo = bunkerActor.Trait<BunkerCargo>();
             bunkerPassenger = passengerActor.Trait<BunkerPassenger>();
-            this.maxTries = maxTries;
             this.willDisappear = willDisappear;
-            targetPos = pos;
-            rs = bunkerActor.TraitOrDefault<RenderSprites>();
-            bunkerAnimation = new Animation(bunkerActor.World, bunkerActor.Info.Name);
         }
 
         protected override void OnEnterComplete(Actor self, Actor targetActor)
