@@ -3,6 +3,11 @@
 ## Introduction
 A Red Alert 2 Yuri's Revenge mod for OpenRA Engine
 
+## Screenshots
+
+![Yuri faction](https://media.moddb.com/images/members/4/3399/3398047/openra-yr.1.PNG)
+![Mirage tank](https://media.moddb.com/images/members/4/3399/3398047/openra-yr.PNG)
+
 ## Version
 release-20190314
 
