@@ -43,12 +43,15 @@ The mixes inside of `Game6.CAB` are `ra2md.mix` and `langmd.mix`. Copy those two
 For the soundtrack you want `thememd.mix` from your CD.  
 
 ## Credit
+Abarrat  
 alienfxfiend  
+Blarget2  
 finalshake  
 forcecore  
 fusion809  
 Gyula Zimmermann(Graion Dilach)  
 intr  
+neuromancer  
 MustafaTR  
 yaaaaa  
 
