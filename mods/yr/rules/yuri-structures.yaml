@@ -623,7 +623,8 @@ yaggun:
 	Turreted:
 		TurnSpeed: 10
 		InitialFacing: 224
-		Offset: 320,-50,-10
+		PreviewFacing: 224
+		Offset: -512,20,600
 	AttackTurreted:
 		Voice: Attack
 	Armament@primary:
@@ -699,7 +700,7 @@ yaggun:
 		QuantizedFacings: 16
 	WithMuzzleOverlay:
 	RenderVoxels:
-		Scale: 18
+		Scale: 19
 		LightYaw: 800
 		LightPitch: 120
 		LightAmbientColor: -1.3,-1.3,-1.3
