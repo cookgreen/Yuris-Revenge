@@ -671,8 +671,8 @@ jumpjet:
 		CruiseAltitude: 3072
 		LandWhenIdle: false
 		InitialFacing: 20
-		TurnSpeed: 10
-		Speed: 100
+		TurnSpeed: 255
+		Speed: 140
 		AltitudeVelocity: 83
 		Voice: Move
 		AirborneCondition: airborne
@@ -724,7 +724,7 @@ jumpjet.husk:
 		Name: Rocketeer
 	Aircraft:
 		TurnSpeed: 10
-		Speed: 100
+		Speed: 140
 	FallsToEarth:
 		Explosion: UnitExplodeSmall
 	RevealsShroud:
