@@ -63,6 +63,7 @@ cahosp:
 	flag: cahosp_f
 		Length: 16
 		ZOffset: 128
+		Offset: -9,-23
 
 caoutp:
 	Defaults:
