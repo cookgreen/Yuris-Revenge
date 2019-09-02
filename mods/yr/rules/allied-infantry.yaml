@@ -64,15 +64,17 @@ dog:
 	Health:
 		HP: 100
 	Mobile:
-		Speed: 99
+		Speed: 120
 	Passenger:
 		PipType: Yellow
 	RevealsShroud:
 		Range: 5c0
 	Armament:
 		Weapon: DogJaw
+		ReloadingCondition: attack-cooldown
 	AttackLeap:
 		Voice: Attack
+		PauseOnCondition: attacking || attack-cooldown
 	AutoTarget:
 		InitialStance: AttackAnything
 	AutoTargetPriority@DEFAULT:
