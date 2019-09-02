@@ -520,6 +520,7 @@
 		
 ^GarrisonableBuilding:
 	Inherits: ^CivBuilding
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	BunkerCargo:
 		Types: Infantry
 		MaxWeight: 10
