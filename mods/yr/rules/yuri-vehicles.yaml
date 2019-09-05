@@ -511,15 +511,12 @@ disk:
 		AttackType: Hover
 	Voiced:
 		VoiceSet: DiskVoice
-	AutoTarget:
 	Turreted:
 		TurnSpeed: 5
 	RenderSprites:
 	RenderVoxels:
 	WithVoxelBody:
 	WithVoxelTurret:
-	AttackTurreted:
-		Voice: Attack
 	VoiceAnnouncement:
 		Voice: Build
 	HitShape:

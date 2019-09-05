@@ -9,7 +9,7 @@ A Red Alert 2 Yuri's Revenge mod for OpenRA Engine
 ![Mirage tank](https://media.moddb.com/images/members/4/3399/3398047/openra-yr.PNG)
 
 ## Version
-release-20190314
+playtest-20190825
 
 ## Build
 Run "make.cmd" or "make.sh" and type "all" in the terminal  
