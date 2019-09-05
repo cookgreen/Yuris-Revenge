@@ -21,7 +21,7 @@ yhvr:
 		TurnSpeed: 10
 		Speed: 75
 		Locomotor: lcraft
-		RequiresCondition: !notmobile
+		PauseOnCondition: !(!notmobile)
 	RevealsShroud:
 		Range: 6c0
 	Cargo:

@@ -70,7 +70,6 @@ Player:
 		CancelledAudio: Cancelled
 		SpeedUp: True
 	PlaceBuilding:
-		Palette: effect75alpha
 		NewOptionsNotification: NewOptions
 		CannotPlaceNotification: BuildingCannotPlaceAudio
 	SupportPowerManager:
@@ -145,3 +144,4 @@ Player:
 		Palette: cameo-chevron
 	PlayerExperience:
 	ConditionManager:
+	GameSaveViewportManager:

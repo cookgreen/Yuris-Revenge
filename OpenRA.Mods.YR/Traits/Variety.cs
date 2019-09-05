@@ -183,7 +183,7 @@ namespace OpenRA.Mods.YR.Traits
             return varietiedActor.Render(wr);
         }
 
-        public IEnumerable<Rectangle> ModifyScreenBounds(Actor self, WorldRenderer wr, IEnumerable<Rectangle> bounds)
+        public IEnumerable<Primitives.Rectangle> ModifyScreenBounds(Actor self, WorldRenderer wr, IEnumerable<Primitives.Rectangle> bounds)
         {
             return bounds;
         }
@@ -254,9 +254,13 @@ namespace OpenRA.Mods.YR.Traits
             remainingTime = Math.Max(remainingTime, time);
         }
 
-        public void MovingToResources(Actor self, CPos targetCell, Activity next) { }
+        public void MovingToResources(Actor self, CPos targetCell)
+        {
+        }
 
-        public void MovingToRefinery(Actor self, Actor refineryActor, Activity next) { }
+        public void MovingToRefinery(Actor self, Actor refineryActor)
+        {
+        }
 
         public void MovementCancelled(Actor self) { }
 

@@ -371,7 +371,7 @@ V3EWH:
 		Explosions: medium_brnl
 		ImpactSounds: expnew13.wav
 		ValidTargets: Ground, Water
-        
+		
 VirusCloudDamage:
 	ReloadDelay: 5
 	Projectile: InstantHit
@@ -392,4 +392,4 @@ VirusCloudDamage:
 			Drone: 0
 			Rocket: 0
 		DamageTypes: VirusDeath
-		InvalidTargets: Air 
+		InvalidTargets: Air

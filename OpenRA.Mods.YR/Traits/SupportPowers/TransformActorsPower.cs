@@ -75,7 +75,7 @@ namespace OpenRA.Mods.YR.Traits.SupportPowers
                 self.World.AddFrameEndTask(w =>
                 {
                     dics = new List<TypeDictionary>();
-                    var location = self.World.Map.CenterOfCell(order.TargetLocation);
+                    var location = order.Target.CenterPosition;
 
                     PlayLaunchSounds();
                     //Game.Sound.Play(SoundType.World, info.DeploySound, location);

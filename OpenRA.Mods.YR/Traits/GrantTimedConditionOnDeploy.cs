@@ -17,7 +17,9 @@ using OpenRA.Mods.Common.Activities;
 using OpenRA.Mods.Common.Orders;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.Common.Traits.Render;
+using OpenRA.Primitives;
 using OpenRA.Traits;
+using Color = OpenRA.Primitives.Color;
 
 namespace OpenRA.Mods.RA2.Traits
 {
@@ -254,6 +256,9 @@ namespace OpenRA.Mods.RA2.Traits
 
 		bool ISelectionBar.DisplayWhenEmpty { get { return info.ShowSelectionBar; } }
 
-		Color ISelectionBar.GetColor() { return deployState == TimedDeployState.Charging ? info.ChargingColor : info.DischargingColor; }
-	}
+        public Primitives.Color GetColor()
+        {
+            return deployState == TimedDeployState.Charging ? info.ChargingColor : info.DischargingColor;
+        }
+    }
 }

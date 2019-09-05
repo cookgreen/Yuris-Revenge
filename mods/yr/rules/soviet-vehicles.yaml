@@ -64,7 +64,7 @@ harv:
 		Resources: Ore, Gems
 		UnloadTicksPerBale: 1
 		SearchFromProcRadius: 24
-		SearchFromOrderRadius: 12
+		SearchFromHarvesterRadius: 12
 		HarvestVoice: Move
 		DeliverVoice: Move
 	Health:
@@ -169,7 +169,7 @@ htk:
 		Speed: 75
 		TurnSpeed: 15
 		Crushes: crate, infantry
-		RequiresCondition: !notmobile && !chronodisable
+		PauseOnCondition: !(!notmobile && !chronodisable)
 	Health:
 		HP: 180
 	Armor:

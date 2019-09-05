@@ -363,6 +363,8 @@ World:
 		PanelName: SKIRMISH_STATS
 	LoadWidgetAtGameStart:
 	CliffBackImpassabilityLayer:
+	TimeLimitManager:
+	Selection:
 
 EditorWorld:
 	Inherits: ^BaseWorld

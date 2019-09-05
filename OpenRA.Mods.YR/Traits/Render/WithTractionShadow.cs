@@ -21,6 +21,7 @@ using System.Linq;
 using OpenRA.Graphics;
 using OpenRA.Traits;
 using OpenRA.Mods.Common.Traits;
+using OpenRA.Primitives;
 
 namespace OpenRA.Mods.YR.Traits.Render
 {
@@ -67,7 +68,7 @@ namespace OpenRA.Mods.YR.Traits.Render
 			return shadowSprites.Concat(r);
 		}
 
-        public IEnumerable<Rectangle> ModifyScreenBounds(Actor self, WorldRenderer wr, IEnumerable<Rectangle> r)
+        public IEnumerable<Primitives.Rectangle> ModifyScreenBounds(Actor self, WorldRenderer wr, IEnumerable<Primitives.Rectangle> r)
         {
             return r;
         }

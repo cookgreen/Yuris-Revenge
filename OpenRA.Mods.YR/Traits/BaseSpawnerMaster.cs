@@ -241,10 +241,10 @@ namespace OpenRA.Mods.YR.Traits
 				var spawnOffset = exit == null ? WVec.Zero : exit.SpawnOffset;
 				slave.Trait<IPositionable>().SetVisualPosition(slave, centerPosition + spawnOffset);
 
-				var location = self.World.Map.CellContaining(centerPosition + spawnOffset);
+				var location = centerPosition + spawnOffset;
 
 				var mv = slave.Trait<IMove>();
-				slave.QueueActivity(mv.MoveIntoWorld(slave, location));
+				slave.QueueActivity(mv.MoveToTarget(slave, Target.FromPos(location)));
 
 				w.Add(slave);
 			});

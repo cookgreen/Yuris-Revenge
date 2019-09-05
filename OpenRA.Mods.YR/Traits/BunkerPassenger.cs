@@ -33,11 +33,6 @@ namespace OpenRA.Mods.YR.Traits
         [Desc("Grant a condition when actor is bunkered")]
         public readonly string GrantBunkerCondition = null;
 
-        [Desc("Use to set when to use alternate transports (Never, Force, Default, Always).",
-			"Force - use force move modifier (Alt) to enable.",
-			"Default - use force move modifier (Alt) to disable.")]
-		public readonly AlternateTransportsMode AlternateTransportsMode = AlternateTransportsMode.Force;
-
 		[Desc("Number of retries using alternate transports.")]
 		public readonly int MaxAlternateTransportAttempts = 1;
 
@@ -65,12 +60,12 @@ namespace OpenRA.Mods.YR.Traits
 		{
 			this.info = info;
             self = init.Self;
-			Func<Actor, bool> canTarget = IsCorrectCargoType;
+			Func<Actor, TargetModifiers, bool> canTarget = IsCorrectCargoType;
 			Func<Actor, bool> useEnterCursor = CanEnter;
 			Orders = new EnterAlliedActorTargeter<BunkerCargoInfo>[]
 			{
-				new EnterBunkerTargeter("EnterBunker", 5, canTarget, useEnterCursor, Info.AlternateTransportsMode),
-				new EnterBunkersTargeter("EnterBunkers", 5, canTarget, useEnterCursor, Info.AlternateTransportsMode)
+				new EnterBunkerTargeter("EnterBunker", 5, canTarget, useEnterCursor),
+				new EnterBunkersTargeter("EnterBunkers", 5, canTarget, useEnterCursor)
 			};
 		}
 
@@ -112,7 +107,7 @@ namespace OpenRA.Mods.YR.Traits
 			return null;
 		}
 
-		bool IsCorrectCargoType(Actor target)
+		bool IsCorrectCargoType(Actor target, TargetModifiers modifiers)
 		{
 			var ci = target.Info.TraitInfo<BunkerCargoInfo>();
             
@@ -170,7 +165,7 @@ namespace OpenRA.Mods.YR.Traits
             if (!CanEnter(targetActor))
                 return;
 
-            if (!IsCorrectCargoType(targetActor))
+            if (!IsCorrectCargoType(targetActor, new TargetModifiers()))
                 return;
 
             if (!order.Queued)
@@ -179,7 +174,7 @@ namespace OpenRA.Mods.YR.Traits
             BunkerCargo cargo = targetActor.TraitOrDefault<BunkerCargo>();
 
             var transports = order.OrderString == "EnterBunkers";
-            self.SetTargetLine(order.Target, Color.Green);
+            //self.s(order.Target, Color.Green);
             self.QueueActivity(new EnterBunker(self, targetActor, targetActor.CenterPosition, cargo.Info.WillDisappear, transports ? Info.MaxAlternateTransportAttempts : 0, !transports));
 		}
 

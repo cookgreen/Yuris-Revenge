@@ -290,7 +290,7 @@ naradr:
 		Range: 10c0
 	WithIdleOverlay@dish:
 		Sequence: idle-dish
-		PauseOnCondition: lowpower 
+		PauseOnCondition: lowpower
 		RequiresCondition: !build-incomplete
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate

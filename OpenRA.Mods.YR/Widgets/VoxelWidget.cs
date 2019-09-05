@@ -247,7 +247,7 @@ namespace OpenRA.Mods.YR.Widgets
             {
                 var b = rs.First();
                 foreach (var rr in rs.Skip(1))
-                    b = Rectangle.Union(b, rr);
+                    b = OpenRA.Primitives.Rectangle.Union(b, rr);
 
                 IdealPreviewSize = new int2(b.Width, b.Height);
                 PreviewOffset = -new int2(b.Left, b.Top) - IdealPreviewSize / 2;

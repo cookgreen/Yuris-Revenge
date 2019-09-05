@@ -7,6 +7,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Size = OpenRA.Primitives.Size;
+using Rectangle = OpenRA.Primitives.Rectangle;
 
 namespace OpenRA.Mods.YR.Widgets
 {
@@ -57,7 +59,7 @@ namespace OpenRA.Mods.YR.Widgets
             var videoSheet = new Sheet(SheetType.BGRA, new Size(textureSize, textureSize));
 
             videoSheet.GetTexture().ScaleFilter = TextureScaleFilter.Linear;
-            videoSheet.GetTexture().SetData(video.FrameData);
+            //videoSheet.GetTexture().SetData(video.FrameData);
 
             videoSprite = new Sprite(videoSheet,
                 new Rectangle(
@@ -113,7 +115,7 @@ namespace OpenRA.Mods.YR.Widgets
                 while (nextFrame > video.CurrentFrame)
                 {
                     video.AdvanceFrame();
-                    videoSprite.Sheet.GetTexture().SetData(video.FrameData);
+                    //videoSprite.Sheet.GetTexture().SetData(video.FrameData);
                     skippedFrames++;
                 }
 
@@ -186,7 +188,7 @@ namespace OpenRA.Mods.YR.Widgets
             paused = true;
             Game.Sound.StopVideo();
             video.Reset();
-            videoSprite.Sheet.GetTexture().SetData(video.FrameData);
+            //videoSprite.Sheet.GetTexture().SetData(video.FrameData);
             Game.RunAfterTick(onComplete);
         }
 

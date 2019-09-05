@@ -90,7 +90,7 @@ TREE27:
 
 TREE28:
 	Inherits: ^Tree
-    
+	
 TREE29:
 	Inherits: ^Tree
 

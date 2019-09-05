@@ -105,7 +105,7 @@ namespace OpenRA.Mods.YR.Traits
 				/// This slave is just bugged out by Follow activity not canceling properly.
 				/// AssignTargetForSpawned(s, self.Location);
 
-				self.QueueActivity(new FindResources(self));
+				self.QueueActivity(new FindAndDeliverResources(self));
 			}
 		}
 	}

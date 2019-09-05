@@ -61,7 +61,7 @@ namespace OpenRA.Mods.YR.Activities
 			sbm.Facing = GetEffectiveFacing();
 		}
 
-		public override Activity Tick(Actor self)
+		public override bool Tick(Actor self)
 		{
 			var d = targetPos - self.CenterPosition;
 
@@ -72,12 +72,12 @@ namespace OpenRA.Mods.YR.Activities
 			if (d.HorizontalLengthSquared < move.HorizontalLengthSquared)
 			{
 				Queue(new CallFunc(() => self.Kill(self)));
-				return NextActivity;
+				return true;
 			}
 
 			FlyToward(self, sbm);
 			ticks++;
-			return this;
+			return false;
 		}
 
 		public override IEnumerable<Target> GetTargets(Actor self)

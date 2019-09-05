@@ -483,11 +483,11 @@ disk:
 		Description: Yuri Laser Disk, Strong with infantry, aircraft\n Weak with vehicles
 	Aircraft:
 		CruiseAltitude: 4608
-		LandWhenIdle: false
 		TurnSpeed: 100
 		Speed: 200
 		CanHover: True
 		VTOL: true
+		CanSlide: True
 	Selectable:
 		Bounds: 78, 43, 0, -15
 	Health:
@@ -508,6 +508,7 @@ disk:
 	AttackAircraft:
 		FacingTolerance: 20
 		Voice: Attack
+		AttackType: Hover
 	Voiced:
 		VoiceSet: DiskVoice
 	AutoTarget:
@@ -524,7 +525,7 @@ disk:
 	HitShape:
 	SelfRotationCraft:
 	Repairable:
-		RepairBuildings:
+		RepairActors:
 	Rearmable:
 		RearmActors:
 	SpawnActorOnDeath:

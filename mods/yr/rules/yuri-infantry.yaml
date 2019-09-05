@@ -202,7 +202,7 @@ slav:
 		Resources: Ore,Gems
 		BaleUnloadDelay: 1
 		SearchFromProcRadius: 30
-		SearchFromOrderRadius: 11
+		SearchFromHarvesterRadius: 11
 		HarvestVoice: Move
 		DeliverVoice: Move
 	Health:
@@ -258,7 +258,7 @@ yuri:
 		HP: 100
 	Mobile:
 		Speed: 60
-		RequiresCondition: !deployed && !deploying && !chronodisable
+		PauseOnCondition: !(!deployed && !deploying && !chronodisable)
 	RevealsShroud:
 		Range: 12c0
 	Armor:
@@ -341,7 +341,7 @@ yuripr:
 		HP: 150
 	Mobile:
 		Speed: 90
-		RequiresCondition: !deployed && !deploying && !chronodisable
+		PauseOnCondition: !(!deployed && !deploying && !chronodisable)
 	RevealsShroud:
 		Range: 12c0
 	Armor:

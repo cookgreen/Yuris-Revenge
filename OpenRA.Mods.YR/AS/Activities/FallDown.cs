@@ -50,21 +50,21 @@ namespace OpenRA.Mods.AS.Activities
 			return NextActivity;
 		}
 
-		public override Activity Tick(Actor self)
+		public override bool Tick(Actor self)
 		{
-			// If this is the first tick
-			if (!triggered)
-				return FirstTick(self);
+            // If this is the first tick
+            if (!triggered)
+                Queue(FirstTick(self));
 
 			currentPosition -= fallVector;
 
-			// If the unit has landed, this will be the last tick
-			if (self.World.Map.DistanceAboveTerrain(currentPosition).Length <= 0)
-				return LastTick(self);
+            // If the unit has landed, this will be the last tick
+            if (self.World.Map.DistanceAboveTerrain(currentPosition).Length <= 0)
+                Queue(LastTick(self));
 
 			pos.SetVisualPosition(self, currentPosition);
 
-			return this;
+			return false;
 		}
 	}
 }

@@ -24,10 +24,10 @@ namespace OpenRA.Mods.YR.Activities
             this.master = master;
         }
 
-        public override Activity Tick(Actor self)
+        public override bool Tick(Actor self)
         {
             if (self.IsDead)
-                return NextActivity;
+                return false;
 
             self.World.AddFrameEndTask(w =>
             {
@@ -36,7 +36,7 @@ namespace OpenRA.Mods.YR.Activities
                 self.World.Remove(self);
             });
 
-            return NextActivity;
+            return false;
         }
     }
 }

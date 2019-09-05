@@ -1,6 +1,6 @@
 Metadata:
 	Title: Red Alert 2 Yuri's Revenge
-	Version: release-20190314
+	Version: playtest-20190825
 	Website: https://github.com/cookgreen/yr
 	WebIcon32: https://raw.githubusercontent.com/cookgreen/yr/master/mods/yr/icon.png
 
@@ -77,7 +77,7 @@ Packages:
 
 MapFolders:
 	yr|maps: System
-	~^maps/yr/release-20190314: User
+	~^maps/yr/playtest-20190825: User
 
 Rules:
 	yr|rules/proxy-actors.yaml
@@ -151,7 +151,6 @@ ChromeLayout:
 	yr|chrome/mainmenu.yaml
 	yr|chrome/vxlbrowser.yaml
 	common|chrome/ingame-infostats.yaml
-	common|chrome/ingame-observerstats.yaml
 	common|chrome/musicplayer.yaml
 	common|chrome/tooltips.yaml
 	common|chrome/ingame.yaml
@@ -163,6 +162,7 @@ ChromeLayout:
 	common|chrome/ingame-infoscripterror.yaml
 	common|chrome/ingame-infobriefing.yaml
 	common|chrome/ingame-debug.yaml
+	common|chrome/ingame-debuginfo.yaml
 	common|chrome/ingame-perf.yaml
 	common|chrome/settings.yaml
 	common|chrome/credits.yaml
@@ -183,6 +183,8 @@ ChromeLayout:
 	yr|chrome/missionbrowser.yaml
 	common|chrome/confirmation-dialogs.yaml
 	common|chrome/color-picker.yaml
+	common|chrome/gamesave-browser.yaml
+	common|chrome/gamesave-loading.yaml
 	common|chrome/dropdowns.yaml
 	common|chrome/editor.yaml
 	common|chrome/playerprofile.yaml
@@ -252,27 +254,35 @@ Fonts:
 	Regular:
 		Font: common|FreeSans.ttf
 		Size:14
+		Ascender: 8
 	Bold:
 		Font: common|FreeSansBold.ttf
 		Size:14
+		Ascender: 8
 	Title:
 		Font: common|FreeSansBold.ttf
 		Size:32
+		Ascender: 9
 	BigBold:
 		Font: common|FreeSansBold.ttf
 		Size:24
+		Ascender: 11
 	MediumBold:
 		Font: common|FreeSansBold.ttf
 		Size:18
+		Ascender: 11
 	Small:
 		Font: common|FreeSans.ttf
 		Size:12
+		Ascender: 14
 	Tiny:
 		Font: common|FreeSans.ttf
 		Size:10
+		Ascender: 18
 	TinyBold:
 		Font: common|FreeSansBold.ttf
 		Size:10
+		Ascender: 26
 
 Missions:
 	yr|missions.yaml

@@ -113,10 +113,10 @@ namespace OpenRA.Mods.YR.Traits
 			var sh = slave.Trait<Harvester>();
 
 			// set target spot to mine
-			sh.LastOrderLocation = targetLocation;
+			//sh.LastOrderLocation = targetLocation;
 
 			// This prevents harvesters returning to an empty patch when the player orders them to a new patch:
-			sh.LastHarvestedCell = sh.LastOrderLocation;
+			//sh.LastHarvestedCell = sh.LastOrderLocation;
 		}
 
 		// Launch a freshly created slave that isn't in world to the world.
@@ -131,13 +131,13 @@ namespace OpenRA.Mods.YR.Traits
 				// Move into world, if not. Ground units get stuck without this.
 				if (info.SpawnIsGroundUnit)
 				{
-					var mv = se.Actor.Trait<IMove>().MoveIntoWorld(slave, self.Location);
+					var mv = se.Actor.Trait<IMove>().MoveToTarget(slave, Target.FromPos(self.CenterPosition));
 					if (mv != null)
 						slave.QueueActivity(mv);
 				}
 
 				AssignTargetForSpawned(slave, targetLocation);
-				slave.QueueActivity(new FindResources(slave));
+				slave.QueueActivity(new FindAndDeliverResources(slave));
 			});
 		}
 
@@ -181,10 +181,10 @@ namespace OpenRA.Mods.YR.Traits
 
 		CPos ResolveHarvestLocation(Actor self, Order order)
 		{
-			if (order.TargetLocation == CPos.Zero)
+			if (self.World.Map.CellContaining(order.Target.CenterPosition) == CPos.Zero)
 				return self.Location;
 
-			var loc = order.TargetLocation;
+			var loc = self.World.Map.CellContaining(order.Target.CenterPosition);
 
 			var territory = self.World.WorldActor.TraitOrDefault<ResourceClaimLayer>();
 			if (territory != null)
@@ -210,7 +210,7 @@ namespace OpenRA.Mods.YR.Traits
 
 			LastOrderLocation = ResolveHarvestLocation(self, order);
 			self.QueueActivity(new SpawnerHarvesterHarvest(self));
-			self.SetTargetLine(Target.FromCell(self.World, LastOrderLocation.Value), Color.Red);
+			//self.SetTargetLine(Target.FromCell(self.World, LastOrderLocation.Value), Color.Red);
 
 			// Assign new targets for slaves too.
 			foreach (var se in SlaveEntries)
@@ -267,7 +267,7 @@ namespace OpenRA.Mods.YR.Traits
 				var s = se.Actor;
 				se.SpawnerSlave.Stop(s);
 				AssignTargetForSpawned(s, self.Location);
-				s.QueueActivity(new FindResources(s));
+				s.QueueActivity(new FindAndDeliverResources(s));
 			}
 		}
 
@@ -314,7 +314,7 @@ namespace OpenRA.Mods.YR.Traits
                 se.SpawnerSlave.LinkMaster(se.Actor, toActor, refineryMaster);
                 se.SpawnerSlave.Stop(se.Actor);
                 if(!se.Actor.IsDead)
-                    se.Actor.QueueActivity(new FindResources(se.Actor));
+                    se.Actor.QueueActivity(new FindAndDeliverResources(se.Actor));
             }
             refineryMaster.AssignSlavesToMaster(SlaveEntries);
             toActor.QueueActivity(new SpawnerRefineryHarvest(toActor));

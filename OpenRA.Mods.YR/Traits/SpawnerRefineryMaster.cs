@@ -134,14 +134,14 @@ namespace OpenRA.Mods.YR.Traits
 
             self.World.AddFrameEndTask(w =>
             {
-                slave.QueueActivity(new FindResources(slave));
+                slave.QueueActivity(new FindAndDeliverResources(slave));
             });
         }
 
         void HandleSpawnerHarvest(Actor self, Order order)
         {
             //Maybe player have a better idea, let's move
-            ForceMove(order.TargetLocation);
+            ForceMove(self.World.Map.CellContaining(order.Target.CenterPosition));
         }
 
         public void ForceMove(CPos pos)

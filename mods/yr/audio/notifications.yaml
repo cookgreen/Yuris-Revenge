@@ -60,6 +60,8 @@ Speech:
 		ForceShieldActivated: 133
 		ForceShieldReady: 132
 		FourMinutesRemaining: 030
+		GameLoaded: load1
+		GameSaved: save1
 		GeneticMutatorDetected: 128
 		GeneticMutatorActivated: 129
 		GeneticMutatorReady: 130

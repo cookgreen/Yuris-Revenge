@@ -15,6 +15,7 @@ using System.Drawing;
 using OpenRA.Graphics;
 using OpenRA.Mods.RA2.Graphics;
 using OpenRA.Traits;
+using Color = OpenRA.Primitives.Color;
 
 namespace OpenRA.Mods.RA2.Traits
 {
@@ -68,7 +69,7 @@ namespace OpenRA.Mods.RA2.Traits
 
 		IEnumerable<IRenderable> IRenderAboveShroudWhenSelected.RenderAboveShroud(Actor self, WorldRenderer wr)
 		{
-			var color = Color.FromArgb(info.Transparency, info.UsePlayerColor ? self.Owner.Color.RGB : info.Color);
+			var color = Color.FromArgb(info.Transparency, info.UsePlayerColor ? self.Owner.Color : info.Color);
 
 			if (mindController != null)
 			{

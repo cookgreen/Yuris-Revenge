@@ -20,14 +20,14 @@ ChaosGasAttack:
 			Concrete: 0
 			Drone: 100
 			Rocket: 100
-            
+			
 VirtusGas:
 	Inherits: ^MG
 	ReloadDelay: 80
-	Range:1c0
+	Range: 1c0
 	Report: iviratta.wav
 	Warhead@1Dam: SpreadDamage
-		Damage: 0     
+		Damage: 0
 		ValidTargets: Infantry
 		Versus:
 			None: 100
@@ -41,4 +41,4 @@ VirtusGas:
 			Concrete: 0
 			Drone: 100
 			Rocket: 0
-		DamageTypes: VirusDeath, Prone100Percent 
+		DamageTypes: VirusDeath, Prone100Percent

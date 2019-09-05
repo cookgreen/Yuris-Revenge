@@ -70,7 +70,7 @@ namespace OpenRA.Mods.YR.Activities
 		Activity UndeployAndGo(Actor self, out MiningState state)
 		{
 			state = MiningState.Scan;
-			QueueChild(new UndeployForGrantedCondition(self, deploy));
+			QueueChild(new DeployForGrantedCondition(self, deploy));
 			return this;
 		}
 
@@ -78,7 +78,7 @@ namespace OpenRA.Mods.YR.Activities
 		{
 			if (ChildActivity != null)
 			{
-				ChildActivity = ActivityUtils.RunActivity(self, ChildActivity);
+                QueueChild(ActivityUtils.RunActivity(self, ChildActivity));
 				state = MiningState.Scan;
 				return this;
 			}
@@ -103,7 +103,7 @@ namespace OpenRA.Mods.YR.Activities
 			if (!harv.LastOrderLocation.HasValue)
 				harv.LastOrderLocation = closestHarvestablePosition;
 
-			self.SetTargetLine(Target.FromCell(self.World, closestHarvestablePosition.Value), Color.Red, false);
+			//self.SetTargetLine(Target.FromCell(self.World, closestHarvestablePosition.Value), Color.Red, false);
 
 			// Calculate best depoly position.
 			var deployPosition = CalcTransformPosition(self, closestHarvestablePosition.Value);
@@ -120,7 +120,7 @@ namespace OpenRA.Mods.YR.Activities
 			// TODO: The harvest-deliver-return sequence is a horrible mess of duplicated code and edge-cases
 			var notify = self.TraitsImplementing<INotifyHarvesterAction>();
 			foreach (var n in notify)
-				n.MovingToResources(self, deployPosition.Value, this);
+				n.MovingToResources(self, deployPosition.Value);
 
 			state = MiningState.TryDeploy;
 
@@ -140,7 +140,7 @@ namespace OpenRA.Mods.YR.Activities
 			// Could be wait or could be move to.
 			if (ChildActivity != null)
 			{
-				ChildActivity = ActivityUtils.RunActivity(self, ChildActivity);
+                QueueChild(ActivityUtils.RunActivity(self, ChildActivity));
 				state = MiningState.TryDeploy;
 				return this;
 			}
@@ -169,7 +169,7 @@ namespace OpenRA.Mods.YR.Activities
 			// Deploying in progress
 			if (ChildActivity != null)
 			{
-				ChildActivity = ActivityUtils.RunActivity(self, ChildActivity);
+                QueueChild(ActivityUtils.RunActivity(self, ChildActivity));
 				state = MiningState.Deploying;
 				return this;
 			}
@@ -209,13 +209,13 @@ namespace OpenRA.Mods.YR.Activities
 			return UndeployAndGo(self, out state);
 		}
 
-		public override Activity Tick(Actor self)
+		public override bool Tick(Actor self)
 		{
-			if (IsCanceled)
-				return NextActivity;
+			if (IsCanceling)
+				return true;
 
-			if (NextInQueue != null)
-				return NextInQueue;
+			//if (NextInQueue != null)
+			//	return NextInQueue;
 
 			// Erm... looking at this, I could split these into separte activites...
 			// I prefer finite state machine style though...
@@ -226,18 +226,23 @@ namespace OpenRA.Mods.YR.Activities
 			switch (harv.MiningState)
 			{
 				case MiningState.Scan:
-					return ScanTick(self, out harv.MiningState);
+					Queue(ScanTick(self, out harv.MiningState));
+                    return true;
 				case MiningState.TryDeploy:
-					return TryDeployTick(self, out harv.MiningState);
+                    Queue(TryDeployTick(self, out harv.MiningState));
+                    return true;
 				case MiningState.Deploying:
-					return DeployingTick(self, out harv.MiningState);
+                    Queue(DeployingTick(self, out harv.MiningState));
+                    return true;
 				case MiningState.Mining:
-					return MiningTick(self, out harv.MiningState);
+                    Queue(MiningTick(self, out harv.MiningState));
+                    return true;
 				case MiningState.Kick:
-					return KickTick(self, out harv.MiningState);
+					Queue(KickTick(self, out harv.MiningState));
+                    return true;
 				default:
 					Game.Debug("SpawnHarvesterFindResources.cs in invalid state!");
-					return null;
+					return false;
 			}
 		}
 
@@ -276,7 +281,7 @@ namespace OpenRA.Mods.YR.Activities
 			// Find any harvestable resources:
 			//var passable = (uint)mobileInfo.GetMovementClass(self.World.Map.Rules.TileSet);
 			List<CPos> path;
-			using (var search = PathSearch.Search(self.World, mobileInfo.LocomotorInfo, self, true,
+			using (var search = PathSearch.Search(self.World, mobile.Locomotor, self, true,
 				loc => domainIndex.IsPassable(self.Location, loc, mobileInfo.LocomotorInfo)
 					&& harv.CanHarvestCell(self, loc) && claimLayer.CanClaimCell(self, loc))
 				.WithCustomCost(loc =>

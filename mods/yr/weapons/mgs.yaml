@@ -272,7 +272,7 @@ AAGattling2:
 	Inherits: ^Gatling
 	ReloadDelay: 8
 	Range: 8c0
-	Report: vgatlo4a, vgatlo5a, vgatlo5b, vgatlo6a 
+	Report: vgatlo4a, vgatlo5a, vgatlo5b, vgatlo6a
 	ValidTargets: Air
 	#Report: vgatlo4a.wav, vgatlo5a.wav, vgatlo5b.wav, vgatlo6a.wav
 	Warhead@1Dam: SpreadDamage
@@ -342,7 +342,7 @@ AGGattling3E:
 	ReloadDelay: 16
 	Range: 5c0
 	ValidTargets: Ground, Water
-	Report: vgatlo7a.wav, vgatlo8a.wav, vgatlo8b.wav, vgatlo9a.wav 
+	Report: vgatlo7a.wav, vgatlo8a.wav, vgatlo8b.wav, vgatlo9a.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 25
 		ValidTargets: Ground, Water

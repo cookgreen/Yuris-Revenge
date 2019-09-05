@@ -22,38 +22,35 @@ namespace OpenRA.Mods.YR.Orders
 {
 	public class EnterBunkersTargeter : EnterAlliedActorTargeter<BunkerCargoInfo>
 	{
-		readonly AlternateTransportsMode mode;
-        Func<Actor, bool> canTarget;
+        Func<Actor, TargetModifiers, bool> canTarget;
 
         public EnterBunkersTargeter(string order, int priority,
-			Func<Actor, bool> canTarget, Func<Actor, bool> useEnterCursor,
-			AlternateTransportsMode mode)
+			Func<Actor, TargetModifiers, bool> canTarget, Func<Actor, bool> useEnterCursor)
 			: base(order, priority, canTarget, useEnterCursor)
         {
-            this.mode = mode;
             this.canTarget = canTarget;
         }
 
 		public override bool CanTargetActor(Actor self, Actor target, TargetModifiers modifiers, ref string cursor)
         {
-            if (target.Owner.InternalName == "Neutral" && target.Info.HasTraitInfo<BunkerCargoInfo>() && canTarget(target))
+            if (target.Owner.InternalName == "Neutral" && target.Info.HasTraitInfo<BunkerCargoInfo>() && canTarget(target, modifiers))
                 return true;
 
-            switch (mode)
-			{
-				case AlternateTransportsMode.None:
-					return false;
-				case AlternateTransportsMode.Force:
-					if (!modifiers.HasModifier(TargetModifiers.ForceMove))
-						return false;
-					break;
-				case AlternateTransportsMode.Default:
-					if (modifiers.HasModifier(TargetModifiers.ForceMove))
-						return false;
-					break;
-				case AlternateTransportsMode.Always:
-					break;
-            }
+            //switch (mode)
+			//{
+			//	case AlternateTransportsMode.None:
+			//		return false;
+			//	case AlternateTransportsMode.Force:
+			//		if (!modifiers.HasModifier(TargetModifiers.ForceMove))
+			//			return false;
+			//		break;
+			//	case AlternateTransportsMode.Default:
+			//		if (modifiers.HasModifier(TargetModifiers.ForceMove))
+			//			return false;
+			//		break;
+			//	case AlternateTransportsMode.Always:
+			//		break;
+            //}
 
             return base.CanTargetActor(self, target, modifiers, ref cursor);
 		}

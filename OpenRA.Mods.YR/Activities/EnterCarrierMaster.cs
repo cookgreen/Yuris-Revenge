@@ -85,11 +85,6 @@ namespace OpenRA.Mods.YR.Activities
             base.OnLastRun(self);
         }
 
-        protected override void OnCancel(Actor self)
-        {
-            base.OnCancel(self);
-        }
-
         protected override bool TryStartEnter(Actor self, Actor targetActor)
         {
             return base.TryStartEnter(self, targetActor);

@@ -62,10 +62,22 @@ namespace OpenRA.Mods.YR.Traits
 		[Desc("Voice to play when ordered to unload the passengers.")]
 		[VoiceReference] public readonly string UnloadVoice = "Action";
 
-		[Desc("Which direction the passenger will face (relative to the transport) when unloading.")]
+        [Desc("Radius to search for a load/unload location if the ordered cell is blocked.")]
+        public readonly WDist LoadRange = WDist.FromCells(5);
+
+        [Desc("Which direction the passenger will face (relative to the transport) when unloading.")]
 		public readonly int PassengerFacing = 128;
 
-		[Desc("Cursor to display when able to unload the passengers.")]
+        [Desc("Delay (in ticks) before continuing after loading a passenger.")]
+        public readonly int AfterLoadDelay = 8;
+
+        [Desc("Delay (in ticks) before unloading the first passenger.")]
+        public readonly int BeforeUnloadDelay = 8;
+
+        [Desc("Delay (in ticks) before continuing after unloading a passenger.")]
+        public readonly int AfterUnloadDelay = 25;
+
+        [Desc("Cursor to display when able to unload the passengers.")]
 		public readonly string UnloadCursor = "deploy";
 
 		[Desc("Cursor to display when unable to unload the passengers.")]
@@ -224,26 +236,25 @@ namespace OpenRA.Mods.YR.Traits
 		bool IIssueDeployOrder.CanIssueDeployOrder(Actor self) { return true; }
 
 		public void ResolveOrder(Actor self, Order order)
-		{
-			if (order.OrderString == "Unload")
-			{
-				if (!CanUnload())
-					return;
+        {
+            if (order.OrderString == "Unload")
+            {
+                if (!order.Queued && !CanUnload())
+                    return;
 
-				Unloading = true;
-				self.CancelActivity();
-				if (aircraft != null)
-					self.QueueActivity(new HeliLand(self, true));
-				self.QueueActivity(new UnloadBunkerCargo(self, true));
-			}
-		}
+                if (!order.Queued)
+                    self.CancelActivity();
+
+                self.QueueActivity(new UnloadBunkerCargo(self, Info.LoadRange));
+            }
+        }
 
 		IEnumerable<CPos> GetAdjacentCells()
 		{
 			return Util.AdjacentCells(self.World, Target.FromActor(self)).Where(c => self.Location != c);
 		}
 
-		bool CanUnload()
+		public bool CanUnload()
 		{
 			if (checkTerrainType)
 			{

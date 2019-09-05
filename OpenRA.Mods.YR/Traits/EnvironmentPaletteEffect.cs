@@ -19,6 +19,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OpenRA.Graphics;
+using Color = OpenRA.Primitives.Color;
 
 namespace OpenRA.Mods.YR.Traits
 {

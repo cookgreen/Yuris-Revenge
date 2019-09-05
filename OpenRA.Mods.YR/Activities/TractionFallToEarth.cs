@@ -77,12 +77,12 @@ namespace OpenRA.Mods.YR.Activities
 			health.InflictDamage(self, self, new Damage(health.MaxHP * tractable.Info.DamageFactor / 100), false);
 		}
 
-		public override Activity Tick(Actor self)
+		public override bool Tick(Actor self)
 		{
 			if (self.World.Map.DistanceAboveTerrain(self.CenterPosition).Length <= 0)
 			{
 				OnGroundLevel(self);
-				return null;
+				return false;
 			}
 
 			var move = new WVec(0, 0, fallSpeed);
@@ -94,7 +94,7 @@ namespace OpenRA.Mods.YR.Activities
 			else
 				tractable.SetPosition(self, pos);
 
-			return this;
+			return true;
 		}
 	}
 }

@@ -96,18 +96,18 @@ namespace OpenRA.Mods.YR.Activities
             return this;
 		}
 
-		public override Activity Tick(Actor self)
+		public override bool Tick(Actor self)
 		{
             /*
              We just need to confirm one thing: when the nearest resource is finished, 
              just find the next resource point and transform and move to that location
              */
 
-			if (IsCanceled)
-				return NextActivity;
+			if (IsCanceling)
+				return true;
 
-			if (NextInQueue != null)
-				return NextInQueue;
+			//if (NextInQueue != null)
+			//	return NextInQueue;
 
 			// Erm... looking at this, I could split these into separte activites...
 			// I prefer finite state machine style though...
@@ -118,11 +118,13 @@ namespace OpenRA.Mods.YR.Activities
 			switch (harv.MiningState)
 			{
 				case MiningState.Mining:
-					return MiningTick(self, out harv.MiningState);
+                    Queue(MiningTick(self, out harv.MiningState));
+                    return true;
 				case MiningState.Kick:
-					return KickTick(self, out harv.MiningState);
+                    Queue(KickTick(self, out harv.MiningState));
+                    return true;
                 default:
-					return null;
+					return false;
 			}
 		}
 
@@ -145,11 +147,12 @@ namespace OpenRA.Mods.YR.Activities
             {
                 choosenSlave = slaves[0];
 
+                var mobile = choosenSlave.Actor.Trait<Mobile>();
                 var mobileInfo = choosenSlave.Actor.Info.TraitInfo<MobileInfo>();
                 // Find any harvestable resources:
                 //var passable = (uint)mobileInfo.GetMovementClass(self.World.Map.Rules.TileSet);
                 List<CPos> path;
-                using (var search = PathSearch.Search(self.World, mobileInfo.LocomotorInfo, self, true,
+                using (var search = PathSearch.Search(self.World, mobile.Locomotor, self, true,
                     loc => domainIndex.IsPassable(self.Location, loc, mobileInfo.LocomotorInfo)
                         && harv.CanHarvestCell(self, loc) && claimLayer.CanClaimCell(self, loc))
                     .WithCustomCost(loc =>

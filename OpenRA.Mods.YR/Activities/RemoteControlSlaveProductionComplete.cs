@@ -24,11 +24,11 @@ namespace OpenRA.Mods.YR.Activities
             this.slave = slave;
         }
 
-        public override Activity Tick(Actor self)
+        public override bool Tick(Actor self)
         {
             slave.BuildComplete = true;
 
-            return NextActivity;
+            return true;
         }
     }
 }

@@ -285,7 +285,7 @@
 	ShutdownPower:
 		Duration: 10
 		RequiresCondition: diskdrainability
-        
+		
 ^Diskdraintransfercashable:
 	ExternalCondition@diskdrainability:
 		Condition: diskdrainability
@@ -299,7 +299,7 @@
 	Targetable@REFIMERY:
 		TargetTypes: refinery
 		RequiresCondition: normalcash
-    
+	
 ^Tractable:
 	Tractable:
 		TractingCondition: tracting
@@ -328,7 +328,7 @@
 		Condition: chronodisable
 		Color: FFFFFF
 	Mobile:
-		RequiresCondition: !chronodisable
+		PauseOnCondition: !(!chronodisable)
 	ExternalCondition@CHRONODISABLE:
 		Condition: chronodisable
 
@@ -371,7 +371,7 @@
 	AutoTargetPriority@ATTACKANYTHING:
 		RequiresCondition: stance-attackanything || assault-move
 	AttackMove:
-		AssaultMoveScanCondition: assault-move
+		AssaultMoveCondition: assault-move
 		Voice: Attack
 		
 ^AutoTargetRobotTankGroundAssaultMove:
@@ -382,7 +382,7 @@
 	AutoTargetPriority@ATTACKANYTHING:
 		RequiresCondition: (stance-attackanything || assault-move) && robotcenter
 	AttackMove:
-		AssaultMoveScanCondition: assault-move && robotcenter
+		AssaultMoveCondition: assault-move && robotcenter
 		Voice: Attack
 
 ^AutoTargetAir:
@@ -410,7 +410,7 @@
 	AutoTargetPriority@ATTACKANYTHING:
 		RequiresCondition: stance-attackanything || assault-move
 	AttackMove:
-		AssaultMoveScanCondition: assault-move
+		AssaultMoveCondition: assault-move
 		Voice: Attack
 
 ^Building:
@@ -487,6 +487,7 @@
 		Sequence: repair
 		ReferencePoint: Center
 		Palette: mouse
+	ActorPreviewPlaceBuildingPreview:
 
 ^SupportBuilding:
 	Inherits: ^Building
@@ -751,7 +752,7 @@
 	QuantizeFacingsFromSequence:
 		Sequence: stand
 	Repairable:
-		RepairBuildings: cahosp
+		RepairActors: cahosp
 		Voice: Move
 	Chronoshiftable:
 		ExplodeInstead: true
@@ -901,7 +902,7 @@
 	Mobile:
 		Voice: Move
 		TurnSpeed: 5
-		RequiresCondition: !bunkered
+		PauseOnCondition: !(!bunkered)
 		Locomotor: wheeled
 	SelectionDecorations:
 		Palette: pips
@@ -911,7 +912,7 @@
 		TargetTypes: Ground, Vehicle, Repair, DetonateAttack
 	Repairable:
 		Voice: Move
-		RepairBuildings: gadept, nadept, caoutp
+		RepairActors: gadept, nadept, caoutp
 	Passenger:
 		Voice: Move
 		CargoType: Vehicle
@@ -995,6 +996,7 @@
 		AirborneCondition: airborne
 		CanHover: True
 		VTOL: true
+		CanSlide: True
 	HiddenUnderFog:
 		Type: CenterPosition
 	ActorLostNotification:
@@ -1032,11 +1034,9 @@
 		CruiseAltitude: 5600
 		CruisingCondition: cruising
 		AltitudeVelocity: 120
-		LandWhenIdle: false
 		TakeOffOnCreation: false
 	Hovers@CRUISING:
 		RequiresCondition: cruising
-	ReturnOnIdle:
 	WithVoxelBody:
 
 ^Husk:
@@ -1077,6 +1077,7 @@
 	Aircraft:
 		CanHover: true
 		VTOL: true
+		CanSlide: True
 
 ^Ship:
 	Inherits@1: ^ExistsInWorld
@@ -1103,7 +1104,7 @@
 		TargetTypes: Ground, Repair
 	Repairable:
 		Voice: Attack
-		RepairBuildings: gayard, nayard
+		RepairActors: gayard, nayard
 	HiddenUnderFog:
 	ActorLostNotification:
 	ProximityCaptor:

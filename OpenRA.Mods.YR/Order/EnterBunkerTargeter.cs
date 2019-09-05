@@ -22,30 +22,30 @@ namespace OpenRA.Mods.YR.Orders
 {
 	public class EnterBunkerTargeter : EnterAlliedActorTargeter<BunkerCargoInfo>
 	{
-		readonly AlternateTransportsMode mode;
-
 		public EnterBunkerTargeter(string order, int priority,
-			Func<Actor, bool> canTarget, Func<Actor, bool> useEnterCursor,
-			AlternateTransportsMode mode)
-			: base(order, priority, canTarget, useEnterCursor) { this.mode = mode; }
+			Func<Actor, TargetModifiers, bool> canTarget, Func<Actor, bool> useEnterCursor)
+			: base(order, priority, canTarget, useEnterCursor)
+        {
+
+        }
 
 		public override bool CanTargetActor(Actor self, Actor target, TargetModifiers modifiers, ref string cursor)
 		{
-			switch (mode)
-			{
-				case AlternateTransportsMode.None:
-					break;
-				case AlternateTransportsMode.Force:
-					if (modifiers.HasModifier(TargetModifiers.ForceMove))
-						return false;
-					break;
-				case AlternateTransportsMode.Default:
-					if (!modifiers.HasModifier(TargetModifiers.ForceMove))
-						return false;
-					break;
-				case AlternateTransportsMode.Always:
-					return false;
-			}
+			//switch (mode)
+			//{
+			//	case AlternateTransportsMode.None:
+			//		break;
+			//	case AlternateTransportsMode.Force:
+			//		if (modifiers.HasModifier(TargetModifiers.ForceMove))
+			//			return false;
+			//		break;
+			//	case AlternateTransportsMode.Default:
+			//		if (!modifiers.HasModifier(TargetModifiers.ForceMove))
+			//			return false;
+			//		break;
+			//	case AlternateTransportsMode.Always:
+			//		return false;
+			//}
 
 			return base.CanTargetActor(self, target, modifiers, ref cursor);
 		}

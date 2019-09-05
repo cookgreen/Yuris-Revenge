@@ -181,41 +181,6 @@ namespace OpenRA.Mods.YR.Traits
 
 		#region Implement IMove
 
-		public Activity MoveTo(CPos cell, int nearEnough)
-		{
-			return new ShootableBallisticMissileFly(self, Target.FromCell(self.World, cell));
-		}
-
-		public Activity MoveTo(CPos cell, Actor ignoredActor)
-		{
-			return new ShootableBallisticMissileFly(self, Target.FromCell(self.World, cell));
-		}
-
-		public Activity MoveWithinRange(Target target, WDist range)
-		{
-			return new ShootableBallisticMissileFly(self, target);
-		}
-
-		public Activity MoveWithinRange(Target target, WDist minRange, WDist maxRange)
-		{
-			return new ShootableBallisticMissileFly(self, target);
-		}
-
-		public Activity MoveFollow(Actor self, Target target, WDist minRange, WDist maxRange)
-		{
-			// You can't follow lol
-			return new ShootableBallisticMissileFly(self, target);
-		}
-
-		public Activity MoveIntoWorld(Actor self, CPos cell, SubCell subCell = SubCell.Any)
-		{
-			return null;
-		}
-
-		public Activity MoveToTarget(Actor self, Target target)
-		{
-			return new ShootableBallisticMissileFly(self, target);
-		}
 
 		public Activity MoveIntoTarget(Actor self, Target target)
 		{
@@ -271,7 +236,11 @@ namespace OpenRA.Mods.YR.Traits
 			}
 		}
 
-		public Order IssueOrder(Actor self, IOrderTargeter order, Target target, bool queued)
+        private MovementType currentMovementType;
+
+        public MovementType CurrentMovementTypes { get => currentMovementType; set => currentMovementType = value; }
+
+        public Order IssueOrder(Actor self, IOrderTargeter order, Target target, bool queued)
 		{
             if (order.OrderID == "Enter")
                 return new Order(order.OrderID, self, queued);
@@ -282,27 +251,32 @@ namespace OpenRA.Mods.YR.Traits
 			return null;
 		}
 
-		public void ResolveOrder(Actor self, Order order)
-		{
-			if (order.OrderString == "Move")
-			{
-				var cell = self.World.Map.Clamp(order.TargetLocation);
-				var target = Target.FromCell(self.World, cell);
-				self.QueueActivity(order.Queued, new ShootableBallisticMissileFly(self, target));
-			}
-		}
-
 		#endregion
 
 		public void RemovedFromWorld(Actor self)
 		{
 			self.World.RemoveFromMaps(self, this);
 			OnAirborneAltitudeLeft();
-		}
+        }
 
-		#region Airborne conditions
+        public Activity MoveTo(CPos cell, int nearEnough, Primitives.Color? targetLineColor = null)
+        {
+            return new ShootableBallisticMissileFly(self, Target.FromCell(self.World, cell));
+        }
 
-		void OnAirborneAltitudeReached()
+        public Activity MoveTo(CPos cell, Actor ignoreActor, Primitives.Color? targetLineColor = null)
+        {
+            return new ShootableBallisticMissileFly(self, Target.FromCell(self.World, cell));
+        }
+
+        public Activity MoveIntoWorld(Actor self, int delay = 0)
+        {
+            return null;
+        }
+
+        #region Airborne conditions
+
+        void OnAirborneAltitudeReached()
 		{
 			if (airborne)
 				return;
@@ -345,22 +319,22 @@ namespace OpenRA.Mods.YR.Traits
             return new[] { Pair.New(Location, SubCell.FullCell) };
         }
 
-        public Activity MoveWithinRange(Target target, WDist range, WPos? initialTargetPosition = default(WPos?), Color? targetLineColor = default(Color?))
+        public Activity MoveWithinRange(Target target, WDist range, WPos? initialTargetPosition = default(WPos?), Primitives.Color? targetLineColor = default(Primitives.Color?))
         {
             return null;
         }
 
-        public Activity MoveWithinRange(Target target, WDist minRange, WDist maxRange, WPos? initialTargetPosition = default(WPos?), Color? targetLineColor = default(Color?))
+        public Activity MoveWithinRange(Target target, WDist minRange, WDist maxRange, WPos? initialTargetPosition = default(WPos?), Primitives.Color? targetLineColor = default(Primitives.Color?))
         {
             return null;
         }
 
-        public Activity MoveFollow(Actor self, Target target, WDist minRange, WDist maxRange, WPos? initialTargetPosition = default(WPos?), Color? targetLineColor = default(Color?))
+        public Activity MoveFollow(Actor self, Target target, WDist minRange, WDist maxRange, WPos? initialTargetPosition = default(WPos?), Primitives.Color? targetLineColor = default(Primitives.Color?))
         {
             return null;
         }
 
-        public Activity MoveToTarget(Actor self, Target target, WPos? initialTargetPosition = default(WPos?), Color? targetLineColor = default(Color?))
+        public Activity MoveToTarget(Actor self, Target target, WPos? initialTargetPosition = default(WPos?), Primitives.Color? targetLineColor = default(Primitives.Color?))
         {
             return null;
         }

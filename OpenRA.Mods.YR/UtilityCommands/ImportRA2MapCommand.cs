@@ -20,6 +20,8 @@ using OpenRA.Mods.Common.Traits;
 using OpenRA.Primitives;
 using OpenRA.Traits;
 using System.Drawing;
+using Size = OpenRA.Primitives.Size;
+using Rectangle = OpenRA.Primitives.Rectangle;
 
 namespace OpenRA.Mods.Cnc.UtilityCommands
 {

@@ -91,10 +91,5 @@ namespace OpenRA.Mods.YR.Activities
         {
             bunkerPassenger.Unreserve(self);
         }
-
-        protected override void OnCancel(Actor self)
-        {
-            bunkerPassenger.Unreserve(self);
-        }
     }
 }

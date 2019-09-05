@@ -10,7 +10,6 @@
 #endregion
 
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 using OpenRA.Graphics;
 using OpenRA.Mods.Common.Graphics;
@@ -80,12 +79,12 @@ namespace OpenRA.Mods.YR.Traits
 			if (wsb != null && wsb.DefaultAnimation.HasSequence(info.Sequence))
 				wsb.PlayCustomAnimation(self, info.Sequence);
 
-			Game.Sound.Play(SoundType.World, info.OnFireSound, self.World.Map.CenterOfCell(order.TargetLocation));
+			Game.Sound.Play(SoundType.World, info.OnFireSound, order.Target.CenterPosition);
 
             IEnumerable<Actor> actors = null;
             if (!info.EffectToAll)
             {
-                actors = UnitsInRange(order.TargetLocation);
+                actors = UnitsInRange(self.World.Map.CellContaining(order.Target.CenterPosition));
             }
             else
             {
@@ -165,7 +164,7 @@ namespace OpenRA.Mods.YR.Traits
 				foreach (var unit in power.UnitsInRange(xy))
 				{
 					var bounds = unit.TraitsImplementing<IDecorationBounds>().FirstNonEmptyBounds(unit, wr);
-					yield return new SelectionBoxRenderable(unit, bounds, Color.Red);
+					yield return new SelectionBoxRenderable(unit, bounds, OpenRA.Primitives.Color.Red);
 				}
 			}
 
@@ -182,6 +181,15 @@ namespace OpenRA.Mods.YR.Traits
 			{
 				return power.UnitsInRange(cell).Any() ? power.info.Cursor : power.info.BlockedCursor;
 			}
-		}
+
+            public void Deactivate()
+            {
+            }
+
+            public bool HandleKeyPress(KeyInput e)
+            {
+                return true;
+            }
+        }
 	}
 }

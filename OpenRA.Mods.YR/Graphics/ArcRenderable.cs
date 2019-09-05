@@ -13,19 +13,20 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using OpenRA.Graphics;
+using OpenRA.Primitives;
 
 namespace OpenRA.Mods.RA2.Graphics
 {
 	public struct ArcRenderable : IRenderable, IFinalizedRenderable
 	{
-		readonly Color color;
+		readonly Primitives.Color color;
 		readonly WPos a, b;
 		readonly WAngle angle;
 		readonly int zOffset;
 		readonly WDist width;
 		readonly int segments;
 
-		public ArcRenderable(WPos a, WPos b, int zOffset, WAngle angle, Color color, WDist width, int segments)
+		public ArcRenderable(WPos a, WPos b, int zOffset, WAngle angle, Primitives.Color color, WDist width, int segments)
 		{
 			this.a = a;
 			this.b = b;
@@ -59,6 +60,10 @@ namespace OpenRA.Mods.RA2.Graphics
 		}
 
 		public void RenderDebugGeometry(WorldRenderer wr) { }
-		public Rectangle ScreenBounds(WorldRenderer wr) { return Rectangle.Empty; }
-	}
+
+        Primitives.Rectangle IFinalizedRenderable.ScreenBounds(WorldRenderer wr)
+        {
+            return Primitives.Rectangle.Empty;
+        }
+    }
 }

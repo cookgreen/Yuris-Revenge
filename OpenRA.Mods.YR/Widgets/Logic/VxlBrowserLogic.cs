@@ -26,6 +26,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Color = OpenRA.Primitives.Color;
 
 namespace OpenRA.Mods.YR.Widgets.Logic
 {
@@ -103,7 +104,7 @@ namespace OpenRA.Mods.YR.Widgets.Logic
 
             var lightAmbientColorPreview = panel.GetOrNull<ColorPreviewManagerWidget>("LIGHT_AMBIENT_COLOR_MANAGER");
             if (lightAmbientColorPreview != null)
-                lightAmbientColorPreview.Color = HSLColor.FromRGB(
+                lightAmbientColorPreview.Color = Color.FromArgb(
                     Convert.ToInt32(lightAmbientColor[0] * 255),
                     Convert.ToInt32(lightAmbientColor[1] * 255),
                     Convert.ToInt32(lightAmbientColor[2] * 255)
@@ -111,7 +112,7 @@ namespace OpenRA.Mods.YR.Widgets.Logic
 
             var lightDiffuseColorPreview = panel.GetOrNull<ColorPreviewManagerWidget>("LIGHT_DIFFUSE_COLOR_MANAGER");
             if (lightDiffuseColorPreview != null)
-                lightDiffuseColorPreview.Color = HSLColor.FromRGB(
+                lightDiffuseColorPreview.Color = Color.FromArgb(
                     Convert.ToInt32(lightDiffuseColor[0] * 255),
                     Convert.ToInt32(lightDiffuseColor[1] * 255),
                     Convert.ToInt32(lightDiffuseColor[2] * 255)
@@ -156,7 +157,7 @@ namespace OpenRA.Mods.YR.Widgets.Logic
             {
                 lightAmbientColorDropDown.OnMouseDown = _ => ShowLightAmbientColorDropDown(lightAmbientColorDropDown, lightAmbientColorPreview, world);
                 lightAmbientColorBlock = panel.Get<ColorBlockWidget>("AMBIENT_COLORBLOCK");
-                lightAmbientColorBlock.GetColor = () => System.Drawing.Color.FromArgb(
+                lightAmbientColorBlock.GetColor = () => OpenRA.Primitives.Color.FromArgb(
                     Convert.ToInt32(lightAmbientColor[0] * 255),
                     Convert.ToInt32(lightAmbientColor[1] * 255),
                     Convert.ToInt32(lightAmbientColor[2] * 255)
@@ -171,7 +172,7 @@ namespace OpenRA.Mods.YR.Widgets.Logic
             {
                 lightDiffuseColorDropDown.OnMouseDown = _ => ShowLightDiffuseColorDropDown(lightDiffuseColorDropDown, lightDiffuseColorPreview, world);
                 lightDiffuseColorBlock = panel.Get<ColorBlockWidget>("DIFFUSE_COLORBLOCK");
-                lightDiffuseColorBlock.GetColor = () => System.Drawing.Color.FromArgb(
+                lightDiffuseColorBlock.GetColor = () => Color.FromArgb(
                     Convert.ToInt32(lightDiffuseColor[0] * 255),
                     Convert.ToInt32(lightDiffuseColor[1] * 255),
                     Convert.ToInt32(lightDiffuseColor[2] * 255)
@@ -400,7 +401,7 @@ namespace OpenRA.Mods.YR.Widgets.Logic
         {
             Action onExit = () =>
             {
-                System.Drawing.Color c = preview.Color.RGB;
+                Color c = preview.Color;
                 lightAmbientColor[0] = float.Parse((Convert.ToSingle(c.R) / 255).ToString("0.0"));
                 lightAmbientColor[1] = float.Parse((Convert.ToSingle(c.G) / 255).ToString("0.0"));
                 lightAmbientColor[2] = float.Parse((Convert.ToSingle(c.B) / 255).ToString("0.0"));
@@ -410,12 +411,12 @@ namespace OpenRA.Mods.YR.Widgets.Logic
 
             color.RemovePanel();
 
-            Action<HSLColor> onChange = c => preview.Color = c;
+            Action<Color> onChange = c => preview.Color = c;
             
             var colorChooser = Game.LoadWidget(world, "COLOR_CHOOSER", null, new WidgetArgs()
             {
                 { "onChange", onChange },
-                { "initialColor", HSLColor.FromRGB(
+                { "initialColor", Color.FromArgb(
                 Convert.ToInt32(lightAmbientColor[0] * 255),
                 Convert.ToInt32(lightAmbientColor[1] * 255),
                 Convert.ToInt32(lightAmbientColor[2] * 255)
@@ -430,7 +431,7 @@ namespace OpenRA.Mods.YR.Widgets.Logic
         {
             Action onExit = () =>
             {
-                System.Drawing.Color c = preview.Color.RGB;
+                Color c = preview.Color;
                 lightDiffuseColor[0] = float.Parse((Convert.ToSingle(c.R) / 255).ToString("0.0"));
                 lightDiffuseColor[1] = float.Parse((Convert.ToSingle(c.G) / 255).ToString("0.0"));
                 lightDiffuseColor[2] = float.Parse((Convert.ToSingle(c.B) / 255).ToString("0.0"));
@@ -440,12 +441,12 @@ namespace OpenRA.Mods.YR.Widgets.Logic
 
             color.RemovePanel();
 
-            Action<HSLColor> onChange = c => preview.Color = c;
+            Action<Color> onChange = c => preview.Color = c;
 
             var colorChooser = Game.LoadWidget(world, "COLOR_CHOOSER", null, new WidgetArgs()
             {
                 { "onChange", onChange },
-                { "initialColor", HSLColor.FromRGB(
+                { "initialColor", Color.FromArgb(
                 Convert.ToInt32(lightDiffuseColor[0] * 255),
                 Convert.ToInt32(lightDiffuseColor[1] * 255),
                 Convert.ToInt32(lightDiffuseColor[2] * 255)
