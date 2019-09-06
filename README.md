@@ -51,8 +51,8 @@ forcecore
 fusion809  
 Gyula Zimmermann(Graion Dilach)  
 intr  
-neuromancer  
 MustafaTR  
+neuromancer  
 yaaaaa  
 
 #### Thanks to all the people who helped this mod!  
