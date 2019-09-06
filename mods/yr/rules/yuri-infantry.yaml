@@ -341,6 +341,7 @@ yuripr:
 		HP: 150
 	Mobile:
 		Speed: 90
+		Locomotor: swimsuit
 		PauseOnCondition: !(!deployed && !deploying && !chronodisable)
 	RevealsShroud:
 		Range: 12c0
