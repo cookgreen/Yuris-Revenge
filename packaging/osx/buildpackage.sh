@@ -4,7 +4,19 @@ set -e
 
 command -v make >/dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires make."; exit 1; }
 command -v python >/dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires python."; exit 1; }
-command -v curl >/dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires curl."; exit 1; }
+command -v curl >/dev/null 2>&1 || command -v wget > /dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires curl or wget."; exit 1; }
+
+require_variables() {
+	missing=""
+	for i in "$@"; do
+		eval check="\$$i"
+		[ -z "${check}" ] && missing="${missing}   ${i}\n"
+	done
+	if [ ! -z "${missing}" ]; then
+		echo "Required mod.config variables are missing:\n${missing}Repair your mod.config (or user.config) and try again."
+		exit 1
+	fi
+}
 
 if [ $# -eq "0" ]; then
 	echo "Usage: `basename $0` version [outputdir]"
@@ -21,6 +33,10 @@ if [ -f "${TEMPLATE_ROOT}/user.config" ]; then
 	# shellcheck source=user.config
 	. "${TEMPLATE_ROOT}/user.config"
 fi
+
+require_variables "MOD_ID" "ENGINE_DIRECTORY" "PACKAGING_DISPLAY_NAME" "PACKAGING_INSTALLER_NAME" \
+	"PACKAGING_OSX_LAUNCHER_TAG" "PACKAGING_OSX_LAUNCHER_SOURCE" "PACKAGING_OSX_LAUNCHER_TEMP_ARCHIVE_NAME" \
+	"PACKAGING_FAQ_URL" "PACKAGING_OVERWRITE_MOD_VERSION"
 
 TAG="$1"
 if [ $# -eq "1" ]; then
@@ -40,14 +56,18 @@ modify_plist() {
 }
 
 echo "Building launcher"
-curl -s -L  -o "${PACKAGING_OSX_LAUNCHER_TEMP_ARCHIVE_NAME}" -O "${PACKAGING_OSX_LAUNCHER_SOURCE}" || exit 3
+
+if command -v curl >/dev/null 2>&1; then
+	curl -s -L -o "${PACKAGING_OSX_LAUNCHER_TEMP_ARCHIVE_NAME}" -O "${PACKAGING_OSX_LAUNCHER_SOURCE}" || exit 3
+else
+	wget -cq "${PACKAGING_OSX_LAUNCHER_SOURCE}" -O "${PACKAGING_OSX_LAUNCHER_TEMP_ARCHIVE_NAME}" || exit 3
+fi
 
 unzip -qq -d "${BUILTDIR}" "${PACKAGING_OSX_LAUNCHER_TEMP_ARCHIVE_NAME}"
 rm "${PACKAGING_OSX_LAUNCHER_TEMP_ARCHIVE_NAME}"
 
 modify_plist "{DEV_VERSION}" "${TAG}" "${BUILTDIR}/OpenRA.app/Contents/Info.plist"
 modify_plist "{FAQ_URL}" "${PACKAGING_FAQ_URL}" "${BUILTDIR}/OpenRA.app/Contents/Info.plist"
-echo "Building core files"
 
 pushd ${TEMPLATE_ROOT} > /dev/null
 
@@ -62,11 +82,21 @@ if [ ! -d "${OUTPUTDIR}" ]; then
 	exit 1
 fi
 
-make version VERSION="${TAG}"
+MOD_VERSION=$(grep 'Version:' mods/${MOD_ID}/mod.yaml | awk '{print $2}')
+
+if [ "${PACKAGING_OVERWRITE_MOD_VERSION}" == "True" ]; then
+    make version VERSION="${TAG}"
+else
+	echo "Mod version ${MOD_VERSION} will remain unchanged.";
+fi
 
 pushd ${ENGINE_DIRECTORY} > /dev/null
+echo "Building core files"
+
+make clean
 make osx-dependencies
-make core SDK="-sdk:4.5"
+make core
+make version VERSION="${ENGINE_VERSION}"
 make install-engine gameinstalldir="/Contents/Resources/" DESTDIR="${BUILTDIR}/OpenRA.app"
 make install-common-mod-files gameinstalldir="/Contents/Resources/" DESTDIR="${BUILTDIR}/OpenRA.app"
 
@@ -76,10 +106,13 @@ for f in ${PACKAGING_COPY_ENGINE_FILES}; do
 done
 
 popd > /dev/null
+
+echo "Building mod files"
+make core
+cp -Lr mods/* "${BUILTDIR}/OpenRA.app/Contents/Resources/mods"
+
 popd > /dev/null
 
-# Add mod files
-cp -Lr "${TEMPLATE_ROOT}/mods/"* "${BUILTDIR}/OpenRA.app/Contents/Resources/mods"
 cp "mod.icns" "${BUILTDIR}/OpenRA.app/Contents/Resources/${MOD_ID}.icns"
 
 pushd "${BUILTDIR}" > /dev/null
