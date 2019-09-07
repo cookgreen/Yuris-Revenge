@@ -7,5 +7,5 @@ Icon=openra-{MODID}
 Exec=openra-{MODID} %u
 Terminal=false
 Categories=Game;StrategyGame;
-StartupWMClass=openra-{MODID}
+StartupWMClass=openra-{MODID}-{TAG}
 MimeType=x-scheme-handler/openra-{MODID}-{TAG};
