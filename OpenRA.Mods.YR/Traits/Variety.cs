@@ -11,19 +11,19 @@
  * information, see COPYING.
  */
 #endregion
-using OpenRA.Mods.Common.Traits;
-using OpenRA.Traits;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using OpenRA.Graphics;
-using System.Drawing;
 using OpenRA.Activities;
-using OpenRA.Primitives;
+using OpenRA.Graphics;
 using OpenRA.Mods.Common;
 using OpenRA.Mods.Common.Activities;
+using OpenRA.Mods.Common.Traits;
+using OpenRA.Primitives;
+using OpenRA.Traits;
 
 namespace OpenRA.Mods.YR.Traits
 {

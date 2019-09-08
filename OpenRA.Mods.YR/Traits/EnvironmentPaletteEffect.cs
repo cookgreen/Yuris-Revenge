@@ -11,7 +11,6 @@
  * information, see COPYING.
  */
 #endregion
-using OpenRA.Traits;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -19,6 +18,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OpenRA.Graphics;
+using OpenRA.Traits;
 using Color = OpenRA.Primitives.Color;
 
 namespace OpenRA.Mods.YR.Traits

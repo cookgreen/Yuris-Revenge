@@ -11,17 +11,17 @@
  * information, see COPYING.
  */
 #endregion
-using OpenRA.Mods.Common.Warheads;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using OpenRA.Traits;
-using OpenRA.Primitives;
 using OpenRA.Mods.Common;
 using OpenRA.Mods.Common.Effects;
 using OpenRA.Mods.Common.Traits.Render;
+using OpenRA.Mods.Common.Warheads;
+using OpenRA.Primitives;
+using OpenRA.Traits;
 
 namespace OpenRA.Mods.YR.Warheads
 {

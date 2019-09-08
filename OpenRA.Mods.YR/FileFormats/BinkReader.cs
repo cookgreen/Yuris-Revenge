@@ -12,11 +12,13 @@ namespace OpenRA.Mods.YR.FileFormats
     {
         public BinkFrameIndex[] Indices;
     }
+
     public class BinkFrameIndex
     {
         public uint Offset;
         public bool IsKeyframe;
     }
+
     public class BinkAudioTrack
     {
         public int ID;
@@ -25,6 +27,7 @@ namespace OpenRA.Mods.YR.FileFormats
         public int SampleBits;
         public int SampleRate;
     }
+
     public class BinkReader
     {
         public List<BinkAudioTrack> AudioTracks;
@@ -32,7 +35,6 @@ namespace OpenRA.Mods.YR.FileFormats
         public int AudioChannels;
         public byte[] AudioData;
         public int CurrentFrame;
-        public Bitmap FrameData;
         public float Framerate;
         public int Frames;
         public bool HasAudio;
@@ -55,16 +57,17 @@ namespace OpenRA.Mods.YR.FileFormats
             {
                 throw new Exception("Invalid BINK File!");
             }
-            stream.ReadByte();//Version
-            stream.ReadUInt32();//File Size
-            Frames = stream.ReadInt32();//Number of frames
-            stream.ReadFloat();//Largest frame size
-            stream.ReadFloat();//Unknown
-            Width = stream.ReadInt32();//Video width
-            Height = stream.ReadInt32();//Video height
-            Framerate = stream.ReadInt32();//Frames per second
-            buffer = stream.ReadBytes(4);//Frames per second divider
-            buffer = stream.ReadBytes(4);//Flags
+
+            stream.ReadByte(); // Version
+            stream.ReadUInt32(); // File Size
+            Frames = stream.ReadInt32(); // Number of frames
+            stream.ReadFloat(); // Largest frame size
+            stream.ReadFloat(); // Unknown
+            Width = stream.ReadInt32(); // Video width
+            Height = stream.ReadInt32(); // Video height
+            Framerate = stream.ReadInt32(); // Frames per second
+            buffer = stream.ReadBytes(4); // Frames per second divider
+            buffer = stream.ReadBytes(4); // Flags
             AudioTrackLength = stream.ReadUInt32();
             HasAudio = AudioTrackLength > 0;
 
@@ -100,6 +103,7 @@ namespace OpenRA.Mods.YR.FileFormats
                 track.AudioChannels = buffer[0];
                 AudioTracks.Add(track);
             }
+
             for (int i = 0; i < AudioTrackLength; i++)
             {
                 BinkAudioTrack track = AudioTracks[i];
@@ -111,6 +115,7 @@ namespace OpenRA.Mods.YR.FileFormats
                 newbuffer[3] = 0;
                 track.SampleRate = BitConverter.ToInt32(newbuffer, 0);
             }
+
             for (int i = 0; i < AudioTrackLength; i++)
             {
                 BinkAudioTrack track = AudioTracks[i];
@@ -128,6 +133,7 @@ namespace OpenRA.Mods.YR.FileFormats
         {
             stream.Seek(frameIndexTable.Indices[CurrentFrame].Offset, SeekOrigin.Begin);
         }
+
         public void Reset()
         {
             CurrentFrame = 0;

@@ -216,8 +216,8 @@ namespace OpenRA.Mods.YR.Widgets
                         new WAngle(360)
                     )
                 }, 
-                () => false, 
-                () => 0, 
+                () => false,
+                () => 0,
                 true);
             
             ModelPreview preview = new ModelPreview(

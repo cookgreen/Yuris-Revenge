@@ -10,13 +10,12 @@
 #endregion
 
 using System;
-using OpenRA.Mods.Common.Traits;
-using OpenRA.Traits;
-using OpenRA.Mods.Common.Activities;
-using OpenRA.Mods.YR.Traits;
-using OpenRA.Mods.Common.Effects;
 using OpenRA.Graphics;
-using OpenRA.Mods.Common.Traits.Render;
+using OpenRA.Mods.Common.Activities;
+using OpenRA.Mods.Common.Effects;
+using OpenRA.Mods.Common.Traits;
+using OpenRA.Mods.YR.Traits;
+using OpenRA.Traits;
 
 namespace OpenRA.Mods.YR.Activities
 {
@@ -25,18 +24,18 @@ namespace OpenRA.Mods.YR.Activities
 		readonly BunkerPassenger bunkerPassenger;
 		Actor bunkerActor;
 		BunkerCargo bunkerCargo;
-        bool willDisappear;
+		bool willDisappear;
 
-        public EnterBunker(Actor passengerActor, Actor bunkerActor, WPos pos, bool willDisappear=true, int maxTries = 0, bool repathWhileMoving = true)
+		public EnterBunker(Actor passengerActor, Actor bunkerActor, WPos pos, bool willDisappear = true, int maxTries = 0, bool repathWhileMoving = true)
 			: base(passengerActor, Target.FromActor(bunkerActor))
 		{
 			this.bunkerActor = bunkerActor;
 			bunkerCargo = bunkerActor.Trait<BunkerCargo>();
-            bunkerPassenger = passengerActor.Trait<BunkerPassenger>();
-            this.willDisappear = willDisappear;
+			bunkerPassenger = passengerActor.Trait<BunkerPassenger>();
+			this.willDisappear = willDisappear;
         }
 
-        protected override void OnEnterComplete(Actor self, Actor targetActor)
+		protected override void OnEnterComplete(Actor self, Actor targetActor)
         {
             self.World.AddFrameEndTask(w =>
             {
@@ -67,6 +66,7 @@ namespace OpenRA.Mods.YR.Activities
                         Game.Sound.PlayNotification(self.World.Map.Rules, self.Owner, "Speech", bunkerCargo.Info.StructureGarrisonedNotification, self.Owner.Faction.InternalName);
                     }
                 }
+
                 bunkerCargo.Load(bunkerActor, self);
                 bunkerPassenger.GrantCondition();
                 if (willDisappear)
@@ -75,19 +75,19 @@ namespace OpenRA.Mods.YR.Activities
                 }
                 else
                 {
-                    //If didn't disappear, then move the passenger actor to the bunker center
+                    // If didn't disappear, then move the passenger actor to the bunker center
                     self.QueueActivity(mobile.VisualMove(self, self.CenterPosition, bunkerActor.CenterPosition));
                     mobile.SetVisualPosition(self, bunkerActor.CenterPosition);
                 }
             });
         }
 
-        protected override bool TryStartEnter(Actor self, Actor targetActor)
+		protected override bool TryStartEnter(Actor self, Actor targetActor)
         {
             return bunkerCargo.Unloading || bunkerCargo.CanLoad(bunkerActor, self);
         }
 
-        protected override void OnLastRun(Actor self)
+		protected override void OnLastRun(Actor self)
         {
             bunkerPassenger.Unreserve(self);
         }

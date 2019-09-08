@@ -1,186 +1,39 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5FC0D41E-5B09-413E-8D14-97AB1981A76E}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>OpenRA.Mods.YR</RootNamespace>
-    <AssemblyName>OpenRA.Mods.YR</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <CodeAnalysisRuleSet>OpenRA.Mods.YR.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <CodeAnalysisRuleSet>OpenRA.Mods.YR.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\x86\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <DebugType>full</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>OpenRA.Mods.YR.ruleset</CodeAnalysisRuleSet>
+    <TargetFramework>net461</TargetFramework>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-    <WarningLevel>3</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
-    <OutputPath>bin\x86\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
     <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>x86</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>OpenRA.Mods.YR.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <PropertyGroup>
-    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+    <LangVersion>7.0</LangVersion>
+    <DebugSymbols>true</DebugSymbols>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <OutputPath>../mods/yr</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <CodeAnalysisRuleSet>..\engine\OpenRA.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Eluant, Version=1.0.5867.35197, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\engine\Eluant.dll</HintPath>
+    <!-- Work around an issue where Rider does not detect files in the project root using the default glob -->
+    <Compile Include="**/*.cs" Exclude="$(DefaultItemExcludes)" />
+  </ItemGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='Debug'">
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Eluant">
+      <HintPath>..\engine\thirdparty\download\Eluant.dll</HintPath>
+      <Private>False</Private>
     </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118" />
+    <AdditionalFiles Include="stylecop.json" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Activities\ChronoResourceTeleport.cs" />
-    <Compile Include="Activities\EnterCarrierMaster.cs" />
-    <Compile Include="Activities\EnterBunker.cs" />
-    <Compile Include="Activities\MarkerSlaveLeave.cs" />
-    <Compile Include="Activities\RemoteControlSlaveProductionComplete.cs" />
-    <Compile Include="Activities\ShootableBallisticMissileFly.cs" />
-    <Compile Include="Activities\SpawnerRefineryHarvest.cs" />
-    <Compile Include="Activities\SpawnerHarvesterHarvest.cs" />
-    <Compile Include="Activities\TractionFallToEarth.cs" />
-    <Compile Include="Activities\UnloadBunkerCargo.cs" />
-    <Compile Include="AS\Activities\FallDown.cs" />
-    <Compile Include="AS\Warheads\RevealShroudWarhead.cs" />
-    <Compile Include="AS\Warheads\SpawnActorWarhead.cs" />
-    <Compile Include="AS\Warheads\WarheadAS.cs" />
-    <Compile Include="AudioLoaders\WavHackLoader.cs" />
-    <Compile Include="Common\Immobile.cs" />
-    <Compile Include="FileFormats\BinkReader.cs" />
-    <Compile Include="FileFormats\WavHackReader.cs" />
-    <Compile Include="FileSystem\BagFile.cs" />
-    <Compile Include="Graphics\ArcRenderable.cs" />
-    <Compile Include="Traits\GrantConditionOnAttackType.cs" />
-    <Compile Include="Traits\GrantConditionWhenCashflow.cs" />
-    <Compile Include="Traits\Render\WithTractionShadow.cs" />
-    <Compile Include="Order\EnterBunkersTargeter.cs" />
-    <Compile Include="Order\EnterBunkerTargeter.cs" />
-    <Compile Include="Order\ShootableBallisticMissileMoveOrderTargeter.cs" />
-    <Compile Include="Traits\AttackBunkered.cs" />
-    <Compile Include="Traits\BaseSpawnerMaster.cs" />
-    <Compile Include="Traits\BaseSpawnerSlave.cs" />
-    <Compile Include="Traits\Berserkable.cs" />
-    <Compile Include="Traits\BunkerCargo.cs" />
-    <Compile Include="Traits\CarrierMaster.cs" />
-    <Compile Include="Traits\CarrierSlave.cs" />
-    <Compile Include="Traits\ChronoResourceDelivery.cs" />
-    <Compile Include="Traits\GrantExternalConditionWeapon.cs" />
-    <Compile Include="Traits\GrantTimedConditionOnDeploy.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Traits\CrewKillable.cs" />
-    <Compile Include="Traits\DetectVariety.cs" />
-    <Compile Include="Traits\EnvironmentPaletteEffect.cs" />
-    <Compile Include="Traits\GrantConditionOnProductionToSelf.cs" />
-    <Compile Include="Traits\GrantConditionOnStage.cs" />
-    <Compile Include="Traits\Render\WithSuperPowerAnimation.cs" />
-    <Compile Include="Traits\ShutdownPower.cs" />
-    <Compile Include="Traits\SupportPowers\ExploreMapSupportPower.cs" />
-    <Compile Include="Traits\GrantConditionOnCapture.cs" />
-    <Compile Include="Traits\MarkerMaster.cs" />
-    <Compile Include="Traits\MarkerSlave.cs" />
-    <Compile Include="Traits\MindControllable.cs" />
-    <Compile Include="Traits\MindController.cs" />
-    <Compile Include="Traits\MissileSpawnerMaster.cs" />
-    <Compile Include="Traits\MissileSpawnerSlave.cs" />
-    <Compile Include="Traits\SupportPowers\GrantExternalConditionPower.cs" />
-    <Compile Include="Traits\SupportPowers\ParticleSupportPower.cs" />
-    <Compile Include="Traits\BunkerPassenger.cs" />
-    <Compile Include="Traits\PeriodicExplosion.cs" />
-    <Compile Include="Traits\RemoteControlMaster.cs" />
-    <Compile Include="Traits\RemoteControlSlave.cs" />
-    <Compile Include="Traits\Render\WithExitOverlay.cs" />
-    <Compile Include="Traits\Render\WithMindControlArc.cs" />
-    <Compile Include="Traits\SelfRotationCraft.cs" />
-    <Compile Include="Traits\ShootableBallisticMissile.cs" />
-    <Compile Include="Traits\ShowWholeMap.cs" />
-    <Compile Include="Traits\SpawnerHarvesterMaster.cs" />
-    <Compile Include="Traits\SpawnerHarvesterSlave.cs" />
-    <Compile Include="Traits\SpawnerRefineryMaster.cs" />
-    <Compile Include="Traits\Bunkerable.cs" />
-    <Compile Include="Traits\SupportPowers\SupportPowerWithNotify.cs" />
-    <Compile Include="Traits\SupportPowers\TransformActorsPower.cs" />
-    <Compile Include="Traits\Tractable.cs" />
-    <Compile Include="Traits\Variety.cs" />
-    <Compile Include="UtilityCommands\ImportRA2MapCommand.cs" />
-    <Compile Include="Warheads\TractorWarhead.cs" />
-    <Compile Include="Warheads\KillCrewWarhead.cs" />
-    <Compile Include="Warheads\TransformActorWarhead.cs" />
-    <Compile Include="Widgets\BinkPlayerWidget.cs" />
-    <Compile Include="Widgets\Logic\IngamePowerLogic.cs" />
-    <Compile Include="Widgets\Logic\NewMainMenuLogic.cs" />
-    <Compile Include="Widgets\Logic\NewMissionBrowserLogic.cs" />
-    <Compile Include="Widgets\Logic\VxlBrowserLogic.cs" />
-    <Compile Include="Widgets\ResourceBarSpriteWidget.cs" />
-    <Compile Include="Widgets\VoxelWidget.cs" />
-    <Compile Include="Traits\Render\WithBuildingPlacedOverlayConditional.cs" />
+    <ProjectReference Include="..\engine\OpenRA.Game\OpenRA.Game.csproj" />
+    <ProjectReference Include="..\engine\OpenRA.Mods.Cnc\OpenRA.Mods.Cnc.csproj" />
+    <ProjectReference Include="..\engine\OpenRA.Mods.Common\OpenRA.Mods.Common.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\engine\OpenRA.Game\OpenRA.Game.csproj">
-      <Project>{0dfb103f-2962-400f-8c6d-e2c28ccba633}</Project>
-      <Name>OpenRA.Game</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\engine\OpenRA.Mods.Cnc\OpenRA.Mods.Cnc.csproj">
-      <Project>{2881135d-4d62-493e-8f83-5eee92ccc6be}</Project>
-      <Name>OpenRA.Mods.Cnc</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\engine\OpenRA.Mods.Common\OpenRA.Mods.Common.csproj">
-      <Project>{fe6c8cc0-2f07-442a-b29f-17617b3b7fc6}</Project>
-      <Name>OpenRA.Mods.Common</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="OpenRA.Mods.YR.ruleset" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  -->
-  <Target Name="AfterBuild">
-    <MakeDir Directories="$(SolutionDir)mods/yr/" />
-    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(SolutionDir)mods/yr/" />
-  </Target>
 </Project>
