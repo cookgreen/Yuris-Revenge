@@ -1136,7 +1136,7 @@
 		ReturnToOrigin: false
 	MapEditorData:
 		Categories: Naval
-
+        
 ^OreDrill:
 	Inherits@1: ^SpriteActor
 	Tooltip:
