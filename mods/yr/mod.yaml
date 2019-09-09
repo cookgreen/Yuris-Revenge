@@ -145,7 +145,7 @@ Assemblies:
 	yr|OpenRA.Mods.YR.dll
 
 ChromeLayout:
-	yr|chrome/assetbrowser.yaml
+	common|chrome/assetbrowser.yaml
 	yr|chrome/ingame-player.yaml
 	yr|chrome/ingame-infoobjectives.yaml
 	yr|chrome/mainmenu.yaml
