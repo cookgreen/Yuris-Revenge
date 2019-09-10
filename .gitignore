@@ -1,12 +1,10 @@
 user.config
 engine
-ra2
 bin
 obj
 mods/*/*.dll
 mods/*/*.mdb
 mods/*/*.pdb
-mods/ra2/*
 /*.dll
 /*.dll.config
 /*.so
