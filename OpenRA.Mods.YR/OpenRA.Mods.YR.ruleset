@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<RuleSet Name="OpenRA.Mods.YR 的规则" Description="OpenRA.Mods.YR.csproj 的代码分析规则。" ToolsVersion="14.0">
+<RuleSet Name="OpenRA.Mods.YR" Description="OpenRA.Mods.YR.csproj 的代码分析规则。" ToolsVersion="16.0">
   <IncludeAll Action="Warning" />
   <Rules AnalyzerId="Microsoft.Analyzers.ManagedCodeAnalysis" RuleNamespace="Microsoft.Rules.Managed">
     <Rule Id="CA1000" Action="None" />
@@ -413,5 +413,25 @@
     <Rule Id="IDE0004" Action="None" />
     <Rule Id="IDE0005" Action="None" />
     <Rule Id="IDE1005" Action="None" />
+  </Rules>
+  <Rules AnalyzerId="StyleCop.Analyzers" RuleNamespace="StyleCop.Analyzers">
+    <Rule Id="SA1000" Action="Hidden" />
+    <Rule Id="SA1003" Action="Hidden" />
+    <Rule Id="SA1005" Action="Hidden" />
+    <Rule Id="SA1013" Action="Hidden" />
+    <Rule Id="SA1025" Action="Hidden" />
+    <Rule Id="SA1111" Action="Hidden" />
+    <Rule Id="SA1028" Action="Hidden" />
+    <Rule Id="SA1133" Action="Hidden" />
+    <Rule Id="SA1134" Action="Hidden" />
+    <Rule Id="SA1208" Action="Hidden" />
+    <Rule Id="SA1210" Action="Hidden" />
+    <Rule Id="SA1211" Action="Hidden" />
+    <Rule Id="SA1306" Action="Hidden" />
+    <Rule Id="SA1307" Action="Hidden" />
+    <Rule Id="SA1512" Action="Hidden" />
+    <Rule Id="SA1513" Action="Hidden" />
+    <Rule Id="SA1515" Action="Hidden" />
+    <Rule Id="SA1518" Action="Hidden" />
   </Rules>
 </RuleSet>

@@ -2,9 +2,9 @@
 /*
  * CnP of FindResources.cs of OpenRA... erm... Not quite, anymore!
  * Modded by Boolbada of OP Mod
- * 
+ *
  * Modded by Cook Green of YR Mod
- * 
+ *
  * Copyright 2007-2017 The OpenRA Developers (see AUTHORS)
  * This file is part of OpenRA, which is free software. It is made
  * available to you under the terms of the GNU General Public License
@@ -34,7 +34,7 @@ namespace OpenRA.Mods.YR.Activities
     /// Harvester Master Vehicle can find the resource
     /// </summary>
 	public class SpawnerHarvesterHarvest : Activity
-	{	
+	{
 		readonly SpawnerHarvesterMaster harv;
 		readonly SpawnerHarvesterMasterInfo harvInfo;
 		readonly Mobile mobile;
@@ -97,13 +97,11 @@ namespace OpenRA.Mods.YR.Activities
 				return this;
 			}
 
-			//// ... Don't claim resource layer here. Slaves will claim by themselves.
+			// ... Don't claim resource layer here. Slaves will claim by themselves.
 
 			// If not given a direct order, assume ordered to the first resource location we find:
 			if (!harv.LastOrderLocation.HasValue)
 				harv.LastOrderLocation = closestHarvestablePosition;
-
-			//self.SetTargetLine(Target.FromCell(self.World, closestHarvestablePosition.Value), Color.Red, false);
 
 			// Calculate best depoly position.
 			var deployPosition = CalcTransformPosition(self, closestHarvestablePosition.Value);
@@ -115,7 +113,6 @@ namespace OpenRA.Mods.YR.Activities
 				state = MiningState.Scan;
 				return this;
 			}
-			//}
 
 			// TODO: The harvest-deliver-return sequence is a horrible mess of duplicated code and edge-cases
 			var notify = self.TraitsImplementing<INotifyHarvesterAction>();
@@ -153,12 +150,9 @@ namespace OpenRA.Mods.YR.Activities
 			}
 
 			// Issue deploy order and enter deploying state.
-			//if (deploy. == DeployState.Undeployed)
-			//{
 			IsInterruptible = false;
             
             tranforms.DeployTransform(true);
-			//}
 
 			state = MiningState.Deploying;
 			return this;
@@ -213,9 +207,6 @@ namespace OpenRA.Mods.YR.Activities
 		{
 			if (IsCanceling)
 				return true;
-
-			//if (NextInQueue != null)
-			//	return NextInQueue;
 
 			// Erm... looking at this, I could split these into separte activites...
 			// I prefer finite state machine style though...
@@ -279,7 +270,7 @@ namespace OpenRA.Mods.YR.Activities
 			var searchRadiusSquared = searchRadius * searchRadius;
 
 			// Find any harvestable resources:
-			//var passable = (uint)mobileInfo.GetMovementClass(self.World.Map.Rules.TileSet);
+			// var passable = (uint)mobileInfo.GetMovementClass(self.World.Map.Rules.TileSet);
 			List<CPos> path;
 			using (var search = PathSearch.Search(self.World, mobile.Locomotor, self, true,
 				loc => domainIndex.IsPassable(self.Location, loc, mobileInfo.LocomotorInfo)

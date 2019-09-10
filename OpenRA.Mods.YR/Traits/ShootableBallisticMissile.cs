@@ -226,7 +226,7 @@ namespace OpenRA.Mods.YR.Traits
 
 		private MovementType currentMovementType;
 
-		public MovementType CurrentMovementTypes { get => currentMovementType; set => currentMovementType = value; }
+		public MovementType CurrentMovementTypes { get { return currentMovementType; } set { currentMovementType = value; } }
 
 		public Order IssueOrder(Actor self, IOrderTargeter order, Target target, bool queued)
 		{

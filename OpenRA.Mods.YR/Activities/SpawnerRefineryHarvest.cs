@@ -90,7 +90,7 @@ namespace OpenRA.Mods.YR.Activities
             else
             {
                 state = MiningState.Kick;
-                lastScanRange *= 2; //larger search range
+                lastScanRange *= 2; // larger search range
             }
 
             return this;
@@ -105,9 +105,6 @@ namespace OpenRA.Mods.YR.Activities
 
 			if (IsCanceling)
 				return true;
-
-			//if (NextInQueue != null)
-			//	return NextInQueue;
 
 			// Erm... looking at this, I could split these into separte activites...
 			// I prefer finite state machine style though...
@@ -150,7 +147,7 @@ namespace OpenRA.Mods.YR.Activities
                 var mobile = choosenSlave.Actor.Trait<Mobile>();
                 var mobileInfo = choosenSlave.Actor.Info.TraitInfo<MobileInfo>();
                 // Find any harvestable resources:
-                //var passable = (uint)mobileInfo.GetMovementClass(self.World.Map.Rules.TileSet);
+                // var passable = (uint)mobileInfo.GetMovementClass(self.World.Map.Rules.TileSet);
                 List<CPos> path;
                 using (var search = PathSearch.Search(self.World, mobile.Locomotor, self, true,
                     loc => domainIndex.IsPassable(self.Location, loc, mobileInfo.LocomotorInfo)
