@@ -20,7 +20,6 @@ The slave harvester's docking however, needs engine mod.
 */
 
 using System.Collections.Generic;
-using System.Drawing;
 using OpenRA.Activities;
 using OpenRA.Mods.Common.Activities;
 using OpenRA.Mods.Common.Pathfinder;

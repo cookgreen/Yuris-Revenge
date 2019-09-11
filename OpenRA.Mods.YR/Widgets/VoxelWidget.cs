@@ -17,7 +17,6 @@ using OpenRA.Mods.Common.Graphics;
 using OpenRA.Widgets;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
