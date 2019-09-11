@@ -209,6 +209,13 @@ AegisVoice:
 		Move: vaegmoa,vaegmob,vaegmoc,vaegmod,vaegmoe
 		Attack: vaegata,vaegatb,vaegatc,vaegatd,vaegate,vaegatf,vaegatg,vaegath
        
+AircraftCarrierVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: vairsea, vairseb, vairsec, vairsed, vairsee
+		Move: vairmoa, vairmob, vairmoc, vairmod, vairmoe
+		Attack: vairata, vairatb, vairatc, vairatd, vairate
+       
 TyphoonSubVoice:
 	DefaultVariant: .wav
 	Voices:

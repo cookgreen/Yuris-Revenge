@@ -66,7 +66,7 @@ dest:
 	RevealsShroud:
 		Range: 7c0
 	Selectable:
-		Bounds: 80, 80, 0, -6
+		Bounds: 80, 67, 0, -6
 	Armament@primary:
 		Weapon: 155mm
 		LocalOffset: 768,0,0
@@ -108,7 +108,7 @@ aegis:
 	Tooltip:
 		Name: Aegis Cruiser
 	Selectable:
-		Bounds: 60, 80, 0, -6
+		Bounds: 88, 58, 0, -6
 	Health:
 		HP: 800
 	Armor:
@@ -231,7 +231,7 @@ carrier:
 		Range: 7c0
 		Type: CenterPosition
 	Selectable:
-		Bounds: 160,68,0,-6
+		Bounds: 112,76,0,-6
 	Mobile:
 		TurnSpeed: 1
 		Speed: 60
@@ -248,7 +248,7 @@ carrier:
 	WithVoxelBody:
 	RenderSprites:
 	Voiced:
-		VoiceSet: AlliedNavalVoice
+		VoiceSet: AircraftCarrierVoice
 	HitShape:
 	CarrierMaster:
 		Actors: hornet, hornet, hornet

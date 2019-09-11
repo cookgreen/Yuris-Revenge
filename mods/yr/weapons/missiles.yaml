@@ -268,31 +268,6 @@ MissileLauncherE:
 	Report: iggiat2a.wav, iggiat2b.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 50
-		
-V3Launcher:
-	Inherits: ^LargeBullet
-	ReloadDelay: 150
-	Range: 18c0
-	ValidTargets: Ground, Water
-	Warhead@1Dam: SpreadDamage
-		Spread: 1
-		Damage: 1
-		ValidTargets: Ground, Water
-		Versus:
-			None: 100
-			Flak: 100
-			Plate: 100
-			Light: 100
-			Medium: 100
-			Heavy: 100
-			Wood: 100
-			Steel: 100
-			Concrete: 100
-			Drone: 100
-			Rocket: 100
-	Warhead@2Eff: CreateEffect
-		-Explosions:
-		ValidTargets: Ground, Water
 
 HornetBomb:
 	Inherits: ^Missile
@@ -380,16 +355,3 @@ BoomerTorpedo:
 BoomerTorpedoE:
 	Inherits: SubTorpedo
 	Burst: 4
-		
-CruiseLauncher:
-	Inherits: ^LargeBullet
-	Range: 20c0
-	ReloadDelay: 30
-	Report: vbooat1a.wav
-	ValidTargets: Infantry, Vehicle, Structure
-	Burst: 2
-	Warhead@1Dam: SpreadDamage
-		Damage: 1
-		ValidTargets: Ground
-	Warhead@2Eff: CreateEffect
-		-Explosions:

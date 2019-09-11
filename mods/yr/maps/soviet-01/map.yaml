@@ -1,12 +1,21 @@
 MapFormat: 11
+
 RequiresMod: yr
+
 Title: Soviet Mission 01 - Operation: Time Shift
+
 Author: Westwood Studios
+
 Tileset: NEWURBAN
+
 MapSize: 58,280
+
 Bounds: 4,29,52,178
+
 Visibility: MissionSelector
+
 Categories: Campaign
+
 Players:
 	PlayerReference@Neutral:
 		Name: Neutral
@@ -38,6 +47,7 @@ Players:
 		LockColor: True
 		Color: FF0000
 		Enemies: Yuri, Allies
+
 Actors:
 	allied_grandcannon02: gtgcan
 		Location: 73,39
@@ -303,6 +313,7 @@ Actors:
 		Location: 42,21
 		Owner: Yuri
 		Facing: 192
+		Stance: AttackAnything
 	Actor68: yaggun
 		Location: 34,5
 		Owner: Yuri
@@ -359,6 +370,7 @@ Actors:
 		Facing: 224
 		Faction: Soviets
 		Owner: Yuri
+		Stance: AttackAnything
 	Actor83: yaggun
 		Location: 49,18
 		Facing: 224
@@ -399,7 +411,8 @@ Actors:
 		Owner: Allies
 	Actor92: gapill
 		Location: 140,39
-		Owner: Neutral
+		Faction: Soviets
+		Owner: Allies
 	Actor93: nasam
 		Location: 136,46
 		Faction: Soviets
@@ -535,8 +548,9 @@ Actors:
 		Owner: Yuri
 	Actor132: yaggun
 		Location: 37,14
-		Owner: Neutral
 		Facing: 256
+		Faction: Soviets
+		Owner: Yuri
 	Actor133: yaggun
 		Location: 46,11
 		Facing: 128
@@ -558,7 +572,8 @@ Actors:
 		Owner: Allies
 	Actor137: catime01
 		Location: 141,38
-		Owner: Neutral
+		Faction: Soviets
+		Owner: Allies
 	Actor138: catime02
 		Location: 184,79
 		Owner: Neutral
@@ -579,7 +594,8 @@ Actors:
 		Owner: Neutral
 	Actor144: nanrct
 		Location: 19,-14
-		Owner: Neutral
+		Faction: Soviets
+		Owner: Yuri
 	Actor145: nanrct
 		Location: 47,14
 		Health: 50
@@ -630,9 +646,9 @@ Actors:
 	allied_aiegs01: aegis
 		Location: 40,25
 		Health: 6
-		Facing: 320
 		Faction: Soviets
 		Owner: Allies
+		Facing: 65
 	allied_carrier03: carrier
 		Location: 45,27
 		Health: 0
@@ -749,64 +765,79 @@ Actors:
 		Facing: 288
 	Actor186: e1
 		Location: 140,50
-		Owner: Neutral
 		Facing: 98
+		Faction: Soviets
+		Owner: Allies
 	Actor187: e1
 		Location: 139,50
-		Owner: Neutral
 		Facing: 98
+		Faction: Soviets
+		Owner: Allies
 	Actor188: e1
 		Location: 141,50
-		Owner: Neutral
 		Facing: 98
+		Faction: Soviets
+		Owner: Allies
 	Actor189: ggi
 		Location: 139,51
-		Owner: Neutral
 		Facing: 100
+		Faction: Soviets
+		Owner: Allies
 	Actor190: ggi
 		Location: 140,51
-		Owner: Neutral
 		Facing: 100
+		Faction: Soviets
+		Owner: Allies
 	Actor191: e1
 		Location: 132,24
-		Owner: Neutral
 		Facing: 98
+		Faction: Soviets
+		Owner: Allies
 	Actor192: e1
 		Location: 132,25
-		Owner: Neutral
 		Facing: 98
+		Faction: Soviets
+		Owner: Allies
 	Actor193: e1
 		Location: 132,26
-		Owner: Neutral
 		Facing: 98
+		Faction: Soviets
+		Owner: Allies
 	Actor194: ggi
 		Location: 131,24
-		Owner: Neutral
 		Facing: 98
+		Faction: Soviets
+		Owner: Allies
 	Actor195: ggi
 		Location: 131,25
-		Owner: Neutral
 		Facing: 98
+		Faction: Soviets
+		Owner: Allies
 	Actor196: e1
 		Location: 133,31
-		Owner: Neutral
 		Facing: 100
+		Faction: Soviets
+		Owner: Allies
 	Actor197: e1
 		Location: 133,32
-		Owner: Neutral
 		Facing: 100
+		Faction: Soviets
+		Owner: Allies
 	Actor198: e1
 		Location: 133,33
-		Owner: Neutral
 		Facing: 100
+		Faction: Soviets
+		Owner: Allies
 	Actor199: ggi
 		Location: 132,31
-		Owner: Neutral
 		Facing: 100
+		Faction: Soviets
+		Owner: Allies
 	Actor200: ggi
 		Location: 132,32
-		Owner: Neutral
 		Facing: 99
+		Faction: Soviets
+		Owner: Allies
 	Actor201: e2
 		Location: 186,84
 		Owner: Neutral
@@ -3373,4 +3404,5 @@ Actors:
 	Actor1053: trock02
 		Location: 175,102
 		Owner: Neutral
+
 Rules: yr|rules/campaign-rules.yaml, rules.yaml

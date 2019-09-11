@@ -225,3 +225,55 @@ sqd:
 		Voice: Attack
 		RepairActors: gayard, nayard
 	HitShape:
+
+	
+dred:
+	Inherits: ^Ship
+	Inherits@MC: ^MindControllable
+	Inherits@SMC: ^SuperMindControllable
+	Buildable:
+		Queue: Ship
+		BuildPaletteOrder: 60
+		Prerequisites: natech, ~nayard
+		Description: Soviet dreadnought ship.\n  Strong vs Tanks, Structures, Infantry\n  Weak vs Aircraft
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: Dreadnought
+	Health:
+		HP: 800
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 7c0
+		Type: CenterPosition
+	Selectable:
+		Bounds: 112,76,0,-6
+	Mobile:
+		TurnSpeed: 1
+		Speed: 60
+	RevealsShroud:
+		Range: 7c0
+	Turreted:
+		TurnSpeed: 255
+	AttackTurreted:
+		Voice: Attack
+	AutoTarget:
+	Explodes:
+		Weapon: UnitExplode
+		EmptyWeapon: UnitExplode
+	WithVoxelBody:
+	RenderSprites:
+	Voiced:
+		VoiceSet: SovietNavalVoice
+	HitShape:
+	MissileSpawnerMaster:
+		Actors: dmisl, dmisl
+	Exit@0:
+		SpawnOffset: 0,0,0
+		Facing: 0
+	Repairable:
+		Voice: Attack
+		RepairActors: gayard, nayard
+	Armament:
+		Weapon: DredLauncher

@@ -5,6 +5,10 @@ Tick = function()
 	CheckPower()
 end
 
+SendHorriers = function()
+	--[[Send four horriers to attack power plant]]
+end
+
 SendSovietReforcement = function()
 	--[[TODO: Send Soviet Troopers]]
 end
@@ -46,6 +50,8 @@ WorldLoaded = function()
 	allies = Player.GetPlayer("Allies")
 	player = Player.GetPlayer("Soviets")
 	yuri = Player.GetPlayer("Yuri")
+	
+	SendHorriers()
 	
 	Trigger.OnObjectiveAdded(player, function(p, id)
 		Media.DisplayMessage(p.GetObjectiveDescription(id), "New " .. string.lower(p.GetObjectiveType(id)) .. " objective")

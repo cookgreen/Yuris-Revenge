@@ -94,6 +94,11 @@ bsub:
 		LocalOffset: 768,0,0
 		FireDelay: 2
 		RequiresCondition: rank-elite
+	Armament@Second:
+		Name: second
+		Weapon: CruiseLauncher
+		LocalOffset: 768,0,0
+		FireDelay: 2
 	AttackFrontal:
 		Voice: Attack
 	AutoTarget:
