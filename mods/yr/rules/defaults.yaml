@@ -526,6 +526,7 @@
 		Types: Infantry
 		MaxWeight: 10
 		PipCount: 10
+		EjectOnDeath: true
 		GrantAccepter: garrisonable-building
 		ChangeOwnerWhenGarrison: true
 		StructureGarrisonedNotification: StructureGarrisoned

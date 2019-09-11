@@ -927,6 +927,9 @@ nabnkr:
 	Inherits: ^Building
 	Inherits@shape: ^2x2Shape
 	Inherits@SMC: ^SuperMindControllable
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
 	Buildable:
 		Queue: Support
 		BuildPaletteOrder: 20
@@ -934,6 +937,8 @@ nabnkr:
 		Description: Make Soviet soldier more powerful when against the enemies
 	Selectable:
 		Bounds: 83, 72, 0, -10
+	Tooltip:
+		Name: Soviet Battle Bunker
 	Health:
 		HP: 810
 	Armor:
@@ -942,6 +947,7 @@ nabnkr:
 		Types: Infantry
 		MaxWeight: 6
 		PipCount: 6
+		EjectOnDeath: true
 		StructureGarrisonedNotification: StructureGarrisoned
 		StructureAbandonedNotification: StructureAbandoned
 		BunkerNotSequence: idle
@@ -955,11 +961,6 @@ nabnkr:
 		Range: 8c0
 	Valued:
 		Cost: 600
-	Tooltip:
-		Name: Soviet Battle Bunker
-	Building:
-		Footprint: xx xx
-		Dimensions: 2,2
 	Power:
 		Amount: 0
 		

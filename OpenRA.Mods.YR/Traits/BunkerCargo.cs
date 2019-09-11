@@ -435,56 +435,70 @@ namespace OpenRA.Mods.YR.Traits
 				reservedWeight -= w;
 				reserves.Remove(a);
 
-				if (loadingToken != ConditionManager.InvalidConditionToken)
-					loadingToken = conditionManager.RevokeCondition(self, loadingToken);
+                if (loadingToken != ConditionManager.InvalidConditionToken)
+                {
+                    loadingToken = conditionManager.RevokeCondition(self, loadingToken);
+                }
 			}
 
-			// If not initialized then this will be notified in the first tick
-			if (initialized)
-				foreach (var npe in self.TraitsImplementing<INotifyPassengerEntered>())
-					npe.OnPassengerEntered(self, a);
+            // If not initialized then this will be notified in the first tick
+            if (initialized)
+            {
+                foreach (var npe in self.TraitsImplementing<INotifyPassengerEntered>())
+                {
+                    npe.OnPassengerEntered(self, a);
+                }
+            }
 
 			var p = a.Trait<BunkerPassenger>();
 			p.Transport = self;
 
 			string passengerCondition;
-			if (conditionManager != null && Info.PassengerConditions.TryGetValue(a.Info.Name, out passengerCondition))
-				passengerTokens.GetOrAdd(a.Info.Name).Push(conditionManager.GrantCondition(self, passengerCondition));
+            if (conditionManager != null && Info.PassengerConditions.TryGetValue(a.Info.Name, out passengerCondition))
+            {
+                passengerTokens.GetOrAdd(a.Info.Name).Push(conditionManager.GrantCondition(self, passengerCondition));
+            }
 
-			if (conditionManager != null && !string.IsNullOrEmpty(Info.LoadedCondition))
-				loadedTokens.Push(conditionManager.GrantCondition(self, Info.LoadedCondition));
+            if (conditionManager != null && !string.IsNullOrEmpty(Info.LoadedCondition))
+            {
+                loadedTokens.Push(conditionManager.GrantCondition(self, Info.LoadedCondition));
+            }
 		}
 
 		void INotifyKilled.Killed(Actor self, AttackInfo e)
 		{
-			if (Info.EjectOnDeath)
-				while (!IsEmpty(self) && CanUnload())
-				{
-					var passenger = Unload(self);
-					var cp = self.CenterPosition;
-					var inAir = self.World.Map.DistanceAboveTerrain(cp).Length != 0;
-					var positionable = passenger.Trait<IPositionable>();
-					positionable.SetPosition(passenger, self.Location);
+            if (Info.EjectOnDeath)
+            {
+                while (!IsEmpty(self) && CanUnload())
+                {
+                    var passenger = Unload(self);
+                    var cp = self.CenterPosition;
+                    var inAir = self.World.Map.DistanceAboveTerrain(cp).Length != 0;
+                    var positionable = passenger.Trait<IPositionable>();
+                    positionable.SetPosition(passenger, self.Location);
 
-					if (!inAir && positionable.CanEnterCell(self.Location, self, false))
-					{
-                        if(Info.WillDisappear)
-                        {
-                            self.World.AddFrameEndTask(w => w.Add(passenger));
-                        }
-						var nbm = passenger.TraitOrDefault<INotifyBlockingMove>();
-						if (nbm != null)
-							nbm.OnNotifyBlockingMove(passenger, passenger);
-					}
-					else
-						passenger.Kill(e.Attacker);
-				}
-
-			foreach (var c in cargo)
-				c.Kill(e.Attacker);
-
-			cargo.Clear();
-		}
+                    if (!inAir && positionable.CanEnterCell(self.Location, self, false))
+                    {
+                        self.World.AddFrameEndTask(w => w.Add(passenger));
+                        var nbm = passenger.TraitOrDefault<INotifyBlockingMove>();
+                        if (nbm != null)
+                            nbm.OnNotifyBlockingMove(passenger, passenger);
+                    }
+                    else
+                    {
+                        passenger.Kill(e.Attacker);
+                    }
+                }
+            }
+            else
+            {
+                foreach (var c in cargo)
+                {
+                    c.Kill(e.Attacker);
+                }
+            }
+            cargo.Clear();
+        }
 
 		void INotifyActorDisposing.Disposing(Actor self)
 		{
