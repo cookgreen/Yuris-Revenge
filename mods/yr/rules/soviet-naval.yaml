@@ -57,6 +57,8 @@ sub:
 		Name: Typhoon Attack Sub
 	Health:
 		HP: 600
+	Selectable:
+		Bounds: 79, 60, 0, -6
 	Armor:
 		Type: Heavy
 	Mobile:
@@ -180,6 +182,7 @@ sqd:
 	SelectionDecorations:
 		Palette: pips
 	Selectable:
+		Bounds: 101, 64, 0, -10
 	Voiced:
 		VoiceSet: GiantSquidVoice
 	Armament:
