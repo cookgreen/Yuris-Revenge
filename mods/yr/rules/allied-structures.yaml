@@ -452,6 +452,8 @@ gayard:
 		BuildPaletteOrder: 50
 		Prerequisites: power, refinery, ~structures.allies
 		Description: Produces and repairs ships,\nsubmarines, transports, and other naval units.
+	Selectable:
+		Bounds: 158, 192, 0, -40
 	Targetable:
 		TargetTypes: Ground, Water, C4
 	ProvidesPrerequisite@default:

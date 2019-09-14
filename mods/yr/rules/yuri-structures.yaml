@@ -322,7 +322,7 @@ yayard:
 		Prerequisites: power, yarefn, ~structures.yuris
 		Description: Build Yuri's Navy Force
 	Selectable:
-		Bounds: 220, 155, 0, -20
+		Bounds: 162, 173, 0, -20
 	Health:
 		HP: 1500
 	Armor:
