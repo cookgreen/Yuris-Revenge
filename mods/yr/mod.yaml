@@ -289,7 +289,7 @@ Missions:
 
 SupportsMapsFrom: yr
 
-SoundFormats: Aud, WavHack
+SoundFormats: Aud, Wav
 
 SpriteFormats: ShpTS, TmpTS, ShpTD, PngSheet
 

@@ -514,6 +514,7 @@ AKM:
 	Range: 7c0
 	Report: iboratta.wav, iborattb.wav
 	ValidTargets: Infantry, Vehicle, Ship
+	InvalidTargets: Structure
 	Warhead@1Dam: SpreadDamage
 		Damage: 65
 		ValidTargets: Infantry, Vehicle, Ship

@@ -157,45 +157,53 @@ namespace OpenRA.Mods.YR.Traits
             if (a.Info.Name != Info.SpawnerArmamentName)
                 return;
 
-            // Issue retarget order for already launched ones
-            foreach (var slave in slaveEntries)
-                if (slave.IsLaunched && slave.IsValid)
-                    slave.SpawnerSlave.Attack(slave.Actor, target);
+			// Issue retarget order for already launched ones
+			foreach (var slave in slaveEntries)
+			{
+				if (slave.IsLaunched && slave.IsValid)
+				{
+					slave.SpawnerSlave.Attack(slave.Actor, target);
+				}
+			}
 
-            var se = GetLaunchable();
-            if (se == null)
+            var slaveEntry = GetLaunchable();
+            if (slaveEntry == null)
                 return;
 
-            se.IsLaunched = true; // mark as launched
+            slaveEntry.IsLaunched = true; // mark as launched
 
-            if (se.SpawnerSlave.NeedToReload())
+            if (slaveEntry.SpawnerSlave.NeedToReload())
             {
-                se.SpawnerSlave.Reload();
+                slaveEntry.SpawnerSlave.Reload();
             }
 
-            // Launching condition is timed, so not saving the token.
-            if (Info.LaunchingCondition != null)
-                conditionManager.GrantCondition(self, Info.LaunchingCondition/*, Info.LaunchingTicks*/);
+			// Launching condition is timed, so not saving the token.
+			if (Info.LaunchingCondition != null)
+			{
+				conditionManager.GrantCondition(self, Info.LaunchingCondition/*, Info.LaunchingTicks*/);
+			}
 
             //Spawn the attackers into world
-            SpawnIntoWorld(self, se.Actor, self.CenterPosition);
+            SpawnIntoWorld(self, slaveEntry.Actor, self.CenterPosition);
 
-            se.SpawnerSlave.SetSpawnInfo(finishEdge, spawnOffset, targetPos);
+            slaveEntry.SpawnerSlave.SetSpawnInfo(finishEdge, spawnOffset, targetPos);
 
             // Queue attack order, too.
             self.World.AddFrameEndTask(w =>
             {
                 // The actor might had been trying to do something before entering the carrier.
                 // Cancel whatever it was trying to do.
-                se.SpawnerSlave.Stop(se.Actor);
-                se.Actor.PlayVoice(Info.MarkSound);
-                se.SpawnerSlave.Attack(se.Actor, target);
+                slaveEntry.SpawnerSlave.Stop(slaveEntry.Actor);
+				if (!string.IsNullOrEmpty(Info.MarkSound))
+				{
+					slaveEntry.Actor.PlayVoice(Info.MarkSound);
+				}
+                slaveEntry.SpawnerSlave.Attack(slaveEntry.Actor, target);
             });
         }
 
         public override void SpawnIntoWorld(Actor self, Actor slave, WPos centerPosition)
         {
-
             WPos target = centerPosition;
 
             for (var i = -Info.SquadSize / 2; i <= Info.SquadSize / 2; i++)
@@ -279,27 +287,29 @@ namespace OpenRA.Mods.YR.Traits
         public void PickupSlave(Actor self, Actor a)
         {
             CarrierSlaveEntry slaveEntry = null;
-            foreach (var se in slaveEntries)
-                if (se.Actor == a)
-                {
-                    slaveEntry = se;
-                    break;
-                }
+			foreach (var se in slaveEntries)
+			{
+				if (se.Actor == a)
+				{
+					slaveEntry = se;
+					break;
+				}
+			}
 
-            if (slaveEntry == null)
-                throw new InvalidOperationException("An actor that isn't my slave entered me?");
+			if (slaveEntry != null)
+			{
+				slaveEntry.IsLaunched = false;
 
-            slaveEntry.IsLaunched = false;
+				// setup rearm
+				slaveEntry.RearmTicks = Info.RearmTicks;
 
-            // setup rearm
-            slaveEntry.RearmTicks = Info.RearmTicks;
+				string spawnContainCondition;
+				if (conditionManager != null && Info.SpawnContainConditions.TryGetValue(a.Info.Name, out spawnContainCondition))
+					spawnContainTokens.GetOrAdd(a.Info.Name).Push(conditionManager.GrantCondition(self, spawnContainCondition));
 
-            string spawnContainCondition;
-            if (conditionManager != null && Info.SpawnContainConditions.TryGetValue(a.Info.Name, out spawnContainCondition))
-                spawnContainTokens.GetOrAdd(a.Info.Name).Push(conditionManager.GrantCondition(self, spawnContainCondition));
-
-            if (conditionManager != null && !string.IsNullOrEmpty(Info.LoadedCondition))
-                loadedTokens.Push(conditionManager.GrantCondition(self, Info.LoadedCondition));
+				if (conditionManager != null && !string.IsNullOrEmpty(Info.LoadedCondition))
+					loadedTokens.Push(conditionManager.GrantCondition(self, Info.LoadedCondition));
+			}
         }
 
         public void Tick(Actor self)
@@ -313,9 +323,11 @@ namespace OpenRA.Mods.YR.Traits
                 {
                     Replenish(self, slaveEntries);
 
-                    // If there's something left to spawn, restart the timer.
-                    if (SelectEntryToSpawn(slaveEntries) != null)
-                        respawnTicks = Info.RespawnTicks;
+					// If there's something left to spawn, restart the timer.
+					if (SelectEntryToSpawn(slaveEntries) != null)
+					{
+						respawnTicks = Info.RespawnTicks;
+					}
                 }
             }
 

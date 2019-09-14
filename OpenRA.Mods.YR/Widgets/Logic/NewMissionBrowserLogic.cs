@@ -33,12 +33,6 @@ namespace OpenRA.Mods.YR.Widgets.Logic
 		readonly SpriteFont descriptionFont;
 		readonly DropDownButtonWidget difficultyButton;
 		readonly DropDownButtonWidget gameSpeedButton;
-		//readonly ButtonWidget startBriefingVideoButton;
-		readonly ButtonWidget stopBriefingVideoButton;
-		readonly ButtonWidget startInfoVideoButton;
-		readonly ButtonWidget stopInfoVideoButton;
-		readonly BinkPlayerWidget videoPlayer;
-		readonly BackgroundWidget fullscreenVideoPlayer;
 
 		readonly ScrollPanelWidget missionList;
 		readonly ScrollItemWidget headerTemplate;
@@ -72,10 +66,6 @@ namespace OpenRA.Mods.YR.Widgets.Logic
 			previewWidget.Preview = () => selectedMap;
 			previewWidget.IsVisible = () => playingVideo == PlayingVideo.None;
 
-			videoPlayer = widget.Get<BinkPlayerWidget>("MISSION_VIDEO");
-			widget.Get("MISSION_BIN").IsVisible = () => playingVideo != PlayingVideo.None;
-			fullscreenVideoPlayer = Ui.LoadWidget<BackgroundWidget>("FULLSCREEN_PLAYER", Ui.Root, new WidgetArgs { { "world", world } });
-
 			descriptionPanel = widget.Get<ScrollPanelWidget>("MISSION_DESCRIPTION_PANEL");
 
 			description = descriptionPanel.Get<LabelWidget>("MISSION_DESCRIPTION");
@@ -83,16 +73,6 @@ namespace OpenRA.Mods.YR.Widgets.Logic
 
 			difficultyButton = widget.Get<DropDownButtonWidget>("DIFFICULTY_DROPDOWNBUTTON");
 			gameSpeedButton = widget.GetOrNull<DropDownButtonWidget>("GAMESPEED_DROPDOWNBUTTON");
-
-			//startBriefingVideoButton = widget.Get<ButtonWidget>("START_BRIEFING_VIDEO_BUTTON");
-			stopBriefingVideoButton = widget.Get<ButtonWidget>("STOP_BRIEFING_VIDEO_BUTTON");
-			stopBriefingVideoButton.IsVisible = () => playingVideo == PlayingVideo.Briefing;
-			stopBriefingVideoButton.OnClick = () => StopVideo(videoPlayer);
-
-			startInfoVideoButton = widget.Get<ButtonWidget>("START_INFO_VIDEO_BUTTON");
-			stopInfoVideoButton = widget.Get<ButtonWidget>("STOP_INFO_VIDEO_BUTTON");
-			stopInfoVideoButton.IsVisible = () => playingVideo == PlayingVideo.Info;
-			stopInfoVideoButton.OnClick = () => StopVideo(videoPlayer);
 
 			var allPreviews = new List<MapPreview>();
 			missionList.RemoveChildren();
@@ -155,7 +135,6 @@ namespace OpenRA.Mods.YR.Widgets.Logic
 
 			widget.Get<ButtonWidget>("BACK_BUTTON").OnClick = () =>
 			{
-				StopVideo(videoPlayer);
 				Game.Disconnect();
 				Ui.CloseWindow();
 				onExit();
@@ -246,12 +225,6 @@ namespace OpenRA.Mods.YR.Widgets.Logic
 				}
 			}).Start();
 
-			//startBriefingVideoButton.IsVisible = () => briefingVideoVisible && playingVideo != PlayingVideo.Briefing;
-			//startBriefingVideoButton.OnClick = () => PlayVideo(videoPlayer, briefingVideo, PlayingVideo.Briefing);
-
-			startInfoVideoButton.IsVisible = () => infoVideoVisible && playingVideo != PlayingVideo.Info;
-			startInfoVideoButton.OnClick = () => PlayVideo(videoPlayer, infoVideo, PlayingVideo.Info);
-
 			descriptionPanel.ScrollToTop();
 
 			if (difficultyButton != null)
@@ -324,50 +297,8 @@ namespace OpenRA.Mods.YR.Widgets.Logic
 				Game.Sound.MusicVolume = cachedMusicVolume;
 		}
 
-		void PlayVideo(BinkPlayerWidget player, string video, PlayingVideo pv, Action onComplete = null)
-		{
-			if (!modData.DefaultFileSystem.Exists(video))
-			{
-				ConfirmationDialogs.ButtonPrompt(
-					title: "Video not installed",
-					text: "The game videos can be installed from the\n\"Manage Content\" menu in the mod chooser.",
-					cancelText: "Back",
-					onCancel: () => { });
-			}
-			else
-			{
-				StopVideo(player);
-
-				playingVideo = pv;
-				player.Load(video);
-
-				// video playback runs asynchronously
-				player.PlayThen(() =>
-				{
-					StopVideo(player);
-					if (onComplete != null)
-						onComplete();
-				});
-
-				// Mute other distracting sounds
-				MuteSounds();
-			}
-		}
-
-		void StopVideo(BinkPlayerWidget player)
-		{
-			if (playingVideo == PlayingVideo.None)
-				return;
-
-			UnMuteSounds();
-			player.Stop();
-			playingVideo = PlayingVideo.None;
-		}
-
 		void StartMissionClicked()
 		{
-			StopVideo(videoPlayer);
-
 			if (selectedMap.InvalidCustomRules)
 				return;
 
@@ -379,17 +310,8 @@ namespace OpenRA.Mods.YR.Widgets.Logic
 			orders.Add(Order.Command("state {0}".F(Session.ClientState.Ready)));
 
 			var missionData = selectedMap.Rules.Actors["world"].TraitInfoOrDefault<MissionDataInfo>();
-			if (missionData != null && missionData.StartVideo != null && modData.DefaultFileSystem.Exists(missionData.StartVideo))
-			{
-				var fsPlayer = fullscreenVideoPlayer.Get<BinkPlayerWidget>("PLAYER");
-				fullscreenVideoPlayer.Visible = true;
-				PlayVideo(fsPlayer, missionData.StartVideo, PlayingVideo.GameStart, () =>
-				{
-					Game.CreateAndStartLocalServer(selectedMap.Uid, orders);
-				});
-			}
-			else
-				Game.CreateAndStartLocalServer(selectedMap.Uid, orders);
+
+			Game.CreateAndStartLocalServer(selectedMap.Uid, orders);
 		}
 
 		class DropDownOption

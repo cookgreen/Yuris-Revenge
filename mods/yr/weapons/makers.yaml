@@ -1,4 +1,5 @@
 Flare:
 	Inherits: ^Maker
+	InvalidTargets: Infantry, Vehicle, Ship
 FlareE:
-	Inherits: ^Maker
+	Inherits: Flare

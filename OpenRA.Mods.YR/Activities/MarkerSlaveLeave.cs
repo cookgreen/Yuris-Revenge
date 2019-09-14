@@ -18,10 +18,12 @@ namespace OpenRA.Mods.YR.Activities
 {
     class MarkerSlaveLeave : Activity
     {
+		private Actor slave;
         private Actor master;
-        public MarkerSlaveLeave(Actor self, Actor master)
+        public MarkerSlaveLeave(Actor slave, Actor master)
         {
             this.master = master;
+			this.slave = slave;
         }
 
         public override bool Tick(Actor self)
@@ -31,7 +33,7 @@ namespace OpenRA.Mods.YR.Activities
 
             self.World.AddFrameEndTask(w =>
             {
-                master.Trait<MarkerMaster>().PickupSlave(master, self);
+                master.Trait<MarkerMaster>().PickupSlave(master, slave);
 
                 self.World.Remove(self);
             });
