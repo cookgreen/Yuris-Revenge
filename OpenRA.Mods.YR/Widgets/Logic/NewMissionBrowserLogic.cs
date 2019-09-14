@@ -47,6 +47,8 @@ namespace OpenRA.Mods.YR.Widgets.Logic
 		[ObjectCreator.UseCtor]
 		public NewMissionBrowserLogic(Widget widget, ModData modData, World world, Action onStart, Action onExit)
 		{
+			playingVideo = PlayingVideo.Briefing;
+
 			this.modData = modData;
 			this.onStart = onStart;
 			Game.BeforeGameStart += OnGameStart;
