@@ -504,7 +504,8 @@ nayard:
 		Offset: 5,1
 		Palette: mouse
 		IsPlayerPalette: false
-	RepairsUnits:
+	RepairsUnitsConditional:
+		RepairingCondition: repairing
 		FinishRepairingNotification: UnitRepaired
 	ProductionBar:
 		ProductionType: Naval.Soviets
@@ -512,7 +513,7 @@ nayard:
 		Amount: -20
 	WithIdleOverlay@crane:
 		Sequence: idle-crane
-		RequiresCondition: !build-incomplete
+		RequiresCondition: !build-incomplete && !repairing
 	WithIdleOverlay@waves:
 		Sequence: idle-waves
 		RequiresCondition: !build-incomplete
