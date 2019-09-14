@@ -1166,6 +1166,10 @@ castl01:
 	damaged-idle: custl01
 		Start: 1
 		ShadowStart: 5
+	rubble: custl01
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
 	garrisoned: custl01
 
 castl02:
