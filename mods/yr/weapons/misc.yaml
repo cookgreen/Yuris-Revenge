@@ -85,12 +85,15 @@ V3Launcher:
         
 HornetLauncher:
 	Inherits: ^Launcher
-
-CruiseLauncher:
-	Inherits: ^Launcher
         
 DredLauncher:
 	Inherits: ^Launcher
+
+CruiseLauncher:
+	Inherits: ^Launcher
+	ValidTargets: Structure
+	Warhead@1Dam: TargetDamage
+		ValidTargets: Structure
         
 SpyCameraWeapon:
 	ReloadDelay: 30
