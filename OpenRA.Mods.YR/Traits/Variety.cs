@@ -117,27 +117,13 @@ namespace OpenRA.Mods.YR.Traits
             }
 
             if (Varied && IsVisible(self, self.World.RenderPlayer))
-            {
-                if (!string.IsNullOrEmpty(info.Actor))
-                {
-                    if (varietiedActor == null || !varietiedActor.IsInWorld)
-                    {
-                        return createActorAndRender(self.World, info.Actor, wr);
-                    }
-                    else
-                    {
-                        return varietiedActor.Render(wr);
-                    }
-                }
-                else
-                {
-                    var palette = string.IsNullOrEmpty(Info.Palette) ? null : Info.IsPlayerPalette ? wr.Palette(Info.Palette + self.Owner.InternalName) : wr.Palette(Info.Palette);
-                    if (palette == null)
-                        return r;
-                    else
-                        return r.Select(a => a.IsDecoration ? a : a.WithPalette(palette));
-                }
-            }
+			{
+				var palette = string.IsNullOrEmpty(Info.Palette) ? null : Info.IsPlayerPalette ? wr.Palette(Info.Palette + self.Owner.InternalName) : wr.Palette(Info.Palette);
+				if (palette == null)
+					return r;
+				else
+					return r.Select(a => a.IsDecoration ? a : a.WithPalette(palette));
+			}
             else
             {
                 if (!string.IsNullOrEmpty(info.Actor))

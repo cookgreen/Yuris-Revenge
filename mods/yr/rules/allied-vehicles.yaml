@@ -458,7 +458,7 @@ mgtk:
 	Bunkerable:
 	Variety:
 		Actor: tree28
-		UnvarietyOn: Move
+		IsPlayerPalette: true
 		VarietyCondition: varing
 	Targetable:
 		RequiresCondition: !varing
