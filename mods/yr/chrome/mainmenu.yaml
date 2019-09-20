@@ -162,12 +162,46 @@ Container@MAINMENU:
 							Height: 30
 							Text: Asset Browser
 							Font: Bold
-						Button@VOXELBROWSER_BUTTON:
+						Button@OTHER_TOOLS_BUTTON:
 							X: PARENT_RIGHT / 2 - WIDTH / 2
 							Y: 220
 							Width: 140
 							Height: 30
+							Text: Other Tools
+							Font: Bold
+						Button@BACK_BUTTON:
+							X: PARENT_RIGHT / 2 - WIDTH / 2
+							Key: escape
+							Y: 260
+							Width: 140
+							Height: 30
+							Text: Back
+							Font: Bold
+				Background@OTHER_TOOLS_MENU:
+					Width: PARENT_RIGHT
+					Height: PARENT_BOTTOM
+					Children:
+						Label@OTHER_TOOLS_MENU_TITLE:
+							X: 0
+							Y: 20
+							Width: 200
+							Height: 30
+							Text: Other Tools
+							Align: Center
+							Font: Bold
+						Button@VOXELBROWSER_BUTTON:
+							X: PARENT_RIGHT / 2 - WIDTH / 2
+							Y: 60
+							Width: 140
+							Height: 30
 							Text: Voxel Browser
+							Font: Bold
+						Button@SOUNDPLAYER_BUTTON:
+							X: PARENT_RIGHT / 2 - WIDTH / 2
+							Y: 100
+							Width: 140
+							Height: 30
+							Text: Sound Player
 							Font: Bold
 						Button@BACK_BUTTON:
 							X: PARENT_RIGHT / 2 - WIDTH / 2

@@ -29,7 +29,7 @@ namespace OpenRA.Mods.YR.Widgets.Logic
 		Justification = "SystemInformation version should be defined next to the dictionary it refers to.")]
 	public class NewMainMenuLogic : ChromeLogic
 	{
-		protected enum MenuType { Main, Singleplayer, Extras, MapEditor, SystemInfoPrompt, None }
+		protected enum MenuType { Main, Singleplayer, Extras, MapEditor, SystemInfoPrompt, OtherTools, None }
 
 		protected enum MenuPanel { None, Missions, Skirmish, Multiplayer, MapEditor, Replays }
 
@@ -158,19 +158,33 @@ namespace OpenRA.Mods.YR.Widgets.Logic
 					});
 				};
 
-			extrasMenu.Get<ButtonWidget>("VOXELBROWSER_BUTTON").OnClick = () =>
-			{
-				SwitchMenu(MenuType.None);
-                Game.OpenWindow("VXLBROWSER_PANEL", new WidgetArgs
-				{
-					{ "onExit", () => SwitchMenu(MenuType.Extras) },
-				});
-			};
+            extrasMenu.Get<ButtonWidget>("OTHER_TOOLS_BUTTON").OnClick = () => SwitchMenu(MenuType.OtherTools);
 
 			extrasMenu.Get<ButtonWidget>("BACK_BUTTON").OnClick = () => SwitchMenu(MenuType.Main);
 
-			// Map editor menu
-			var mapEditorMenu = widget.Get("MAP_EDITOR_MENU");
+            var otherToolsMenu = widget.Get("OTHER_TOOLS_MENU");
+            otherToolsMenu.IsVisible = () => menuType == MenuType.OtherTools;
+
+            otherToolsMenu.Get<ButtonWidget>("VOXELBROWSER_BUTTON").OnClick = () =>
+            {
+                SwitchMenu(MenuType.None);
+                Game.OpenWindow("VXLBROWSER_PANEL", new WidgetArgs
+                {
+                    { "onExit", () => SwitchMenu(MenuType.OtherTools) },
+                });
+            };
+            otherToolsMenu.Get<ButtonWidget>("SOUNDPLAYER_BUTTON").OnClick = () =>
+            {
+                SwitchMenu(MenuType.None);
+                Game.OpenWindow("SOUND_PANEL", new WidgetArgs
+                {
+                    { "onExit", () => SwitchMenu(MenuType.OtherTools) },
+                });
+            };
+            otherToolsMenu.Get<ButtonWidget>("BACK_BUTTON").OnClick = () => SwitchMenu(MenuType.Extras);
+
+            // Map editor menu
+            var mapEditorMenu = widget.Get("MAP_EDITOR_MENU");
 			mapEditorMenu.IsVisible = () => menuType == MenuType.MapEditor;
 
 			// Loading into the map editor
