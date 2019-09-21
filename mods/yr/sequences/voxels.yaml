@@ -46,15 +46,14 @@ cruise:
 
 dest:
 	idle:
-	
-destwo: 
-	idle:
+	empty: destwo
 
 dmisl: 
 	idle:
 
 dred:
 	idle:
+	empty: dredwo
 
 euroc:
 	idle:
@@ -212,9 +211,7 @@ tug:
 
 v3:
 	idle:
-	
-v3wo:
-	idle:
+	empty: v3wo
 
 v3rocket: 
 	idle:

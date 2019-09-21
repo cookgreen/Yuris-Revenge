@@ -56,11 +56,10 @@ namespace OpenRA.Mods.YR.Traits
 
 	public class MissileSpawnerMaster : BaseSpawnerMaster, IPips, ITick, INotifyAttack
 	{
-		//// readonly Dictionary<string, Stack<int>> spawnContainTokens = new Dictionary<string, Stack<int>>();
-
 		public new MissileSpawnerMasterInfo Info { get; private set; }
 
 		ConditionManager conditionManager;
+		int loadedConditionToken = ConditionManager.InvalidConditionToken;
 
 		//// Stack<int> loadedTokens = new Stack<int>();
 
@@ -75,6 +74,13 @@ namespace OpenRA.Mods.YR.Traits
 		{
 			base.Created(self);
 			conditionManager = self.Trait<ConditionManager>();
+
+			if (!string.IsNullOrEmpty(Info.LoadedCondition) &&
+				loadedConditionToken == ConditionManager.InvalidConditionToken)
+			{
+				loadedConditionToken = conditionManager.GrantCondition(self, 
+					Info.LoadedCondition);
+			}
 		}
 
 		public override void OnOwnerChanged(Actor self, Player oldOwner, Player newOwner)
@@ -103,10 +109,6 @@ namespace OpenRA.Mods.YR.Traits
 			var se = GetLaunchable();
 			if (se == null)
 				return;
-
-			// Launching condition is timed, so not saving the token.
-			if (Info.LaunchingCondition != null)
-				conditionManager.GrantCondition(self, Info.LaunchingCondition/*, Info.LaunchingTicks*/);
 
 			// Program the trajectory.
 			var sbm = se.Actor.Trait<ShootableBallisticMissile>();
@@ -167,9 +169,22 @@ namespace OpenRA.Mods.YR.Traits
 				{
 					Replenish(self, SlaveEntries);
 
+					if (!string.IsNullOrEmpty(Info.LoadedCondition) &&
+						loadedConditionToken == ConditionManager.InvalidConditionToken)
+					{
+						loadedConditionToken = conditionManager.GrantCondition(self, Info.LoadedCondition);
+					}
+
 					// If there's something left to spawn, restart the timer.
 					if (SelectEntryToSpawn(SlaveEntries) != null)
 						respawnTicks = Info.RespawnTicks;
+				}
+				else
+				{
+					if (loadedConditionToken != ConditionManager.InvalidConditionToken)
+					{
+						loadedConditionToken = conditionManager.RevokeCondition(self, loadedConditionToken);
+					}
 				}
 			}
 		}

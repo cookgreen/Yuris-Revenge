@@ -597,8 +597,10 @@ v3rocket:
 		Speed: 170
 	Selectable:
 		Bounds: 30, 24, -10, -11
-	Contrail:
-		Offset: -598,0,0
+	LeavesTrails:
+		Image: smokey2
+		MovingInterval: 2
+		Type: CenterPosition
 	AttackFrontal:
 		Voice: Attack
 	Voiced:

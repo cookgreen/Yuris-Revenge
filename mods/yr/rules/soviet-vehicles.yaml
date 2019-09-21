@@ -463,7 +463,6 @@ v3:
 	Selectable:
 		Bounds: 64, 52, 0, -6
 	RenderVoxels:
-	WithVoxelBody:
 	Voiced:
 		VoiceSet: V3LauncherVoice
 	ProducibleWithLevel:
@@ -473,3 +472,10 @@ v3:
 		RequiresCondition: machshop
 	MissileSpawnerMaster:
 		Actors: v3rocket
+		RespawnTicks: 400
+		LoadedCondition: loaded
+	WithVoxelBody@FULL:
+		RequiresCondition: loaded
+	WithVoxelBody@EMPTY:
+		Sequence: empty
+		RequiresCondition: !loaded

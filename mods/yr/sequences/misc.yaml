@@ -516,5 +516,8 @@ viruscloud:
 		Tick: 200
 		ZOffset: 4096
 	die: txgasg
-
+    
+smokey2:
+	idle:
+		Length: *
 
