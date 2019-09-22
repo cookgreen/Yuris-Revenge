@@ -368,7 +368,7 @@ namespace OpenRA.Mods.Cnc.UtilityCommands
 		};
 
 		[Desc("FILENAME", "Convert a Red Alert 2 map to the OpenRA format.")]
-		void IUtilityCommand.Run(Utility utility, string[] args)
+		public void Run(Utility utility, string[] args)
 		{
 			// HACK: The engine code assumes that Game.modData is set.
 			Game.ModData = utility.ModData;

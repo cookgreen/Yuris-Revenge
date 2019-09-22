@@ -70,6 +70,7 @@ Player:
 		CancelledAudio: Cancelled
 		SpeedUp: True
 	PlaceBuilding:
+		Palette: pips
 		NewOptionsNotification: NewOptions
 		CannotPlaceNotification: BuildingCannotPlaceAudio
 	SupportPowerManager:

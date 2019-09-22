@@ -371,5 +371,6 @@ EditorWorld:
 	EditorActorLayer:
 	EditorResourceLayer:
 	EditorSelectionLayer:
+		Palette: pips
 	LoadWidgetAtGameStart:
 	Selection:
