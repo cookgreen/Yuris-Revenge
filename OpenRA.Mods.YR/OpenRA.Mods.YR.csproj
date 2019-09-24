@@ -32,8 +32,14 @@
     <AdditionalFiles Include="stylecop.json" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\engine\OpenRA.Game\OpenRA.Game.csproj" />
-    <ProjectReference Include="..\engine\OpenRA.Mods.Cnc\OpenRA.Mods.Cnc.csproj" />
-    <ProjectReference Include="..\engine\OpenRA.Mods.Common\OpenRA.Mods.Common.csproj" />
+    <ProjectReference Include="../engine/OpenRA.Game/OpenRA.Game.csproj">
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="../engine/OpenRA.Mods.Cnc/OpenRA.Mods.Cnc.csproj">
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="../engine/OpenRA.Mods.Common/OpenRA.Mods.Common.csproj">
+      <Private>False</Private>
+    </ProjectReference>
   </ItemGroup>
 </Project>
