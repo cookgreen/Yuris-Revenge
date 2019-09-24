@@ -49,11 +49,11 @@ Blarget2
 finalshake  
 forcecore  
 fusion809  
-Gyula Zimmermann(Graion Dilach)  
 intr  
-MustafaTR  
+Mustafa Alperen Seki(MustaphaTR)    
 neuromancer  
 yaaaaa  
+Zimmermann Gyula(GraionDilach)  
 
 #### Thanks to all the people who helped this mod!  
 
