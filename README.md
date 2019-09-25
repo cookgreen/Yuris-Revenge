@@ -12,7 +12,7 @@ A Red Alert 2 Yuri's Revenge mod for OpenRA Engine
 playtest-20190825
 
 ## Build
-Run "make.cmd" or "make.sh" and type "all" in the terminal  
+Run "make.cmd" on Windows or run "make" on Linux/MacOS and type "all" in the terminal  
 
 ## Install the content
 Note: Normally installing the content from the ingame content installer is enough.
