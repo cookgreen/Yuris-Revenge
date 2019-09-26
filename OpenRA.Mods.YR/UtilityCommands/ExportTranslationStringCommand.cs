@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OpenRA.Mods.YR.Helper;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -48,9 +49,7 @@ namespace OpenRA.Mods.YR.UtilityCommands
 				subNodes.Add(new MiniYamlNode("Rules", new MiniYaml(null, ruleNodes)));
 
 				List<MiniYamlNode> nodes = new List<MiniYamlNode>();
-				string upperFirst = localizationName.Substring(0, 1).ToUpper();
-				var newLocalizationName = localizationName.Replace(localizationName.Substring(0, 1), upperFirst);
-				MiniYamlNode node = new MiniYamlNode(localizationName, new MiniYaml(newLocalizationName, subNodes));
+				MiniYamlNode node = new MiniYamlNode(localizationName, new MiniYaml(localizationName.SetFirstLetterUpper(), subNodes));
 				nodes.Add(node);
 				
 				MiniYaml tranlsation = new MiniYaml(null, nodes);
