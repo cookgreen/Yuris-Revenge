@@ -236,6 +236,7 @@ Music:
 	yr|audio/music.yaml
 
 Translations:
+	yr|languages/chinese.yaml
 	yr|languages/english.yaml
 
 LoadScreen: LogoStripeLoadScreen

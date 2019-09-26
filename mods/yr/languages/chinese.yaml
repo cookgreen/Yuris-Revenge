@@ -1,0 +1,416 @@
+chinese:
+	chinese: Chinese
+		Rules:
+			^CivBuilding: Civilian Building
+			^Flag: Flag
+			^CivilianInfantry: Civilian
+			^CivVehicle: Civilian Vehicle
+			^Husk: Destroyed Aircraft
+			^Ship: Ship
+			^OreDrill: Ore Drill
+			^Tree: Tree
+			^StreetSign: Street Sign
+			^TrafficLight: Traffic Light
+			^StreetLight: Street Light
+			^TelephonePole: Utility Pole
+			^Rock: Rock
+			^Crate: Crate
+			^ShootableMissile: Missile
+			^ShootableMissileVoxel: Missile
+			engineer: Engineer
+			dog: Attack Dog
+			e1: G.I.
+			ggi: Guardian GI
+			snipe: Sniper
+			ghost: Navy SEAL
+			ccomand: Chrono Commando
+			ptroop: Psi Commando
+			tany: Tanya
+			jumpjet: Rocketeer
+			jumpjet.husk: Rocketeer
+			cleg: Chrono Legionnaire
+			e2: Conscript
+			flakt: Flak Trooper
+			shk: Tesla Trooper
+			terror: Terrorist
+			deso: Desolator
+			ivan: Crazy Ivan
+			boris: Boris
+			init: Initiate
+			yengineer: Engineer
+			brute: Brute
+			virus: Virus
+			slav: Slave
+			yuri: Yuri Clone
+			yuripr: Yuri Prime
+			civa: Texan
+			civb: Texan
+			civc: Texan
+			civbbp: Baseball Player
+			civbfm: Beach Fat Male
+			civbf: Beach Fat Female
+			civbtm: Beach Thin Male
+			civsfm: Snow Fat Male
+			civsf: Snow Fat Male
+			civstm: Snow Thin Male
+			vladimir: Vladimir
+			pentgen: Pentagon General
+			ssrv: Secret Service
+			pres: President
+			mumy: Evil Mummy
+			eins: Albert Einstein
+			cabhut: Bridge repair hut
+			^LowBridgeRamp: Wooden Bridge
+			^ElevatedBridgePlaceholder: Concrete Bridge
+			lobrdb_a: Concrete Bridge
+			lobrdb_b: Concrete Bridge
+			cow: Cow
+			all: Alligator
+			polarb: Polar Bear
+			josh: Monkey
+			gacnst: Construction Yard
+			gapowr: Power Plant
+			gapile: Barracks
+			garefn: Ore Refinery
+			gaairc: Airforce Command Headquarters
+			amradr: American Airforce Command Headquarters
+			gaweap: War Factory
+			gayard: Naval Yard
+			gadept: Service Depot
+			gatech: Battle Lab
+			gawall: Allied Wall
+			gapill: Pill Box
+			nasam: Patriot Missile System
+			gtgcan: Grand Cannon
+			gaorep: Allied Ore Purifier
+			garobo: Allied Robot Control Center
+			gaspysat: Spy Satellite Uplink
+			gagap: Gap Generator
+			gaweat: Weather Controller
+			gacsph: Chronosphere
+			atesla: Prism Tower
+			power: Power Plant
+			refinery: Ore Refinery
+			barracks: Infantry Production
+			radar: Radar
+			repairpad: Service Depot
+			nacnst: Construction Yard
+			napowr: Tesla Reactor
+			nahand: Barracks
+			narefn: Ore Refinery
+			naradr: Radar Tower
+			naweap: War Factory
+			nayard: Naval Yard
+			nadept: Service Depot
+			nanrct: Nuclear Reactor
+			natech: Battle Lab
+			nairon: Iron Curtain Device
+			namisl: Nuclear Missile Silo
+			nawall: Soviet Wall
+			naflak: Flak Cannon
+			tesla: Tesla Coil
+			nalasr: Sentry Gun
+			nabnkr: Soviet Battle Bunker
+			naindp: Soviet Industrial Plant
+			napsya: Psychic Amplifier
+			napsyb: Psychic Beacon
+			yacnst: Yuri Construction Yard
+			yapowr: Bio Reactor
+			yabrck: Yuri Barracks
+			yarefn: Slave Miner
+			yaweap: Yuri War Factory
+			yayard: Yuri Naval Yard
+			yagrnd: Grinder
+			yatech: Yuri Battle Lab
+			gafwll: Citadel Walls
+			natbnk: Tank Bunker
+			yaggun: Gattling Cannon
+			yapsyt: Psychic Tower
+			yagntc: Genetic Mutator
+			yappet: Psychic Dominator
+			naclon: Cloning Vats
+			napsis: Psychic Radar
+			yarock: Unknown Building
+			yacomd: Yuri Command Center
+			yapppt: Partially Built Psychic Dominator
+			cafncb: Black Fence
+			cafncw: White Fence
+			cafnck: Brown Fence
+			cafncy: Yellow Fence
+			cafncg: Green Fence
+			cafncm: Purple Fence
+			gasand: Sandbags
+			cafncp: Prison Camp Fence
+			cawt01: Water Tower
+			cats01: Twin Silos
+			cabarn02: Barn
+			cawash01: White House
+			cawsh12: Washington Monument
+			cawash14: Jefferson Memorial
+			cawash15: Lincoln Memorial
+			cawash16: Smithsonian Castle
+			cawash17: Smithsonian Natural History Museum
+			cawash18: White House Fountain
+			cawash19: Iwo Jima Memorial
+			canewy04: Statue of Liberty
+			canewy05: World Trade Center
+			canewy20: Warehouse
+			canewy21: Warehouse
+			caswst01: Southwest Building
+			caarmy01: Army Tent
+			caarmy02: Army Tent
+			caarmy03: Army Tent
+			caarmy04: Army Tent
+			cafarm01: Farm
+			cafarm02: Farm Silo
+			cafarm06: Lighthouse
+			causfgl: American Flag
+			carufgl: Soviet Flag
+			cairfgl: Iraqi Flag
+			capofgl: Polish Flag
+			caskfgl: Korean Flag
+			calbfgl: Libyan Flag
+			cafrfgl: French Flag
+			cagefgl: German Flag
+			cacufgl: Cuban Flag
+			caukfgl: British Flag
+			cavnfgl: Vietnamese Flag
+			caicfgl: Icelandic Flag
+			canwfgl: Norwegian Flag
+			caswfgl: Swedish Flag
+			cafifgl: Finnish Flag
+			caesfgl: Estonian Flag
+			calafgl: Latvian Flag
+			califgl: Lithuanian Flag
+			canlfgl: Dutch Flag
+			caeifgl: Irish Flag
+			canlfgl: Dutch Flag
+			caspfgl: Spanish Flag
+			cajpfgl: Japanese Flag
+			cangfgl: Nigerian Flag
+			cacolo01: Air Force Academy Chapel
+			caind01: Factory
+			calab: Einstein's Lab
+			cagas01: Gas Station
+			galite: Light Post
+			city05: Battersea Power Station
+			catech01: Communications Center
+			catexs02: Alamo
+			capars01: Eiffel Tower
+			capars07: Phone Booth
+			capars10: Bistro
+			capars11: Arc de Triumphe
+			capars12: Notre Dame
+			capars13: Bistro
+			capars14: Bistro
+			cafrma: Farmhouse
+			cafrmb: Outhouse
+			caprs03: Louvre
+			cagard01: Guard Shack
+			carus01: St. Basil's Cathedral
+			carus02g: Kremlin Wall Clock Tower
+			carus03: Kremlin Palace
+			camiam04: Lifeguard Hut
+			camiam08: Arizona Memorial
+			camex01: Mayan Pyramid
+			camex02: Mayan Castillo
+			camex03: Mayan Minor Temple
+			camex04: Mayan Large Temple
+			camex05: Mayan Platfrom
+			caeur1: Cottage
+			caeur2: Cottage
+			cachig04: Associates Center
+			cachig05: Sears Tower
+			cachig06: Water Tower
+			castl05a: Busch Stadium
+			castl05b: Busch Stadium
+			castl05c: Busch Stadium
+			castl05d: Busch Stadium
+			castl05e: Busch Stadium
+			castl05f: Busch Stadium
+			castl05g: Busch Stadium
+			castl05h: Busch Stadium
+			camsc07: Thatched Hut Chief
+			camsc08: Thatched Hut
+			camsc09: Thatched Hut
+			camsc10: McBurger Kong
+			cabunk01: Concrete Bunker
+			cabunk02: Concrete Bunker
+			cabunk03: Concrete Bunker
+			cabunk04: Concrete Bunker
+			camorr01: Building
+			camorr02: Building
+			camorr03: Building
+			camorr04: Building
+			camorr05: Building
+			camorr06: Building
+			camorr07: Building
+			camorr08: Building
+			camorr09: Building
+			camorr10: Building
+			cala01: Building
+			cala03: Hollywood Sign
+			cala04: Hollywood Bowl
+			cala05: LAX
+			cala06: LAX Control Tower
+			cala07: Movie Theater
+			cala08: Car Dealership
+			cala09: Convenience Store
+			cala10: Billboard
+			cala11: Hollywood Bowl
+			cala12: Hollywood Bowl
+			cala13: Hollywood Sign
+			cala14: Mini Mall
+			cala15: Mini Mall
+			caegyp01: Pyramid
+			caegyp02: Pyramid
+			caegyp03: Sphinx
+			caegyp04: Pyramid
+			caegyp05: Pyramid
+			caegyp06: Pyramid
+			calond01: Building
+			calond03: Building
+			calond04: British Parlaiment
+			calond05: Big Ben
+			calond06: Tower of London
+			casanf01: Building
+			casanf02: Building
+			casanf03: Building
+			casanf05: Alcatraz
+			casanf06: Building
+			casanf07: Building
+			casanf08: Building
+			casanf15: Alcatraz Water Tower
+			casanf16: Light House
+			casanf17: Building
+			casanf18: Building
+			casydn02: McRoo Burger
+			casydn03: Sydney Opera House
+			calunr01: Lunar Lander
+			calunr02: American Flag
+			caseat01: Seattle Space Needle
+			caseat02: MassiveSoft Campus
+			catran01: Crypt
+			catran02: Crypt
+			catran03: Yuri's Fortress
+			catime01: Time Machine
+			catime02: Time Machine
+			caoild: Tech Oil Derrick
+			caairp: Tech Airport
+			cahosp: Civilian Hospital
+			caoutp: Tech Outpost
+			camach: Tech Machine Shop
+			capowr: Tech Power Plant
+			caslab: Tech Secret Lab
+			amcv: Mobile Construction Vehicle
+			cmin: Chrono Miner
+			mtnk: Grizzly Battle Tank
+			tnkd: Tank Destroyer
+			fv: Infantry Fighting Vehicle
+			sref: Prism Tank
+			mgtk: Mirage Tank
+			robo: Robot Tank
+			bfrt: Battle Fortress
+			smcv: Mobile Construction Vehicle
+			harv: War Miner
+			dron: Terror Drone
+			htk: Flak Track
+			htnk: Rhino Heavy Tank
+			apoc: Apocalypse Tank
+			ttnk: Tesla Tank
+			dtruck: Demolition Truck
+			v3: V3 Launcher
+			pcv: Mobile Construction Vehicle
+			smin: Slave Miner
+			ltnk: Lasher Light Tank
+			ytnk: Gatling Tank
+			tele: Magnetron
+			caos: Chaos Drone
+			mind: Master Mind
+			disk: Floating Disk
+			diskhusk: Floating Disk
+			bus: School Bus
+			limo: Presidential Limousine
+			pick: Pickup Truck
+			car: Automobile
+			wini: Recreational Vehicle
+			propa: Propaganda Truck
+			cop: Police Car
+			euroc: European Car
+			cona: Excavator
+			trucka: Truck
+			truckb: Truck
+			suvb: Black SUV
+			suvw: White SUV
+			stang: Mustang
+			ptruck: Pickup Truck
+			taxi: Taxi
+			lcrf: Amphibious Transport
+			dest: Destroyer
+			aegis: Aegis Cruiser
+			dlph: Dolphin
+			carrier: Aircraft Carrier
+			sapc: Amphibious Transport
+			sub: Typhoon Attack Sub
+			hyd: Sea Scorpion
+			sqd: Giant Squid
+			dred: Dreadnought
+			yhvr: Hover Transport Yuri
+			bsub: Yuri Boomer
+			shad: Night Hawk
+			shadhusk: Night Hawk
+			zep: Kirov Airship
+			zephusk: Kirov Airship
+			orca: Harrier
+			orcahusk: Harrier
+			beag: Black Eagle
+			beaghusk: Black Eagle
+			pdplane: Cargo Plane
+			pdplanehusk: Cargo Plane
+			hornet: Hornet
+			hornethusk: Hornet
+			bpln: Soviet MIG
+			bplnhusk: Soviet MIG
+			schp: Soviet Siege Chopper
+			schd: Soviet Siege Chopper
+			schphusk: Soviet Siege Chopper
+			spyp: Soviet Spy Plane
+			v3rocket: V3 Rocket
+			dmisl: Cruise Missile
+			cmisl: Cruise Missile
+			camisc01: Barrels
+			camisc02: Barrel
+			camisc03: Dumpster
+			camisc04: Mailbox
+			camisc05: Pipes
+			camisc06: V3 Ammunition
+			camsc11: Tires
+			camsc12: Practice Target
+			camsc13: Derelict Tank
+			ammocrat: Ammo Crates
+			camsc01: Hot Dog Stand
+			camsc02: Beach Umbrellas
+			camsc03: Beach Umbrellas
+			camsc04: Beach Towels
+			camsc05: Beach Towels
+			camsc06: Camp Fire
+			caeuro05: Statue
+			capark01: Park Bench
+			capark02: Swing Set
+			capark03: Merry Go Round
+			castrt01: Traffic Light
+			castrt02: Traffic Light
+			castrt03: Traffic Light
+			castrt04: Traffic Light
+			castrt05: Bus Stop
+			camov01: Drive In Movie Screen
+			camov02: Drive In Movie Concession Stand
+			pole01: Utility Pole
+			pole02: Utility Pole
+			hdstn01: AlringtonStones
+			spkr01: Drive-In Speaker
+			cakrmw: Kremlin Walls
+			gagate_a: Guard Border Crossing
+			tug: Tug Boat
+			cruise: Cruise Ship
+			cdest: Coast Guard Boat
