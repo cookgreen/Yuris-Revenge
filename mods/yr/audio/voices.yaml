@@ -675,6 +675,18 @@ YuriPrimeVoice:
 		Melted: igenmela, igenmelb, igenmelc
 		Build: iyupcrd
         
+CosmonautVoice:
+	DefaultVariant: .wav
+	Voices: 
+		Attack: ilasata, ilasatb, ilasatc, ilasatd, ilasate
+		Move: ilasmoa, ilasmob, ilasmoc, ilasmod, ilasmoe
+		Select: ilassea, ilasseb, ilassec, ilassed, ilassee
+		Feedback: ilasfea, ilasfeb, ilasfec, ilasfed
+		Die: ilasdia, ilasdib, ilasdic, ilasdid, ilasdie
+		Zapped: igenzapa
+		Burned: ienadia #gotta put something as temp else game crashes
+		Melted: igenmela, igenmelb, igenmelc
+        
 SlaveMinerVoice:
 	DefaultVariant: .wav
 	Voices:

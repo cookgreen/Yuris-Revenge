@@ -399,3 +399,82 @@ yuripr:
 		CargoType: Infantry
 		GrantBunkerCondition: bunkered
 		Accepter: bfrt
+
+lunr:
+	Inherits: ^Infantry
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	HiddenUnderFog:
+		Type: CenterPosition
+	Valued:
+		Cost: 600
+	Tooltip:
+		Name: Lunar Infantry
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Infantry
+		BuildPaletteOrder: 160
+		Prerequisites: missiononly
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Health:
+		HP: 125
+	-TimedConditionBar@ChronoDisable:
+	-ExternalCondition@CHRONODISABLE:
+	-Mobile:
+	RevealsShroud:
+		Range: 8c0
+		Type: CenterPosition
+	Armor:
+		Type: None
+	Armament@primary:
+		Weapon: Lunarlaser
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: Lunarlaser
+		RequiresCondition: rank-elite
+	AttackFrontal:
+		Voice: Attack
+	Aircraft:
+		CruiseAltitude: 3072
+		InitialFacing: 20
+		TurnSpeed: 255
+		Speed: 140
+		AltitudeVelocity: 83
+		Voice: Move
+		AirborneCondition: airborne
+		CanHover: True
+		IdealSeparation: 512
+		TakeOffOnResupply: true
+		VTOL: true
+		CanSlide: True
+	WithInfantryBody:
+		StandSequences: fly
+		MoveSequence: fly
+		DefaultAttackSequence: shoot-air
+		IdleSequences: idle-air
+	Hovers:
+		BobDistance: -45
+	-Crushable:
+	-TakeCover:
+	-Targetable:
+	-WithDeathAnimation@normal:
+	-WithDeathAnimation@effect:
+	Targetable@airborne:
+		TargetTypes: Air, Disguise
+		RequiresCondition: airborne
+	WithShadow:
+	Voiced:
+		VoiceSet: CosmonautVoice
+	ProducibleWithLevel:
+		Prerequisites: barracks.infiltrated
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+	Targetable@ground:
+		TargetTypes: Ground, Infantry, DetonateAttack, Disguise
+		RequiresCondition: !airborne
+	-Passenger:
+	Repairable:
+		RepairActors:
+		Voice: Move
+	Rearmable:
+		RearmActors:

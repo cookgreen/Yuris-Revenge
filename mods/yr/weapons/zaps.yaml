@@ -330,3 +330,27 @@ MagnetronRepel:
 	Inherits: MagnetronTract
 	Warhead@1Tract: Tractor
 		CruiseSpeedMultiplier: -1
+        
+Lunarlaser:
+	ReloadDelay: 20
+	Range: 7c0
+	Report: ilasatta.wav
+	Projectile: LaserZap
+		Width: 50
+		Duration: 15
+		UsePlayerColor: true
+	Warhead@1Dam: SpreadDamage
+		Damage: 25
+		Versus:
+			None: 100
+			Flak: 100
+			Plate: 100
+			Light: 75
+			Medium: 50
+			Heavy: 50
+			Wood: 100
+			Steel: 100
+			Concrete: 100
+			Drone: 100
+			Rocket: 100
+		DamageTypes: RadiationDeath

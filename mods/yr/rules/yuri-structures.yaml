@@ -603,7 +603,7 @@ yaggun:
 		Queue: Support
 		BuildPaletteOrder: 30
 		Prerequisites: yabrck, ~structures.yuris
-		Description: Powerful Anti-Infantry and Aircraft Cannon
+		Description: Powerful Anti-Infantry and Anti-Aircraft Cannon
 	Health:
 		HP: 810
 	Armor:
@@ -700,7 +700,7 @@ yaggun:
 		QuantizedFacings: 16
 	WithMuzzleOverlay:
 	RenderVoxels:
-		Scale: 19
+		Scale: 18
 		LightYaw: 800
 		LightPitch: 120
 		LightAmbientColor: -1.3,-1.3,-1.3
@@ -714,7 +714,7 @@ yaggun:
 	Power:
 		Amount: -50
 	Targetable:
-		TargetTypes: powerable-defense
+		TargetTypes: Ground, C4, DetonateAttack, Structure, powerable-defense
 
 yapsyt:
 	Inherits: ^SupportBuilding
@@ -746,8 +746,6 @@ yapsyt:
 		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -100
-	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure
 	Armament:
 		Weapon: MindControl
 		MuzzleSequence: muzzle
@@ -767,6 +765,8 @@ yapsyt:
 	AutoTargetPriority@DEFAULT:
 		Types: MindControl
 		RequiresCondition: !controlling
+	Targetable:
+		TargetTypes: Ground, C4, DetonateAttack, Structure
 
 yagntc:
 	Inherits: ^Building
@@ -824,6 +824,8 @@ yagntc:
 		Condition: build-incomplete
 	Power:
 		Amount: -200
+	Targetable:
+		TargetTypes: Ground, C4, DetonateAttack, Structure
 
 yappet:
 	Inherits: ^Building
@@ -881,6 +883,8 @@ yappet:
 		ActiveSequence: active
 		DeactiveSequence: deactive
 		Condition: build-incomplete
+	Targetable:
+		TargetTypes: Ground, C4, DetonateAttack, Structure
 		
 naclon:
 	Inherits: ^Building

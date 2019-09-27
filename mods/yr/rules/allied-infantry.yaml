@@ -728,7 +728,6 @@ jumpjet.husk:
 		TurnSpeed: 10
 		Speed: 140
 	FallsToEarth:
-		Explosion: UnitExplodeSmall
 	RevealsShroud:
 		Range: 8c0
 		Type: CenterPosition
