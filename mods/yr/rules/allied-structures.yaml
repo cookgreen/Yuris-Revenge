@@ -991,10 +991,44 @@ gaweat:
 		Range: 5c0
 	Power:
 		Amount: -200
-	# Nothing to disable at the moment
-	#GrantConditionOnPowerState@LOWPOWER:
-	#	Condition: lowpower
-	#	ValidPowerStates: Low, Critical
+	GrantConditionOnPowerState@LOWPOWER:
+		Condition: lowpower
+		ValidPowerStates: Low, Critical
+	ParticleSupportPower@LightningStorm:
+		OrderName: Lightningstorm
+		ChargeInterval: 15000
+		Icon: lightningstorm
+		Description: Lightning Storm
+		LongDesc: Control the weather to destroy enemy forces.
+		EndChargeSound: spsylo1a.wav,spsylo2a.wav,spsylo2b.wav,spsylo2c.wav,spsylo3a.wav
+		LaunchSound: spsydom.wav
+		DisplayTimerStances: Ally, Neutral, Enemy
+		DisplayBeacon: True
+		DisplayRadarPing: True
+		RangeTotal: 7
+		Weapons:
+			LightningStormWeapon1: 0, 0, 0
+			LightningStormWeapon2: 3000, 4500, 0
+			LightningStormWeapon3: -3000, 4800, 0
+			LightningStormWeapon4: -3000, 0, 0
+			LightningStormWeapon5: -3000, 2000, 0
+			LightningStormWeapon6: -2400, 3800, 0
+			LightningStormWeapon7: 2400, 3800, 0
+			LightningStormWeapon8: -5400, 3800, 0
+			LightningStormWeapon9: 5400, 3600, 0
+			LightningStormWeapon10: -5400, 4800, 0
+		PauseOnCondition: lowpower
+		Cursor: weatherstorm
+		EnvironmentEffectType: LightningStorm
+		ChangeOwner: false
+	SupportPowerChargeBar:
+	WithSupportPowerOverlay:
+		OrderName: Lightningstorm
+		IdleSequence: idle
+		ChargedSequence: charged
+		ActiveSequence: active
+		DeactiveSequence: deactive
+		Condition: build-incomplete
 
 gacsph:
 	Inherits: ^Building

@@ -314,14 +314,42 @@ DominatorWH:
 		Delay: 0
 		Explosions: psychicdomcld
 		ValidTargets: Ground, Water
-		ImpactSounds: beonewithyuri.aud
 		ImpactActors: false
 	Warhead@3Eff: CreateEffect
 		Delay: 15
 		Explosions: psychicdomloc
 		ValidTargets: Ground, Water
-		ImpactSounds: psiwavesound.aud
 		ImpactActors: false
+        
+LightningStormWeapon1:
+	Inherits: ^LightningStorm1
+        
+LightningStormWeapon2:
+	Inherits: ^LightningStorm2
+        
+LightningStormWeapon3:
+	Inherits: ^LightningStorm3
+        
+LightningStormWeapon4:
+	Inherits: ^LightningStorm1
+        
+LightningStormWeapon5:
+	Inherits: ^LightningStorm2
+        
+LightningStormWeapon6:
+	Inherits: ^LightningStorm3
+        
+LightningStormWeapon7:
+	Inherits: ^LightningStorm1
+        
+LightningStormWeapon8:
+	Inherits: ^LightningStorm2
+        
+LightningStormWeapon9:
+	Inherits: ^LightningStorm3
+        
+LightningStormWeapon10:
+	Inherits: ^LightningStorm3
 		
 Demolish:
 	Warhead@1Dam: SpreadDamage

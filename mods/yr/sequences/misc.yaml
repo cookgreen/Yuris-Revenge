@@ -270,6 +270,24 @@ explosion:
 	psychicdomloc: pdfxloc
 		Offset: 0, 50
 		Tick: 50
+	weathercloud1: wccloud1
+		Offset: 0, -100
+		Tick: 80
+	weatherblot1: wclbolt1
+		Offset: 0, 80
+		Tick: 200
+	weathercloud2: wccloud2
+		Offset: 0, -120
+		Tick: 80
+	weatherblot2: wclbolt2
+		Offset: 0, 60
+		Tick: 200
+	weathercloud3: wccloud3
+		Offset: -0, -100
+		Tick: 80
+	weatherblot3: wclbolt3
+		Offset: -0, 80
+		Tick: 200
 	chaosgas: cdgas
 	diskray: diskray
 		Length: 4
@@ -420,9 +438,9 @@ icon:
 	geneticmute: muteicon
 	psychicdom: pdomicon
 	psychicrev: psyricon
+	lightningstorm: bolticon
 	forceshield: forcicon
 	spyp: spypicon
-	maintenance: maintenanceicon
 
 atomic:
 	up: nkmslup

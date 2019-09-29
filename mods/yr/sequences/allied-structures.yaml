@@ -678,11 +678,6 @@ gaweat:
 			NEWURBAN: GENERIC
 			DESERT: GENERIC
 			LUNAR: GENERIC
-	idle: ggweth
-		ShadowStart: 3
-	damaged-idle: ggweth
-		Start: 1
-		ShadowStart: 4
 	make: guwethmk
 		Length: 25
 		ShadowStart: 25
@@ -692,6 +687,38 @@ gaweat:
 			NEWURBAN: NEWURBAN
 			DESERT: DESERT
 			LUNAR: LUNAR
+	idle: ggweth
+		ShadowStart: 3
+	damaged-idle: ggweth
+		Start: 1
+		ShadowStart: 4
+	charged: ggweth_f
+		Length: 12
+		ShadowStart: 24
+		Tick: 150
+	damaged-charged: ggweth_f
+		Start: 12
+		Length: 12
+		ShadowStart: 36
+		Tick: 150
+	active: ggweth_g
+		Length: 12
+		ShadowStart: 24
+		Tick: 150
+	damaged-active: ggweth_g
+		Start: 12
+		Length: 12
+		ShadowStart: 36
+		Tick: 150
+	deactive: ggweth_h
+		Length: 12
+		ShadowStart: 24
+		Tick: 150
+	damaged-deactive: ggweth_h
+		Start: 12
+		Length: 12
+		ShadowStart: 36
+		Tick: 150
 	icon: wethicon
 		Offset: 0,0
 		UseTilesetCode: false

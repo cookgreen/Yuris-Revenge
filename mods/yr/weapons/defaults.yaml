@@ -283,3 +283,108 @@
 	Projectile: InstantHit
 	Warhead@1Dam: TargetDamage
 		ValidTargets: Ground, Water
+        
+^LightningStorm1:
+	ReloadDelay: 0
+	Range: 7c0
+	Projectile: InstantHit
+		Speed: 425
+		Blockable: false
+	Warhead@1Dam: SpreadDamage
+		Delay: 5
+		Spread: 1c0
+		Damage: 45
+		Versus:
+			None: 0
+			Flak: 0
+			Plate: 0
+			Light: 0
+			Medium: 0
+			Heavy: 0
+			Wood: 100
+			Steel: 100
+			Concrete: 6
+			Drone: 0
+			Rocket: 0
+		DamageTypes: Prone100Percent
+	Warhead@2Eff: CreateEffect
+		Delay: 0
+		Explosions: weathercloud1
+		UsePlayerPalette: true
+		ExplosionPalette: player
+		ValidTargets: Ground, Water
+		ImpactActors: false
+	Warhead@3Eff: CreateEffect
+		Delay: 50
+		Explosions: weatherblot1
+		ValidTargets: Ground, Water
+        
+^LightningStorm2:
+	ReloadDelay: 0
+	Range: 7c0
+	Projectile: InstantHit
+		Speed: 425
+		Blockable: false
+	Warhead@1Dam: SpreadDamage
+		Delay: 5
+		Spread: 1c0
+		Damage: 45
+		Versus:
+			None: 0
+			Flak: 0
+			Plate: 0
+			Light: 0
+			Medium: 0
+			Heavy: 0
+			Wood: 100
+			Steel: 100
+			Concrete: 6
+			Drone: 0
+			Rocket: 0
+		DamageTypes: Prone100Percent
+	Warhead@2Eff: CreateEffect
+		Delay: 0
+		Explosions: weathercloud2
+		UsePlayerPalette: true
+		ExplosionPalette: player
+		ValidTargets: Ground, Water
+		ImpactActors: false
+	Warhead@3Eff: CreateEffect
+		Delay: 50
+		Explosions: weatherblot2
+		ValidTargets: Ground, Water
+        
+^LightningStorm3:
+	ReloadDelay: 0
+	Range: 7c0
+	Projectile: InstantHit
+		Speed: 425
+		Blockable: false
+	Warhead@1Dam: SpreadDamage
+		Delay: 5
+		Spread: 1c0
+		Damage: 45
+		Versus:
+			None: 0
+			Flak: 0
+			Plate: 0
+			Light: 0
+			Medium: 0
+			Heavy: 0
+			Wood: 100
+			Steel: 100
+			Concrete: 6
+			Drone: 0
+			Rocket: 0
+		DamageTypes: Prone100Percent
+	Warhead@2Eff: CreateEffect
+		Delay: 0
+		Explosions: weathercloud3
+		UsePlayerPalette: true
+		ExplosionPalette: player
+		ValidTargets: Ground, Water
+		ImpactActors: false
+	Warhead@3Eff: CreateEffect
+		Delay: 50
+		Explosions: weatherblot3
+		ValidTargets: Ground, Water

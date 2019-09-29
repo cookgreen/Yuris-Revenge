@@ -218,3 +218,7 @@
 		Type: Dominator
 		Color: d7000050
 		Length: 90
+	EnvironmentPaletteEffect@LIGHTNINGSTORM:
+		Type: LightningStorm
+		Color: 08112e50
+		Length: 90
