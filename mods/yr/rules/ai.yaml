@@ -38,8 +38,23 @@ Player:
 					Attractiveness: -10
 					TargetMetric: Value
 					CheckRadius: 7c0
+			lightningstorm:
+				OrderName: Lightningstorm
+				MinimumAttractiveness: 3000
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 8c0
+				Consideration@2:
+					Against: Ally
+					Types: Air, Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 7c0
 			psychicdomnator:
-				OrderName: ParticleSupportPowerInfoOrder
+				OrderName: Psychicdomnator
 				MinimumAttractiveness: 3000
 				Consideration@1:
 					Against: Enemy
@@ -54,7 +69,7 @@ Player:
 					TargetMetric: Value
 					CheckRadius: 7c0
 			geneticmutator:
-				OrderName: TransformActorsPowerInfoOrder
+				OrderName: Geneticconverter
 				MinimumAttractiveness: 1500
 				Consideration@1:
 					Against: Enemy
@@ -68,16 +83,9 @@ Player:
 					Attractiveness: -10
 					TargetMetric: Value
 					CheckRadius: 7c0
-	HarvesterBotModule@test:
-		RequiresCondition: enable-test-ai
-		HarvesterTypes: cmin, harv, smin
-		RefineryTypes: garefn, narefn, yarefn
 	BaseBuilderBotModule@test:
 		RequiresCondition: enable-test-ai
-		MinimumExcessPower: 60
-		MaximumExcessPower: 210
-		ExcessPowerIncrement: 30
-		ExcessPowerIncreaseThreshold: 4
+		DefenseQueues: Support
 		ConstructionYardTypes: gacnst, nacnst, yacnst
 		RefineryTypes: garefn, narefn, yarefn
 		PowerTypes: gapowr, napowr, nanrct, yapowr
@@ -134,6 +142,7 @@ Player:
 			gadept: 1
 			nadept: 1
 			yagrnd: 1
+			yaggun: 10
 			gapill: 10
 			nalasr: 10
 			nasam: 4
@@ -143,20 +152,12 @@ Player:
 			gtgcan: 1
 			gagap: 1
 			namisl: 1
+			gaweat: 1
 			yappet: 1
 			yagntc: 1
-	McvManagerBotModule@test:
-		RequiresCondition: enable-test-ai
-		McvTypes: amcv, smcv, pcv
-		ConstructionYardTypes: gacnst, nacnst, yacnst
-		McvFactoryTypes: gaweap, naweap, yaweap
-	BuildingRepairBotModule@test:
-		RequiresCondition: enable-test-ai
 	SquadManagerBotModule@test:
 		RequiresCondition: enable-test-ai
 		SquadSize: 5
-		RushAttackScanRadius: 30
-		ProtectUnitScanRadius: 25
 		ExcludeFromSquadsTypes: cmin, harv, smin, amcv, smcv, pcv
 		ConstructionYardTypes: gacnst, nacnst, yacnst
 	UnitBuilderBotModule@test:
@@ -201,3 +202,11 @@ Player:
 			cmin: 8
 			harv: 8
 			smin: 8
+		RequiresCondition: enable-test-ai
+		McvTypes: amcv, smcv, pcv
+		ConstructionYardTypes: gacnst, nacnst, yacnst
+		McvFactoryTypes: gaweap, naweap, yaweap
+	HarvesterBotModule:
+		RequiresCondition: enable-test-ai
+	BuildingRepairBotModule:
+		RequiresCondition: enable-test-ai
