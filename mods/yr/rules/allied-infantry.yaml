@@ -715,6 +715,7 @@ jumpjet:
 		Voice: Move
 	Rearmable:
 		RearmActors:
+	WithIdleOverlayOnGround:
 
 jumpjet.husk:
 	Inherits: ^HelicopterHusk
