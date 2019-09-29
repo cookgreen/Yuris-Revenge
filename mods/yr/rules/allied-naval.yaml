@@ -77,6 +77,11 @@ dest:
 		LocalOffset: 768,0,0
 		FireDelay: 2
 		RequiresCondition: rank-elite
+	Armament@secondary:
+		Weapon: ASWLauncher
+		LocalOffset: 768,0,0
+		FireDelay: 2
+		RequiresCondition: !rank-elite
 	AttackFrontal:
 		Voice: Attack
 	DetectCloaked:
@@ -86,11 +91,20 @@ dest:
 	Explodes:
 		Weapon: UnitExplode
 		EmptyWeapon: UnitExplode
-	WithVoxelBody:
 	RenderSprites:
 	Voiced:
 		VoiceSet: AlliedNavalVoice
 	HitShape:
+	CarrierMaster:
+		Actors: asw
+		RespawnTicks: 300
+		SpawnAllAtOnce: true
+		LoadedCondition: loaded
+	WithVoxelBody@FULL:
+		RequiresCondition: loaded
+	WithVoxelBody@EMPTY:
+		Sequence: empty
+		RequiresCondition: !loaded
 
 aegis:
 	Inherits: ^Ship

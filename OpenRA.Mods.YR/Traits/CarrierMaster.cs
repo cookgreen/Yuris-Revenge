@@ -77,6 +77,7 @@ namespace OpenRA.Mods.YR.Traits
 		Stack<int> loadedTokens = new Stack<int>();
 
 		int respawnTicks = 0;
+		int loadedConditionToken = ConditionManager.InvalidConditionToken;
 
 		public CarrierMaster(ActorInitializer init, CarrierMasterInfo info) : base(init, info)
 		{
@@ -87,6 +88,13 @@ namespace OpenRA.Mods.YR.Traits
 		{
 			base.Created(self);
 			conditionManager = self.Trait<ConditionManager>();
+
+			if (!string.IsNullOrEmpty(Info.LoadedCondition) &&
+				loadedConditionToken == ConditionManager.InvalidConditionToken)
+			{
+				loadedConditionToken = conditionManager.GrantCondition(self,
+					Info.LoadedCondition);
+			}
 		}
 
 		public override BaseSpawnerSlaveEntry[] CreateSlaveEntries(BaseSpawnerMasterInfo info)
@@ -240,9 +248,22 @@ namespace OpenRA.Mods.YR.Traits
 				{
 					Replenish(self, slaveEntries);
 
+					if (!string.IsNullOrEmpty(Info.LoadedCondition) &&
+						loadedConditionToken == ConditionManager.InvalidConditionToken)
+					{
+						loadedConditionToken = conditionManager.GrantCondition(self, Info.LoadedCondition);
+					}
+
 					// If there's something left to spawn, restart the timer.
 					if (SelectEntryToSpawn(slaveEntries) != null)
 						respawnTicks = Info.RespawnTicks;
+				}
+				else
+				{
+					if (loadedConditionToken != ConditionManager.InvalidConditionToken)
+					{
+						loadedConditionToken = conditionManager.RevokeCondition(self, loadedConditionToken);
+					}
 				}
 			}
 

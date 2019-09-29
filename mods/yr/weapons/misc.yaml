@@ -94,6 +94,12 @@ CruiseLauncher:
 	ValidTargets: Structure
 	Warhead@1Dam: TargetDamage
 		ValidTargets: Structure
+
+ASWLauncher:
+	Inherits: ^Launcher
+	ValidTargets: Underwater
+	Warhead@1Dam: TargetDamage
+		ValidTargets: Underwater
         
 SpyCameraWeapon:
 	ReloadDelay: 30

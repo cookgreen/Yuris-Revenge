@@ -355,6 +355,49 @@ hornet:
 	Rearmable:
 		RearmActors: carrier
 
+asw:
+	Inherits: ^Plane
+	Valued:
+		Cost: 50
+	Tooltip:
+		Name: Osprey
+	Health:
+		HP: 75
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 2c0
+		Type: GroundPosition
+		RevealGeneratedShroud: False
+	Armament:
+		Weapon: ASWBomb
+		PauseOnCondition: !ammo
+	Aircraft:
+		InitialFacing: 192
+		TurnSpeed: 8
+		Speed: 180
+		RepulsionSpeed: 40
+		VTOL: false
+	AttackAircraft:
+		FacingTolerance: 20
+		AttackType: Hover
+	AmmoPool:
+		Ammo: 3
+		AmmoCondition: ammo
+	RejectsOrders:
+	SpawnActorOnDeath:
+		Actor: hornethusk
+	-Selectable:
+	-ActorLostNotification:
+	CarrierSlave:
+		LandingDistance: 8c0
+	HitShape:
+	Interactable:
+	RenderVoxels:
+		NormalsPalette: ts-normals
+	Rearmable:
+		RearmActors: carrier
+
 hornethusk:
 	Inherits: ^PlaneHusk
 	Tooltip:
