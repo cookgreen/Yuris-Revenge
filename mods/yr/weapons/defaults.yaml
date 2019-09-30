@@ -239,6 +239,7 @@
 	Range: 1c496
 	ValidTargets: Ground
 	Projectile: InstantHit
+		Speed: 600
 	Warhead@1Dam: SpreadDamage
 		Damage: 100
 		ValidTargets: Infantry, Structure
@@ -260,6 +261,7 @@
 	Range: 1c496
 	ValidTargets: Ground
 	Projectile: InstantHit
+		Speed: 600
 	Warhead@1Dam: SpreadDamage
 		Damage: 100
 		ValidTargets: Vehicle
@@ -281,6 +283,7 @@
 	Range: 25c0
 	ValidTargets: Ground, Water
 	Projectile: InstantHit
+		Speed: 500
 	Warhead@1Dam: TargetDamage
 		ValidTargets: Ground, Water
         

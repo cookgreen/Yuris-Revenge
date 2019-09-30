@@ -131,6 +131,7 @@ Speech:
 		Training: 066
 		TwentyMinutesRemaining: 027
 		TwoMinutesRemaining: 032
+		UnableToComply: 046
 		UnitArmorUpgraded: 077
 		UnitFirepowerUpgraded: 076
 		UnitLost: 064

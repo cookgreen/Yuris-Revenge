@@ -17,7 +17,7 @@ EngineerVoice:
 		Feedback: fea, feb, fec
 		Die: dia, dib, dic, did
 		Zapped: igenzapa
-		Burned: ienadia #gotta put something as temp else game crashes
+		Burned: ienadia
 		Melted: igenmela, igenmelb, igenmelc
 		# [EngAllPowerDown] Sounds = ienapow
 		DisablePrefixes: Zapped, Burned, Melted
@@ -770,6 +770,9 @@ MummyVoice:
 		Move: gmummova, gmummovd
 		Attack: gmumatta, gmumattb, gmumattc
 		Die: gmumdiea, gmumdieb, gmumdiec, gmumdied
+		Zapped: igenzapa
+		Burned: ienadia
+		Melted: igenmela, igenmelb, igenmelc
 		
 EinsteinVoice:
 	DefaultVariant: .wav
@@ -779,3 +782,6 @@ EinsteinVoice:
 		Attack: ieinata, ieinatb, ieinatc, ieinatd, ieinate
 		Feedback: ieinfea, ieinfeb, ieinfec, ieinfed, ieinfee
 		Die: ieindia, ieindib, ieindic, ieindid, ieindie
+		Zapped: igenzapa
+		Burned: ienadia
+		Melted: igenmela, igenmelb, igenmelc

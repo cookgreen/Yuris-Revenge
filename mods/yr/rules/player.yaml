@@ -13,7 +13,7 @@ Player:
 		LowPowerModifier: 300
 		ReadyAudio: ConstructionComplete
 		BlockedAudio: NoBuild
-		LimitedAudio: BuildingInProgress
+		LimitedAudio: UnableToComply
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -23,7 +23,7 @@ Player:
 		LowPowerModifier: 300
 		ReadyAudio: ConstructionComplete
 		BlockedAudio: NoBuild
-		LimitedAudio: BuildingInProgress
+		LimitedAudio: UnableToComply
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -33,7 +33,7 @@ Player:
 		LowPowerModifier: 300
 		ReadyAudio: UnitReady
 		BlockedAudio: NoBuild
-		LimitedAudio: BuildingInProgress
+		LimitedAudio: UnableToComply
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -44,7 +44,7 @@ Player:
 		LowPowerModifier: 300
 		ReadyAudio: UnitReady
 		BlockedAudio: NoBuild
-		LimitedAudio: BuildingInProgress
+		LimitedAudio: UnableToComply
 		QueuedAudio: Training
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -54,7 +54,7 @@ Player:
 		LowPowerModifier: 300
 		ReadyAudio: UnitReady
 		BlockedAudio: NoBuild
-		LimitedAudio: BuildingInProgress
+		LimitedAudio: UnableToComply
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -64,7 +64,7 @@ Player:
 		LowPowerModifier: 300
 		ReadyAudio: UnitReady
 		BlockedAudio: NoBuild
-		LimitedAudio: BuildingInProgress
+		LimitedAudio: UnableToComply
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
