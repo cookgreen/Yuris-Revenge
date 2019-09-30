@@ -341,7 +341,7 @@ boris:
 	Buildable:
 		Queue: Infantry
 		Prerequisites: natech, ~nahand
-		BuildPaletteOrder: 20
+		BuildPaletteOrder: 140
 		BuildLimit: 1
 		Description: Elite Soviet commando Infantry\n  Strong vs Infantry, Buildings, Vehicles\n  Weak with Aircraft
 	Valued:

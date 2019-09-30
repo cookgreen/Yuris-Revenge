@@ -413,7 +413,7 @@ lunr:
 		Queue: Infantry
 		BuildAtProductionType: Infantry
 		BuildPaletteOrder: 160
-		Prerequisites: missiononly
+		Prerequisites: ~missiononly
 	Selectable:
 		Bounds: 20, 30, 0, -11
 	Health:
