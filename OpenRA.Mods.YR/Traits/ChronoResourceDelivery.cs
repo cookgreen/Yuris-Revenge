@@ -72,12 +72,12 @@ namespace OpenRA.Mods.RA2.Traits
 				ticksTillCheck--;
 		}
 
-        public void MovingToResources(Actor self, CPos targetCell)
+        void INotifyHarvesterAction.MovingToResources(Actor self, CPos targetCell)
         {
             Reset();
         }
 
-        public void MovingToRefinery(Actor self, Actor refineryActor)
+        void INotifyHarvesterAction.MovingToRefinery(Actor self, Actor refineryActor)
         {
             var iao = refineryActor.Trait<IAcceptResources>();
             var targetCell = refineryActor.Location + iao.DeliveryOffset;
@@ -87,7 +87,7 @@ namespace OpenRA.Mods.RA2.Traits
             destination = targetCell;
         }
 
-        public void MovementCancelled(Actor self)
+        void INotifyHarvesterAction.MovementCancelled(Actor self)
 		{
 			Reset();
 		}
@@ -108,9 +108,7 @@ namespace OpenRA.Mods.RA2.Traits
 			var pos = self.Trait<IPositionable>();
 			if (pos.CanEnterCell(destination.Value))
 			{
-				self.CancelActivity();
 				self.QueueActivity(new ChronoResourceTeleport(destination.Value, info));
-				self.QueueActivity(nextActivity);
 				Reset();
 			}
 		}
