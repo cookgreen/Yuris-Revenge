@@ -512,8 +512,9 @@ robo:
 	HitShape:
 	SelfHealing@MACHSHOP:
 		RequiresCondition: machshop
-	RemoteControlSlave:
+	GrantConditionOnPrerequisite:
 		Condition: robotcenter
+		Prerequisites: garobo
 	WithColoredOverlay@robotankoffline:
 		RequiresCondition: !robotcenter
 	RejectsOrders@robotankoffline:

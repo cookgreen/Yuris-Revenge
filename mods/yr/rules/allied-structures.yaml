@@ -883,6 +883,7 @@ garobo:
 		Footprint: xx xx
 		Dimensions: 2,2
 	ProvidesPrerequisite:
+		RequiresCondition: !lowpower
 	Health:
 		HP: 600
 	Armor:
@@ -891,8 +892,9 @@ garobo:
 		Range: 4c0
 	Power:
 		Amount: -100
-	RemoteControlMaster:
-		GrantRemoteControlCondition: robotcenter
+	GrantConditionOnPowerState@LOWPOWER:
+		Condition: lowpower
+		ValidPowerStates: Low, Critical
 
 gaspysat:
 	Inherits: ^Building
