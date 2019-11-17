@@ -24,9 +24,6 @@ namespace OpenRA.Mods.YR.Traits
 	[Desc("This actor can spawn actors.")]
 	public class CarrierMasterInfo : BaseSpawnerMasterInfo
 	{
-		[Desc("Spawn is a missile that dies and not return.")]
-		public readonly bool SpawnIsMissile = false;
-
 		[Desc("Spawn rearm delay, in ticks")]
 		public readonly int RearmTicks = 150;
 
