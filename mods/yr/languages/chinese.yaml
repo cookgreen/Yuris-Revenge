@@ -17,32 +17,32 @@ chinese:
 			^Crate: Crate
 			^ShootableMissile: Missile
 			^ShootableMissileVoxel: Missile
-			engineer: Engineer
-			dog: Attack Dog
-			e1: G.I.
-			ggi: Guardian GI
-			snipe: Sniper
-			ghost: Navy SEAL
-			ccomand: Chrono Commando
-			ptroop: Psi Commando
-			tany: Tanya
-			jumpjet: Rocketeer
-			jumpjet.husk: Rocketeer
-			cleg: Chrono Legionnaire
-			e2: Conscript
-			flakt: Flak Trooper
-			shk: Tesla Trooper
-			terror: Terrorist
-			deso: Desolator
-			ivan: Crazy Ivan
-			boris: Boris
-			init: Initiate
-			yengineer: Engineer
-			brute: Brute
-			virus: Virus
-			slav: Slave
-			yuri: Yuri Clone
-			yuripr: Yuri Prime
+			engineer: 工程师
+			dog: 狗
+			e1: 美国大兵
+			ggi: 守卫大兵
+			snipe: 狙击手
+			ghost: 海豹突击队
+			ccomand: 超时空突击队
+			ptroop: 心灵突击队
+			tany: 谭雅
+			jumpjet: 火箭飞行兵
+			jumpjet.husk: 火箭飞行兵
+			cleg: 超时空军团兵
+			e2: 动员兵
+			flakt: 防空步兵
+			shk: 磁暴步兵
+			terror: 恐怖份子
+			deso: 辐射工兵
+			ivan: 疯狂伊万
+			boris: 鲍里斯
+			init: 尤里新兵
+			yengineer: 工程师
+			brute: 狂兽人
+			virus: 病毒狙击手
+			slav: 奴隶
+			yuri: 尤里复制人
+			yuripr: 尤里总理
 			civa: Texan
 			civb: Texan
 			civc: Texan
@@ -68,71 +68,71 @@ chinese:
 			all: Alligator
 			polarb: Polar Bear
 			josh: Monkey
-			gacnst: Construction Yard
-			gapowr: Power Plant
-			gapile: Barracks
-			garefn: Ore Refinery
-			gaairc: Airforce Command Headquarters
-			amradr: American Airforce Command Headquarters
-			gaweap: War Factory
-			gayard: Naval Yard
-			gadept: Service Depot
-			gatech: Battle Lab
-			gawall: Allied Wall
-			gapill: Pill Box
-			nasam: Patriot Missile System
-			gtgcan: Grand Cannon
-			gaorep: Allied Ore Purifier
-			garobo: Allied Robot Control Center
-			gaspysat: Spy Satellite Uplink
-			gagap: Gap Generator
-			gaweat: Weather Controller
-			gacsph: Chronosphere
-			atesla: Prism Tower
-			power: Power Plant
-			refinery: Ore Refinery
-			barracks: Infantry Production
-			radar: Radar
-			repairpad: Service Depot
-			nacnst: Construction Yard
-			napowr: Tesla Reactor
-			nahand: Barracks
-			narefn: Ore Refinery
-			naradr: Radar Tower
-			naweap: War Factory
-			nayard: Naval Yard
-			nadept: Service Depot
-			nanrct: Nuclear Reactor
-			natech: Battle Lab
-			nairon: Iron Curtain Device
-			namisl: Nuclear Missile Silo
-			nawall: Soviet Wall
-			naflak: Flak Cannon
-			tesla: Tesla Coil
-			nalasr: Sentry Gun
-			nabnkr: Soviet Battle Bunker
-			naindp: Soviet Industrial Plant
-			napsya: Psychic Amplifier
-			napsyb: Psychic Beacon
-			yacnst: Yuri Construction Yard
-			yapowr: Bio Reactor
-			yabrck: Yuri Barracks
-			yarefn: Slave Miner
-			yaweap: Yuri War Factory
-			yayard: Yuri Naval Yard
-			yagrnd: Grinder
-			yatech: Yuri Battle Lab
-			gafwll: Citadel Walls
-			natbnk: Tank Bunker
-			yaggun: Gattling Cannon
-			yapsyt: Psychic Tower
-			yagntc: Genetic Mutator
-			yappet: Psychic Dominator
-			naclon: Cloning Vats
-			napsis: Psychic Radar
-			yarock: Unknown Building
-			yacomd: Yuri Command Center
-			yapppt: Partially Built Psychic Dominator
+			gacnst: 盟军建造场
+			gapowr: 发电厂
+			gapile: 兵营
+			garefn: 矿石精炼场
+			gaairc: 空指部
+			amradr: 空指部
+			gaweap: 战争工厂
+			gayard: 造船厂
+			gadept: 维修厂
+			gatech: 作战实验室
+			gawall: 盟军围墙
+			gapill: 机枪碉堡
+			nasam: 爱国者导弹系统
+			gtgcan: 巨炮
+			gaorep: 矿石提纯器
+			garobo: 机器人控制中心
+			gaspysat: 间谍卫星
+			gagap: 裂缝产生器
+			gaweat: 天气控制仪
+			gacsph: 超时空传送仪
+			atesla: 光棱塔
+			power: 发电厂
+			refinery: 矿石精炼场
+			barracks: 兵营
+			radar: 雷达
+			repairpad: 维修厂
+			nacnst: 苏联建造场
+			napowr: 磁化反应器
+			nahand: 苏联兵营
+			narefn: 苏联矿石精炼厂
+			naradr: 雷达
+			naweap: 战争工厂
+			nayard: 造船厂
+			nadept: 维修厂
+			nanrct: 核子反应器
+			natech: 作战实验室
+			nairon: 铁幕装置
+			namisl: 核弹发射井
+			nawall: 苏联城墙
+			naflak: 防空炮
+			tesla: 磁暴线圈
+			nalasr: 哨戒炮
+			nabnkr: 战斗碉堡
+			naindp: 工业工厂
+			napsya: 心灵控制增幅器
+			napsyb: 心灵信标
+			yacnst: 尤里建造场
+			yapowr: 生化反应器
+			yabrck: 尤里兵营
+			yarefn: 奴隶矿场
+			yaweap: 尤里战争工厂
+			yayard: 尤里造船厂
+			yagrnd: 部队回收站
+			yatech: 尤里作战实验室
+			gafwll: 护城墙
+			natbnk: 坦克碉堡
+			yaggun: 加特林机炮
+			yapsyt: 心灵控制塔
+			yagntc: 基因突变器
+			yappet: 心灵控制器
+			naclon: 克隆缸
+			napsis: 心灵探测器
+			yarock: 未知建筑
+			yacomd: 尤里指挥中心
+			yapppt: 建设中的心灵控制器
 			cafncb: Black Fence
 			cafncw: White Fence
 			cafnck: Brown Fence
@@ -302,33 +302,33 @@ chinese:
 			camach: Tech Machine Shop
 			capowr: Tech Power Plant
 			caslab: Tech Secret Lab
-			amcv: Mobile Construction Vehicle
-			cmin: Chrono Miner
-			mtnk: Grizzly Battle Tank
-			tnkd: Tank Destroyer
-			fv: Infantry Fighting Vehicle
-			sref: Prism Tank
-			mgtk: Mirage Tank
-			robo: Robot Tank
-			bfrt: Battle Fortress
-			smcv: Mobile Construction Vehicle
-			harv: War Miner
-			dron: Terror Drone
-			htk: Flak Track
-			htnk: Rhino Heavy Tank
-			apoc: Apocalypse Tank
-			ttnk: Tesla Tank
-			dtruck: Demolition Truck
-			v3: V3 Launcher
-			pcv: Mobile Construction Vehicle
-			smin: Slave Miner
-			ltnk: Lasher Light Tank
-			ytnk: Gatling Tank
-			tele: Magnetron
-			caos: Chaos Drone
-			mind: Master Mind
-			disk: Floating Disk
-			diskhusk: Floating Disk
+			amcv: 盟军机动建设车
+			cmin: 超时空探矿车
+			mtnk: 灰熊坦克
+			tnkd: 坦克杀手
+			fv: 多功能步兵车
+			sref: 光棱坦克
+			mgtk: 幻影坦克
+			robo: 机器人坦克
+			bfrt: 战斗要塞
+			smcv: 苏联机动建设车
+			harv: 武装探矿车
+			dron: 恐怖无人机
+			htk: 防空履带车
+			htnk: 犀牛重型坦克
+			apoc: 天启坦克
+			ttnk: 磁能坦克
+			dtruck: 自爆卡车
+			v3: V3火箭发射车
+			pcv: 尤里机动建设车
+			smin: 奴隶矿场
+			ltnk: 狂风坦克
+			ytnk: 加特林坦克
+			tele: 磁电坦克
+			caos: 神经突击车
+			mind: 心灵之主
+			disk: 镭射幽浮
+			diskhusk: 镭射幽浮
 			bus: School Bus
 			limo: Presidential Limousine
 			pick: Pickup Truck
@@ -345,39 +345,39 @@ chinese:
 			stang: Mustang
 			ptruck: Pickup Truck
 			taxi: Taxi
-			lcrf: Amphibious Transport
-			dest: Destroyer
-			aegis: Aegis Cruiser
-			dlph: Dolphin
-			carrier: Aircraft Carrier
-			sapc: Amphibious Transport
-			sub: Typhoon Attack Sub
-			hyd: Sea Scorpion
-			sqd: Giant Squid
-			dred: Dreadnought
-			yhvr: Hover Transport Yuri
-			bsub: Yuri Boomer
-			shad: Night Hawk
-			shadhusk: Night Hawk
-			zep: Kirov Airship
-			zephusk: Kirov Airship
-			orca: Harrier
-			orcahusk: Harrier
-			beag: Black Eagle
-			beaghusk: Black Eagle
-			pdplane: Cargo Plane
-			pdplanehusk: Cargo Plane
-			hornet: Hornet
-			hornethusk: Hornet
-			bpln: Soviet MIG
-			bplnhusk: Soviet MIG
-			schp: Soviet Siege Chopper
-			schd: Soviet Siege Chopper
-			schphusk: Soviet Siege Chopper
-			spyp: Soviet Spy Plane
-			v3rocket: V3 Rocket
-			dmisl: Cruise Missile
-			cmisl: Cruise Missile
+			lcrf: 运输艇
+			dest: 驱逐舰
+			aegis: 巡洋舰
+			dlph: 海豚
+			carrier: 航空母舰
+			sapc: 运输艇
+			sub: 台风攻击潜艇
+			hyd: 海蝎
+			sqd: 巨型乌贼
+			dred: 无畏导弹舰
+			yhvr: 运输艇
+			bsub: 雷鸣攻击潜艇
+			shad: 夜鹰直升机
+			shadhusk: 夜鹰直升机
+			zep: 基洛夫空艇
+			zephusk: 基洛夫空艇
+			orca: 入侵者战机
+			orcahusk: 入侵者战机
+			beag: 黑鹰战机
+			beaghusk: 黑鹰战机
+			pdplane: 运输机
+			pdplanehusk: 运输机
+			hornet: 舰载机
+			hornethusk: 舰载机
+			bpln: 米格战斗机
+			bplnhusk: 米格战斗机
+			schp: 武装直升机
+			schd: 武装直升机
+			schphusk: 武装直升机
+			spyp: 侦察机
+			v3rocket: V3火箭
+			dmisl: 巡航导弹
+			cmisl: 巡航导弹
 			camisc01: Barrels
 			camisc02: Barrel
 			camisc03: Dumpster
