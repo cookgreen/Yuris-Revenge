@@ -1,22 +1,22 @@
 chinese:
 	chinese: Chinese
 		Rules:
-			^CivBuilding: Civilian Building
-			^Flag: Flag
-			^CivilianInfantry: Civilian
-			^CivVehicle: Civilian Vehicle
-			^Husk: Destroyed Aircraft
-			^Ship: Ship
-			^OreDrill: Ore Drill
-			^Tree: Tree
-			^StreetSign: Street Sign
-			^TrafficLight: Traffic Light
-			^StreetLight: Street Light
-			^TelephonePole: Utility Pole
-			^Rock: Rock
-			^Crate: Crate
-			^ShootableMissile: Missile
-			^ShootableMissileVoxel: Missile
+			^CivBuilding: 民用建筑物
+			^Flag: 旗帜
+			^CivilianInfantry: 平民
+			^CivVehicle: 车辆
+			^Husk: 坠毁飞机
+			^Ship: 船
+			^OreDrill: 油井钻头
+			^Tree: 树
+			^StreetSign: 街道标识
+			^TrafficLight: 交通指示灯
+			^StreetLight: 路灯
+			^TelephonePole: 电线杆
+			^Rock: 岩石
+			^Crate: 箱子
+			^ShootableMissile: 弹体
+			^ShootableMissileVoxel: 弹体
 			engineer: 工程师
 			dog: 狗
 			e1: 美国大兵
@@ -43,31 +43,31 @@ chinese:
 			slav: 奴隶
 			yuri: 尤里复制人
 			yuripr: 尤里总理
-			civa: Texan
-			civb: Texan
-			civc: Texan
-			civbbp: Baseball Player
-			civbfm: Beach Fat Male
-			civbf: Beach Fat Female
-			civbtm: Beach Thin Male
-			civsfm: Snow Fat Male
-			civsf: Snow Fat Male
-			civstm: Snow Thin Male
-			vladimir: Vladimir
-			pentgen: Pentagon General
-			ssrv: Secret Service
-			pres: President
-			mumy: Evil Mummy
-			eins: Albert Einstein
-			cabhut: Bridge repair hut
-			^LowBridgeRamp: Wooden Bridge
-			^ElevatedBridgePlaceholder: Concrete Bridge
-			lobrdb_a: Concrete Bridge
-			lobrdb_b: Concrete Bridge
-			cow: Cow
-			all: Alligator
-			polarb: Polar Bear
-			josh: Monkey
+			civa: 德州平民
+			civb: 德州平民
+			civc: 德州平民
+			civbbp: 棒球运动员
+			civbfm: 平民
+			civbf: 平民
+			civbtm: 平民
+			civsfm: 平民
+			civsf: 平民
+			civstm: 平民
+			vladimir: 维拉迪莫
+			pentgen: 五角大楼将军
+			ssrv: 间谍
+			pres: 美国总统
+			mumy: 木乃伊
+			eins: 阿尔伯特 爱因斯坦
+			cabhut: 桥梁维修小屋
+			^LowBridgeRamp: 木桥
+			^ElevatedBridgePlaceholder: 混凝土桥梁
+			lobrdb_a: 混凝土桥梁
+			lobrdb_b: 混凝土桥梁
+			cow: 牛
+			all: 鳄鱼
+			polarb: 北极熊
+			josh: 猴子
 			gacnst: 盟军建造场
 			gapowr: 发电厂
 			gapile: 兵营
@@ -133,175 +133,174 @@ chinese:
 			yarock: 未知建筑
 			yacomd: 尤里指挥中心
 			yapppt: 建设中的心灵控制器
-			cafncb: Black Fence
-			cafncw: White Fence
-			cafnck: Brown Fence
-			cafncy: Yellow Fence
-			cafncg: Green Fence
-			cafncm: Purple Fence
-			gasand: Sandbags
-			cafncp: Prison Camp Fence
-			cawt01: Water Tower
-			cats01: Twin Silos
-			cabarn02: Barn
-			cawash01: White House
-			cawsh12: Washington Monument
-			cawash14: Jefferson Memorial
-			cawash15: Lincoln Memorial
-			cawash16: Smithsonian Castle
-			cawash17: Smithsonian Natural History Museum
-			cawash18: White House Fountain
-			cawash19: Iwo Jima Memorial
-			canewy04: Statue of Liberty
-			canewy05: World Trade Center
-			canewy20: Warehouse
-			canewy21: Warehouse
-			caswst01: Southwest Building
-			caarmy01: Army Tent
-			caarmy02: Army Tent
-			caarmy03: Army Tent
-			caarmy04: Army Tent
-			cafarm01: Farm
-			cafarm02: Farm Silo
-			cafarm06: Lighthouse
-			causfgl: American Flag
-			carufgl: Soviet Flag
-			cairfgl: Iraqi Flag
-			capofgl: Polish Flag
-			caskfgl: Korean Flag
-			calbfgl: Libyan Flag
-			cafrfgl: French Flag
-			cagefgl: German Flag
-			cacufgl: Cuban Flag
-			caukfgl: British Flag
-			cavnfgl: Vietnamese Flag
-			caicfgl: Icelandic Flag
-			canwfgl: Norwegian Flag
-			caswfgl: Swedish Flag
-			cafifgl: Finnish Flag
-			caesfgl: Estonian Flag
-			calafgl: Latvian Flag
-			califgl: Lithuanian Flag
-			canlfgl: Dutch Flag
-			caeifgl: Irish Flag
-			canlfgl: Dutch Flag
-			caspfgl: Spanish Flag
-			cajpfgl: Japanese Flag
-			cangfgl: Nigerian Flag
-			cacolo01: Air Force Academy Chapel
-			caind01: Factory
-			calab: Einstein's Lab
-			cagas01: Gas Station
-			galite: Light Post
-			city05: Battersea Power Station
-			catech01: Communications Center
-			catexs02: Alamo
-			capars01: Eiffel Tower
-			capars07: Phone Booth
-			capars10: Bistro
-			capars11: Arc de Triumphe
-			capars12: Notre Dame
-			capars13: Bistro
-			capars14: Bistro
-			cafrma: Farmhouse
-			cafrmb: Outhouse
-			caprs03: Louvre
-			cagard01: Guard Shack
-			carus01: St. Basil's Cathedral
-			carus02g: Kremlin Wall Clock Tower
-			carus03: Kremlin Palace
-			camiam04: Lifeguard Hut
-			camiam08: Arizona Memorial
-			camex01: Mayan Pyramid
-			camex02: Mayan Castillo
-			camex03: Mayan Minor Temple
-			camex04: Mayan Large Temple
-			camex05: Mayan Platfrom
-			caeur1: Cottage
-			caeur2: Cottage
-			cachig04: Associates Center
-			cachig05: Sears Tower
-			cachig06: Water Tower
-			castl05a: Busch Stadium
-			castl05b: Busch Stadium
-			castl05c: Busch Stadium
-			castl05d: Busch Stadium
-			castl05e: Busch Stadium
-			castl05f: Busch Stadium
-			castl05g: Busch Stadium
-			castl05h: Busch Stadium
-			camsc07: Thatched Hut Chief
-			camsc08: Thatched Hut
-			camsc09: Thatched Hut
-			camsc10: McBurger Kong
-			cabunk01: Concrete Bunker
-			cabunk02: Concrete Bunker
-			cabunk03: Concrete Bunker
-			cabunk04: Concrete Bunker
-			camorr01: Building
-			camorr02: Building
-			camorr03: Building
-			camorr04: Building
-			camorr05: Building
-			camorr06: Building
-			camorr07: Building
-			camorr08: Building
-			camorr09: Building
-			camorr10: Building
-			cala01: Building
-			cala03: Hollywood Sign
-			cala04: Hollywood Bowl
-			cala05: LAX
-			cala06: LAX Control Tower
-			cala07: Movie Theater
-			cala08: Car Dealership
-			cala09: Convenience Store
-			cala10: Billboard
-			cala11: Hollywood Bowl
-			cala12: Hollywood Bowl
-			cala13: Hollywood Sign
-			cala14: Mini Mall
-			cala15: Mini Mall
-			caegyp01: Pyramid
-			caegyp02: Pyramid
-			caegyp03: Sphinx
-			caegyp04: Pyramid
-			caegyp05: Pyramid
-			caegyp06: Pyramid
-			calond01: Building
-			calond03: Building
-			calond04: British Parlaiment
-			calond05: Big Ben
-			calond06: Tower of London
-			casanf01: Building
-			casanf02: Building
-			casanf03: Building
-			casanf05: Alcatraz
-			casanf06: Building
-			casanf07: Building
-			casanf08: Building
-			casanf15: Alcatraz Water Tower
-			casanf16: Light House
-			casanf17: Building
-			casanf18: Building
-			casydn02: McRoo Burger
-			casydn03: Sydney Opera House
-			calunr01: Lunar Lander
-			calunr02: American Flag
-			caseat01: Seattle Space Needle
-			caseat02: MassiveSoft Campus
-			catran01: Crypt
-			catran02: Crypt
-			catran03: Yuri's Fortress
-			catime01: Time Machine
-			catime02: Time Machine
-			caoild: Tech Oil Derrick
-			caairp: Tech Airport
-			cahosp: Civilian Hospital
-			caoutp: Tech Outpost
-			camach: Tech Machine Shop
-			capowr: Tech Power Plant
-			caslab: Tech Secret Lab
+			cafncb: 围栏
+			cafncw: 围栏
+			cafnck: 围栏
+			cafncy: 围栏
+			cafncg: 围栏
+			cafncm: 围栏
+			gasand: 沙袋
+			cafncp: 监狱营地围栏
+			cawt01: 水塔
+			cats01: 双筒仓
+			cabarn02: 谷仓
+			cawash01: 白宫
+			cawsh12: 华盛顿纪念碑
+			cawash14: 杰斐逊纪念堂
+			cawash15: 林肯纪念堂
+			cawash16: 史密森尼城堡
+			cawash17: 史密森尼自然历史博物馆
+			cawash18: 白宫喷泉
+			cawash19: 硫磺岛纪念馆
+			canewy04: 自由女神像
+			canewy05: 世界贸易中心
+			canewy20: 仓库
+			canewy21: 仓库
+			caswst01: 西南大厦
+			caarmy01: 军队营帐
+			caarmy02: 军队营帐
+			caarmy03: 军队营帐
+			caarmy04: 军队营帐
+			cafarm01: 农场
+			cafarm02: 农场筒仓
+			cafarm06: 灯塔
+			causfgl: 美国国旗
+			carufgl: 苏联国旗
+			cairfgl: 伊拉克国旗
+			capofgl: 波兰国旗
+			caskfgl: 韩国国旗
+			calbfgl: 利比亚国旗
+			cafrfgl: 法国国旗
+			cagefgl: 德国国旗
+			cacufgl: 古巴国旗
+			caukfgl: 英国国旗
+			cavnfgl: 越南国旗
+			caicfgl: 冰岛国旗
+			canwfgl: 挪威国旗
+			caswfgl: 瑞典国旗
+			cafifgl: 芬兰国旗
+			caesfgl: 爱沙尼亚国旗
+			calafgl: 拉脱维亚国旗
+			califgl: 立陶宛国旗
+			canlfgl: 荷兰国旗
+			caeifgl: 爱尔兰国旗
+			caspfgl: 西班牙国旗
+			cajpfgl: 日本国旗
+			cangfgl: 尼日利亚国旗
+			cacolo01: 空军礼拜学堂
+			caind01: 工厂
+			calab: 爱因斯坦实验室
+			cagas01: 加油站
+			galite: 灯柱
+			city05: 巴特西发电站
+			catech01: 通信中心
+			catexs02: 阿拉莫
+			capars01: 埃菲尔铁塔
+			capars07: 电话亭
+			capars10: 小酒馆
+			capars11: 凯旋门
+			capars12: 巴黎圣母院
+			capars13: 小酒馆
+			capars14: 小酒馆
+			cafrma: 农舍
+			cafrmb: 小屋
+			caprs03: 卢浮宫
+			cagard01: 卫兵小屋
+			carus01: 圣巴索大教堂
+			carus02g: 克里姆林宫挂钟塔
+			carus03: 克里姆林宫
+			camiam04: 救生员小屋
+			camiam08: 亚利桑那纪念馆
+			camex01: 玛雅金字塔
+			camex02: 玛雅-卡斯蒂略
+			camex03: 玛雅小庙
+			camex04: 玛雅大寺
+			camex05: 玛雅光棱塔
+			caeur1: 平房
+			caeur2: 平房
+			cachig04: 会议中心
+			cachig05: 希尔斯大厦
+			cachig06: 水塔
+			castl05a: 布希体育场
+			castl05b: 布希体育场
+			castl05c: 布希体育场
+			castl05d: 布希体育场
+			castl05e: 布希体育场
+			castl05f: 布希体育场
+			castl05g: 布希体育场
+			castl05h: 布希体育场
+			camsc07: 茅屋
+			camsc08: 茅屋
+			camsc09: 茅屋
+			camsc10: 麦堡王
+			cabunk01: 混凝土碉堡
+			cabunk02: 混凝土碉堡
+			cabunk03: 混凝土碉堡
+			cabunk04: 混凝土碉堡
+			camorr01: 建筑物
+			camorr02: 建筑物
+			camorr03: 建筑物
+			camorr04: 建筑物
+			camorr05: 建筑物
+			camorr06: 建筑物
+			camorr07: 建筑物
+			camorr08: 建筑物
+			camorr09: 建筑物
+			camorr10: 建筑物
+			cala01: 建筑物
+			cala03: 好莱坞标志
+			cala04: 好莱坞露天剧场
+			cala05: 洛杉矶国际机场
+			cala06: 洛杉矶国际机场空中管制塔
+			cala07: 剧院
+			cala08: 汽车经销店
+			cala09: 便利店
+			cala10: 广告牌
+			cala11: 好莱坞露天剧场
+			cala12: 好莱坞露天剧场
+			cala13: 好莱坞标志
+			cala14: 迷你商城
+			cala15: 迷你商城
+			caegyp01: 金字塔
+			caegyp02: 金字塔
+			caegyp03: 狮身人面像
+			caegyp04: 金字塔
+			caegyp05: 金字塔
+			caegyp06: 金字塔
+			calond01: 建筑物
+			calond03: 建筑物
+			calond04: 英国国会
+			calond05: 大本钟
+			calond06: 伦敦塔
+			casanf01: 建筑物
+			casanf02: 建筑物
+			casanf03: 建筑物
+			casanf05: 恶魔岛
+			casanf06: 建筑物
+			casanf07: 建筑物
+			casanf08: 建筑物
+			casanf15: 恶魔岛水塔
+			casanf16: 灯塔
+			casanf17: 建筑物
+			casanf18: 建筑物
+			casydn02: 麦克罗汉堡
+			casydn03: 悉尼歌剧院
+			calunr01: 月球着陆器
+			calunr02: 美国国旗
+			caseat01: 西雅图太空针塔
+			caseat02: 巨软园区
+			catran01: 地穴
+			catran02: 地穴
+			catran03: 尤里要塞
+			catime01: 时间机器
+			catime02: 时间机器
+			caoild: 科技钻油井
+			caairp: 科技机场
+			cahosp: 医院
+			caoutp: 科技前哨站
+			camach: 机器商店
+			capowr: 科技发电厂
+			caslab: 秘密实验室
 			amcv: 盟军机动建设车
 			cmin: 超时空探矿车
 			mtnk: 灰熊坦克
@@ -329,22 +328,22 @@ chinese:
 			mind: 心灵之主
 			disk: 镭射幽浮
 			diskhusk: 镭射幽浮
-			bus: School Bus
-			limo: Presidential Limousine
-			pick: Pickup Truck
-			car: Automobile
-			wini: Recreational Vehicle
-			propa: Propaganda Truck
-			cop: Police Car
-			euroc: European Car
-			cona: Excavator
-			trucka: Truck
-			truckb: Truck
-			suvb: Black SUV
-			suvw: White SUV
-			stang: Mustang
-			ptruck: Pickup Truck
-			taxi: Taxi
+			bus: 校车
+			limo: 总统豪华轿车
+			pick: 货车
+			car: 汽车
+			wini: 休闲车
+			propa: 宣传车
+			cop: 警车
+			euroc: 欧洲车
+			cona: 挖掘机
+			trucka: 卡车
+			truckb: 卡车
+			suvb: 轿车
+			suvw: 轿车
+			stang: 野马轿车
+			ptruck: 货车
+			taxi: 出租车
 			lcrf: 运输艇
 			dest: 驱逐舰
 			aegis: 巡洋舰
@@ -378,39 +377,39 @@ chinese:
 			v3rocket: V3火箭
 			dmisl: 巡航导弹
 			cmisl: 巡航导弹
-			camisc01: Barrels
-			camisc02: Barrel
-			camisc03: Dumpster
-			camisc04: Mailbox
-			camisc05: Pipes
-			camisc06: V3 Ammunition
-			camsc11: Tires
-			camsc12: Practice Target
-			camsc13: Derelict Tank
-			ammocrat: Ammo Crates
-			camsc01: Hot Dog Stand
-			camsc02: Beach Umbrellas
-			camsc03: Beach Umbrellas
-			camsc04: Beach Towels
-			camsc05: Beach Towels
-			camsc06: Camp Fire
-			caeuro05: Statue
-			capark01: Park Bench
-			capark02: Swing Set
-			capark03: Merry Go Round
-			castrt01: Traffic Light
-			castrt02: Traffic Light
-			castrt03: Traffic Light
-			castrt04: Traffic Light
-			castrt05: Bus Stop
-			camov01: Drive In Movie Screen
-			camov02: Drive In Movie Concession Stand
-			pole01: Utility Pole
-			pole02: Utility Pole
-			hdstn01: AlringtonStones
-			spkr01: Drive-In Speaker
-			cakrmw: Kremlin Walls
-			gagate_a: Guard Border Crossing
-			tug: Tug Boat
-			cruise: Cruise Ship
-			cdest: Coast Guard Boat
+			camisc01: 油桶
+			camisc02: 油桶
+			camisc03: 垃圾箱
+			camisc04: 信箱
+			camisc05: 运输管
+			camisc06: V3火箭架
+			camsc11: 轮胎
+			camsc12: 练习目标
+			camsc13: 废弃坦克
+			ammocrat: 弹药箱
+			camsc01: 热狗摊
+			camsc02: 沙滩伞
+			camsc03: 沙滩伞
+			camsc04: 沙滩毛巾
+			camsc05: 沙滩毛巾
+			camsc06: 营地篝火
+			caeuro05: 雕像
+			capark01: 公园长椅
+			capark02: 秋千椅
+			capark03: 旋转木马
+			castrt01: 交通指示灯
+			castrt02: 交通指示灯
+			castrt03: 交通指示灯
+			castrt04: 交通指示灯
+			castrt05: 公交站
+			camov01: 电幕
+			camov02: 电幕
+			pole01: 电线杆
+			pole02: 电线杆
+			hdstn01: 阿灵顿石头
+			spkr01: 扬声器
+			cakrmw: 克里姆林宫墙
+			gagate_a: 警卫室
+			tug: 拖船
+			cruise: 游轮
+			cdest: 海岸警卫队船
