@@ -50,10 +50,13 @@ namespace OpenRA.Mods.YR.UtilityCommands
 				DirectoryInfo di = new DirectoryInfo(modFolder);
 				DirectoryInfo modRootDir = di.Parent;
 				string newModFullPath = Path.Combine(modRootDir.FullName, newModID);
-				if (!Directory.Exists(newModFullPath))
+
+				if (Directory.Exists(newModFullPath))
 				{
-					Directory.CreateDirectory(newModFullPath);
+					Directory.Delete(newModFullPath, true);
 				}
+				Directory.CreateDirectory(newModFullPath);
+
 				foreach (var fileSystemInfo in di.EnumerateFileSystemInfos())
 				{
 					if (fileSystemInfo.Attributes == FileAttributes.Directory)
