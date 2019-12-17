@@ -75,6 +75,8 @@ namespace OpenRA.Mods.YR.UtilityCommands
 				//------------------------------------------------------
 
 				List<string> mapFolders = new List<string>();
+				List<string> ruleFilePathes = new List<string>();
+
 				//Modify mod.yaml file
 				string newModYaml = Path.Combine(newModFullPath, "mod.yaml");
 				var modYamlNodes = MiniYaml.FromFile(newModYaml);
@@ -141,6 +143,8 @@ namespace OpenRA.Mods.YR.UtilityCommands
 									oldKey,
 									string.Format("{0}|", newModID)
 								);
+
+								ruleFilePathes.Add(Path.Combine(newModFullPath, subYamlNode.Key.Split('|')[1]));
 							}
 						}
 					}
@@ -157,7 +161,7 @@ namespace OpenRA.Mods.YR.UtilityCommands
 								);
 
 								string[] tokens = subYamlNode.Key.Split('|');//Relative map folder
-								mapFolders.Add(Path.Combine(modFolder, tokens[1]));
+								mapFolders.Add(Path.Combine(newModFullPath, tokens[1]));
 							}
 							else if (subYamlNode.Key.StartsWith("~"))//optional map folder
 							{
@@ -311,12 +315,55 @@ namespace OpenRA.Mods.YR.UtilityCommands
 					}
 				}
 				modYamlNodes.WriteToFile(newModYaml);
+
+				//Modify all maps
+				foreach (var mapFolder in mapFolders)
+				{
+					DirectoryInfo mapDir = new DirectoryInfo(mapFolder);
+					if (!mapDir.Exists)
+					{
+						continue;
+					}
+					foreach (var directory in mapDir.EnumerateDirectories())
+					{
+						if (File.Exists(Path.Combine(directory.FullName, "map.bin")) &&
+						   File.Exists(Path.Combine(directory.FullName, "map.yaml")) &&
+						   File.Exists(Path.Combine(directory.FullName, "map.png")))
+						{
+							string mapYamlPath = Path.Combine(directory.FullName, "map.yaml");
+							var mapYamlFile = MiniYaml.FromFile(mapYamlPath);
+							foreach (var node in mapYamlFile)
+							{
+								if (node.Key == "RequiresMod")
+								{
+									node.Value.Value = newModID;
+									break;
+								}
+							}
+							mapYamlFile.WriteToFile(mapYamlPath);
+						}
+					}
+				}
+
+				//Write all the translation strings into the new mod yaml files
+				foreach (var ruleFilePath in ruleFilePathes)
+				{
+					var ruleYamlFile = MiniYaml.FromFile(ruleFilePath);
+					foreach (var node in ruleYamlFile)
+					{
+						if (rulesLocalizationNode != null)
+						{
+							var actorLocalizationNode = rulesLocalizationNode.Value.Nodes.Where(o => o.Key == node.Key).FirstOrDefault();
+							var toolTipTraitNode = node.Value.Nodes.Where(o => o.Key == "Tooltip").FirstOrDefault();
+							if (toolTipTraitNode != null && actorLocalizationNode != null)
+							{
+								toolTipTraitNode.Value.Nodes[0].Value.Value = actorLocalizationNode.Value.Value;
+							}
+						}
+					}
+					ruleYamlFile.WriteToFile(ruleFilePath);
+				}
 			}
-
-
-
-			//Write all the translation strings into the new mod yaml files
-
 
 			Console.WriteLine("Import task has already finished!");
 		}
