@@ -413,3 +413,11 @@ chinese:
 			tug: 拖船
 			cruise: 游轮
 			cdest: 海岸警卫队船
+		ModContent:
+			InstallPromptMessage: OpenRA尤里的复仇模组需要来自原版游戏的资源文件和声音文件
+			HeaderMessage: 原版游戏的资源文件和声音文件可以从原版光盘中复制
+			Packages: 
+				base: 红色警戒2游戏文件
+ 				base-md: 红色警戒2尤里的复仇游戏文件
+				music-md: 红色警戒2尤里的复仇音乐
+				movie-md: 红色警戒2尤里的复仇过场动画
