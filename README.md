@@ -1,6 +1,4 @@
 # OpenRA Red Alert 2 Yuri's Revenge
-
-## Introduction
 A Red Alert 2 Yuri's Revenge mod for OpenRA Engine
 
 ## Screenshots
