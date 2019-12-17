@@ -32,12 +32,12 @@ Mac OSX: `~/Library/Application Support/OpenRA/Content/yr/`
 Linux: `~/.openra/Content/yr/`  
 Create the `yr` directory if it does not exist.  
 
-### Download  
+#### Download  
 The game can be bought and downloaded from the following official places:  
 [EA Origin](https://www.origin.com/hkg/en-us/store/command-and-conquer/command-and-conquer-the-ultimate-collection)  
 [XWIS](http://xwis.net/forums/index.php/topic/163831-how-to-play/)  
 
-### Disc  
+#### Disc  
 If you own the original CDs:  
 
 Locate `Game1.CAB` on Original `Red Alert 2` CD in the `INSTALL/` directory.  
