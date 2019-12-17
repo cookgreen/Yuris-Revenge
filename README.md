@@ -14,6 +14,14 @@ playtest-20190825
 ## Build
 Run "make.cmd" on Windows and type "all" in the terminal or run "make" on Linux/MacOS  
 
+## Wiki  
+You can check more information on wiki:  
+https://github.com/cookgreen/Yuris-Revenge/wiki  
+
+## Issue  
+If you meet any problem, please post an issue:  
+https://github.com/cookgreen/Yuris-Revenge/issues  
+
 ## Install the content
 Note: Normally installing the content from the ingame content installer is enough.
 
@@ -41,21 +49,6 @@ Locate `Game6.CAB` on Original `Red Alert 2 Yuri's Revenge` CD in the `INSTALL/`
 Copy all required mixes into your content folder.  
 The mixes inside of `Game6.CAB` are `ra2md.mix` and `langmd.mix`. Copy those two into your content folder.  
 For the soundtrack you want `thememd.mix` from your CD.  
-
-## Credit
-Abarrat  
-alienfxfiend  
-Blarget2  
-finalshake  
-forcecore  
-fusion809  
-Gyula Zimmermann(GraionDilach)  
-intr  
-Mustafa Alperen Seki(MustaphaTR)    
-neuromancer  
-yaaaaa  
-
-#### Thanks to all the people who helped this mod!  
 
 ## License
 GPLv3
