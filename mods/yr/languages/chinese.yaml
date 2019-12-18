@@ -413,6 +413,45 @@ chinese:
 			tug: 拖船
 			cruise: 游轮
 			cdest: 海岸警卫队船
+		World:
+			Faction@random: 
+				Name: 随机
+			Faction@allies: 
+				Name: 随机盟军
+			Faction@soviets: 
+				Name: 随机苏联
+			Faction@yuris: 
+				Name: 随机尤里
+			Faction@1:
+				Name: 美国
+				Description: 美国\n特殊能力: 空降部队
+			Faction@2:
+				Name: 德国
+				Description: 德国\n特殊载具: 坦克杀手
+			Faction@3:
+				Name: 英国
+				Description: 英国\n特色步兵: 狙击手
+			Faction@4:
+				Name: 法国
+				Description: 法国\n特色建筑: 巨炮
+			Faction@5:
+				Name: 韩国
+				Description: 韩国\n特殊飞行器: 黑鹰战机
+			Faction@6:
+				Name: 古巴
+				Description: 古巴\n特色步兵: 恐怖份子
+			Faction@7:
+				Name: 利比亚
+				Description: 利比亚\n特殊载具: 自爆卡车
+			Faction@8:
+				Name: 伊拉克
+				Description: 伊拉克\n特色步兵: 辐射工兵
+			Faction@9:
+				Name: 苏俄
+				Description: 苏俄\n特殊载具: 磁能坦克
+			Faction@10:
+				Name: 尤里
+				Description: 尤里\n特殊能力: 心灵控制技术
 		ModContent:
 			InstallPromptMessage: OpenRA尤里的复仇模组需要来自原版游戏的资源文件和声音文件
 			HeaderMessage: 原版游戏的资源文件和声音文件可以从原版光盘中复制

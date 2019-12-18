@@ -31,6 +31,7 @@ namespace OpenRA.Mods.YR.UtilityCommands
 			}
 			var rulesLocalizationNode = nodes[0].Value.Nodes[0].Value.Nodes.Where(o => o.Key == "Rules").FirstOrDefault();
 			var modContentLocalizationNode = nodes[0].Value.Nodes[0].Value.Nodes.Where(o => o.Key == "ModContent").FirstOrDefault();
+			var worldRulesLocalizationNode = nodes[0].Value.Nodes[0].Value.Nodes.Where(o => o.Key == "World").FirstOrDefault();
 
 			//Get the original mod install dir
 			string modID = modData.Manifest.Id;
@@ -351,13 +352,34 @@ namespace OpenRA.Mods.YR.UtilityCommands
 					var ruleYamlFile = MiniYaml.FromFile(ruleFilePath);
 					foreach (var node in ruleYamlFile)
 					{
-						if (rulesLocalizationNode != null)
+						if (rulesLocalizationNode != null && node.Key != "^BaseWorld")
 						{
 							var actorLocalizationNode = rulesLocalizationNode.Value.Nodes.Where(o => o.Key == node.Key).FirstOrDefault();
 							var toolTipTraitNode = node.Value.Nodes.Where(o => o.Key == "Tooltip").FirstOrDefault();
 							if (toolTipTraitNode != null && actorLocalizationNode != null)
 							{
 								toolTipTraitNode.Value.Nodes[0].Value.Value = actorLocalizationNode.Value.Value;
+							}
+						}
+						else if (node.Key == "^BaseWorld")
+						{
+							if (worldRulesLocalizationNode != null)
+							{
+								foreach (var worldChildNode in node.Value.Nodes)
+								{
+									var factionLocalizationNode = worldRulesLocalizationNode.Value.Nodes.Where(o => o.Key == worldChildNode.Key).FirstOrDefault();
+									if (factionLocalizationNode != null)
+									{
+										foreach (var valueNode in worldChildNode.Value.Nodes)
+										{
+											var valueLocalizationNode = factionLocalizationNode.Value.Nodes.Where(o => o.Key == valueNode.Key).FirstOrDefault();
+											if (valueLocalizationNode != null)
+											{
+												valueNode.Value.Value = valueLocalizationNode.Value.Value;
+											}
+										}
+									}
+								}
 							}
 						}
 					}

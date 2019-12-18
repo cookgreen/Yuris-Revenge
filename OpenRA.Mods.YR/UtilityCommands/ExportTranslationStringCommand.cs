@@ -38,7 +38,7 @@ namespace OpenRA.Mods.YR.UtilityCommands
 					{
 						foreach (var trait in actor.Value.Nodes)
 						{
-							// TODO: export the string which has translation identifier
+							// TODO: export the string which has translation attribute
 							if (trait.Key == "Tooltip")
 							{
 								ruleNodes.Add(new MiniYamlNode(actor.Key, new MiniYaml(trait.Value.Nodes[0].Value.Value)));

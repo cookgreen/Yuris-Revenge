@@ -178,7 +178,7 @@
 		Name: Yuri Country
 		InternalName: yuri
 		Side: Yuris
-		Description:
+		Description: Yuri\nSpecial Vehicle: Mind Control Technology
 	ResourceType@Ore:
 		ResourceType: 1
 		Palette: resource
