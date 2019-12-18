@@ -30,8 +30,9 @@ namespace OpenRA.Mods.YR.UtilityCommands
 				return;
 			}
 			var rulesLocalizationNode = nodes[0].Value.Nodes[0].Value.Nodes.Where(o => o.Key == "Rules").FirstOrDefault();
-			var modContentLocalizationNode = nodes[0].Value.Nodes[0].Value.Nodes.Where(o => o.Key == "ModContent").FirstOrDefault();
+			var chromeLayoutsLocalizationNode = nodes[0].Value.Nodes[0].Value.Nodes.Where(o => o.Key == "ChromeLayouts").FirstOrDefault();
 			var worldRulesLocalizationNode = nodes[0].Value.Nodes[0].Value.Nodes.Where(o => o.Key == "World").FirstOrDefault();
+			var modContentLocalizationNode = nodes[0].Value.Nodes[0].Value.Nodes.Where(o => o.Key == "ModContent").FirstOrDefault();
 
 			//Get the original mod install dir
 			string modID = modData.Manifest.Id;
@@ -77,6 +78,7 @@ namespace OpenRA.Mods.YR.UtilityCommands
 
 				List<string> mapFolders = new List<string>();
 				List<string> ruleFilePathes = new List<string>();
+				List<string> chromeLayoutFilePathes = new List<string>();
 
 				//Modify mod.yaml file
 				string newModYaml = Path.Combine(newModFullPath, "mod.yaml");
@@ -145,7 +147,14 @@ namespace OpenRA.Mods.YR.UtilityCommands
 									string.Format("{0}|", newModID)
 								);
 
-								ruleFilePathes.Add(Path.Combine(newModFullPath, subYamlNode.Key.Split('|')[1]));
+								if (modYamlNode.Key == "Rules")
+								{
+									ruleFilePathes.Add(Path.Combine(newModFullPath, subYamlNode.Key.Split('|')[1]));
+								}
+								else if (modYamlNode.Key == "ChromeLayout")
+								{
+									chromeLayoutFilePathes.Add(Path.Combine(newModFullPath, subYamlNode.Key.Split('|')[1]));
+								}
 							}
 						}
 					}
@@ -346,7 +355,7 @@ namespace OpenRA.Mods.YR.UtilityCommands
 					}
 				}
 
-				//Write all the translation strings into the new mod yaml files
+				//Translate Rules file
 				foreach (var ruleFilePath in ruleFilePathes)
 				{
 					var ruleYamlFile = MiniYaml.FromFile(ruleFilePath);
@@ -361,7 +370,7 @@ namespace OpenRA.Mods.YR.UtilityCommands
 								toolTipTraitNode.Value.Nodes[0].Value.Value = actorLocalizationNode.Value.Value;
 							}
 						}
-						else if (node.Key == "^BaseWorld")
+						else if (node.Key == "^BaseWorld")//Translate Factions
 						{
 							if (worldRulesLocalizationNode != null)
 							{
@@ -385,9 +394,40 @@ namespace OpenRA.Mods.YR.UtilityCommands
 					}
 					ruleYamlFile.WriteToFile(ruleFilePath);
 				}
+
+				//Translate Chrome Layouts
+				foreach (var chromeLayoutFilePath in chromeLayoutFilePathes)
+				{
+					var chromeLayoutFile = MiniYaml.FromFile(chromeLayoutFilePath);
+					foreach (var chromeNode in chromeLayoutFile)
+					{
+						var chromeLocalizationNode = chromeLayoutsLocalizationNode.Value.Nodes.Where(o => o.Key == chromeNode.Key).FirstOrDefault();
+						if (chromeLocalizationNode != null)
+						{
+							translateChrome(chromeNode, chromeLocalizationNode);
+						}
+					}
+					chromeLayoutFile.WriteToFile(chromeLayoutFilePath);
+				}
 			}
 
 			Console.WriteLine("Import task has already finished!");
+		}
+
+		private void translateChrome(MiniYamlNode chromeNode, MiniYamlNode chromeLocalizationNode)
+		{
+			foreach(var subNode in chromeNode.Value.Nodes)
+			{
+				var subChromeLocalizationNode = chromeLocalizationNode.Value.Nodes.Where(o => o.Key == subNode.Key).FirstOrDefault();
+				if (subChromeLocalizationNode != null)
+				{
+					if (!string.IsNullOrEmpty(subNode.Value.Value))
+					{
+						subNode.Value.Value = subChromeLocalizationNode.Value.Value;
+					}
+					translateChrome(subNode, subChromeLocalizationNode);
+				}
+			}
 		}
 
 		private string ReplacePathWithNewModID(string path, string oldModID, string newModID)

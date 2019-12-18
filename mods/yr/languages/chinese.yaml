@@ -452,6 +452,95 @@ chinese:
 			Faction@10:
 				Name: 尤里
 				Description: 尤里\n特殊能力: 心灵控制技术
+		ChromeLayouts:
+			Container@MAINMENU:
+				Children:
+					Container@MENUS:
+ 						Children:
+							Background@MAIN_MENU:
+								Children:
+									Label@MAINMENU_LABEL_TITLE:
+										Text: OpenRA尤里的复仇模组
+									Button@SINGLEPLAYER_BUTTON:
+										Text: 单人游戏
+									Button@MULTIPLAYER_BUTTON:
+										Text: 多人游戏
+									Button@SETTINGS_BUTTON:
+										Text: 设置
+									Button@EXTRAS_BUTTON:
+										Text: 额外内容
+									Button@CONTENT_BUTTON:
+										Text: 管理资源
+									Button@QUIT_BUTTON:
+										Text: 退出
+							Background@SINGLEPLAYER_MENU:
+								Children:
+									Label@SINGLEPLAYER_MENU_TITLE:
+										Text: 单人游戏
+									Button@SKIRMISH_BUTTON:
+										Text: 遭遇战
+									Button@MISSIONS_BUTTON:
+										Text: 单人任务
+									Button@BACK_BUTTON:
+										Text: 返回
+							Background@EXTRAS_MENU:
+								Children:
+									Label@EXTRAS_MENU_TITLE:
+										Text: 额外内容
+									Button@REPLAYS_BUTTON:
+										Text: 游戏录像
+									Button@MUSIC_BUTTON:
+										Text: 游戏音乐
+									Button@MAP_EDITOR_BUTTON:
+										Text: 地图编辑器
+									Button@ASSETBROWSER_BUTTON:
+										Text: 资源查看器
+									Button@OTHER_TOOLS_BUTTON:
+										Text: 其他工具
+									Button@BACK_BUTTON:
+										Text: 返回
+							Background@OTHER_TOOLS_MENU:
+								Children:
+									Label@OTHER_TOOLS_MENU_TITLE:
+										Text: 其他工具
+									Button@VOXELBROWSER_BUTTON:
+										Text: 体素查看器
+									Button@SOUNDPLAYER_BUTTON:
+										Text: 声效播放器
+									Button@BACK_BUTTON:
+										Text: 返回
+							Background@MAP_EDITOR_MENU:
+								Children:
+									Label@MAP_EDITOR_MENU_TITLE:
+										Text: 地图编辑器
+									Button@NEW_MAP_BUTTON:
+										Text: 新建地图
+									Button@LOAD_MAP_BUTTON:
+										Text: 载入地图
+									Button@BACK_BUTTON:
+										Text: 返回
+					Background@SYSTEM_INFO_PROMPT:
+ 						Children:
+							Label@PROMPT_TITLE:
+								Text: 系统信息
+							Label@PROMPT_TEXT_A:
+								Text: 我们想要搜集一些系统的信息以优化OpenRA
+							Label@PROMPT_TEXT_B:
+								Text: 在你的许可下, 以下这些信息将会被发送:
+							Checkbox@SYSINFO_CHECKBOX:
+								Text: 发送系统信息
+							Button@BACK_BUTTON:
+								Text: 继续
+					Background@NEWS_BG:
+ 						Children:
+							DropDownButton@NEWS_BUTTON:
+								Text: 战地新闻
+					Container@UPDATE_NOTICE:
+ 						Children:
+							Label@A:
+								Text: 你正在运行一个旧版本的OpenRA
+							Label@B:
+								Text: 访问www.openra.net以获取新版本
 		ModContent:
 			InstallPromptMessage: OpenRA尤里的复仇模组需要来自原版游戏的资源文件和声音文件
 			HeaderMessage: 原版游戏的资源文件和声音文件可以从原版光盘中复制
