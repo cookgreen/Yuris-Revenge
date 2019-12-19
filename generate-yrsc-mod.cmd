@@ -16,7 +16,7 @@ if not exist %ENGINE_DIRECTORY%\OpenRA.Game.exe goto noengine
 >nul find %ENGINE_VERSION% %ENGINE_DIRECTORY%\VERSION || goto noengine
 cd %ENGINE_DIRECTORY%
 
-call OpenRA.Utility.exe yr --import-translation-string chinese yrsc
+call OpenRA.Utility.exe yr --import-translation-string chinese yrsc translation_fonts/FontsSetting.yaml
 pause
 exit /b
 

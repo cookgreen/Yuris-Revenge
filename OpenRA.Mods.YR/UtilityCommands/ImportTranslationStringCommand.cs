@@ -14,11 +14,17 @@ namespace OpenRA.Mods.YR.UtilityCommands
 
 		public bool ValidateArguments(string[] args) { return args.Length >= 3; }
 
-		[Desc("LOCALIZATIONNAME NEWMODID", "")]
+		[Desc("LOCALIZATIONNAME NEWMODID FONTSETTINGYAMLFILE", "")]
 		public void Run(Utility utility, string[] args)
 		{
 			Console.WriteLine("Starting importing the translated strings");
 			//Get translated strings from LOCALIZATIONNAME.yaml
+			string customFontPath = null;
+			if (args.Length == 4)
+			{
+				customFontPath = args[3];
+			}
+
 			string localizationName = args[1];
 			var modData = utility.ModData;
 			string localizationFile = string.Format("languages\\{0}.yaml", localizationName);
@@ -69,6 +75,34 @@ namespace OpenRA.Mods.YR.UtilityCommands
 					else
 					{
 						File.Copy(fileSystemInfo.FullName, Path.Combine(newModFullPath, fileSystemInfo.Name));
+					}
+				}
+
+				string lightFont = null;
+				string normalFont = null;
+				string boldFont = null;
+				if (!string.IsNullOrEmpty(customFontPath))
+				{
+					string currentDir = Environment.CurrentDirectory;
+					DirectoryInfo d = new DirectoryInfo(currentDir);
+					string fontSettingFilePath = Path.Combine(d.Parent.FullName, customFontPath);
+					Console.WriteLine(fontSettingFilePath);
+					if (File.Exists(fontSettingFilePath))
+					{
+						var fontSettingFile = MiniYaml.FromFile(fontSettingFilePath);
+						if (fontSettingFile[0].Value.Nodes.Count == 2)
+						{
+							normalFont = Path.Combine(Path.GetDirectoryName(fontSettingFilePath), fontSettingFile[0].Value.Nodes[0].Value.Value);
+							boldFont = Path.Combine(Path.GetDirectoryName(fontSettingFilePath), fontSettingFile[0].Value.Nodes[1].Value.Value);
+						}
+						else
+						{
+							Console.WriteLine("Error: Invalid font setting file!");
+						}
+					}
+					else
+					{
+						Console.WriteLine("Error: Specific font path can't be found!");
 					}
 				}
 
@@ -227,6 +261,33 @@ namespace OpenRA.Mods.YR.UtilityCommands
 											oldKey,
 											string.Format("{0}|", newModID)
 										);
+									}
+
+									if ((subYamlNode.Key == "Tiny" ||
+									   subYamlNode.Key == "Small" ||
+									   subYamlNode.Key == "Regular" ||
+									   subYamlNode.Key == "Title"))
+									{
+										string targetNormalFontFile = Path.Combine(newModFullPath, Path.GetFileName(normalFont));
+										if (File.Exists(normalFont) &&
+											!File.Exists(targetNormalFontFile))
+										{
+											File.Copy(normalFont, targetNormalFontFile);
+										}
+										sNode.Value.Value = string.Format("{0}|{1}", newModID, Path.GetFileName(normalFont));
+									}
+									else if (subYamlNode.Key == "TinyBold" ||
+											subYamlNode.Key == "Bold" ||
+											subYamlNode.Key == "MediumBold" ||
+											subYamlNode.Key == "BigBold")
+									{
+										string targetBoldFontFile = Path.Combine(newModFullPath, Path.GetFileName(boldFont));
+										if (File.Exists(boldFont) &&
+											!File.Exists(targetBoldFontFile))
+										{
+											File.Copy(boldFont, targetBoldFontFile);
+										}
+										sNode.Value.Value = string.Format("{0}|{1}", newModID, Path.GetFileName(boldFont));
 									}
 								}
 							}
