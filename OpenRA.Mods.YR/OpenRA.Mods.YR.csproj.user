@@ -4,6 +4,6 @@
     <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
   </PropertyGroup>
   <PropertyGroup>
-    <ActiveDebugProfile>OpenRA Yuri's Revenge (Chinese Verion)</ActiveDebugProfile>
+    <ActiveDebugProfile>OpenRA Yuri's Revenge</ActiveDebugProfile>
   </PropertyGroup>
 </Project>
