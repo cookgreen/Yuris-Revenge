@@ -14,7 +14,7 @@ namespace OpenRA.Mods.YR.UtilityCommands
 
 		public bool ValidateArguments(string[] args) { return args.Length >= 3; }
 
-		[Desc("LOCALIZATIONNAME NEWMODID FONTSETTINGYAMLFILE", "")]
+		[Desc("LOCALIZATIONNAME NEWMODID [FONTSETTINGYAMLFILE]", "")]
 		public void Run(Utility utility, string[] args)
 		{
 			Console.WriteLine("Starting importing the translated strings");
@@ -113,6 +113,7 @@ namespace OpenRA.Mods.YR.UtilityCommands
 				List<string> mapFolders = new List<string>();
 				List<string> ruleFilePathes = new List<string>();
 				List<string> chromeLayoutFilePathes = new List<string>();
+                Dictionary<string, string> externalMods = new Dictionary<string, string>();
 
 				//Modify mod.yaml file
 				string newModYaml = Path.Combine(newModFullPath, "mod.yaml");
@@ -132,26 +133,33 @@ namespace OpenRA.Mods.YR.UtilityCommands
 					{
 						foreach (var subYamlNode in modYamlNode.Value.Nodes)
 						{
-							if (subYamlNode.Key == string.Format("${0}", modID))
-							{
-								subYamlNode.Key = string.Format("${0}", newModID);
-								subYamlNode.Value.Value = newModID;
-							}
-							else if (subYamlNode.Key.StartsWith(string.Format("{0}|", modID)))
-							{
-								string oldKey = string.Format("{0}|", modID);
-								subYamlNode.Key = subYamlNode.Key.Replace(
-									oldKey,
-									string.Format("{0}|", newModID)
-								);
-							}
-							else if (subYamlNode.Key.StartsWith("~"))
-							{
-								if (subYamlNode.Key.Substring(1).StartsWith("^"))
-								{
-									subYamlNode.Key = "~^" + ReplacePathWithNewModID(subYamlNode.Key.Substring(2), modID, newModID);
-								}
-							}
+                            if (subYamlNode.Key == string.Format("${0}", modID))
+                            {
+                                subYamlNode.Key = string.Format("${0}", newModID);
+                                subYamlNode.Value.Value = newModID;
+                            }
+                            else if (subYamlNode.Key.StartsWith(string.Format("{0}|", modID)))
+                            {
+                                string oldKey = string.Format("{0}|", modID);
+                                subYamlNode.Key = subYamlNode.Key.Replace(
+                                    oldKey,
+                                    string.Format("{0}|", newModID)
+                                );
+                            }
+                            else if (subYamlNode.Key.StartsWith("~"))
+                            {
+                                if (subYamlNode.Key.Substring(1).StartsWith("^"))
+                                {
+                                    subYamlNode.Key = "~^" + ReplacePathWithNewModID(subYamlNode.Key.Substring(2), modID, newModID);
+                                }
+                            }
+                            else if (!subYamlNode.Key.StartsWith("~") &&
+                                     !string.IsNullOrEmpty(subYamlNode.Value.Value))
+                            {
+                                //This is an external mod
+                                Console.WriteLine(Platform.ResolvePath(subYamlNode.Key));
+                                externalMods.Add(subYamlNode.Value.Value, Platform.ResolvePath(subYamlNode.Key));
+                            }
 						}
 					}
 					else if (modYamlNode.Key == "Rules" ||
@@ -173,23 +181,58 @@ namespace OpenRA.Mods.YR.UtilityCommands
 					{
 						foreach (var subYamlNode in modYamlNode.Value.Nodes)
 						{
-							if (subYamlNode.Key.StartsWith(string.Format("{0}|", modID)))
-							{
-								string oldKey = string.Format("{0}|", modID);
-								subYamlNode.Key = subYamlNode.Key.Replace(
-									oldKey,
-									string.Format("{0}|", newModID)
-								);
+                            if (subYamlNode.Key.StartsWith(string.Format("{0}|", modID)))
+                            {
+                                string oldKey = string.Format("{0}|", modID);
+                                subYamlNode.Key = subYamlNode.Key.Replace(
+                                    oldKey,
+                                    string.Format("{0}|", newModID)
+                                );
 
-								if (modYamlNode.Key == "Rules")
-								{
-									ruleFilePathes.Add(Path.Combine(newModFullPath, subYamlNode.Key.Split('|')[1]));
-								}
-								else if (modYamlNode.Key == "ChromeLayout")
-								{
-									chromeLayoutFilePathes.Add(Path.Combine(newModFullPath, subYamlNode.Key.Split('|')[1]));
-								}
-							}
+                                if (modYamlNode.Key == "Rules")
+                                {
+                                    ruleFilePathes.Add(Path.Combine(newModFullPath, subYamlNode.Key.Split('|')[1]));
+                                }
+                                else if (modYamlNode.Key == "ChromeLayout")
+                                {
+                                    chromeLayoutFilePathes.Add(Path.Combine(newModFullPath, subYamlNode.Key.Split('|')[1]));
+                                }
+                            }
+                            else
+                            {
+                                string[] tokens = subYamlNode.Key.Split('|');
+                                if (tokens.Length == 2)
+                                {
+                                    if (externalMods.ContainsKey(tokens[0]) &&
+                                       (modYamlNode.Key == "Rules" || 
+                                       modYamlNode.Key == "ChromeLayout"))
+                                    {
+                                        //Copy the external mod files
+                                        string filePath = Path.Combine(externalMods[tokens[0]], tokens[1]);
+                                        string newFilePath = Path.Combine(newModFullPath, tokens[0], tokens[1]);
+                                        string newFileDir = Path.GetDirectoryName(newFilePath);
+                                        if (!Directory.Exists(newFileDir))
+                                        {
+                                            Directory.CreateDirectory(newFileDir);
+                                        }
+                                        if (!File.Exists(newFilePath))
+                                        {
+                                            File.Copy(filePath, newFilePath);
+                                        }
+                                        string relativePath = ConvertToRelativeCurrentPath(newFilePath, newModFullPath);
+                                        subYamlNode.Key = string.Format("{0}|{1}", newModID, relativePath);
+
+                                        if (modYamlNode.Key == "Rules")
+                                        {
+                                            ruleFilePathes.Add(newFilePath);
+                                        }
+                                        else if (modYamlNode.Key == "ChromeLayout")
+                                        {
+                                            chromeLayoutFilePathes.Add(newFilePath);
+                                        }
+                                    }
+                                }
+                            }
 						}
 					}
 					else if (modYamlNode.Key == "MapFolders")
@@ -474,6 +517,25 @@ namespace OpenRA.Mods.YR.UtilityCommands
 
 			Console.WriteLine("Import task has already finished!");
 		}
+
+        private string ConvertToRelativeCurrentPath(string fullPath, string relativeTo)
+        {
+            fullPath = fullPath.Replace("\\", "/");
+            relativeTo = relativeTo.Replace("\\", "/");
+            int index = 0;
+            for (int i = 0; i < fullPath.Length; i++)
+            {
+                if ((fullPath[i] != relativeTo[i]) || 
+                    i == relativeTo.Length - 1)
+                {
+                    index = i;
+                    break;
+                }
+            }
+            string relativePath = fullPath.Substring(index + 2);
+            Console.WriteLine(relativePath);
+            return relativePath;
+        }
 
 		private void translateChrome(MiniYamlNode chromeNode, MiniYamlNode chromeLocalizationNode)
 		{

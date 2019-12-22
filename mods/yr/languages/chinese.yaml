@@ -541,6 +541,118 @@ chinese:
 								Text: 你正在运行一个旧版本的OpenRA
 							Label@B:
 								Text: 访问www.openra.net以获取新版本
+			Container@INGAME_MENU:
+				Children:
+					Background@MENU_BUTTONS:
+ 						Children:
+ 							Label@LABEL_TITLE:
+ 								Text: 选项
+			Background@ASSETBROWSER_PANEL:
+				Children:
+					Label@ASSETBROWSER_TITLE:
+ 						Text: 资源查看器
+					Label@SOURCE_SELECTOR_DESC:
+ 						Text: 选择资源文件
+					DropDownButton@SOURCE_SELECTOR:
+ 						Text: 文件夹
+					Label@FILENAME_DESC:
+ 						Text: 筛选器:
+					Label@PALETTE_DESC:
+ 						Text: 调色板:
+					Background@SPRITE_BG:
+ 						Children:
+ 							Label@ERROR:
+  								Text: 资源文件错误. 详情查看assetbrowser.log
+					Button@CLOSE_BUTTON:
+ 						Text: 关闭
+			Background@THREEBUTTON_PROMPT:
+				Children:
+					Button@CONFIRM_BUTTON:
+						Text: 确定
+					Button@OTHER_BUTTON:
+						Text: 重启
+					Button@CANCEL_BUTTON:
+						Text: 取消
+			Background@TWOBUTTON_PROMPT:
+				Children:
+					Button@CONFIRM_BUTTON:
+						Text: 确定
+					Button@CANCEL_BUTTON:
+						Text: 取消
+			Background@TEXT_INPUT_PROMPT:
+				Children:
+					Button@ACCEPT_BUTTON:
+						Text: 确定
+					Button@CANCEL_BUTTON:
+						Text: 取消
+			Container@LOBBY_PLAYER_BIN:
+				Children:
+					Container@LABEL_CONTAINER:
+						Children:
+							Label@LABEL_LOBBY_NAME:
+								Text: 名称
+							Label@LABEL_LOBBY_COLOR:
+								Text: 颜色
+							Label@LABEL_LOBBY_FACTION:
+								Text: 阵营
+							Label@LABEL_LOBBY_TEAM:
+								Text: 队伍
+							Label@LABEL_LOBBY_SPAWN:
+								Text: 出生点
+							Label@LABEL_LOBBY_STATUS:
+  								Text: 准备
+					ScrollPanel@LOBBY_PLAYERS:
+						Children:
+							Container@TEMPLATE_EDITABLE_PLAYER:
+  								Children:
+  									TextField@NAME:
+  										Text: 名称
+  									DropDownButton@SLOT_OPTIONS:
+  										Text: 名称
+  									DropDownButton@FACTION:
+  										Children:
+  											Label@FACTIONNAME:
+  												Text: 阵营
+  									DropDownButton@TEAM_DROPDOWN:
+  										Text: 队伍
+  									DropDownButton@SPAWN_DROPDOWN:
+  										Text: 出生点
+							Container@TEMPLATE_NONEDITABLE_PLAYER:
+  								Children:
+									Label@NAME:
+										Text: 名称
+									Container@FACTION:
+										Children:
+											Label@FACTIONNAME:
+												Text: 阵营
+									Label@TEAM:
+										Text: 队伍
+							Container@TEMPLATE_EMPTY:
+  								Children:
+									Label@NAME:
+										Text: 名称
+									DropDownButton@SLOT_OPTIONS:
+										Text: 名称
+									Button@JOIN:
+										Text: 切换到这个位置
+							Container@TEMPLATE_EDITABLE_SPECTATOR:
+  								Children:
+									TextField@NAME:
+										Text: 名称
+									Label@SPECTATOR:
+										Text: 旁观者
+							Container@TEMPLATE_NONEDITABLE_SPECTATOR:
+  								Children:
+									Label@NAME:
+										Text: 名称
+									Label@SPECTATOR:
+										Text: 旁观者
+							Container@TEMPLATE_NEW_SPECTATOR:
+  								Children:
+									Checkbox@TOGGLE_SPECTATORS:
+										Text: 是否允许旁观者?
+									Button@SPECTATE:
+										Text: 旁观
 		ModContent:
 			InstallPromptMessage: OpenRA尤里的复仇模组需要来自原版游戏的资源文件和声音文件
 			HeaderMessage: 原版游戏的资源文件和声音文件可以从原版光盘中复制
