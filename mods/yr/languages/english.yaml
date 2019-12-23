@@ -687,7 +687,33 @@ english:
 					Button@START_GAME_BUTTON:
 						Text: Start Game
 					Button@DISCONNECT_BUTTON:
-						Text: Leavy Game
+						Text: Leave Game
+			Background@VXLBROWSER_PANEL:
+				Children:
+					Label@ASSETBROWSER_TITLE:
+						Text: Voxel Browser
+					Label@FILENAME_DESC:
+						Text: Filter by name
+					Label@PALETTE_DESC:
+						Text: Palette:
+					Label@PLAYER_PALETTE_DESC:
+						Text: Player Palette:
+					Label@NORMALS_PALETTE_DESC:
+						Text: Normals Palette:
+					Label@SHADOW_PALETTE_DESC:
+						Text: Shadow Palette:
+					Label@SCALE_DESC:
+						Text: Scale:
+					Label@LIGHTPITCH_DESC:
+						Text: Light Pitch:
+					Label@LIGHTYAW_DESC:
+						Text: Light Yaw:
+					Label@LIGHTAMBIENTCOLOR_DESC:
+						Text: Light Ambient Color:
+					Label@LIGHTDIFFUSECOLOR_DESC:
+						Text: Light Diffuse Color:
+					Button@CLOSE_BUTTON:
+						Text: Close
 		FontSettings:
 			Normal: common|FreeSans.ttf
 			Bold: common|FreeSansBold.ttf

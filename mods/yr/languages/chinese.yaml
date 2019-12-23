@@ -685,6 +685,32 @@ chinese:
 						Text: 开始游戏
 					Button@DISCONNECT_BUTTON:
 						Text: 离开游戏
+			Background@VXLBROWSER_PANEL:
+				Children:
+					Label@ASSETBROWSER_TITLE:
+						Text: 体素查看器
+					Label@FILENAME_DESC:
+						Text: 筛选器
+					Label@PALETTE_DESC:
+						Text: 调色板:
+					Label@PLAYER_PALETTE_DESC:
+						Text: Player调色板:
+					Label@NORMALS_PALETTE_DESC:
+						Text: 法线调色板:
+					Label@SHADOW_PALETTE_DESC:
+						Text: 阴影调色板:
+					Label@SCALE_DESC:
+						Text: 缩放:
+					Label@LIGHTPITCH_DESC:
+						Text: 光照方向俯仰角:
+					Label@LIGHTYAW_DESC:
+						Text: 光照方向偏航角:
+					Label@LIGHTAMBIENTCOLOR_DESC:
+						Text: 环境光颜色:
+					Label@LIGHTDIFFUSECOLOR_DESC:
+						Text: 漫反射光照颜色:
+					Button@CLOSE_BUTTON:
+						Text: 关闭
 		FontSettings:
 			Normal: yr|FZHTK.TTF
 			Bold: yr|FZHTK.TTF
