@@ -11,7 +11,9 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Text;
 using OpenRA.Graphics;
 using OpenRA.Primitives;
 using OpenRA.Widgets;
@@ -27,6 +29,7 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 		static readonly int2 OriginalGraphicsWindowedSize;
 		static readonly int2 OriginalGraphicsFullscreenSize;
 		static readonly bool OriginalServerDiscoverNatDevices;
+		static readonly string OriginalLanguage;
 
 		readonly Dictionary<PanelType, Action> leavePanelActions = new Dictionary<PanelType, Action>();
 		readonly Dictionary<PanelType, Action> resetPanelActions = new Dictionary<PanelType, Action>();
@@ -53,6 +56,7 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 			OriginalGraphicsWindowedSize = original.Graphics.WindowedSize;
 			OriginalGraphicsFullscreenSize = original.Graphics.FullscreenSize;
 			OriginalServerDiscoverNatDevices = original.Server.DiscoverNatDevices;
+			OriginalLanguage = original.Graphics.Language;
 		}
 
 		[ObjectCreator.UseCtor]
@@ -82,8 +86,11 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 				    current.Graphics.Mode != OriginalGraphicsMode ||
 				    current.Graphics.WindowedSize != OriginalGraphicsWindowedSize ||
 					current.Graphics.FullscreenSize != OriginalGraphicsFullscreenSize ||
-					current.Server.DiscoverNatDevices != OriginalServerDiscoverNatDevices)
+					current.Server.DiscoverNatDevices != OriginalServerDiscoverNatDevices ||
+					current.Graphics.Language != OriginalLanguage)
 				{
+					SwitchLanguage(current.Graphics.Language, modData);
+
 					Action restart = () =>
 					{
 						var external = Game.ExternalMods[ExternalMod.MakeKey(Game.ModData.Manifest)];
@@ -107,6 +114,401 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 				resetPanelActions[settingsPanel]();
 				Game.Settings.Save();
 			};
+		}
+
+		private void SwitchLanguage(string currentLanguage, ModData modData)
+		{
+			currentLanguage = currentLanguage.ToLower();
+
+			string localizationFile = string.Format("languages\\{0}.yaml", currentLanguage);
+			var stream = modData.ModFiles.Open(localizationFile);
+			var nodes = MiniYaml.FromStream(stream);
+			if (nodes[0].Value.Nodes[0].Key != currentLanguage)
+			{
+				Console.WriteLine("Invalid localization file!");
+				return;
+			}
+			var rulesLocalizationNode = nodes[0].Value.Nodes[0].Value.Nodes.Where(o => o.Key == "Rules").FirstOrDefault();
+			var chromeLayoutsLocalizationNode = nodes[0].Value.Nodes[0].Value.Nodes.Where(o => o.Key == "ChromeLayouts").FirstOrDefault();
+			var worldRulesLocalizationNode = nodes[0].Value.Nodes[0].Value.Nodes.Where(o => o.Key == "World").FirstOrDefault();
+			var modContentLocalizationNode = nodes[0].Value.Nodes[0].Value.Nodes.Where(o => o.Key == "ModContent").FirstOrDefault();
+
+			//Get the original mod install dir
+			string modID = modData.Manifest.Id;
+			string modFolder = null;
+			if (stream is FileStream)
+			{
+				var fs = stream as FileStream;
+				if (fs.Name.Contains(localizationFile))
+				{
+					int idx = fs.Name.IndexOf(localizationFile);
+					modFolder = fs.Name.Substring(0, idx);
+				}
+			}
+			//Copy all the original mod files to the new mod which id is defined by NEWMODID parameter
+			if (!string.IsNullOrEmpty(modFolder))
+			{
+				string customFontPath = null;
+
+				DirectoryInfo di = new DirectoryInfo(modFolder);
+				customFontPath = Path.Combine(di.Parent.Parent.FullName, "translation_fonts\\FontsSetting.yaml");
+
+				string lightFont = null;
+				string normalFont = null;
+				string boldFont = null;
+				if (!string.IsNullOrEmpty(customFontPath))
+				{
+					string currentDir = Environment.CurrentDirectory;
+					DirectoryInfo d = new DirectoryInfo(currentDir);
+					string fontSettingFilePath = Path.Combine(d.Parent.FullName, customFontPath);
+					Console.WriteLine(fontSettingFilePath);
+					if (File.Exists(fontSettingFilePath))
+					{
+						var fontSettingFile = MiniYaml.FromFile(fontSettingFilePath);
+						if (fontSettingFile[0].Value.Nodes.Count == 2)
+						{
+							normalFont = Path.Combine(Path.GetDirectoryName(fontSettingFilePath), fontSettingFile[0].Value.Nodes[0].Value.Value);
+							boldFont = Path.Combine(Path.GetDirectoryName(fontSettingFilePath), fontSettingFile[0].Value.Nodes[1].Value.Value);
+						}
+						else
+						{
+							Console.WriteLine("Error: Invalid font setting file!");
+						}
+					}
+					else
+					{
+						Console.WriteLine("Error: Specific font path can't be found!");
+					}
+				}
+
+				//------------------------------------------------------
+				// Modify all the yaml files using the original mod id
+				//------------------------------------------------------
+
+				List<string> mapFolders = new List<string>();
+				List<string> ruleFilePathes = new List<string>();
+				List<string> chromeLayoutFilePathes = new List<string>();
+				Dictionary<string, string> externalMods = new Dictionary<string, string>();
+
+				string newModFullPath = modFolder;
+				//Modify mod.yaml file
+				string newModYaml = Path.Combine(newModFullPath, "mod.yaml");
+				var modYamlNodes = MiniYaml.FromFile(newModYaml);
+				foreach (var modYamlNode in modYamlNodes)
+				{
+					if (modYamlNode.Key == "Packages")
+					{
+						foreach (var subYamlNode in modYamlNode.Value.Nodes)
+						{
+							if (!subYamlNode.Key.StartsWith("~") &&
+									 !string.IsNullOrEmpty(subYamlNode.Value.Value))
+							{
+								//This is an external mod
+								Console.WriteLine(Platform.ResolvePath(subYamlNode.Key));
+								externalMods.Add(subYamlNode.Value.Value, Platform.ResolvePath(subYamlNode.Key));
+							}
+						}
+					}
+					else if (modYamlNode.Key == "Rules" ||
+							 modYamlNode.Key == "Sequences" ||
+							 modYamlNode.Key == "ModelSequences" ||
+							 modYamlNode.Key == "Cursors" ||
+							 modYamlNode.Key == "Chrome" ||
+							 modYamlNode.Key == "Assemblies" ||
+							 modYamlNode.Key == "ChromeLayout" ||
+							 modYamlNode.Key == "Hotkeys" ||
+							 modYamlNode.Key == "Weapons" ||
+							 modYamlNode.Key == "Voices" ||
+							 modYamlNode.Key == "Notifications" ||
+							 modYamlNode.Key == "TileSets" ||
+							 modYamlNode.Key == "Music" ||
+							 modYamlNode.Key == "Translations" ||
+							 modYamlNode.Key == "ChromeMetrics" ||
+							 modYamlNode.Key == "Missions")
+					{
+						foreach (var subYamlNode in modYamlNode.Value.Nodes)
+						{
+							if (subYamlNode.Key.StartsWith(string.Format("{0}|", modID)))
+							{
+								if (modYamlNode.Key == "Rules")
+								{
+									ruleFilePathes.Add(Path.Combine(newModFullPath, subYamlNode.Key.Split('|')[1]));
+								}
+								else if (modYamlNode.Key == "ChromeLayout")
+								{
+									chromeLayoutFilePathes.Add(Path.Combine(newModFullPath, subYamlNode.Key.Split('|')[1]));
+								}
+							}
+							else
+							{
+								string[] tokens = subYamlNode.Key.Split('|');
+								if (tokens.Length == 2)
+								{
+									if (externalMods.ContainsKey(tokens[0]) &&
+									   (modYamlNode.Key == "Rules" ||
+									   modYamlNode.Key == "ChromeLayout"))
+									{
+										//Copy the external mod files
+										string filePath = Path.Combine(externalMods[tokens[0]], tokens[1]);
+
+										if (modYamlNode.Key == "Rules")
+										{
+											ruleFilePathes.Add(filePath);
+										}
+										else if (modYamlNode.Key == "ChromeLayout")
+										{
+											chromeLayoutFilePathes.Add(filePath);
+										}
+									}
+								}
+							}
+						}
+					}
+					else if (modYamlNode.Key == "MapFolders")
+					{
+						foreach (var subYamlNode in modYamlNode.Value.Nodes)
+						{
+							if (subYamlNode.Key.StartsWith(string.Format("{0}|", modID)))
+							{
+								string[] tokens = subYamlNode.Key.Split('|');//Relative map folder
+								mapFolders.Add(Path.Combine(newModFullPath, tokens[1]));
+							}
+							else if (subYamlNode.Key.StartsWith("~"))//optional map folder
+							{
+								string temp = subYamlNode.Key.Substring(1);
+								if (temp.StartsWith("^"))
+								{
+									string fullPath = Platform.ResolvePath(temp);
+									mapFolders.Add(fullPath);
+									subYamlNode.Key = "~" + temp;
+								}
+							}
+						}
+					}
+					else if (modYamlNode.Key == "Fonts")
+					{
+						foreach (var subYamlNode in modYamlNode.Value.Nodes)
+						{
+							foreach (var sNode in subYamlNode.Value.Nodes)
+							{
+								if (sNode.Key == "Font")
+								{
+									if (sNode.Value.Value.StartsWith(string.Format("{0}|", modID)))
+									{
+										string oldKey = string.Format("{0}|", modID);
+										sNode.Value.Value = sNode.Value.Value.Replace(
+											oldKey,
+											string.Format("{0}|", modID)
+										);
+									}
+
+									if ((subYamlNode.Key == "Tiny" ||
+									   subYamlNode.Key == "Small" ||
+									   subYamlNode.Key == "Regular" ||
+									   subYamlNode.Key == "Title"))
+									{
+										if (string.IsNullOrEmpty(normalFont))
+										{
+											continue;
+										}
+										string targetNormalFontFile = Path.Combine(newModFullPath, Path.GetFileName(normalFont));
+										if (File.Exists(normalFont) &&
+											!File.Exists(targetNormalFontFile))
+										{
+											File.Copy(normalFont, targetNormalFontFile);
+										}
+										sNode.Value.Value = string.Format("{0}|{1}", modID, Path.GetFileName(normalFont));
+									}
+									else if (subYamlNode.Key == "TinyBold" ||
+											subYamlNode.Key == "Bold" ||
+											subYamlNode.Key == "MediumBold" ||
+											subYamlNode.Key == "BigBold")
+									{
+										if (string.IsNullOrEmpty(boldFont))
+										{
+											continue;
+										}
+										string targetBoldFontFile = Path.Combine(newModFullPath, Path.GetFileName(boldFont));
+										if (File.Exists(boldFont) &&
+											!File.Exists(targetBoldFontFile))
+										{
+											File.Copy(boldFont, targetBoldFontFile);
+										}
+										sNode.Value.Value = string.Format("{0}|{1}", modID, Path.GetFileName(boldFont));
+									}
+								}
+							}
+						}
+					}
+					else if (modYamlNode.Key == "ModContent")
+					{
+						foreach (var subYamlNode in modYamlNode.Value.Nodes)
+						{
+							if (subYamlNode.Key == "InstallPromptMessage")
+							{
+								//Translate
+								if (modContentLocalizationNode != null)
+								{
+									var installPromptLocalization = modContentLocalizationNode.Value.Nodes.Where(o => o.Key == "InstallPromptMessage").FirstOrDefault();
+									if (installPromptLocalization != null)
+									{
+										subYamlNode.Value.Value = installPromptLocalization.Value.Value;
+									}
+								}
+							}
+							else if (subYamlNode.Key == "HeaderMessage")
+							{
+								//Translate
+								if (modContentLocalizationNode != null)
+								{
+									var headerMessageLocalization = modContentLocalizationNode.Value.Nodes.Where(o => o.Key == "HeaderMessage").FirstOrDefault();
+									if (headerMessageLocalization != null)
+									{
+										subYamlNode.Value.Value = headerMessageLocalization.Value.Value;
+									}
+								}
+							}
+							else if (subYamlNode.Key == "Packages")
+							{
+								foreach (var sNode in subYamlNode.Value.Nodes)
+								{
+
+									//Translate
+									if (modContentLocalizationNode != null)
+									{
+										var packageLocalization = modContentLocalizationNode.Value.Nodes.Where(o => o.Key == "Packages").FirstOrDefault();
+										if (packageLocalization != null)
+										{
+											var subPackageLocalizationNode = packageLocalization.Value.Nodes.Where(o => o.Key == sNode.Key).FirstOrDefault();
+											if (subPackageLocalizationNode != null)
+											{
+												sNode.Value.Value = subPackageLocalizationNode.Value.Value;
+											}
+										}
+									}
+								}
+							}
+							else if (subYamlNode.Key == "Sources")
+							{
+								foreach (var sNode in subYamlNode.Value.Nodes)
+								{
+									if (sNode.Key.StartsWith(string.Format("{0}|", modID)))
+									{
+										string oldKey = string.Format("{0}|", modID);
+										sNode.Key = sNode.Key.Replace(
+											oldKey,
+											string.Format("{0}|", modID)
+										);
+									}
+								}
+							}
+						}
+					}
+				}
+				modYamlNodes.WriteToFile(newModYaml);
+
+				//Modify all maps
+				foreach (var mapFolder in mapFolders)
+				{
+					DirectoryInfo mapDir = new DirectoryInfo(mapFolder);
+					if (!mapDir.Exists)
+					{
+						continue;
+					}
+					foreach (var directory in mapDir.EnumerateDirectories())
+					{
+						if (File.Exists(Path.Combine(directory.FullName, "map.bin")) &&
+						   File.Exists(Path.Combine(directory.FullName, "map.yaml")) &&
+						   File.Exists(Path.Combine(directory.FullName, "map.png")))
+						{
+							string mapYamlPath = Path.Combine(directory.FullName, "map.yaml");
+							var mapYamlFile = MiniYaml.FromFile(mapYamlPath);
+							foreach (var node in mapYamlFile)
+							{
+								if (node.Key == "RequiresMod")
+								{
+									node.Value.Value = modID;
+									break;
+								}
+							}
+							mapYamlFile.WriteToFile(mapYamlPath);
+						}
+					}
+				}
+
+				//Translate Rules file
+				foreach (var ruleFilePath in ruleFilePathes)
+				{
+					var ruleYamlFile = MiniYaml.FromFile(ruleFilePath);
+					foreach (var node in ruleYamlFile)
+					{
+						if (rulesLocalizationNode != null && node.Key != "^BaseWorld")
+						{
+							var actorLocalizationNode = rulesLocalizationNode.Value.Nodes.Where(o => o.Key == node.Key).FirstOrDefault();
+							var toolTipTraitNode = node.Value.Nodes.Where(o => o.Key == "Tooltip").FirstOrDefault();
+							if (toolTipTraitNode != null && actorLocalizationNode != null)
+							{
+								toolTipTraitNode.Value.Nodes[0].Value.Value = actorLocalizationNode.Value.Value;
+							}
+						}
+						else if (node.Key == "^BaseWorld")//Translate Factions
+						{
+							if (worldRulesLocalizationNode != null)
+							{
+								foreach (var worldChildNode in node.Value.Nodes)
+								{
+									var factionLocalizationNode = worldRulesLocalizationNode.Value.Nodes.Where(o => o.Key == worldChildNode.Key).FirstOrDefault();
+									if (factionLocalizationNode != null)
+									{
+										foreach (var valueNode in worldChildNode.Value.Nodes)
+										{
+											var valueLocalizationNode = factionLocalizationNode.Value.Nodes.Where(o => o.Key == valueNode.Key).FirstOrDefault();
+											if (valueLocalizationNode != null)
+											{
+												valueNode.Value.Value = valueLocalizationNode.Value.Value;
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+					ruleYamlFile.WriteToFile(ruleFilePath);
+				}
+
+				//Translate Chrome Layouts
+				foreach (var chromeLayoutFilePath in chromeLayoutFilePathes)
+				{
+					var chromeLayoutFile = MiniYaml.FromFile(chromeLayoutFilePath);
+					foreach (var chromeNode in chromeLayoutFile)
+					{
+						var chromeLocalizationNode = chromeLayoutsLocalizationNode.Value.Nodes.Where(o => o.Key == chromeNode.Key).FirstOrDefault();
+						if (chromeLocalizationNode != null)
+						{
+							translateChrome(chromeNode, chromeLocalizationNode);
+						}
+					}
+					chromeLayoutFile.WriteToFile(chromeLayoutFilePath);
+				}
+			}
+
+			Console.WriteLine("Import task has already finished!");
+		}
+
+		private void translateChrome(MiniYamlNode chromeNode, MiniYamlNode chromeLocalizationNode)
+		{
+			foreach (var subNode in chromeNode.Value.Nodes)
+			{
+				var subChromeLocalizationNode = chromeLocalizationNode.Value.Nodes.Where(o => o.Key == subNode.Key).FirstOrDefault();
+				if (subChromeLocalizationNode != null)
+				{
+					if (!string.IsNullOrEmpty(subNode.Value.Value))
+					{
+						subNode.Value.Value = subChromeLocalizationNode.Value.Value;
+					}
+					translateChrome(subNode, subChromeLocalizationNode);
+				}
+			}
 		}
 
 		static void BindCheckboxPref(Widget parent, string id, object group, string pref)
