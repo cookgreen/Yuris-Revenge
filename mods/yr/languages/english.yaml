@@ -656,4 +656,38 @@ english:
 										Text: Allow Spectators?
 									Button@SPECTATE:
 										Text: Spectate
-		
+			Background@SERVER_LOBBY:
+				Children:
+ 					DropDownButton@SLOTS_DROPDOWNBUTTON:
+						Text: Slot Admin
+ 					Container@SKIRMISH_TABS:
+						Children:
+						    Button@PLAYERS_TAB:
+						    	Text: Players
+						    Button@OPTIONS_TAB:
+						    	Text: Options
+						    Button@MUSIC_TAB:
+						    	Text: Music
+					Container@MULTIPLAYER_TABS:
+						Children:
+						    Button@PLAYERS_TAB:
+						    	Text: Players
+						    Button@OPTIONS_TAB:
+						    	Text: Options
+						    Button@MUSIC_TAB:
+						    	Text: Music
+						    Button@SERVERS_TAB:
+						    	Text: Servers
+					Button@CHANGEMAP_BUTTON:
+						Text: Change Map
+					Container@LOBBYCHAT:
+						Children:
+						    Button@CHAT_MODE:
+						    	Text: Team
+					Button@START_GAME_BUTTON:
+						Text: Start Game
+					Button@DISCONNECT_BUTTON:
+						Text: Leavy Game
+		FontSettings:
+			Normal: common|FreeSans.ttf
+			Bold: common|FreeSansBold.ttf

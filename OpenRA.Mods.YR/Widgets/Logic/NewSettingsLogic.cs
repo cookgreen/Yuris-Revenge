@@ -132,6 +132,7 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 			var chromeLayoutsLocalizationNode = nodes[0].Value.Nodes[0].Value.Nodes.Where(o => o.Key == "ChromeLayouts").FirstOrDefault();
 			var worldRulesLocalizationNode = nodes[0].Value.Nodes[0].Value.Nodes.Where(o => o.Key == "World").FirstOrDefault();
 			var modContentLocalizationNode = nodes[0].Value.Nodes[0].Value.Nodes.Where(o => o.Key == "ModContent").FirstOrDefault();
+			var fontSettingsNode = nodes[0].Value.Nodes[0].Value.Nodes.Where(o => o.Key == "FontSettings").FirstOrDefault();
 
 			//Get the original mod install dir
 			string modID = modData.Manifest.Id;
@@ -156,29 +157,15 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 				string lightFont = null;
 				string normalFont = null;
 				string boldFont = null;
-				if (!string.IsNullOrEmpty(customFontPath))
+
+				if (fontSettingsNode.Value.Nodes.Count == 2)
 				{
-					string currentDir = Environment.CurrentDirectory;
-					DirectoryInfo d = new DirectoryInfo(currentDir);
-					string fontSettingFilePath = Path.Combine(d.Parent.FullName, customFontPath);
-					Console.WriteLine(fontSettingFilePath);
-					if (File.Exists(fontSettingFilePath))
-					{
-						var fontSettingFile = MiniYaml.FromFile(fontSettingFilePath);
-						if (fontSettingFile[0].Value.Nodes.Count == 2)
-						{
-							normalFont = Path.Combine(Path.GetDirectoryName(fontSettingFilePath), fontSettingFile[0].Value.Nodes[0].Value.Value);
-							boldFont = Path.Combine(Path.GetDirectoryName(fontSettingFilePath), fontSettingFile[0].Value.Nodes[1].Value.Value);
-						}
-						else
-						{
-							Console.WriteLine("Error: Invalid font setting file!");
-						}
-					}
-					else
-					{
-						Console.WriteLine("Error: Specific font path can't be found!");
-					}
+					normalFont = fontSettingsNode.Value.Nodes[0].Value.Value;
+					boldFont = fontSettingsNode.Value.Nodes[1].Value.Value;
+				}
+				else
+				{
+					Console.WriteLine("Error: Invalid font setting file!");
 				}
 
 				//------------------------------------------------------
@@ -311,13 +298,7 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 										{
 											continue;
 										}
-										string targetNormalFontFile = Path.Combine(newModFullPath, Path.GetFileName(normalFont));
-										if (File.Exists(normalFont) &&
-											!File.Exists(targetNormalFontFile))
-										{
-											File.Copy(normalFont, targetNormalFontFile);
-										}
-										sNode.Value.Value = string.Format("{0}|{1}", modID, Path.GetFileName(normalFont));
+										sNode.Value.Value = normalFont;
 									}
 									else if (subYamlNode.Key == "TinyBold" ||
 											subYamlNode.Key == "Bold" ||
@@ -328,13 +309,7 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 										{
 											continue;
 										}
-										string targetBoldFontFile = Path.Combine(newModFullPath, Path.GetFileName(boldFont));
-										if (File.Exists(boldFont) &&
-											!File.Exists(targetBoldFontFile))
-										{
-											File.Copy(boldFont, targetBoldFontFile);
-										}
-										sNode.Value.Value = string.Format("{0}|{1}", modID, Path.GetFileName(boldFont));
+										sNode.Value.Value = boldFont;
 									}
 								}
 							}

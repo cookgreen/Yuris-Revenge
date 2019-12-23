@@ -653,6 +653,41 @@ chinese:
 										Text: 是否允许旁观者?
 									Button@SPECTATE:
 										Text: 旁观
+			Background@SERVER_LOBBY:
+				Children:
+ 					DropDownButton@SLOTS_DROPDOWNBUTTON:
+						Text: 设为管理员
+ 					Container@SKIRMISH_TABS:
+						Children:
+						    Button@PLAYERS_TAB:
+						    	Text: 玩家
+						    Button@OPTIONS_TAB:
+						    	Text: 选项
+						    Button@MUSIC_TAB:
+						    	Text: 音乐
+					Container@MULTIPLAYER_TABS:
+						Children:
+						    Button@PLAYERS_TAB:
+						    	Text: 玩家
+						    Button@OPTIONS_TAB:
+						    	Text: 选项
+						    Button@MUSIC_TAB:
+						    	Text: 音乐
+						    Button@SERVERS_TAB:
+						    	Text: 服务器
+					Button@CHANGEMAP_BUTTON:
+						Text: 变更地图
+					Container@LOBBYCHAT:
+						Children:
+						    Button@CHAT_MODE:
+						    	Text: 队伍
+					Button@START_GAME_BUTTON:
+						Text: 开始游戏
+					Button@DISCONNECT_BUTTON:
+						Text: 离开游戏
+		FontSettings:
+			Normal: yr|FZHTK.TTF
+			Bold: yr|FZHTK.TTF
 		#ModContent:
 		#	InstallPromptMessage: OpenRA尤里的复仇模组需要来自原版游戏的资源文件和声音文件
 		#	HeaderMessage: 原版游戏的资源文件和声音文件可以从原版光盘中复制
