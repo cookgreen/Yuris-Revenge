@@ -28,6 +28,10 @@ MoveCameraTo = function(position)
 end
 
 MissionAccomplished = function()
+	Media.PlaySoundNotification(player, "Cheer")
+	Media.PlaySoundNotification(player, "Cheer")
+	Media.PlaySoundNotification(player, "Cheer")
+	Media.PlaySoundNotification(player, "Cheer")
 	Media.PlaySpeechNotification(player, "MissionAccomplished")
 end
 

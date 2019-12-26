@@ -154,6 +154,7 @@ Sounds:
 		RadarDown: uradarof
 		CashTickUp: ucredup
 		CashTickDown: ucreddn
+		Cheer: ucheer
 		LevelUp: gupgrad1
 		DisablePower: gpowof
 		EnablePower: gpowon
