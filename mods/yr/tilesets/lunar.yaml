@@ -1,15 +1,16 @@
 General:
-	Name: lunar
+	Name: LUNAR
 	Id: LUNAR
-	Palette: isolun.pal
+	Extensions: .lun, .shp
 	HeightDebugColors: 00000080, 00004480, 00008880, 0000CC80, 0000FF80, 4400CC80, 88008880, CC004480, FF110080, FF550080, FF990080, FFDD0080, DDFF0080, 99FF0080, 55FF0080, 11FF0080
 	EditorTemplateOrder: Lat Moon Dirt, Blank, ZMM Ramps, Ramps, LAT Moon Dirt Dark, Moon Dirt Dark Individual, LAT Grass Rough, GrassRough Individual, Pavement Individual, LAT Moon Dirt Light, Moon Dirt Light Individual, Ramp edge fixup, LAT Pavement, Sand (beach), Sand (beach) Transitions, Craters, LunarLander, Lunar Crevas # Obsolete Height Pieces, Cliff Set, Shore Pieces, Cliff/Water pieces, DirtRoads Bendy, DirtRoads Junctions, DirtRoads Straight, Bridges, Paved Roads, Water, ZMM Cliff Set, DirtRoads Slopes, ZMM Dirt Road Slopes, Slope Set Pieces, ZSlope Set Pieces, New MM Height Pieces, Waterfalls, Farm Crops, Paved Road Ends, Pavement, Paved road bits, Ramp edge fixup - Marble Madness, Paved Road Slopes, Waterfalls-B, Waterfalls-C, Waterfalls-D, Newest MM Height, Tunnel Floor, Tunnel Side, Destroyable Cliffs, Water Caves, ZMM Bendy Dirt Roads, ZMM Dirt Road Junctions, ZMM Straight Dirt Roads, ZMM Shore Pieces, ZMM Waterfalls, ZMM Waterfalls-B, ZMM Waterfalls-C, ZMM Waterfalls-D, ZMM Water Caves, ZMMCliff/Water pieces, ZMM Water, DirtTunnel Floor, Water bridge, RA2 rubble farm, RA2 rubble mobile, RA2 rubble mexican, Wood Bridges, RA2 uss arizona
-	SheetSize: 2048
+	SheetSize: 4096
 	EnableDepth: true
 
 Terrain:
 	TerrainType@Clear:
 		Type: Clear
+		AcceptsSmudgeType: SmallCrater, MediumCrater, LargeCrater, SmallScorch, MediumScorch, LargeScorch
 		TargetTypes: Ground
 		Color: 000000
 	TerrainType@Ice:
@@ -18,14 +19,16 @@ Terrain:
 		Color: 000000
 	TerrainType@Road:
 		Type: Road
+		AcceptsSmudgeType: SmallScorch, MediumScorch, LargeScorch
 		TargetTypes: Ground
 		Color: 000000
 	TerrainType@Bridge:
 		Type: Bridge
-		Color: 5A5C5A
+		Color: 000000
 		TargetTypes: Ground
 	TerrainType@Rail:
 		Type: Rail
+		AcceptsSmudgeType: SmallScorch, MediumScorch, LargeScorch
 		TargetTypes: Ground
 		Color: 000000
 	TerrainType@Impassable:
@@ -35,24 +38,43 @@ Terrain:
 	TerrainType@Water:
 		Type: Water
 		TargetTypes: Water
-		IsWater: True
 		Color: 000000
 	TerrainType@DirtRoad:
 		Type: DirtRoad
+		AcceptsSmudgeType: SmallCrater, MediumCrater, LargeCrater, SmallScorch, MediumScorch, LargeScorch
 		TargetTypes: Ground
 		Color: 000000
 	TerrainType@Rough:
 		Type: Rough
+		AcceptsSmudgeType: SmallCrater, MediumCrater, LargeCrater, SmallScorch, MediumScorch, LargeScorch
 		TargetTypes: Ground
 		Color: 000000
 	TerrainType@Cliff:
 		Type: Cliff
 		TargetTypes: Ground
 		Color: 000000
+	TerrainType@Tree:
+		Type: Tree
+		TargetTypes: Ground
+		Color: 506428
+	TerrainType@Rock:
+		Type: Rock
+		TargetTypes: Ground
+		Color: 444444
+	TerrainType@Ore:
+		Type: Ore
+		AcceptsSmudgeType: SmallCrater, MediumCrater, LargeCrater, SmallScorch, MediumScorch, LargeScorch
+		Color: F0C000
+		TargetTypes: Ground
+	TerrainType@Gems:
+		Type: Gems
+		AcceptsSmudgeType: SmallCrater, MediumCrater, LargeCrater, SmallScorch, MediumScorch, LargeScorch
+		Color: 600060
+		TargetTypes: Ground
 
 Templates:
 	Template@0:
-		Category: Lat Moon Dirt
+		Categories: Lat Moon Dirt
 		Id: 0
 		Images: clear01.lun, clear01a.lun, clear01b.lun, clear01c.lun, clear01d.lun, clear01e.lun, clear01f.lun, clear01g.lun
 		Size: 1, 1
@@ -60,10 +82,8 @@ Templates:
 			0: Clear
 				LeftColor: A0A4AD
 				RightColor: A4A8B1
-				ZOffset: -15
-				ZRamp: 0
 	Template@1:
-		Category: Blank
+		Categories: Blank
 		Id: 1
 		Images: blank01.lun
 		Size: 1, 1
@@ -71,10 +91,8 @@ Templates:
 			0: Rough
 				LeftColor: D2D2DC
 				RightColor: D0D0DA
-				ZOffset: -15
-				ZRamp: 0
 	Template@2:
-		Category: ZMM Ramps
+		Categories: ZMM Ramps
 		Id: 2
 		Images: mslop01.lun, mslop01a.lun, mslop01b.lun, mslop01c.lun
 		Size: 1, 1
@@ -83,10 +101,8 @@ Templates:
 				RampType: 1
 				LeftColor: 935B98
 				RightColor: 935C99
-				ZOffset: -15
-				ZRamp: 0
 	Template@3:
-		Category: ZMM Ramps
+		Categories: ZMM Ramps
 		Id: 3
 		Images: mslop02.lun, mslop02a.lun, mslop02b.lun, mslop02c.lun
 		Size: 1, 1
@@ -95,10 +111,8 @@ Templates:
 				RampType: 2
 				LeftColor: 5F586E
 				RightColor: 5F576D
-				ZOffset: -15
-				ZRamp: 0
 	Template@4:
-		Category: ZMM Ramps
+		Categories: ZMM Ramps
 		Id: 4
 		Images: mslop03.lun, mslop03a.lun, mslop03b.lun, mslop03c.lun
 		Size: 1, 1
@@ -107,10 +121,8 @@ Templates:
 				RampType: 3
 				LeftColor: 4D735A
 				RightColor: 526E60
-				ZOffset: -15
-				ZRamp: 0
 	Template@5:
-		Category: ZMM Ramps
+		Categories: ZMM Ramps
 		Id: 5
 		Images: mslop04.lun, mslop04a.lun, mslop04b.lun, mslop04c.lun
 		Size: 1, 1
@@ -119,10 +131,8 @@ Templates:
 				RampType: 4
 				LeftColor: 837186
 				RightColor: 7B797E
-				ZOffset: -15
-				ZRamp: 0
 	Template@6:
-		Category: ZMM Ramps
+		Categories: ZMM Ramps
 		Id: 6
 		Images: mslop05.lun, mslop05a.lun, mslop05b.lun, mslop05c.lun
 		Size: 1, 1
@@ -131,10 +141,8 @@ Templates:
 				RampType: 5
 				LeftColor: 2ED72E
 				RightColor: 2ED72E
-				ZOffset: -15
-				ZRamp: 0
 	Template@7:
-		Category: ZMM Ramps
+		Categories: ZMM Ramps
 		Id: 7
 		Images: mslop06.lun, mslop06a.lun, mslop06b.lun, mslop06c.lun
 		Size: 1, 1
@@ -143,10 +151,8 @@ Templates:
 				RampType: 6
 				LeftColor: 615970
 				RightColor: 0DF90D
-				ZOffset: -15
-				ZRamp: 0
 	Template@8:
-		Category: ZMM Ramps
+		Categories: ZMM Ramps
 		Id: 8
 		Images: mslop07.lun, mslop07a.lun, mslop07b.lun, mslop07c.lun
 		Size: 1, 1
@@ -155,10 +161,8 @@ Templates:
 				RampType: 7
 				LeftColor: 389F41
 				RightColor: 389F41
-				ZOffset: -15
-				ZRamp: 0
 	Template@9:
-		Category: ZMM Ramps
+		Categories: ZMM Ramps
 		Id: 9
 		Images: mslop08.lun, mslop08a.lun, mslop08b.lun, mslop08c.lun
 		Size: 1, 1
@@ -167,10 +171,8 @@ Templates:
 				RampType: 8
 				LeftColor: 0DF90D
 				RightColor: 99589D
-				ZOffset: -15
-				ZRamp: 0
 	Template@10:
-		Category: ZMM Ramps
+		Categories: ZMM Ramps
 		Id: 10
 		Images: mslop09.lun, mslop09a.lun, mslop09b.lun, mslop09c.lun
 		Size: 1, 1
@@ -179,10 +181,8 @@ Templates:
 				RampType: 9
 				LeftColor: 0FF70F
 				RightColor: 0FF70F
-				ZOffset: -15
-				ZRamp: 0
 	Template@11:
-		Category: ZMM Ramps
+		Categories: ZMM Ramps
 		Id: 11
 		Images: mslop10.lun, mslop10a.lun, mslop10b.lun, mslop10c.lun
 		Size: 1, 1
@@ -191,10 +191,8 @@ Templates:
 				RampType: 10
 				LeftColor: 0DF90D
 				RightColor: 615970
-				ZOffset: -15
-				ZRamp: 0
 	Template@12:
-		Category: ZMM Ramps
+		Categories: ZMM Ramps
 		Id: 12
 		Images: mslop11.lun, mslop11a.lun, mslop11b.lun, mslop11c.lun
 		Size: 1, 1
@@ -203,10 +201,8 @@ Templates:
 				RampType: 11
 				LeftColor: 389F41
 				RightColor: 389F41
-				ZOffset: -15
-				ZRamp: 0
 	Template@13:
-		Category: ZMM Ramps
+		Categories: ZMM Ramps
 		Id: 13
 		Images: mslop12.lun, mslop12a.lun, mslop12b.lun, mslop12c.lun
 		Size: 1, 1
@@ -215,10 +211,8 @@ Templates:
 				RampType: 12
 				LeftColor: 99589D
 				RightColor: 0DF90D
-				ZOffset: -15
-				ZRamp: 0
 	Template@15:
-		Category: ZMM Ramps
+		Categories: ZMM Ramps
 		Id: 15
 		Images: mslop14.lun, mslop14a.lun, mslop14b.lun, mslop14c.lun
 		Size: 1, 1
@@ -227,10 +221,8 @@ Templates:
 				RampType: 14
 				LeftColor: 625B72
 				RightColor: 625B72
-				ZOffset: -15
-				ZRamp: 0
 	Template@16:
-		Category: ZMM Ramps
+		Categories: ZMM Ramps
 		Id: 16
 		Images: mslop15.lun, mslop15a.lun, mslop15b.lun, mslop15c.lun
 		Size: 1, 1
@@ -239,10 +231,8 @@ Templates:
 				RampType: 15
 				LeftColor: 546D63
 				RightColor: 546D63
-				ZOffset: -15
-				ZRamp: 0
 	Template@17:
-		Category: ZMM Ramps
+		Categories: ZMM Ramps
 		Id: 17
 		Images: mslop16.lun, mslop16a.lun, mslop16b.lun, mslop16c.lun
 		Size: 1, 1
@@ -251,10 +241,8 @@ Templates:
 				RampType: 16
 				LeftColor: 9D56A0
 				RightColor: 9D56A0
-				ZOffset: -15
-				ZRamp: 0
 	Template@18:
-		Category: ZMM Ramps
+		Categories: ZMM Ramps
 		Id: 18
 		Images: mslop17.lun, mslop17a.lun, mslop17b.lun, mslop17c.lun
 		Size: 1, 1
@@ -263,10 +251,8 @@ Templates:
 				RampType: 17
 				LeftColor: 615970
 				RightColor: 99589D
-				ZOffset: -15
-				ZRamp: 0
 	Template@19:
-		Category: ZMM Ramps
+		Categories: ZMM Ramps
 		Id: 19
 		Images: mslop18.lun, mslop18a.lun, mslop18b.lun, mslop18c.lun
 		Size: 1, 1
@@ -275,10 +261,8 @@ Templates:
 				RampType: 18
 				LeftColor: 99589D
 				RightColor: 615970
-				ZOffset: -15
-				ZRamp: 0
 	Template@20:
-		Category: ZMM Ramps
+		Categories: ZMM Ramps
 		Id: 20
 		Images: mslop19.lun
 		Size: 1, 1
@@ -287,10 +271,8 @@ Templates:
 				RampType: 19
 				LeftColor: 40734D
 				RightColor: 837476
-				ZOffset: -15
-				ZRamp: 0
 	Template@21:
-		Category: ZMM Ramps
+		Categories: ZMM Ramps
 		Id: 21
 		Images: mslop20.lun
 		Size: 1, 1
@@ -299,10 +281,8 @@ Templates:
 				RampType: 20
 				LeftColor: 59486F
 				RightColor: 5F876A
-				ZOffset: -15
-				ZRamp: 0
 	Template@29:
-		Category: Ramps
+		Categories: Ramps
 		Id: 29
 		Images: slope01.lun, slope01a.lun, slope01b.lun, slope01c.lun
 		Size: 1, 1
@@ -311,10 +291,8 @@ Templates:
 				RampType: 1
 				LeftColor: 848894
 				RightColor: 838793
-				ZOffset: -15
-				ZRamp: 0
 	Template@30:
-		Category: Ramps
+		Categories: Ramps
 		Id: 30
 		Images: slope02.lun, slope02a.lun, slope02b.lun, slope02c.lun
 		Size: 1, 1
@@ -323,10 +301,8 @@ Templates:
 				RampType: 2
 				LeftColor: 7B808C
 				RightColor: 787C88
-				ZOffset: -15
-				ZRamp: 0
 	Template@31:
-		Category: Ramps
+		Categories: Ramps
 		Id: 31
 		Images: slope03.lun, slope03a.lun, slope03b.lun, slope03c.lun
 		Size: 1, 1
@@ -335,10 +311,8 @@ Templates:
 				RampType: 3
 				LeftColor: A2A6AE
 				RightColor: A2A6AE
-				ZOffset: -15
-				ZRamp: 0
 	Template@32:
-		Category: Ramps
+		Categories: Ramps
 		Id: 32
 		Images: slope04.lun, slope04a.lun, slope04b.lun, slope04c.lun
 		Size: 1, 1
@@ -347,10 +321,8 @@ Templates:
 				RampType: 4
 				LeftColor: B2B5BD
 				RightColor: B8BAC1
-				ZOffset: -15
-				ZRamp: 0
 	Template@33:
-		Category: Ramps
+		Categories: Ramps
 		Id: 33
 		Images: slope05.lun, slope05a.lun, slope05b.lun, slope05c.lun
 		Size: 1, 1
@@ -359,10 +331,8 @@ Templates:
 				RampType: 5
 				LeftColor: 848893
 				RightColor: 787D89
-				ZOffset: -15
-				ZRamp: 0
 	Template@34:
-		Category: Ramps
+		Categories: Ramps
 		Id: 34
 		Images: slope06.lun, slope06a.lun, slope06b.lun, slope06c.lun
 		Size: 1, 1
@@ -371,10 +341,8 @@ Templates:
 				RampType: 6
 				LeftColor: 818591
 				RightColor: 9FA3AC
-				ZOffset: -15
-				ZRamp: 0
 	Template@35:
-		Category: Ramps
+		Categories: Ramps
 		Id: 35
 		Images: slope07.lun, slope07a.lun, slope07b.lun, slope07c.lun
 		Size: 1, 1
@@ -383,10 +351,8 @@ Templates:
 				RampType: 7
 				LeftColor: B5B8BF
 				RightColor: A4A7B0
-				ZOffset: -15
-				ZRamp: 0
 	Template@36:
-		Category: Ramps
+		Categories: Ramps
 		Id: 36
 		Images: slope08.lun, slope08a.lun, slope08b.lun, slope08c.lun
 		Size: 1, 1
@@ -395,10 +361,8 @@ Templates:
 				RampType: 8
 				LeftColor: A4A8B0
 				RightColor: A7AAB3
-				ZOffset: -15
-				ZRamp: 0
 	Template@37:
-		Category: Ramps
+		Categories: Ramps
 		Id: 37
 		Images: slope09.lun, slope09a.lun, slope09b.lun, slope09c.lun
 		Size: 1, 1
@@ -407,10 +371,8 @@ Templates:
 				RampType: 9
 				LeftColor: A3A7AF
 				RightColor: A7ABB3
-				ZOffset: -15
-				ZRamp: 0
 	Template@38:
-		Category: Ramps
+		Categories: Ramps
 		Id: 38
 		Images: slope10.lun, slope10a.lun, slope10b.lun, slope10c.lun
 		Size: 1, 1
@@ -419,10 +381,8 @@ Templates:
 				RampType: 10
 				LeftColor: 9CA0A9
 				RightColor: 7D818D
-				ZOffset: -15
-				ZRamp: 0
 	Template@39:
-		Category: Ramps
+		Categories: Ramps
 		Id: 39
 		Images: slope11.lun, slope11a.lun, slope11b.lun, slope11c.lun
 		Size: 1, 1
@@ -431,10 +391,8 @@ Templates:
 				RampType: 11
 				LeftColor: A4A8B0
 				RightColor: B8BBC1
-				ZOffset: -15
-				ZRamp: 0
 	Template@40:
-		Category: Ramps
+		Categories: Ramps
 		Id: 40
 		Images: slope12.lun, slope12a.lun, slope12b.lun, slope12c.lun
 		Size: 1, 1
@@ -443,10 +401,8 @@ Templates:
 				RampType: 12
 				LeftColor: A0A3AC
 				RightColor: A4A8B1
-				ZOffset: -15
-				ZRamp: 0
 	Template@41:
-		Category: Ramps
+		Categories: Ramps
 		Id: 41
 		Images: slope13.lun, slope13a.lun, slope13b.lun, slope13c.lun
 		Size: 1, 1
@@ -455,10 +411,8 @@ Templates:
 				RampType: 13
 				LeftColor: 484C60
 				RightColor: 484C60
-				ZOffset: -15
-				ZRamp: 0
 	Template@42:
-		Category: Ramps
+		Categories: Ramps
 		Id: 42
 		Images: slope14.lun, slope14a.lun, slope14b.lun, slope14c.lun
 		Size: 1, 1
@@ -467,10 +421,8 @@ Templates:
 				RampType: 14
 				LeftColor: 808490
 				RightColor: 7A7F8B
-				ZOffset: -15
-				ZRamp: 0
 	Template@43:
-		Category: Ramps
+		Categories: Ramps
 		Id: 43
 		Images: slope15.lun, slope15a.lun, slope15b.lun, slope15c.lun
 		Size: 1, 1
@@ -479,10 +431,8 @@ Templates:
 				RampType: 15
 				LeftColor: A9ADB5
 				RightColor: A9ADB5
-				ZOffset: -15
-				ZRamp: 0
 	Template@44:
-		Category: Ramps
+		Categories: Ramps
 		Id: 44
 		Images: slope16.lun, slope16a.lun, slope16b.lun, slope16c.lun
 		Size: 1, 1
@@ -491,10 +441,8 @@ Templates:
 				RampType: 16
 				LeftColor: A0A3AC
 				RightColor: A7AAB3
-				ZOffset: -15
-				ZRamp: 0
 	Template@45:
-		Category: Ramps
+		Categories: Ramps
 		Id: 45
 		Images: slope17.lun
 		Size: 1, 1
@@ -503,10 +451,8 @@ Templates:
 				RampType: 17
 				LeftColor: 818691
 				RightColor: A3A6AF
-				ZOffset: -15
-				ZRamp: 0
 	Template@46:
-		Category: Ramps
+		Categories: Ramps
 		Id: 46
 		Images: slope18.lun
 		Size: 1, 1
@@ -515,10 +461,8 @@ Templates:
 				RampType: 20
 				LeftColor: 9EA2AB
 				RightColor: 7D818D
-				ZOffset: -15
-				ZRamp: 0
 	Template@47:
-		Category: Ramps
+		Categories: Ramps
 		Id: 47
 		Images: slope19.lun
 		Size: 1, 1
@@ -527,10 +471,8 @@ Templates:
 				RampType: 17
 				LeftColor: 818691
 				RightColor: A3A6AF
-				ZOffset: -15
-				ZRamp: 0
 	Template@48:
-		Category: Ramps
+		Categories: Ramps
 		Id: 48
 		Images: slope20.lun
 		Size: 1, 1
@@ -539,10 +481,8 @@ Templates:
 				RampType: 20
 				LeftColor: 9EA2AB
 				RightColor: 7D818D
-				ZOffset: -15
-				ZRamp: 0
 	Template@49:
-		Category: LAT Moon Dirt Dark
+		Categories: LAT Moon Dirt Dark
 		Id: 49
 		Images: ruff01.lun, ruff01a.lun, ruff01b.lun, ruff01c.lun, ruff01d.lun, ruff01e.lun, ruff01f.lun, ruff01g.lun
 		Size: 1, 1
@@ -550,10 +490,8 @@ Templates:
 			0: Clear
 				LeftColor: 777B88
 				RightColor: 7B7F8B
-				ZOffset: -15
-				ZRamp: 0
 	Template@50:
-		Category: Moon Dirt Dark Individual
+		Categories: Moon Dirt Dark Individual
 		Id: 50
 		Images: clat01.lun, clat01a.lun
 		Size: 1, 1
@@ -561,10 +499,8 @@ Templates:
 			0: Clear
 				LeftColor: 878B96
 				RightColor: 838793
-				ZOffset: -15
-				ZRamp: 0
 	Template@51:
-		Category: Moon Dirt Dark Individual
+		Categories: Moon Dirt Dark Individual
 		Id: 51
 		Images: clat02.lun, clat02a.lun
 		Size: 1, 1
@@ -572,10 +508,8 @@ Templates:
 			0: Clear
 				LeftColor: 838793
 				RightColor: 9A9EA7
-				ZOffset: -15
-				ZRamp: 0
 	Template@52:
-		Category: Moon Dirt Dark Individual
+		Categories: Moon Dirt Dark Individual
 		Id: 52
 		Images: clat03.lun, clat03a.lun
 		Size: 1, 1
@@ -583,10 +517,8 @@ Templates:
 			0: Clear
 				LeftColor: 818591
 				RightColor: 8C909A
-				ZOffset: -15
-				ZRamp: 0
 	Template@53:
-		Category: Moon Dirt Dark Individual
+		Categories: Moon Dirt Dark Individual
 		Id: 53
 		Images: clat04.lun, clat04a.lun
 		Size: 1, 1
@@ -594,10 +526,8 @@ Templates:
 			0: Clear
 				LeftColor: 8A8E99
 				RightColor: A6AAB2
-				ZOffset: -15
-				ZRamp: 0
 	Template@54:
-		Category: Moon Dirt Dark Individual
+		Categories: Moon Dirt Dark Individual
 		Id: 54
 		Images: clat05.lun, clat05a.lun
 		Size: 1, 1
@@ -605,10 +535,8 @@ Templates:
 			0: Clear
 				LeftColor: 888C97
 				RightColor: 7C808C
-				ZOffset: -15
-				ZRamp: 0
 	Template@55:
-		Category: Moon Dirt Dark Individual
+		Categories: Moon Dirt Dark Individual
 		Id: 55
 		Images: clat06.lun, clat06a.lun
 		Size: 1, 1
@@ -616,10 +544,8 @@ Templates:
 			0: Clear
 				LeftColor: 828792
 				RightColor: 9397A1
-				ZOffset: -15
-				ZRamp: 0
 	Template@56:
-		Category: Moon Dirt Dark Individual
+		Categories: Moon Dirt Dark Individual
 		Id: 56
 		Images: clat07.lun, clat07a.lun
 		Size: 1, 1
@@ -627,10 +553,8 @@ Templates:
 			0: Clear
 				LeftColor: 7B808C
 				RightColor: 838793
-				ZOffset: -15
-				ZRamp: 0
 	Template@57:
-		Category: Moon Dirt Dark Individual
+		Categories: Moon Dirt Dark Individual
 		Id: 57
 		Images: clat08.lun, clat08a.lun
 		Size: 1, 1
@@ -638,10 +562,8 @@ Templates:
 			0: Clear
 				LeftColor: 828692
 				RightColor: A4A8B1
-				ZOffset: -15
-				ZRamp: 0
 	Template@58:
-		Category: Moon Dirt Dark Individual
+		Categories: Moon Dirt Dark Individual
 		Id: 58
 		Images: clat09.lun, clat09a.lun
 		Size: 1, 1
@@ -649,10 +571,8 @@ Templates:
 			0: Clear
 				LeftColor: 9B9FA8
 				RightColor: 848893
-				ZOffset: -15
-				ZRamp: 0
 	Template@59:
-		Category: Moon Dirt Dark Individual
+		Categories: Moon Dirt Dark Individual
 		Id: 59
 		Images: clat10.lun, clat10a.lun
 		Size: 1, 1
@@ -660,10 +580,8 @@ Templates:
 			0: Clear
 				LeftColor: 9DA1AA
 				RightColor: 9A9EA7
-				ZOffset: -15
-				ZRamp: 0
 	Template@60:
-		Category: Moon Dirt Dark Individual
+		Categories: Moon Dirt Dark Individual
 		Id: 60
 		Images: clat11.lun, clat11a.lun
 		Size: 1, 1
@@ -671,10 +589,8 @@ Templates:
 			0: Clear
 				LeftColor: 989CA5
 				RightColor: 8A8E99
-				ZOffset: -15
-				ZRamp: 0
 	Template@61:
-		Category: Moon Dirt Dark Individual
+		Categories: Moon Dirt Dark Individual
 		Id: 61
 		Images: clat12.lun, clat12a.lun
 		Size: 1, 1
@@ -682,10 +598,8 @@ Templates:
 			0: Clear
 				LeftColor: 9296A0
 				RightColor: A5A9B1
-				ZOffset: -15
-				ZRamp: 0
 	Template@62:
-		Category: Moon Dirt Dark Individual
+		Categories: Moon Dirt Dark Individual
 		Id: 62
 		Images: clat13.lun, clat13a.lun
 		Size: 1, 1
@@ -693,10 +607,8 @@ Templates:
 			0: Clear
 				LeftColor: 9EA2AB
 				RightColor: 838893
-				ZOffset: -15
-				ZRamp: 0
 	Template@63:
-		Category: Moon Dirt Dark Individual
+		Categories: Moon Dirt Dark Individual
 		Id: 63
 		Images: clat14.lun, clat14a.lun
 		Size: 1, 1
@@ -704,10 +616,8 @@ Templates:
 			0: Clear
 				LeftColor: 989CA6
 				RightColor: 9397A1
-				ZOffset: -15
-				ZRamp: 0
 	Template@64:
-		Category: Moon Dirt Dark Individual
+		Categories: Moon Dirt Dark Individual
 		Id: 64
 		Images: clat15.lun, clat15a.lun
 		Size: 1, 1
@@ -715,10 +625,8 @@ Templates:
 			0: Clear
 				LeftColor: 989CA6
 				RightColor: 838793
-				ZOffset: -15
-				ZRamp: 0
 	Template@65:
-		Category: Moon Dirt Dark Individual
+		Categories: Moon Dirt Dark Individual
 		Id: 65
 		Images: clat16.lun, clat16a.lun
 		Size: 1, 1
@@ -726,10 +634,8 @@ Templates:
 			0: Clear
 				LeftColor: 90949E
 				RightColor: 9A9EA8
-				ZOffset: -15
-				ZRamp: 0
 	Template@76:
-		Category: LAT Grass Rough
+		Categories: LAT Grass Rough
 		Id: 76
 		Images: sandy01.lun, sandy01a.lun, sandy01b.lun, sandy01c.lun, sandy01d.lun, sandy01e.lun, sandy01f.lun, sandy01g.lun
 		Size: 1, 1
@@ -737,10 +643,8 @@ Templates:
 			0: Rough
 				LeftColor: 9F974B
 				RightColor: 9C9147
-				ZOffset: -15
-				ZRamp: 0
 	Template@77:
-		Category: GrassRough Individual
+		Categories: GrassRough Individual
 		Id: 77
 		Images: dlat01.lun, dlat01a.lun
 		Size: 1, 1
@@ -748,10 +652,8 @@ Templates:
 			0: Rough
 				LeftColor: A59849
 				RightColor: A09147
-				ZOffset: -15
-				ZRamp: 0
 	Template@78:
-		Category: GrassRough Individual
+		Categories: GrassRough Individual
 		Id: 78
 		Images: dlat02.lun, dlat02a.lun
 		Size: 1, 1
@@ -759,10 +661,8 @@ Templates:
 			0: Rough
 				LeftColor: 9F994B
 				RightColor: A59846
-				ZOffset: -15
-				ZRamp: 0
 	Template@79:
-		Category: GrassRough Individual
+		Categories: GrassRough Individual
 		Id: 79
 		Images: dlat03.lun, dlat03a.lun
 		Size: 1, 1
@@ -770,10 +670,8 @@ Templates:
 			0: Rough
 				LeftColor: B49F4A
 				RightColor: A29647
-				ZOffset: -15
-				ZRamp: 0
 	Template@80:
-		Category: GrassRough Individual
+		Categories: GrassRough Individual
 		Id: 80
 		Images: dlat04.lun, dlat04a.lun
 		Size: 1, 1
@@ -781,10 +679,8 @@ Templates:
 			0: Rough
 				LeftColor: BCA14B
 				RightColor: A9A64F
-				ZOffset: -15
-				ZRamp: 0
 	Template@81:
-		Category: GrassRough Individual
+		Categories: GrassRough Individual
 		Id: 81
 		Images: dlat05.lun, dlat05a.lun
 		Size: 1, 1
@@ -792,10 +688,8 @@ Templates:
 			0: Rough
 				LeftColor: A4994C
 				RightColor: 9E8F49
-				ZOffset: -15
-				ZRamp: 0
 	Template@82:
-		Category: GrassRough Individual
+		Categories: GrassRough Individual
 		Id: 82
 		Images: dlat06.lun, dlat06a.lun
 		Size: 1, 1
@@ -803,10 +697,8 @@ Templates:
 			0: Rough
 				LeftColor: AF9F49
 				RightColor: AA9C4C
-				ZOffset: -15
-				ZRamp: 0
 	Template@83:
-		Category: GrassRough Individual
+		Categories: GrassRough Individual
 		Id: 83
 		Images: dlat07.lun, dlat07a.lun
 		Size: 1, 1
@@ -814,10 +706,8 @@ Templates:
 			0: Rough
 				LeftColor: 908D46
 				RightColor: AD9A49
-				ZOffset: -15
-				ZRamp: 0
 	Template@84:
-		Category: GrassRough Individual
+		Categories: GrassRough Individual
 		Id: 84
 		Images: dlat08.lun, dlat08a.lun
 		Size: 1, 1
@@ -825,10 +715,8 @@ Templates:
 			0: Rough
 				LeftColor: B19C4C
 				RightColor: A59B4D
-				ZOffset: -15
-				ZRamp: 0
 	Template@85:
-		Category: GrassRough Individual
+		Categories: GrassRough Individual
 		Id: 85
 		Images: dlat09.lun, dlat09a.lun
 		Size: 1, 1
@@ -836,10 +724,8 @@ Templates:
 			0: Rough
 				LeftColor: AC9E4F
 				RightColor: A2944C
-				ZOffset: -15
-				ZRamp: 0
 	Template@86:
-		Category: GrassRough Individual
+		Categories: GrassRough Individual
 		Id: 86
 		Images: dlat10.lun, dlat10a.lun
 		Size: 1, 1
@@ -847,10 +733,8 @@ Templates:
 			0: Rough
 				LeftColor: B9A954
 				RightColor: AE9E4D
-				ZOffset: -15
-				ZRamp: 0
 	Template@87:
-		Category: GrassRough Individual
+		Categories: GrassRough Individual
 		Id: 87
 		Images: dlat11.lun, dlat11a.lun
 		Size: 1, 1
@@ -858,10 +742,8 @@ Templates:
 			0: Rough
 				LeftColor: A8A14E
 				RightColor: ADA14E
-				ZOffset: -15
-				ZRamp: 0
 	Template@88:
-		Category: GrassRough Individual
+		Categories: GrassRough Individual
 		Id: 88
 		Images: dlat12.lun, dlat12a.lun
 		Size: 1, 1
@@ -869,10 +751,8 @@ Templates:
 			0: Rough
 				LeftColor: A79A4C
 				RightColor: 9FA04E
-				ZOffset: -15
-				ZRamp: 0
 	Template@89:
-		Category: GrassRough Individual
+		Categories: GrassRough Individual
 		Id: 89
 		Images: dlat13.lun, dlat13a.lun
 		Size: 1, 1
@@ -880,10 +760,8 @@ Templates:
 			0: Rough
 				LeftColor: A3A050
 				RightColor: B5974A
-				ZOffset: -15
-				ZRamp: 0
 	Template@90:
-		Category: GrassRough Individual
+		Categories: GrassRough Individual
 		Id: 90
 		Images: dlat14.lun, dlat14a.lun
 		Size: 1, 1
@@ -891,10 +769,8 @@ Templates:
 			0: Rough
 				LeftColor: ADA350
 				RightColor: A49947
-				ZOffset: -15
-				ZRamp: 0
 	Template@91:
-		Category: GrassRough Individual
+		Categories: GrassRough Individual
 		Id: 91
 		Images: dlat15.lun, dlat15a.lun
 		Size: 1, 1
@@ -902,10 +778,8 @@ Templates:
 			0: Rough
 				LeftColor: 9DA148
 				RightColor: A69A49
-				ZOffset: -15
-				ZRamp: 0
 	Template@92:
-		Category: GrassRough Individual
+		Categories: GrassRough Individual
 		Id: 92
 		Images: dlat16.lun, dlat16a.lun
 		Size: 1, 1
@@ -913,10 +787,8 @@ Templates:
 			0: Rough
 				LeftColor: A69B4C
 				RightColor: 9F994B
-				ZOffset: -15
-				ZRamp: 0
 	Template@93:
-		Category: Pavement Individual
+		Categories: Pavement Individual
 		Id: 93
 		Images: plat01.lun, plat01a.lun
 		Size: 1, 1
@@ -924,10 +796,8 @@ Templates:
 			0: Road
 				LeftColor: AEAA92
 				RightColor: ABA78E
-				ZOffset: -15
-				ZRamp: 0
 	Template@94:
-		Category: Pavement Individual
+		Categories: Pavement Individual
 		Id: 94
 		Images: plat02.lun, plat02a.lun
 		Size: 1, 1
@@ -935,10 +805,8 @@ Templates:
 			0: Road
 				LeftColor: BBB4A8
 				RightColor: B8B59D
-				ZOffset: -15
-				ZRamp: 0
 	Template@95:
-		Category: Pavement Individual
+		Categories: Pavement Individual
 		Id: 95
 		Images: plat03.lun, plat03a.lun
 		Size: 1, 1
@@ -946,10 +814,8 @@ Templates:
 			0: Road
 				LeftColor: B7AE9D
 				RightColor: B4AE90
-				ZOffset: -15
-				ZRamp: 0
 	Template@96:
-		Category: Pavement Individual
+		Categories: Pavement Individual
 		Id: 96
 		Images: plat04.lun, plat04a.lun
 		Size: 1, 1
@@ -957,10 +823,8 @@ Templates:
 			0: Road
 				LeftColor: B2AA9E
 				RightColor: 9FA45F
-				ZOffset: -15
-				ZRamp: 0
 	Template@97:
-		Category: Pavement Individual
+		Categories: Pavement Individual
 		Id: 97
 		Images: plat05.lun, plat05a.lun
 		Size: 1, 1
@@ -968,10 +832,8 @@ Templates:
 			0: Road
 				LeftColor: ACA58C
 				RightColor: B5AC9D
-				ZOffset: -15
-				ZRamp: 0
 	Template@98:
-		Category: Pavement Individual
+		Categories: Pavement Individual
 		Id: 98
 		Images: plat06.lun, plat06a.lun
 		Size: 1, 1
@@ -979,10 +841,8 @@ Templates:
 			0: Road
 				LeftColor: ABA58A
 				RightColor: B7B096
-				ZOffset: -15
-				ZRamp: 0
 	Template@99:
-		Category: Pavement Individual
+		Categories: Pavement Individual
 		Id: 99
 		Images: plat07.lun, plat07a.lun
 		Size: 1, 1
@@ -990,10 +850,8 @@ Templates:
 			0: Road
 				LeftColor: A2A179
 				RightColor: ABA986
-				ZOffset: -15
-				ZRamp: 0
 	Template@100:
-		Category: Pavement Individual
+		Categories: Pavement Individual
 		Id: 100
 		Images: plat08.lun, plat08a.lun
 		Size: 1, 1
@@ -1001,10 +859,8 @@ Templates:
 			0: Road
 				LeftColor: B4ADA2
 				RightColor: B1AD90
-				ZOffset: -15
-				ZRamp: 0
 	Template@101:
-		Category: Pavement Individual
+		Categories: Pavement Individual
 		Id: 101
 		Images: plat09.lun, plat09a.lun
 		Size: 1, 1
@@ -1012,10 +868,8 @@ Templates:
 			0: Road
 				LeftColor: B9B49E
 				RightColor: B8B1A4
-				ZOffset: -15
-				ZRamp: 0
 	Template@102:
-		Category: Pavement Individual
+		Categories: Pavement Individual
 		Id: 102
 		Images: plat10.lun, plat10a.lun
 		Size: 1, 1
@@ -1023,10 +877,8 @@ Templates:
 			0: Road
 				LeftColor: ACAA7B
 				RightColor: ACAB80
-				ZOffset: -15
-				ZRamp: 0
 	Template@103:
-		Category: Pavement Individual
+		Categories: Pavement Individual
 		Id: 103
 		Images: plat11.lun, plat11a.lun
 		Size: 1, 1
@@ -1034,10 +886,8 @@ Templates:
 			0: Road
 				LeftColor: B6B19D
 				RightColor: B2AC98
-				ZOffset: -15
-				ZRamp: 0
 	Template@104:
-		Category: Pavement Individual
+		Categories: Pavement Individual
 		Id: 104
 		Images: plat12.lun, plat12a.lun
 		Size: 1, 1
@@ -1045,10 +895,8 @@ Templates:
 			0: Road
 				LeftColor: B9B19C
 				RightColor: B1AC81
-				ZOffset: -15
-				ZRamp: 0
 	Template@105:
-		Category: Pavement Individual
+		Categories: Pavement Individual
 		Id: 105
 		Images: plat13.lun, plat13a.lun
 		Size: 1, 1
@@ -1056,10 +904,8 @@ Templates:
 			0: Road
 				LeftColor: 9AA355
 				RightColor: B1AC9E
-				ZOffset: -15
-				ZRamp: 0
 	Template@106:
-		Category: Pavement Individual
+		Categories: Pavement Individual
 		Id: 106
 		Images: plat14.lun, plat14a.lun
 		Size: 1, 1
@@ -1067,10 +913,8 @@ Templates:
 			0: Road
 				LeftColor: AAAA7C
 				RightColor: B8B395
-				ZOffset: -15
-				ZRamp: 0
 	Template@107:
-		Category: Pavement Individual
+		Categories: Pavement Individual
 		Id: 107
 		Images: plat15.lun, plat15a.lun
 		Size: 1, 1
@@ -1078,10 +922,8 @@ Templates:
 			0: Road
 				LeftColor: A9AA76
 				RightColor: ADA88A
-				ZOffset: -15
-				ZRamp: 0
 	Template@108:
-		Category: Pavement Individual
+		Categories: Pavement Individual
 		Id: 108
 		Images: plat16.lun, plat16a.lun
 		Size: 1, 1
@@ -1089,10 +931,8 @@ Templates:
 			0: Road
 				LeftColor: ADAC82
 				RightColor: B2B08A
-				ZOffset: -15
-				ZRamp: 0
 	Template@109:
-		Category: LAT Moon Dirt Light
+		Categories: LAT Moon Dirt Light
 		Id: 109
 		Images: green01.lun, green01a.lun, green01b.lun, green01c.lun, green01d.lun, green01e.lun, green01f.lun, green01g.lun
 		Size: 1, 1
@@ -1100,10 +940,8 @@ Templates:
 			0: Rough
 				LeftColor: 989BA5
 				RightColor: A0A3AC
-				ZOffset: -15
-				ZRamp: 0
 	Template@110:
-		Category: Moon Dirt Light Individual
+		Categories: Moon Dirt Light Individual
 		Id: 110
 		Images: glat01.lun, glat01a.lun
 		Size: 1, 1
@@ -1111,10 +949,8 @@ Templates:
 			0: Clear
 				LeftColor: 9296A0
 				RightColor: A2A5AE
-				ZOffset: -15
-				ZRamp: 0
 	Template@111:
-		Category: Moon Dirt Light Individual
+		Categories: Moon Dirt Light Individual
 		Id: 111
 		Images: glat02.lun, glat02a.lun
 		Size: 1, 1
@@ -1122,10 +958,8 @@ Templates:
 			0: Clear
 				LeftColor: 9599A3
 				RightColor: 9599A3
-				ZOffset: -15
-				ZRamp: 0
 	Template@112:
-		Category: Moon Dirt Light Individual
+		Categories: Moon Dirt Light Individual
 		Id: 112
 		Images: glat03.lun, glat03a.lun
 		Size: 1, 1
@@ -1133,10 +967,8 @@ Templates:
 			0: Clear
 				LeftColor: 9A9DA7
 				RightColor: A4A7B0
-				ZOffset: -15
-				ZRamp: 0
 	Template@113:
-		Category: Moon Dirt Light Individual
+		Categories: Moon Dirt Light Individual
 		Id: 113
 		Images: glat04.lun, glat04a.lun
 		Size: 1, 1
@@ -1144,10 +976,8 @@ Templates:
 			0: Clear
 				LeftColor: 90949E
 				RightColor: A3A7B0
-				ZOffset: -15
-				ZRamp: 0
 	Template@114:
-		Category: Moon Dirt Light Individual
+		Categories: Moon Dirt Light Individual
 		Id: 114
 		Images: glat05.lun, glat05a.lun
 		Size: 1, 1
@@ -1155,10 +985,8 @@ Templates:
 			0: Clear
 				LeftColor: A6A9B1
 				RightColor: A3A6AF
-				ZOffset: -15
-				ZRamp: 0
 	Template@115:
-		Category: Moon Dirt Light Individual
+		Categories: Moon Dirt Light Individual
 		Id: 115
 		Images: glat06.lun, glat06a.lun
 		Size: 1, 1
@@ -1166,10 +994,8 @@ Templates:
 			0: Clear
 				LeftColor: A1A5AD
 				RightColor: 90949E
-				ZOffset: -15
-				ZRamp: 0
 	Template@116:
-		Category: Moon Dirt Light Individual
+		Categories: Moon Dirt Light Individual
 		Id: 116
 		Images: glat07.lun, glat07a.lun
 		Size: 1, 1
@@ -1177,10 +1003,8 @@ Templates:
 			0: Clear
 				LeftColor: A6A9B1
 				RightColor: A8ABB3
-				ZOffset: -15
-				ZRamp: 0
 	Template@117:
-		Category: Moon Dirt Light Individual
+		Categories: Moon Dirt Light Individual
 		Id: 117
 		Images: glat08.lun, glat08a.lun
 		Size: 1, 1
@@ -1188,10 +1012,8 @@ Templates:
 			0: Clear
 				LeftColor: A4A7B0
 				RightColor: 9B9FA8
-				ZOffset: -15
-				ZRamp: 0
 	Template@118:
-		Category: Moon Dirt Light Individual
+		Categories: Moon Dirt Light Individual
 		Id: 118
 		Images: glat09.lun, glat09a.lun
 		Size: 1, 1
@@ -1199,10 +1021,8 @@ Templates:
 			0: Clear
 				LeftColor: 9599A3
 				RightColor: A2A5AE
-				ZOffset: -15
-				ZRamp: 0
 	Template@119:
-		Category: Moon Dirt Light Individual
+		Categories: Moon Dirt Light Individual
 		Id: 119
 		Images: glat10.lun, glat10a.lun
 		Size: 1, 1
@@ -1210,10 +1030,8 @@ Templates:
 			0: Clear
 				LeftColor: 9599A3
 				RightColor: 9195A0
-				ZOffset: -15
-				ZRamp: 0
 	Template@120:
-		Category: Moon Dirt Light Individual
+		Categories: Moon Dirt Light Individual
 		Id: 120
 		Images: glat11.lun, glat11a.lun
 		Size: 1, 1
@@ -1221,10 +1039,8 @@ Templates:
 			0: Clear
 				LeftColor: 989CA5
 				RightColor: 9FA3AC
-				ZOffset: -15
-				ZRamp: 0
 	Template@121:
-		Category: Moon Dirt Light Individual
+		Categories: Moon Dirt Light Individual
 		Id: 121
 		Images: glat12.lun, glat12a.lun
 		Size: 1, 1
@@ -1232,10 +1048,8 @@ Templates:
 			0: Clear
 				LeftColor: 9397A1
 				RightColor: 999DA6
-				ZOffset: -15
-				ZRamp: 0
 	Template@122:
-		Category: Moon Dirt Light Individual
+		Categories: Moon Dirt Light Individual
 		Id: 122
 		Images: glat13.lun, glat13a.lun
 		Size: 1, 1
@@ -1243,10 +1057,8 @@ Templates:
 			0: Clear
 				LeftColor: A3A7AF
 				RightColor: A1A4AD
-				ZOffset: -15
-				ZRamp: 0
 	Template@123:
-		Category: Moon Dirt Light Individual
+		Categories: Moon Dirt Light Individual
 		Id: 123
 		Images: glat14.lun, glat14a.lun
 		Size: 1, 1
@@ -1254,10 +1066,8 @@ Templates:
 			0: Clear
 				LeftColor: A5A8B1
 				RightColor: 9396A1
-				ZOffset: -15
-				ZRamp: 0
 	Template@124:
-		Category: Moon Dirt Light Individual
+		Categories: Moon Dirt Light Individual
 		Id: 124
 		Images: glat15.lun, glat15a.lun
 		Size: 1, 1
@@ -1265,10 +1075,8 @@ Templates:
 			0: Clear
 				LeftColor: A4A8B0
 				RightColor: A6A9B2
-				ZOffset: -15
-				ZRamp: 0
 	Template@125:
-		Category: Moon Dirt Light Individual
+		Categories: Moon Dirt Light Individual
 		Id: 125
 		Images: glat16.lun, glat16a.lun
 		Size: 1, 1
@@ -1276,10 +1084,8 @@ Templates:
 			0: Clear
 				LeftColor: A0A3AC
 				RightColor: 9599A3
-				ZOffset: -15
-				ZRamp: 0
 	Template@126:
-		Category: Ramp edge fixup
+		Categories: Ramp edge fixup
 		Id: 126
 		Images: rmpfx01.lun, rmpfx01a.lun, rmpfx01b.lun, rmpfx01c.lun
 		Size: 1, 1
@@ -1288,10 +1094,8 @@ Templates:
 				RampType: 1
 				LeftColor: 8C909B
 				RightColor: 838893
-				ZOffset: -15
-				ZRamp: 0
 	Template@127:
-		Category: Ramp edge fixup
+		Categories: Ramp edge fixup
 		Id: 127
 		Images: rmpfx02.lun, rmpfx02a.lun, rmpfx02b.lun, rmpfx02c.lun
 		Size: 1, 1
@@ -1300,10 +1104,8 @@ Templates:
 				RampType: 1
 				LeftColor: 848894
 				RightColor: 8A8E99
-				ZOffset: -15
-				ZRamp: 0
 	Template@128:
-		Category: Ramp edge fixup
+		Categories: Ramp edge fixup
 		Id: 128
 		Images: rmpfx03.lun, rmpfx03a.lun, rmpfx03b.lun, rmpfx03c.lun
 		Size: 1, 1
@@ -1312,10 +1114,8 @@ Templates:
 				RampType: 1
 				LeftColor: 8C909B
 				RightColor: 8A8F99
-				ZOffset: -15
-				ZRamp: 0
 	Template@129:
-		Category: Ramp edge fixup
+		Categories: Ramp edge fixup
 		Id: 129
 		Images: rmpfx04.lun, rmpfx04a.lun, rmpfx04b.lun, rmpfx04c.lun
 		Size: 1, 1
@@ -1324,10 +1124,8 @@ Templates:
 				RampType: 2
 				LeftColor: 7C808C
 				RightColor: 878B96
-				ZOffset: -15
-				ZRamp: 0
 	Template@130:
-		Category: Ramp edge fixup
+		Categories: Ramp edge fixup
 		Id: 130
 		Images: rmpfx05.lun, rmpfx05a.lun, rmpfx05b.lun, rmpfx05c.lun
 		Size: 1, 1
@@ -1336,10 +1134,8 @@ Templates:
 				RampType: 2
 				LeftColor: 858995
 				RightColor: 787D89
-				ZOffset: -15
-				ZRamp: 0
 	Template@131:
-		Category: Ramp edge fixup
+		Categories: Ramp edge fixup
 		Id: 131
 		Images: rmpfx06.lun, rmpfx06a.lun, rmpfx06b.lun, rmpfx06c.lun
 		Size: 1, 1
@@ -1348,10 +1144,8 @@ Templates:
 				RampType: 2
 				LeftColor: 868A95
 				RightColor: 878B96
-				ZOffset: -15
-				ZRamp: 0
 	Template@132:
-		Category: Ramp edge fixup
+		Categories: Ramp edge fixup
 		Id: 132
 		Images: rmpfx07.lun, rmpfx07a.lun, rmpfx07b.lun, rmpfx07c.lun
 		Size: 1, 1
@@ -1360,10 +1154,8 @@ Templates:
 				RampType: 3
 				LeftColor: A2A6AE
 				RightColor: A3A6AF
-				ZOffset: -15
-				ZRamp: 0
 	Template@133:
-		Category: Ramp edge fixup
+		Categories: Ramp edge fixup
 		Id: 133
 		Images: rmpfx08.lun, rmpfx08a.lun, rmpfx08b.lun, rmpfx08c.lun
 		Size: 1, 1
@@ -1372,10 +1164,8 @@ Templates:
 				RampType: 3
 				LeftColor: A1A5AE
 				RightColor: A2A6AE
-				ZOffset: -15
-				ZRamp: 0
 	Template@134:
-		Category: Ramp edge fixup
+		Categories: Ramp edge fixup
 		Id: 134
 		Images: rmpfx09.lun, rmpfx09a.lun, rmpfx09b.lun, rmpfx09c.lun
 		Size: 1, 1
@@ -1384,10 +1174,8 @@ Templates:
 				RampType: 3
 				LeftColor: A1A5AE
 				RightColor: A3A6AF
-				ZOffset: -15
-				ZRamp: 0
 	Template@135:
-		Category: Ramp edge fixup
+		Categories: Ramp edge fixup
 		Id: 135
 		Images: rmpfx10.lun, rmpfx10a.lun, rmpfx10b.lun, rmpfx10c.lun
 		Size: 1, 1
@@ -1396,10 +1184,8 @@ Templates:
 				RampType: 4
 				LeftColor: BCBEC4
 				RightColor: C5C7CC
-				ZOffset: -15
-				ZRamp: 0
 	Template@136:
-		Category: Ramp edge fixup
+		Categories: Ramp edge fixup
 		Id: 136
 		Images: rmpfx11.lun, rmpfx11a.lun, rmpfx11b.lun, rmpfx11c.lun
 		Size: 1, 1
@@ -1408,10 +1194,8 @@ Templates:
 				RampType: 4
 				LeftColor: C1C3C9
 				RightColor: C3C4CA
-				ZOffset: -15
-				ZRamp: 0
 	Template@137:
-		Category: Ramp edge fixup
+		Categories: Ramp edge fixup
 		Id: 137
 		Images: rmpfx12.lun, rmpfx12a.lun, rmpfx12b.lun, rmpfx12c.lun
 		Size: 1, 1
@@ -1420,10 +1204,8 @@ Templates:
 				RampType: 4
 				LeftColor: BCBFC5
 				RightColor: C2C4CA
-				ZOffset: -15
-				ZRamp: 0
 	Template@150:
-		Category: LAT Pavement
+		Categories: LAT Pavement
 		Id: 150
 		Images: pvclr01.lun, pvclr01a.lun, pvclr01b.lun, pvclr01c.lun, pvclr01d.lun, pvclr01e.lun, pvclr01f.lun, pvclr01g.lun
 		Size: 1, 1
@@ -1431,10 +1213,8 @@ Templates:
 			0: Clear
 				LeftColor: B7B09F
 				RightColor: B2AA9B
-				ZOffset: -15
-				ZRamp: 0
 	Template@166:
-		Category: Sand (beach)
+		Categories: Sand (beach)
 		Id: 166
 		Images: green01.lun, green01a.lun, green01b.lun, green01c.lun, green01d.lun, green01e.lun, green01f.lun, green01g.lun
 		Size: 1, 1
@@ -1442,10 +1222,8 @@ Templates:
 			0: Rough
 				LeftColor: 989BA5
 				RightColor: A0A3AC
-				ZOffset: -15
-				ZRamp: 0
 	Template@167:
-		Category: Sand (beach) Transitions
+		Categories: Sand (beach) Transitions
 		Id: 167
 		Images: glat01.lun, glat01a.lun
 		Size: 1, 1
@@ -1453,10 +1231,8 @@ Templates:
 			0: Clear
 				LeftColor: 9296A0
 				RightColor: A2A5AE
-				ZOffset: -15
-				ZRamp: 0
 	Template@168:
-		Category: Sand (beach) Transitions
+		Categories: Sand (beach) Transitions
 		Id: 168
 		Images: glat02.lun, glat02a.lun
 		Size: 1, 1
@@ -1464,10 +1240,8 @@ Templates:
 			0: Clear
 				LeftColor: 9599A3
 				RightColor: 9599A3
-				ZOffset: -15
-				ZRamp: 0
 	Template@169:
-		Category: Sand (beach) Transitions
+		Categories: Sand (beach) Transitions
 		Id: 169
 		Images: glat03.lun, glat03a.lun
 		Size: 1, 1
@@ -1475,10 +1249,8 @@ Templates:
 			0: Clear
 				LeftColor: 9A9DA7
 				RightColor: A4A7B0
-				ZOffset: -15
-				ZRamp: 0
 	Template@170:
-		Category: Sand (beach) Transitions
+		Categories: Sand (beach) Transitions
 		Id: 170
 		Images: glat04.lun, glat04a.lun
 		Size: 1, 1
@@ -1486,10 +1258,8 @@ Templates:
 			0: Clear
 				LeftColor: 90949E
 				RightColor: A3A7B0
-				ZOffset: -15
-				ZRamp: 0
 	Template@171:
-		Category: Sand (beach) Transitions
+		Categories: Sand (beach) Transitions
 		Id: 171
 		Images: glat05.lun, glat05a.lun
 		Size: 1, 1
@@ -1497,10 +1267,8 @@ Templates:
 			0: Clear
 				LeftColor: A6A9B1
 				RightColor: A3A6AF
-				ZOffset: -15
-				ZRamp: 0
 	Template@172:
-		Category: Sand (beach) Transitions
+		Categories: Sand (beach) Transitions
 		Id: 172
 		Images: glat06.lun, glat06a.lun
 		Size: 1, 1
@@ -1508,10 +1276,8 @@ Templates:
 			0: Clear
 				LeftColor: A1A5AD
 				RightColor: 90949E
-				ZOffset: -15
-				ZRamp: 0
 	Template@173:
-		Category: Sand (beach) Transitions
+		Categories: Sand (beach) Transitions
 		Id: 173
 		Images: glat07.lun, glat07a.lun
 		Size: 1, 1
@@ -1519,10 +1285,8 @@ Templates:
 			0: Clear
 				LeftColor: A6A9B1
 				RightColor: A8ABB3
-				ZOffset: -15
-				ZRamp: 0
 	Template@174:
-		Category: Sand (beach) Transitions
+		Categories: Sand (beach) Transitions
 		Id: 174
 		Images: glat08.lun, glat08a.lun
 		Size: 1, 1
@@ -1530,10 +1294,8 @@ Templates:
 			0: Clear
 				LeftColor: A4A7B0
 				RightColor: 9B9FA8
-				ZOffset: -15
-				ZRamp: 0
 	Template@175:
-		Category: Sand (beach) Transitions
+		Categories: Sand (beach) Transitions
 		Id: 175
 		Images: glat09.lun, glat09a.lun
 		Size: 1, 1
@@ -1541,10 +1303,8 @@ Templates:
 			0: Clear
 				LeftColor: 9599A3
 				RightColor: A2A5AE
-				ZOffset: -15
-				ZRamp: 0
 	Template@176:
-		Category: Sand (beach) Transitions
+		Categories: Sand (beach) Transitions
 		Id: 176
 		Images: glat10.lun, glat10a.lun
 		Size: 1, 1
@@ -1552,10 +1312,8 @@ Templates:
 			0: Clear
 				LeftColor: 9599A3
 				RightColor: 9195A0
-				ZOffset: -15
-				ZRamp: 0
 	Template@177:
-		Category: Sand (beach) Transitions
+		Categories: Sand (beach) Transitions
 		Id: 177
 		Images: glat11.lun, glat11a.lun
 		Size: 1, 1
@@ -1563,10 +1321,8 @@ Templates:
 			0: Clear
 				LeftColor: 989CA5
 				RightColor: 9FA3AC
-				ZOffset: -15
-				ZRamp: 0
 	Template@178:
-		Category: Sand (beach) Transitions
+		Categories: Sand (beach) Transitions
 		Id: 178
 		Images: glat12.lun, glat12a.lun
 		Size: 1, 1
@@ -1574,10 +1330,8 @@ Templates:
 			0: Clear
 				LeftColor: 9397A1
 				RightColor: 999DA6
-				ZOffset: -15
-				ZRamp: 0
 	Template@179:
-		Category: Sand (beach) Transitions
+		Categories: Sand (beach) Transitions
 		Id: 179
 		Images: glat13.lun, glat13a.lun
 		Size: 1, 1
@@ -1585,10 +1339,8 @@ Templates:
 			0: Clear
 				LeftColor: A3A7AF
 				RightColor: A1A4AD
-				ZOffset: -15
-				ZRamp: 0
 	Template@180:
-		Category: Sand (beach) Transitions
+		Categories: Sand (beach) Transitions
 		Id: 180
 		Images: glat14.lun, glat14a.lun
 		Size: 1, 1
@@ -1596,10 +1348,8 @@ Templates:
 			0: Clear
 				LeftColor: A5A8B1
 				RightColor: 9396A1
-				ZOffset: -15
-				ZRamp: 0
 	Template@181:
-		Category: Sand (beach) Transitions
+		Categories: Sand (beach) Transitions
 		Id: 181
 		Images: glat15.lun, glat15a.lun
 		Size: 1, 1
@@ -1607,10 +1357,8 @@ Templates:
 			0: Clear
 				LeftColor: A4A8B0
 				RightColor: A6A9B2
-				ZOffset: -15
-				ZRamp: 0
 	Template@182:
-		Category: Sand (beach) Transitions
+		Categories: Sand (beach) Transitions
 		Id: 182
 		Images: glat16.lun, glat16a.lun
 		Size: 1, 1
@@ -1618,10 +1366,8 @@ Templates:
 			0: Clear
 				LeftColor: A0A3AC
 				RightColor: 9599A3
-				ZOffset: -15
-				ZRamp: 0
 	Template@183:
-		Category: Craters
+		Categories: Craters
 		Id: 183
 		Images: crtr01.lun
 		Size: 2, 2
@@ -1629,25 +1375,17 @@ Templates:
 			0: Clear
 				LeftColor: 8F929D
 				RightColor: A3A6AE
-				ZOffset: -15
-				ZRamp: 0
 			1: Clear
 				LeftColor: A9ABB3
 				RightColor: A5A8B0
-				ZOffset: -15
-				ZRamp: 0
 			2: Clear
 				LeftColor: A6A9B1
 				RightColor: 989BA5
-				ZOffset: -15
-				ZRamp: 0
 			3: Clear
 				LeftColor: A0A3AC
 				RightColor: 9EA1AA
-				ZOffset: -15
-				ZRamp: 0
 	Template@184:
-		Category: Craters
+		Categories: Craters
 		Id: 184
 		Images: crtr02.lun
 		Size: 2, 2
@@ -1655,25 +1393,17 @@ Templates:
 			0: Clear
 				LeftColor: 858994
 				RightColor: 848793
-				ZOffset: -15
-				ZRamp: 0
 			1: Clear
 				LeftColor: 636877
 				RightColor: A0A3AC
-				ZOffset: -15
-				ZRamp: 0
 			2: Clear
 				LeftColor: A2A4AD
 				RightColor: 7E828E
-				ZOffset: -15
-				ZRamp: 0
 			3: Clear
 				LeftColor: 9396A0
 				RightColor: 878A96
-				ZOffset: -15
-				ZRamp: 0
 	Template@185:
-		Category: Craters
+		Categories: Craters
 		Id: 185
 		Images: crtr03.lun
 		Size: 3, 3
@@ -1681,50 +1411,32 @@ Templates:
 			0: Clear
 				LeftColor: 747885
 				RightColor: 8F929D
-				ZOffset: -15
-				ZRamp: 0
 			1: Clear
 				LeftColor: A7AAB2
 				RightColor: A3A6AE
-				ZOffset: -15
-				ZRamp: 0
 			2: Clear
 				LeftColor: 8E919C
 				RightColor: B1B3BB
-				ZOffset: -15
-				ZRamp: 0
 			3: Clear
 				LeftColor: 999DA6
 				RightColor: 888C97
-				ZOffset: -15
-				ZRamp: 0
 			4: Clear
 				LeftColor: 9295A0
 				RightColor: 9FA1AB
-				ZOffset: -15
-				ZRamp: 0
 			5: Clear
 				LeftColor: 9295A0
 				RightColor: A5A8B0
-				ZOffset: -15
-				ZRamp: 0
 			6: Clear
 				LeftColor: 8E919C
 				RightColor: 7A7E8B
-				ZOffset: -15
-				ZRamp: 0
 			7: Clear
 				LeftColor: A5A8B0
 				RightColor: 7D818D
-				ZOffset: -15
-				ZRamp: 0
 			8: Clear
 				LeftColor: A5A8B0
 				RightColor: A4A6AF
-				ZOffset: -15
-				ZRamp: 0
 	Template@186:
-		Category: Craters
+		Categories: Craters
 		Id: 186
 		Images: crtr04.lun
 		Size: 3, 3
@@ -1732,50 +1444,32 @@ Templates:
 			0: Clear
 				LeftColor: 8E919C
 				RightColor: 9B9EA8
-				ZOffset: -15
-				ZRamp: 0
 			1: Clear
 				LeftColor: 9497A1
 				RightColor: 979AA4
-				ZOffset: -15
-				ZRamp: 0
 			2: Clear
 				LeftColor: 979AA4
 				RightColor: A8ABB3
-				ZOffset: -15
-				ZRamp: 0
 			3: Clear
 				LeftColor: 979AA4
 				RightColor: 858894
-				ZOffset: -15
-				ZRamp: 0
 			4: Clear
 				LeftColor: 838793
 				RightColor: 6B6F7D
-				ZOffset: -15
-				ZRamp: 0
 			5: Clear
 				LeftColor: 9699A3
 				RightColor: 9FA2AB
-				ZOffset: -15
-				ZRamp: 0
 			6: Clear
 				LeftColor: A1A4AD
 				RightColor: 797D8A
-				ZOffset: -15
-				ZRamp: 0
 			7: Clear
 				LeftColor: 9EA1AA
 				RightColor: 8D919C
-				ZOffset: -15
-				ZRamp: 0
 			8: Clear
 				LeftColor: A1A4AD
 				RightColor: A5A8B0
-				ZOffset: -15
-				ZRamp: 0
 	Template@187:
-		Category: Craters
+		Categories: Craters
 		Id: 187
 		Images: crtr05.lun
 		Size: 4, 4
@@ -1783,85 +1477,53 @@ Templates:
 			0: Clear
 				LeftColor: 989BA5
 				RightColor: 92959F
-				ZOffset: -15
-				ZRamp: 0
 			1: Clear
 				LeftColor: 555A6A
 				RightColor: 747885
-				ZOffset: -15
-				ZRamp: 0
 			2: Clear
 				LeftColor: 626776
 				RightColor: 848793
-				ZOffset: -15
-				ZRamp: 0
 			3: Clear
 				LeftColor: 979AA4
 				RightColor: A8AAB3
-				ZOffset: -15
-				ZRamp: 0
 			4: Clear
 				LeftColor: 757A87
 				RightColor: 525767
-				ZOffset: -15
-				ZRamp: 0
 			5: Clear
 				LeftColor: 565C6C
 				RightColor: 606574
-				ZOffset: -15
-				ZRamp: 0
 			6: Clear
 				LeftColor: 595E6D
 				RightColor: 787C89
-				ZOffset: -15
-				ZRamp: 0
 			7: Clear
 				LeftColor: 9C9FA9
 				RightColor: 999CA6
-				ZOffset: -15
-				ZRamp: 0
 			8: Clear
 				LeftColor: 818591
 				RightColor: 575C6C
-				ZOffset: -15
-				ZRamp: 0
 			9: Clear
 				LeftColor: 8A8E99
 				RightColor: 858994
-				ZOffset: -15
-				ZRamp: 0
 			10: Clear
 				LeftColor: 7D818D
 				RightColor: 606574
-				ZOffset: -15
-				ZRamp: 0
 			11: Clear
 				LeftColor: ACAEB6
 				RightColor: A5A7B0
-				ZOffset: -15
-				ZRamp: 0
 			12: Clear
 				LeftColor: A6A8B1
 				RightColor: 8D919B
-				ZOffset: -15
-				ZRamp: 0
 			13: Clear
 				LeftColor: 7C808D
 				RightColor: 969AA3
-				ZOffset: -15
-				ZRamp: 0
 			14: Clear
 				LeftColor: A3A6AF
 				RightColor: A7AAB2
-				ZOffset: -15
-				ZRamp: 0
 			15: Clear
 				LeftColor: 9FA2AB
 				RightColor: A3A6AF
-				ZOffset: -15
-				ZRamp: 0
 	Template@188:
-		Category: Craters
+		Categories: Craters
 		Id: 188
 		Images: crtr06.lun
 		Size: 4, 4
@@ -1869,85 +1531,53 @@ Templates:
 			0: Clear
 				LeftColor: 989BA5
 				RightColor: A5A7B0
-				ZOffset: -15
-				ZRamp: 0
 			1: Clear
 				LeftColor: 787D89
 				RightColor: A4A7AF
-				ZOffset: -15
-				ZRamp: 0
 			2: Clear
 				LeftColor: A3A5AE
 				RightColor: A7A9B1
-				ZOffset: -15
-				ZRamp: 0
 			3: Clear
 				LeftColor: A4A6AF
 				RightColor: A9ABB3
-				ZOffset: -15
-				ZRamp: 0
 			4: Clear
 				LeftColor: 686D7B
 				RightColor: 565B6B
-				ZOffset: -15
-				ZRamp: 0
 			5: Clear
 				LeftColor: 828692
 				RightColor: 868A95
-				ZOffset: -15
-				ZRamp: 0
 			6: Clear
 				LeftColor: 9295A0
 				RightColor: A6A8B1
-				ZOffset: -15
-				ZRamp: 0
 			7: Clear
 				LeftColor: BBBDC3
 				RightColor: A5A8B0
-				ZOffset: -15
-				ZRamp: 0
 			8: Clear
 				LeftColor: 9FA2AB
 				RightColor: 6A6F7D
-				ZOffset: -15
-				ZRamp: 0
 			9: Clear
 				LeftColor: 737784
 				RightColor: 8F939D
-				ZOffset: -15
-				ZRamp: 0
 			10: Clear
 				LeftColor: 9396A1
 				RightColor: 8F929D
-				ZOffset: -15
-				ZRamp: 0
 			11: Clear
 				LeftColor: BBBDC3
 				RightColor: B9BBC2
-				ZOffset: -15
-				ZRamp: 0
 			12: Clear
 				LeftColor: A6A9B1
 				RightColor: A6A9B1
-				ZOffset: -15
-				ZRamp: 0
 			13: Clear
 				LeftColor: A0A3AC
 				RightColor: 9B9EA7
-				ZOffset: -15
-				ZRamp: 0
 			14: Clear
 				LeftColor: A4A7AF
 				RightColor: B1B3BA
-				ZOffset: -15
-				ZRamp: 0
 			15: Clear
 				LeftColor: A3A6AF
 				RightColor: A2A5AD
-				ZOffset: -15
-				ZRamp: 0
 	Template@189:
-		Category: Craters
+		Categories: Craters
 		Id: 189
 		Images: crtr07.lun
 		Size: 5, 5
@@ -1955,130 +1585,80 @@ Templates:
 			0: Clear
 				LeftColor: A5A7B0
 				RightColor: A4A7B0
-				ZOffset: -15
-				ZRamp: 0
 			1: Clear
 				LeftColor: 7F838F
 				RightColor: A2A5AD
-				ZOffset: -15
-				ZRamp: 0
 			2: Clear
 				LeftColor: 989BA5
 				RightColor: A4A6AF
-				ZOffset: -15
-				ZRamp: 0
 			3: Clear
 				LeftColor: 9C9FA8
 				RightColor: 9EA1AA
-				ZOffset: -15
-				ZRamp: 0
 			4: Clear
 				LeftColor: A3A5AE
 				RightColor: A8ABB3
-				ZOffset: -15
-				ZRamp: 0
 			5: Clear
 				LeftColor: A2A5AE
 				RightColor: A9ABB3
-				ZOffset: -15
-				ZRamp: 0
 			6: Clear
 				LeftColor: 6D727F
 				RightColor: 6C717F
-				ZOffset: -15
-				ZRamp: 0
 			7: Clear
 				LeftColor: 6D717F
 				RightColor: 626776
-				ZOffset: -15
-				ZRamp: 0
 			8: Clear
 				LeftColor: 7C808C
 				RightColor: 848893
-				ZOffset: -15
-				ZRamp: 0
 			9: Clear
 				LeftColor: 9A9DA6
 				RightColor: A5A7B0
-				ZOffset: -15
-				ZRamp: 0
 			10: Clear
 				LeftColor: A0A3AC
 				RightColor: 9FA2AB
-				ZOffset: -15
-				ZRamp: 0
 			11: Clear
 				LeftColor: 9C9FA8
 				RightColor: 989BA5
-				ZOffset: -15
-				ZRamp: 0
 			12: Clear
 				LeftColor: 7A7E8B
 				RightColor: 7E828E
-				ZOffset: -15
-				ZRamp: 0
 			13: Clear
 				LeftColor: 8E919C
 				RightColor: 797D8A
-				ZOffset: -15
-				ZRamp: 0
 			14: Clear
 				LeftColor: 7E828E
 				RightColor: A3A6AE
-				ZOffset: -15
-				ZRamp: 0
 			15: Clear
 				LeftColor: 9EA1AA
 				RightColor: 777B88
-				ZOffset: -15
-				ZRamp: 0
 			16: Clear
 				LeftColor: 747986
 				RightColor: 898D98
-				ZOffset: -15
-				ZRamp: 0
 			17: Clear
 				LeftColor: 545969
 				RightColor: A1A4AC
-				ZOffset: -15
-				ZRamp: 0
 			18: Clear
 				LeftColor: 888C97
 				RightColor: 9497A1
-				ZOffset: -15
-				ZRamp: 0
 			19: Clear
 				LeftColor: A5A7B0
 				RightColor: A1A4AD
-				ZOffset: -15
-				ZRamp: 0
 			20: Clear
 				LeftColor: A8ABB3
 				RightColor: A7AAB2
-				ZOffset: -15
-				ZRamp: 0
 			21: Clear
 				LeftColor: A3A6AF
 				RightColor: 9FA1AA
-				ZOffset: -15
-				ZRamp: 0
 			22: Clear
 				LeftColor: 9B9EA7
 				RightColor: 8C909A
-				ZOffset: -15
-				ZRamp: 0
 			23: Clear
 				LeftColor: 9A9EA7
 				RightColor: 9DA0A9
-				ZOffset: -15
-				ZRamp: 0
 			24: Clear
 				LeftColor: A6A9B1
 				RightColor: A9ABB3
-				ZOffset: -15
-				ZRamp: 0
 	Template@190:
-		Category: Craters
+		Categories: Craters
 		Id: 190
 		Images: crtr08.lun
 		Size: 5, 5
@@ -2086,130 +1666,80 @@ Templates:
 			0: Clear
 				LeftColor: 878B96
 				RightColor: 848793
-				ZOffset: -15
-				ZRamp: 0
 			1: Clear
 				LeftColor: 7E828E
 				RightColor: 9EA1AA
-				ZOffset: -15
-				ZRamp: 0
 			2: Clear
 				LeftColor: 9EA1AA
 				RightColor: A5A8B0
-				ZOffset: -15
-				ZRamp: 0
 			3: Clear
 				LeftColor: 9C9FA8
 				RightColor: A4A7AF
-				ZOffset: -15
-				ZRamp: 0
 			4: Clear
 				LeftColor: A7AAB2
 				RightColor: A8AAB3
-				ZOffset: -15
-				ZRamp: 0
 			5: Clear
 				LeftColor: A6A9B1
 				RightColor: 9B9EA8
-				ZOffset: -15
-				ZRamp: 0
 			6: Clear
 				LeftColor: B6B8BF
 				RightColor: 999CA6
-				ZOffset: -15
-				ZRamp: 0
 			7: Clear
 				LeftColor: 9699A2
 				RightColor: 9EA1AA
-				ZOffset: -15
-				ZRamp: 0
 			8: Clear
 				LeftColor: 7A7E8B
 				RightColor: A0A2AB
-				ZOffset: -15
-				ZRamp: 0
 			9: Clear
 				LeftColor: A8ABB3
 				RightColor: A6A9B1
-				ZOffset: -15
-				ZRamp: 0
 			10: Clear
 				LeftColor: A6A9B1
 				RightColor: A3A5AE
-				ZOffset: -15
-				ZRamp: 0
 			11: Clear
 				LeftColor: 898C97
 				RightColor: 90949E
-				ZOffset: -15
-				ZRamp: 0
 			12: Clear
 				LeftColor: 9EA1AA
 				RightColor: 8F939D
-				ZOffset: -15
-				ZRamp: 0
 			13: Clear
 				LeftColor: 6E7380
 				RightColor: 676B7A
-				ZOffset: -15
-				ZRamp: 0
 			14: Clear
 				LeftColor: 9DA0A9
 				RightColor: A4A7AF
-				ZOffset: -15
-				ZRamp: 0
 			15: Clear
 				LeftColor: 9699A3
 				RightColor: 7F828E
-				ZOffset: -15
-				ZRamp: 0
 			16: Clear
 				LeftColor: 585E6D
 				RightColor: 636877
-				ZOffset: -15
-				ZRamp: 0
 			17: Clear
 				LeftColor: 888C97
 				RightColor: 8E919C
-				ZOffset: -15
-				ZRamp: 0
 			18: Clear
 				LeftColor: 575C6C
 				RightColor: 696E7C
-				ZOffset: -15
-				ZRamp: 0
 			19: Clear
 				LeftColor: 9396A0
 				RightColor: A5A7B0
-				ZOffset: -15
-				ZRamp: 0
 			20: Clear
 				LeftColor: A9ACB4
 				RightColor: 8E929C
-				ZOffset: -15
-				ZRamp: 0
 			21: Clear
 				LeftColor: 8F929C
 				RightColor: 7B7F8C
-				ZOffset: -15
-				ZRamp: 0
 			22: Clear
 				LeftColor: 91949E
 				RightColor: 666B7A
-				ZOffset: -15
-				ZRamp: 0
 			23: Clear
 				LeftColor: 8A8D98
 				RightColor: 9295A0
-				ZOffset: -15
-				ZRamp: 0
 			24: Clear
 				LeftColor: 979AA4
 				RightColor: 9699A3
-				ZOffset: -15
-				ZRamp: 0
 	Template@191:
-		Category: LunarLander
+		Categories: LunarLander
 		Id: 191
 		Images: eagle01.lun
 		Size: 4, 4
@@ -2217,85 +1747,53 @@ Templates:
 			0: Cliff
 				LeftColor: A8AAB1
 				RightColor: A7A9B0
-				ZOffset: -15
-				ZRamp: 0
 			1: Cliff
 				LeftColor: A9A29F
 				RightColor: A3A6AE
-				ZOffset: -15
-				ZRamp: 0
 			2: Cliff
 				LeftColor: 9A9DA7
 				RightColor: A6A9B1
-				ZOffset: -15
-				ZRamp: 0
 			3: Cliff
 				LeftColor: ABAEB6
 				RightColor: A9ABB3
-				ZOffset: -15
-				ZRamp: 0
 			4: Cliff
 				LeftColor: 9EA1AA
 				RightColor: 9E9EA3
-				ZOffset: -15
-				ZRamp: 0
 			5: Cliff
 				LeftColor: 84766C
 				RightColor: 928274
-				ZOffset: -15
-				ZRamp: 0
 			6: Cliff
 				LeftColor: 5B473D
 				RightColor: 676C7A
-				ZOffset: -15
-				ZRamp: 0
 			7: Cliff
 				LeftColor: 838792
 				RightColor: AAACB4
-				ZOffset: -15
-				ZRamp: 0
 			8: Cliff
 				LeftColor: A6A8B1
 				RightColor: 91949E
-				ZOffset: -15
-				ZRamp: 0
 			9: Cliff
 				LeftColor: 9A9DA6
 				RightColor: 90837C
-				ZOffset: -15
-				ZRamp: 0
 			10: Cliff
 				LeftColor: 7B6E69
 				RightColor: 464752
-				ZOffset: -15
-				ZRamp: 0
 			11: Cliff
 				LeftColor: AFB1B7
 				RightColor: ADABAE
-				ZOffset: -15
-				ZRamp: 0
 			12: Cliff
 				LeftColor: A6A9B1
 				RightColor: A9ABB4
-				ZOffset: -15
-				ZRamp: 0
 			13: Cliff
 				LeftColor: A1A4AD
 				RightColor: 9C9FA9
-				ZOffset: -15
-				ZRamp: 0
 			14: Cliff
 				LeftColor: ABAEB6
 				RightColor: A7A5A7
-				ZOffset: -15
-				ZRamp: 0
 			15: Cliff
 				LeftColor: A4A7AF
 				RightColor: ABADB5
-				ZOffset: -15
-				ZRamp: 0
 	Template@192:
-		Category: Lunar Crevas
+		Categories: Lunar Crevas
 		Id: 192
 		Images: crevas01.lun
 		Size: 3, 2
@@ -2303,35 +1801,23 @@ Templates:
 			0: Cliff
 				LeftColor: 7D818D
 				RightColor: 999CA5
-				ZOffset: -15
-				ZRamp: 0
 			1: Cliff
 				LeftColor: 6A6F7C
 				RightColor: 8A8E99
-				ZOffset: -15
-				ZRamp: 0
 			2: Cliff
 				LeftColor: 5A5F6F
 				RightColor: 9296A0
-				ZOffset: -15
-				ZRamp: 0
 			3: Cliff
 				LeftColor: A3A5AE
 				RightColor: 737784
-				ZOffset: -15
-				ZRamp: 0
 			4: Cliff
 				LeftColor: 4D5364
 				RightColor: 242B40
-				ZOffset: -15
-				ZRamp: 0
 			5: Cliff
 				LeftColor: 8A8E99
 				RightColor: 989BA5
-				ZOffset: -15
-				ZRamp: 0
 	Template@193:
-		Category: Lunar Crevas
+		Categories: Lunar Crevas
 		Id: 193
 		Images: crevas02.lun
 		Size: 2, 3
@@ -2339,35 +1825,23 @@ Templates:
 			0: Cliff
 				LeftColor: 7A7E8A
 				RightColor: 999CA5
-				ZOffset: -15
-				ZRamp: 0
 			1: Cliff
 				LeftColor: 797D8A
 				RightColor: 9396A0
-				ZOffset: -15
-				ZRamp: 0
 			2: Cliff
 				LeftColor: 7C808C
 				RightColor: 666B79
-				ZOffset: -15
-				ZRamp: 0
 			3: Cliff
 				LeftColor: 252C41
 				RightColor: 717583
-				ZOffset: -15
-				ZRamp: 0
 			4: Cliff
 				LeftColor: 9DA0A9
 				RightColor: 6C717F
-				ZOffset: -15
-				ZRamp: 0
 			5: Cliff
 				LeftColor: 6D717F
 				RightColor: 9699A3
-				ZOffset: -15
-				ZRamp: 0
 	Template@194:
-		Category: Lunar Crevas
+		Categories: Lunar Crevas
 		Id: 194
 		Images: crevas03.lun
 		Size: 2, 4
@@ -2375,45 +1849,29 @@ Templates:
 			0: Cliff
 				LeftColor: 90939E
 				RightColor: 9EA1AA
-				ZOffset: -15
-				ZRamp: 0
 			1: Cliff
 				LeftColor: 8D909B
 				RightColor: 979AA4
-				ZOffset: -15
-				ZRamp: 0
 			2: Cliff
 				LeftColor: 878A96
 				RightColor: 6B6F7D
-				ZOffset: -15
-				ZRamp: 0
 			3: Cliff
 				LeftColor: 4F5565
 				RightColor: 737785
-				ZOffset: -15
-				ZRamp: 0
 			4: Cliff
 				LeftColor: A3A5AE
 				RightColor: 818591
-				ZOffset: -15
-				ZRamp: 0
 			5: Cliff
 				LeftColor: 464B5D
 				RightColor: 777B88
-				ZOffset: -15
-				ZRamp: 0
 			6: Cliff
 				LeftColor: A1A4AD
 				RightColor: 7F828F
-				ZOffset: -15
-				ZRamp: 0
 			7: Cliff
 				LeftColor: 838692
 				RightColor: 656A78
-				ZOffset: -15
-				ZRamp: 0
 	Template@195:
-		Category: Lunar Crevas
+		Categories: Lunar Crevas
 		Id: 195
 		Images: crevas04.lun
 		Size: 4, 2
@@ -2421,45 +1879,29 @@ Templates:
 			0: Cliff
 				LeftColor: 767A87
 				RightColor: 7E828F
-				ZOffset: -15
-				ZRamp: 0
 			1: Cliff
 				LeftColor: 6B707E
 				RightColor: 8A8D98
-				ZOffset: -15
-				ZRamp: 0
 			2: Cliff
 				LeftColor: 6C707E
 				RightColor: 7C808C
-				ZOffset: -15
-				ZRamp: 0
 			3: Cliff
 				LeftColor: 7C808D
 				RightColor: A0A2AB
-				ZOffset: -15
-				ZRamp: 0
 			4: Cliff
 				LeftColor: A2A4AD
 				RightColor: 7D808D
-				ZOffset: -15
-				ZRamp: 0
 			5: Cliff
 				LeftColor: 828692
 				RightColor: 626675
-				ZOffset: -15
-				ZRamp: 0
 			6: Cliff
 				LeftColor: 8A8D99
 				RightColor: 616675
-				ZOffset: -15
-				ZRamp: 0
 			7: Cliff
 				LeftColor: 9EA1AA
 				RightColor: 777B88
-				ZOffset: -15
-				ZRamp: 0
 	Template@196:
-		Category: Lunar Crevas
+		Categories: Lunar Crevas
 		Id: 196
 		Images: crevas05.lun
 		Size: 5, 2
@@ -2467,55 +1909,35 @@ Templates:
 			0: Cliff
 				LeftColor: 8A8E99
 				RightColor: A1A3AC
-				ZOffset: -15
-				ZRamp: 0
 			1: Cliff
 				LeftColor: 696E7C
 				RightColor: A8ABB3
-				ZOffset: -15
-				ZRamp: 0
 			2: Cliff
 				LeftColor: 7D818D
 				RightColor: 8F939D
-				ZOffset: -15
-				ZRamp: 0
 			3: Cliff
 				LeftColor: 636877
 				RightColor: A1A4AD
-				ZOffset: -15
-				ZRamp: 0
 			4: Cliff
 				LeftColor: 7B7F8B
 				RightColor: 9B9DA7
-				ZOffset: -15
-				ZRamp: 0
 			5: Cliff
 				LeftColor: 91959F
 				RightColor: 636877
-				ZOffset: -15
-				ZRamp: 0
 			6: Cliff
 				LeftColor: 91949E
 				RightColor: 4D5364
-				ZOffset: -15
-				ZRamp: 0
 			7: Cliff
 				LeftColor: 696D7C
 				RightColor: 3B4154
-				ZOffset: -15
-				ZRamp: 0
 			8: Cliff
 				LeftColor: 8E929C
 				RightColor: 404658
-				ZOffset: -15
-				ZRamp: 0
 			9: Cliff
 				LeftColor: 757986
 				RightColor: A4A7AF
-				ZOffset: -15
-				ZRamp: 0
 	Template@197:
-		Category: Lunar Crevas
+		Categories: Lunar Crevas
 		Id: 197
 		Images: crevas06.lun
 		Size: 2, 5
@@ -2523,50 +1945,30 @@ Templates:
 			0: Cliff
 				LeftColor: 838692
 				RightColor: 717583
-				ZOffset: -15
-				ZRamp: 0
 			1: Cliff
 				LeftColor: 6F7381
 				RightColor: 9A9DA7
-				ZOffset: -15
-				ZRamp: 0
 			2: Cliff
 				LeftColor: 666B79
 				RightColor: 626776
-				ZOffset: -15
-				ZRamp: 0
 			3: Cliff
 				LeftColor: 42485A
 				RightColor: 636877
-				ZOffset: -15
-				ZRamp: 0
 			4: Cliff
 				LeftColor: 888C97
 				RightColor: 737785
-				ZOffset: -15
-				ZRamp: 0
 			5: Cliff
 				LeftColor: 343B4E
 				RightColor: 888C97
-				ZOffset: -15
-				ZRamp: 0
 			6: Cliff
 				LeftColor: 8E919C
 				RightColor: 7A7E8B
-				ZOffset: -15
-				ZRamp: 0
 			7: Cliff
 				LeftColor: 22283E
 				RightColor: 4A5061
-				ZOffset: -15
-				ZRamp: 0
 			8: Cliff
 				LeftColor: 8C909B
 				RightColor: 454B5D
-				ZOffset: -15
-				ZRamp: 0
 			9: Cliff
 				LeftColor: 868A95
 				RightColor: 5E6372
-				ZOffset: -15
-				ZRamp: 0

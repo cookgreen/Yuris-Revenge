@@ -1019,7 +1019,7 @@ yarock:
 	Health:
 		HP: 700
 	Armor:
-		Type: wood
+		Type: Wood
 	RevealsShroud:
 		Range: 8c0
 	Valued:
@@ -1036,7 +1036,7 @@ yacomd:
 	Health:
 		HP: 1000
 	Armor:
-		Type: concrete
+		Type: Concrete
 	RevealsShroud:
 		Range: 8c0
 	Valued:
@@ -1045,6 +1045,17 @@ yacomd:
 		Name: Yuri Command Center
 	Power:
 		Amount: 0
+	SpawnActorOnDeath:
+		Actor: yacomd.rubble
+
+yacomd.rubble:
+	Inherits: ^Rubble
+	Inherits@shape: ^4x4Shape
+	Building:
+		Footprint: ==== ==== ==== ====
+		Dimensions: 4, 4
+	RenderSprites:
+		Image: yacomd
 
 yapppt:
 	Inherits: ^Building
@@ -1053,7 +1064,7 @@ yapppt:
 	Health:
 		HP: 1000
 	Armor:
-		Type: wood
+		Type: Wood
 	RevealsShroud:
 		Range: 8c0
 	Valued:

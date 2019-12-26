@@ -688,6 +688,29 @@ yappet:
 		Offset: 0,0
 		UseTilesetCode: false
 
+yacomd:
+	Defaults:
+		Offset: 0, -24
+		UseTilesetCode: true
+		TilesetOverrides:
+			TEMPERATE: GENERIC
+			URBAN: GENERIC
+			NEWURBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
+	idle: yacomd
+		Length: 1
+		ShadowStart: 4
+	damaged-idle: yacomd
+		Start: 1
+		Length: 1
+		ShadowStart: 5
+	rubble: yacomd
+		Start: 1
+		Length: 1
+		ShadowStart: 7
+	icon: xxicon
+
 yarock:
 	Defaults:
 		Offset: 0, -24

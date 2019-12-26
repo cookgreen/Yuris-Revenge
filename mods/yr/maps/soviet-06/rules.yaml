@@ -1,0 +1,5 @@
+World:
+	LuaScript:
+		Scripts: soviet06.lua
+	MissionData:
+		Briefing: Yuri plans to launch himself to the moon after initiating his Psychic Dominator wave over earth. We need to install a base on the moon so we can build an attack force capable of destroying Yuri's moon bases and his Lunar Command Center. 

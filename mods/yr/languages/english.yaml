@@ -549,7 +549,7 @@ english:
 					Background@MENU_BUTTONS:
  						Children:
  							Label@LABEL_TITLE:
- 								Text: Settings
+ 								Text: Options
 			Background@ASSETBROWSER_PANEL:
 				Children:
 					Label@ASSETBROWSER_TITLE:
