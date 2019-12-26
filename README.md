@@ -23,8 +23,15 @@ https://github.com/cookgreen/Yuris-Revenge/issues
 ## Install the content
 Note: Normally installing the content from the ingame content installer is enough.
 
-The mod expects the original Red Alert 2 game assets and original Yuri's Revenge assets in place. Put the .mix archives in the following directory depending on your operating system.
-
+The mod expects the original Red Alert 2 game assets and original Yuri's Revenge assets in place. Put the .mix archives in the following directory depending on your operating system.  
+  
+Red Alert 2 Directory:  
+Windows: `My Documents\OpenRA\Content\ra2\`  
+Mac OSX: `~/Library/Application Support/OpenRA/Content/ra2/`  
+Linux: `~/.openra/Content/ra2/`  
+Create the `ra2` directory if it does not exist.  
+  
+Yuri's Revenge Directory:  
 Windows: `My Documents\OpenRA\Content\yr\`  
 Mac OSX: `~/Library/Application Support/OpenRA/Content/yr/`  
 Linux: `~/.openra/Content/yr/`  
@@ -40,12 +47,12 @@ If you own the original CDs:
 
 Locate `Game1.CAB` on Original `Red Alert 2` CD in the `INSTALL/` directory.  
 Copy all required mixes into your content folder.  
-The mixes inside of `Game1.CAB` are `ra2.mix` and `language.mix`. Copy those two into your content folder.  
+The mixes inside of `Game1.CAB` are `ra2.mix` and `language.mix`. Copy those two into your `ra2` content folder.  
 For the soundtrack you want `theme.mix` from your CD.  
 
 Locate `Game6.CAB` on Original `Red Alert 2 Yuri's Revenge` CD in the `INSTALL/` directory.  
 Copy all required mixes into your content folder.  
-The mixes inside of `Game6.CAB` are `ra2md.mix` and `langmd.mix`. Copy those two into your content folder.  
+The mixes inside of `Game6.CAB` are `ra2md.mix` and `langmd.mix`. Copy those two into your `yr` content folder.  
 For the soundtrack you want `thememd.mix` from your CD.  
 
 ## License

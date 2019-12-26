@@ -7,9 +7,9 @@ origin: C&C The Ultimate Collection (Origin version, English)
 		theme.mix: 184f99e3292ab19c71c08a1ad7097ce739396190
 	Install:
 		copy: .
-			^Content/yr/ra2.mix: ra2.mix
+			^Content/ra2/ra2.mix: ra2.mix
 			^Content/yr/ra2md.mix: ra2md.mix
-			^Content/yr/language.mix: language.mix
+			^Content/ra2/language.mix: language.mix
 			^Content/yr/langmd.mix: langmd.mix
 			^Content/yr/theme.mix: theme.mix
 			^Content/yr/thememd.mix: thememd.mix
