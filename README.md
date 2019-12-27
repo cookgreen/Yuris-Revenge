@@ -25,13 +25,13 @@ Note: Normally installing the content from the ingame content installer is enoug
 
 The mod expects the original Red Alert 2 game assets and original Yuri's Revenge assets in place. Put the .mix archives in the following directory depending on your operating system.  
   
-Red Alert 2 Directory:  
+### Red Alert 2 Directory:  
 Windows: `My Documents\OpenRA\Content\ra2\`  
 Mac OSX: `~/Library/Application Support/OpenRA/Content/ra2/`  
 Linux: `~/.openra/Content/ra2/`  
 Create the `ra2` directory if it does not exist.  
   
-Yuri's Revenge Directory:  
+### Yuri's Revenge Directory:  
 Windows: `My Documents\OpenRA\Content\yr\`  
 Mac OSX: `~/Library/Application Support/OpenRA/Content/yr/`  
 Linux: `~/.openra/Content/yr/`  
