@@ -22,19 +22,25 @@ https://github.com/cookgreen/Yuris-Revenge/issues
 
 ## Install the content
 Note: Normally installing the content from the ingame content installer is enough.
-
+  
 The mod expects the original Red Alert 2 game assets and original Yuri's Revenge assets in place. Put the .mix archives in the following directory depending on your operating system.  
   
+### Confirm the content path:
+Run Utility command: `--display-content-path` to determine the OpenRA content path, after run this command, it will output like this:
+```
+OpenRA Content Path: <YourOpenRAContentPath>
+```
+  
 ### Red Alert 2 Directory:  
-Windows: `My Documents\OpenRA\Content\ra2\`  
-Mac OSX: `~/Library/Application Support/OpenRA/Content/ra2/`  
-Linux: `~/.openra/Content/ra2/`  
+Windows: `<YourOpenRAContentPath>\ra2\`  
+Mac OSX: `<YourOpenRAContentPath>/ra2/`  
+Linux: `<YourOpenRAContentPath>/ra2/`  
 Create the `ra2` directory if it does not exist.  
   
 ### Yuri's Revenge Directory:  
-Windows: `My Documents\OpenRA\Content\yr\`  
-Mac OSX: `~/Library/Application Support/OpenRA/Content/yr/`  
-Linux: `~/.openra/Content/yr/`  
+Windows: `<YourOpenRAContentPath>\yr\`  
+Mac OSX: `<YourOpenRAContentPath>/yr/`  
+Linux: `<YourOpenRAContentPath>/yr/`  
 Create the `yr` directory if it does not exist.  
 
 #### Download  
