@@ -126,7 +126,7 @@ namespace OpenRA.Mods.YR.Activities
 			// Instead of queing, we RETURN MOVE.
 			// This doesn't break the graph and will work fine (as "bad" codes did in older ORA engine).
 			var move = mobile.MoveTo(deployPosition.Value, 2);
-			move.Queue(this);
+			move.QueueChild(this);
 			return move;
 		}
 
