@@ -216,19 +216,19 @@ namespace OpenRA.Mods.YR.Activities
 			switch (harv.MiningState)
 			{
 				case MiningState.Scan:
-					Queue(ScanTick(self, out harv.MiningState));
+                    QueueChild(ScanTick(self, out harv.MiningState));
                     return true;
 				case MiningState.TryDeploy:
-                    Queue(TryDeployTick(self, out harv.MiningState));
+                    QueueChild(TryDeployTick(self, out harv.MiningState));
                     return true;
 				case MiningState.Deploying:
-                    Queue(DeployingTick(self, out harv.MiningState));
+                    QueueChild(DeployingTick(self, out harv.MiningState));
                     return true;
 				case MiningState.Mining:
-                    Queue(MiningTick(self, out harv.MiningState));
+                    QueueChild(MiningTick(self, out harv.MiningState));
                     return true;
 				case MiningState.Kick:
-					Queue(KickTick(self, out harv.MiningState));
+                    QueueChild(KickTick(self, out harv.MiningState));
                     return true;
 				default:
 					Game.Debug("SpawnHarvesterFindResources.cs in invalid state!");

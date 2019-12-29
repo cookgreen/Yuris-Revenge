@@ -5,7 +5,7 @@
       "executablePath": "..\\..\\engine\\OpenRA.Game.exe",
       "commandLineArgs": "Engine.LaunchPath=..\\..\\engine \"Engine.ModSearchPaths=..\\..\\mods,..\\..\\engine\\mods\" Game.Mod=yr"
     },
-    "OpenRA Yuri's Revenge (Chinese Verion)": {
+    "OpenRA Yuri's Revenge (Chinese Version)": {
       "commandName": "Executable",
       "executablePath": "..\\..\\engine\\OpenRA.Game.exe",
       "commandLineArgs": "Engine.LaunchPath=..\\..\\engine \"Engine.ModSearchPaths=..\\..\\mods,..\\..\\engine\\mods\" Game.Mod=yrsc"

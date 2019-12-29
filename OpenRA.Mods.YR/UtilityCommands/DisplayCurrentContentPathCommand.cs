@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OpenRA.Mods.YR.UtilityCommands
 {
-    class DisplayCurrentContentPath : IUtilityCommand
+    public class DisplayCurrentContentPath : IUtilityCommand
     {
         public string Name { get { return "--display-content-path"; } }
 

@@ -114,10 +114,10 @@ namespace OpenRA.Mods.YR.Activities
 			switch (harv.MiningState)
 			{
 				case MiningState.Mining:
-                    Queue(MiningTick(self, out harv.MiningState));
+                    QueueChild(MiningTick(self, out harv.MiningState));
                     return true;
 				case MiningState.Kick:
-                    Queue(KickTick(self, out harv.MiningState));
+                    QueueChild(KickTick(self, out harv.MiningState));
                     return true;
                 default:
 					return false;

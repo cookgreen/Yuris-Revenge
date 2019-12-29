@@ -690,6 +690,7 @@ CosmonautVoice:
 SlaveMinerVoice:
 	DefaultVariant: .wav
 	Voices:
+		Action: vslaata ,vslaatb ,vslaatc ,vslaate
 		Select: vslasea ,vslaseb ,vslasec ,vslased ,vslasee ,vslasef ,vslaseg
 		Move: vslamoa ,vslamoc ,vslamoe ,vslamof
 		Attack: vslaata ,vslaatb ,vslaatc ,vslaate
