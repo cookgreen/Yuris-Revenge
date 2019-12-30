@@ -52,7 +52,8 @@ namespace OpenRA.Mods.YR.Activities
 			pathFinder = self.World.WorldActor.Trait<IPathFinder>();
 			domainIndex = self.World.WorldActor.Trait<DomainIndex>();
             lastScanRange = harvInfo.LongScanRadius;
-        }
+			ChildHasPriority = false;
+		}
 
 		public SpawnerRefineryHarvest(Actor self, CPos avoidCell)
 			: this(self)
@@ -60,22 +61,22 @@ namespace OpenRA.Mods.YR.Activities
 			this.avoidCell = avoidCell;
 		}
 
-		Activity MiningTick(Actor self, out MiningState state)
+		Activity Mining(Actor self, out MiningState state)
 		{
 			// Let the harvester become idle so it can shoot enemies.
 			// Tick in SpawnerHarvester trait will kick activity back to KickTick.
 			state = MiningState.Mining;
-			return NextActivity;
+			return ChildActivity;
 		}
 
-		Activity KickTick(Actor self, out MiningState state)
+		Activity Kick(Actor self, out MiningState state)
 		{
 			var closestHarvestablePosition = ClosestHarvestablePos(self, harvInfo.KickScanRadius);
 			if (closestHarvestablePosition.HasValue)
 			{
 				// I may stay mining.
 				state = MiningState.Mining;
-				return NextActivity;
+				return ChildActivity;
 			}
 
 			// get going
@@ -103,7 +104,7 @@ namespace OpenRA.Mods.YR.Activities
              */
 
 			if (IsCanceling)
-				return true;
+				return false;
 
 			// Erm... looking at this, I could split these into separte activites...
 			// I prefer finite state machine style though...
@@ -114,14 +115,14 @@ namespace OpenRA.Mods.YR.Activities
 			switch (harv.MiningState)
 			{
 				case MiningState.Mining:
-                    QueueChild(MiningTick(self, out harv.MiningState));
-                    return true;
+                    QueueChild(Mining(self, out harv.MiningState));
+                    return false;
 				case MiningState.Kick:
-                    QueueChild(KickTick(self, out harv.MiningState));
-                    return true;
-                default:
-					return false;
+                    QueueChild(Kick(self, out harv.MiningState));
+                    return false;
 			}
+
+			return true;
 		}
 
 		/// <summary>

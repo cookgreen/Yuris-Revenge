@@ -19,6 +19,7 @@ This one itself doesn't need engine mod.
 The slave harvester's docking however, needs engine mod.
 */
 
+using System;
 using System.Collections.Generic;
 using OpenRA.Activities;
 using OpenRA.Mods.Common.Activities;
@@ -34,17 +35,18 @@ namespace OpenRA.Mods.YR.Activities
     /// </summary>
 	public class SpawnerHarvesterHarvest : Activity
 	{
-		readonly SpawnerHarvesterMaster harv;
-		readonly SpawnerHarvesterMasterInfo harvInfo;
-		readonly Mobile mobile;
-		readonly MobileInfo mobileInfo;
-		readonly ResourceClaimLayer claimLayer;
-		readonly IPathFinder pathFinder;
-		readonly DomainIndex domainIndex;
-		readonly GrantConditionOnDeploy deploy;
-        readonly Transforms tranforms;
-
-		CPos? avoidCell;
+		private readonly SpawnerHarvesterMaster harv;
+		private readonly SpawnerHarvesterMasterInfo harvInfo;
+		private readonly Mobile mobile;
+		private readonly MobileInfo mobileInfo;
+		private readonly ResourceClaimLayer claimLayer;
+		private readonly IPathFinder pathFinder;
+		private readonly DomainIndex domainIndex;
+		private readonly GrantConditionOnDeploy deploy;
+		private readonly Transforms tranforms;
+		private CPos deployDestPosition;
+		private CPos? avoidCell;
+		private int cellRange;
 
 		public SpawnerHarvesterHarvest(Actor self)
 		{
@@ -57,7 +59,7 @@ namespace OpenRA.Mods.YR.Activities
 			pathFinder = self.World.WorldActor.Trait<IPathFinder>();
 			domainIndex = self.World.WorldActor.Trait<DomainIndex>();
             tranforms = self.Trait<Transforms>();
-
+			ChildHasPriority = false;
         }
 
 		public SpawnerHarvesterHarvest(Actor self, CPos avoidCell)
@@ -66,22 +68,8 @@ namespace OpenRA.Mods.YR.Activities
 			this.avoidCell = avoidCell;
 		}
 
-		Activity UndeployAndGo(Actor self, out MiningState state)
+		void ScanAndMove(Actor self, out MiningState state)
 		{
-			state = MiningState.Scan;
-			QueueChild(new DeployForGrantedCondition(self, deploy));
-			return this;
-		}
-
-		Activity ScanTick(Actor self, out MiningState state)
-		{
-			if (ChildActivity != null)
-			{
-                QueueChild(ActivityUtils.RunActivity(self, ChildActivity));
-				state = MiningState.Scan;
-				return this;
-			}
-
 			var closestHarvestablePosition = ClosestHarvestablePos(self, harvInfo.LongScanRadius);
 
 			// No suitable resource field found.
@@ -93,7 +81,6 @@ namespace OpenRA.Mods.YR.Activities
 				// Avoid creating an activity cycle
 				QueueChild(new Wait(randFrames));
 				state = MiningState.Scan;
-				return this;
 			}
 
 			// ... Don't claim resource layer here. Slaves will claim by themselves.
@@ -110,7 +97,6 @@ namespace OpenRA.Mods.YR.Activities
 			{
 				QueueChild(new Wait(harvInfo.KickDelay));
 				state = MiningState.Scan;
-				return this;
 			}
 
 			// TODO: The harvest-deliver-return sequence is a horrible mess of duplicated code and edge-cases
@@ -118,88 +104,92 @@ namespace OpenRA.Mods.YR.Activities
 			foreach (var n in notify)
 				n.MovingToResources(self, deployPosition.Value);
 
-			state = MiningState.TryDeploy;
+			state = MiningState.Moving;
 
-			// This gives glitch. If you repeatedly on an ore target then
-			// the child Move() will glitch out and the harvester will be positioned in illegal places.
-			// QueueChild(mobile.MoveTo(deployPosition.Value, 2));
-			// Instead of queing, we RETURN MOVE.
-			// This doesn't break the graph and will work fine (as "bad" codes did in older ORA engine).
-			var move = mobile.MoveTo(deployPosition.Value, 2);
-			move.QueueChild(this);
-			return move;
+			//When it reached the best position, we will let it do this activity again
+			deployDestPosition = deployPosition.Value;
+			cellRange = 2;
+			var moveActivity = mobile.MoveTo(deployPosition.Value, cellRange);
+			moveActivity.Queue(this);
+			QueueChild(moveActivity);
 		}
 
-		Activity TryDeployTick(Actor self, out MiningState state)
+		private void CheckIfReachedBestLocation(Actor self, out MiningState state)
 		{
-			// Wait for child wait activity to be done.
-			// Could be wait or could be move to.
-			if (ChildActivity != null)
+			if ((self.Location - deployDestPosition).LengthSquared <= cellRange * cellRange)
 			{
-                QueueChild(ActivityUtils.RunActivity(self, ChildActivity));
+				ChildActivity.Cancel(self);
 				state = MiningState.TryDeploy;
-				return this;
 			}
+			else
+			{
+				state = MiningState.Moving;
+			}
+		}
 
+		private void TryDeploy(Actor self, out MiningState state)
+		{
 			if (!deploy.IsValidTerrain(self.Location))
 			{
 				// If we can't deploy, go back to scan state so that we scan try deploy again.
 				state = MiningState.Scan;
-				return this;
 			}
-
-			// Issue deploy order and enter deploying state.
-			IsInterruptible = false;
-            
-            tranforms.DeployTransform(true);
-
-			state = MiningState.Deploying;
-			return this;
-		}
-
-		Activity DeployingTick(Actor self, out MiningState state)
-		{
-			// Deploying in progress
-			if (ChildActivity != null)
+			else
 			{
-                QueueChild(ActivityUtils.RunActivity(self, ChildActivity));
+				IsInterruptible = false;
+            
+				Activity transformsActivity = tranforms.GetTransformActivity(self);
+				QueueChild(transformsActivity);
+
 				state = MiningState.Deploying;
-				return this;
 			}
-
-            // deploy failure.
-            if (!tranforms.CanDeploy())
-            {
-                QueueChild(new Wait(15));
-                state = MiningState.Scan;
-                return this;
-            }
-
-            state = MiningState.Mining;
-			return this;
 		}
 
-		Activity MiningTick(Actor self, out MiningState state)
+		private void Deploying(Actor self, out MiningState state)
+		{
+			// deploy failure.
+			if (!tranforms.CanDeploy())
+			{
+				//Wait 15 seconds and return state to Scan
+				Activity act = new Wait(15);
+				QueueChild(act);
+				state = MiningState.Scan;
+			}
+			else
+			{
+				state = MiningState.Mining;
+			}
+		}
+
+		private Activity Mining(Actor self, out MiningState state)
 		{
 			// Let the harvester become idle so it can shoot enemies.
 			// Tick in SpawnerHarvester trait will kick activity back to KickTick.
-			state = MiningState.Mining;
-			return NextActivity;
+			state = MiningState.Kick;
+			return ChildActivity;
 		}
 
-		Activity KickTick(Actor self, out MiningState state)
+		private void UndeployingCheck(Actor self, out MiningState state)
 		{
 			var closestHarvestablePosition = ClosestHarvestablePos(self, harvInfo.KickScanRadius);
 			if (closestHarvestablePosition.HasValue)
 			{
 				// I may stay mining.
 				state = MiningState.Mining;
-				return NextActivity;
 			}
+			else
+			{
+				// get going
+				harv.LastOrderLocation = null;
+				CheckWheteherNeedUndeployAndGo(self, out state);
+			}
+		}
 
-			// get going
-			harv.LastOrderLocation = null;
-			return UndeployAndGo(self, out state);
+		private Activity CheckWheteherNeedUndeployAndGo(Actor self, out MiningState state)
+		{
+			QueueChild(new DeployForGrantedCondition(self, deploy));
+			state = MiningState.Scan;
+			return this;
 		}
 
 		public override bool Tick(Actor self)
@@ -207,33 +197,29 @@ namespace OpenRA.Mods.YR.Activities
 			if (IsCanceling)
 				return true;
 
-			// Erm... looking at this, I could split these into separte activites...
-			// I prefer finite state machine style though...
-			// I can see what is going on at high level in this single place -_-
-			// I think this is less horrible than OpenRA FindResources... stuff.
-			// We are losing one tick, but so what?
-			// If this loss isn't acceptable, call ATick() from BTick() or something.
 			switch (harv.MiningState)
 			{
 				case MiningState.Scan:
-                    QueueChild(ScanTick(self, out harv.MiningState));
-                    return true;
+					ScanAndMove(self, out harv.MiningState);
+					break;
+				case MiningState.Moving:
+					CheckIfReachedBestLocation(self, out harv.MiningState);
+					break;
 				case MiningState.TryDeploy:
-                    QueueChild(TryDeployTick(self, out harv.MiningState));
-                    return true;
+					TryDeploy(self, out harv.MiningState);
+					break;
 				case MiningState.Deploying:
-                    QueueChild(DeployingTick(self, out harv.MiningState));
-                    return true;
+					Deploying(self, out harv.MiningState);
+					break;
 				case MiningState.Mining:
-                    QueueChild(MiningTick(self, out harv.MiningState));
-                    return true;
+					Mining(self, out harv.MiningState);
+					break;
 				case MiningState.Kick:
-                    QueueChild(KickTick(self, out harv.MiningState));
-                    return true;
-				default:
-					Game.Debug("SpawnHarvesterFindResources.cs in invalid state!");
-					return false;
+					UndeployingCheck(self, out harv.MiningState);
+					break;
 			}
+
+			return TickChild(self);
 		}
 
 		// Find a nearest Transformable position from harvestablePos

@@ -66,7 +66,8 @@ namespace OpenRA.Mods.YR.Traits
 
 	public enum MiningState
 	{
-		Scan, // Scan ore and move there
+		Scan, // Scanning ore 
+		Moving, // Moving to the best location
 		TryDeploy, // Try to deploy
 		Deploying, // Playing deploy animation.
 		Mining, // Slaves are mining. We get kicked sometimes to move closer to ore.
