@@ -50,14 +50,14 @@ namespace OpenRA.Mods.YR.Traits
 
 		public IReadOnlyDictionary<CPos, SubCell> OccupiedCells(ActorInfo info, CPos location, SubCell subCell = SubCell.Any) { return new ReadOnlyDictionary<CPos, SubCell>(); }
 		bool IOccupySpaceInfo.SharesCell { get { return false; } }
-		public bool CanEnterCell(World world, Actor self, CPos cell, Actor ignoreActor = null, bool checkTransientActors = true)
-		{
-			// SBMs may not land.
-			return false;
-		}
 
 		// set by spawned logic, not this.
 		public int GetInitialFacing() { return 0; }
+
+		public bool CanEnterCell(World world, Actor self, CPos cell, SubCell subCell = SubCell.FullCell, Actor ignoreActor = null, bool checkTransientActors = true)
+		{
+			return false;
+		}
 	}
 
 	public class ShootableBallisticMissile : ITick, ISync, IFacing, IPositionable, IMove,
@@ -331,5 +331,10 @@ namespace OpenRA.Mods.YR.Traits
         {
             return (toPos - fromPos).Length / Info.Speed;
         }
-    }
+
+		public Activity ReturnToCell(Actor self)
+		{
+			return null;
+		}
+	}
 }

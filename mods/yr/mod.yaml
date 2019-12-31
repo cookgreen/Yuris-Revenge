@@ -1,6 +1,6 @@
 Metadata:
 	Title: Red Alert 2 Yuri's Revenge
-	Version: playtest-20190825
+	Version: release-20191117
 	Website: https://github.com/cookgreen/yr
 	WebIcon32: https://raw.githubusercontent.com/cookgreen/yr/master/mods/yr/icon.png
 
@@ -78,7 +78,7 @@ Packages:
 
 MapFolders:
 	yr|maps: System
-	~^maps/yr/playtest-20190825: User
+	~^maps/yr/release-20191117: User
 
 Rules:
 	yr|rules/proxy-actors.yaml
@@ -146,48 +146,49 @@ Assemblies:
 	yr|OpenRA.Mods.YR.dll
 
 ChromeLayout:
-	common|chrome/assetbrowser.yaml
-	yr|chrome/ingame-player.yaml
-	yr|chrome/ingame-infoobjectives.yaml
 	yr|chrome/mainmenu.yaml
 	yr|chrome/vxlbrowser.yaml
 	yr|chrome/soundplayer.yaml
-	common|chrome/ingame-infostats.yaml
-	common|chrome/musicplayer.yaml
-	common|chrome/tooltips.yaml
 	common|chrome/ingame.yaml
-	common|chrome/ingame-observer.yaml
 	common|chrome/ingame-chat.yaml
 	yr|chrome/ingame-binkplayer.yaml
-	common|chrome/ingame-menu.yaml
 	common|chrome/ingame-info.yaml
 	common|chrome/ingame-infoscripterror.yaml
 	common|chrome/ingame-infobriefing.yaml
+	common|chrome/ingame-infoobjectives.yaml
+	common|chrome/ingame-infostats.yaml
+	common|chrome/ingame-menu.yaml
+	yr|chrome/ingame-observer.yaml
+	yr|chrome/ingame-player.yaml
+	common|chrome/ingame-perf.yaml
 	common|chrome/ingame-debug.yaml
 	common|chrome/ingame-debuginfo.yaml
-	common|chrome/ingame-perf.yaml
+	common|chrome/ingame-infochat.yaml
 	yr|chrome/settings.yaml
 	common|chrome/credits.yaml
 	common|chrome/lobby.yaml
+	common|chrome/lobby-mappreview.yaml
 	common|chrome/lobby-players.yaml
 	common|chrome/lobby-options.yaml
 	common|chrome/lobby-music.yaml
-	common|chrome/lobby-mappreview.yaml
 	common|chrome/lobby-servers.yaml
 	common|chrome/lobby-kickdialogs.yaml
+	common|chrome/color-picker.yaml
+	common|chrome/map-chooser.yaml
 	common|chrome/multiplayer-browser.yaml
 	common|chrome/multiplayer-browserpanels.yaml
 	common|chrome/multiplayer-createserver.yaml
 	common|chrome/multiplayer-directconnect.yaml
-	common|chrome/map-chooser.yaml
 	common|chrome/connection.yaml
 	common|chrome/replaybrowser.yaml
-	yr|chrome/missionbrowser.yaml
-	common|chrome/confirmation-dialogs.yaml
-	common|chrome/color-picker.yaml
 	common|chrome/gamesave-browser.yaml
 	common|chrome/gamesave-loading.yaml
 	common|chrome/dropdowns.yaml
+	common|chrome/musicplayer.yaml
+	common|chrome/tooltips.yaml
+	common|chrome/assetbrowser.yaml
+	common|chrome/missionbrowser.yaml
+	common|chrome/confirmation-dialogs.yaml
 	common|chrome/editor.yaml
 	common|chrome/playerprofile.yaml
     

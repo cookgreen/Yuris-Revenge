@@ -369,5 +369,10 @@ namespace OpenRA.Mods.YR.Traits
 
 			return true;
 		}
+
+		public bool TargetOverridesSelection(Actor self, Target target, List<Actor> actorsAt, CPos xy, TargetModifiers modifiers)
+		{
+			return true;
+		}
 	}
 }

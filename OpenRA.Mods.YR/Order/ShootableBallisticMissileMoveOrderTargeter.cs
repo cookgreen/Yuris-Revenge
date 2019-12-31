@@ -39,6 +39,11 @@ namespace OpenRA.Mods.YR.Orders
 			return true;
 		}
 
+		public bool TargetOverridesSelection(Actor self, Target target, List<Actor> actorsAt, CPos xy, TargetModifiers modifiers)
+		{
+			return true;
+		}
+
 		public bool IsQueued { get; protected set; }
 	}
 }
