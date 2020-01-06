@@ -413,6 +413,45 @@ chinese:
 			tug: 拖船
 			cruise: 游轮
 			cdest: 海岸警卫队船
+		Maps:
+			amazon: 
+				Title: 暴风天
+			arena: 
+				Title: 竞技场
+			bayopigs: 
+				Title: 猪猡湾
+			bermuda: 
+				Title: 百慕大三角洲
+			breakaway: 
+				Title: 脱逃
+			c1a01md: 
+				Title: 盟军合作任务第一关
+			c1a02md: 
+				Title: 盟军合作任务第二关
+			c1a03md: 
+				Title: 盟军合作任务第三关
+			c2s01md: 
+				Title: 苏联合作任务第一关
+			c2s02md: 
+				Title: 苏联合作任务第二关
+			c2s03md: 
+				Title: 苏联合作任务第三关
+			c3y01md: 
+				Title: 尤里合作任务第一关
+			c3y02md: 
+				Title: 尤里合作任务第二关
+			c4w01md: 
+				Title: 世界联盟合作任务
+			tn01mw:
+				Title: 世界锦标赛地图01
+			tn02mw:
+				Title: 世界锦标赛地图02
+			tn03mw:
+				Title: 世界锦标赛地图03
+			tn04mw:
+				Title: 世界锦标赛地图04
+			soviet-06:
+				Title: 苏联任务06 - 军事行动: 飞向月球
 		World:
 			Faction@random: 
 				Name: 随机
