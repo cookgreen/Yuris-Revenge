@@ -520,6 +520,8 @@ chinese:
 										Text: 遭遇战
 									Button@MISSIONS_BUTTON:
 										Text: 单人任务
+									Button@WD_BUTTON:
+										Text: 征服世界之旅
 									Button@BACK_BUTTON:
 										Text: 返回
 							Background@EXTRAS_MENU:
