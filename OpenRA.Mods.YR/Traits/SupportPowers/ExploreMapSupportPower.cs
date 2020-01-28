@@ -51,7 +51,7 @@ namespace OpenRA.Mods.YR.Traits
             {
                 Shroud shround = self.Owner.Shroud;
                 WPos destPosition = order.Target.CenterPosition;
-                var cells = Shroud.ProjectedCellsInRange(self.World.Map, destPosition, WDist.FromCells(info.Radius));
+                var cells = Shroud.ProjectedCellsInRange(self.World.Map, self.World.Map.CellContaining(destPosition), WDist.FromCells(info.Radius));
                 try
                 {
                     shround.AddSource(this, type, cells.ToArray());

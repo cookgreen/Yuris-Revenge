@@ -223,7 +223,7 @@ namespace OpenRA.Mods.YR.Traits
                 this.targetPos = target;
 
                 var attack = slave.Trait<AttackAircraft>();
-                attack.AttackTarget(Target.FromPos(target + targetOffset), false, true);
+                attack.AttackTarget(Target.FromPos(target + targetOffset), AttackSource.Default, false, true);
             }
         }
 
