@@ -1,6 +1,6 @@
 Metadata:
 	Title: Red Alert 2 Yuri's Revenge
-	Version: playtest-20200118
+	Version: release-20200202
 	Website: https://github.com/cookgreen/yr
 	WebIcon32: https://raw.githubusercontent.com/cookgreen/yr/master/mods/yr/icon.png
 
@@ -78,7 +78,7 @@ Packages:
 
 MapFolders:
 	yr|maps: System
-	~^maps/yr/playtest-20200118: User
+	~^maps/yr/release-20200202: User
 
 Rules:
 	yr|rules/proxy-actors.yaml
