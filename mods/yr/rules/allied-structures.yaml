@@ -30,6 +30,25 @@ gacnst:
 		Offset: 1,1
 		Facing: 96
 		DeployCursor: undeploy
+		RequiresCondition: factundeploy && !build-incomplete
+	TransformsIntoMobile:
+		RequiresCondition: factundeploy
+		Locomotor: heavytracked
+		Voice: Move
+		RequiresForceMove: true
+	TransformsIntoRepairable:
+		RequiresCondition: factundeploy
+		RepairActors: gadept, nadept, caoutp
+		Voice: Move
+		RequiresForceMove: true
+	TransformsIntoPassenger:
+		RequiresCondition: factundeploy
+		CargoType: Vehicle
+		Voice: Move
+		RequiresForceMove: true
+	GrantConditionOnPrerequisite@GLOBALFACTUNDEPLOY:
+		Condition: factundeploy
+		Prerequisites: global-factundeploy
 	ProductionQueue@Building:
 		Type: Building
 	ProductionQueue@Support:
@@ -65,7 +84,6 @@ gacnst:
 	SpawnActorsOnSell@yuris:
 		ActorTypes: init, init, init, init, yengineer
 		Factions: yuri
-
 gapowr:
 	Inherits: ^Building
 	Inherits@shape: ^2x2Shape

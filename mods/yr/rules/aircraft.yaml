@@ -77,7 +77,7 @@ shad:
 		Voice: Attack
 		AttackType: Hover
 	RenderSprites:
-	WithVoxelWalkerBody:
+	WithVoxelHelicopterBody:
 		TickRate: 1
 	Hovers@CRUISING:
 		RequiresCondition: cruising

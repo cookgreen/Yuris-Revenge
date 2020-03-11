@@ -254,8 +254,8 @@ World:
 		BuildRadiusCheckboxVisible: false
 	MapOptions:
 		ShortGameCheckboxDisplayOrder: 2
-		TechLevelDropdownDisplayOrder: 2
-		GameSpeedDropdownDisplayOrder: 3
+		TechLevelDropdownDisplayOrder: 3
+		GameSpeedDropdownDisplayOrder: 4
 	CreateMPPlayers:
 	MPStartUnits@amcv:
 		Class: none
@@ -354,6 +354,7 @@ World:
 	MPStartLocations:
 		SeparateTeamSpawnsCheckboxDisplayOrder: 6
 	SpawnMPUnits:
+		DropdownDisplayOrder: 2
 	PathFinder:
 	ValidateOrder:
 	DebugPauseState:
@@ -364,6 +365,15 @@ World:
 	LoadWidgetAtGameStart:
 	CliffBackImpassabilityLayer:
 	TimeLimitManager:
+		TimeLimitDisplayOrder: 1
+		TimeLimitWarnings:
+			1: OneMinuteRemaining
+			2: TwoMinutesRemaining
+			3: ThreeMinutesRemaining
+			4: FourMinutesRemaining
+			5: FiveMinutesRemaining
+			10: TenMinutesRemaining
+			20: TwentyMinutesRemaining
 	Selection:
 
 EditorWorld:
