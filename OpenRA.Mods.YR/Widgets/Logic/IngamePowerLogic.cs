@@ -30,19 +30,19 @@ namespace OpenRA.Mods.YR.Widgets.Logic
             var powerManager = world.LocalPlayer.PlayerActor.Trait<PowerManager>();
 
 
-            var powerBar = widget.Get<ResourceBarSpriteWidget>("POWERBAR");
-
-            powerBar.GetProvided = () => powerManager.PowerProvided;
-            powerBar.GetUsed = () => powerManager.PowerDrained;
-            powerBar.TooltipFormat = "Power Usage: {0}/{1}";
-            powerBar.GetPowerState = () =>
-            {
-                if (powerManager.PowerState == PowerState.Critical)
-                    return "low";
-                if (powerManager.PowerState == PowerState.Low)
-                    return "middle";
-                return "heigh";
-            };
+            //var powerBar = widget.Get<PowerBarWidge>("POWERBAR");
+			//
+            //powerBar.GetProvided = () => powerManager.PowerProvided;
+            //powerBar.GetUsed = () => powerManager.PowerDrained;
+            //powerBar.TooltipFormat = "Power Usage: {0}/{1}";
+            //powerBar.GetPowerState = () =>
+            //{
+            //    if (powerManager.PowerState == PowerState.Critical)
+            //        return "low";
+            //    if (powerManager.PowerState == PowerState.Low)
+            //        return "middle";
+            //    return "heigh";
+            //};
         }
     }
 }

@@ -1960,7 +1960,9 @@ dropdown: dialog.png
 	separator: 512,1,1,19
 	observer-separator: 768,256,1,19
 	
-power: chrome.png
-	heigh: 263,10,10,2
-	middle: 274,10,10,2
-	low: 285,10,10,2
+power-meter: chrome.png
+	power-meter-none: 249,522,12,2
+	power-meter-available: 262,522,12,2
+	power-meter-used: 274,522,12,2
+	power-meter-danger: 286,522,12,2
+	power-meter-disabled: 298,522,12,2
