@@ -369,6 +369,9 @@ ModContent:
 		movie-md: Yuri's Revenge Briefings
 			TestFiles: ^Content/yr/movmd03.mix
 			Sources: yr, origin, tfd
+		wdt: Red Alert 2 World Domination Tour
+			TestFiles: ^Content/ra2/wdt.mix
+			Sources: ra2, origin, tfd
 	Sources:
 		yr|installer/ra2.yaml
 		yr|installer/yr.yaml

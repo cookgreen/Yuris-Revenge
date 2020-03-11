@@ -516,14 +516,34 @@ namespace OpenRA.Mods.YR.Widgets.Logic
 
 		private void OpenWorldDominationPanel()
 		{
-			SwitchMenu(MenuType.None);
-			Ui.OpenWindow("WD_PANEL", new WidgetArgs
+			bool founded = File.Exists(Path.GetFullPath(Platform.ResolvePath("^Content/ra2/wdt.mix")));
+
+			if (!founded)
 			{
-				{ "onStart", () => { RemoveShellmapUI(); lastGameState = MenuPanel.Multiplayer; } },
-				{ "onExit", () => SwitchMenu(MenuType.Multiplayer) },
-				{ "directConnectHost", null },
-				{ "directConnectPort", 0 },
-			});
+				ConfirmationDialogs.ButtonPrompt(
+					title: "Error",
+					text: "Can't find wdt.mix!",
+					confirmText: "Retry",
+					cancelText: "Quit",
+					onCancel: close,
+					onConfirm: OpenWorldDominationPanel);
+			}
+			else
+			{
+				SwitchMenu(MenuType.None);
+				Game.OpenWindow("WD_PANEL", new WidgetArgs
+				{
+					{ "onStart", () => { RemoveShellmapUI(); lastGameState = MenuPanel.Multiplayer; } },
+					{ "onExit", () => SwitchMenu(MenuType.Multiplayer) },
+					{ "directConnectHost", null },
+					{ "directConnectPort", 0 },
+				});
+			}
+		}
+
+		private void close()
+		{
+
 		}
 
 		void OpenReplayBrowserPanel()
