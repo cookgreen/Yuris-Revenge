@@ -35,6 +35,9 @@ Tick = function()
 		return
 	end
 	RepairBeacon()
+	
+	--[[Prevent Yuri from becoming poor and unable to repair the beacon]]
+	yuri.Cash += 10
 end
 
 WorldLoaded = function()
