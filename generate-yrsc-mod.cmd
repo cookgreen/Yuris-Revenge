@@ -17,21 +17,21 @@ if not exist %ENGINE_DIRECTORY%\OpenRA.Game.exe goto noengine
 cd %ENGINE_DIRECTORY%
 
 call OpenRA.Utility.exe yr --import-translation-string chinese yrsc translation_fonts/FontsSetting.yaml
-echo Launching OpenRA Yuir's Revenge Chinese Version...
+echo 正在启动 开源红警2尤里的复仇 ... 
 cd ..
 launch-yrsc
 pause
 exit /b
 
 :noengine
-echo Required engine files not found.
-echo Run `make all` in the mod directory to fetch and build the required files, then try again.
+echo 需要的引擎文件没有找到
+echo 在mod根目录运行 `make all` 命令以便获取并且构建需要的文件，然后再试一次
 pause
 exit /b
 
 :badconfig
-echo Required mod.config variables are missing.
-echo Ensure that MOD_ID ENGINE_VERSION and ENGINE_DIRECTORY are
-echo defined in your mod.config (or user.config) and try again.
+echo 需要的mod.config变量缺失
+echo 确保MOD_ID，ENGINE_VERSION以及ENGINE_DIRECTORY这三个变量
+echo 存在于你的 mod.config (或者 user.config) 然后再试一次.
 pause
 exit /b
