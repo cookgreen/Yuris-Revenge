@@ -1,0 +1,18 @@
+WDT:
+	Scenarios:
+		NA: 
+			Name: North America
+			BackgroundImage: xx.shp
+		EU: 
+			Name: Europe
+			BackgroundImage: xx.shp
+		EA: 
+			Name: East Asia
+			BackgroundImage: xx.shp
+	Blocks:
+		NA:
+			NP:
+				Name: North Pacific
+				Image: NP
+				UILocation: 0, 0
+                

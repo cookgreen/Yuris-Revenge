@@ -1,5 +1,6 @@
 ﻿using OpenRA.Graphics;
 using OpenRA.Mods.Common.Widgets;
+using OpenRA.Mods.YR.WDT;
 using OpenRA.Widgets;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,7 @@ namespace OpenRA.Mods.YR.Widgets.Logic
 
 		readonly World world;
 		readonly ModData modData;
+		readonly WDTData wdtData;
 
 		Widget panel;
 
@@ -28,6 +30,8 @@ namespace OpenRA.Mods.YR.Widgets.Logic
 		{
 			this.modData = modData;
 			this.world = world;
+			var wdtDataReader = new WDTDataReader("wdt_data.yaml");
+			wdtData = wdtDataReader.Reader();
 
 			panel = widget;
 
