@@ -1,0 +1,375 @@
+WDT:
+	Scenarios:
+		NA: 
+			Name: North America
+			BackgroundImage: america_worlddom_b.pcx
+		EU: 
+			Name: Europe
+			BackgroundImage: europe_worlddom_b.pcx
+		EA: 
+			Name: East Asia
+			BackgroundImage: asia_worlddom_b.pcx
+	Blocks:
+		NA:
+			terr01:
+				Name: North Pacific
+				Image: amterr00.shp
+				UILocation: 0, 0
+			terr02:
+				Name: Northern Rockies
+				Image: amterr01.shp
+				UILocation: 0, 0
+			terr03:
+				Name: Dakotas
+				Image: amterr02.shp
+				UILocation: 0, 0
+			terr04:
+				Name: Black Hills
+				Image: amterr03.shp
+				UILocation: 0, 0
+			terr05:
+				Name: Lake Superior
+				Image: amterr04.shp
+				UILocation: 0, 0
+			terr06:
+				Name: Lawrence
+				Image: amterr05.shp
+				UILocation: 0, 0
+			terr07:
+				Name: Northern Gulf
+				Image: amterr06.shp
+				UILocation: 0, 0
+			terr08:
+				Name: New England
+				Image: amterr07.shp
+				UILocation: 0, 0
+			terr09:
+				Name: Sierra Nevada
+				Image: amterr08.shp
+				UILocation: 0, 0
+			terr10:
+				Name: Salt Lake
+				Image: amterr09.shp
+				UILocation: 0, 0
+			terr11:
+				Name: Great Divide
+				Image: amterr10.shp
+				UILocation: 0, 0
+			terr12:
+				Name: Great Plains
+				Image: amterr11.shp
+				UILocation: 0, 0
+			terr13:
+				Name: Western Gateway
+				Image: amterr12.shp
+				UILocation: 0, 0
+			terr14:
+				Name: Great Lakes
+				Image: amterr13.shp
+				UILocation: 0, 0
+			terr15:
+				Name: Appalachians
+				Image: amterr14.shp
+				UILocation: 0, 0
+			terr16:
+				Name: Southern Cal
+				Image: amterr15.shp
+				UILocation: 0, 0
+			terr17:
+				Name: Southern Desert
+				Image: amterr16.shp
+				UILocation: 0, 0
+			terr18:
+				Name: White Sands
+				Image: amterr17.shp
+				UILocation: 0, 0
+			terr19:
+				Name: Dodge
+				Image: amterr18.shp
+				UILocation: 0, 0
+			terr20:
+				Name: Ozarks
+				Image: amterr19.shp
+				UILocation: 0, 0
+			terr21:
+				Name: Ohio River
+				Image: amterr20.shp
+				UILocation: 0, 0
+			terr22:
+				Name: Roanoke
+				Image: amterr21.shp
+				UILocation: 0, 0
+			terr23:
+				Name: Gila Desert
+				Image: amterr22.shp
+				UILocation: 0, 0
+			terr24:
+				Name: Panhandle
+				Image: amterr23.shp
+				UILocation: 0, 0
+			terr25:
+				Name: Texas Gulf
+				Image: amterr24.shp
+				UILocation: 0, 0
+			terr26:
+				Name: Gulf Coast
+				Image: amterr25.shp
+				UILocation: 0, 0
+			terr27:
+				Name: Savannah
+				Image: amterr26.shp
+				UILocation: 0, 0
+			terr28:
+				Name: Baja
+				Image: amterr27.shp
+				UILocation: 0, 0
+			terr29:
+				Name: Sierra Madre
+				Image: amterr28.shp
+				UILocation: 0, 0
+			terr30:
+				Name: Southern Gulf
+				Image: amterr29.shp
+				UILocation: 0, 0
+		EU:
+			terr01:
+				Name: Eire
+				Image: euterr00.shp
+				UILocation: 0, 0
+			terr02:
+				Name: Britannia
+				Image: euterr01.shp
+				UILocation: 0, 0
+			terr03:
+				Name: Norway
+				Image: euterr02.shp
+				UILocation: 0, 0
+			terr04:
+				Name: Sweden
+				Image: euterr03.shp
+				UILocation: 0, 0
+			terr05:
+				Name: Finland
+				Image: euterr04.shp
+				UILocation: 0, 0
+			terr06:
+				Name: Bay of Biscay
+				Image: euterr05.shp
+				UILocation: 0, 0
+			terr07:
+				Name: La Seine
+				Image: euterr06.shp
+				UILocation: 0, 0
+			terr08:
+				Name: Germany
+				Image: euterr07.shp
+				UILocation: 0, 0
+			terr09:
+				Name: Poland
+				Image: euterr08.shp
+				UILocation: 0, 0
+			terr10:
+				Name: Baltic
+				Image: euterr09.shp
+				UILocation: 0, 0
+			terr11:
+				Name: Belarus
+				Image: euterr10.shp
+				UILocation: 0, 0
+			terr12:
+				Name: Ukraine
+				Image: euterr11.shp
+				UILocation: 0, 0
+			terr13:
+				Name: North Atlantic
+				Image: euterr12.shp
+				UILocation: 0, 0
+			terr14:
+				Name: Ebro
+				Image: euterr13.shp
+				UILocation: 0, 0
+			terr15:
+				Name: Gulf of Lions
+				Image: euterr14.shp
+				UILocation: 0, 0
+			terr16:
+				Name: Alps
+				Image: euterr15.shp
+				UILocation: 0, 0
+			terr17:
+				Name: Liguria
+				Image: euterr16.shp
+				UILocation: 0, 0
+			terr18:
+				Name: Adriatic Coast
+				Image: euterr17.shp
+				UILocation: 0, 0
+			terr19:
+				Name: Danube Delta
+				Image: euterr18.shp
+				UILocation: 0, 0
+			terr20:
+				Name: Black Sea
+				Image: euterr19.shp
+				UILocation: 0, 0
+			terr21:
+				Name: Sierra Morena
+				Image: euterr20.shp
+				UILocation: 0, 0
+			terr22:
+				Name: Sardinia
+				Image: euterr21.shp
+				UILocation: 0, 0
+			terr23:
+				Name: Tyrrhenia
+				Image: euterr22.shp
+				UILocation: 0, 0
+			terr24:
+				Name: Aegean Coast
+				Image: euterr23.shp
+				UILocation: 0, 0
+			terr25:
+				Name: Asia Minor
+				Image: euterr24.shp
+				UILocation: 0, 0
+			terr26:
+				Name: Mesopotamia
+				Image: euterr25.shp
+				UILocation: 0, 0
+			terr27:
+				Name: Morocco
+				Image: euterr26.shp
+				UILocation: 0, 0
+			terr28:
+				Name: South Med
+				Image: euterr27.shp
+				UILocation: 0, 0
+			terr29:
+				Name: Sahara
+				Image: euterr28.shp
+				UILocation: 0, 0
+			terr30:
+				Name: Tunisia
+				Image: euterr29.shp
+				UILocation: 0, 0
+		EA:
+			terr01:
+				Name: Xinjiang
+				Image: asterr00.shp
+				UILocation: 0, 0
+			terr02:
+				Name: Gansu
+				Image: asterr01.shp
+				UILocation: 0, 0
+			terr03:
+				Name: Nei Mongol
+				Image: asterr02.shp
+				UILocation: 0, 0
+			terr04:
+				Name: Heilongjiang
+				Image: asterr03.shp
+				UILocation: 0, 0
+			terr05:
+				Name: Jilin
+				Image: asterr04.shp
+				UILocation: 0, 0
+			terr06:
+				Name: Liaoning
+				Image: asterr05.shp
+				UILocation: 0, 0
+			terr07:
+				Name: Republic of Korea
+				Image: asterr06.shp
+				UILocation: 0, 0
+			terr08:
+				Name: Japan
+				Image: asterr07.shp
+				UILocation: 0, 0
+			terr09:
+				Name: Japan Islands
+				Image: asterr08.shp
+				UILocation: 0, 0
+			terr10:
+				Name: Eastern Tibet
+				Image: asterr09.shp
+				UILocation: 0, 0
+			terr11:
+				Name: Xizang
+				Image: asterr10.shp
+				UILocation: 0, 0
+			terr12:
+				Name: Qinghai
+				Image: asterr11.shp
+				UILocation: 0, 0
+			terr13:
+				Name: Yunnan
+				Image: asterr12.shp
+				UILocation: 0, 0
+			terr14:
+				Name: Sichuan
+				Image: asterr13.shp
+				UILocation: 0, 0
+			terr15:
+				Name: Shaanxi
+				Image: asterr14.shp
+				UILocation: 0, 0
+			terr16:
+				Name: Shanxi
+				Image: asterr15.shp
+				UILocation: 0, 0
+			terr17:
+				Name: Hebei
+				Image: asterr16.shp
+				UILocation: 0, 0
+			terr18:
+				Name: Henan
+				Image: asterr17.shp
+				UILocation: 0, 0
+			terr19:
+				Name: Shandong
+				Image: asterr18.shp
+				UILocation: 0, 0
+			terr20:
+				Name: Jiangsu
+				Image: asterr19.shp
+				UILocation: 0, 0
+			terr21:
+				Name: Nanjing
+				Image: asterr20.shp
+				UILocation: 0, 0
+			terr22:
+				Name: Hubei
+				Image: asterr21.shp
+				UILocation: 0, 0
+			terr23:
+				Name: Hunan
+				Image: asterr22.shp
+				UILocation: 0, 0
+			terr24:
+				Name: Guangxi
+				Image: asterr23.shp
+				UILocation: 0, 0
+			terr25:
+				Name: Guangdong
+				Image: asterr24.shp
+				UILocation: 0, 0
+			terr26:
+				Name: Taiwan
+				Image: asterr25.shp
+				UILocation: 0, 0
+			terr27:
+				Name: South Sea
+				Image: asterr26.shp
+				UILocation: 0, 0
+			terr28:
+				Name: Hainan
+				Image: asterr27.shp
+				UILocation: 0, 0
+			terr29:
+				Name: Philippines
+				Image: asterr28.shp
+				UILocation: 0, 0
+			terr30:
+				Name: Guizhou
+				Image: asterr29.shp
+				UILocation: 0, 0

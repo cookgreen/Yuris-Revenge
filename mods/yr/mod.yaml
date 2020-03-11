@@ -65,6 +65,7 @@ Packages:
 	~audio.bag
 	~thememd.mix
 	~movmd03.mix
+	~wdt.mix
 	yr|bits
 	yr|bits/animations
 	yr|bits/audio
@@ -74,6 +75,7 @@ Packages:
 	yr|bits/projectiles
 	yr|bits/structures
 	yr|bits/units
+	yr|data
 	yr|uibits
 
 MapFolders:
