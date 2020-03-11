@@ -29,7 +29,7 @@ namespace OpenRA.Mods.YR.Widgets.Logic
 		Justification = "SystemInformation version should be defined next to the dictionary it refers to.")]
 	public class NewMainMenuLogic : ChromeLogic
 	{
-		protected enum MenuType { Main, Singleplayer, Extras, MapEditor, SystemInfoPrompt, OtherTools, None }
+		protected enum MenuType { Main, Singleplayer, Extras, MapEditor, SystemInfoPrompt, OtherTools, None, Multiplayer}
 
 		protected enum MenuPanel { None, Missions, Skirmish, Multiplayer, MapEditor, Replays }
 
@@ -86,7 +86,7 @@ namespace OpenRA.Mods.YR.Widgets.Logic
 
 			mainMenu.Get<ButtonWidget>("SINGLEPLAYER_BUTTON").OnClick = () => SwitchMenu(MenuType.Singleplayer);
 
-			mainMenu.Get<ButtonWidget>("MULTIPLAYER_BUTTON").OnClick = OpenMultiplayerPanel;
+			mainMenu.Get<ButtonWidget>("MULTIPLAYER_BUTTON").OnClick = () => SwitchMenu(MenuType.Multiplayer);
 
 			mainMenu.Get<ButtonWidget>("CONTENT_BUTTON").OnClick = () =>
 			{
@@ -128,6 +128,18 @@ namespace OpenRA.Mods.YR.Widgets.Logic
 			singleplayerMenu.Get<ButtonWidget>("SKIRMISH_BUTTON").OnClick = StartSkirmishGame;
 
 			singleplayerMenu.Get<ButtonWidget>("BACK_BUTTON").OnClick = () => SwitchMenu(MenuType.Main);
+
+			// Multiplayer menu
+			var multiplayerMenu = widget.Get("MULTIPLAYER_MENU");
+			multiplayerMenu.IsVisible = () => menuType == MenuType.Multiplayer;
+
+			var onlinegameButton = multiplayerMenu.Get<ButtonWidget>("ONLINEGAME_BUTTON");
+			onlinegameButton.OnClick = OpenMultiplayerPanel;
+
+			var worldDominationButton = multiplayerMenu.Get<ButtonWidget>("WD_BUTTON");
+			worldDominationButton.OnClick = OpenWorldDominationPanel;
+
+			multiplayerMenu.Get<ButtonWidget>("BACK_BUTTON").OnClick = () => SwitchMenu(MenuType.Main);
 
 			// Extras menu
 			var extrasMenu = widget.Get("EXTRAS_MENU");
@@ -496,7 +508,19 @@ namespace OpenRA.Mods.YR.Widgets.Logic
 			Ui.OpenWindow("MULTIPLAYER_PANEL", new WidgetArgs
 			{
 				{ "onStart", () => { RemoveShellmapUI(); lastGameState = MenuPanel.Multiplayer; } },
-				{ "onExit", () => SwitchMenu(MenuType.Main) },
+				{ "onExit", () => SwitchMenu(MenuType.Multiplayer) },
+				{ "directConnectHost", null },
+				{ "directConnectPort", 0 },
+			});
+		}
+
+		private void OpenWorldDominationPanel()
+		{
+			SwitchMenu(MenuType.None);
+			Ui.OpenWindow("WD_PANEL", new WidgetArgs
+			{
+				{ "onStart", () => { RemoveShellmapUI(); lastGameState = MenuPanel.Multiplayer; } },
+				{ "onExit", () => SwitchMenu(MenuType.Multiplayer) },
 				{ "directConnectHost", null },
 				{ "directConnectPort", 0 },
 			});

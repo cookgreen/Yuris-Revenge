@@ -1,0 +1,5 @@
+Background@WD_PANEL:
+	X: (WINDOW_RIGHT - WIDTH) / 2
+	Y: (WINDOW_BOTTOM -  HEIGHT) / 2
+	Width: 600
+	Height: 450

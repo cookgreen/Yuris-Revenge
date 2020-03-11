@@ -191,6 +191,7 @@ ChromeLayout:
 	common|chrome/confirmation-dialogs.yaml
 	common|chrome/editor.yaml
 	common|chrome/playerprofile.yaml
+	yr|chrome/wd.yaml
     
 Hotkeys:
 	common|hotkeys/game.yaml

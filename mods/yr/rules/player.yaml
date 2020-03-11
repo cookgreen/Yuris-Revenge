@@ -93,13 +93,6 @@ Player:
 	GpsWatcher:
 	Shroud:
 		FogCheckboxDisplayOrder: 3
-	LobbyPrerequisiteCheckbox@GLOBALFACTUNDEPLOY:
-		ID: factundeploy
-		Label: Redeployable MCVs
-		Description: Allow undeploying Construction Yard.
-		Enabled: True
-		DisplayOrder: 7
-		Prerequisites: global-factundeploy
 	LobbyPrerequisiteCheckbox@GLOBALBOUNTY:
 		ID: bounty
 		Label: Kill Bounties
