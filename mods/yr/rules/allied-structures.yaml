@@ -861,6 +861,8 @@ gaorep:
 		Range: 5c0
 	WithIdleOverlay@glow:
 		Sequence: idle-glow
+	ResourcePurifier:
+		Modifier: 25
 	Power:
 		Amount: -200
 

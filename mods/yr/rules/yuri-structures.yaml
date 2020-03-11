@@ -722,7 +722,7 @@ yapsyt:
 	Buildable:
 		Queue: Support
 		BuildPaletteOrder: 40
-		Prerequisites: napsis, ~structures.yuris
+		Prerequisites: napsis, ~structures.yuris, ~techlevel.unrestricted
 		Description: Mind Control Tower
 	Selectable:
 		Bounds: 69, 150, 0, -70
@@ -774,7 +774,7 @@ yagntc:
 	Buildable:
 		Queue: Support
 		BuildPaletteOrder: 50
-		Prerequisites: yatech, ~structures.yuris
+		Prerequisites: yatech, ~structures.yuris, ~techlevel.unrestricted
 		BuildLimit: 1
 		Description: Convert soldiers to powerful brute
 	Selectable:

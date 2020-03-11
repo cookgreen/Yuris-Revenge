@@ -293,6 +293,8 @@ explosion:
 		Length: 4
 		Offset: 0, -80
 		Tick: 50
+	small_barrel_explosion: brrlexp1
+	large_barrel_explosion: brrlexp2
 
 discus:
 	idle:
@@ -538,4 +540,11 @@ viruscloud:
 smokey2:
 	idle:
 		Length: *
-
+        
+chrono:
+	warpin: warpin
+		Length: *
+		ZOffset: -2047
+	warpout: warpout
+		Length: *
+		ZOffset: -2047
