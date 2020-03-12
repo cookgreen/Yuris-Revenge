@@ -7,7 +7,7 @@ A Red Alert 2 Yuri's Revenge mod for OpenRA Hg (Higher Graphic) Engine which pow
 ![Voxel browser](https://media.moddb.com/images/members/4/3399/3398047/voxelbrowser.PNG)
 
 ## Version
-unknown
+{DEV-VERISON}
 
 ## Build
 ### Windows
