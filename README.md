@@ -1,5 +1,5 @@
-# OpenRA Red Alert 2 Yuri's Revenge
-A Red Alert 2 Yuri's Revenge mod for OpenRA Engine
+# OpenRA Red Alert 2 Yuri's Revenge (Hg Edition)
+A Red Alert 2 Yuri's Revenge mod for OpenRA Hg (Higher Graphic) Engine which powered by alexeik
 
 ## Screenshots
 
@@ -7,10 +7,13 @@ A Red Alert 2 Yuri's Revenge mod for OpenRA Engine
 ![Voxel browser](https://media.moddb.com/images/members/4/3399/3398047/voxelbrowser.PNG)
 
 ## Version
-release-20191117
+unknown
 
 ## Build
-Run "make.cmd" on Windows and type "all" in the terminal or run "make" on Linux/MacOS  
+### Windows
+Run "make.cmd" on Windows and type "all" in the terminal  
+### Linux/MacOS
+Run "make" on Linux/MacOS  
 
 ## Wiki  
 You can check more information on wiki:  

@@ -1,5 +1,5 @@
 user.config
-engine
+engine_hg
 bin
 obj
 mods/*/*.dll
