@@ -10,5 +10,6 @@ namespace OpenRA.Mods.YR.WDT
 	{
 		public string Name;
 		public string BackgroundImage;
+		internal string Key;
 	}
 }

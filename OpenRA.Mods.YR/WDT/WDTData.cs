@@ -9,12 +9,12 @@ namespace OpenRA.Mods.YR.WDT
 	public class WDTData
 	{
 		public List<WDTScenario> Scenarios;
-		public List<WDTBlock> Blocks;
+		public Dictionary<string, List<WDTBlock>> Blocks;
 
 		public WDTData()
 		{
 			Scenarios = new List<WDTScenario>();
-			Blocks = new List<WDTBlock>();
+			Blocks = new Dictionary<string, List<WDTBlock>>();
 		}
 	}
 }

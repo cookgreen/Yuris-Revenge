@@ -31,7 +31,13 @@ namespace OpenRA.Mods.YR.Widgets.Logic
 			this.modData = modData;
 			this.world = world;
 			var wdtDataReader = new WDTDataReader("wdt_data.yaml");
-			wdtData = wdtDataReader.Reader();
+			wdtData = wdtDataReader.Read(modData);
+
+			currentSprites = null;
+			currentFrame = 0;
+			currentPalette = null;
+			isVideoLoaded = false;
+			isLoadError = false;
 
 			panel = widget;
 
@@ -51,6 +57,17 @@ namespace OpenRA.Mods.YR.Widgets.Logic
 					Ui.CloseWindow();
 					onExit();
 				};
+
+			loadDefaultWDTData();
+		}
+
+		private void loadDefaultWDTData()
+		{
+			if (wdtData.Scenarios.Count > 0)
+			{
+				currentSprites = world.Map.Rules.Sequences.SpriteCache[wdtData.Scenarios[0].BackgroundImage];
+				currentFrame = 0;
+			}
 		}
 	}
 }
