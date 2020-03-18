@@ -59,7 +59,7 @@ namespace OpenRA.Mods.YR.Activities
 			pathFinder = self.World.WorldActor.Trait<IPathFinder>();
 			domainIndex = self.World.WorldActor.Trait<DomainIndex>();
             tranforms = self.Trait<Transforms>();
-			ChildHasPriority = false;
+			//ChildHasPriority = false;
         }
 
 		public SpawnerHarvesterHarvest(Actor self, CPos avoidCell)
@@ -79,7 +79,7 @@ namespace OpenRA.Mods.YR.Activities
 				var randFrames = self.World.SharedRandom.Next(100, 175);
 
 				// Avoid creating an activity cycle
-				QueueChild(new Wait(randFrames));
+				QueueChild(self,new Wait(randFrames));
 				state = MiningState.Scan;
 			}
 
@@ -95,14 +95,14 @@ namespace OpenRA.Mods.YR.Activities
 			// Just sit there until we can. Won't happen unless the map is filled with units.
 			if (deployPosition == null)
 			{
-				QueueChild(new Wait(harvInfo.KickDelay));
+				QueueChild(self, new Wait(harvInfo.KickDelay));
 				state = MiningState.Scan;
 			}
 
 			// TODO: The harvest-deliver-return sequence is a horrible mess of duplicated code and edge-cases
 			var notify = self.TraitsImplementing<INotifyHarvesterAction>();
 			foreach (var n in notify)
-				n.MovingToResources(self, deployPosition.Value);
+				n.MovingToResources(self, deployPosition.Value, null);
 
 			state = MiningState.Moving;
 
@@ -110,8 +110,8 @@ namespace OpenRA.Mods.YR.Activities
 			deployDestPosition = deployPosition.Value;
 			cellRange = 2;
 			var moveActivity = mobile.MoveTo(deployPosition.Value, cellRange);
-			moveActivity.Queue(this);
-			QueueChild(moveActivity);
+			moveActivity.Queue(self, this);
+			QueueChild(self, moveActivity);
 		}
 
 		private void CheckIfReachedBestLocation(Actor self, out MiningState state)
@@ -138,8 +138,8 @@ namespace OpenRA.Mods.YR.Activities
 			{
 				IsInterruptible = false;
             
-				Activity transformsActivity = tranforms.GetTransformActivity(self);
-				QueueChild(transformsActivity);
+				//Activity transformsActivity = tranforms.GetTransformActivity(self);
+				//QueueChild(self, transformsActivity);
 
 				state = MiningState.Deploying;
 			}
@@ -152,7 +152,7 @@ namespace OpenRA.Mods.YR.Activities
 			{
 				//Wait 15 seconds and return state to Scan
 				Activity act = new Wait(15);
-				QueueChild(act);
+				QueueChild(self, act);
 				state = MiningState.Scan;
 			}
 			else
@@ -187,15 +187,15 @@ namespace OpenRA.Mods.YR.Activities
 
 		private Activity CheckWheteherNeedUndeployAndGo(Actor self, out MiningState state)
 		{
-			QueueChild(new DeployForGrantedCondition(self, deploy));
+			QueueChild(self, new DeployForGrantedCondition(self, deploy));
 			state = MiningState.Scan;
 			return this;
 		}
 
-		public override bool Tick(Actor self)
+		public override Activity Tick(Actor self)
 		{
 			if (IsCanceling)
-				return true;
+				return NextActivity;
 
 			switch (harv.MiningState)
 			{
@@ -219,7 +219,7 @@ namespace OpenRA.Mods.YR.Activities
 					break;
 			}
 
-			return TickChild(self);
+			return NextActivity;
 		}
 
 		// Find a nearest Transformable position from harvestablePos
@@ -257,7 +257,7 @@ namespace OpenRA.Mods.YR.Activities
 			// Find any harvestable resources:
 			// var passable = (uint)mobileInfo.GetMovementClass(self.World.Map.Rules.TileSet);
 			List<CPos> path;
-			using (var search = PathSearch.Search(self.World, mobile.Locomotor, self, true,
+			using (var search = PathSearch.Search(self.World, mobileInfo.LocomotorInfo, self, true,
 				loc => domainIndex.IsPassable(self.Location, loc, mobileInfo.LocomotorInfo)
 					&& harv.CanHarvestCell(self, loc) && claimLayer.CanClaimCell(self, loc))
 				.WithCustomCost(loc =>

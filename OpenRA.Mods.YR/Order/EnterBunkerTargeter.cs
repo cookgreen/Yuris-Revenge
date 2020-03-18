@@ -22,7 +22,7 @@ namespace OpenRA.Mods.YR.Orders
 	public class EnterBunkerTargeter : EnterAlliedActorTargeter<BunkerCargoInfo>
 	{
 		public EnterBunkerTargeter(string order, int priority,
-			Func<Actor, TargetModifiers, bool> canTarget, Func<Actor, bool> useEnterCursor)
+			Func<Actor, bool> canTarget, Func<Actor, bool> useEnterCursor)
 			: base(order, priority, canTarget, useEnterCursor)
         {
 

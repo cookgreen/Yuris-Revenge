@@ -10,6 +10,7 @@
 
 using System.Collections.Generic;
 using OpenRA.Mods.Common.Effects;
+using OpenRA.Primitives;
 using OpenRA.Traits;
 
 namespace OpenRA.Mods.AS.Warheads

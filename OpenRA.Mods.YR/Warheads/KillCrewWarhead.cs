@@ -13,6 +13,7 @@
 #endregion
 using OpenRA.Mods.Common.Warheads;
 using OpenRA.Mods.YR.Traits;
+using OpenRA.Primitives;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29215.179
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRA.Game", "engine\OpenRA.Game\OpenRA.Game.csproj", "{0DFB103F-2962-400F-8C6D-E2C28CCBA633}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRA.Game", "engine_hg\OpenRA.Game\OpenRA.Game.csproj", "{0DFB103F-2962-400F-8C6D-E2C28CCBA633}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRA.Mods.Common", "engine\OpenRA.Mods.Common\OpenRA.Mods.Common.csproj", "{FE6C8CC0-2F07-442A-B29F-17617B3B7FC6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRA.Mods.Common", "engine_hg\OpenRA.Mods.Common\OpenRA.Mods.Common.csproj", "{FE6C8CC0-2F07-442A-B29F-17617B3B7FC6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRA.Mods.Cnc", "engine\OpenRA.Mods.Cnc\OpenRA.Mods.Cnc.csproj", "{2881135D-4D62-493E-8F83-5EEE92CCC6BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRA.Mods.Cnc", "engine_hg\OpenRA.Mods.Cnc\OpenRA.Mods.Cnc.csproj", "{2881135D-4D62-493E-8F83-5EEE92CCC6BE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenRA.Mods.YR", "OpenRA.Mods.YR\OpenRA.Mods.YR.csproj", "{21FC6EDA-4A41-4F0B-B454-BF362793247A}"
 EndProject

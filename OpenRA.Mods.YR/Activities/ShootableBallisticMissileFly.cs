@@ -13,6 +13,7 @@ using System;
 using System.Collections.Generic;
 using OpenRA.Activities;
 using OpenRA.Mods.YR.Traits;
+using OpenRA.Primitives;
 using OpenRA.Traits;
 
 /* Works with no base engine modification */
@@ -61,7 +62,7 @@ namespace OpenRA.Mods.YR.Activities
 			sbm.Facing = GetEffectiveFacing();
 		}
 
-		public override bool Tick(Actor self)
+		public override Activity Tick(Actor self)
 		{
 			var d = targetPos - self.CenterPosition;
 
@@ -71,13 +72,13 @@ namespace OpenRA.Mods.YR.Activities
 			// Destruct so that Explodes will be called
 			if (d.HorizontalLengthSquared < move.HorizontalLengthSquared)
 			{
-				Queue(new CallFunc(() => self.Kill(self)));
-				return true;
+				Queue(self, new CallFunc(() => self.Kill(self)));
+				return NextActivity;
 			}
 
 			FlyToward(self, sbm);
 			ticks++;
-			return false;
+			return NextActivity;
 		}
 
 		public override IEnumerable<Target> GetTargets(Actor self)

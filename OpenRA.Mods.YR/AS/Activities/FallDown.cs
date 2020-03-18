@@ -10,6 +10,7 @@
 
 using OpenRA.Activities;
 using OpenRA.Mods.Common.Traits;
+using OpenRA.Primitives;
 using OpenRA.Traits;
 
 namespace OpenRA.Mods.AS.Activities
@@ -50,21 +51,21 @@ namespace OpenRA.Mods.AS.Activities
 			return NextActivity;
 		}
 
-		public override bool Tick(Actor self)
+		public override Activity Tick(Actor self)
 		{
             // If this is the first tick
             if (!triggered)
-                Queue(FirstTick(self));
+                Queue(self, FirstTick(self));
 
 			currentPosition -= fallVector;
 
             // If the unit has landed, this will be the last tick
             if (self.World.Map.DistanceAboveTerrain(currentPosition).Length <= 0)
-                Queue(LastTick(self));
+                Queue(self,LastTick(self));
 
 			pos.SetVisualPosition(self, currentPosition);
 
-			return false;
+			return NextActivity;
 		}
 	}
 }

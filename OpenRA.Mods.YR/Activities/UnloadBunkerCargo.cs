@@ -62,16 +62,16 @@ namespace OpenRA.Mods.YR.Activities
             if (aircraft != null)
             {
                 // Queue the activity even if already landed in case self.Location != destination
-                QueueChild(new Land(self, destination, unloadRange));
-                takeOffAfterUnload = !aircraft.AtLandAltitude;
+                //QueueChild(new Land(self, destination, unloadRange));
+                //takeOffAfterUnload = !aircraft.AtLandAltitude;
             }
             else if (mobile != null)
             {
                 var cell = self.World.Map.Clamp(this.self.World.Map.CellContaining(destination.CenterPosition));
-                QueueChild(new Move(self, cell, unloadRange));
+                QueueChild(self, new Move(self, cell, unloadRange));
             }
 
-            QueueChild(new Wait(cargo.Info.BeforeUnloadDelay));
+            QueueChild(self, new Wait(cargo.Info.BeforeUnloadDelay));
         }
 
         public Pair<CPos, SubCell>? ChooseExitSubCell(Actor passenger)
@@ -94,10 +94,10 @@ namespace OpenRA.Mods.YR.Activities
 				.Where(c => pos.CanEnterCell(c, null, true) != pos.CanEnterCell(c, null, false));
 		}
 
-		public override bool Tick(Actor self)
+		public override Activity Tick(Actor self)
 		{
             if (IsCanceling || cargo.IsEmpty(self))
-                return true;
+                return NextActivity;
 
             if (cargo.CanUnload())
             {
@@ -111,8 +111,8 @@ namespace OpenRA.Mods.YR.Activities
                 if (exitSubCell == null)
                 {
                     self.NotifyBlocker(BlockedExitCells(actor));
-                    QueueChild(new Wait(10));
-                    return false;
+                    QueueChild(self, new Wait(10));
+                    return NextActivity;
                 }
 
                 cargo.Unload(self);
@@ -135,15 +135,15 @@ namespace OpenRA.Mods.YR.Activities
             if (!unloadAll || !cargo.CanUnload())
             {
                 if (cargo.Info.AfterUnloadDelay > 0)
-                    QueueChild(new Wait(cargo.Info.AfterUnloadDelay, false));
+                    QueueChild(self, new Wait(cargo.Info.AfterUnloadDelay, false));
 
                 if (takeOffAfterUnload)
-                    QueueChild(new TakeOff(self));
+                    QueueChild(self, new TakeOff(self));
 
-                return true;
+                return NextActivity;
             }
 
-            return false;
+            return NextActivity;
 		}
 	}
 }

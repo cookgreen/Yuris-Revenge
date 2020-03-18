@@ -17,6 +17,7 @@ using OpenRA.Traits;
 using OpenRA.Mods.YR.Traits;
 using OpenRA.Mods.Common;
 using OpenRA.Mods.Common.Warheads;
+using OpenRA.Primitives;
 
 namespace OpenRA.Mods.YR.Warheads
 {

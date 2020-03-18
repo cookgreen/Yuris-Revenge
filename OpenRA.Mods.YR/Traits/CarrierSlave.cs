@@ -20,6 +20,7 @@ using OpenRA.Mods.Common.Traits;
 using OpenRA.Traits;
 using OpenRA.Mods.YR.Activities;
 using System;
+using OpenRA.Primitives;
 
 /*
 Works without base engine modification.

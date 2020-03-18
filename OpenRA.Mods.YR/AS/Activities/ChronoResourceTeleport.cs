@@ -31,7 +31,7 @@ namespace OpenRA.Mods.AS.Activities
 			this.harvestedField = harvestedField;
 		}
 
-		public override bool Tick(Actor self)
+		public override Activity Tick(Actor self)
 		{
 			var image = info.Image ?? self.Info.Name;
 
@@ -60,7 +60,7 @@ namespace OpenRA.Mods.AS.Activities
 
 			self.QueueActivity(new FindAndDeliverResources(self, harvestedField));
 
-			return true;
+			return NextActivity;
 		}
 	}
 }

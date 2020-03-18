@@ -52,7 +52,7 @@ namespace OpenRA.Mods.YR.Activities
 			pathFinder = self.World.WorldActor.Trait<IPathFinder>();
 			domainIndex = self.World.WorldActor.Trait<DomainIndex>();
             lastScanRange = harvInfo.LongScanRadius;
-			ChildHasPriority = false;
+			//ChildHasPriority = false;
 		}
 
 		public SpawnerRefineryHarvest(Actor self, CPos avoidCell)
@@ -96,7 +96,7 @@ namespace OpenRA.Mods.YR.Activities
             return this;
 		}
 
-		public override bool Tick(Actor self)
+		public override Activity Tick(Actor self)
 		{
             /*
              We just need to confirm one thing: when the nearest resource is finished, 
@@ -104,7 +104,7 @@ namespace OpenRA.Mods.YR.Activities
              */
 
 			if (IsCanceling)
-				return false;
+				return NextActivity;
 
 			// Erm... looking at this, I could split these into separte activites...
 			// I prefer finite state machine style though...
@@ -115,14 +115,14 @@ namespace OpenRA.Mods.YR.Activities
 			switch (harv.MiningState)
 			{
 				case MiningState.Mining:
-                    QueueChild(Mining(self, out harv.MiningState));
-                    return false;
+                    QueueChild(self, Mining(self, out harv.MiningState));
+                    return NextActivity;
 				case MiningState.Kick:
-                    QueueChild(Kick(self, out harv.MiningState));
-                    return false;
+                    QueueChild(self, Kick(self, out harv.MiningState));
+                    return NextActivity;
 			}
 
-			return true;
+			return NextActivity;
 		}
 
 		/// <summary>
@@ -149,7 +149,7 @@ namespace OpenRA.Mods.YR.Activities
                 // Find any harvestable resources:
                 // var passable = (uint)mobileInfo.GetMovementClass(self.World.Map.Rules.TileSet);
                 List<CPos> path;
-                using (var search = PathSearch.Search(self.World, mobile.Locomotor, self, true,
+                using (var search = PathSearch.Search(self.World, mobileInfo.LocomotorInfo, self, true,
                     loc => domainIndex.IsPassable(self.Location, loc, mobileInfo.LocomotorInfo)
                         && harv.CanHarvestCell(self, loc) && claimLayer.CanClaimCell(self, loc))
                     .WithCustomCost(loc =>

@@ -11,6 +11,7 @@
 using System.Linq;
 using OpenRA.Mods.Common.Activities;
 using OpenRA.Mods.Common.Traits;
+using OpenRA.Primitives;
 using OpenRA.Traits;
 
 namespace OpenRA.Mods.AS.Traits

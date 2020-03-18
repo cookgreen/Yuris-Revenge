@@ -20,6 +20,7 @@ using OpenRA.Traits;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.YR.Activities;
 using OpenRA.Mods.YR.Orders;
+using OpenRA.Primitives;
 
 namespace OpenRA.Mods.YR.Traits
 {
@@ -63,8 +64,8 @@ namespace OpenRA.Mods.YR.Traits
 			Func<Actor, bool> useEnterCursor = CanEnter;
 			Orders = new EnterAlliedActorTargeter<BunkerCargoInfo>[]
 			{
-				new EnterBunkerTargeter("EnterBunker", 5, canTarget, useEnterCursor),
-				new EnterBunkersTargeter("EnterBunkers", 5, canTarget, useEnterCursor)
+				//new EnterBunkerTargeter("EnterBunker", 5, canTarget, useEnterCursor),
+				//new EnterBunkersTargeter("EnterBunkers", 5, canTarget, useEnterCursor)
 			};
 		}
 

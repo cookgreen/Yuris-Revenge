@@ -13,6 +13,7 @@ using System;
 using System.Collections.Generic;
 using OpenRA.Graphics;
 using OpenRA.Mods.RA2.Graphics;
+using OpenRA.Primitives;
 using OpenRA.Traits;
 using Color = OpenRA.Primitives.Color;
 

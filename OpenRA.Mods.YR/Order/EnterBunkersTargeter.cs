@@ -21,10 +21,10 @@ namespace OpenRA.Mods.YR.Orders
 {
 	public class EnterBunkersTargeter : EnterAlliedActorTargeter<BunkerCargoInfo>
 	{
-        Func<Actor, TargetModifiers, bool> canTarget;
+        Func<Actor, bool> canTarget;
 
         public EnterBunkersTargeter(string order, int priority,
-			Func<Actor, TargetModifiers, bool> canTarget, Func<Actor, bool> useEnterCursor)
+			Func<Actor, bool> canTarget, Func<Actor, bool> useEnterCursor)
 			: base(order, priority, canTarget, useEnterCursor)
         {
             this.canTarget = canTarget;
@@ -32,7 +32,7 @@ namespace OpenRA.Mods.YR.Orders
 
 		public override bool CanTargetActor(Actor self, Actor target, TargetModifiers modifiers, ref string cursor)
         {
-            if (target.Owner.InternalName == "Neutral" && target.Info.HasTraitInfo<BunkerCargoInfo>() && canTarget(target, modifiers))
+            if (target.Owner.InternalName == "Neutral" && target.Info.HasTraitInfo<BunkerCargoInfo>() /*&& canTarget(target, modifiers)*/)
                 return true;
 
             //switch (mode)

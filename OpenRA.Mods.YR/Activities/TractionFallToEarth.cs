@@ -18,6 +18,7 @@ using System.Linq;
 using OpenRA.Activities;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.YR.Traits;
+using OpenRA.Primitives;
 using OpenRA.Traits;
 
 namespace OpenRA.Mods.YR.Activities
@@ -77,12 +78,12 @@ namespace OpenRA.Mods.YR.Activities
 			health.InflictDamage(self, self, new Damage(health.MaxHP * tractable.Info.DamageFactor / 100), false);
 		}
 
-		public override bool Tick(Actor self)
+		public override Activity Tick(Actor self)
 		{
 			if (self.World.Map.DistanceAboveTerrain(self.CenterPosition).Length <= 0)
 			{
 				OnGroundLevel(self);
-				return false;
+				return NextActivity;
 			}
 
 			var move = new WVec(0, 0, fallSpeed);
@@ -94,7 +95,7 @@ namespace OpenRA.Mods.YR.Activities
 			else
 				tractable.SetPosition(self, pos);
 
-			return true;
+			return NextActivity;
 		}
 	}
 }

@@ -16,6 +16,7 @@ using OpenRA.Mods.Common.Graphics;
 using OpenRA.Mods.Common.Traits.Render;
 using OpenRA.Traits;
 using OpenRA.Mods.Common.Traits;
+using OpenRA.Primitives;
 
 namespace OpenRA.Mods.YR.Traits
 {
@@ -174,7 +175,7 @@ namespace OpenRA.Mods.YR.Traits
 				var pal = wr.Palette(TileSet.TerrainPaletteInternalName);
 
 				foreach (var t in world.Map.FindTilesInCircle(xy, range))
-					yield return new SpriteRenderable(tile, wr.World.Map.CenterOfCell(t), WVec.Zero, -511, pal, 1f, true);
+					yield return new SpriteRenderable(null, tile, wr.World.Map.CenterOfCell(t), WVec.Zero, -511, pal, 1f, true);
 			}
 
 			public string GetCursor(World world, CPos cell, int2 worldPixel, MouseInput mi)

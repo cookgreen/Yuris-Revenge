@@ -14,6 +14,7 @@
 using OpenRA.Graphics;
 using OpenRA.Mods.Cnc.Graphics;
 using OpenRA.Mods.Common.Graphics;
+using OpenRA.Primitives;
 using OpenRA.Widgets;
 using System;
 using System.Collections.Generic;

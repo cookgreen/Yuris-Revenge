@@ -17,6 +17,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OpenRA.Graphics;
+using OpenRA.Primitives;
 using OpenRA.Traits;
 using Color = OpenRA.Primitives.Color;
 

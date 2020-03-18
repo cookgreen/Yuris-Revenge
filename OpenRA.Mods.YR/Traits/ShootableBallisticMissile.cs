@@ -12,6 +12,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using OpenRA;
 using OpenRA.Activities;
 using OpenRA.Mods.Common;
 using OpenRA.Mods.Common.Traits;
@@ -57,6 +58,11 @@ namespace OpenRA.Mods.YR.Traits
 		public bool CanEnterCell(World world, Actor self, CPos cell, SubCell subCell = SubCell.FullCell, Actor ignoreActor = null, bool checkTransientActors = true)
 		{
 			return false;
+		}
+
+		public bool CanEnterCell(World world, Actor self, CPos cell, Actor ignoreActor = null, bool checkTransientActors = true)
+		{
+			throw new NotImplementedException();
 		}
 	}
 
@@ -303,7 +309,7 @@ namespace OpenRA.Mods.YR.Traits
 
 		Pair<CPos, SubCell>[] IOccupySpace.OccupiedCells()
         {
-            CPos location = self.World.Map.CellContaining(self.CenterPosition);
+			CPos location = self.World.Map.CellContaining(self.CenterPosition);
             return new[] { Pair.New(location, SubCell.FullCell) };
         }
 
@@ -335,6 +341,21 @@ namespace OpenRA.Mods.YR.Traits
 		public Activity ReturnToCell(Actor self)
 		{
 			return null;
+		}
+
+		public Activity MoveTo(CPos cell, int nearEnough)
+		{
+			throw new NotImplementedException();
+		}
+
+		public Activity MoveTo(CPos cell, Actor ignoreActor)
+		{
+			throw new NotImplementedException();
+		}
+
+		public Activity MoveIntoWorld(Actor self, CPos cell, SubCell subCell = SubCell.Any)
+		{
+			throw new NotImplementedException();
 		}
 	}
 }

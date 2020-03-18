@@ -15,6 +15,7 @@ using System.Collections.Generic;
 using OpenRA.GameRules;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.Common.Widgets;
+using OpenRA.Primitives;
 using OpenRA.Widgets;
 
 namespace OpenRA.Mods.YR.Widgets.Logic

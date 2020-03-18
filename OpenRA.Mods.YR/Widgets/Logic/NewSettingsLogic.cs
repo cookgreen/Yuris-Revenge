@@ -517,19 +517,19 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 			key.Get<LabelWidget>("FUNCTION").GetText = () => hd.Description + ":";
 
 			var remapButton = key.Get<ButtonWidget>("HOTKEY");
-			WidgetUtils.TruncateButtonToTooltip(remapButton, modData.Hotkeys[hd.Name].GetValue().DisplayString());
+			//WidgetUtils.TruncateButtonToTooltip(remapButton, modData.Hotkeys[hd.Name].GetValue().DisplayString());
 
 			remapButton.IsHighlighted = () => selectedHotkeyDefinition == hd;
 
 			var hotkeyValidColor = ChromeMetrics.Get<Color>("HotkeyColor");
 			var hotkeyInvalidColor = ChromeMetrics.Get<Color>("HotkeyColorInvalid");
 
-			remapButton.GetColor = () =>
-			{
-				return modData.Hotkeys.GetFirstDuplicate(hd.Name, modData.Hotkeys[hd.Name].GetValue(), hd) != null ?
-					hotkeyInvalidColor :
-					hotkeyValidColor;
-			};
+			//remapButton.GetColor = () =>
+			//{
+			//	return modData.Hotkeys.GetFirstDuplicate(hd.Name, modData.Hotkeys[hd.Name].GetValue(), hd) != null ?
+			//		hotkeyInvalidColor :
+			//		hotkeyValidColor;
+			//};
 
 			if (selectedHotkeyDefinition == hd)
 			{
@@ -590,8 +590,8 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 
 			var targetLinesDropDown = panel.Get<DropDownButtonWidget>("TARGET_LINES_DROPDOWN");
 			targetLinesDropDown.OnMouseDown = _ => ShowTargetLinesDropdown(targetLinesDropDown, gs);
-			targetLinesDropDown.GetText = () => gs.TargetLines == TargetLinesType.Automatic ?
-				"Automatic" : gs.TargetLines == TargetLinesType.Manual ? "Manual" : "Disabled";
+			//targetLinesDropDown.GetText = () => gs.TargetLines == TargetLinesType.Automatic ?
+			//	"Automatic" : gs.TargetLines == TargetLinesType.Manual ? "Manual" : "Disabled";
 
 			// Update zoom immediately
 			var pixelDoubleCheckbox = panel.Get<CheckboxWidget>("PIXELDOUBLE_CHECKBOX");
@@ -879,7 +879,7 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 			return () =>
 			{
 				hotkeyEntryWidget.Key = modData.Hotkeys[selectedHotkeyDefinition.Name].GetValue();
-				hotkeyEntryWidget.ForceYieldKeyboardFocus();
+				//hotkeyEntryWidget.ForceYieldKeyboardFocus();
 			};
 		}
 
@@ -914,7 +914,7 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 				foreach (var hd in modData.Hotkeys.Definitions)
 				{
 					modData.Hotkeys.Set(hd.Name, hd.Default);
-					WidgetUtils.TruncateButtonToTooltip(panel.Get(hd.Name).Get<ButtonWidget>("HOTKEY"), hd.Default.DisplayString());
+					//WidgetUtils.TruncateButtonToTooltip(panel.Get(hd.Name).Get<ButtonWidget>("HOTKEY"), hd.Default.DisplayString());
 				}
 			};
 		}
@@ -1098,24 +1098,24 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 
 		static void ShowTargetLinesDropdown(DropDownButtonWidget dropdown, GameSettings s)
 		{
-			var options = new Dictionary<string, TargetLinesType>()
-			{
-				{ "Automatic", TargetLinesType.Automatic },
-				{ "Manual", TargetLinesType.Manual },
-				{ "Disabled", TargetLinesType.Disabled },
-			};
+			//var options = new Dictionary<string, TargetLinesType>()
+			//{
+			//	{ "Automatic", TargetLinesType.Automatic },
+			//	{ "Manual", TargetLinesType.Manual },
+			//	{ "Disabled", TargetLinesType.Disabled },
+			//};
 
 			Func<string, ScrollItemWidget, ScrollItemWidget> setupItem = (o, itemTemplate) =>
 			{
-				var item = ScrollItemWidget.Setup(itemTemplate,
-					() => s.TargetLines == options[o],
-					() => s.TargetLines = options[o]);
-
-				item.Get<LabelWidget>("LABEL").GetText = () => o;
-				return item;
+				//var item = ScrollItemWidget.Setup(itemTemplate,
+				//	() => s.TargetLines == options[o],
+				//	() => s.TargetLines = options[o]);
+				//
+				//item.Get<LabelWidget>("LABEL").GetText = () => o;
+				return null;
 			};
 
-			dropdown.ShowDropDown("LABEL_DROPDOWN_TEMPLATE", 500, options.Keys, setupItem);
+			//dropdown.ShowDropDown("LABEL_DROPDOWN_TEMPLATE", 500, options.Keys, setupItem);
 		}
 
 		void MakeMouseFocusSettingsLive()
@@ -1158,13 +1158,13 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 			clearButton.OnClick = ClearHotkey;
 
 			hotkeyEntryWidget = panel.Get<HotkeyEntryWidget>("HOTKEY_ENTRY");
-			hotkeyEntryWidget.IsValid = () => isHotkeyValid;
+			//hotkeyEntryWidget.IsValid = () => isHotkeyValid;
 			hotkeyEntryWidget.OnLoseFocus = ValidateHotkey;
 		}
 
 		void ValidateHotkey()
 		{
-			duplicateHotkeyDefinition = modData.Hotkeys.GetFirstDuplicate(selectedHotkeyDefinition.Name, hotkeyEntryWidget.Key, selectedHotkeyDefinition);
+			//duplicateHotkeyDefinition = modData.Hotkeys.GetFirstDuplicate(selectedHotkeyDefinition.Name, hotkeyEntryWidget.Key, selectedHotkeyDefinition);
 			isHotkeyValid = duplicateHotkeyDefinition == null;
 			isHotkeyDefault = hotkeyEntryWidget.Key == selectedHotkeyDefinition.Default || (!hotkeyEntryWidget.Key.IsValid() && !selectedHotkeyDefinition.Default.IsValid());
 
@@ -1174,7 +1174,7 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 
 		void SaveHotkey()
 		{
-			WidgetUtils.TruncateButtonToTooltip(selectedHotkeyButton, hotkeyEntryWidget.Key.DisplayString());
+			//WidgetUtils.TruncateButtonToTooltip(selectedHotkeyButton, hotkeyEntryWidget.Key.DisplayString());
 			modData.Hotkeys.Set(selectedHotkeyDefinition.Name, hotkeyEntryWidget.Key);
 			Game.Settings.Save();
 		}

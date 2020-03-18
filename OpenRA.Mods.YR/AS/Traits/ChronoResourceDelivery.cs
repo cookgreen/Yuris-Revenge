@@ -14,6 +14,7 @@ using OpenRA.Activities;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.AS.Activities;
 using OpenRA.Traits;
+using OpenRA;
 
 namespace OpenRA.Mods.AS.Traits
 {
@@ -127,6 +128,16 @@ namespace OpenRA.Mods.AS.Traits
 		{
 			ticksTillCheck = 0;
 			destination = null;
+		}
+
+		public void MovingToResources(Actor self, CPos targetCell, Activity next)
+		{
+			throw new NotImplementedException();
+		}
+
+		public void MovingToRefinery(Actor self, Actor refineryActor, Activity next)
+		{
+			throw new NotImplementedException();
 		}
 	}
 }

@@ -19,6 +19,7 @@ using OpenRA.Mods.Common.Traits;
 using OpenRA.Network;
 using OpenRA.Widgets;
 using OpenRA.Mods.Common.Widgets;
+using OpenRA.Primitives;
 
 namespace OpenRA.Mods.YR.Widgets.Logic
 {
@@ -30,7 +31,7 @@ namespace OpenRA.Mods.YR.Widgets.Logic
 		readonly Action onStart;
 		readonly ScrollPanelWidget descriptionPanel;
 		readonly LabelWidget description;
-		readonly SpriteFont descriptionFont;
+		readonly SpriteFontMSDF descriptionFont;
 		readonly DropDownButtonWidget difficultyButton;
 		readonly DropDownButtonWidget gameSpeedButton;
 

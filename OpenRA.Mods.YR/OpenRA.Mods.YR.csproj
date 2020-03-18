@@ -25,20 +25,20 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Eluant">
-      <HintPath>..\engine\thirdparty\download\Eluant.dll</HintPath>
+      <HintPath>..\engine_hg\thirdparty\download\Eluant.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <PackageReference Include="StyleCop.Analyzers" Version="1.1.118" />
     <AdditionalFiles Include="stylecop.json" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="../engine/OpenRA.Game/OpenRA.Game.csproj">
+    <ProjectReference Include="../engine_hg/OpenRA.Game/OpenRA.Game.csproj">
       <Private>False</Private>
     </ProjectReference>
-    <ProjectReference Include="../engine/OpenRA.Mods.Cnc/OpenRA.Mods.Cnc.csproj">
+    <ProjectReference Include="../engine_hg/OpenRA.Mods.Cnc/OpenRA.Mods.Cnc.csproj">
       <Private>False</Private>
     </ProjectReference>
-    <ProjectReference Include="../engine/OpenRA.Mods.Common/OpenRA.Mods.Common.csproj">
+    <ProjectReference Include="../engine_hg/OpenRA.Mods.Common/OpenRA.Mods.Common.csproj">
       <Private>False</Private>
     </ProjectReference>
   </ItemGroup>

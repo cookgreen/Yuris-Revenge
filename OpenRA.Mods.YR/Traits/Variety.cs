@@ -16,6 +16,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using OpenRA;
 using OpenRA.Activities;
 using OpenRA.Graphics;
 using OpenRA.Mods.Common;
@@ -267,6 +268,16 @@ namespace OpenRA.Mods.YR.Traits
 
         public void VisualPositionChanged(Actor self, byte oldLayer, byte newLayer)
         {
+        }
+
+        public void MovingToResources(Actor self, CPos targetCell, Activity next)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void MovingToRefinery(Actor self, Actor refineryActor, Activity next)
+        {
+            throw new NotImplementedException();
         }
     }
 }
