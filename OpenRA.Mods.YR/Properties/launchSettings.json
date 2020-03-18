@@ -1,14 +1,14 @@
 {
   "profiles": {
-    "OpenRA Yuri's Revenge": {
+    "OpenRA Yuri's Revenge (HG version)": {
       "commandName": "Executable",
-      "executablePath": "..\\..\\engine\\OpenRA.Game.exe",
-      "commandLineArgs": "Engine.LaunchPath=..\\..\\engine \"Engine.ModSearchPaths=..\\..\\mods,..\\..\\engine\\mods\" Game.Mod=yr"
+      "executablePath": "..\\..\\engine_hg\\OpenRA.Game.exe",
+      "commandLineArgs": "Engine.LaunchPath=..\\..\\engine_hg \"Engine.ModSearchPaths=..\\..\\mods,..\\..\\engine_hg\\mods\" Game.Mod=yr"
     },
-    "OpenRA Yuri's Revenge (Chinese Version)": {
+    "开源红警2 尤里的复仇 (高画质版本)": {
       "commandName": "Executable",
-      "executablePath": "..\\..\\engine\\OpenRA.Game.exe",
-      "commandLineArgs": "Engine.LaunchPath=..\\..\\engine \"Engine.ModSearchPaths=..\\..\\mods,..\\..\\engine\\mods\" Game.Mod=yrsc"
+      "executablePath": "..\\..\\engine_hg\\OpenRA.Game.exe",
+      "commandLineArgs": "Engine.LaunchPath=..\\..\\engine_hg \"Engine.ModSearchPaths=..\\..\\mods,..\\..\\engine_hg\\mods\" Game.Mod=yrsc"
     }
   }
 }
