@@ -2,11 +2,9 @@
 A Red Alert 2 Yuri's Revenge mod for OpenRA Hg (Higher Graphic) Engine which powered by alexeik
 
 ## Screenshots
+![](https://media.moddb.com/images/members/4/3399/3398047/unknown.1.png)
 
-![Yuri faction](https://media.moddb.com/images/members/4/3399/3398047/openra-yr.1.PNG)
-![Voxel browser](https://media.moddb.com/images/members/4/3399/3398047/voxelbrowser.PNG)
-
-## Version
+## HG Engine Version
 {DEV-VERISON}
 
 ## Build
