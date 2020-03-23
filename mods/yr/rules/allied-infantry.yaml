@@ -157,6 +157,7 @@ e1:
 		CanDeployOnRamps: True
 		Facing: 128
 		RequiresCondition: !parachute
+		Voice: Deploy
 	GrantCondition:
 		Condition: editorhack
 	WithInfantryBody@Editor: # HACK: negative conditions don't count in EnabledByDefault, we can use this duplicate WIB to render it on map editor
@@ -263,6 +264,7 @@ ggi:
 		CanDeployOnRamps: True
 		Facing: 128
 		RequiresCondition: !parachute
+		Voice: Deploy
 	GrantCondition:
 		Condition: editorhack
 	WithInfantryBody@Editor: # HACK: negative conditions don't count in EnabledByDefault, we can use this duplicate WIB to render it on map editor

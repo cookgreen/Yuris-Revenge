@@ -227,6 +227,12 @@
 		ReferencePoint: Bottom, Right
 		RequiresCondition: rank-elite
 		ZOffset: 256
+        
+^AffectedByIndustrialPlant:
+	ProductionCostMultiplier@INDUSTRAL_PLANT:
+		Multiplier: 75
+		Prerequisites: naindp
+		Queue: Ship, Vehicle
 
 ^CrateStatModifiers:
 	FirepowerMultiplier@CRATES:
@@ -900,6 +906,7 @@
 	Inherits@4: ^ChronoDisable
 	Inherits@5: ^CrateStatModifiers
 	Inherits@6: ^Tractable
+	Inherits@7: ^AffectedByIndustrialPlant
 	OwnerLostAction:
 		Action: Kill
 	Mobile:
@@ -1035,7 +1042,8 @@
 	WithTextControlGroupDecoration:
 
 ^Plane:
-	Inherits: ^Aircraft
+	Inherits@1: ^Aircraft
+	Inherits@2: ^AffectedByIndustrialPlant
 	Aircraft:
 		CruiseAltitude: 5600
 		CruisingCondition: cruising
