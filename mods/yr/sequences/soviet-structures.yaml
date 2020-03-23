@@ -625,6 +625,7 @@ nawall:
 		UseTilesetCode: false
 
 nalasr:
+	Inherits@Muzzle: ^WithMachineGunMuzzle
 	Defaults:
 		Offset: 0, -20
 		UseTilesetCode: true
@@ -709,6 +710,7 @@ tesla:
 		UseTilesetCode: false
 
 naflak:
+	Inherits@Muzzle: ^WithFlakMuzzle
 	Defaults:
 		Offset: 0, -15
 		ZOffset: -512

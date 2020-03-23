@@ -321,3 +321,13 @@ lobrdb_r_sw:
 		NeighbourOffsets: 1,-1
 	EditorOnlyTooltip:
 		Name: Bridge Ramp
+
+bridgb1:
+	Inherits: ^ElevatedBridgePlaceholder
+	Tooltip:
+		Name: Wooden Bridge
+
+bridgb2:
+	Inherits: ^ElevatedBridgePlaceholder
+	Tooltip:
+		Name: Wooden Bridge

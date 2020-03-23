@@ -93,6 +93,8 @@ cmin:
 	HitShape:
 	SelfHealing@MACHSHOP:
 		RequiresCondition: machshop
+	Targetable@RadiationImmunity:
+		TargetTypes: ImmuneToRadiation
 
 mtnk:
 	Inherits: ^Vehicle
@@ -123,11 +125,13 @@ mtnk:
 		TurnSpeed: 5
 	Armament@primary:
 		Weapon: 105mm
-		LocalOffset: 640,0,384
+		LocalOffset: 832,0,512
+		MuzzleSequence: muzzle
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: 105mmE
-		LocalOffset: 640,0,384
+		LocalOffset: 832,0,512
+		MuzzleSequence: muzzle-2
 		RequiresCondition: rank-elite
 	AttackTurreted:
 		Voice: Attack
@@ -148,6 +152,7 @@ mtnk:
 	SelfHealing@MACHSHOP:
 		RequiresCondition: machshop
 	Bunkerable:
+	WithMuzzleOverlay:
 
 tnkd:
 	Inherits: ^Vehicle
@@ -176,11 +181,13 @@ tnkd:
 		Range: 8c0
 	Armament@primary:
 		Weapon: sabot
-		LocalOffset: 640,0,384
+		LocalOffset: 800,0,768
+		MuzzleSequence: muzzle
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: sabotE
-		LocalOffset: 640,0,384
+		LocalOffset: 800,0,768
+		MuzzleSequence: muzzle-2
 		RequiresCondition: rank-elite
 	AttackFrontal:
 		Voice: Attack
@@ -199,6 +206,7 @@ tnkd:
 	SelfHealing@MACHSHOP:
 		RequiresCondition: machshop
 	Bunkerable:
+	WithMuzzleOverlay:
 
 fv:
 	Inherits: ^Vehicle
@@ -393,7 +401,26 @@ sref:
 		EmptyWeapon: UnitExplodeSmall
 	RenderSprites:
 	RenderVoxels:
+	GrantConditionOnAttack@turretcharge1:
+		Condition: turretcharge
+		RevokeDelay: 5
+	GrantConditionOnAttack@turretcharge2:
+		Condition: turretcharge
+		RevokeDelay: 10
+	GrantConditionOnAttack@turretcharge3:
+		Condition: turretcharge
+		RevokeDelay: 15
 	WithVoxelTurret:
+		RequiresCondition: !turretcharge
+	WithVoxelTurret@stage1:
+		RequiresCondition: turretcharge == 1
+		Sequence: turret-stage1
+	WithVoxelTurret@stage2:
+		RequiresCondition: turretcharge == 2
+		Sequence: turret-stage2
+	WithVoxelTurret@stage3:
+		RequiresCondition: turretcharge == 3
+		Sequence: turret-stage3
 	WithVoxelBody:
 	Voiced:
 		VoiceSet: PrismTankVoice
@@ -433,10 +460,12 @@ mgtk:
 	Armament@primary:
 		Weapon: MirageGun
 		LocalOffset: 640, 0, 427
+		MuzzleSequence: muzzle
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: MirageGunE
 		LocalOffset: 640, 0, 427
+		MuzzleSequence: muzzle
 		RequiresCondition: rank-elite
 	AttackFrontal:
 		Voice: Attack
@@ -462,6 +491,7 @@ mgtk:
 		VarietyCondition: varing
 	Targetable:
 		RequiresCondition: !varing
+	WithMuzzleOverlay:
 
 robo:
 	Inherits: ^Vehicle

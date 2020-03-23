@@ -828,6 +828,8 @@ naflak:
 		PauseOnCondition: lowpower
 	Armament:
 		Weapon: FlakWeapon
+		LocalOffset: 640,0,1536
+		MuzzleSequence: muzzle
 	BodyOrientation:
 		QuantizedFacings: 16
 	RenderVoxels:
@@ -844,6 +846,7 @@ naflak:
 		ValidPowerStates: Low, Critical
 	Targetable:
 		TargetTypes: powerable-defense
+	WithMuzzleOverlay:
 
 tesla:
 	Inherits: ^SupportBuilding
@@ -936,6 +939,10 @@ nalasr:
 		Voice: Attack
 	Armament:
 		Weapon: vulcan
+		LocalOffset: 544,128,480, 544,-128,480
+		MuzzleSequence: muzzle
+		MuzzleSplitFacings: 8
+	WithMuzzleOverlay:
 	BodyOrientation:
 		QuantizedFacings: 16
 	RenderVoxels:

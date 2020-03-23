@@ -69,13 +69,15 @@ dest:
 		Bounds: 80, 67, 0, -6
 	Armament@primary:
 		Weapon: 155mm
-		LocalOffset: 768,0,0
 		FireDelay: 2
+		LocalOffset: 1152,0,800
+		MuzzleSequence: muzzle
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: 155mmE
-		LocalOffset: 768,0,0
 		FireDelay: 2
+		LocalOffset: 1152,0,800
+		MuzzleSequence: muzzle
 		RequiresCondition: rank-elite
 	Armament@secondary:
 		Weapon: ASWLauncher
@@ -105,6 +107,7 @@ dest:
 	WithVoxelBody@EMPTY:
 		Sequence: empty
 		RequiresCondition: !loaded
+	WithMuzzleOverlay:
 
 aegis:
 	Inherits: ^Ship

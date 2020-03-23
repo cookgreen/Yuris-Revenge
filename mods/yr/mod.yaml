@@ -3,6 +3,10 @@ Metadata:
 	Version: release-20200202
 	Website: https://github.com/cookgreen/yr
 	WebIcon32: https://raw.githubusercontent.com/cookgreen/yr/master/mods/yr/icon.png
+    
+ModCredits:
+	ModTabTitle: Red Alert 2 Yuri's Revenge
+	ModCreditsFile: yr|CREDITS # TODO rename to AUTHORS as stated in the .cs files when OpenRA#17460 is available
 
 PackageFormats: Mix, AudioBag
 
@@ -260,35 +264,35 @@ ChromeMetrics:
 Fonts:
 	Regular:
 		Font: common|FreeSans.ttf
-		Size:14
+		Size: 14
 		Ascender: 8
 	Bold:
 		Font: common|FreeSansBold.ttf
-		Size:14
+		Size: 14
 		Ascender: 8
 	Title:
 		Font: common|FreeSansBold.ttf
-		Size:32
+		Size: 32
 		Ascender: 9
 	BigBold:
 		Font: common|FreeSansBold.ttf
-		Size:24
+		Size: 24
 		Ascender: 11
 	MediumBold:
 		Font: common|FreeSansBold.ttf
-		Size:18
+		Size: 18
 		Ascender: 11
 	Small:
 		Font: common|FreeSans.ttf
-		Size:12
+		Size: 12
 		Ascender: 14
 	Tiny:
 		Font: common|FreeSans.ttf
-		Size:10
+		Size: 10
 		Ascender: 18
 	TinyBold:
 		Font: common|FreeSansBold.ttf
-		Size:10
+		Size: 10
 		Ascender: 26
 
 Missions:
@@ -300,7 +304,7 @@ SoundFormats: Aud, Wav
 
 SpriteFormats: ShpTS, TmpTS, ShpTD, PngSheet
 
-SpriteSequenceFormat: TilesetSpecificSpriteSequence
+SpriteSequenceFormat: ExtendedTilesetSpecificSpriteSequence
 	TilesetExtensions:
 		TEMPERATE: .tem
 		SNOW: .sno
@@ -316,6 +320,8 @@ SpriteSequenceFormat: TilesetSpecificSpriteSequence
 		NEWURBAN: n
 		DESERT: d
 		LUNAR: l
+	TilesetSuffixes:
+		SNOW: a
 
 ModelSequenceFormat: VoxelModelSequence
 

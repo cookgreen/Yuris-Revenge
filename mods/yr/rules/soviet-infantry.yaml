@@ -85,16 +85,25 @@ flakt:
 		Voice: Attack
 	Armament@primary:
 		Weapon: FlakGuyGun
+		LocalOffset: 256,0,1024
+		MuzzleSequence: muzzle
 		RequiresCondition: !rank-elite
 	Armament@secondary:
 		Weapon: FlakGuyAAGun
+		LocalOffset: 256,0,1024
+		MuzzleSequence: muzzle
 		RequiresCondition: !rank-elite
 	Armament@primary-elite:
 		Weapon: FlakGuyGunE
+		LocalOffset: 256,0,1024
+		MuzzleSequence: muzzle
 		RequiresCondition: rank-elite
 	Armament@secondary-elite:
 		Weapon: FlakGuyAAGunE
+		LocalOffset: 256,0,1024
+		MuzzleSequence: muzzle
 		RequiresCondition: rank-elite
+	WithMuzzleOverlay:
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 	Voiced:
@@ -279,6 +288,8 @@ deso:
 		CargoType: Infantry
 		GrantBunkerCondition: bunkered
 		Accepter: bfrt
+	Targetable@RadiationImmunity:
+		TargetTypes: ImmuneToRadiation
 
 ivan:
 	Inherits: ^Infantry

@@ -112,6 +112,8 @@ smin:
 		Actors: slav, slav, slav, slav, slav
 		Resources: Ore,Gems,Tiberium
 		DeployScanRadius: 20
+	Targetable@RadiationImmunity:
+		TargetTypes: ImmuneToRadiation
 	
 ltnk:
 	Inherits: ^Vehicle

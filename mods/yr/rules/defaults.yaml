@@ -738,6 +738,7 @@
 		Types: Infantry
 	Crushable:
 		CrushSound: igensqua.wav
+	EdibleByLeap:
 	Guard:
 		Voice: Attack
 	Guardable:
@@ -763,7 +764,7 @@
 	Repairable:
 		RepairActors: cahosp
 		Voice: Move
-	Chronoshiftable:
+	ChronoshiftableWithSpriteEffect:
 		ExplodeInstead: true
 	MapEditorData:
 		Categories: Infantry
@@ -1040,6 +1041,13 @@
 	Inherits@1: ^NeutralAircraft
 	Inherits@2: ^GainsExperience
 	WithTextControlGroupDecoration:
+	ChronoshiftableWithSpriteEffect:
+		Image: chrono
+		WarpInSequence: warpin
+		WarpOutSequence: warpout
+		ChronoshiftSound: schrmov.wav
+		ReturnToOrigin: false
+		RequiresCondition: !airborne
 
 ^Plane:
 	Inherits@1: ^Aircraft

@@ -723,7 +723,7 @@ gapill:
 		Bounds: 50, 30, 0, -4
 	Armament:
 		Weapon: vulcan2
-		LocalOffset: 768,85,512
+		LocalOffset: 416,0,416
 		MuzzleSequence: muzzle
 		MuzzleSplitFacings: 8
 	AttackTurreted:
@@ -1100,6 +1100,7 @@ gacsph:
 		KillCargo: False
 		SelectionCursor: chronosphere
 		TargetCursor: chronosphere
+		TargetOverlayPalette: effect75alpha
 		PauseOnCondition: lowpower
 
 atesla:
