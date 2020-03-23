@@ -214,7 +214,7 @@ RadBeamWeapon:
 	Warhead@1Dam: SpreadDamage
 		Spread: 42
 		Damage: 125
- 		InvalidTargets: Structure, Wall, ImmuneToRadiation
+		InvalidTargets: Structure, Wall, ImmuneToRadiation
 		Versus:
 			None: 100
 			Flak: 100
