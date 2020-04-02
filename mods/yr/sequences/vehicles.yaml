@@ -89,7 +89,7 @@ mtnk:
 	icon: gtnkicon
 
 harv:
-	Inherits@Muzzle: ^WithMachineGunMuzzle
+	Inherits@Muzzle: ^WithFlakMuzzle
 	harvest: oregath
 		Length: 15
 		Facings: 8
