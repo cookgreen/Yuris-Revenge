@@ -66,33 +66,55 @@ cahosp:
 		Offset: -9,-23
 
 caoutp:
+	Inherits: ^TechStructure
 	Defaults:
-		UseTilesetCode: true
-		Offset: -15, -50
+		UseTilesetCode: false
+		UseTilesetSuffix: false
+		Offset: -15, -50, 65
 	idle-tower:
-		ShadowStart: 4
+		ShadowStart: -1
 	damaged-idle-tower:
 		Start: 1
-		ShadowStart: 5
+		ShadowStart: -1
+	idle-tower-shadow:
+		UseTilesetCode: false
+		Start: 4
+	damaged-idle-tower-shadow:
+		UseTilesetCode: false
+		Start: 5
 	idle: caoutp_d
+		UseTilesetCode: false
 		ShadowStart: 2
 	damaged-idle: caoutp_d
-		Start: 1
+		UseTilesetCode: false
 		ShadowStart: 3
 	active-crane: caoutp_a
+		UseTilesetCode: false
 		Length: 10
 		Tick: 200
 		ShadowStart: 20
 	damaged-active-crane: caoutp_a
+		UseTilesetCode: false
 		Start: 20
 		Length: 10
 		Tick: 200
 		ShadowStart: 30
 	bib: caoutpbb
+		UseTilesetCode: false
+		ZOffset: -1c511
+		Offset: -15, -50, 15
+		ZRamp: 1
+		-DepthSprite:
 	damaged-bib: caoutpbb
+		UseTilesetCode: false
 		Start: 1
+		ZOffset: -1c511
+		Offset: -15, -50, 15
+		ZRamp: 1
+		-DepthSprite:
 	flag: caoutp_f
-		Length: 16
+	rubble:
+		UseTilesetCode: false
 
 camach:
 	Defaults:

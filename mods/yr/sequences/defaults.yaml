@@ -197,3 +197,19 @@
 		Length: *
 		Offset: 0,0
 		UseTilesetCode: false
+        
+^TechStructure:
+	Defaults:
+		UseTilesetCode: true
+		DepthSprite: isodepth.shp
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	flag:
+		Length: 16
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
