@@ -110,13 +110,10 @@ namespace OpenRA.Mods.YR.Traits
 		// Modify Harvester trait's states to do the mining.
 		void AssignTargetForSpawned(Actor slave, CPos targetLocation)
 		{
-			var sh = slave.Trait<Harvester>();
+			var harvest = slave.Trait<Harvester>();
 
 			// set target spot to mine
-			//sh.LastOrderLocation = targetLocation;
-
-			// This prevents harvesters returning to an empty patch when the player orders them to a new patch:
-			//sh.LastHarvestedCell = sh.LastOrderLocation;
+			slave.QueueActivity(new FindAndDeliverResources(slave, targetLocation));
 		}
 
 		// Launch a freshly created slave that isn't in world to the world.
@@ -137,7 +134,6 @@ namespace OpenRA.Mods.YR.Traits
 				}
 
 				AssignTargetForSpawned(slave, targetLocation);
-				slave.QueueActivity(new FindAndDeliverResources(slave));
 			});
 		}
 
@@ -163,13 +159,21 @@ namespace OpenRA.Mods.YR.Traits
 			// Launch whatever we can.
 			bool hasInvalidEntry = false;
 			foreach (var se in SlaveEntries)
+			{
 				if (!se.IsValid)
+				{
 					hasInvalidEntry = true;
+				}
 				else if (!se.Actor.IsInWorld)
+				{
 					Launch(self, se, destination);
+				}
+			}
 
 			if (hasInvalidEntry)
+			{
 				respawnTicks = info.RespawnTicks;
+			}
 		}
 
 		public Order IssueOrder(Actor self, IOrderTargeter order, Target target, bool queued)
@@ -204,7 +208,9 @@ namespace OpenRA.Mods.YR.Traits
 			// state == Deploying implies order string of SpawnerHarvestDeploying
 			// and must not cancel deploy activity!
 			if (MiningState != MiningState.Deploying)
+			{
 				self.CancelActivity();
+			}
 
 			MiningState = MiningState.Scan;
 
@@ -214,8 +220,12 @@ namespace OpenRA.Mods.YR.Traits
 
 			// Assign new targets for slaves too.
 			foreach (var se in SlaveEntries)
+			{
 				if (se.IsValid && se.Actor.IsInWorld)
+				{
 					AssignTargetForSpawned(se.Actor, LastOrderLocation.Value);
+				}
+			}
 		}
 
 		public void ResolveOrder(Actor self, Order order)

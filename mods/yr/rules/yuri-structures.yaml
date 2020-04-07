@@ -203,7 +203,7 @@ yarefn:
 		Prerequisites: power, ~structures.yuris
 		Description: Provides credits for Yuri
 	Selectable:
-		Bounds: 70, 50, 0, -20
+		Bounds: 90, 60, 0, -20
 	Valued:
 		Cost: 1500
 	Tooltip:

@@ -125,15 +125,15 @@ namespace OpenRA.Mods.YR.Traits
         {
         }
 
-        void Launch(Actor self, BaseSpawnerSlaveEntry se, CPos targetLocation)
+        void Launch(Actor master, BaseSpawnerSlaveEntry slaveEntry, CPos targetLocation)
         {
-            var slave = se.Actor;
+            var slave = slaveEntry.Actor;
 
-            SpawnIntoWorld(self, slave, self.CenterPosition);
+            SpawnIntoWorld(master, slave, master.CenterPosition);
 
-            self.World.AddFrameEndTask(w =>
+            master.World.AddFrameEndTask(w =>
             {
-                slave.QueueActivity(new FindAndDeliverResources(slave));
+                slave.QueueActivity(new FindAndDeliverResources(slave, master));
             });
         }
 
@@ -147,7 +147,7 @@ namespace OpenRA.Mods.YR.Traits
         {
             force = true;
             forceMovePos = pos;
-            transforms.DeployTransform(true);
+            transforms.DeployTransform(false);
         }
 
         public void Tick(Actor self)
@@ -165,14 +165,22 @@ namespace OpenRA.Mods.YR.Traits
 
             // Launch whatever we can.
             bool hasInvalidEntry = false;
-            foreach (var se in SlaveEntries)
-                if (!se.IsValid)
+            foreach (var slaveEntry in SlaveEntries)
+            {
+                if (!slaveEntry.IsValid)
+                {
                     hasInvalidEntry = true;
-                else if (!se.Actor.IsInWorld)
-                    Launch(self, se, destination);
+                }
+                else if (!slaveEntry.Actor.IsInWorld)
+                {
+                    Launch(self, slaveEntry, destination);
+                }
+            }
 
             if (hasInvalidEntry)
+            {
                 respawnTicks = Info.RespawnTicks;
+            }
         }
         public override void OnSlaveKilled(Actor self, Actor slave)
         {
@@ -191,10 +199,12 @@ namespace OpenRA.Mods.YR.Traits
             }
         }
 
-        public void ResolveOrder(Actor self, Order order)
+        void IResolveOrder.ResolveOrder(Actor self, Order order)
         {
             if (order.OrderString == "SpawnerRefineryHarvest")
+            {
                 HandleSpawnerHarvest(self, order);
+            }
             else if (order.OrderString == "Stop" || order.OrderString == "Move")
             {
                 // Disable "smart idle"

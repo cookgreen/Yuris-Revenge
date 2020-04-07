@@ -143,13 +143,17 @@ namespace OpenRA.Mods.YR.Traits
 		/// Follows policy defined by Info.OneShotSpawn.
 		/// </summary>
 		/// <returns>true when a new slave actor is created.</returns>
-		public void Replenish(Actor self, BaseSpawnerSlaveEntry[] slaveEntries)
+		public virtual void Replenish(Actor self, BaseSpawnerSlaveEntry[] slaveEntries)
 		{
 			if (Info.SpawnAllAtOnce)
 			{
 				foreach (var se in slaveEntries)
+				{
 					if (!se.IsValid)
+					{
 						Replenish(self, se);
+					}
+				}
 			}
 			else
 			{
@@ -242,9 +246,6 @@ namespace OpenRA.Mods.YR.Traits
 				slave.Trait<IPositionable>().SetVisualPosition(slave, centerPosition + spawnOffset);
 
 				var location = centerPosition + spawnOffset;
-
-				var mv = slave.Trait<IMove>();
-				slave.QueueActivity(mv.MoveToTarget(slave, Target.FromPos(location)));
 
 				w.Add(slave);
 			});
