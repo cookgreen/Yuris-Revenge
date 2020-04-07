@@ -39,7 +39,7 @@ smcv:
 	RenderVoxels:
 	WithVoxelBody:
 	Voiced:
-		VoiceSet: MCVVoice
+		VoiceSet: SovietMCVVoice
 	HitShape:
 	SelfHealing@MACHSHOP:
 		RequiresCondition: machshop

@@ -38,7 +38,7 @@ pcv:
 	RenderVoxels:
 	WithVoxelBody:
 	Voiced:
-		VoiceSet: MCVVoice
+		VoiceSet: YuriMCVVoice
 	HitShape:
 	SelfHealing@MACHSHOP:
 		RequiresCondition: machshop

@@ -70,6 +70,24 @@ MCVVoice:
 	Voices:
 		Select: sea, seb, sec, sed, see
 		Move: moa, mob, moc, mod, moe
+        
+AlliedMCVVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: vmcasea, vmcaseb, vmcasec, vmcased, vmcasee
+		Move: vmcamoa, vmcamob, vmcamoc, vmcamod, vmcamoe
+        
+SovietMCVVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: vmcssea, vmcsseb, vmcssec, vmcssed, vmcssee
+		Move: vmcsmoa, vmcsmob, vmcsmoc, vmcsmod, vmcsmoe
+        
+YuriMCVVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: vmcysea, vmcyseb, vmcysec, vmcysed, vmcysee
+		Move: vmcymoa, vmcymob, vmcymoc, vmcymod, vmcymoe
 
 AlliedVehicleVoice:
 	DefaultVariant: .wav

@@ -38,7 +38,7 @@ amcv:
 	RenderVoxels:
 	WithVoxelBody:
 	Voiced:
-		VoiceSet: MCVVoice
+		VoiceSet: AlliedMCVVoice
 	HitShape:
 	SelfHealing@MACHSHOP:
 		RequiresCondition: machshop
