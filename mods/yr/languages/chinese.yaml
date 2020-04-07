@@ -753,8 +753,8 @@ chinese:
 					Button@CLOSE_BUTTON:
 						Text: 关闭
 		FontSettings:
-			Normal: yr|wqy-zenhei.ttf
-			Bold: yr|wqy-zenhei.ttf
+			Normal: yr|sarasa-fixed-sc-regular.ttf
+			Bold: yr|sarasa-fixed-sc-bold.ttf
 		#ModContent:
 		#	InstallPromptMessage: OpenRA尤里的复仇模组需要来自原版游戏的资源文件和声音文件
 		#	HeaderMessage: 原版游戏的资源文件和声音文件可以从原版光盘中复制

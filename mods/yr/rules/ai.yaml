@@ -118,9 +118,9 @@ Player:
 			naindp: 1
 			gagap: 2
 		BuildingFractions:
-			garefn: 15
-			narefn: 15
-			yarefn: 15
+			garefn: 30
+			narefn: 30
+			yarefn: 30
 			gapowr: 35
 			napowr: 25
 			yapowr: 25
