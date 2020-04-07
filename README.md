@@ -15,6 +15,9 @@ Run "make.cmd" on Windows and type "all" in the terminal
 ### Linux/MacOS
 Run "make" on Linux/MacOS  
 
+## Tip
+When Start Skirmish mode, please make sure your money set to `10000` or above
+
 ## Wiki  
 You can check more information on wiki:  
 https://github.com/cookgreen/Yuris-Revenge/wiki  
