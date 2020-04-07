@@ -969,13 +969,17 @@ naclon:
 		SpawnOffset: 0,0,0
 		ExitCell: 2, 2
 	Production:
-		Produces: Dummy
+		Produces: Infantry
 	RallyPoint:
 		Offset: 3,3
 		Palette: mouse
 		IsPlayerPalette: false
 	ClonesProducedUnits:
 		CloneableTypes: infantry
+	AcceptsDeliveredCash:
+	SpawnSurvivors:
+		DeathTypes: ExplosionDeath, BulletDeath
+		Actors: init, init, init, init
 
 napsis:
 	Inherits: ^Building
