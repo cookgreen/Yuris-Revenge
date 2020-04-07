@@ -124,11 +124,17 @@ namespace OpenRA.Mods.YR.Activities
                     var move = actor.Trait<IMove>();
                     var pos = actor.Trait<IPositionable>();
 
-                    pos.SetPosition(self, exitSubCell.Value.First, exitSubCell.Value.Second);
-                    pos.SetVisualPosition(actor, spawn);
+                    //pos.SetPosition(self, exitSubCell.Value.First, exitSubCell.Value.Second);
+                    //pos.SetVisualPosition(actor, spawn);
 
                     actor.CancelActivity();
-                    w.Add(actor);
+                    if (cargo.Info.WillDisappear)
+                    {
+                        w.Add(actor);
+                    }
+
+                    BunkerPassenger bunkerPassenger = actor.TraitOrDefault<BunkerPassenger>();
+                    bunkerPassenger.RevokeCondition();
                 });
             }
 

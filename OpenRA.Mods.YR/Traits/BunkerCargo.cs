@@ -585,11 +585,11 @@ namespace OpenRA.Mods.YR.Traits
                 bunkeredToken = conditionManager.RevokeCondition(self, bunkeredToken);
         }
 
-        public void ChangeState(BunkerState bunkered)
+        public void ChangeState(BunkerState bunkerState)
         {
             if (buildComplete)
             {
-                switch (bunkered)
+                switch (bunkerState)
                 {
                     case BunkerState.NonBunkered:
                         if (!string.IsNullOrEmpty(Info.BunkerNotSequence))
@@ -605,7 +605,7 @@ namespace OpenRA.Mods.YR.Traits
                         break;
                 }
             }
-            bunkerState = bunkered;
+            this.bunkerState = bunkerState;
         }
 
         public void PlayBunkeringAnimationBackward(Action after)

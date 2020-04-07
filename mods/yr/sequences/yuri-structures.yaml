@@ -410,6 +410,7 @@ natbnk:
 	Defaults:
 		Offset: 0, -24
 		UseTilesetCode: true
+		UseTilesetSuffix: false
 		TilesetOverrides:
 			TEMPERATE: GENERIC
 			URBAN: GENERIC
