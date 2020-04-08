@@ -424,6 +424,8 @@ chinese:
 				Title: 百慕大三角洲
 			breakaway: 
 				Title: 脱逃
+			bridgegap:
+				Title: 桥缝
 			c1a01md: 
 				Title: 盟军合作任务第一关
 			c1a02md: 
@@ -442,6 +444,10 @@ chinese:
 				Title: 尤里合作任务第二关
 			c4w01md: 
 				Title: 世界联盟合作任务
+			carville:
+				Title: 卡维利
+			tn01mw:
+				Title: 世界锦标赛地图01
 			tn01mw:
 				Title: 世界锦标赛地图01
 			tn02mw:
