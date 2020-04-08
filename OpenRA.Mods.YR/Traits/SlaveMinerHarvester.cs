@@ -215,7 +215,7 @@ namespace OpenRA.Mods.YR.Traits
 			MiningState = MiningState.Scan;
 
 			LastOrderLocation = ResolveHarvestLocation(self, order);
-			self.QueueActivity(new SpawnerHarvesterHarvest(self));
+			self.QueueActivity(new SlaveMinerHarvesterHarvest(self));
 			//self.SetTargetLine(Target.FromCell(self.World, LastOrderLocation.Value), Color.Red);
 
 			// Assign new targets for slaves too.
@@ -257,7 +257,7 @@ namespace OpenRA.Mods.YR.Traits
 			{
 				kickTicks = info.KickDelay;
 				MiningState = MiningState.Kick;
-				self.QueueActivity(new SpawnerHarvesterHarvest(self));
+				self.QueueActivity(new SlaveMinerHarvesterHarvest(self));
 			}
 		}
 
@@ -327,7 +327,7 @@ namespace OpenRA.Mods.YR.Traits
                     se.Actor.QueueActivity(new FindAndDeliverResources(se.Actor));
             }
             refineryMaster.AssignSlavesToMaster(SlaveEntries);
-            toActor.QueueActivity(new SpawnerRefineryHarvest(toActor));
+            toActor.QueueActivity(new SlaveMinerMasterHarvest(toActor));
         }
 
         public override void Killed(Actor self, AttackInfo e)

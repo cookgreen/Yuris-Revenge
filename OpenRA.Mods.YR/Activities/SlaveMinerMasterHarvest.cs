@@ -33,7 +33,7 @@ namespace OpenRA.Mods.YR.Activities
     /// <summary>
     /// This activity will allow refinery building actor to send its slave to find the resource
     /// </summary>
-	public class SpawnerRefineryHarvest : Activity
+	public class SlaveMinerMasterHarvest : Activity
 	{	
 		readonly SlaveMinerMaster harv;
 		readonly SlaveMinerInfo harvInfo;
@@ -44,7 +44,7 @@ namespace OpenRA.Mods.YR.Activities
 
 		CPos? avoidCell;
 
-		public SpawnerRefineryHarvest(Actor self)
+		public SlaveMinerMasterHarvest(Actor self)
 		{
 			harv = self.Trait<SlaveMinerMaster>();
 			harvInfo = self.Info.TraitInfo<SlaveMinerInfo>();
@@ -55,7 +55,7 @@ namespace OpenRA.Mods.YR.Activities
 			ChildHasPriority = false;
 		}
 
-		public SpawnerRefineryHarvest(Actor self, CPos avoidCell)
+		public SlaveMinerMasterHarvest(Actor self, CPos avoidCell)
 			: this(self)
 		{
 			this.avoidCell = avoidCell;

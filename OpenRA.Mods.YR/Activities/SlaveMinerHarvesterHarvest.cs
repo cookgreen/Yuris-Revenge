@@ -33,7 +33,7 @@ namespace OpenRA.Mods.YR.Activities
     /// <summary>
     /// Harvester Master Vehicle can find the resource
     /// </summary>
-	public class SpawnerHarvesterHarvest : Activity
+	public class SlaveMinerHarvesterHarvest : Activity
 	{
 		private readonly SlaveMinerHarvester harv;
 		private readonly SlaveMinerHarvesterInfo harvInfo;
@@ -48,7 +48,7 @@ namespace OpenRA.Mods.YR.Activities
 		private CPos? avoidCell;
 		private int cellRange;
 
-		public SpawnerHarvesterHarvest(Actor self)
+		public SlaveMinerHarvesterHarvest(Actor self)
 		{
 			harv = self.Trait<SlaveMinerHarvester>();
 			harvInfo = self.Info.TraitInfo<SlaveMinerHarvesterInfo>();
@@ -62,7 +62,7 @@ namespace OpenRA.Mods.YR.Activities
 			ChildHasPriority = false;
         }
 
-		public SpawnerHarvesterHarvest(Actor self, CPos avoidCell)
+		public SlaveMinerHarvesterHarvest(Actor self, CPos avoidCell)
 			: this(self)
 		{
 			this.avoidCell = avoidCell;

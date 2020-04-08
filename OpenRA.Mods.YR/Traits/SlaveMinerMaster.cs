@@ -92,11 +92,11 @@ namespace OpenRA.Mods.YR.Traits
             if (force)
             {
                 harvesterMaster.LastOrderLocation = forceMovePos;
-                toActor.QueueActivity(new SpawnerHarvesterHarvest(toActor));
+                toActor.QueueActivity(new SlaveMinerHarvesterHarvest(toActor));
             }
             else
             {
-                toActor.QueueActivity(new SpawnerHarvesterHarvest(toActor));
+                toActor.QueueActivity(new SlaveMinerHarvesterHarvest(toActor));
             }
         }
 
@@ -233,7 +233,7 @@ namespace OpenRA.Mods.YR.Traits
             {
                 kickTicks = info.KickDelay;
                 MiningState = MiningState.Kick;
-                self.QueueActivity(new SpawnerRefineryHarvest(self));
+                self.QueueActivity(new SlaveMinerMasterHarvest(self));
             }
         }
 
