@@ -531,7 +531,7 @@ namespace OpenRA.Mods.YR.Widgets.Logic
 			else
 			{
 				SwitchMenu(MenuType.None);
-				Game.OpenWindow("WD_PANEL", new WidgetArgs
+				Game.OpenWindow("WDT_PANEL", new WidgetArgs
 				{
 					{ "onStart", () => { RemoveShellmapUI(); lastGameState = MenuPanel.Multiplayer; } },
 					{ "onExit", () => SwitchMenu(MenuType.Multiplayer) },

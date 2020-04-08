@@ -50,24 +50,22 @@ namespace OpenRA.Mods.YR.Widgets.Logic
 				spriteWidget.IsVisible = () => !isVideoLoaded && !isLoadError;
 			}
 
-			var closeButton = panel.GetOrNull<ButtonWidget>("BACK_BUTTON");
-			if (closeButton != null)
-				closeButton.OnClick = () =>
+			var startButton = panel.GetOrNull<ButtonWidget>("START_BUTTON");
+			if (startButton != null)
+				startButton.OnClick = () =>
+				{
+					//Generate a random map by using the wdt data
+					//Hosting a multiplayer server and go into the lobby ui
+					//Then start game like the regular multiplayer
+				};
+
+			var closeButton = panel.GetOrNull<ButtonWidget>("CLOSE_BUTTON");
+			if (startButton != null)
+				startButton.OnClick = () =>
 				{
 					Ui.CloseWindow();
 					onExit();
 				};
-
-			loadDefaultWDTData();
-		}
-
-		private void loadDefaultWDTData()
-		{
-			if (wdtData.Scenarios.Count > 0)
-			{
-				currentSprites = world.Map.Rules.Sequences.SpriteCache[wdtData.Scenarios[0].BackgroundImage];
-				currentFrame = 0;
-			}
 		}
 	}
 }
