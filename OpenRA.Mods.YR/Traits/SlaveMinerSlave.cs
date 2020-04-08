@@ -33,7 +33,7 @@ namespace OpenRA.Mods.YR.Traits
         Free, //We are free, we are free!!! Change owner to the killer
         Idle, //Nothing happen
     }
-	public class SpawnerHarvesterSlaveInfo : BaseSpawnerSlaveInfo, Requires<HarvesterInfo>
+	public class SlaveMinerSlaveInfo : BaseSpawnerSlaveInfo, Requires<HarvesterInfo>
 	{
         [Desc("What will happen when master was killed?")]
         public readonly SlaveState OnMasterKilled = SlaveState.Idle;
@@ -42,16 +42,16 @@ namespace OpenRA.Mods.YR.Traits
         public readonly SlaveState OnMasterOwnerChanged = SlaveState.Idle;
 		public override object Create(ActorInitializer init)
 		{
-			return new SpawnerHarvesterSlave(init, this);
+			return new SlaveMinerSlave(init, this);
 		}
 	}
 
-	class SpawnerHarvesterSlave : BaseSpawnerSlave, ITick
+	class SlaveMinerSlave : BaseSpawnerSlave, ITick
 	{
-		SpawnerHarvesterMaster spawnerHarvesterMaster;
-        SpawnerHarvesterSlaveInfo info;
+		SlaveMinerHarvester spawnerHarvesterMaster;
+        SlaveMinerSlaveInfo info;
 
-		public SpawnerHarvesterSlave(ActorInitializer init, SpawnerHarvesterSlaveInfo info) : base(init, info) {
+		public SlaveMinerSlave(ActorInitializer init, SlaveMinerSlaveInfo info) : base(init, info) {
             this.info = info;
         }
 
@@ -61,7 +61,7 @@ namespace OpenRA.Mods.YR.Traits
             // Link master for the harvester trait.
             try
             {
-                spawnerHarvesterMaster = Master.Trait<SpawnerHarvesterMaster>();
+                spawnerHarvesterMaster = Master.Trait<SlaveMinerHarvester>();
             }
             catch
             {

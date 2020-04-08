@@ -234,6 +234,10 @@ yarefn:
 		DeployCursor: undeploy
 	CustomSellValue:
 		Value: 300
+	SlaveMinerMaster:
+		Actors: slav, slav, slav, slav, slav
+		SpawnAllAtOnce: True
+		Resources: Ore,Gems,Tiberium
 	InfiltrateForCash:
 		Types: SpyInfiltrate
 		Percentage: 50
@@ -249,10 +253,6 @@ yarefn:
 	GrantConditionOnDeploy:
 		DeployedCondition: deploy
 		UndeployedCondition: undeploy
-	SpawnerRefineryMaster:
-		Actors: slav, slav, slav, slav, slav
-		SpawnAllAtOnce: True
-		Resources: Ore,Gems,Tiberium
 
 yaweap:
 	Inherits: ^Building

@@ -35,8 +35,8 @@ namespace OpenRA.Mods.YR.Activities
     /// </summary>
 	public class SpawnerRefineryHarvest : Activity
 	{	
-		readonly SpawnerRefineryMaster harv;
-		readonly SpawnerRefineryMasterInfo harvInfo;
+		readonly SlaveMinerMaster harv;
+		readonly SlaveMinerInfo harvInfo;
 		readonly ResourceClaimLayer claimLayer;
 		readonly IPathFinder pathFinder;
 		readonly DomainIndex domainIndex;
@@ -46,8 +46,8 @@ namespace OpenRA.Mods.YR.Activities
 
 		public SpawnerRefineryHarvest(Actor self)
 		{
-			harv = self.Trait<SpawnerRefineryMaster>();
-			harvInfo = self.Info.TraitInfo<SpawnerRefineryMasterInfo>();
+			harv = self.Trait<SlaveMinerMaster>();
+			harvInfo = self.Info.TraitInfo<SlaveMinerInfo>();
 			claimLayer = self.World.WorldActor.TraitOrDefault<ResourceClaimLayer>();
 			pathFinder = self.World.WorldActor.Trait<IPathFinder>();
 			domainIndex = self.World.WorldActor.Trait<DomainIndex>();

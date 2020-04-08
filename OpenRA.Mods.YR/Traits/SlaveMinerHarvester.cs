@@ -36,7 +36,7 @@ namespace OpenRA.Mods.YR.Traits
     }
 
     [Desc("This actor is a harvester that uses its spawns to indirectly harvest resources. i.e., Slave Miner.")]
-	public class SpawnerHarvesterMasterInfo : SpawnerHarvestResourceInfo, Requires<IOccupySpaceInfo>, Requires<GrantConditionOnDeployInfo>
+	public class SlaveMinerHarvesterInfo : SpawnerHarvestResourceInfo, Requires<IOccupySpaceInfo>, Requires<GrantConditionOnDeployInfo>
 	{
 		[VoiceReference] public readonly string HarvestVoice = "Action";
 
@@ -61,7 +61,7 @@ namespace OpenRA.Mods.YR.Traits
         [Desc("Play this sound when the slave is freed")]
         public readonly string FreeSound = null;
 
-		public override object Create(ActorInitializer init) { return new SpawnerHarvesterMaster(init, this); }
+		public override object Create(ActorInitializer init) { return new SlaveMinerHarvester(init, this); }
 	}
 
 	public enum MiningState
@@ -75,10 +75,10 @@ namespace OpenRA.Mods.YR.Traits
         Undeploy,//Ready to transform
 	}
 
-	public class SpawnerHarvesterMaster : BaseSpawnerMaster, INotifyIdle,
+	public class SlaveMinerHarvester : BaseSpawnerMaster, INotifyIdle,
 		ITick, IIssueOrder, IResolveOrder, IOrderVoice, INotifyDeployComplete, INotifyTransform
 	{
-		readonly SpawnerHarvesterMasterInfo info;
+		readonly SlaveMinerHarvesterInfo info;
 		readonly Actor self;
 		readonly ResourceLayer resLayer;
 		readonly Mobile mobile;
@@ -89,14 +89,14 @@ namespace OpenRA.Mods.YR.Traits
 
 		public IEnumerable<IOrderTargeter> Orders
 		{
-			get { yield return new SpawnerResourceHarvestOrderTargeter<SpawnerHarvesterMasterInfo>("SpawnerHarvest"); }
+			get { yield return new SpawnerResourceHarvestOrderTargeter<SlaveMinerHarvesterInfo>("SpawnerHarvest"); }
 		}
 
 		int respawnTicks; // allowed to spawn a new slave when <= 0.
 		int kickTicks;
 		bool allowKicks = true; // allow kicks?
 
-		public SpawnerHarvesterMaster(ActorInitializer init, SpawnerHarvesterMasterInfo info) : base(init, info)
+		public SlaveMinerHarvester(ActorInitializer init, SlaveMinerHarvesterInfo info) : base(init, info)
 		{
 			self = init.Self;
 			this.info = info;
@@ -318,7 +318,7 @@ namespace OpenRA.Mods.YR.Traits
         void INotifyTransform.AfterTransform(Actor toActor)
         {
             //When transform complete, assign the slaves to the transform actor
-            SpawnerRefineryMaster refineryMaster = toActor.Trait<SpawnerRefineryMaster>();
+            SlaveMinerMaster refineryMaster = toActor.Trait<SlaveMinerMaster>();
             foreach (var se in SlaveEntries)
             {
                 se.SpawnerSlave.LinkMaster(se.Actor, toActor, refineryMaster);

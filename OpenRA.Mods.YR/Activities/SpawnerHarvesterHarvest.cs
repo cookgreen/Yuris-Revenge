@@ -35,8 +35,8 @@ namespace OpenRA.Mods.YR.Activities
     /// </summary>
 	public class SpawnerHarvesterHarvest : Activity
 	{
-		private readonly SpawnerHarvesterMaster harv;
-		private readonly SpawnerHarvesterMasterInfo harvInfo;
+		private readonly SlaveMinerHarvester harv;
+		private readonly SlaveMinerHarvesterInfo harvInfo;
 		private readonly Mobile mobile;
 		private readonly MobileInfo mobileInfo;
 		private readonly ResourceClaimLayer claimLayer;
@@ -50,8 +50,8 @@ namespace OpenRA.Mods.YR.Activities
 
 		public SpawnerHarvesterHarvest(Actor self)
 		{
-			harv = self.Trait<SpawnerHarvesterMaster>();
-			harvInfo = self.Info.TraitInfo<SpawnerHarvesterMasterInfo>();
+			harv = self.Trait<SlaveMinerHarvester>();
+			harvInfo = self.Info.TraitInfo<SlaveMinerHarvesterInfo>();
 			mobile = self.Trait<Mobile>();
 			mobileInfo = self.Info.TraitInfo<MobileInfo>();
 			deploy = self.Trait<GrantConditionOnDeploy>();

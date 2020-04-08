@@ -11,6 +11,7 @@
  * information, see COPYING.
  */
 #endregion
+using OpenRA;
 using OpenRA.Mods.Common.Activities;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.YR.Activities;
@@ -24,7 +25,7 @@ using System.Threading.Tasks;
 
 namespace OpenRA.Mods.YR.Traits
 {
-    public class SpawnerRefineryMasterInfo : SpawnerHarvestResourceInfo
+    public class SlaveMinerInfo : SpawnerHarvestResourceInfo
     {
         [Desc("When deployed, use this scan radius.")]
         public readonly int ShortScanRadius = 8;
@@ -45,30 +46,31 @@ namespace OpenRA.Mods.YR.Traits
         public readonly string FreeSound = null;
         public override object Create(ActorInitializer init)
         {
-            return new SpawnerRefineryMaster(init, this);
+            return new SlaveMinerMaster(init, this);
         }
     }
 
-    public class SpawnerRefineryMaster : BaseSpawnerMaster, INotifyTransform, INotifyBuildingPlaced, ITick, IIssueOrder, IResolveOrder, INotifyIdle
+    public class SlaveMinerMaster : BaseSpawnerMaster, INotifyTransform, INotifyBuildingPlaced, ITick, IIssueOrder, IResolveOrder, INotifyIdle
     {
         /*When transformed complete, it must be mining state*/
         public MiningState MiningState = MiningState.Mining;
         public CPos? LastOrderLocation = null;
-        private SpawnerRefineryMasterInfo info;
-        readonly ResourceLayer resLayer;
-        int respawnTicks = 0;
-        int kickTicks;
-        bool allowKicks = true; // allow kicks?
-        Transforms transforms;
-        bool force = false;
-        CPos? forceMovePos = null;
+        private SlaveMinerInfo info;
+        private readonly ResourceLayer resLayer;
+        private int respawnTicks = 0;
+        private int kickTicks;
+        private bool allowKicks = true; // allow kicks?
+        private Transforms transforms;
+        private GrantConditionOnDeploy grantCondOnDeply;
+        private bool force = false;
+        private CPos? forceMovePos = null;
 
         public IEnumerable<IOrderTargeter> Orders
         {
-            get { yield return new SpawnerResourceHarvestOrderTargeter<SpawnerRefineryMasterInfo>("SpawnerRefineryHarvest"); }
+            get { yield return new SpawnerResourceHarvestOrderTargeter<SlaveMinerInfo>("SpawnerRefineryHarvest"); }
         }
 
-        public SpawnerRefineryMaster(ActorInitializer init, SpawnerRefineryMasterInfo info) : base(init, info)
+        public SlaveMinerMaster(ActorInitializer init, SlaveMinerInfo info) : base(init, info)
         {
             this.info = info;
             resLayer = init.Self.World.WorldActor.Trait<ResourceLayer>();
@@ -78,7 +80,7 @@ namespace OpenRA.Mods.YR.Traits
         void INotifyTransform.AfterTransform(Actor toActor)
         {
             //When transform complete, assign the slaves to this transform actor
-            SpawnerHarvesterMaster harvesterMaster = toActor.Trait<SpawnerHarvesterMaster>();
+            SlaveMinerHarvester harvesterMaster = toActor.Trait<SlaveMinerHarvester>();
             foreach (var se in SlaveEntries)
             {
                 se.SpawnerSlave.LinkMaster(se.Actor, toActor, harvesterMaster);

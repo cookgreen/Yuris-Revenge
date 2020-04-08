@@ -224,7 +224,7 @@ slav:
 		VoiceSet: SlaveWorkerVoice
 	AttackFrontal:
 		Voice: Attack
-	SpawnerHarvesterSlave:
+	SlaveMinerSlave:
 		OnMasterKilled: Free
 		OnMasterChangeOwner: Free
 		FreeCondition: freed
