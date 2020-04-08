@@ -33,7 +33,7 @@ namespace OpenRA.Mods.YR.Activities
 
             self.World.AddFrameEndTask(w =>
             {
-                if (!master.IsDead)
+                if (!master.IsDead && master.IsInWorld)
                 {
                     master.Trait<MarkerMaster>().PickupSlave(master, slave);
                 }
