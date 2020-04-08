@@ -62,7 +62,6 @@ namespace OpenRA.Mods.YR.Traits
         private int kickTicks;
         private bool allowKicks = true; // allow kicks?
         private Transforms transforms;
-        private GrantConditionOnDeploy grantCondOnDeply;
         private bool force = false;
         private CPos? forceMovePos = null;
         private const string orderID = "SlaveMinerMasterHarvest";
