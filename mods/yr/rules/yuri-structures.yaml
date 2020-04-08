@@ -221,7 +221,7 @@ yarefn:
 		Dimensions: 2,2
 	Refinery:
 		DockOffset: 3,0
-		ShowTicks: False
+		ShowTicks: True
 		TickLifetime: 30
 		TickVelocity: 1
 		TickRate: 10
