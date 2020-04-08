@@ -25,7 +25,7 @@ using System.Threading.Tasks;
 
 namespace OpenRA.Mods.YR.Traits
 {
-    public class SlaveMinerInfo : SpawnerHarvestResourceInfo
+    public class SlaveMinerMasterInfo : SpawnerHarvestResourceInfo
     {
         [Desc("When deployed, use this scan radius.")]
         public readonly int ShortScanRadius = 8;
@@ -50,12 +50,13 @@ namespace OpenRA.Mods.YR.Traits
         }
     }
 
-    public class SlaveMinerMaster : BaseSpawnerMaster, INotifyTransform, INotifyBuildingPlaced, ITick, IIssueOrder, IResolveOrder, INotifyIdle
+    public class SlaveMinerMaster : BaseSpawnerMaster, INotifyTransform, 
+        INotifyBuildingPlaced, ITick, IIssueOrder, IResolveOrder
     {
         /*When transformed complete, it must be mining state*/
         public MiningState MiningState = MiningState.Mining;
         public CPos? LastOrderLocation = null;
-        private SlaveMinerInfo info;
+        private SlaveMinerMasterInfo info;
         private readonly ResourceLayer resLayer;
         private int respawnTicks = 0;
         private int kickTicks;
@@ -64,20 +65,22 @@ namespace OpenRA.Mods.YR.Traits
         private GrantConditionOnDeploy grantCondOnDeply;
         private bool force = false;
         private CPos? forceMovePos = null;
+        private const string orderID = "SlaveMinerMasterHarvest";
 
         public IEnumerable<IOrderTargeter> Orders
         {
-            get { yield return new SpawnerResourceHarvestOrderTargeter<SlaveMinerInfo>("SpawnerRefineryHarvest"); }
+            get { yield return new SlaveMinerHarvestOrderTargeter<SlaveMinerMasterInfo>(orderID); }
         }
 
-        public SlaveMinerMaster(ActorInitializer init, SlaveMinerInfo info) : base(init, info)
+        public SlaveMinerMaster(ActorInitializer init, SlaveMinerMasterInfo info) : base(init, info)
         {
             this.info = info;
             resLayer = init.Self.World.WorldActor.Trait<ResourceLayer>();
             transforms = init.Self.Trait<Transforms>();
         }
 
-        void INotifyTransform.AfterTransform(Actor toActor)
+		#region Transform
+		public void AfterTransform(Actor toActor)
         {
             //When transform complete, assign the slaves to this transform actor
             SlaveMinerHarvester harvesterMaster = toActor.Trait<SlaveMinerHarvester>();
@@ -105,7 +108,13 @@ namespace OpenRA.Mods.YR.Traits
 
         }
 
-        public bool CanHarvestCell(Actor self, CPos cell)
+        public void OnTransform(Actor self)
+        {
+        }
+
+		#endregion
+
+		public bool CanHarvestCell(Actor self, CPos cell)
         {
             // Resources only exist in the ground layer
             if (cell.Layer != 0)
@@ -119,27 +128,37 @@ namespace OpenRA.Mods.YR.Traits
             return info.Resources.Contains(resType.Info.Type);
         }
 
-        void INotifyBuildingPlaced.BuildingPlaced(Actor self)
-        {
-        }
-
-        void INotifyTransform.OnTransform(Actor self)
-        {
-        }
-
-        void Launch(Actor master, BaseSpawnerSlaveEntry slaveEntry, CPos targetLocation)
+        private void Launch(Actor master, BaseSpawnerSlaveEntry slaveEntry, CPos targetLocation)
         {
             var slave = slaveEntry.Actor;
 
             SpawnIntoWorld(master, slave, master.CenterPosition);
+        }
 
-            master.World.AddFrameEndTask(w =>
+        public override void SpawnIntoWorld(Actor self, Actor slave, WPos centerPosition)
+        {
+            var exit = ChooseExit(self);
+            SetSpawnedFacing(slave, self, exit);
+
+            self.World.AddFrameEndTask(w =>
             {
-                slave.QueueActivity(new FindAndDeliverResources(slave, master));
+                if (self.IsDead)
+                    return;
+
+                var spawnOffset = exit == null ? WVec.Zero : exit.SpawnOffset;
+                slave.Trait<IPositionable>().SetVisualPosition(slave, centerPosition + spawnOffset);
+
+                var location = centerPosition + spawnOffset;
+
+                w.Add(slave);
+
+                slave.CancelActivity();
+
+                slave.CurrentActivity.QueueChild(new FindAndDeliverResources(slave, self));
             });
         }
 
-        void HandleSpawnerHarvest(Actor self, Order order)
+        private void HandleSpawnerHarvest(Actor self, Order order)
         {
             //Maybe player have a better idea, let's move
             ForceMove(self.World.Map.CellContaining(order.Target.CenterPosition));
@@ -150,6 +169,67 @@ namespace OpenRA.Mods.YR.Traits
             force = true;
             forceMovePos = pos;
             transforms.DeployTransform(false);
+        }
+        public override void OnSlaveKilled(Actor self, Actor slave)
+        {
+            // Set clock so that regen happens.
+            if (respawnTicks <= 0) // Don't interrupt an already running timer!
+                respawnTicks = Info.RespawnTicks;
+        }
+
+        public override void Killed(Actor self, AttackInfo e)
+        {
+            base.Killed(self, e);
+
+            if (!string.IsNullOrEmpty(info.FreeSound))
+            {
+                Game.Sound.Play(SoundType.World, info.FreeSound, self.CenterPosition);
+            }
+        }
+
+        public void BuildingPlaced(Actor self)
+        {
+        }
+
+        public void ResolveOrder(Actor self, Order order)
+        {
+            if (order.OrderString == orderID)
+            {
+                HandleSpawnerHarvest(self, order);
+            }
+            else if (order.OrderString == "Stop" || order.OrderString == "Move")
+            {
+                // Disable "smart idle"
+                MiningState = MiningState.Scan;
+            }
+        }
+
+        public Order IssueOrder(Actor self, IOrderTargeter order, Target target, bool queued)
+        {
+            if (order.OrderID == orderID)
+                return new Order(order.OrderID, self, target, queued);
+            return null;
+        }
+
+        public void TickIdle(Actor self)
+        {
+            // wake up on idle for long (to find new resource patch. i.e., kick)
+            if (allowKicks && self.IsIdle)
+                kickTicks--;
+            else
+                kickTicks = info.KickDelay;
+
+            if (kickTicks <= 0)
+            {
+                kickTicks = info.KickDelay;
+                MiningState = MiningState.Packaging;
+                self.QueueActivity(new SlaveMinerMasterHarvest(self));
+            }
+        }
+
+        public BaseSpawnerSlaveEntry[] GetSlaves()
+        {
+            return SlaveEntries;
         }
 
         public void Tick(Actor self)
@@ -183,63 +263,6 @@ namespace OpenRA.Mods.YR.Traits
             {
                 respawnTicks = Info.RespawnTicks;
             }
-        }
-        public override void OnSlaveKilled(Actor self, Actor slave)
-        {
-            // Set clock so that regen happens.
-            if (respawnTicks <= 0) // Don't interrupt an already running timer!
-                respawnTicks = Info.RespawnTicks;
-        }
-
-        public override void Killed(Actor self, AttackInfo e)
-        {
-            base.Killed(self, e);
-
-            if (!string.IsNullOrEmpty(info.FreeSound))
-            {
-                Game.Sound.Play(SoundType.World, info.FreeSound, self.CenterPosition);
-            }
-        }
-
-        void IResolveOrder.ResolveOrder(Actor self, Order order)
-        {
-            if (order.OrderString == "SpawnerRefineryHarvest")
-            {
-                HandleSpawnerHarvest(self, order);
-            }
-            else if (order.OrderString == "Stop" || order.OrderString == "Move")
-            {
-                // Disable "smart idle"
-                MiningState = MiningState.Scan;
-            }
-        }
-
-        public Order IssueOrder(Actor self, IOrderTargeter order, Target target, bool queued)
-        {
-            if (order.OrderID == "SpawnerRefineryHarvest")
-                return new Order(order.OrderID, self, target, queued);
-            return null;
-        }
-
-        public void TickIdle(Actor self)
-        {
-            // wake up on idle for long (to find new resource patch. i.e., kick)
-            if (allowKicks && self.IsIdle)
-                kickTicks--;
-            else
-                kickTicks = info.KickDelay;
-
-            if (kickTicks <= 0)
-            {
-                kickTicks = info.KickDelay;
-                MiningState = MiningState.Kick;
-                self.QueueActivity(new SlaveMinerMasterHarvest(self));
-            }
-        }
-
-        public BaseSpawnerSlaveEntry[] GetSlaves()
-        {
-            return SlaveEntries;
         }
     }
 }

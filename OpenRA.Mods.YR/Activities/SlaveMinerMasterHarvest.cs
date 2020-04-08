@@ -36,7 +36,7 @@ namespace OpenRA.Mods.YR.Activities
 	public class SlaveMinerMasterHarvest : Activity
 	{	
 		readonly SlaveMinerMaster harv;
-		readonly SlaveMinerInfo harvInfo;
+		readonly SlaveMinerMasterInfo harvInfo;
 		readonly ResourceClaimLayer claimLayer;
 		readonly IPathFinder pathFinder;
 		readonly DomainIndex domainIndex;
@@ -47,7 +47,7 @@ namespace OpenRA.Mods.YR.Activities
 		public SlaveMinerMasterHarvest(Actor self)
 		{
 			harv = self.Trait<SlaveMinerMaster>();
-			harvInfo = self.Info.TraitInfo<SlaveMinerInfo>();
+			harvInfo = self.Info.TraitInfo<SlaveMinerMasterInfo>();
 			claimLayer = self.World.WorldActor.TraitOrDefault<ResourceClaimLayer>();
 			pathFinder = self.World.WorldActor.Trait<IPathFinder>();
 			domainIndex = self.World.WorldActor.Trait<DomainIndex>();
@@ -89,7 +89,7 @@ namespace OpenRA.Mods.YR.Activities
             }
             else
             {
-                state = MiningState.Kick;
+                state = MiningState.Packaging;
                 lastScanRange *= 2; // larger search range
             }
 
@@ -117,7 +117,7 @@ namespace OpenRA.Mods.YR.Activities
 				case MiningState.Mining:
                     QueueChild(Mining(self, out harv.MiningState));
                     return false;
-				case MiningState.Kick:
+				case MiningState.Packaging:
                     QueueChild(Kick(self, out harv.MiningState));
                     return false;
 			}

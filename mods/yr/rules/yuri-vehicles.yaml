@@ -80,10 +80,10 @@ smin:
 		Prerequisite: yarefn
 	Turreted:
 		TurnSpeed: 5
-	SlaveMinerHarvester:
-		Actors: slav, slav, slav, slav, slav
-		Resources: Ore,Gems,Tiberium
-		DeployScanRadius: 20
+	#SlaveMinerHarvester:
+	#	Actors: slav, slav, slav, slav, slav
+	#	Resources: Ore,Gems,Tiberium
+	#	DeployScanRadius: 20
 	Armament@primary:
 		Weapon: 20mmrapid
 		LocalOffset: 640,0,384

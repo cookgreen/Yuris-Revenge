@@ -221,7 +221,7 @@ yarefn:
 		Dimensions: 2,2
 	Refinery:
 		DockOffset: 3,0
-		ShowTicks: True
+		ShowTicks: False
 		TickLifetime: 30
 		TickVelocity: 1
 		TickRate: 10
@@ -234,10 +234,10 @@ yarefn:
 		DeployCursor: undeploy
 	CustomSellValue:
 		Value: 300
-	SlaveMinerMaster:
-		Actors: slav, slav, slav, slav, slav
-		SpawnAllAtOnce: True
-		Resources: Ore,Gems,Tiberium
+	#SlaveMinerMaster:
+	#	Actors: slav, slav, slav, slav, slav
+	#	SpawnAllAtOnce: True
+	#	Resources: Ore,Gems,Tiberium
 	InfiltrateForCash:
 		Types: SpyInfiltrate
 		Percentage: 50

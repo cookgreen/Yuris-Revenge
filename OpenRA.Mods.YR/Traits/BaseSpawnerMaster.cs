@@ -232,14 +232,14 @@ namespace OpenRA.Mods.YR.Traits
 					se.Actor.Dispose();
 		}
 
-		public virtual void SpawnIntoWorld(Actor self, Actor slave, WPos centerPosition)
+		public virtual void SpawnIntoWorld(Actor master, Actor slave, WPos centerPosition)
 		{
-			var exit = ChooseExit(self);
-			SetSpawnedFacing(slave, self, exit);
+			var exit = ChooseExit(master);
+			SetSpawnedFacing(slave, master, exit);
 
-			self.World.AddFrameEndTask(w =>
+			master.World.AddFrameEndTask(w =>
 			{
-				if (self.IsDead)
+				if (master.IsDead)
 					return;
 
 				var spawnOffset = exit == null ? WVec.Zero : exit.SpawnOffset;
@@ -255,7 +255,7 @@ namespace OpenRA.Mods.YR.Traits
 		// Here, we choose one by round robin.
 		// Start from -1 so that +1 logic below will make it 0.
 		int exitRoundRobin = -1;
-		ExitInfo ChooseExit(Actor self)
+		protected ExitInfo ChooseExit(Actor self)
 		{
 			if (exits.Length == 0)
 				return null;
@@ -264,7 +264,7 @@ namespace OpenRA.Mods.YR.Traits
 			return exits[exitRoundRobin];
 		}
 
-		void SetSpawnedFacing(Actor spawned, Actor spawner, ExitInfo exit)
+		protected void SetSpawnedFacing(Actor spawned, Actor spawner, ExitInfo exit)
 		{
 			int facingOffset = facing == null ? 0 : facing.Facing;
 

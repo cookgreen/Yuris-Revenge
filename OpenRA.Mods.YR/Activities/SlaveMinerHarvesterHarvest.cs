@@ -165,7 +165,7 @@ namespace OpenRA.Mods.YR.Activities
 		{
 			// Let the harvester become idle so it can shoot enemies.
 			// Tick in SpawnerHarvester trait will kick activity back to KickTick.
-			state = MiningState.Kick;
+			state = MiningState.Packaging;
 			return ChildActivity;
 		}
 
@@ -214,7 +214,7 @@ namespace OpenRA.Mods.YR.Activities
 				case MiningState.Mining:
 					Mining(self, out harv.MiningState);
 					break;
-				case MiningState.Kick:
+				case MiningState.Packaging:
 					UndeployingCheck(self, out harv.MiningState);
 					break;
 			}

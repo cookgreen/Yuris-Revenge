@@ -29,7 +29,18 @@ then you need to modify harvester logics, which is the very core of the engine!
 
 namespace OpenRA.Mods.YR.Traits
 {
-    public class SpawnerHarvestResourceInfo : BaseSpawnerMasterInfo
+	public enum MiningState
+	{
+		Scan, // Scanning ore 
+		Moving, // Moving to the best location
+		TryDeploy, // Try to deploy
+		Deploying, // Playing deploy animation.
+		Mining, // Slaves are mining. We get kicked sometimes to move closer to ore.
+		Packaging, // Check if there's ore field is close enough.
+		Undeploy,//Ready to transform
+	}
+
+	public class SpawnerHarvestResourceInfo : BaseSpawnerMasterInfo
     {
         [Desc("Which resources it can harvest. Make sure slaves can mine these too!")]
         public readonly HashSet<string> Resources = new HashSet<string>();
@@ -64,24 +75,14 @@ namespace OpenRA.Mods.YR.Traits
 		public override object Create(ActorInitializer init) { return new SlaveMinerHarvester(init, this); }
 	}
 
-	public enum MiningState
-	{
-		Scan, // Scanning ore 
-		Moving, // Moving to the best location
-		TryDeploy, // Try to deploy
-		Deploying, // Playing deploy animation.
-		Mining, // Slaves are mining. We get kicked sometimes to move closer to ore.
-		Kick, // Check if there's ore field is close enough.
-        Undeploy,//Ready to transform
-	}
-
-	public class SlaveMinerHarvester : BaseSpawnerMaster, INotifyIdle,
+	public class SlaveMinerHarvester : BaseSpawnerMaster,
 		ITick, IIssueOrder, IResolveOrder, IOrderVoice, INotifyDeployComplete, INotifyTransform
 	{
 		readonly SlaveMinerHarvesterInfo info;
 		readonly Actor self;
 		readonly ResourceLayer resLayer;
 		readonly Mobile mobile;
+		private const string orderID = "SlaveMinerHarvest";
 
 		// Because activities don't remember states, we remember states here for them.
 		public CPos? LastOrderLocation = null;
@@ -89,7 +90,7 @@ namespace OpenRA.Mods.YR.Traits
 
 		public IEnumerable<IOrderTargeter> Orders
 		{
-			get { yield return new SpawnerResourceHarvestOrderTargeter<SlaveMinerHarvesterInfo>("SpawnerHarvest"); }
+			get { yield return new SlaveMinerHarvestOrderTargeter<SlaveMinerHarvesterInfo>(orderID); }
 		}
 
 		int respawnTicks; // allowed to spawn a new slave when <= 0.
@@ -178,7 +179,7 @@ namespace OpenRA.Mods.YR.Traits
 
 		public Order IssueOrder(Actor self, IOrderTargeter order, Target target, bool queued)
 		{
-			if (order.OrderID == "SpawnerHarvest")
+			if (order.OrderID == orderID)
 				return new Order(order.OrderID, self,target, queued);
 			return null;
 		}
@@ -230,7 +231,7 @@ namespace OpenRA.Mods.YR.Traits
 
 		public void ResolveOrder(Actor self, Order order)
 		{
-			if (order.OrderString == "SpawnerHarvest")
+			if (order.OrderString == orderID)
 				HandleSpawnerHarvest(self, order);
 			else if (order.OrderString == "Stop" || order.OrderString == "Move")
 			{
@@ -242,7 +243,7 @@ namespace OpenRA.Mods.YR.Traits
 
 		public string VoicePhraseForOrder(Actor self, Order order)
 		{
-			return order.OrderString == "SpawnerHarvest" ? info.HarvestVoice : null;
+			return order.OrderString == orderID ? info.HarvestVoice : null;
 		}
 
 		public void TickIdle(Actor self)
@@ -256,7 +257,7 @@ namespace OpenRA.Mods.YR.Traits
 			if (kickTicks <= 0)
 			{
 				kickTicks = info.KickDelay;
-				MiningState = MiningState.Kick;
+				MiningState = MiningState.Packaging;
 				self.QueueActivity(new SlaveMinerHarvesterHarvest(self));
 			}
 		}
@@ -341,10 +342,10 @@ namespace OpenRA.Mods.YR.Traits
         }
     }
 
-	class SpawnerResourceHarvestOrderTargeter<T> : IOrderTargeter where T : SpawnerHarvestResourceInfo
+	class SlaveMinerHarvestOrderTargeter<T> : IOrderTargeter where T : SpawnerHarvestResourceInfo
     {
         private string orderID;
-        public SpawnerResourceHarvestOrderTargeter(string orderID)
+        public SlaveMinerHarvestOrderTargeter(string orderID)
         {
             this.orderID = orderID;
         }

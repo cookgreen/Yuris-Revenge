@@ -97,7 +97,8 @@ namespace OpenRA.Mods.YR.Traits
             {
                 return;
             }
-			if (spawnerHarvesterMaster.MiningState == MiningState.Mining && self.CurrentActivity is WaitFor)
+			if (spawnerHarvesterMaster.MiningState == MiningState.Mining 
+                /*&& self.CurrentActivity is WaitFor*/)
 			{
 				self.CancelActivity();
 
