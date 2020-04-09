@@ -738,34 +738,33 @@ gacsph:
 		UseTilesetCode: false
 
 atesla:
+	Inherits: ^Structure
 	Defaults:
-		Offset: 1,-15
-		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
+		UseTilesetCode: false
+		Offset: 1,-15, 15
 	idle-normal: ggpris
+		UseTilesetCode: false
 		ShadowStart: 3
 	damaged-idle-normal: ggpris
-		Start: 1
-		ShadowStart: 4
+		UseTilesetCode: false
 	idle: ggpris_b
+		UseTilesetCode: false
 		Length: 9
 		Tick: 100
 		ShadowStart: 18
 	damaged-idle: ggpris_b
+		UseTilesetCode: false
 		Start: 9
 		Length: 9
 		Tick: 180
 		ShadowStart: 27
 	active: ggpris_a
+		UseTilesetCode: false
 		Length: 10
 		Tick: 100
 		ShadowStart: 20
 	damaged-active: ggpris_a
+		UseTilesetCode: false
 		Start: 10
 		Length: 10
 		Tick: 100
@@ -775,18 +774,11 @@ atesla:
 		ShadowStart: 21
 		Tick: 100
 	icon: prisicon
-		Offset: 0,0
-		UseTilesetCode: false
 	make: gtprismk
+		UseTilesetCode: false
 		Length: 8
 		ShadowStart: 8
 		Tick: 160
-		TilesetOverrides:
-			TEMPERATE: TEMPERATE
-			URBAN: URBAN
-			NEWURBAN: NEWURBAN
-			DESERT: DESERT
-			LUNAR: LUNAR
 
 garobo:
 	Defaults:

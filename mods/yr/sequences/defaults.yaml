@@ -198,6 +198,34 @@
 		Offset: 0,0
 		UseTilesetCode: false
         
+^Structure:
+	Defaults:
+		UseTilesetCode: true
+		TilesetOverrides:
+			TEMPERATE: GENERIC
+			URBAN: GENERIC
+			NEWURBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
+		DepthSprite: isodepth.shp
+	idle:
+		ShadowStart: 3
+	make:
+		Length: 25
+		ShadowStart: 25
+		TilesetOverrides:
+			TEMPERATE: TEMPERATE
+			URBAN: URBAN
+			NEWURBAN: NEWURBAN
+			DESERT: DESERT
+			LUNAR: LUNAR
+	damaged-idle:
+		Start: 1
+		ShadowStart: 4
+	icon:
+		Offset: 0,0
+		UseTilesetCode: false
+        
 ^TechStructure:
 	Defaults:
 		UseTilesetCode: true
