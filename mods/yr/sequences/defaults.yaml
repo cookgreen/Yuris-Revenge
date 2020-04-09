@@ -1,3 +1,43 @@
+^Animal:
+	die4:
+		Start: 86
+		Length: 15
+	die5:
+		Start: 86
+		Length: 15
+	die6:
+		Start: 86
+		Length: 15
+	die7:
+		Start: 86
+		Length: 15
+	die8:
+		Start: 86
+		Length: 15
+	die9:
+		Start: 86
+		Length: 15
+        
+^Civilian:
+	die4: nukedie
+		Length: *
+		Tick: 50
+	die5: yuridie
+		Length: *
+		Tick: 80
+	die6: electro
+		Length: *
+		Tick: 80
+	die7: virusd
+		Length: *
+		Tick: 80
+	die8: brutdie
+		Length: *
+		Tick: 80
+	die9: gendeath
+		Length: *
+		Tick: 80
+        
 ^BasicInfantry:
 	stand:
 		Facings: 8
@@ -93,17 +133,6 @@
 		Start: 134
 		Length: 6
 		Facings: 8
-        
-^Animal:
-	die7:
-		Start: 86
-		Length: 15
-	die8:
-		Start: 86
-		Length: 15
-	die9:
-		Start: 86
-		Length: 15
 
 ^ArmedInfantry:
 	Inherits: ^Infantry
