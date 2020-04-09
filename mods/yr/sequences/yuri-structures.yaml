@@ -84,12 +84,12 @@ yapowr:
 		ShadowStart: 24
 		Tick: 150
 	idle-lights: yapowr_c
-		Length: 2
-		Tick: 200
+		Length: 3
+		Tick: 500
 	damaged-idle-lights: yapowr_c
 		Start: 5
-		Length: 2
-		Tick: 200
+		Length: 3
+		Tick: 500
 	icon: ypwricon
 		Offset: 0,0
 		UseTilesetCode: false
