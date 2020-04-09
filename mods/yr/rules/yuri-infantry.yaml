@@ -55,7 +55,7 @@ yengineer:
 		Queue: Infantry
 		Prerequisites: ~yabrck
 		BuildPaletteOrder: 20
-		Description: Capture enemy structures and netural vehicles.\n Unarmed
+		Description: Capture enemy structures.\n Unarmed
 	Valued:
 		Cost: 500
 	Tooltip:
@@ -197,9 +197,9 @@ slav:
 		Name: Slave
 	Buildable:
 		Queue: Infantry
-		Prerequisites: napsis, ~yabrck
+		Prerequisites: yarefn, ~yabrck
 		BuildPaletteOrder: 20
-		Description: Virus sniper.\n Strong vs Infantry\n Weak vs Vehicle and Aircraft
+		Description: Slave Worker
 	Selectable:
 		Bounds: 20, 30, 0, -11
 	Harvester:
@@ -219,6 +219,8 @@ slav:
 	RevealsShroud:
 		Range: 5c0
 	WithSpriteBody:
+	WithInfantryBody:
+		DefaultAttackSequence: idle
 	WithDockingAnimation:
 		DockSequence: idle
 		DockLoopSequence: idle
