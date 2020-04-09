@@ -1110,8 +1110,8 @@ atesla:
 	Buildable:
 		Queue: Support
 		BuildPaletteOrder: 40
-		Description: Advanced base defense.\nRequires power to operate.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
 		Prerequisites: power, radar, ~structures.allies
+		Description: Advanced base defense.\nRequires power to operate.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
 	Valued:
 		Cost: 1500
 	Tooltip:
@@ -1136,6 +1136,7 @@ atesla:
 		ReloadDelay: 60
 		ChargeAudio: bpripow.wav
 		PauseOnCondition: lowpower
+		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -75
 	AutoTarget:
@@ -1148,7 +1149,6 @@ atesla:
 		RequiresCondition: !build-incomplete
 	WithSpriteBody:
 		PauseOnCondition: lowpower
-		RequiresCondition: !build-incomplete
 	WithRangeCircle:
 		Range: 8c0
 		Type: prismcannon
