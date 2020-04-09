@@ -93,6 +93,17 @@
 		Start: 134
 		Length: 6
 		Facings: 8
+        
+^Animal:
+	die7:
+		Start: 86
+		Length: 15
+	die8:
+		Start: 86
+		Length: 15
+	die9:
+		Start: 86
+		Length: 15
 
 ^ArmedInfantry:
 	Inherits: ^Infantry
