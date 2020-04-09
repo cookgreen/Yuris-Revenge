@@ -205,7 +205,6 @@ caoutp.rubble:
 		Footprint: ==== ==== ====
 	RenderSprites:
 		Image: caoutp
-		Palette: outpost-rubble
 
 		
 camach:
