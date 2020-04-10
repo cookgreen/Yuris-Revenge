@@ -43,10 +43,6 @@ yacnst:
 	GrantConditionOnPrerequisite@GLOBALFACTUNDEPLOY:
 		Condition: factundeploy
 		Prerequisites: global-factundeploy
-	ProductionQueue@Building:
-		Type: Building
-	ProductionQueue@Support:
-		Type: Support
 	ProductionBar@Building:
 		ProductionType: Building
 	ProductionBar@Support:
