@@ -145,6 +145,7 @@ Cursors:
 
 Chrome:
 	yr|chrome.yaml
+	yr|chrome-wdt.yaml
 
 Assemblies:
 	common|OpenRA.Mods.Common.dll
