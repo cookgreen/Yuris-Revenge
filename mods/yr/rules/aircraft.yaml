@@ -126,16 +126,16 @@ zep:
 		Description: Soviet heavy bomber\n  Strong vs Infantry, Vehicle, Ship and Structure\n Weak vs Aircraft
 	Selectable:
 		Bounds: 149, 86, 0, -11
-	AttackAircraft:
+	Aircraft:
 		CruiseAltitude: 5600
 		TurnSpeed: 5
-		Speed: 50
+		Speed: 25
 		Voice: Move
 		AirborneCondition: airborne
 		CanHover: True
 		TakeOffOnResupply: true
 		VTOL: true
-		AttackType: Hover
+		CanSlide: True
 	Health:
 		HP: 2000
 	Armor:
