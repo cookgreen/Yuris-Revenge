@@ -1018,8 +1018,8 @@ gaweat:
 		Icon: lightningstorm
 		Description: Lightning Storm
 		LongDesc: Control the weather to destroy enemy forces.
-		EndChargeSound: spsylo1a.wav,spsylo2a.wav,spsylo2b.wav,spsylo2c.wav,spsylo3a.wav
-		LaunchSound: spsydom.wav
+		EndChargeSound: swealo2a.wav swealo2b.wav swealo2c.wav
+		LaunchSound: sweaintr.wav
 		DisplayTimerStances: Ally, Neutral, Enemy
 		DisplayBeacon: True
 		DisplayRadarPing: True
