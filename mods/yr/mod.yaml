@@ -80,6 +80,7 @@ Packages:
 	yr|bits/structures
 	yr|bits/units
 	yr|data
+	yr|languages/
 	yr|uibits
 
 MapFolders:

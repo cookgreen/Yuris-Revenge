@@ -120,7 +120,7 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 		{
 			currentLanguage = currentLanguage.ToLower();
 
-			string localizationFile = string.Format("languages\\{0}.yaml", currentLanguage);
+			string localizationFile = string.Format("{0}.yaml", currentLanguage);
 			var stream = modData.ModFiles.Open(localizationFile);
 			var nodes = MiniYaml.FromStream(stream);
 			if (nodes[0].Value.Nodes[0].Key != currentLanguage)
@@ -142,8 +142,8 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 				var fs = stream as FileStream;
 				if (fs.Name.Contains(localizationFile))
 				{
-					int idx = fs.Name.IndexOf(localizationFile);
-					modFolder = fs.Name.Substring(0, idx);
+                    DirectoryInfo di = new DirectoryInfo(localizationFile);
+                    modFolder = di.Parent.FullName;
 				}
 			}
 			//Copy all the original mod files to the new mod which id is defined by NEWMODID parameter
