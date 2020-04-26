@@ -31,7 +31,9 @@ namespace OpenRA.Mods.YR.Widgets.Logic
 	{
 		protected enum MenuType { Main, Singleplayer, Extras, MapEditor, SystemInfoPrompt, OtherTools, None, Multiplayer}
 
-		protected enum MenuPanel { None, Missions, Skirmish, Multiplayer, MapEditor, Replays }
+		protected enum MenuPanel { None, Missions, Skirmish, Multiplayer, MapEditor, Replays,
+			GameSaves
+		}
 
 		protected MenuType menuType = MenuType.Main;
 		readonly Widget rootMenu;
@@ -115,6 +117,10 @@ namespace OpenRA.Mods.YR.Widgets.Logic
 			// Singleplayer menu
 			var singleplayerMenu = widget.Get("SINGLEPLAYER_MENU");
 			singleplayerMenu.IsVisible = () => menuType == MenuType.Singleplayer;
+
+			var loadButton = singleplayerMenu.Get<ButtonWidget>("LOAD_BUTTON");
+			loadButton.IsDisabled = () => !GameSaveBrowserLogic.IsLoadPanelEnabled(modData.Manifest);
+			loadButton.OnClick = OpenGameSaveBrowserPanel;
 
 			var missionsButton = singleplayerMenu.Get<ButtonWidget>("MISSIONS_BUTTON");
 			missionsButton.OnClick = OpenMissionBrowserPanel;
@@ -302,6 +308,18 @@ namespace OpenRA.Mods.YR.Widgets.Logic
 				LoadAndDisplayNews(webServices.GameNews, newsBG);
 
 			Game.OnShellmapLoaded += OpenMenuBasedOnLastGame;
+		}
+
+		private void OpenGameSaveBrowserPanel()
+		{
+			SwitchMenu(MenuType.None);
+			Ui.OpenWindow("GAMESAVE_BROWSER_PANEL", new WidgetArgs
+			{
+				{ "onExit", () => SwitchMenu(MenuType.Singleplayer) },
+				{ "onStart", () => { RemoveShellmapUI(); lastGameState = MenuPanel.GameSaves; } },
+				{ "isSavePanel", false },
+				{ "world", null }
+			});
 		}
 
 		void LoadAndDisplayNews(string newsURL, Widget newsBG)
