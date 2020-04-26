@@ -840,8 +840,6 @@ naflak:
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
 		ValidPowerStates: Low, Critical
-	Targetable:
-		TargetTypes: powerable-defense
 	WithMuzzleOverlay:
 
 tesla:
@@ -900,8 +898,6 @@ tesla:
 		RequiresCondition: !lowpower && !build-incomplete
 	ExternalCondition@CHARGED:
 		Condition: charged
-	Targetable:
-		TargetTypes: powerable-defense
 
 nalasr:
 	Inherits: ^VoxelLighting

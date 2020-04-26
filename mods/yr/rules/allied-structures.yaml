@@ -787,8 +787,6 @@ nasam:
 		ValidPowerStates: Low, Critical
 	RequiresBuildableArea:
 		Adjacent: 5
-	Targetable:
-		TargetTypes: powerable-defense
 
 gtgcan:
 	Inherits: ^VoxelLighting
