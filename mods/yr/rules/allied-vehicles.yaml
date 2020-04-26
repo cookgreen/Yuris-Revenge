@@ -549,6 +549,7 @@ robo:
 		RequiresCondition: !robotcenter
 	RejectsOrders@robotankoffline:
 		RequiresCondition: !robotcenter
+	Hovers:
 
 bfrt:
 	Inherits: ^Vehicle

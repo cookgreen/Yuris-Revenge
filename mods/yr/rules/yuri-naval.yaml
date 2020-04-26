@@ -40,6 +40,7 @@ yhvr:
 	Voiced:
 		VoiceSet: HoverYuriVoice
 	HitShape:
+	Hovers:
 
 bsub:
 	Inherits: ^Ship

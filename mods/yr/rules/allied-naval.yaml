@@ -40,6 +40,7 @@ lcrf:
 	Voiced:
 		VoiceSet: HoverAlliedVoice
 	HitShape:
+	Hovers:
 
 dest:
 	Inherits: ^Ship

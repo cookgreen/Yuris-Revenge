@@ -40,6 +40,7 @@ sapc:
 	Voiced:
 		VoiceSet: HoverSovietVoice
 	HitShape:
+	Hovers:
 
 sub:
 	Inherits: ^Ship
