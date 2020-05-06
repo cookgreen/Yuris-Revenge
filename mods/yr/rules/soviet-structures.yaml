@@ -723,6 +723,7 @@ nairon:
 		DisplayRadarPing: True
 		Condition: invulnerability
 		PauseOnCondition: lowpower
+		Range: 3
 	SupportPowerChargeBar:
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
