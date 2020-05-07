@@ -1096,6 +1096,7 @@ gacsph:
 		TargetCursor: chronosphere
 		TargetOverlayPalette: effect75alpha
 		PauseOnCondition: lowpower
+		Range: 3
 
 atesla:
 	Inherits: ^SupportBuilding
