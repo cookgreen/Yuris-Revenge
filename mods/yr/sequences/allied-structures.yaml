@@ -616,6 +616,7 @@ gaspysat:
 		UseTilesetCode: false
 
 gagap:
+	Inherits: ^Structure
 	Defaults:
 		Offset: -15, -7
 		UseTilesetCode: true
