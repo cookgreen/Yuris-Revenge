@@ -23,6 +23,7 @@ https://github.com/cookgreen/Yuris-Revenge/wiki/Install-the-content
 ## Wiki  
 You can check more information on wiki:  
 https://github.com/cookgreen/Yuris-Revenge/wiki  
+(PS: The wiki has both English and Simplified Chinese version)  
 
 ## Issue  
 If you meet any problem, please post an issue:  
