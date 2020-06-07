@@ -843,8 +843,6 @@ gtgcan:
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
 		ValidPowerStates: Low, Critical
-	Targetable:
-		TargetTypes: powerable-defense
 
 gaorep:
 	Inherits: ^Building
