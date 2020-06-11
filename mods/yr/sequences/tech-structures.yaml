@@ -1,4 +1,5 @@
 caoild:
+    Inherits: ^TechStructure
 	Defaults:
 		UseTilesetCode: true
 	idle:
