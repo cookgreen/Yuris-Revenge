@@ -20,6 +20,10 @@ Run "make" on Linux/MacOS
 ## Install the content
 https://github.com/cookgreen/Yuris-Revenge/wiki/Install-the-content  
 
+## Contribution 
+You can post a pull request:  
+https://github.com/cookgreen/Yuris-Revenge/pulls  
+
 ## Wiki  
 You can check more information on wiki:  
 https://github.com/cookgreen/Yuris-Revenge/wiki  
