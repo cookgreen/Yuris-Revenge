@@ -46,7 +46,7 @@ Maverick:
 		Arm: 2
 		Inaccuracy: 128
 		HorizontalRateOfTurn: 8
-		RangeLimit: 7c204
+		RangeLimit: 10c204
 		ContrailColor: D8D8FF
 	Warhead@1Dam: SpreadDamage
 		Spread: 128
@@ -93,7 +93,7 @@ HoverMissile:
 		Arm: 2
 		Inaccuracy: 128
 		HorizontalRateOfTurn: 8
-		RangeLimit: 7c204
+		RangeLimit: 14c512
 		ContrailColor: D8D8FF
 	Warhead@1Dam: SpreadDamage
 		Spread: 128
