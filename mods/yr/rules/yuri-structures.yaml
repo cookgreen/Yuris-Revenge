@@ -249,6 +249,7 @@ yarefn:
 	GrantConditionOnDeploy:
 		DeployedCondition: deploy
 		UndeployedCondition: undeploy
+	-Capturable:
 
 yaweap:
 	Inherits: ^Building
