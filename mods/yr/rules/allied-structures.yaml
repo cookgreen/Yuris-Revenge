@@ -1012,7 +1012,7 @@ gaweat:
 		OrderName: Lightningstorm
 		ChargeInterval: 15000
 		Icon: lightningstorm
-		Description: Lightning Storm
+		Description: Weather Storm
 		LongDesc: Control the weather to destroy enemy forces.
 		EndChargeSound: swealo2a.wav swealo2b.wav swealo2c.wav
 		LaunchSound: sweaintr.wav
@@ -1081,7 +1081,8 @@ gacsph:
 		OrderName: Chronoshift
 		Icon: chrono
 		ChargeInterval: 7500
-		Description: Chronoshift
+		Description: Chronosphere
+		EndChargeSpeechNotification: ChronosphereReady
 		LongDesc: Teleports a group of units across\nthe map.
 		# Those sounds don't work: OpenRA/OpenRA#10540
 		# They also want to be played successive
