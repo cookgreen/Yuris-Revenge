@@ -154,7 +154,7 @@ narefn:
 			LUNAR: LUNAR
 	idle-drill: ngrefnl1
 		Length: 3
-		Tick: 1500
+		Tick: 200
 	idle-bib: ngrefnbb
 		ShadowStart: 3
 		ZOffset: -512
