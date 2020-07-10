@@ -980,7 +980,7 @@ gagap:
 		RequiredForShortGame: false
 
 gaweat:
-	Inherits: ^Building
+	Inherits: ^SupportBuilding
 	Inherits@shape: ^3x3Shape
 	Buildable:
 		Queue: Support

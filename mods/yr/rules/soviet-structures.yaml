@@ -731,7 +731,7 @@ nairon:
 		ValidPowerStates: Low, Critical
 
 namisl:
-	Inherits: ^Building
+	Inherits: ^SupportBuilding
 	Inherits@shape: ^3x3Shape
 	Buildable:
 		Queue: Support
