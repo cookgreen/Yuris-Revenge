@@ -33,8 +33,5 @@ https://github.com/cookgreen/Yuris-Revenge/wiki
 If you meet any problem, please post an issue:  
 https://github.com/cookgreen/Yuris-Revenge/issues  
 
-## Tip
-When Start Skirmish mode, please make sure your money set to `10000` or above  
-
 ## License
 GPLv3
