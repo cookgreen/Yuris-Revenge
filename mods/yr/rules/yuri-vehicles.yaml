@@ -508,7 +508,7 @@ disk:
 		LocalOffset: 0,0,-300
 	WithMuzzleOverlay:
 	AttackAircraft:
-		FacingTolerance: 20
+		FacingTolerance: 128
 		Voice: Attack
 		AttackType: Hover
 	Voiced:
