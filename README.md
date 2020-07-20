@@ -18,7 +18,8 @@ Run "make.cmd" on Windows and type "all" in the terminal
 Run "make" on Linux/MacOS  
 
 ## Install the content
-https://github.com/cookgreen/Yuris-Revenge/wiki/Install-the-content  
+https://github.com/cookgreen/Yuris-Revenge/wiki/Install-the-content (English Version)   
+https://github.com/cookgreen/Yuris-Revenge/wiki/%E5%AE%89%E8%A3%85%E8%B5%84%E6%BA%90 (Simplified Chinese Version)  
 
 ## Contribution 
 You can post a pull request:  
