@@ -7,6 +7,28 @@ SovietInitForce3 = { "lunr", "lunr", "lunr", "lunr", "lunr" }
 
 YuriInitForce1 = { "tele" } --[[Magnetron x 1, Master Mind x 1]]
 YuriInitForce2 = { "mind" }
+YuriProductionTypeInfantry = { "lunr" } --[[ 70% percent chance ]]
+YuriProductionTypeVehicle = { "ytnk", "ltnk" } --[[ 30% percent chance ]]
+
+YuriIncome = 0
+YuriProductionInitDelay = 0
+
+if Map.LobbyOption("difficulty") == "easy" then
+	YuriIncome = 10
+	YuriProductionDelay = DateTime.Second(15)
+	
+elseif Map.LobbyOption("difficulty") == "normal" then
+	YuriIncome = 50
+	YuriProductionDelay = DateTime.Second(10)
+
+elseif Map.LobbyOption("difficulty") == "hard" then
+	YuriIncome = 100
+	YuriProductionDelay = DateTime.Second(5)
+
+else
+	YuriIncome = 5
+	YuriProductionDelay = DateTime.Second(20)
+end
 
 LaunchSovietForce = function()
 	--[[TODO: Add a movement path for these actors]]
@@ -65,12 +87,54 @@ CheckYuriHasDestroyed = function()
 	end
 end
 
+YuriIncomeTick = function()
+	yuri.cash = yuri.cash + YuriIncome
+end
+
+YuriProductionTick = function()
+	
+	if YuriProductionTypeInfantry then
+		Trigger.AfterDelay(InfantryDelay, YuriInfantryProduction)
+	end
+
+	if YuriProductionTypeVehicle then
+		Trigger.AfterDelay(VehicleDelay, YuriVehicleProduction)
+	end
+end
+
+YuriInfantryProduction = function()
+	local toBuild = { Utils.Random(YuriProductionTypeInfantry) }
+	
+	yuri.Build(toBuild, function(unit)
+			var randomActor = GetPlayerRandomActor()
+			unit.Attack(randomActor)
+	end)
+end
+
+YuriVehicleProduction = function()
+	local toBuild = { Utils.Random(YuriProductionTypeVehicle) }
+	
+	yuri.Build(toBuild, function(unit)
+			var randomActor = GetPlayerRandomActor()
+			unit.Attack(randomActor)
+	end)
+end
+
+GetPlayerRandomActor = function()
+	var actors = player.GetActors();
+	var randomActor = Utils.Random(actors)
+	return randomActor
+end
+
 Tick = function()
 	if not isFinishObjective1 then
 		CheckBaseHasBuilt()
 	end
 	CheckYuriCommandCenter()
 	CheckYuriHasDestroyed()
+	
+	YuriProductionTick()
+	YuriIncomeTick()
 end
 
 WorldLoaded = function()
