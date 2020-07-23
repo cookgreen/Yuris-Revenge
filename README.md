@@ -9,7 +9,7 @@ A Red Alert 2 Yuri's Revenge mod for OpenRA Engine
 </details>
 
 ## Version
-release-20200202
+release-20200503
 
 ## Build
 ### Windows
