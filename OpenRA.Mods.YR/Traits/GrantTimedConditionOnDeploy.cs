@@ -11,6 +11,7 @@
 
 using System;
 using System.Collections.Generic;
+using OpenRA;
 using OpenRA.Activities;
 using OpenRA.Mods.Common.Activities;
 using OpenRA.Mods.Common.Orders;
@@ -112,11 +113,6 @@ namespace OpenRA.Mods.RA2.Traits
 		Order IIssueDeployOrder.IssueDeployOrder(Actor self, bool queued)
 		{
 			return new Order("GrantTimedConditionOnDeploy", self, queued);
-		}
-
-		bool IIssueDeployOrder.CanIssueDeployOrder(Actor self)
-		{
-			return true;
 		}
 
 		IEnumerable<IOrderTargeter> IIssueOrder.Orders
@@ -259,5 +255,10 @@ namespace OpenRA.Mods.RA2.Traits
         {
             return deployState == TimedDeployState.Charging ? info.ChargingColor : info.DischargingColor;
         }
-    }
+
+		public bool CanIssueDeployOrder(Actor self, bool queued)
+		{
+			return true;
+		}
+	}
 }

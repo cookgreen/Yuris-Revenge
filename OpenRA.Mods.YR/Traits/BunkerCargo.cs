@@ -23,6 +23,7 @@ using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.Common;
 using OpenRA.Mods.Common.Traits.Render;
 using OpenRA.Mods.YR.Activities;
+using OpenRA;
 
 namespace OpenRA.Mods.YR.Traits
 {
@@ -228,12 +229,10 @@ namespace OpenRA.Mods.YR.Traits
 			return null;
 		}
 
-		Order IIssueDeployOrder.IssueDeployOrder(Actor self, bool queued)
+		public Order IssueDeployOrder(Actor self, bool queued)
 		{
 			return new Order("Unload", self, queued);
 		}
-
-		bool IIssueDeployOrder.CanIssueDeployOrder(Actor self) { return true; }
 
 		public void ResolveOrder(Actor self, Order order)
         {
@@ -347,9 +346,9 @@ namespace OpenRA.Mods.YR.Traits
                 }
                 if (Info.ChangeOwnerWhenGarrison)
                 {
-                    Player neutralPlayer = null;
+					Player neutralPlayer = null;
 
-                    Player[] players = this.self.World.Players;
+					Player[] players = this.self.World.Players;
                     for (int i = 0; i < players.Length; i++)
                     {
                         if (players[i].InternalName == "Neutral")
@@ -364,7 +363,7 @@ namespace OpenRA.Mods.YR.Traits
 
                 if (!string.IsNullOrEmpty(Info.StructureAbandonedNotification))
                 {
-                    Game.Sound.PlayNotification(self.World.Map.Rules, self.Owner, "Speech", Info.StructureAbandonedNotification, self.Owner.Faction.InternalName);
+					Game.Sound.PlayNotification(self.World.Map.Rules, self.Owner, "Speech", Info.StructureAbandonedNotification, self.Owner.Faction.InternalName);
                 }
             }
 
@@ -456,7 +455,7 @@ namespace OpenRA.Mods.YR.Traits
 			string passengerCondition;
             if (conditionManager != null && Info.PassengerConditions.TryGetValue(a.Info.Name, out passengerCondition))
             {
-                passengerTokens.GetOrAdd(a.Info.Name).Push(conditionManager.GrantCondition(self, passengerCondition));
+				passengerTokens.GetOrAdd(a.Info.Name).Push(conditionManager.GrantCondition(self, passengerCondition));
             }
 
             if (conditionManager != null && !string.IsNullOrEmpty(Info.LoadedCondition))
@@ -477,7 +476,7 @@ namespace OpenRA.Mods.YR.Traits
                     var positionable = passenger.Trait<IPositionable>();
                     positionable.SetPosition(passenger, self.Location);
 
-                    if (!inAir && positionable.CanEnterCell(self.Location, self, false))
+                    if (!inAir && positionable.CanEnterCell(self.Location, self, BlockedByActor.All))
                     {
                         self.World.AddFrameEndTask(w => w.Add(passenger));
                         var nbm = passenger.TraitOrDefault<INotifyBlockingMove>();
@@ -619,5 +618,10 @@ namespace OpenRA.Mods.YR.Traits
                 });
             }
         }
-    }
+
+		public bool CanIssueDeployOrder(Actor self, bool queued)
+		{
+			return true;
+		}
+	}
 }

@@ -21,6 +21,7 @@ using OpenRA.Primitives;
 using OpenRA.Traits;
 using Size = OpenRA.Primitives.Size;
 using Rectangle = OpenRA.Primitives.Rectangle;
+using OpenRA.Mods.Cnc.FileFormats;
 
 namespace OpenRA.Mods.Cnc.UtilityCommands
 {

@@ -16,6 +16,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using OpenRA.GameRules;
 using OpenRA.Mods.Common;
 using OpenRA.Mods.Common.Effects;
 using OpenRA.Mods.Common.Traits.Render;
@@ -38,8 +39,10 @@ namespace OpenRA.Mods.YR.Warheads
         private Actor actor;
         private TypeDictionary typeDic;
         private string[] excludeActors;
-        public override void DoImpact(Target target, Actor firedBy, IEnumerable<int> damageModifiers)
+        public override void DoImpact(Target target, WarheadArgs args)
         {
+            var firedBy = args.SourceActor;
+
             if (!string.IsNullOrEmpty(ExcludeActor))
             {
                 excludeActors = ExcludeActor.Split(',');

@@ -16,6 +16,7 @@ using OpenRA.Mods.Common.Graphics;
 using OpenRA.Mods.Common.Traits.Render;
 using OpenRA.Traits;
 using OpenRA.Mods.Common.Traits;
+using OpenRA;
 
 namespace OpenRA.Mods.YR.Traits
 {
@@ -160,12 +161,13 @@ namespace OpenRA.Mods.YR.Traits
 
 			public IEnumerable<IRenderable> RenderAboveShroud(WorldRenderer wr, World world)
 			{
-				var xy = wr.Viewport.ViewToWorld(Viewport.LastMousePos);
-				foreach (var unit in power.UnitsInRange(xy))
-				{
-					var bounds = unit.TraitsImplementing<IDecorationBounds>().FirstNonEmptyBounds(unit, wr);
-					yield return new SelectionBoxRenderable(unit, bounds, OpenRA.Primitives.Color.Red);
-				}
+				//var xy = wr.Viewport.ViewToWorld(Viewport.LastMousePos);
+				//foreach (var unit in power.UnitsInRange(xy))
+				//{
+				//	var bounds = unit.TraitsImplementing<IDecorationBounds>().FirstNonEmptyBounds(unit, wr);
+				//	yield return new SelectionBoxRenderable(unit, bounds, OpenRA.Primitives.Color.Red);
+				//}
+				return new List<IRenderable>();
 			}
 
 			public IEnumerable<IRenderable> Render(WorldRenderer wr, World world)
@@ -190,6 +192,11 @@ namespace OpenRA.Mods.YR.Traits
             {
                 return true;
             }
-        }
+
+			public IEnumerable<IRenderable> RenderAnnotations(WorldRenderer wr, World world)
+			{
+				throw new System.NotImplementedException();
+			}
+		}
 	}
 }

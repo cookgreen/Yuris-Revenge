@@ -89,7 +89,7 @@ namespace OpenRA.Mods.YR.Traits
 			if (ammoPools.Length == 0)
 				return false;
 
-			return ammoPools.All(x => /*!x.AutoReloads &&*/ !x.HasAmmo());
+			return ammoPools.All(x => /*!x.AutoReloads &&*/ !x.HasAmmo);
 		}
 
 		public virtual void OnBecomingIdle(Actor self)

@@ -12,6 +12,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using OpenRA;
 using OpenRA.Activities;
 using OpenRA.Mods.Common;
 using OpenRA.Mods.Common.Traits;
@@ -54,7 +55,7 @@ namespace OpenRA.Mods.YR.Traits
 		// set by spawned logic, not this.
 		public int GetInitialFacing() { return 0; }
 
-		public bool CanEnterCell(World world, Actor self, CPos cell, SubCell subCell = SubCell.FullCell, Actor ignoreActor = null, bool checkTransientActors = true)
+		public bool CanEnterCell(World world, Actor self, CPos cell, SubCell subCell = SubCell.FullCell, Actor ignoreActor = null, BlockedByActor check = BlockedByActor.All)
 		{
 			return false;
 		}
@@ -252,11 +253,6 @@ namespace OpenRA.Mods.YR.Traits
             return new ShootableBallisticMissileFly(self, Target.FromCell(self.World, cell));
         }
 
-		public Activity MoveTo(CPos cell, Actor ignoreActor, Primitives.Color? targetLineColor = null)
-        {
-            return new ShootableBallisticMissileFly(self, Target.FromCell(self.World, cell));
-        }
-
 		public Activity MoveIntoWorld(Actor self, int delay = 0)
         {
             return null;
@@ -303,7 +299,7 @@ namespace OpenRA.Mods.YR.Traits
 
 		Pair<CPos, SubCell>[] IOccupySpace.OccupiedCells()
         {
-            CPos location = self.World.Map.CellContaining(self.CenterPosition);
+			CPos location = self.World.Map.CellContaining(self.CenterPosition);
             return new[] { Pair.New(location, SubCell.FullCell) };
         }
 
@@ -335,6 +331,21 @@ namespace OpenRA.Mods.YR.Traits
 		public Activity ReturnToCell(Actor self)
 		{
 			return null;
+		}
+
+		public bool CanEnterCell(CPos location, Actor actor, BlockedByActor blockedByActor)
+		{
+			return true;
+		}
+
+		public Activity MoveTo(CPos cell, int nearEnough, Actor ignoreActor, bool evaluateNearestMovableCell, Primitives.Color? targetLineColor = null)
+		{
+			return new ShootableBallisticMissileFly(self, Target.FromCell(self.World, cell));
+		}
+
+		public SubCell GetAvailableSubCell(CPos location, SubCell preferredSubCell = SubCell.Any, Actor ignoreActor = null, BlockedByActor check = BlockedByActor.All)
+		{
+			return new SubCell();
 		}
 	}
 }

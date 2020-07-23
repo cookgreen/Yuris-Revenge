@@ -19,6 +19,14 @@ namespace OpenRA.Mods.YR.SpriteLoaders
 			public float2 Offset { get; set; }
 			public byte[] Data { get; set; }
 			public bool DisableExportPadding { get { return false; } }
+
+			public SpriteFrameType Type
+			{
+				get
+				{
+					return SpriteFrameType.BGRA;
+				}
+			}
 		}
 		public bool TryParseSprite(Stream s, out ISpriteFrame[] frames, out TypeDictionary metadata)
 		{

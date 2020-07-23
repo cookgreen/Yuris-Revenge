@@ -384,3 +384,5 @@ EditorWorld:
 		Palette: pips
 	LoadWidgetAtGameStart:
 	Selection:
+	EditorCursorLayer:
+	EditorActionManager:
