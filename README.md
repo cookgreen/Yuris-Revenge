@@ -1,4 +1,5 @@
-# OpenRA Red Alert 2 Yuri's Revenge / 开源红警复刻尤里的复仇
+# OpenRA Red Alert 2 Yuri's Revenge
+# 开源红警复刻尤里的复仇  
 A Red Alert 2 Yuri's Revenge mod for OpenRA Engine
 
 ## Screenshots / 截图  
