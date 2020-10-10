@@ -115,13 +115,15 @@ namespace OpenRA.Mods.YR.Widgets
                 origin = (1f / scale * origin.ToFloat2()).ToInt2();
 
             Game.Renderer.Flush();
-            Game.Renderer.SetViewportParams(-origin - PreviewOffset, scale);
+            // TODO: This was completely removed from the API
+            // Game.Renderer.SetViewportParams(-origin - PreviewOffset, scale);
 
             foreach (var r in renderables)
                 r.Render(WorldRenderer);
             
             Game.Renderer.Flush();
-            Game.Renderer.SetViewportParams(WorldRenderer.Viewport.TopLeft, WorldRenderer.Viewport.Zoom);
+            // TODO: This was completely removed from the API
+            // Game.Renderer.SetViewportParams(WorldRenderer.Viewport.TopLeft, WorldRenderer.Viewport.Zoom);
         }
 
         public override void PrepareRenderables()
@@ -240,7 +242,7 @@ namespace OpenRA.Mods.YR.Widgets
             PreviewOffset = int2.Zero;
             IdealPreviewSize = int2.Zero;
 
-            var rs = previews.SelectMany(p => p.ScreenBounds(WorldRenderer, WPos.Zero));
+            var rs = previews.SelectMany(p => ((IActorPreview)p).ScreenBounds(WorldRenderer, WPos.Zero));
 
             if (rs.Any())
             {
@@ -253,7 +255,7 @@ namespace OpenRA.Mods.YR.Widgets
             }
 
             renderables = previews
-                .SelectMany(p => p.Render(WorldRenderer, WPos.Zero))
+                .SelectMany(p => ((IActorPreview)p).Render(WorldRenderer, WPos.Zero))
                 .OrderBy(WorldRenderer.RenderableScreenZPositionComparisonKey)
                 .Select(r => r.PrepareRender(WorldRenderer))
                 .ToArray();

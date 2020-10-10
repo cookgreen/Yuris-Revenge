@@ -149,7 +149,7 @@ namespace OpenRA.Mods.YR.Activities
                 // Find any harvestable resources:
                 // var passable = (uint)mobileInfo.GetMovementClass(self.World.Map.Rules.TileSet);
                 List<CPos> path;
-                using (var search = PathSearch.Search(self.World, mobile.Locomotor, self, true,
+                using (var search = PathSearch.Search(self.World, mobile.Locomotor, self, BlockedByActor.All,
                     loc => domainIndex.IsPassable(self.Location, loc, mobileInfo.LocomotorInfo)
                         && harv.CanHarvestCell(self, loc) && claimLayer.CanClaimCell(self, loc))
                     .WithCustomCost(loc =>

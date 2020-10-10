@@ -39,7 +39,7 @@ namespace OpenRA.Mods.YR.Activities
 			if (tractable.Info.ExplosionWeapon != null)
 			{
 				// Use .FromPos since this actor is killed. Cannot use Target.FromActor
-				tractable.Info.ExplosionWeapon.Impact(Target.FromPos(self.CenterPosition), self, Enumerable.Empty<int>());
+				tractable.Info.ExplosionWeapon.Impact(Target.FromPos(self.CenterPosition), new GameRules.WarheadArgs() { SourceActor = self, DamageModifiers = new int[0] });
 			}
 
 			tractable.RevokeTractingCondition(self);

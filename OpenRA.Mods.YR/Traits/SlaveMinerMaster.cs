@@ -119,7 +119,7 @@ namespace OpenRA.Mods.YR.Traits
             if (cell.Layer != 0)
                 return false;
 
-            var resType = resLayer.GetResource(cell);
+            var resType = resLayer.GetResource(cell).Type;
             if (resType == null)
                 return false;
 
