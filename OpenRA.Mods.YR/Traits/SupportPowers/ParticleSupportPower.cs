@@ -168,7 +168,7 @@ namespace OpenRA.Mods.YR.Traits.SupportPowers
                         info.WeaponInfos[i].OffsetZ
                     );
                     WPos newPos = targetPos + offset;
-                    weaponInfo.Impact(Target.FromPos(newPos), self, Enumerable.Empty<int>());
+                    weaponInfo.Impact(Target.FromPos(newPos), new WarheadArgs { SourceActor = self, DamageModifiers = new int[0] });
 
                     var victimActors = w.FindActorsInCircle(targetPos, weaponInfo.Range);
                     foreach(Actor actor in victimActors)
