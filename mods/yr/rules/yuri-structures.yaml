@@ -973,6 +973,7 @@ naclon:
 		IsPlayerPalette: false
 	ClonesProducedUnits:
 		CloneableTypes: infantry
+		ProductionType: Cloning
 	AcceptsDeliveredCash:
 	SpawnSurvivors:
 		DeathTypes: ExplosionDeath, BulletDeath
