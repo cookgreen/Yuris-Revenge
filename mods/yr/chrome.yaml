@@ -2371,7 +2371,7 @@ reload-icon:
 		disabled-11: 944,136,16,16
 
 flags:
-	Inherits: ^Button
+	Inherits: ^Buttons
 	Regions:
 		america: 00, 00, 45, 21
 		germany: 00, 21, 45, 21
@@ -2839,7 +2839,7 @@ checkbox:
 		corner-br: 767,127,1,1
 
 checkbox-bits: 
-	Inherits: ^Button
+	Inherits: ^Buttons
 	Regions:
 		checked: 100,157,16,16
 		checked-disabled: 100,173,16,16
