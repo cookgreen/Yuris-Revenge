@@ -1,0 +1,10 @@
+yr-german-disc: Red Alert2 Yuri's Revenge German Disc
+	IDFiles:
+		Readme.txt: c36d3036e2a01ba441a830e1b4afb225f33f6c3e
+	Install:
+		copy: .
+			^Content/yr/thememd.mix: thememd.mix
+			^Content/yr/movmd03.mix: movmd03.mix
+		extract-mscab: INSTALL/Game6.CAB
+			^Content/yr/ra2md.mix: ra2md.mix
+			^Content/yr/langmd.mix: langmd.mix
