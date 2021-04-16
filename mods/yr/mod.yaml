@@ -371,14 +371,14 @@ ModContent:
 			Required: true
 		base-md: Yuri's Revenge Files
 			TestFiles: ^Content/yr/ra2md.mix, ^Content/yr/langmd.mix
-			Sources: yr, origin, tfd
+			Sources: yr, origin, tfd, yr-german-disc
 			Required: true
 		music-md: Yuri's Revenge Music
 			TestFiles: ^Content/yr/thememd.mix
-			Sources: yr, origin, tfd
+			Sources: yr, origin, tfd, yr-german-disc
 		movie-md: Yuri's Revenge Briefings
 			TestFiles: ^Content/yr/movmd03.mix
-			Sources: yr, origin, tfd
+			Sources: yr, origin, tfd, yr-german-disc
 		wdt: Red Alert 2 World Domination Tour
 			TestFiles: ^Content/ra2/wdt.mix
 			Sources: ra2, origin, tfd
