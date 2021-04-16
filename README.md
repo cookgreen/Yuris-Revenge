@@ -9,7 +9,7 @@ A Red Alert 2 Yuri's Revenge mod for OpenRA Engine
  <img src="https://media.moddb.com/images/members/4/3399/3398047/voxelbrowser.PNG" />  
 </details>
 
-## Version / 版本  
+## Engine Version / 引擎版本  
 release-20200503
 
 ## Build / 构建  
