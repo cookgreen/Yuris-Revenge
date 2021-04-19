@@ -35,7 +35,7 @@ RequestExecutionLevel admin
 !define MUI_STARTMENUPAGE_REGISTRY_ROOT "HKLM"
 !define MUI_STARTMENUPAGE_REGISTRY_KEY "Software\${PACKAGING_WINDOWS_REGISTRY_KEY}"
 !define MUI_STARTMENUPAGE_REGISTRY_VALUENAME "Start Menu Folder"
-!define MUI_STARTMENUPAGE_DEFAULTFOLDER "OpenRA"
+!define MUI_STARTMENUPAGE_DEFAULTFOLDER "OpenRA Red Alert 2 Yuri's Revenge"
 
 Var StartMenuFolder
 !insertmacro MUI_PAGE_STARTMENU Application $StartMenuFolder
