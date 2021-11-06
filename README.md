@@ -1,4 +1,6 @@
 # OpenRA Red Alert 2 Yuri's Revenge
+[![Build status](https://ci.appveyor.com/api/projects/status/jjhe0163q93j4bev/branch/master?svg=true)](https://ci.appveyor.com/project/cookgreen/yuris-revenge/branch/master)
+  
 # 开源红警复刻尤里的复仇  
 A Red Alert 2 Yuri's Revenge mod for OpenRA Engine
 
