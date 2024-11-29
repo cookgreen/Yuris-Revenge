@@ -203,6 +203,8 @@
 		AllowedTerrainTypes: Clear, Rough, Road
 		AllowUnderActors: false
 		TerrainType: Gems
+	ResourceRenderer:
+        RenderTypes: Ore, Gems
 	TerrainRenderer:
 
 World:
