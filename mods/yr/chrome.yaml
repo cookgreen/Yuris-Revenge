@@ -2345,6 +2345,7 @@ lobby-bits:
 		admin-anonymous: 118,0,16,16
 		player-registered: 102,16,16,16
 		player-anonymous: 118,16,16,16
+		kick: 118,16,16,16
 
 strategic: 
 	Image: strategic.png
